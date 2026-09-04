@@ -1,0 +1,320 @@
+{
+  "title": "占城大师本地研究归档完整性清单",
+  "generatedAt": "2026-09-04T01:59:38+00:00",
+  "archiveRoot": "research/archive",
+  "note": "归档实体被Git忽略；本清单用于验证本地备份是否完整。",
+  "snapshots": [
+    {
+      "snapshot": "2026-09-03",
+      "files": 61,
+      "bytes": 156492305,
+      "entries": [
+        {
+          "path": "cache/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
+          "bytes": 1,
+          "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+        },
+        {
+          "path": "cache/__PATCH_DIR/patchFuncIndexList.json",
+          "bytes": 9354,
+          "sha256": "c2bfc25950ea0ad037bafbc67fb3bdf52e92a93db16622b54487ff38ef14e800"
+        },
+        {
+          "path": "cache/a23078fc21f9ca79.webgl.data.unityweb.bin",
+          "bytes": 20479611,
+          "sha256": "73833e7229d02b630e5ebe408b8b4ecc75120153f71cefcb69445043c822e426"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/01firstbundle_assets_all_3ffdc4ebbc7b6ef074f13e27e84e7c06.bundle",
+          "bytes": 1013038,
+          "sha256": "9f7fafee853b9d658f7b089d02a7608ff6eef2d5280de8b9bf63608a7fab6d52"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/02coregamebundle_assets_all_c6dfa4c52b17c05bb82c44d406f5e1c4.bundle",
+          "bytes": 4318676,
+          "sha256": "0d9f55350d4c0c62fe1cf0221d19f7c6839a502e24ca0ccb740edc2e055bf95f"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/04metagamebundle_assets_all_58240af7f1abe2a25d5b0d62bfdead4f.bundle",
+          "bytes": 14986747,
+          "sha256": "8d09478450beb0f238becfe549844d5207d0b83539822044456ea9669433bbfd"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/3ae6d97ed4ae5e5edbde3a654c423e24_unitybuiltinshaders_36685f24b5d46f9f9f9f18b91f574c3c.bundle",
+          "bytes": 111315,
+          "sha256": "7a2d37317276ab06bdef003fc2bb675de27d488b82b51a6c12ddb82acc0ae3a9"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/3dart_share_assets_all_1faa924e251d05d0c85269c3ae20077c.bundle",
+          "bytes": 5779122,
+          "sha256": "c38ef0cc4ef20f17a1f3153f20d14ab6d1205cd3851fdd1a0879fa4475a5807e"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/a01firstbundle_assets_all_c4b66dd62cf568d379fafefd5bb52b2b.bundle",
+          "bytes": 1778103,
+          "sha256": "3c827355852b000dd12d7305120ee52b226950f9d5a68c6019b1321fc906ef13"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/a02_arenawithprop_assets_all_e664cc5f9dc640503b410e5720199cca.bundle",
+          "bytes": 2807518,
+          "sha256": "e09a0d595dada194930bee2e0980a91ed9142020422b416a8e761be642134ea7"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/a02coregamebundle_assets_all_0f914b74a49f086b20b97816f0559b36.bundle",
+          "bytes": 4340415,
+          "sha256": "c4df25cf5219ffb7888dfb6ade0593e8bbb86d481c80045086abca930790fc44"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/a03coregamebundle_assets_all_8df5669643c9431d31280f52c9bbd3af.bundle",
+          "bytes": 316770,
+          "sha256": "46a9659b2b0f5ab2d2e4767ff1c5e82dbd52e07685a655e0cbad19c08f7dbcfb"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/a04metagamebundle_assets_all_f7f2d75ef683451b85ca8ef576ddfe81.bundle",
+          "bytes": 10858380,
+          "sha256": "6d793d51f1e0ba3888f8dfd64491e55025cdfa4428173b07f270cb04a7b3fa74"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/audiosbundle_assets_all_1160cec0a919418844657ba097aa7c85.bundle",
+          "bytes": 2225082,
+          "sha256": "681818378ae5323c71834384611c2c1c7662c7d1a8b41db6b262a5af69abe790"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/catalog_2026.08.05.09.26.16.hash",
+          "bytes": 32,
+          "sha256": "78050b5a853e1d28b42b47b2839da06273c1490c0fbe368e876706cbf2389c5e"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/catalog_2026.08.28.09.05.24.hash",
+          "bytes": 32,
+          "sha256": "e8e93d051814332fa5631db16c0a324b77138f9636a57f3b585678d9c2fba94f"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/cefbf0334e5fbb8f0ee2e12dbd1af7fe.bundle",
+          "bytes": 851642,
+          "sha256": "89dd77c7b8283eb99eda455451e55347e35fc3cf676b670905c443155abd1ff1"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/charactersorganized_assets__shared_7025386afcb9d9c2f79dd56a67b24dc1.bundle",
+          "bytes": 17931,
+          "sha256": "587b23141007d498d910d9fe79820dcb0d50252fa28e1800474822d31e8ab53e"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/charactersorganized_assets_animator_3c7da3d91e521c68debacc6e075da36f.bundle",
+          "bytes": 2720939,
+          "sha256": "71d1463dec8a2fd43991e34e41d7d07f77586eef65e7a974bdfc973e77d512c0"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/defaultlocalgroup_assets_all_4c031180b5ce3b46ed8000db096f08e3.bundle",
+          "bytes": 20287,
+          "sha256": "838ab64432596f502d694b027cc68f03f9130a1f42c3832e50100ce65bf3ca89"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/duplicateassetisolation_assets_all_62e98671e4c4f783c10e4b9c095cc0a5.bundle",
+          "bytes": 18215,
+          "sha256": "b9bf2a811df347f96bc68de80fcf047ea482960a4580da07667e629fd66842cc"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/effectsbundle_assets_all_3915bc155601fd0167ba608493abec2d.bundle",
+          "bytes": 3772406,
+          "sha256": "db1b7327c3372a3bbe4e6c68ce8e6511bdf1791d62bd1b3626eb82f3ed962d18"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/first_effectbundle_assets_all_8bc52dba72de2516b44042ae5d62f42a.bundle",
+          "bytes": 592009,
+          "sha256": "31d789e415968c06440c0ea8f888c17c85ab50cdef5f73fdf073e26145a25b9a"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/first_ui_assets_all_1f4402e98298d818d704df41f3b31643.bundle",
+          "bytes": 818417,
+          "sha256": "8712179936dc359bcd881fcc3269629a517880c73fef47e6f11433691eefac61"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/firstpack01_assets_all_d50b247164ad153710374000e3be085d.bundle",
+          "bytes": 1747999,
+          "sha256": "5086483435ebb7e158610ec750c477a8441cc38c303455db93194240d07fbb9f"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/firstpack02_assets_all_0d06eaef09cadb86ef077b8df025b4a7.bundle",
+          "bytes": 11334560,
+          "sha256": "0abf6dbed3a45a69062a114768e500c4a78a6adc1882ebe99e71beaafaf6cc3b"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/firstpack0_preload_assets_all_c931ea4d901c477c2b238d6256ceef09.bundle",
+          "bytes": 2938885,
+          "sha256": "474e9c6e6c429b50bbb6fad9d69ac92a3d02087e3707d280a0b1a0c3dffd5533"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/firstpack2_assets_all_7d9e170e4653db36b2ba278f728c3261.bundle",
+          "bytes": 1958962,
+          "sha256": "cd84126fb2c164701b182f75c8cd4d26b5795bc50ac32f850150cb6f1d50028c"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/firstpack_assets_all_90b6de9d931fc3fb82824eb3d8945aa5.bundle",
+          "bytes": 6002967,
+          "sha256": "60595571358e6776f8b19210b86e931eea6548baae8192a5ded72449e9656a50"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/firstpack_home_assets_all_78b8ab3069d237b58c5ad1e6fb5a098c.bundle",
+          "bytes": 12134730,
+          "sha256": "9fc2052745620dec27f06684a73aac7d7bb88d100bca0f54c5683b6133ac61ca"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/font_assets_all_0293e8064761aaac395760cea10f4fbf.bundle",
+          "bytes": 2901920,
+          "sha256": "dd6352cf792fdd4c5c26e68581036604ccbd9727182e4f81c64c86d5f7f4fe66"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/prefabs_assets_all_8b0200574148f11d24ff5c3226907f45.bundle",
+          "bytes": 1866451,
+          "sha256": "a3e17f4ee1f02e20a94c896a2b98bb53f7bfc2dd6023b81df3f622c5ef207997"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/pub_share_assets_all_dc303f4f8f28fdd823675df4f7c8f159.bundle",
+          "bytes": 324132,
+          "sha256": "eb45341b196d1e58acf7e4b387fd713099fee0d7fee5eb9fa36463d659131fd3"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/pvppanel_assets_all_6d0566bc10ae4b0a58bd2a30ecae01bd.bundle",
+          "bytes": 265818,
+          "sha256": "511fa8baa54c3b39ae8f1aad5a65f149e5e35991d8e49ecdfcf87b287b97a897"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/scenepack_assets_all_a0b8d925928ace4254c343747ac57884.bundle",
+          "bytes": 22889,
+          "sha256": "099780d6153e8b58c948d460814c2a5383516371ef0a9bb3bf8ff57fbfc64cc9"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/spine_assets_artifactunlock_6d37f7ce413302111a3c91248b1c28c8.bundle",
+          "bytes": 34467,
+          "sha256": "94abff86cd78841335ad7acbb1472c8f64bc4ef0e0ef5df06a511e9a70504913"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/spine_assets_summon_8cf08864754a00a239e4aa69cd540f6f.bundle",
+          "bytes": 259866,
+          "sha256": "d59697df6978c576b12496186141f2b2be104ed3253c554fe6f9f9291f9d2537"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/spine_assets_upgradercard_6b82b175245f7402bc1a9a302e5e1989.bundle",
+          "bytes": 27843,
+          "sha256": "0236b5cf4417dc6eba974ac3abd67d803b192f77014f8487f78a3e7f2e8dbb44"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/spine_assets_upgraderewardspreviewpanel_ed714a2c8663c25bcee3e7c593766662.bundle",
+          "bytes": 57379,
+          "sha256": "c1582d96648fd07931a21f32e777f3644c5c20e1a074fd3366e0330a58f7be11"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/spine_assets_weeklyclashpanel_40b11238d429f9be1e221452a7b5dfe0.bundle",
+          "bytes": 31177,
+          "sha256": "2d22f4675e2cd7cf4d340766b9e081e60a89311b66e2eef5eee9ee44a0951e1c"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/spinebundle_assets_all_bdb4f591cf39b46a3722d9d5e955e624.bundle",
+          "bytes": 5797698,
+          "sha256": "5ca0fa56e92ace2b2720459dfdd8d94dcf459cfd4a2269340d70d2c8c80ffcbd"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/spritesbundle_assets_all_3a14cc4e248b7792bb96f57eb3ae308b.bundle",
+          "bytes": 7713230,
+          "sha256": "0dab839446bfd23672281abfcf210d1a91e17acae23905ec904b143cc493c256"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/ui_assets_all_203a422009754cbc3795352f3abf337c.bundle",
+          "bytes": 4157902,
+          "sha256": "87fbdc36b1ade3be53e9eced657878ec7169ca715c7c09d1b9c8ff6ed0f43276"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/uipackage_assets_all_dce677db473f179827e86e72a1621520.bundle",
+          "bytes": 3430832,
+          "sha256": "0898ddc2a36c6520d0b8a28c02735b0b94f738fe7713aad3d9bd660d2e39f147"
+        },
+        {
+          "path": "cache/StreamingAssets/WebGL/ljzs_lt/ABFiles_c3fdfad4f447f88024a81625325a5647.txt",
+          "bytes": 5189,
+          "sha256": "d176a3a0b121807232fb6ccc0eda115e43f80266e21e4ed5a18585dbfcd9f5aa"
+        },
+        {
+          "path": "cache/StreamingAssets/WebGL/ljzs_lt/data/config_b0f5e3dd0a9c4d70113144d682a85db3.unity3d",
+          "bytes": 52669,
+          "sha256": "085862a88950e7962a611b12541d9c8be73664084a3b7707e81d022c8ee6cd17"
+        },
+        {
+          "path": "cache/StreamingAssets/WebGL/ljzs_lt/ljzs_lt_eff7e52d2eaf4140462661f223c51d7f",
+          "bytes": 2852,
+          "sha256": "bdc59745e7322ee3d166c11f1d13d0a89cd05b0936afe33c853ba1b5e0f4915a"
+        },
+        {
+          "path": "cache/StreamingAssets/WebGL/ljzs_lt/ui/uiroot.prefab_4967075b56d636d9e81dd8bb5c508428.unity3d",
+          "bytes": 5577,
+          "sha256": "a1e1536dc52c7460dd26fb41748bd643ad3eecdea5d936bbd294345efe089e64"
+        },
+        {
+          "path": "unpacked/__WITHOUT_MULTI_PLUGINCODE__/app-config.json",
+          "bytes": 719,
+          "sha256": "0dd70efc46aecd600b08349581c0bb7909131cd2f02a8a10002330279aaa3032"
+        },
+        {
+          "path": "unpacked/__WITHOUT_MULTI_PLUGINCODE__/game.js",
+          "bytes": 709114,
+          "sha256": "1681cabc642b868633ceb9a66951484f7cd8ede1cf0de358b4abe6b6e468e674"
+        },
+        {
+          "path": "unpacked/__WITHOUT_MULTI_PLUGINCODE__/GameConfig.json",
+          "bytes": 488,
+          "sha256": "3bae7d7dcb10ff6758877f0ffce5409ea91e443411c601e8ae93bf29a373bdfc"
+        },
+        {
+          "path": "unpacked/__WITHOUT_MULTI_PLUGINCODE__/images/375x812.jpg",
+          "bytes": 360088,
+          "sha256": "b479abda2a91f30f616418409eb365073213689212a082bbd67427cffd5df6a9"
+        },
+        {
+          "path": "unpacked/__WITHOUT_MULTI_PLUGINCODE__/images/background.jpg",
+          "bytes": 8917,
+          "sha256": "ee88b4672db843d57b164c5deeaf62e096e3bf91881bdba71a85dd980687db80"
+        },
+        {
+          "path": "unpacked/__WITHOUT_MULTI_PLUGINCODE__/images/unity_logo.png",
+          "bytes": 1216,
+          "sha256": "34799ce1b7a341e39c6c6ea7fa439f170989f3ecc5d0cd3681573569b4b6d239"
+        },
+        {
+          "path": "unpacked/__WITHOUT_MULTI_PLUGINCODE__/workers.js",
+          "bytes": 1750,
+          "sha256": "90cb3596d9411b4c9e024c9dd9efde5b7045914e8fb02e85d9c727c8066226ce"
+        },
+        {
+          "path": "unpacked/_wasmcode1_/wasmcode1/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
+          "bytes": 7706151,
+          "sha256": "743d3f960e614dc2d39ae5d498f28f8a3314a1302f7ae64c0927cf253fb89952"
+        },
+        {
+          "path": "unpacked/_wasmcode1_/wasmcode1/game.js",
+          "bytes": 1118,
+          "sha256": "8bc01c28bda03c4536bd7990755c3cd1aee1eeca22bd552caa343339d473b2d9"
+        },
+        {
+          "path": "unpacked/_wasmcode_/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
+          "bytes": 6786702,
+          "sha256": "63c975b04a35b32e292143ae4dbc95067423d46a31a22e5646c4ade909a527e2"
+        },
+        {
+          "path": "unpacked/_wasmcode_/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br.precompile.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "unpacked/_wasmcode_/wasmcode/game.js",
+          "bytes": 1116,
+          "sha256": "d62e8b985b0b982a84147725bb9cf550c84eadbdd472525e7b9174703c9e7ae1"
+        },
+        {
+          "path": "unpacked/package-manifest.json",
+          "bytes": 2890,
+          "sha256": "4471e77f8eeffed241a8a62a2d58a11bd85b768f80af09e7940db5af1c135e99"
+        }
+      ]
+    }
+  ]
+}

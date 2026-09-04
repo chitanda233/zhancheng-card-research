@@ -1,0 +1,36 @@
+[
+  {
+    "id": "1",
+    "mapSize": "8,16",
+    "mainTowerPos": "0,0,-8,0,0,8",
+    "hexConfigs": "0,0,-6:GoldMine:OneStar:1001;-1.73,0,-9:Barracks:OneStar:1002",
+    "enemyCardDeck": "1001,1002,1003,1004,1005,1011,1013,1014",
+    "enemyDifficultLevel": "1",
+    "tutorialSteps": "",
+    "playerInitialCoin": "150",
+    "enemyInitialCoin": "50",
+    "enemyFlipHexSeq": "",
+    "enemyFlipIntervals": "",
+    "mapShape": "RectangleMap",
+    "gameTutorEndReward": "1003:9",
+    "dragonKnightConfig": "",
+    "cameraLimitBounds": ""
+  },
+  {
+    "id": "2",
+    "mapSize": "8,16",
+    "mainTowerPos": "0,0,-8,0,0,8",
+    "hexConfigs": "0,0,-6:Barracks:OneStar:1002;-1.73,0,-9:Barracks:OneStar:1002;-1.73,0,-7:Barracks:UnCharted:1002;1.73,0,-7:Barracks:OneStar:1003;1.73,0,-9:Barracks:OneStar:1003;0,0,-10:Barracks:OneStar:1005",
+    "enemyCardDeck": "1001,1002,1003,1004,1005,1011,1013,1014",
+    "enemyDifficultLevel": "1",
+    "tutorialSteps": "",
+    "playerInitialCoin": "50",
+    "enemyInitialCoin": "50",
+    "enemyFlipHexSeq": "",
+    "enemyFlipIntervals": "",
+    "mapShape": "RectangleMap",
+    "gameTutorEndReward": "",
+    "dragonKnightConfig": "True",
+    "cameraLimitBounds": ""
+  }
+]

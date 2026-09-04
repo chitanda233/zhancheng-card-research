@@ -1,0 +1,10 @@
+* text=auto eol=lf
+*.html text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.csv text eol=lf
+*.svg text eol=lf
+*.xlsx binary
+*.png binary
+docs/** linguist-generated=true
+

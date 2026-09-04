@@ -1,0 +1,27 @@
+# Local acquisition and reverse-engineering workspace (large or sensitive)
+/cache/
+/extracted/
+/unpacked/
+/research/archive/
+/tools/
+/node_modules
+/card-art/
+/tables/
+/previews/
+
+# Generated working outputs. Publishable copies live in /docs.
+/outputs/
+/docs/site-preview.png
+/docs/site-verification.json
+
+# Local verification and runtime noise
+*.inspect.ndjson
+*.log
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+/skill-summary.txt
+/workbook-verification.json
+.idea/
+.vscode/

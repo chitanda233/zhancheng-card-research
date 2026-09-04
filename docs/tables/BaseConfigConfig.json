@@ -1,0 +1,12 @@
+{
+  "activity_id": 1001,
+  "duration_days": 7,
+  "face_min": 1,
+  "face_max": 6,
+  "recover_interval_hour": 14400,
+  "natural_cap": 10,
+  "baseProbability": 5,
+  "addProbability": 5,
+  "newOrangeCard": 1049,
+  "randomOrangeCard": 5004
+}

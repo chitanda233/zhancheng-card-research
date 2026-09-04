@@ -1,0 +1,632 @@
+{
+  "title": "占城大师研究资料库发布清单",
+  "generatedAt": "2026-09-04T04:37:10+00:00",
+  "snapshot": "2026-09-03",
+  "files": [
+    {
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "index.html",
+      "bytes": 4175,
+      "sha256": "a42cff626a735fb29716e09500886d2b9d5ae3f68ad3a7fcd96dd058e75edc65"
+    },
+    {
+      "path": "reports/battle/battle-rules-data.json",
+      "bytes": 1013353,
+      "sha256": "c7dd68a9c602205459e4601c02073a0c27105e96d454a5e13c8d753f7d752084"
+    },
+    {
+      "path": "reports/battle/index.html",
+      "bytes": 72099,
+      "sha256": "3ae9f6cab27e0c899be281c89e70bf94174e56e17384dc7f5fb3d53554023a04"
+    },
+    {
+      "path": "reports/battle/report.md",
+      "bytes": 24259,
+      "sha256": "4e7ca791f21384f1007c69cb963700efac4f71dc47d64574325c0195b2799c5c"
+    },
+    {
+      "path": "reports/battle/verification.json",
+      "bytes": 1696,
+      "sha256": "84b12ce929201f6a19d2252c24b6fa8bcf3309e134381985d3852119d8b973da"
+    },
+    {
+      "path": "reports/cards/cards-data.json",
+      "bytes": 951807,
+      "sha256": "fc5c6038f470ff877563881a5232abb1c8690436aa25847d40e6e72e635dc41b"
+    },
+    {
+      "path": "reports/cards/cards.xlsx",
+      "bytes": 83234,
+      "sha256": "e52643287e46c20475e294914586f223aa69e37ea0a0987b158446ff8f095a8d"
+    },
+    {
+      "path": "reports/cards/index.html",
+      "bytes": 11427770,
+      "sha256": "cdd5ed83df6dddbf7dae5fde203d388598722fa4392592d1e1fa103f54e11a4c"
+    },
+    {
+      "path": "reports/cards/report.md",
+      "bytes": 9946,
+      "sha256": "1924d46f567df7605f4f89dfe44570aaf9d8074841c484aace69f567e1458744"
+    },
+    {
+      "path": "reports/journey/index.html",
+      "bytes": 528763,
+      "sha256": "41e18fa7ad59c5fb4f361ec9f113cb082b90c884e36a97e1f2ec04d3dcc7d6bc"
+    },
+    {
+      "path": "reports/journey/journey-map.svg",
+      "bytes": 9386,
+      "sha256": "e4cdb95af45aefebe4cf372582bd19621078bdfb4d419ac867031400f15a6d21"
+    },
+    {
+      "path": "reports/journey/journey-nodes.csv",
+      "bytes": 42443,
+      "sha256": "8bf7c3588b888d9d08012815df4c7271bfbfc4a082f663ca33029a20232706b7"
+    },
+    {
+      "path": "reports/journey/journey-nodes.json",
+      "bytes": 49472,
+      "sha256": "90de5df98704c02c3a5ef2854192b140bb03e704a904e8b4dd40ec29fc0f2808"
+    },
+    {
+      "path": "reports/journey/local-evidence.json",
+      "bytes": 538199,
+      "sha256": "0d1f3bc28c99ceb14f784aeb8af7267352e186d2ba7e07d0c9f1cd095bc91204"
+    },
+    {
+      "path": "reports/journey/report.md",
+      "bytes": 124082,
+      "sha256": "09529fa935ebd3cf8ffbec904011d0c8adcdf68baa560ae0a533a820c0d7f062"
+    },
+    {
+      "path": "reports/journey/source-manifest.json",
+      "bytes": 10770,
+      "sha256": "f401440604cc81e4c49b133f49e4d82cdbea194f07f5717703c66be4bdb4321d"
+    },
+    {
+      "path": "reports/journey/tooltip-ui-verification.json",
+      "bytes": 349,
+      "sha256": "fc070dc5012a8e2a9d28572bbf4617a8a8dc9e42a3e04c4308374a2a48fe71b4"
+    },
+    {
+      "path": "reports/journey/tutorial-graph.json",
+      "bytes": 73906,
+      "sha256": "cffb63ee8602598d334219acc2f5b0a13be40d7005648e6584f97acb689c67d3"
+    },
+    {
+      "path": "reports/journey/verification.json",
+      "bytes": 3382,
+      "sha256": "a1b023541a87880e37ea41498217a9608866010007b1026a00eca619da27a587"
+    },
+    {
+      "path": "reports/journey/web-evidence.json",
+      "bytes": 7439,
+      "sha256": "16876741a537ac09b2fd9c80d2771185b026d87b99849fe0be5d90d593ffa297"
+    },
+    {
+      "path": "reports/system/evidence.json",
+      "bytes": 37498,
+      "sha256": "2d26ccd94830a4fa3a1082cf7fc55c6a8b355e4d9eeeb2028fe6db258c4b8afd"
+    },
+    {
+      "path": "reports/system/index.html",
+      "bytes": 97431,
+      "sha256": "0f1dac795319e8fbf0e479045abbb8f25097efdbcd43cfb5d6462a408d7ceac1"
+    },
+    {
+      "path": "reports/system/report.md",
+      "bytes": 73481,
+      "sha256": "238b60d7ee65697f392a71a1034a606ed877e7339dad7da2470b4adfdf2b06da"
+    },
+    {
+      "path": "tables/AIPropInfoConfig.json",
+      "bytes": 14864,
+      "sha256": "d3bfcaccfd078c008f09cfd85497f5991082b9a627dfb81e40370fdc9d1a0a4b"
+    },
+    {
+      "path": "tables/ArenaEnemyBalanceInfogameplay_improve_01.json",
+      "bytes": 6509,
+      "sha256": "a17f89ae6173089cd0393146cb45b17040ccfc85fd465417142d9d867dedeb1d"
+    },
+    {
+      "path": "tables/BaseConfigConfig.json",
+      "bytes": 247,
+      "sha256": "f6afc404d9676f6c2aae435206233903c4d7f3dd9dab0865dc69536345515227"
+    },
+    {
+      "path": "tables/BuildConfigConfig.json",
+      "bytes": 2499,
+      "sha256": "c2df0547b6d920f28963673e30295eda8c8cde4fc4ccde642ccb17504c42ae9b"
+    },
+    {
+      "path": "tables/CheckInRewardsConfig.json",
+      "bytes": 6091,
+      "sha256": "e24367a2da2ca5cf97a4358e9ea202ad699463a36dc2410a22251a78c7b3696d"
+    },
+    {
+      "path": "tables/CheckInRewardsIndexConfig.json",
+      "bytes": 390,
+      "sha256": "4e043094f694129b1d48f44abd8cb103d52683e7f8d1f87ead96b19c0fcc3953"
+    },
+    {
+      "path": "tables/ChessboardConfig.json",
+      "bytes": 1291,
+      "sha256": "4a9901a8b23dee2d5098b81e2c39a1f1d9872e1791e928842a320ca5b84c6139"
+    },
+    {
+      "path": "tables/CumulativeRewardConfig.json",
+      "bytes": 763,
+      "sha256": "e50792d8210498515b1403fd6c58d4157ef1b7abdadb0b9a53596e9f81a25d83"
+    },
+    {
+      "path": "tables/DailyTaskConfig.json",
+      "bytes": 1873,
+      "sha256": "a8d062ac8b5d432a76cd22acec86edc1016856ac55a05758859721b6d83e13d3"
+    },
+    {
+      "path": "tables/EnemyDifficultLevelInfosgameplay_improve_01.json",
+      "bytes": 9636,
+      "sha256": "e7b0243db2a93c6bc8c50289781be16bd2049707bb1310f4bb7f85c852453a5c"
+    },
+    {
+      "path": "tables/FundIAPInfo.json",
+      "bytes": 2670,
+      "sha256": "7f219b3791615ad2cc79d1fcf8e209b1a733cb8761ffe08b87c51c5a8ac317e7"
+    },
+    {
+      "path": "tables/GameSettingConfig.json",
+      "bytes": 650,
+      "sha256": "b4000b7f95e80de982a6142d17a4304d2b7387d1a4680c42b6ed9d9f1d9a143b"
+    },
+    {
+      "path": "tables/GlobalArchitectureInfogameplay_improve_01.json",
+      "bytes": 19619,
+      "sha256": "5e70bf56ebbd88720536d5feeeecebf2ed9db0ffd20a7f7152d80fc7b7f7746f"
+    },
+    {
+      "path": "tables/GlobalArenaInfoSheet2.json",
+      "bytes": 49990,
+      "sha256": "d68a7826ee40d71469682ad0d892f4b7a5614307e8ed2404020389578a1c8a74"
+    },
+    {
+      "path": "tables/GlobalArtifactAIReleaseInfo.json",
+      "bytes": 4409,
+      "sha256": "8d80c2ccdee4f8f94fbdc3dbc1ad3304dc3a816ff7ed7f46bf78e637a9670425"
+    },
+    {
+      "path": "tables/GlobalArtifactsForgeInfo.json",
+      "bytes": 14591,
+      "sha256": "771f0cbdc1a16827571d329686495f591768cfd8928ad1e9bb894b3be312f31b"
+    },
+    {
+      "path": "tables/GlobalBaseAssetsInfo.json",
+      "bytes": 14710,
+      "sha256": "f74d96d33fb836426d6fcf8db6e0e04ace356ec057ea143ebfcf30e5286215b9"
+    },
+    {
+      "path": "tables/GlobalBlessInfo.json",
+      "bytes": 12777,
+      "sha256": "d5d8a76ea3cd39488fd7d1ebadf297625228de818f58d603dbe02b41262694a6"
+    },
+    {
+      "path": "tables/GlobalBoxInfo.json",
+      "bytes": 6230,
+      "sha256": "45fedfec1aa415c0f7492d490f7b8b50e6bfc2fd435d2afe44bbf7d62e8b3463"
+    },
+    {
+      "path": "tables/GlobalCardTalent2Info.json",
+      "bytes": 7424,
+      "sha256": "27fbee1606101f806a3d343dab0c687a97bbc0a0581705eca493fff2d4679c28"
+    },
+    {
+      "path": "tables/GlobalCardTalentInfoSheet3.json",
+      "bytes": 135720,
+      "sha256": "504ef60f14230ef1bc69a6df410e420a273e4789ddde25dae6d112e604a453e3"
+    },
+    {
+      "path": "tables/GlobalDanInfoSheet2.json",
+      "bytes": 6243,
+      "sha256": "a8bd45369d98d0b0823e9d26747a512a06286b7819febfffdeb7e2fd40785401"
+    },
+    {
+      "path": "tables/GlobalExpression.json",
+      "bytes": 8215,
+      "sha256": "be44d81949187c8926341003d5a55695163286279f5c49f891e2f28434578ef7"
+    },
+    {
+      "path": "tables/GlobalFeatureUnlockInfo.json",
+      "bytes": 7978,
+      "sha256": "44b44cd96286fc5b193f5fee149157e6a9fc7b70aa06aedef068a65ccbe288ca"
+    },
+    {
+      "path": "tables/GlobalFormulasInfo.json",
+      "bytes": 3252,
+      "sha256": "95c2b3e975ef96d470710a8386ceaa2f83bf032b700bfb9e313fe9bd068678f3"
+    },
+    {
+      "path": "tables/GlobalFundInfoAbilityFund.json",
+      "bytes": 5102,
+      "sha256": "6eba4f2b6f7c7fe7d31b9f25c11baf4879dca1a739ff50469ab18a104d948271"
+    },
+    {
+      "path": "tables/GlobalFundInfoCardFund.json",
+      "bytes": 4363,
+      "sha256": "a1e4d56c91d99ab375a4caebca48d8251bdf5364b3f0a718c61c59ce42581f0f"
+    },
+    {
+      "path": "tables/GlobalFundInfoMainCityPass.json",
+      "bytes": 2835,
+      "sha256": "810bf6595d01766cdab32b9059e8a3506a0919219d81273731963ea7c7f6c0bf"
+    },
+    {
+      "path": "tables/GlobalFundInfoSeasonPass.json",
+      "bytes": 22225,
+      "sha256": "e52faf56ae08720eb520704552f824b7173c2de0dd7d2fe43d77d370eadedb91"
+    },
+    {
+      "path": "tables/GlobalFundInfoSummonFund.json",
+      "bytes": 4868,
+      "sha256": "340013be7418eb345ed31a8dc1b7a76563cf84bc8aed036313f610c34c7164e1"
+    },
+    {
+      "path": "tables/GlobalGiftChainInfo.json",
+      "bytes": 2378,
+      "sha256": "ef616e9d69efcb1121e2ac16be8afac42018808c30853ccfbc9acfb4e491d7b9"
+    },
+    {
+      "path": "tables/GlobalGiftChainInfo2.json",
+      "bytes": 2316,
+      "sha256": "94cce3c9aac038a892f4f36133681977453b9a0c609eb8e24c847684f2133b63"
+    },
+    {
+      "path": "tables/GlobalHeroCardInfoSheet5.json",
+      "bytes": 67347,
+      "sha256": "fe685dcfe2ed6ed415f713499728f059d692fb9007b5ed2a10189483b5fa6b57"
+    },
+    {
+      "path": "tables/GlobalHexInfo.json",
+      "bytes": 881,
+      "sha256": "d6978c3a516088c67f8c9779c240d802c4c80c092f1c50497a12231c1ae9ddd8"
+    },
+    {
+      "path": "tables/GlobalMainCityAssetsInfo.json",
+      "bytes": 9768,
+      "sha256": "a2320fccc1fdb13886197da1cdfca8cd01fad147cb932268f3aa5b6ca77ca900"
+    },
+    {
+      "path": "tables/GlobalMainCityBuildTalentInfoSheet2.json",
+      "bytes": 1717,
+      "sha256": "187f3eb95af54f4d6aff05e8f0597d4ad9f2f57640c1d6b2ec07039f6d33bc54"
+    },
+    {
+      "path": "tables/GlobalMainCityHouseInfo.json",
+      "bytes": 3018,
+      "sha256": "e42eaf3f7e718f540c19a4ee57c9c34a001d2d24331ec56dc4f64b6561d4847e"
+    },
+    {
+      "path": "tables/GlobalMainCityMapInfo.json",
+      "bytes": 86656,
+      "sha256": "fdb0d1be07ce03970cb3d9b1e674443a73cc1028765dbd752e1847728d387be1"
+    },
+    {
+      "path": "tables/GlobalMainCityTitleInfo.json",
+      "bytes": 5779,
+      "sha256": "804f74dbcc8df8e3fc2ae3cc3c0f036eef2fe28624511fbe4bd5cd2f8200f108"
+    },
+    {
+      "path": "tables/GlobalMysteriousStore.json",
+      "bytes": 2870,
+      "sha256": "608413319760231d3a26af6aa9da6cf6a62217e7f0ed0d12c536d09c77137383"
+    },
+    {
+      "path": "tables/GlobalPolygonArenaInfoSheet2.json",
+      "bytes": 931241,
+      "sha256": "c1e304c3462387535bf3e14e12dee83b8180ea8ac944acaf4ae024f8eaff1ea3"
+    },
+    {
+      "path": "tables/GlobalPropInfoBTest.json",
+      "bytes": 22099,
+      "sha256": "2a17c8e7daab7be64e128ed22ad044a21f524e212f7aa025476f9367f5d9da4f"
+    },
+    {
+      "path": "tables/GlobalRandomHeroCardInfo.json",
+      "bytes": 7967,
+      "sha256": "e54f704830f0f9151357d9cbc5424ce190d483a0f2cd5ad162414f2c6ef0edd7"
+    },
+    {
+      "path": "tables/GlobalRoleInfogameplay_improve_01.json",
+      "bytes": 42704,
+      "sha256": "93ab3fb7d438c4d8d6572675909d94e103020265591ff9149aaed6c93c3d3628"
+    },
+    {
+      "path": "tables/GlobalShopInfo.json",
+      "bytes": 14463,
+      "sha256": "358d6f074a6d1f6f5e72d9c78db968f54f1da9c4a97b05b67ce4e1ec377adef9"
+    },
+    {
+      "path": "tables/GlobalSummonInfo.json",
+      "bytes": 13209,
+      "sha256": "6b486dded6ec2860953baacbd650a6a78d1b6395e5e2e3653ae638a464b2bfef"
+    },
+    {
+      "path": "tables/GlobalTalentFormulasInfoSheet2.json",
+      "bytes": 448,
+      "sha256": "779902ce764d0ab645de96706a041e45ffbf8aac2e09a26abbde1d67ff53a7bc"
+    },
+    {
+      "path": "tables/GlobalTrainingMapInfoSheet1.json",
+      "bytes": 2719,
+      "sha256": "82fe2bcf1982c0ddeb1f505f9411d64324c5dc733d140a843c6289af1ece84ef"
+    },
+    {
+      "path": "tables/GlobalTrainingMapInfoSheet2.json",
+      "bytes": 1227,
+      "sha256": "bb34e861bda63839bea83f65ae17afdb77da72ae5a4a9a6f9f9d16a53032333c"
+    },
+    {
+      "path": "tables/GlobalTrophyProgressInfo.json",
+      "bytes": 62080,
+      "sha256": "d444353723a3875f08a76aca5f8cf56e6a3e3c0ee79f02badaaef4bc1517b2d2"
+    },
+    {
+      "path": "tables/GlobalTutorialInfo.json",
+      "bytes": 48318,
+      "sha256": "d237fdb625c9c33905aa0fc82aa3f922352cd12d769387a1d142783964d2b007"
+    },
+    {
+      "path": "tables/GlobalUpgradeTalentPriceInfoabilities_in_advance.json",
+      "bytes": 505,
+      "sha256": "abde288bcd47e29044b9e5cef031d186b435dc478b18e69a8181af283864bcb5"
+    },
+    {
+      "path": "tables/GlobalWeeklyCardDailyTaskInfo.json",
+      "bytes": 2666,
+      "sha256": "be39ae7270a2962c8c598af53ead1d2271c9fb5df823de6286a47f59b67b91ad"
+    },
+    {
+      "path": "tables/GlobalWeeklyCardStageInfo.json",
+      "bytes": 1265,
+      "sha256": "1f10500983f49f4dd36d271795ac3d059b380547f0757bcc28a45db14262a0ca"
+    },
+    {
+      "path": "tables/GlobaMultistageNewcomerPackageInfo.json",
+      "bytes": 1741,
+      "sha256": "b7367c811a5516a050823f59133da68468bdd87273112e90f5ca1fc51b6b82e5"
+    },
+    {
+      "path": "tables/GlobaUpgradeReward.json",
+      "bytes": 10095,
+      "sha256": "a1f312700d622f53fb26521a62130925e4325adfe96064bde1fc84c8ae47bc5c"
+    },
+    {
+      "path": "tables/How2PlayConfig.json",
+      "bytes": 899,
+      "sha256": "3fb87f9c20d307a2407a0bbc9628d7a6fee624d0e108f64cf58f8eba7647ed71"
+    },
+    {
+      "path": "tables/I2Terms.json",
+      "bytes": 290427,
+      "sha256": "bb5fee7ff8aadf9b43acaf99f1f6a87f49ffc6d87d2053c51b1c969b0a7d5b3a"
+    },
+    {
+      "path": "tables/LapsConfigConfig.json",
+      "bytes": 2854,
+      "sha256": "bcfb5595b056e6b03599230e53b9db6d2f45f88968625ace40f8ba5b72975cb1"
+    },
+    {
+      "path": "tables/LimitedPropInfoConfig.json",
+      "bytes": 969,
+      "sha256": "ad1591ec437054cce61fbb99e77b3d6cd376b74090ab62efbca0ad9c52ed08df"
+    },
+    {
+      "path": "tables/LimitedPropOrderConfig.json",
+      "bytes": 340,
+      "sha256": "bebe00b929b8156f2e0eb18608e7ceab21be41f43f2e08c6fc6d504993bbbc38"
+    },
+    {
+      "path": "tables/LimitedPropPackConfig.json",
+      "bytes": 2233,
+      "sha256": "03d5d58d7dfaa4ee0f25da46f81a22ce749f47a37fa5b9df7221876c6a841f23"
+    },
+    {
+      "path": "tables/PoolConfigConfig.json",
+      "bytes": 10637,
+      "sha256": "df82b9607e177ca0995bdbd174d30f966e3a44868cc9146cd86e5e2ad48348aa"
+    },
+    {
+      "path": "tables/PremiumCustomGiftPackConfig.json",
+      "bytes": 668,
+      "sha256": "659b21fde73ae500089ec8e44f0131838457b60483afd49a0a51b0188bac02a8"
+    },
+    {
+      "path": "tables/PremiumGiftPackConfig.json",
+      "bytes": 2250,
+      "sha256": "337109d6ee7be734431897955a6b84c7dd6e59176d96f363e80ee5dfb34d8033"
+    },
+    {
+      "path": "tables/PropAttrBuffInfoConfig.json",
+      "bytes": 2703,
+      "sha256": "e2b8cec5f25dccef3cc763467e74280926d19f47eb80e471c2c3dba0b00bffe7"
+    },
+    {
+      "path": "tables/PropAttrEnumInfoConfig.json",
+      "bytes": 6588,
+      "sha256": "8f13f3882348b259fa4e6c596e0bc2d7ca9afa50e32a75b77893480dd0bbb4e4"
+    },
+    {
+      "path": "tables/PropAttrTypeConfig.json",
+      "bytes": 598,
+      "sha256": "7a9ac218940eaf3b041d6b7737beeb9c53a3478f54187790303fc1c90e18cfd1"
+    },
+    {
+      "path": "tables/PropRankUpInfoConfig.json",
+      "bytes": 6240,
+      "sha256": "1ffbd6e65487f9150d398344d6fbee5a38f7b2cfb97a8234974d5a441198cb4a"
+    },
+    {
+      "path": "tables/PropUpgradeInfoConfig.json",
+      "bytes": 26831,
+      "sha256": "be220a60b19a773488e68b9b8d8ac0f7e55dadd61ddc691a085fb893d5395bce"
+    },
+    {
+      "path": "tables/PvpBotConfig.json",
+      "bytes": 183649,
+      "sha256": "e48ea5e670c52f822aa7995c28bd68515428dfd122a9446f5356333e019b5606"
+    },
+    {
+      "path": "tables/PvpMapConfig.json",
+      "bytes": 15136,
+      "sha256": "3907e10e4c6bef64519bfcc809d7f17c96802be8d12cd63db0ab6946a590b891"
+    },
+    {
+      "path": "tables/PvpMatchingConfig.json",
+      "bytes": 2727,
+      "sha256": "82fee22c72c25300e96432051a15c1eabc94f59dd226b55096c0bda9f0d26329"
+    },
+    {
+      "path": "tables/PvpPropPieceConfig.json",
+      "bytes": 1030,
+      "sha256": "bb112b320547f981f3a6c706098e524e457a653a39ef510a40ba0a7c4f64b2fa"
+    },
+    {
+      "path": "tables/PvpRankConfig.json",
+      "bytes": 26356,
+      "sha256": "078c8b0f35f5200fcf6d162ff04c192c1c5dcc8d258e29ab0617768fc0d2c3a9"
+    },
+    {
+      "path": "tables/PvpRankingListConfig.json",
+      "bytes": 2009,
+      "sha256": "113e5708acb100bf8fcdd022e5b9291dbb48fea626d9de55bdcf941398828fa4"
+    },
+    {
+      "path": "tables/PvpSeasonPassConfig.json",
+      "bytes": 1913,
+      "sha256": "e2615375db90b8d5fd1df4b38c20bda62c25aff716c2dd73ddc0daebb65b3f3d"
+    },
+    {
+      "path": "tables/PvpSeasonPassRewardConfig.json",
+      "bytes": 47542,
+      "sha256": "963f6adc950581440fdacb248f5e1d8a50cb20518d5e9ffb49340e619c9b6ed8"
+    },
+    {
+      "path": "tables/PvpSeasonTaskConfig.json",
+      "bytes": 8202,
+      "sha256": "7a99842ec5363688db4566fb623fb1c61213776e5b78783a853df4e6c3ea2e84"
+    },
+    {
+      "path": "tables/PvpSettingConfig.json",
+      "bytes": 1184,
+      "sha256": "25742289c6d2aabe9e58216b4bf3d448125b462ec422ced83663fcad0488f207"
+    },
+    {
+      "path": "tables/PvpStateConfig.json",
+      "bytes": 693,
+      "sha256": "79502416e9a30c5fa9434d04acf00b7b40ed0dd1edf204225e6d625a14641464"
+    },
+    {
+      "path": "tables/RemoteConfig.json",
+      "bytes": 1434,
+      "sha256": "c4c7af955e90609715cf6f2b7fe18af64b73f9322ecbae56b33b0a1b7573e4d6"
+    },
+    {
+      "path": "tables/RuinsConfigConfig.json",
+      "bytes": 1613,
+      "sha256": "fd1c618f913e2b80626003608848cf604f11c5cf20373757f44b047d75f96778"
+    },
+    {
+      "path": "tables/S2Rank2PlayConfig.json",
+      "bytes": 28599,
+      "sha256": "f20a999ac07b6f2217ec9ec6edbc29edb2de1a9ef33d40a599d53b86a839818d"
+    },
+    {
+      "path": "tables/S2RankRewardListConfig.json",
+      "bytes": 541,
+      "sha256": "ef0b36f7cbe19368d5cc8fd1ddc09ebae2489216363f4a819eb05176bb7ad41e"
+    },
+    {
+      "path": "tables/S2RushRewardsConfig.json",
+      "bytes": 1436,
+      "sha256": "dfbeff7a4df6a4094222de0f4bda3fb98f9afbb49001cfdaf1386ac97ebac693"
+    },
+    {
+      "path": "tables/SeasonInfo.json",
+      "bytes": 713,
+      "sha256": "fb8cd21b383aeba9239365bcc1e97e9768f60185e67473774bd4f1a2c5de0538"
+    },
+    {
+      "path": "tables/SeasonRankingRewardConfigSheet2.json",
+      "bytes": 1816,
+      "sha256": "dbabd11cc0477cf81e81048e8d1a56d5b653402f61759885ff7cdbf80a35fb71"
+    },
+    {
+      "path": "tables/ShopArenaPackInfos.json",
+      "bytes": 14494,
+      "sha256": "d9a22692f052fa49271a4f1dc94f52e0131ab508bde10f014970a9494d211ac8"
+    },
+    {
+      "path": "tables/SummerCarnival2PlayConfig.json",
+      "bytes": 854,
+      "sha256": "d148e82a4d030c19b41628ac3838780cf7933f61372601d98f58e0df0ffb733e"
+    },
+    {
+      "path": "tables/SummerCarnivalCheckConfig.json",
+      "bytes": 1638,
+      "sha256": "b6cf52515528a67ca05801d1fed92f6f7f4e9f12a13512e6debad701dc83b9c2"
+    },
+    {
+      "path": "tables/SummerCarnivaldailyTaskConfig.json",
+      "bytes": 1641,
+      "sha256": "2d71f4d3857d49824c39c49b1b3f95c20417649d3a2176d2ea78830616d82951"
+    },
+    {
+      "path": "tables/SummerCarnivalpointShopConfig.json",
+      "bytes": 2189,
+      "sha256": "d373dd3679f80d95e95f1072e8545317bb7498a985325142b6f186f79686de7a"
+    },
+    {
+      "path": "tables/TotalDiceConfig.json",
+      "bytes": 10574,
+      "sha256": "1aa1c16c4ffce392a415bf09225ac574c34833c2f5475fe2f18576740d850b5b"
+    },
+    {
+      "path": "tables/UserLablePushPackInfo.json",
+      "bytes": 312,
+      "sha256": "601ed2e301644281944f38b01955ec81f12b6c01231ee15df8e615d74e4d57ab"
+    },
+    {
+      "path": "tables/UserLevelInfo.json",
+      "bytes": 7084,
+      "sha256": "b4c50c20062ee4c6d2d5663bc72834db3615a16f5ada39af43939768aba39ab8"
+    },
+    {
+      "path": "tables/VideoBtnConfig.json",
+      "bytes": 2479,
+      "sha256": "2ca4642f27bf443424c44e342741d28ec5837395ba62c61812bc3701b22cf189"
+    },
+    {
+      "path": "tables/WeeklyCardPoolConfig.json",
+      "bytes": 278,
+      "sha256": "075764b174dfd6d570ea9bdec09c961f6d3de22982f8751350caae3f48767f2a"
+    },
+    {
+      "path": "tables/WeeklyCardUIConfig.json",
+      "bytes": 2754,
+      "sha256": "8c1a342a580e6d615006030acb3f5abab3abdb6e5f280b584b1895561875a393"
+    },
+    {
+      "path": "tables/WeeklyClashDifficultyConfigSheet2.json",
+      "bytes": 2082,
+      "sha256": "e961541cdf902be99699cf80dbce3bf8d261416653d85acbc0576ba836d6f63e"
+    },
+    {
+      "path": "tables/WordEmojiConfig.json",
+      "bytes": 8469,
+      "sha256": "1d321f506ddd88f2801e1e55cd4fc3cc2ea64ca10aff9936f152da6edf36a285"
+    }
+  ]
+}

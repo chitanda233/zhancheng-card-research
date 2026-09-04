@@ -1,0 +1,14 @@
+[
+  {
+    "id": "10001",
+    "name": "SpecialOffer",
+    "iapId": "com.dong.hexwarriors.specialoffer",
+    "reward": "1001:40;20005:40;20006:200"
+  },
+  {
+    "id": "10002",
+    "name": "ElitePack",
+    "iapId": "com.dong.hexwarriors.elitepack",
+    "reward": "1007:300;20005:60000;20006:3000"
+  }
+]

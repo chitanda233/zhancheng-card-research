@@ -1,0 +1,268 @@
+[
+  {
+    "DefaultExpression": true,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/jc1/jc1_SkeletonData.asset",
+    "id": "7001",
+    "name": "EmojiThink"
+  },
+  {
+    "DefaultExpression": true,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/jc2/jc2_SkeletonData.asset",
+    "id": "7002",
+    "name": "EmojiLaugh"
+  },
+  {
+    "DefaultExpression": true,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/jc3/jc3_SkeletonData.asset",
+    "id": "7003",
+    "name": "EmojiCry"
+  },
+  {
+    "DefaultExpression": true,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/jc4/jc4_SkeletonData.asset",
+    "id": "7004",
+    "name": "EmojiAngry"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/1/1_SkeletonData.asset",
+    "id": "7005",
+    "name": "changmaoshou-1"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/2/2_SkeletonData.asset",
+    "id": "7006",
+    "name": "changmaoshou-2"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/3/3_SkeletonData.asset",
+    "id": "7007",
+    "name": "chifuzhanshi-1"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/4/4_SkeletonData.asset",
+    "id": "7008",
+    "name": "chifuzhanshi-2"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/5/5_SkeletonData.asset",
+    "id": "7009",
+    "name": "deluyi-1"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/6/6_SkeletonData.asset",
+    "id": "7010",
+    "name": "deluyi-2"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/7/7_SkeletonData.asset",
+    "id": "7011",
+    "name": "fashi-1"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/8/8_SkeletonData.asset",
+    "id": "7012",
+    "name": "fashi-2"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/9/9_SkeletonData.asset",
+    "id": "7013",
+    "name": "feilong-1"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/10/10_SkeletonData.asset",
+    "id": "7014",
+    "name": "feilong-2"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/11/11_SkeletonData.asset",
+    "id": "7015",
+    "name": "gongjianshouIcon-1"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/12/12_SkeletonData.asset",
+    "id": "7016",
+    "name": "gongjianshouIcon-2"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/13/13_SkeletonData.asset",
+    "id": "7017",
+    "name": "jianshiIcon-1"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/14/14_SkeletonData.asset",
+    "id": "7018",
+    "name": "jianshiIcon-2"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/15/15_SkeletonData.asset",
+    "id": "7019",
+    "name": "jujishou-1"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/16/16_SkeletonData.asset",
+    "id": "7020",
+    "name": "jujishou-2"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/17/17_SkeletonData.asset",
+    "id": "7021",
+    "name": "kulouIcon-1"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/18/18_SkeletonData.asset",
+    "id": "7022",
+    "name": "kulouIcon-2"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/19/19_SkeletonData.asset",
+    "id": "7023",
+    "name": "kuloujureng-1"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/20/20_SkeletonData.asset",
+    "id": "7024",
+    "name": "kuloujureng-2"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/21/21_SkeletonData.asset",
+    "id": "7025",
+    "name": "silingnvwang-1"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/22/22_SkeletonData.asset",
+    "id": "7026",
+    "name": "silingnvwang-2"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/23/feilong-1_SkeletonData.asset",
+    "id": "7027",
+    "name": "youxiaIcon-1"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/24/24_SkeletonData.asset",
+    "id": "7028",
+    "name": "youxiaIcon-2"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/29/29_SkeletonData.asset",
+    "id": "7029",
+    "name": "表情:夺冠"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/30/30_SkeletonData.asset",
+    "id": "7030",
+    "name": "表情:脸接球"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/31/31_SkeletonData.asset",
+    "id": "7031",
+    "name": "表情:胜利"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/32/32_SkeletonData.asset",
+    "id": "7032",
+    "name": "表情:警告"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "xrjnh_limit_item_end_data",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/33/33_SkeletonData.asset",
+    "id": "7033",
+    "name": "表情:陈伯1"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "xrjnh_limit_item_end_data",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/34/34_SkeletonData.asset",
+    "id": "7034",
+    "name": "表情:陈伯2"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "xrjnh_limit_item_end_data",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/35/35_SkeletonData.asset",
+    "id": "7035",
+    "name": "表情:沙子哥1"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "xrjnh_limit_item_end_data",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/36/36_SkeletonData.asset",
+    "id": "7036",
+    "name": "表情:沙子哥2"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "xrjnh_limit_item_end_data",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/37/37_SkeletonData.asset",
+    "id": "7037",
+    "name": "表情:小叶1"
+  },
+  {
+    "DefaultExpression": false,
+    "EndTimeOnlineParamKey": "xrjnh_limit_item_end_data",
+    "SpinePath": "Assets/_Res/Addressable/Spine/Expression/38/38_SkeletonData.asset",
+    "id": "7038",
+    "name": "表情:小叶2"
+  }
+]

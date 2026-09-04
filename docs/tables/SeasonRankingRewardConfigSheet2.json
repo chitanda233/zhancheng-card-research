@@ -1,0 +1,72 @@
+[
+  {
+    "id": "10001",
+    "rankHigh": 1,
+    "rankLow": 1,
+    "weeklyClashRewards": "20006:450;20013:70;20014:25",
+    "seasonRewards": "20006:500;20005:20000;20014:200"
+  },
+  {
+    "id": "10002",
+    "rankHigh": 2,
+    "rankLow": 2,
+    "weeklyClashRewards": "20006:400;20013:60;20014:20",
+    "seasonRewards": "20006:400;20005:15000;20014:150"
+  },
+  {
+    "id": "10003",
+    "rankHigh": 3,
+    "rankLow": 3,
+    "weeklyClashRewards": "20006:350;20013:50;20014:15",
+    "seasonRewards": "20006:300;20005:10000;20014:100"
+  },
+  {
+    "id": "10004",
+    "rankHigh": 4,
+    "rankLow": 10,
+    "weeklyClashRewards": "20006:300;20013:40;20014:10",
+    "seasonRewards": "20006:200;20005:8000;20014:60"
+  },
+  {
+    "id": "10005",
+    "rankHigh": 11,
+    "rankLow": 20,
+    "weeklyClashRewards": "20005:5000;20012:100;20013:30",
+    "seasonRewards": "20006:180;20005:7500;20014:50"
+  },
+  {
+    "id": "10006",
+    "rankHigh": 21,
+    "rankLow": 50,
+    "weeklyClashRewards": "20005:4000;20012:80;20013:20",
+    "seasonRewards": "20006:160;20005:6000;20014:40"
+  },
+  {
+    "id": "10007",
+    "rankHigh": 51,
+    "rankLow": 100,
+    "weeklyClashRewards": "20005:3000;20012:60",
+    "seasonRewards": "20006:140;20005:5500;20014:30"
+  },
+  {
+    "id": "10008",
+    "rankHigh": 101,
+    "rankLow": 500,
+    "weeklyClashRewards": "20005:2000;20012:40",
+    "seasonRewards": "20006:120;20005:5000;20014:20"
+  },
+  {
+    "id": "10009",
+    "rankHigh": 501,
+    "rankLow": 999,
+    "weeklyClashRewards": "20005:1000;20012:30",
+    "seasonRewards": "20006:100;20005:4500;20014:10"
+  },
+  {
+    "id": "10010",
+    "rankHigh": 999,
+    "rankLow": -1,
+    "weeklyClashRewards": "20005:500;20012:20",
+    "seasonRewards": "20006:80;20005:4000;20014:5"
+  }
+]
