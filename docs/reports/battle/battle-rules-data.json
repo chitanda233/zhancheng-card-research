@@ -4300,6 +4300,93 @@
       "ArtifactsForgeBuff_MachineSummon": "传说机械单位的首次召唤概率+{0}"
     }
   },
+  "cardSelectionEvidence": {
+    "metadataRecovery": {
+      "metadataVersion": 31,
+      "protectedMagic": "0995",
+      "xorKey": "0x91",
+      "xorRanges": [
+        "0x000004-0x0000ff",
+        "stringLiteral table 0x000100-0x0439c7"
+      ],
+      "codeRegistration": "0x0cf1ec",
+      "metadataRegistration": "0x09490c"
+    },
+    "initialGeneration": [
+      "BuildStableGenerationOrder",
+      "ResolveInitialRarity",
+      "ResolveRandomArchitecture",
+      "CountCardsByRare",
+      "TrySelectGoldMineCandidate",
+      "IsInitialCardCandidateAllowedByRare",
+      "IsInitialCardCandidateAllowedByGoldMineLimit",
+      "IsInitialCardCandidateAllowedByHiddenRestrictions"
+    ],
+    "opening": [
+      "SelectCardForHex",
+      "SelectCardForCellArchitecture",
+      "ResolveOpenedHexOutcome",
+      "TryRegenerateCapturedHiddenHexContent",
+      "TrySelectCapturedHiddenHexCard"
+    ],
+    "protectionAndOverrides": [
+      "TryApplyFirstThreeCheapOpenReroll",
+      "SelectFirstThreeRCardWithoutGoldMine",
+      "IsFirstThreeRerollCandidate",
+      "SelectLegendaryCardForHex",
+      "ResolveUserLabelGoldCardOdd",
+      "ResolveDailyBlessGoldCardSummonOdd",
+      "ResolveWeeklyCycleCardGoldCardOdd",
+      "TryApplyLegendarySummonTrait"
+    ],
+    "rng": [
+      "FPRandom.NextUInt",
+      "FPRandom.Range",
+      "BuildStableGenerationOrder",
+      "CalculateGenerationOrderKey"
+    ],
+    "wasmMapping": {
+      "ResolveRandomArchitecture": {
+        "rva": "0xEFFC",
+        "tableSlot": 61436,
+        "functionIndex": 15972
+      },
+      "FPRandom.Range": {
+        "rva": "0x43CA",
+        "tableSlot": 17354,
+        "functionIndex": 1693
+      },
+      "TryApplyFirstThreeCheapOpenReroll": {
+        "rva": "0xF384",
+        "tableSlot": 62340,
+        "functionIndex": 25362
+      },
+      "SelectFirstThreeRCardWithoutGoldMine": {
+        "rva": "0xF385",
+        "tableSlot": 62341,
+        "functionIndex": 25388
+      }
+    },
+    "sameRarityWeightConclusion": "ResolveRandomArchitecture passes min=0 and max=candidates.Count to FPRandom.Range, then reads that list index. Selection inside the final filtered list is source-level confirmed uniform selection.",
+    "firstThreeCheapOpen": {
+      "openLimit": 3,
+      "priceLimitExclusive": 250,
+      "triggeredRareLevels": [
+        "SSR",
+        "SSSR"
+      ],
+      "excludedArchitectureType": "defense",
+      "replacementPool": "R cards excluding cardId/architectureId 1001 (gold mine)",
+      "replacementSelection": "FPRandom.Range(0, candidates.Count)"
+    },
+    "userLabelGoldCardOddPoints": {
+      "JustPaidUser": 10,
+      "LosingStreak": 50,
+      "InactiveUser": 30,
+      "WinningStreak": 50,
+      "reset": "After the first qualifying SSSR barracks-like selection for that player"
+    }
+  },
   "counts": {
     "arenaRows": 20,
     "polygonMapRows": 190,
@@ -4322,7 +4409,7 @@
   },
   "warnings": [
     "静态表与缓存默认值不等于服务器实时规则。",
-    "地块五项基础结果权重已确认；字段语义沿用现有反编译映射，具体卡牌选择函数尚未完整恢复。",
+    "地块五项基础结果权重与具体卡牌的最终列表抽取均已恢复；账号标签、祝福等覆盖项仍需结合当局下发值计算。",
     "190条多边形记录是跨竞技场复用记录；按几何字段去重后为22种布局签名，不能宣传成190张独立地图。",
     "PVP地图池的等权概率只适用于同一层级已进入候选池的记录；首局地图另有固定ID。",
     "机器人预设存在不代表所有普通竞技场或赛季对局都是机器人。",

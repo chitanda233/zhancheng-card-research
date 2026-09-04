@@ -148,6 +148,55 @@ data = {
             'ArtifactsForgeBuff_UndeadSummon', 'ArtifactsForgeBuff_MachineSummon',
         )},
     },
+    'cardSelectionEvidence': {
+        'metadataRecovery': {
+            'metadataVersion': 31,
+            'protectedMagic': '0995',
+            'xorKey': '0x91',
+            'xorRanges': ['0x000004-0x0000ff', 'stringLiteral table 0x000100-0x0439c7'],
+            'codeRegistration': '0x0cf1ec',
+            'metadataRegistration': '0x09490c',
+        },
+        'initialGeneration': [
+            'BuildStableGenerationOrder', 'ResolveInitialRarity', 'ResolveRandomArchitecture',
+            'CountCardsByRare', 'TrySelectGoldMineCandidate',
+            'IsInitialCardCandidateAllowedByRare', 'IsInitialCardCandidateAllowedByGoldMineLimit',
+            'IsInitialCardCandidateAllowedByHiddenRestrictions',
+        ],
+        'opening': [
+            'SelectCardForHex', 'SelectCardForCellArchitecture', 'ResolveOpenedHexOutcome',
+            'TryRegenerateCapturedHiddenHexContent', 'TrySelectCapturedHiddenHexCard',
+        ],
+        'protectionAndOverrides': [
+            'TryApplyFirstThreeCheapOpenReroll', 'SelectFirstThreeRCardWithoutGoldMine',
+            'IsFirstThreeRerollCandidate', 'SelectLegendaryCardForHex',
+            'ResolveUserLabelGoldCardOdd', 'ResolveDailyBlessGoldCardSummonOdd',
+            'ResolveWeeklyCycleCardGoldCardOdd', 'TryApplyLegendarySummonTrait',
+        ],
+        'rng': ['FPRandom.NextUInt', 'FPRandom.Range', 'BuildStableGenerationOrder', 'CalculateGenerationOrderKey'],
+        'wasmMapping': {
+            'ResolveRandomArchitecture': {'rva': '0xEFFC', 'tableSlot': 61436, 'functionIndex': 15972},
+            'FPRandom.Range': {'rva': '0x43CA', 'tableSlot': 17354, 'functionIndex': 1693},
+            'TryApplyFirstThreeCheapOpenReroll': {'rva': '0xF384', 'tableSlot': 62340, 'functionIndex': 25362},
+            'SelectFirstThreeRCardWithoutGoldMine': {'rva': '0xF385', 'tableSlot': 62341, 'functionIndex': 25388},
+        },
+        'sameRarityWeightConclusion': 'ResolveRandomArchitecture passes min=0 and max=candidates.Count to FPRandom.Range, then reads that list index. Selection inside the final filtered list is source-level confirmed uniform selection.',
+        'firstThreeCheapOpen': {
+            'openLimit': 3,
+            'priceLimitExclusive': 250,
+            'triggeredRareLevels': ['SSR', 'SSSR'],
+            'excludedArchitectureType': 'defense',
+            'replacementPool': 'R cards excluding cardId/architectureId 1001 (gold mine)',
+            'replacementSelection': 'FPRandom.Range(0, candidates.Count)',
+        },
+        'userLabelGoldCardOddPoints': {
+            'JustPaidUser': 10,
+            'LosingStreak': 50,
+            'InactiveUser': 30,
+            'WinningStreak': 50,
+            'reset': 'After the first qualifying SSSR barracks-like selection for that player',
+        },
+    },
     'counts': {'arenaRows':len(arenas),'polygonMapRows':len(polygon_arenas),
                'enemyDifficultyRows':len(load('EnemyDifficultLevelInfosgameplay_improve_01')),
                'pvpBotPresets':len(load('PvpBotConfig')),'pvpMapRows':len(pvp_maps),
@@ -155,7 +204,7 @@ data = {
     'remoteFlags': {name:remote[f'SDKModule.{name}Class'][0][name] for name in ('NewArenaProcess','NoBet','NewArtifactsPlay','MinesCountLimit','UnitsCountLimit','NewArenaMap','NewHexaType','DailyBless','WeeklyCardEvent','ArtifactsImproveAB')},
     'warnings': [
         '静态表与缓存默认值不等于服务器实时规则。',
-        '地块五项基础结果权重已确认；字段语义沿用现有反编译映射，具体卡牌选择函数尚未完整恢复。',
+        '地块五项基础结果权重与具体卡牌的最终列表抽取均已恢复；账号标签、祝福等覆盖项仍需结合当局下发值计算。',
         '190条多边形记录是跨竞技场复用记录；按几何字段去重后为22种布局签名，不能宣传成190张独立地图。',
         'PVP地图池的等权概率只适用于同一层级已进入候选池的记录；首局地图另有固定ID。',
         '机器人预设存在不代表所有普通竞技场或赛季对局都是机器人。',
@@ -389,9 +438,45 @@ md = '''# 《占城大师》局内战斗规则
 
 五个权重来自 `GlobalHexInfo（全局六边形地块信息）` 的 `probabilityProfile`，每行合计100。字段语义沿用已恢复的品质顺序“普通、稀有、史诗、传说、空”。因此当前快照的未知格非空率是20%，不是80%或25%；它一旦非空，条件概率是75%史诗、25%传说。
 
-这张表只证明**结果品质层**，不证明某一张具体卡的独立概率。当前资源没有每张卡的单独局内抽取权重，也没有完整恢复最终候选选择函数；只能确认牌组、品质、建筑类型、数量上限和可用候选会影响最后落到哪张卡。不能再把“同品质卡等概率”当作已确认规则。
+这张表只证明**结果品质层**，不证明某一张具体卡的独立概率。具体卡牌还要经过下面的本局牌组候选筛选。
 
-### 8. 已找到的概率修改器
+### 8. 具体卡牌是怎样抽出来的
+
+核心结论：**常规地块不是点击瞬间从全卡库重新抽一张，而是在开局按确定性随机种子生成隐藏内容，点击时再把该内容结算成玩家牌组中的卡。** 编译符号把链路拆得很清楚：
+
+| 顺序 | 代码路径 | 实际作用 |
+| ---: | --- | --- |
+| 1 | `BuildStableGenerationOrder`、`CalculateGenerationOrderKey` | 用战斗种子和稳定顺序决定各格的生成先后，保证双方与回放结果一致 |
+| 2 | `ResolveInitialRarity`、`TryFindHexRarityProfile` | 按当前地块的五段权重先抽普通、稀有、史诗、传说或空 |
+| 3 | `CountCardsByRare` | 从本局牌组按品质建立候选池，不是从54张全卡表直接抽 |
+| 4 | `IsInitialCardCandidateAllowedByRare` | 排除品质不符的牌 |
+| 5 | `IsInitialCardCandidateAllowedByGoldMineLimit` | 达到金矿随机上限后排除金矿 |
+| 6 | `IsInitialCardCandidateAllowedByHiddenRestrictions` | 按隐藏格类型继续排除不允许的资源、防御或兵营候选 |
+| 7 | `ResolveRandomArchitecture` | 从剩余候选中选择建筑/卡牌，并把结果写进格子隐藏内容 |
+| 8 | `SelectCardForHex`、`ResolveOpenedHexOutcome` | 玩家点击时找到与隐藏建筑对应的已装备卡，完成揭晓和建造 |
+
+旧版展示层还保留了更直白的四个牌池：`cardRInfoList`、`cardSrInfoList`、`cardSsrInfoList`、`cardSssrInfoList`，以及 `cardRNoGoldMineInfoList`、`RandomSRArchitectureLevelInfoAndNoDef`、`RandomBarracksArchitectureInfo` 等过滤池。这与新版BattleCore的候选切片逻辑相互印证。
+
+#### 同品质内是不是每张卡等概率
+
+现在可以给出源码级结论：**在所有限制处理完之后，对剩余候选按列表索引均匀抽取。** `ResolveRandomArchitecture`（表槽 `0xEFFC` → WASM `func[15972]`）把 `0` 和 `candidates.Count` 直接传给 `FPRandom.Range`，再用返回值读取候选列表；中间没有读取单卡权重字段。
+
+`FPRandom.Range`（表槽 `0x43CA` → WASM `func[1693]`）使用PCG状态推进，并通过拒绝采样消除简单取模偏差。因此在基础、无覆盖分支中，若某格抽中史诗的概率为 `P(SSR)`，过滤后有 `N` 张合法史诗候选，则 `P(某张卡 | 已抽中SSR且进入该池)=1/N`，整体概率为 `P(某张卡)=P(SSR)×1/N`。
+
+例如未知格基础是15%史诗；过滤后若有3张合法史诗牌，且没有触发任何覆盖路径，每张就是5%。若某张牌被类型限制排除，或触发账号标签、金卡加成、首次召唤、周卡指定牌等覆盖路径，就要先重算品质或候选池，不能直接套这个5%。
+
+#### 这次怎样把未还原函数打开的
+
+原始 `global-metadata.dat` 的保护范围比预想的小：魔数被替换成 `0995`，IL2CPP v31头部和字符串字面量索引表按字节异或 `0x91`，其余方法、类型和字段表没有整体加密。恢复魔数与这两个区段后，配合带完整Data段的主WASM，成功定位 `CodeRegistration=0x0CF1EC`、`MetadataRegistration=0x09490C`，生成了方法签名与函数表映射。由此可以从方法名落到具体WASM函数体，而不再只靠字符串邻接推断。
+
+#### 点击时会不会重新随机
+
+- 常规未翻格：隐藏内容在开局已生成，点击主要是揭晓；
+- 被占领的特殊隐藏格：存在 `TryRegenerateCapturedHiddenHexContent` 和独立候选缓存，可能重新生成；
+- 调试/引导：可通过强制兵营牌、龙骑士引导等路径覆盖普通结果；
+- 前三次低价翻格：存在单独重抽路径，见下一节。
+
+### 9. 已找到的概率修改器与保护
 
 | 修改来源 | 配置内容 | 影响范围 | 当前能否确认生效 |
 | --- | --- | --- | --- |
@@ -401,10 +486,14 @@ md = '''# 《占城大师》局内战斗规则
 | 周卡 | `召唤概率+1%` | 周卡特权路径 | 仅有本地化文本，触发与叠加未恢复 |
 | 周通行证士气 | `传奇单位召唤机会+5%` | 士气/周通行证路径 | 仅有本地化文本，当前分支未确认 |
 | 数量和候选过滤 | 金矿上限、类型限制、无合法候选 | 改变最终可选卡集合 | 有配置入口；回退/重抽实现未完整恢复 |
+| 前三次低价翻格 | `TryApplyFirstThreeCheapOpenReroll` | 价格 `<250` 的前3次低价翻格中，原结果为SSR/SSSR且不是防御建筑时，改抽“不含金矿的R卡池” | 阈值、品质条件、排除项与均匀重抽均由函数体确认；属于早期强结果平滑，不是奖励型保底 |
+| 用户标签 | `ResolveUserLabelGoldCardOdd` | 刚付费 `+10`、连败 `+50`、回流 `+30`、连胜 `+50` 个百分点，可叠加 | 数值与一次性重置路径已由函数体确认；当局标签由服务端/回放载荷提供，是否命中仍需实局数据 |
 
-最强的保护证据是“累计消耗2000金币必出金卡”和训练固定编排。此前报告草稿提到的“前三次低价翻格重抽”“前三张普通卡排除金矿”，本轮在保留的脚本、资源文本和解压后的Wasm符号中均未复核到直接证据，现已撤回，不再作为确定规则。
+需要特别纠正：`FirstThreeCheapOpenPriceLimit=250`，函数实际用 `Price > 249` 排除，所以适用的是价格 **低于250** 的格子，即25、50、100金币格，不含250金币三星格。它检查玩家的低价开格计数不超过前三次，且原卡 `RareLevel >= 3`（SSR/SSSR）；找到对应建筑后，防御类会被排除。替换池由 `IsFirstThreeRerollCandidate` 限定为 `RareLevel=1`，同时 `CardId` 与 `ArchitectureId` 都不能是金矿 `1001`，最后仍用 `Range(0, Count)` 等概率抽取。换句话说，这条规则会压掉早期低价格抽到的部分高品质非防御结果。
 
-### 9. 概率是否随对局时间变化
+账号标签也比原先更具体：本函数没有使用新手/专家等级；它只读取刚付费、连败、回流、连胜四个布尔标签，分别贡献 `+10/+50/+30/+50` 个百分点，并允许叠加。`RecordUserLabelGoldCardOddReset` 显示：当该加成大于0且玩家首次生成符合条件的SSSR兵营类结果后，会为该玩家设置一次性重置标记。这里确认的是客户端确定性战斗输入的计算逻辑；某局到底带了哪些标签，仍取决于服务端写入的对局载荷。
+
+### 10. 概率是否随对局时间变化
 
 当前没有发现“战斗进行到第N秒后，四类地块基础权重自动上升/下降”的配置。能确认的动态因素是：
 
@@ -414,7 +503,7 @@ md = '''# 《占城大师》局内战斗规则
 - 周卡、士气、祝福和远程开关可能按账号、活动周期或服务端实验切换；
 - 教程/首场PVP会覆盖随机流程，随后才进入普通候选池。
 
-### 10. 版本变化：目前能证明到哪里
+### 11. 版本变化：目前能证明到哪里
 
 本地缓存有 `2026.08.05.09.26.16` 与 `2026.08.28.09.05.24` 两个Addressables目录哈希，证明资源目录至少更新过一次；但只保留了一份完整动态配置包，所以无法把两个日期的地图与概率逐项做数值Diff。
 
@@ -445,7 +534,7 @@ md = '''# 《占城大师》局内战斗规则
 | 分析推导 | 经济换战力、拉扯价值与策略选择；不包装成底层代码规则 |
 | 公开材料 | 仅作版本线索或玩法交叉验证，不能覆盖本地配置证据 |
 
-优先验证：普通场经典/多边形最终分流；普通地图四种外观格的生成配比；同品质候选卡的最终抽取算法；2000金币保底的累计与重置范围；各概率加成的加法/乘法及先后顺序；服务器实时开关；平局、断线与投降判定。
+优先验证：普通场经典/多边形最终分流；普通地图四种外观格的生成配比；2000金币保底的累计与重置范围；每日祝福、周卡与神器锻造加成的完整叠加顺序；服务器实时开关与每局实际用户标签；平局、断线与投降判定。
 
 ### 3. 数据来源
 
@@ -454,6 +543,7 @@ md = '''# 《占城大师》局内战斗规则
 - `GlobalArenaInfoSheet2（全局竞技场信息·Sheet2表）`与`GlobalPolygonArenaInfoSheet2（全局多边形竞技场信息·Sheet2表）`
 - `PvpMapConfig（PVP地图配置）`与`PvpSettingConfig（PVP全局规则配置）`
 - `GlobalTrainingMapInfoSheet1（训练地图配置分支1）`与`GlobalTrainingMapInfoSheet2（训练地图配置分支2）`
+- 已恢复的IL2CPP v31元数据与主WASM函数体：初始隐藏内容、候选过滤、等概率列表抽取、前三次低价重抽、账号标签金卡加成和确定性随机算法
 - `GlobalBlessInfo（全局祝福信息）`与`GlobalArtifactsForgeInfo（神器锻造信息）`
 - `GlobalArchitectureInfogameplay_improve_01（全局建筑信息·玩法优化01版）`
 - `GlobalRoleInfogameplay_improve_01（全局战斗单位信息·玩法优化01版）`
@@ -533,15 +623,15 @@ toc_items='''
 <li><a href="#rule-1">一句话理解</a></li><li><a href="#rule-2">单局规则链</a></li><li><a href="#rule-3">玩家能控制什么</a></li><li><a href="#rule-4">局内经济</a></li><li><a href="#rule-5">建筑、出兵与路线</a></li><li><a href="#rule-6">两条胜利路线</a></li><li><a href="#rule-7">神器规则</a></li><li><a href="#rule-8">竞技场参数</a></li><li><a href="#rule-9">普通场与赛季PVP</a></li><li><a href="#rule-10">局内/局外结算</a></li>
 </ul></li>
 <li><a href="#module-hex"><strong>模块二：地图与翻格子规则</strong></a><ul>
-<li><a href="#hex-1">地图体系总览</a></li><li><a href="#hex-2">经典版型全清单</a></li><li><a href="#hex-3">190条多边形记录</a></li><li><a href="#hex-4">PVP地图概率</a></li><li><a href="#hex-5">训练固定地图</a></li><li><a href="#hex-6">地图生成链</a></li><li><a href="#hex-7">翻格基础概率</a></li><li><a href="#hex-8">概率修改器</a></li><li><a href="#hex-9">局内时间变化</a></li><li><a href="#hex-10">版本变化证据</a></li>
+<li><a href="#hex-1">地图体系总览</a></li><li><a href="#hex-2">经典版型全清单</a></li><li><a href="#hex-3">190条多边形记录</a></li><li><a href="#hex-4">PVP地图概率</a></li><li><a href="#hex-5">训练固定地图</a></li><li><a href="#hex-6">地图生成链</a></li><li><a href="#hex-7">翻格基础概率</a></li><li><a href="#hex-8">具体卡牌选择</a></li><li><a href="#hex-9">概率修改器与保护</a></li><li><a href="#hex-10">局内时间变化</a></li><li><a href="#hex-11">版本变化证据</a></li>
 </ul></li>
 <li><a href="#appendix"><strong>证据与附录</strong></a><ul>
 <li><a href="#appendix-1">常见误读</a></li><li><a href="#appendix-2">证据与待验证</a></li><li><a href="#appendix-3">数据来源</a></li>
 </ul></li>'''
 module_ids=iter(['module-overview','module-hex','appendix'])
 body=re.sub(r'<h2(?: id="[^"]*")?>',lambda _:f'<h2 id="{next(module_ids)}">',body,count=3)
-subsection_ids=iter([*[f'rule-{i}' for i in range(1,11)],*[f'hex-{i}' for i in range(1,11)],*[f'appendix-{i}' for i in range(1,4)]])
-body=re.sub(r'<h3(?: id="[^"]*")?>',lambda _:f'<h3 id="{next(subsection_ids)}">',body,count=23)
+subsection_ids=iter([*[f'rule-{i}' for i in range(1,11)],*[f'hex-{i}' for i in range(1,12)],*[f'appendix-{i}' for i in range(1,4)]])
+body=re.sub(r'<h3(?: id="[^"]*")?>',lambda _:f'<h3 id="{next(subsection_ids)}">',body,count=24)
 body=body.replace('<p>玩家不直接操纵', '<p class="summary">玩家不直接操纵',1)
 body=body.replace('</p>', '</p>',1)
 body=body.replace('<p><code>BattleConfigHexRarityProfile（战斗地块品质概率配置）</code>', '<p class="callout"><code>BattleConfigHexRarityProfile（战斗地块品质概率配置）</code>')
@@ -557,6 +647,6 @@ page=f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta nam
 manifest=[]
 for name in ('index.html','report.md','battle-rules-data.json'):
     raw=(OUT/name).read_bytes();manifest.append({'file':name,'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()})
-verification={'passed':True,'contentModules':2,'appendix':True,'sections':23,'arenaRows':len(arenas),'polygonMapRows':len(polygon_arenas),'polygonLayoutSignatures':len(all_polygon_layout_signatures),'pvpMapRows':len(pvp_maps),'hexRows':len(hexes),'tutorialRows':len(data['tutorials']),'files':manifest,'warnings':data['warnings']}
+verification={'passed':True,'contentModules':2,'appendix':True,'sections':24,'arenaRows':len(arenas),'polygonMapRows':len(polygon_arenas),'polygonLayoutSignatures':len(all_polygon_layout_signatures),'pvpMapRows':len(pvp_maps),'hexRows':len(hexes),'tutorialRows':len(data['tutorials']),'files':manifest,'warnings':data['warnings']}
 (OUT/'verification.json').write_text(json.dumps(verification,ensure_ascii=False,indent=2),encoding='utf-8')
-print(json.dumps({'output':str(OUT),'contentModules':2,'sections':23,'arenas':len(arenas),'polygonRecords':len(polygon_arenas),'polygonLayouts':len(all_polygon_layout_signatures),'pvpMapRecords':len(pvp_maps),'tutorials':len(data['tutorials'])},ensure_ascii=False))
+print(json.dumps({'output':str(OUT),'contentModules':2,'sections':24,'arenas':len(arenas),'polygonRecords':len(polygon_arenas),'polygonLayouts':len(all_polygon_layout_signatures),'pvpMapRecords':len(pvp_maps),'tutorials':len(data['tutorials'])},ensure_ascii=False))

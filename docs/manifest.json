@@ -1,6 +1,6 @@
 {
   "title": "占城大师研究资料库发布清单",
-  "generatedAt": "2026-09-04T04:37:10+00:00",
+  "generatedAt": "2026-09-04T06:11:53+00:00",
   "snapshot": "2026-09-03",
   "files": [
     {
@@ -15,23 +15,23 @@
     },
     {
       "path": "reports/battle/battle-rules-data.json",
-      "bytes": 1013353,
-      "sha256": "c7dd68a9c602205459e4601c02073a0c27105e96d454a5e13c8d753f7d752084"
+      "bytes": 1016249,
+      "sha256": "bc6d16de2b8c73abc1ad00a5d3b5bfb9bb0de2fd68e9e13ee556a90cd9a81128"
     },
     {
       "path": "reports/battle/index.html",
-      "bytes": 72099,
-      "sha256": "3ae9f6cab27e0c899be281c89e70bf94174e56e17384dc7f5fb3d53554023a04"
+      "bytes": 78894,
+      "sha256": "6ca7ec27d2e9a07dfbb84b7a2c9530697971cb2c58a21c566e293a92d363530a"
     },
     {
       "path": "reports/battle/report.md",
-      "bytes": 24259,
-      "sha256": "4e7ca791f21384f1007c69cb963700efac4f71dc47d64574325c0195b2799c5c"
+      "bytes": 29318,
+      "sha256": "17f810e7ca58c65fdb4a2c786b64b959ae330eb15173d8ac74037b9dd10e2962"
     },
     {
       "path": "reports/battle/verification.json",
-      "bytes": 1696,
-      "sha256": "84b12ce929201f6a19d2252c24b6fa8bcf3309e134381985d3852119d8b973da"
+      "bytes": 1866,
+      "sha256": "b328473eabc050179d9d6ab4a7f0b414fb8acdd549884e7990c996f5fd8361fa"
     },
     {
       "path": "reports/cards/cards-data.json",

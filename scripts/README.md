@@ -13,5 +13,6 @@
 | 交互验证 | `test_journey_tooltips.cjs` | 悬浮提示和响应式验证 |
 | 发布整理 | `build_public_site.py`, `test_public_site.cjs` | `docs/` GitHub Pages 站点 |
 | 归档校验 | `build_archive_manifest.py` | `research/archive-manifest.json` |
+| IL2CPP元数据恢复 | `recover_il2cpp_metadata.py` | 本地可供Il2CppDumper读取的v31元数据 |
 
 发布脚本不会读取完整 `RemoteConfig` 输出到站点，只会使用新手路径证据中已经审核过的玩法开关白名单。

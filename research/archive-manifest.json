@@ -1,13 +1,13 @@
 {
   "title": "占城大师本地研究归档完整性清单",
-  "generatedAt": "2026-09-04T01:59:38+00:00",
+  "generatedAt": "2026-09-04T06:11:00+00:00",
   "archiveRoot": "research/archive",
   "note": "归档实体被Git忽略；本清单用于验证本地备份是否完整。",
   "snapshots": [
     {
       "snapshot": "2026-09-03",
-      "files": 61,
-      "bytes": 156492305,
+      "files": 63,
+      "bytes": 213469845,
       "entries": [
         {
           "path": "cache/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
@@ -248,6 +248,16 @@
           "path": "cache/StreamingAssets/WebGL/ljzs_lt/ui/uiroot.prefab_4967075b56d636d9e81dd8bb5c508428.unity3d",
           "bytes": 5577,
           "sha256": "a1e1536dc52c7460dd26fb41748bd643ad3eecdea5d936bbd294345efe089e64"
+        },
+        {
+          "path": "reverse-engineering/dump.cs",
+          "bytes": 40181928,
+          "sha256": "100964dcabdcbb2ed9691dee8dfb375664a164332827a83e2c2a92c0b39db0a5"
+        },
+        {
+          "path": "reverse-engineering/global-metadata.decrypted.dat",
+          "bytes": 16795612,
+          "sha256": "fa178d839cb6d8b8b24ca5acd8d4bbcef4963332fd49859c80a0dbe20dcc239f"
         },
         {
           "path": "unpacked/__WITHOUT_MULTI_PLUGINCODE__/app-config.json",
