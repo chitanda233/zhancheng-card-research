@@ -18,6 +18,7 @@ zhancheng-card-research/
 │  │  ├─ system/                 # 全系统拆解
 │  │  ├─ battle/                 # 局内战斗规则
 │  │  ├─ cards/                  # 卡牌图鉴、数据和 Excel
+│  │  ├─ chests/                 # 全部宝箱价格、来源、奖励与代码证据
 │  │  └─ journey/                # 新手全路径与教程图
 │  ├─ tables/                    # 报告实际引用的公开配置子集
 │  └─ manifest.json              # 发布文件校验清单
@@ -42,6 +43,8 @@ zhancheng-card-research/
 python scripts/build_public_site.py
 node scripts/test_public_site.cjs
 ```
+
+更新宝箱研究时，先运行 `python scripts/build_chest_report.py`，再执行上述发布整理与检查。其内容基于配置和已审阅的WASM取证，网站入口为 `reports/chests/`。
 
 生成器会：
 
