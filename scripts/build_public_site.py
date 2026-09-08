@@ -15,15 +15,17 @@ SYSTEM_SRC = ROOT / 'outputs/20260903'
 JOURNEY_SRC = ROOT / 'outputs/new-player-journey'
 BATTLE_SRC = ROOT / 'outputs/battle-rules'
 CHEST_SRC = ROOT / 'outputs/chests'
+HEX_SRC = ROOT / 'outputs/hex-random'
 
 SYSTEM_DIR = DOCS / 'reports/system'
 CARDS_DIR = DOCS / 'reports/cards'
 JOURNEY_DIR = DOCS / 'reports/journey'
 BATTLE_DIR = DOCS / 'reports/battle'
 CHEST_DIR = DOCS / 'reports/chests'
+HEX_DIR = DOCS / 'reports/hex-random'
 TABLES_DIR = DOCS / 'tables'
 
-for folder in (DOCS, SYSTEM_DIR, CARDS_DIR, JOURNEY_DIR, BATTLE_DIR, CHEST_DIR, TABLES_DIR):
+for folder in (DOCS, SYSTEM_DIR, CARDS_DIR, JOURNEY_DIR, BATTLE_DIR, CHEST_DIR, HEX_DIR, TABLES_DIR):
     folder.mkdir(parents=True, exist_ok=True)
 
 
@@ -92,6 +94,9 @@ for name in ('index.html','report.md','battle-rules-data.json','verification.jso
 for name in ('index.html', 'report.md', 'chests-data.json'):
     copy(CHEST_SRC / name, CHEST_DIR / name)
 
+for name in ('index.html', 'report.md'):
+    copy(HEX_SRC / name, HEX_DIR / name)
+
 source_manifest = json.loads((JOURNEY_SRC / 'source-manifest.json').read_text(encoding='utf-8'))
 for source in source_manifest:
     source['file'] = f"../../tables/{source['table']}.json"
@@ -127,6 +132,7 @@ index = '''<!doctype html>
 <a class="card" href="reports/cards/index.html"><span class="num">03 / CARDS</span><h3>全卡牌图鉴</h3><p>54张配置记录、43张启用卡、等级计算、技能关联、筛选和 Excel 数据。</p><b>打开图鉴 →</b></a>
 <a class="card" href="reports/journey/index.html"><span class="num">04 / JOURNEY</span><h3>新手全路径</h3><p>训练、首局、成长、开箱、领地、神器、赛季与回访，含ID悬浮说明。</p><b>打开路径报告 →</b></a>
 <a class="card" href="reports/chests/index.html"><span class="num">05 / CHESTS</span><h3>宝箱获取与奖励</h3><p>全部8种宝箱价格、获取入口、奖励内容，以及竞技场掉落概率、计时和加速规则。</p><b>打开宝箱研究 →</b></a>
+<a class="card" href="reports/hex-random/index.html"><span class="num">06 / HEX RANDOMNESS</span><h3>地块生成与兵种随机</h3><p>开局隐藏内容、具体兵种抽取、标签权重、低价重抽和祝福保底，含概率试算。</p><b>打开随机机制复核 →</b></a>
 </section><section class="info"><div><h3>阅读口径</h3><p>静态配置不等于线上实时开关；教程ID只证明局部连接，不按编号大小推定播放顺序；未启用资源不代表已经上线。</p></div><div><h3>数据下载</h3><ul><li><a href="reports/cards/cards.xlsx">卡牌资料 Excel</a></li><li><a href="reports/cards/cards-data.json">卡牌 JSON</a></li><li><a href="reports/journey/journey-nodes.csv">新手节点 CSV</a></li><li><a href="reports/journey/tutorial-graph.json">教程图 JSON</a></li><li><a href="manifest.json">发布文件校验清单</a></li></ul></div></section></main></body></html>'''
 write(DOCS / 'index.html', index)
 
@@ -136,6 +142,7 @@ allowed = {
     CARDS_DIR/'index.html', CARDS_DIR/'report.md', CARDS_DIR/'cards.xlsx', CARDS_DIR/'cards-data.json',
     BATTLE_DIR/'index.html', BATTLE_DIR/'report.md', BATTLE_DIR/'battle-rules-data.json', BATTLE_DIR/'verification.json',
     CHEST_DIR/'index.html', CHEST_DIR/'report.md', CHEST_DIR/'chests-data.json',
+    HEX_DIR/'index.html', HEX_DIR/'report.md',
     JOURNEY_DIR/'index.html', JOURNEY_DIR/'source-manifest.json',
     *(JOURNEY_DIR / name for name in journey_files.values()),
     *(TABLES_DIR / f'{name}.json' for name in referenced_tables),

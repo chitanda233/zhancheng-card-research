@@ -10,6 +10,7 @@
 | 系统报告 | `build_systems_report.py` | 全系统 HTML/Markdown/证据索引 |
 | 局内规则 | `build_battle_rules_report.py`, `test_battle_rules.cjs` | 独立战斗规则页、精简证据数据与交互验证 |
 | 宝箱规则 | `build_chest_report.py`, `inspect_chest_wasm.cjs`, `test_chest_report.cjs` | 宝箱价格、来源、奖励、计时及函数取证、交互验证 |
+| 地块随机复核 | `hex_random_report.md`, `build_hex_random_report.py`, `test_hex_random.cjs` | 独立随机机制页、标签权重计算器、键盘与手机验证 |
 | 新手路径 | `build_journey_evidence.py`, `build_journey_report.py` | 路径 HTML/Markdown/图数据 |
 | 交互验证 | `test_journey_tooltips.cjs` | 悬浮提示和响应式验证 |
 | 发布整理 | `build_public_site.py`, `test_public_site.cjs` | `docs/` GitHub Pages 站点 |
@@ -17,6 +18,8 @@
 | IL2CPP元数据恢复 | `recover_il2cpp_metadata.py` | 本地可供Il2CppDumper读取的v31元数据 |
 
 发布脚本不会读取完整 `RemoteConfig` 输出到站点，只会使用新手路径证据中已经审核过的玩法开关白名单。
+
+地块随机页：先生成宝箱页面以复用报告样式，再执行 `python scripts/build_hex_random_report.py`，随后运行发布整理与 `node scripts/test_hex_random.cjs`。正文源文件为 `scripts/hex_random_report.md`，WASM与缓存继续仅存于本地。
 
 宝箱数据另保留 `ChestImprove01` 和 `BottomChestUI` 两个默认值。反汇编脚本依赖本地 `tools/chest-wasm/node_modules/wabt`（安装：`npm install --prefix tools/chest-wasm wabt --no-save --package-lock=false --ignore-scripts`），只读取归档WASM，输出到被Git忽略的 `outputs/chest-reverse/`。方法RVA用作WASM表槽，不当作文件偏移；共享桩的多重名称无法证明函数体语义。
 

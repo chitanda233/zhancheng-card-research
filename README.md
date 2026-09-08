@@ -19,6 +19,7 @@ zhancheng-card-research/
 │  │  ├─ battle/                 # 局内战斗规则
 │  │  ├─ cards/                  # 卡牌图鉴、数据和 Excel
 │  │  ├─ chests/                 # 全部宝箱价格、来源、奖励与代码证据
+│  │  ├─ hex-random/             # 地块生成、兵种随机与控制机制复核
 │  │  └─ journey/                # 新手全路径与教程图
 │  ├─ tables/                    # 报告实际引用的公开配置子集
 │  └─ manifest.json              # 发布文件校验清单
@@ -46,9 +47,11 @@ node scripts/test_public_site.cjs
 
 更新宝箱研究时，先运行 `python scripts/build_chest_report.py`，再执行上述发布整理与检查。其内容基于配置和已审阅的WASM取证，网站入口为 `reports/chests/`。
 
+更新地块随机专题时，编辑 `scripts/hex_random_report.md`，运行 `python scripts/build_hex_random_report.py`，再发布整理并执行 `node scripts/test_hex_random.cjs`。生成器复用已生成的宝箱报告样式；首次重建先生成宝箱报告。
+
 生成器会：
 
-1. 将三类报告复制到稳定 URL；
+1. 将各类报告复制到稳定 URL；
 2. 只复制报告实际引用的配置表；
 3. 用玩法开关白名单替换完整 `RemoteConfig`；
 4. 将证据索引中的本机绝对路径改成发布相对路径；

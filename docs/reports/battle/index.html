@@ -741,7 +741,7 @@ article li a,article li code{overflow-wrap:anywhere;word-break:break-all}
 </table></div>
 <h3 id="hex-6">6. 地图生成链与已确认边界</h3>
 <p>普通对局可还原的链路是：<strong>模式/层级选择候选池 → 按权重选择地图记录 → 读取尺寸、主塔点、排除点和特殊点 → 建立可用六边格 → 分配可见的地块类型/隐藏内容 → 玩家支付金币揭晓</strong>。其中PVP池权重、经典与多边形的坐标骨架、训练固定格都有直接表证据。</p>
-<p>仍缺两段：普通竞技场在经典三形与新版多边形之间的最终分流代码，以及普通地图上“一星/二星/三星/未知各生成多少格”的全局比例。静态表没有这张分布表，不能用翻开后的品质概率倒推地图外观格比例。公开产品观察也只确认“地图和初始地块随机”，没有给出可审计的地图权重。</p>
+<p>2026-09-08函数体复核补充：未被预置用途覆盖的普通格先调用Range(0,4)，四种品质配置初始机会各25%；主城邻位用途、固定内容、金矿和特殊资源等会覆盖生成，因此整图最终外观比例不等于各25%。普通竞技场经典三形与新版多边形的最终分流仍未完整恢复。详见<a href="../hex-random/index.html">地块生成与兵种随机专题</a>。</p>
 <h3 id="hex-7">7. 翻格价格与基础结果权重</h3>
 <div class="scroll"><table>
 <thead>
@@ -913,19 +913,19 @@ article li a,article li code{overflow-wrap:anywhere;word-break:break-all}
 <tr>
 <td>前三次低价翻格</td>
 <td><code>TryApplyFirstThreeCheapOpenReroll</code></td>
-<td>价格 <code>&lt;250</code> 的前3次低价翻格中，原结果为SSR/SSSR且不是防御建筑时，改抽“不含金矿的R卡池”</td>
-<td>阈值、品质条件、排除项与均匀重抽均由函数体确认；属于早期强结果平滑，不是奖励型保底</td>
+<td>价格 <code>&lt;250</code>、本方低价开格计数≤3，原结果为SSR/SSSR且不是资源或防御建筑时，尝试改抽“不含金矿的R卡池”</td>
+<td>没有合法替换候选时不能保证降级；开格记录完整时序仍待核对</td>
 </tr>
 <tr>
 <td>用户标签</td>
 <td><code>ResolveUserLabelGoldCardOdd</code></td>
-<td>刚付费 <code>+10</code>、连败 <code>+50</code>、回流 <code>+30</code>、连胜 <code>+50</code> 个百分点，可叠加</td>
-<td>数值与一次性重置路径已由函数体确认；当局标签由服务端/回放载荷提供，是否命中仍需实局数据</td>
+<td>本方刚付费 <code>+10</code>、本方连败 <code>+50</code>、本方回流 <code>+30</code>、对手连胜 <code>+50</code> 金卡权重，可叠加</td>
+<td>不是概率百分点；新总权重也增加；线上标签与开关未验证</td>
 </tr>
 </tbody>
 </table></div>
-<p>需要特别纠正：<code>FirstThreeCheapOpenPriceLimit=250</code>，函数实际用 <code>Price &gt; 249</code> 排除，所以适用的是价格 <strong>低于250</strong> 的格子，即25、50、100金币格，不含250金币三星格。它检查玩家的低价开格计数不超过前三次，且原卡 <code>RareLevel &gt;= 3</code>（SSR/SSSR）；找到对应建筑后，防御类会被排除。替换池由 <code>IsFirstThreeRerollCandidate</code> 限定为 <code>RareLevel=1</code>，同时 <code>CardId</code> 与 <code>ArchitectureId</code> 都不能是金矿 <span class="idtip" tabindex="0" data-title="当前上下文中的ID 1001" data-tip="该数字被多张表复用：这里按相邻文字判断为金矿/一星格/教程/竞技场记录，详见对应表链接。">1001</span>，最后仍用 <code>Range(0, Count)</code> 等概率抽取。换句话说，这条规则会压掉早期低价格抽到的部分高品质非防御结果。</p>
-<p>账号标签也比原先更具体：本函数没有使用新手/专家等级；它只读取刚付费、连败、回流、连胜四个布尔标签，分别贡献 <code>+10/+50/+30/+50</code> 个百分点，并允许叠加。<code>RecordUserLabelGoldCardOddReset</code> 显示：当该加成大于0且玩家首次生成符合条件的SSSR兵营类结果后，会为该玩家设置一次性重置标记。这里确认的是客户端确定性战斗输入的计算逻辑；某局到底带了哪些标签，仍取决于服务端写入的对局载荷。</p>
+<p>需要特别纠正：<code>FirstThreeCheapOpenPriceLimit=250</code>，函数实际用 <code>Price &gt; 249</code> 排除，所以适用的是价格 <strong>低于250</strong> 的格子，即25、50、100金币格，不含250金币三星格。它检查本方低价开格计数≤3，且原卡 <code>RareLevel &gt;= 3</code>（SSR/SSSR）；找到对应建筑后，资源类与防御类都会被排除。替换池限定为普通R卡，同时排除金矿；最后仍用 <code>Range(0, Count)</code> 等概率抽取。这是部分早期高品质结果的降级尝试，不是奖励型保底。</p>
+<p>2026-09-08复核更正：本函数读取本方刚付费、连败、回流，以及<strong>对手连胜</strong>，分别增加10/50/30/50点金卡权重，不是百分点。合计增量B时，基础总权重100变成100+B；未知格金卡概率为(5+B)/(100+B)，例如B=50时约36.67%，不是55%。生成符合条件的SSSR兵营类隐藏内容后，会设置该玩家的一次性重置标记；这是初始化阶段，不必等亲手翻出。详细函数映射、金矿限额、祝福消费累计和概率试算见<a href="../hex-random/index.html">独立随机机制复核页</a>。线上实际开关与标签仍未验证。</p>
 <h3 id="hex-10">10. 概率是否随对局时间变化</h3>
 <p>当前没有发现“战斗进行到第N秒后，四类地块基础权重自动上升/下降”的配置。能确认的动态因素是：</p>
 <ul>

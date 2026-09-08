@@ -9,7 +9,7 @@ const { pathToFileURL } = require('node:url');
   const browser = await chromium.launch({ headless: true, channel: 'msedge' });
   const results = { pages: [], errors: [] };
   try {
-    for (const rel of ['index.html','reports/system/index.html','reports/battle/index.html','reports/cards/index.html','reports/journey/index.html','reports/chests/index.html']) {
+    for (const rel of ['index.html','reports/system/index.html','reports/battle/index.html','reports/cards/index.html','reports/journey/index.html','reports/chests/index.html','reports/hex-random/index.html']) {
       const page = await browser.newPage({ viewport: { width: 1360, height: 900 } });
       page.on('pageerror', e => results.errors.push(`${rel}: ${e.message}`));
       const failed = [];
@@ -23,7 +23,7 @@ const { pathToFileURL } = require('node:url');
     }
     const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
     await page.goto(pathToFileURL(path.join(root, 'index.html')).href);
-    assert.equal(await page.locator('.card').count(), 5);
+    assert.equal(await page.locator('.card').count(), 6);
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
     await page.screenshot({ path: path.join(root, 'site-preview.png'), fullPage: true });
     await page.close();
