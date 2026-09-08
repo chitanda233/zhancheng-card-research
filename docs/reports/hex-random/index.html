@@ -5,9 +5,12 @@ fieldset{border:1px solid var(--line);border-radius:8px;margin:16px 0;display:fl
 <li><a href="#_1">《占城大师》局内地块与兵种随机：函数体复核</a><ul>
 <li><a href="#_2">结论</a></li>
 <li><a href="#1">1. 地块怎样生成</a><ul>
-<li><a href="#11">1.1 先有地图，再填隐藏内容</a></li>
-<li><a href="#12">1.2 普通格先抽四种品质配置</a></li>
-<li><a href="#13">1.3 主城周围不是完全自由随机</a></li>
+<li><a href="#11">1.1 先选地图模板：线上权威、离线匹配</a></li>
+<li><a href="#12">1.2 初始化输入与处理顺序</a></li>
+<li><a href="#13">1.3 为什么改变数组顺序通常不改变结果</a></li>
+<li><a href="#14">1.4 普通格先抽四种品质配置</a></li>
+<li><a href="#15">1.5 主城周围不是完全自由随机</a></li>
+<li><a href="#16-4">1.6 竞技场4以后存在特殊资源初始化分支</a></li>
 </ul>
 </li>
 <li><a href="#2">2. 翻格怎样随机到具体兵种</a><ul>
@@ -45,11 +48,33 @@ fieldset{border:1px solid var(--line);border-radius:8px;margin:16px 0;display:fl
 <p class="related"><a href="../battle/index.html">查看局内整体流程与地图种类 →</a> · <a href="report.md">下载完整 Markdown</a></p>
 
 <h2 id="1">1. 地块怎样生成</h2>
-<h3 id="11">1.1 先有地图，再填隐藏内容</h3>
-<p><code>BuildInitialSetupNormalized</code> 对地图配置与玩家牌组做规范化，建立坐标索引，处理双方主城相邻位置、金矿额度、标签状态、特殊资源格，再按稳定顺序生成各格内容。</p>
+<h3 id="11">1.1 先选地图模板：线上权威、离线匹配</h3>
+<p>地图初始化不是先凭空长出一堆格子，而是先确定一个 <code>BattleSetupConfig（战斗地图模板）</code>。模板已经携带格子坐标、相邻关系、主城标记、可开启状态及固定内容等骨架数据。</p>
+<ul>
+<li><strong>线上对局</strong>存在 <code>ApplyBattleCoreServerMapSelection</code> 和 <code>TryGetBattleCoreAuthoritativeMapSelection</code>，可接收服务器给出的竞技场、地图类型、多边形ID和setupId。也就是说客户端不一定自行掷骰决定地图。</li>
+<li><strong>离线对局</strong>的 <code>ResolveOfflineBattleCorePveSetupIdNormalized</code>：若有preferredSetupId，先按ID精确查找并验证入口模式、竞技场、地图类型和多边形ID；否则按同样四项条件顺序扫描模板，返回第一条匹配记录。找不到就报错，不在这个函数里再随机一张兜底地图。</li>
+<li><strong>训练局</strong>有独立的training setupId生成路径，配合固定 <code>hexConfigs</code>；它不是普通竞技场随机池。</li>
+<li><strong>赛季PVP</strong>配置池中同层候选权重全部为1000，因此配置层等权；首场PVP另由 <code>Pvp_PlayFirstMap=1001</code> 固定到矩形图。普通竞技场在经典三形与多边形之间的上游最终选择仍未完整恢复。</li>
+</ul>
+<p>因此要区分两个问题：候选池“选中了哪张地图”，与这张地图内部“每个隐藏格生成了什么”。后面的 <code>BuildInitialSetupNormalized</code> 只负责第二层。</p>
+<h3 id="12">1.2 初始化输入与处理顺序</h3>
+<p><code>BuildInitialSetupNormalized</code> 的顺序已经可以从函数体还原：</p>
+<ol>
+<li>规范化地图模板与双方牌组；模板格列表为空时不能继续。</li>
+<li>用传入seed初始化 <code class="idtip" tabindex="0" data-tip="确定性伪随机源；同样输入可复现，不等于没有上层概率控制。">FPRandom</code>，并先抽一次0～100的整数供特殊资源事件判断。</li>
+<li>建立坐标到格子索引的字典，分别找到玩家与敌方主城；主城缺失会失败。</li>
+<li>读取并规范化两座主城的相邻格槽位，分别执行一次六槽洗牌。</li>
+<li>创建金矿额度、账号标签一次性状态，以及特殊资源候选坐标。</li>
+<li>用seed与每格坐标计算稳定排序键，按该顺序逐格调用 <code>BuildCellContent</code>。</li>
+<li>每格完成后写入内容哈希，最后把生成后的格列表装回并再次规范化整个setup。</li>
+</ol>
+<p>这说明初始化结果至少共同依赖：地图模板、战斗种子、双方牌组、竞技场、玩法开关和用户标签。只知道地图外观，不能唯一推出格子里的兵种。</p>
 <p><code>BuildCellContent</code> 会跳过主城、已开格、已有建筑/内容等不应按普通规则覆盖的格子；教程预置与特殊资源路径不是普通随机格。</p>
 <p>随机源为 <code class="idtip" tabindex="0" data-tip="确定性伪随机源；同样输入可复现，不等于没有上层概率控制。">FPRandom</code>。同一战斗种子、配置、牌组和操作序列可复现同样结果；不同初始输入仍可产生不同结果。确定性主要说明结果可同步、可回放，本身不能证明人为指定输赢。</p>
-<h3 id="12">1.2 普通格先抽四种品质配置</h3>
+<h3 id="13">1.3 为什么改变数组顺序通常不改变结果</h3>
+<p><code>BuildStableGenerationOrder</code> 不直接使用模板里的数组先后。它把seed、格子的Q/R坐标和固定常数混合成64位排序键，再按键排序索引后生成内容。因此同一批坐标即使序列化顺序变化，仍能得到稳定的逐格随机消费顺序；坐标、seed或参与生成的格集合变化才会改变后续随机序列。</p>
+<p>双方主城周围也分别调用 <code>ShuffleSix</code>，所以“双方各有同类邻位用途”不代表用途落在镜像坐标，也不代表具体兵种相同。</p>
+<h3 id="14">1.4 普通格先抽四种品质配置</h3>
 <p><code class="idtip" tabindex="0" data-tip="先选地块品质配置，再按包含加成的新总权重抽稀有度。">ResolveInitialRarity</code> 在有效品质配置存在时先调用 <code>Range(0,4)</code>。</p>
 <ul>
 <li>对没有指定用途的普通格，这对应四种品质配置的各25%初始抽取机会。</li>
@@ -57,7 +82,7 @@ fieldset{border:1px solid var(--line);border-radius:8px;margin:16px 0;display:fl
 <li>防御用途另有强制防御候选选择。</li>
 </ul>
 <p>因此“普通格初始四类各25%”不等于整张最终地图的四种可见格必定各占25%：主城周边用途、固定地图内容、金矿定价、特殊资源、强制防御等会改变最终结果。</p>
-<h3 id="13">1.3 主城周围不是完全自由随机</h3>
+<h3 id="15">1.5 主城周围不是完全自由随机</h3>
 <p><code>ShuffleSix</code> 创建6个槽位并执行洗牌；初始化分别为双方调用一次。<code>ResolveInitialIntent</code> 按洗牌后的位置序号返回：</p>
 <div class="scroll"><table>
 <thead>
@@ -94,6 +119,10 @@ fieldset{border:1px solid var(--line);border-radius:8px;margin:16px 0;display:fl
 </tbody>
 </table></div>
 <p>这是邻位用途的分配规则，不是无条件保证每张地图出现6个有效相邻格：地图边缘、缺失邻位、教程预置及前置跳过都会影响实际落地。双方分别洗牌也不等于同位置的兵种完全镜像。</p>
+<h3 id="16-4">1.6 竞技场4以后存在特殊资源初始化分支</h3>
+<p>初始化会先抽 <code>Range(0,101)</code>，结果小于30才开启特殊资源选择，即代码离散口径为 <strong>30/101≈29.70%</strong>，不是精确30%。<code>SelectSpecialResourceCoords</code> 还要求解析后的竞技场编号至少为4；低档竞技场直接跳过。</p>
+<p>分支生效时，会从满足旧资源行条件、不是已开格、主城或其他排除状态的候选中，再抽1或2个位置；每选一个就移除它和相邻候选，所以特殊资源点不会紧挨着生成。随后 <code>TryBuildSpecialResourceCell</code> 根据竞技场4/5/6及更高档走不同内容档位，内部仍包含随机选择。</p>
+<p>这是初始化阶段的特殊覆盖，并非玩家点击未知格时才临时决定。<code>isResourcesGame</code>是函数参数名，但主初始化调用给它的是上述随机判断结果，不能按名称误读成一个独立“资源玩法模式”。具体资源类型字符串所在共享跳板尚未完全解出，因此这里只确认触发、数量和不相邻保护，不冒充已确认全部奖励清单。</p>
 <h2 id="2">2. 翻格怎样随机到具体兵种</h2>
 <p>通常路径：生成顺序 → 初始品质 → 本局牌组候选 → 品质/类型/金矿限制 → 列表随机 → 锻造等覆盖 → 保存隐藏建筑 → 点击时匹配卡牌 → 翻开阶段覆盖 → 建造或出兵。</p>
 <h3 id="21">2.1 基础品质权重</h3>
@@ -247,9 +276,29 @@ P(其他档位) = 对应基础权重/(100+B)
 </thead>
 <tbody>
 <tr>
+<td>8F6D</td>
+<td style="text-align: right;">15997</td>
+<td>离线地图模板查找；优先指定ID，再按四项条件匹配</td>
+</tr>
+<tr>
+<td>8F6E</td>
+<td style="text-align: right;">16019</td>
+<td>入口、竞技场、地图类型和多边形ID匹配</td>
+</tr>
+<tr>
 <td>EFE2</td>
 <td style="text-align: right;">26052</td>
 <td>初始化隐藏内容</td>
+</tr>
+<tr>
+<td>EFE4</td>
+<td style="text-align: right;">26031</td>
+<td>竞技场4后特殊资源位置、1～2格及不相邻选择</td>
+</tr>
+<tr>
+<td>EFE5</td>
+<td style="text-align: right;">26035</td>
+<td>竞技场ID解析为编号</td>
 </tr>
 <tr>
 <td>54F7</td>
@@ -265,6 +314,16 @@ P(其他档位) = 对应基础权重/(100+B)
 <td>EFF7</td>
 <td style="text-align: right;">15971</td>
 <td>六槽洗牌</td>
+</tr>
+<tr>
+<td>EFF8</td>
+<td style="text-align: right;">15974</td>
+<td>主城相邻槽位规范化</td>
+</tr>
+<tr>
+<td>EFF9</td>
+<td style="text-align: right;">26051</td>
+<td>按seed与Q/R坐标建立稳定生成顺序</td>
 </tr>
 <tr>
 <td>F00F</td>
