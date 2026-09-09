@@ -1,6 +1,6 @@
 {
   "title": "占城大师研究资料库发布清单",
-  "generatedAt": "2026-09-08T06:38:03+00:00",
+  "generatedAt": "2026-09-09T09:22:48+00:00",
   "snapshot": "2026-09-03",
   "files": [
     {
@@ -10,8 +10,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 4727,
-      "sha256": "9b8ad27feb08f128a6cc34042a997fce308de901c8e2f6da0fe55d286dadee82"
+      "bytes": 4736,
+      "sha256": "afe44e3ce7556248286de8ea80607dd07420bece9aa63c62ffe7fe49283e7445"
     },
     {
       "path": "reports/battle/battle-rules-data.json",
@@ -70,13 +70,13 @@
     },
     {
       "path": "reports/hex-random/index.html",
-      "bytes": 189502,
-      "sha256": "d431054b010b8222a8e7104d30a9c797d3925c9a9f084c108760668c5f42d0aa"
+      "bytes": 187493,
+      "sha256": "645a0ace31ff25bf590aead7790c20b63897b39b18e7b3b1ac8bdb83f450a3f2"
     },
     {
       "path": "reports/hex-random/report.md",
-      "bytes": 171404,
-      "sha256": "778a7f1d282607cf12c3238764398ecc30972c71dff9614f9c260f030343ce43"
+      "bytes": 168292,
+      "sha256": "ebbd00ec01f28570f1f7ba67b00b7735b1b0709b11724b6924a5e8308ff35251"
     },
     {
       "path": "reports/journey/index.html",
@@ -135,18 +135,18 @@
     },
     {
       "path": "reports/system/evidence.json",
-      "bytes": 37498,
-      "sha256": "2d26ccd94830a4fa3a1082cf7fc55c6a8b355e4d9eeeb2028fe6db258c4b8afd"
+      "bytes": 37226,
+      "sha256": "e4ae747d1c8f5154712408fdaba70d8e20ce715e4402f506a588e140040bd8eb"
     },
     {
       "path": "reports/system/index.html",
-      "bytes": 97431,
-      "sha256": "0f1dac795319e8fbf0e479045abbb8f25097efdbcd43cfb5d6462a408d7ceac1"
+      "bytes": 101812,
+      "sha256": "7bc791365d24488736c5066234ddf59b376fb3d67e98bd15325854e8ba8a6f71"
     },
     {
       "path": "reports/system/report.md",
-      "bytes": 73481,
-      "sha256": "238b60d7ee65697f392a71a1034a606ed877e7339dad7da2470b4adfdf2b06da"
+      "bytes": 76860,
+      "sha256": "12d4b9d556072a98746ed94df03aa3bd8b8858335aea643dae3dd4383cf89108"
     },
     {
       "path": "tables/AIPropInfoConfig.json",

@@ -250,13 +250,6 @@
       "rows": 54
     },
     {
-      "table": "GlobalHexInfo",
-      "displayName": "GlobalHexInfo（全局六边形地块信息）",
-      "path": "../../tables/GlobalHexInfo.json",
-      "sha256": "d6978c3a516088c67f8c9779c240d802c4c80c092f1c50497a12231c1ae9ddd8",
-      "rows": 4
-    },
-    {
       "table": "GlobalMainCityAssetsInfo",
       "displayName": "GlobalMainCityAssetsInfo（领地建筑美术资源信息）",
       "path": "../../tables/GlobalMainCityAssetsInfo.json",

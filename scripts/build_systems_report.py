@@ -59,7 +59,10 @@ assert sum(r['Weight'] for r in read('LimitedPropInfoConfig'))==10000
 assert sum(r['ShowWeight'] for r in read('LimitedPropInfoConfig'))==10000
 
 template=(ROOT/'scripts'/'systems_report_template.md').read_text(encoding='utf8')
-template=template.replace('{{BATTLE_REWARDS}}',(ROOT/'scripts'/'battle_rewards_section.md').read_text(encoding='utf8').strip())
+rewards=(ROOT/'scripts'/'battle_rewards_section.md').read_text(encoding='utf8').strip()
+rewards=re.sub(r'(?m)^#### 1\.6\.', '#### 3.3.', rewards).replace('第二部分 2.6', '第三部分3.4')
+rewards=rewards.replace('以你当前竞技场 1 为例','以研究快照中的竞技场1为例')
+template=template.replace('{{BATTLE_REWARDS}}',rewards)
 replacements={'CURRENCY':currency,'HEXES':hexes,'PROPS':props,'PROP_ATTRS':prop_attrs,'CITY':city,'CITYBUILD':citybuild,'ARENA':arena,'PVP_RANKS':pvpranks,'CHESTS':chests,'SUMMON':summon,'SKILLS':skills,'FETTERS':fetters,'FLAGS':flagtable,'LIMITED':limited}
 replacements.update({'SETTLEMENT_ARENA':settlement_arena,'SETTLEMENT_PVP':settlement_pvp})
 for k,v in replacements.items():template=template.replace('{{'+k+'}}',v)
@@ -87,7 +90,7 @@ css='''
 body=re.sub(r'(<table>.*?</table>)',r'<div class="table-wrap">\1</div>',body,flags=re.S)
 css+='summary{cursor:pointer;font-size:14px;margin-top:18px;font-weight:700}aside details[open] summary{margin-bottom:15px}'
 css+='aside .toc>ul>li>a{display:block;color:white;font-size:15px;font-weight:700;margin-top:20px}aside .toc ul ul{padding-left:12px;border-left:1px solid #426176;margin-left:3px}aside .toc ul ul li{font-size:12px}main h2{background:#eaf2f6;border-left:5px solid var(--accent);padding:18px 22px;border-top:0;border-radius:0 8px 8px 0}main h3{padding-top:12px}main h4{font-size:15px;color:#496473;margin-top:24px}@media(max-width:1000px){aside .toc ul{columns:1}}'
-toc_markup='<details id="report-toc" open><summary>阅读目录 · 局内循环 / 局外周边系统</summary>'+parser.toc+'</details>'
+toc_markup='<details id="report-toc" open><summary>阅读目录 · 局内循环 / 卡牌与成长 / 局外系统</summary>'+parser.toc+'</details>'
 responsive='<script>const mq=matchMedia("(max-width:1000px)");const sync=()=>document.getElementById("report-toc").open=!mq.matches;sync();mq.addEventListener("change",sync);</script>'
 page='<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>占城大师 · 全系统拆解</title><style>'+css+'</style></head><body><aside><div class="brand">占城大师<br>全系统拆解</div><div class="meta">LOCAL RESOURCE STUDY · 2026.09.03</div>'+parser.toc+'</aside><main><div class="leadlinks"><a href="占城大师_全卡牌图鉴.html">全卡牌图鉴</a><a href="占城大师_全系统拆解报告.md" download>下载 Markdown</a><a href="systems-evidence.json" download>证据索引</a></div>'+body+'<footer>来源：当前电脑提取的游戏包与缓存。此文档可离线阅读；不调用游戏接口。</footer></main></body></html>'
 page=page.replace(parser.toc,toc_markup,1).replace('</body>',responsive+'</body>')
