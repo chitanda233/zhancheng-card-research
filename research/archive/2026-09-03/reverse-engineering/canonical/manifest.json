@@ -38,14 +38,19 @@
   },
   "generated": [
     {
+      "path": "research/archive/2026-09-03/reverse-engineering/canonical/dump-audit.json",
+      "size": 716,
+      "sha256": "6de0c132198c7224602e82148a3a30255406a83549981a16053fd943c5a83134"
+    },
+    {
       "path": "research/archive/2026-09-03/reverse-engineering/canonical/element-map.tsv",
       "size": 7814982,
       "sha256": "d299172d6ca07835689a1149f85735982e83886a1edea5a09348cd8c89b85878"
     },
     {
       "path": "research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv",
-      "size": 34304249,
-      "sha256": "8e9102d3a0e1e442aec3fa570ad6b8575f62536b994650ebdf627f1c87547145"
+      "size": 14672918,
+      "sha256": "fbffd0ec55ed7b292fcc23fbbd1349c5e4be80e0052e4355c9a34b798b522eeb"
     },
     {
       "path": "research/archive/2026-09-03/reverse-engineering/canonical/module-info.txt",
@@ -55,12 +60,12 @@
     {
       "path": "research/archive/2026-09-03/reverse-engineering/canonical/module.objdump.gz",
       "size": 67128949,
-      "sha256": "d445467bb105dd37bdcd827559063ff0613f65e0605e6fd3987ef5be8e3b4495"
+      "sha256": "7063018bb59c9ba4cd142dc7b25196eeda3be13656a89588498d3f699885a804"
     },
     {
       "path": "research/archive/2026-09-03/reverse-engineering/canonical/module.wat.gz",
       "size": 23231838,
-      "sha256": "93d40759e28bfb2db19ba88241c5332eca0a3ea10532b1a25056562b9c340d1a"
+      "sha256": "50f7f8fbc3ae3c3cb81c1d92c486015b8cf099cf48538eaa842b6af91037cef5"
     },
     {
       "path": "research/archive/2026-09-03/reverse-engineering/canonical/validation.json",
