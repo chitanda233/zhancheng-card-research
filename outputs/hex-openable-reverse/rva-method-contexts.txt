@@ -1,0 +1,723 @@
+# Relevant RVA -> method signatures from dump.cs
+0x4201	line 52650	private static bool TryGetBattleCorePreloadedEffectPrefab(string assetPath, out GameObject prefab) { }
+0x4202	line 317896	|-AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<UniTask.Awaiter<object>, RoleBehaviour.<LoadBattleCoreShieldPresentation>d__474>
+0x4203	line 52930	private void AddPooledEffAtUnitPosition(GameObject res, ref GameObject eff) { }
+0x4207	line 52416	private static string GetBattleCoreArtifactBuffPresentationEffectKey(string artifactKey, int effectIndex) { }
+0x4208	line 52969	private void RemoveBattleCoreAuraPresentationSource(string sourceKey) { }
+0x4209	line 28105	public static bool ShouldBlockBattleBuffEffect() { }
+0x420A	line 52960	private static string GetBattleCoreSharedAuraEffectKey(string effectPath) { }
+0x420B	line 52963	private bool TryRetainBattleCoreAuraEffectSource(string sourceKey, string sharedEffectKey) { }
+0x420C	line 317899	|-AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<UniTask.Awaiter<object>, RoleBehaviour.<PlayBattleCoreArtifactBuffAttachmentPresentation>d__482>
+0x420D	line 52939	private static bool ShouldAttachBattleCoreEffectToRoleRoot(string effectPath) { }
+0x420E	line 52933	private void AddPooledRoleRootEffect(GameObject res, ref GameObject eff) { }
+0x420F	line 52966	private bool TryAttachBattleCoreAuraEffectSource(string sourceKey, string sharedEffectKey, GameObject effect) { }
+0x4210	line 52942	private static bool RequiresBattleCoreAuraTick(string effectPath) { }
+0x4211	line 52001	private void SetBattleCorePresentationTickFlag(RolePresentationTickFlags flag, bool active) { }
+0x4213	line 790699	public Vector3 get_lossyScale() { }
+0x4214	line 52699	private static Vector3 ResolveLocalScaleForWorldScale(Vector3 worldScale, Vector3 parentWorldScale) { }
+0x4216	line 52702	private static void RecycleBattleCoreAttachedTemporaryEffect(GameObject instance, Transform restoreParent, string restoreName) { }
+0x4218	line 52406	public static string ResolveBattleCoreAuraPresentationKey(BattleCombatEvent combatEvent) { }
+0x4219	line 52736	public static string ResolveBattleCoreAuraEffectPath(BattleCombatEventType eventType, string auraEffectId, bool isEnemy) { }
+0x421A	line 52739	public static string ResolveBattleCoreAuraAudioClipPath(BattleCombatEventType eventType, string auraEffectId) { }
+0x421B	line 52829	private void PlayBattleCorePresentationAudio(string audioClipPath, BattleSfxCategory category) { }
+0x421C	line 317902	|-AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<UniTask.Awaiter<object>, RoleBehaviour.<PlayBattleCoreAuraPresentation>d__480>
+0x421D	line 52954	private bool HasBattleCoreAuraEffectsRequiringTick() { }
+0x421E	line 52370	public static string ResolveBattleCoreCharmAudioClipPath(bool active) { }
+0x421F	line 317905	|-AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<UniTask.Awaiter<object>, RoleBehaviour.<PlayBattleCoreCharmPresentation>d__469>
+0x4220	line 52074	private void ClearBattleCoreAttackAnimationTimer() { }
+0x4221	line 52161	public void ResetBattleCorePresentationRenderMode() { }
+0x4222	line 51887	private void SetPathfindingEnabled(bool enabled) { }
+0x4223	line 48222	public void RemoveRole(int instanceId, bool player, RoleBehaviour roleBehaviour) { }
+0x4224	line 52052	public void SetAnimation(BattleAnimationName nextAnimationName, bool force = False) { }
+0x4225	line 59931	public void RemoveEnemyRole(GameObject obj, bool triggerTrySpawn = True) { }
+0x4226	line 59928	public void RemovePlayerRole(GameObject obj, bool triggerTrySpawn = True) { }
+0x4227	line 52853	public static string ResolveBattleCoreDeathEffectPath(string unitTypeId, bool isEnemy) { }
+0x4228	line 52832	private void ShowBattleCorePresentationEffect(string assetPath, Vector3 position, Vector3 scale, float delayRecycleTime = 1) { }
+0x4229	line 52866	private static string ResolveBattleCoreSacrDaggerDeathEffectPath(string artifactId) { }
+0x422B	line 52869	private bool CanCompleteBattleCoreDeathPresentation(int deathPresentationVersion) { }
+0x422C	line 52844	private void PlayBattleCoreGoblinDeathBombPresentation(BattleCombatEvent combatEvent, bool goblinDeathBombUnlocked) { }
+0x422D	line 61162	public void Unbind(RoleBehaviour role) { }
+0x422F	line 52644	private bool TryAttachBattleCorePandaLeapTrailEffect(GameObject prefab, int version) { }
+0x4231	line 52621	private bool CanContinueBattleCoreSkeletonKnightShadowDashPresentation(int version) { }
+0x4233	line 53056	private void LateUpdate() { }
+0x4235	line 51890	private static bool ShouldUseWebGLPathfindingTuning() { }
+0x4236	line 317908	|-AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<UniTask.Awaiter<object>, RoleBehaviour.<PlayDizzyPresentation>d__245>
+0x4237	line 51839	private static void AttachBattleCoreControlPresentationEffect(GameObject effect, Transform roleRoot, string effectPath) { }
+0x4239	line 52686	private void RecycleBattleCorePandaLeapTrailEffectNow() { }
+0x423A	line 56692	public static bool get_PVPPlayerIsUp() { }
+0x423B	line 317911	|-AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<UniTask.Awaiter<object>, RoleBehaviour.<RemoteInitInfo>d__734>
+0x423C	line 318316	|-AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<UniTask.Awaiter, RoleBehaviour.<SetAnimation>d__357>
+0x423E	line 52660	private void StopBattleCorePandaLeapTrailPresentation(bool advanceVersion = True, bool allowTail = True, int logicFps = 25) { }
+0x4240	line 52634	private void StopBattleCoreSkeletonKnightShadowDashPresentation(bool advanceVersion = True) { }
+0x4242	line 53204	private void CacheBattleCoreSkillEffectRendererLimits(GameObject effect) { }
+0x4243	line 53198	private void ApplyBattleCoreSkillEffectScale() { }
+0x4244	line 1002104	|-UniTaskExtensions.AttachExternalCancellation<object>
+0x4246	line 998032	public static UniTask Yield(PlayerLoopTiming timing, CancellationToken cancellationToken, bool cancelImmediately = False) { }
+0x4249	line 53330	private bool IsBattleCoreGuardCurrentSequenceCurrent(int sequenceVersion) { }
+0x424A	line 53323	private void OrderBattleCoreGuardCurrentTargets() { }
+0x424B	line 53248	private void MoveNext() { }
+0x424C	line 53333	private void DestroyBattleCoreGuardCurrentEffects() { }
+0x424D	line 1002096	public static UniTask AttachExternalCancellation(UniTask task, CancellationToken cancellationToken) { }
+0x4268	line 872750	|-HashSet<ValueTuple<object, int, object>>.AddIfNotPresent
+0x426A	line 873050	|-HashSet<ValueTuple<object, int, object>>.InternalIndexOf
+0x426C	line 871700	|-HashSet<ValueTuple<object, int, object>>.Remove
+0x4271	line 872753	|-HashSet<AsyncOperationHandle>.AddIfNotPresent
+0x4273	line 873053	|-HashSet<AsyncOperationHandle>.InternalIndexOf
+0x4275	line 871703	|-HashSet<AsyncOperationHandle>.Remove
+0x4279	line 871603	|-HashSet<AsyncOperationHandle>.Contains
+0x427B	line 872756	|-HashSet<BattleHexCoord>.AddIfNotPresent
+0x427D	line 873056	|-HashSet<BattleHexCoord>.InternalIndexOf
+0x427F	line 871706	|-HashSet<BattleHexCoord>.Remove
+0x4283	line 871606	|-HashSet<BattleHexCoord>.Contains
+0x4285	line 872759	|-HashSet<int>.AddIfNotPresent
+0x4287	line 873059	|-HashSet<int>.InternalIndexOf
+0x428D	line 872762	|-HashSet<Int32Enum>.AddIfNotPresent
+0x428F	line 873062	|-HashSet<Int32Enum>.InternalIndexOf
+0x4291	line 871712	|-HashSet<Int32Enum>.Remove
+0x4295	line 871612	|-HashSet<Int32Enum>.Contains
+0x4297	line 409857	|-Dictionary<BattleNavigationSystem.NavigationOccupancyQueryKey, BattleNavigationSystem.NavigationOccupancyQueryResult>.TryInsert
+0x429A	line 422467	|-KeyValuePair<BattleNavigationSystem.NavigationOccupancyQueryKey, BattleNavigationSystem.NavigationOccupancyQueryResult>..ctor
+0x429B	line 409860	|-Dictionary<BattleSimulation.CapturedHiddenHexCandidateCacheKey, BattleSimulation.CapturedHiddenHexCandidateSlice>.TryInsert
+0x429E	line 422470	|-KeyValuePair<BattleSimulation.CapturedHiddenHexCandidateCacheKey, BattleSimulation.CapturedHiddenHexCandidateSlice>..ctor
+0x429F	line 409863	|-Dictionary<BattleSimulation.DeathLocalCandidateCacheKey, BattleSimulation.DeathLocalCandidateSlice>.TryInsert
+0x42A2	line 422473	|-KeyValuePair<BattleSimulation.DeathLocalCandidateCacheKey, BattleSimulation.DeathLocalCandidateSlice>..ctor
+0x42A3	line 409866	|-Dictionary<BattleSimulation.GamePlayImproveLegendaryRoleLimitKey, int>.TryInsert
+0x42A6	line 422476	|-KeyValuePair<BattleSimulation.GamePlayImproveLegendaryRoleLimitKey, int>..ctor
+0x42A7	line 409869	|-Dictionary<BattleSimulation.NoTargetTopologySignatureCacheKey, int>.TryInsert
+0x42AA	line 422479	|-KeyValuePair<BattleSimulation.NoTargetTopologySignatureCacheKey, int>..ctor
+0x42AB	line 409872	|-Dictionary<BattleSimulation.NoTargetWakeCheckCacheKey, bool>.TryInsert
+0x42AE	line 422482	|-KeyValuePair<BattleSimulation.NoTargetWakeCheckCacheKey, bool>..ctor
+0x42AF	line 409875	|-Dictionary<BattleSimulation.PathWallEdgeKey, int>.TryInsert
+0x42B2	line 422485	|-KeyValuePair<BattleSimulation.PathWallEdgeKey, int>..ctor
+0x42B3	line 524949	public BattleCombatEvent Normalized() { }
+0x42B5	line 432783	|-List<BattleCombatEvent>.get_Capacity
+0x42B6	line 537566	private static void RecordProfilerCapacityGrowth(string marker) { }
+0x42B8	line 537893	private void CollectUnitIdsInCircleCore(FPVector2 center, FP radius, int ownerPlayerId, int ownerMode, BattleSimulation.UnitStealthFilter stealthFilter, int excludedUnitId, bool overlapUnitCollider, List<int> ids) { }
+0x42B9	line 534622	private bool TrySelectArmoredOrcNearestTarget(FPVector2 sourcePosition, List<int> targetIds, out BattleUnitState target) { }
+0x42BB	line 536951	private int FindUnitIndex(int unitId) { }
+0x42BC	line 535837	private void ApplyDamageToUnit(int targetIndex, BattleSimulation.DamageSource source, int damage) { }
+0x42BE	line 537587	private BattleSimulation.ScratchIntListLease RentScratchIntList(int minCapacity = 0) { }
+0x42BF	line 405471	|-Dictionary<BattleSimulation.DeathLocalCandidateCacheKey, BattleSimulation.DeathLocalCandidateSlice>.Clear
+0x42C0	line 536723	private void CollectSameHexDeathReplacementCandidateIds(BattleUnitState deadUnit, BattleHexCoord deadCoord, List<int> candidateIds) { }
+0x42C1	line 537941	private void CopyUnitTargetAttackersFromInverseIndex(int targetUnitId, List<int> attackerIds) { }
+0x42C2	line 527073	public static bool get_IsEnabled() { }
+0x42C3	line 527076	public static void SetCounter(string name, int value) { }
+0x42C4	line 527079	public static BattleCoreProfiler.SampleScope Sample(string name) { }
+0x42C5	line 527032	public void Dispose() { }
+0x42C6	line 537797	private int ResolveUnitIndexById(int stableId) { }
+0x42C7	line 537938	private void RemoveTargeterInverseUnit(int unitId) { }
+0x42C8	line 537926	private void SyncTargeterInverseUnit(BattleUnitState unit) { }
+0x42C9	line 536717	private bool TryGetDeathLocalCandidateSlice(BattleUnitState unit, out BattleSimulation.DeathLocalCandidateSlice slice) { }
+0x42CA	line 536738	private bool TryApplyDeathReplacementTarget(ref BattleUnitState unit, int deadUnitId, List<int> candidateIds, int startIndex, int count) { }
+0x42CB	line 531070	public void Schedule(int unitId, int dueFrame, BattleSimulation.CombatScheduleReason reason) { }
+0x42CC	line 536747	private void DelayRetargetAfterDeadUnit(ref BattleUnitState unit, int deadUnitId) { }
+0x42CD	line 538268	private bool HasNearbyEnemyArchitectureForCooldownNoTarget(in BattleUnitState unit) { }
+0x42CE	line 537695	private void CommitUnitState(int unitIndex, in BattleUnitState unit) { }
+0x42D0	line 531257	public void Dispose() { }
+0x42D4	line 439579	|-List<BattleSimulation.ArtifactBuffState>.get_Item
+0x42D6	line 537908	private void CollectArchitectureIdsInCircle(FPVector2 center, FP radius, int ownerPlayerId, int ownerMode, List<int> ids) { }
+0x42D7	line 536957	private int FindArchitectureIndex(int architectureId) { }
+0x42D8	line 538103	private void ApplyDamageToArchitecture(int targetIndex, BattleSimulation.DamageSource source, int damage, bool allowProjectileWallInterception, bool allowMeleeWallInterception) { }
+0x42DA	line 537911	private void CollectWallIdsInCircle(FPVector2 center, FP radius, int ownerPlayerId, int ownerMode, List<int> ids) { }
+0x42DB	line 536960	private int FindWallIndex(int wallId) { }
+0x42DC	line 538139	private void ApplyDamageToWall(int wallIndex, BattleSimulation.DamageSource source, int damage) { }
+0x42DF	line 537806	private void CollectActiveUnitIds(int ownerPlayerId, int ownerMode, BattleSimulation.UnitStealthFilter stealthFilter, int excludedUnitId, bool excludeClones, int minimumRareLevel, List<int> ids) { }
+0x42E1	line 539588	private static bool IsFettersType(string actual, string expected) { }
+0x42E2	line 470667	|-List<int>.RemoveRange
+0x42E3	line 538706	private void AddEvent(BattleCombatEvent combatEvent) { }
+0x42E4	line 535795	private int CalculateActualUnitHealAmount(int unitIndex, int heal) { }
+0x42E5	line 532509	public static BattleSimulation.DamageSource FromArtifact(int ownerPlayerId, string propId, FPVector2 position, int artifactUseSequence = 0) { }
+0x42E6	line 535816	private void ApplyHealToUnit(int unitIndex, BattleSimulation.DamageSource source, int heal) { }
+0x42E7	line 529032	public bool get_IsValid() { }
+0x42E8	line 534877	private BattleHexCoord FindNearestHexCoord(FPVector2 position) { }
+0x42E9	line 529816	public int FindNearestHexIndex(FPVector2 position) { }
+0x42EA	line 529834	public BattleHexCoord GetHexCoord(int index) { }
+0x42EB	line 535069	private bool IsOverclockWrenchAdjacentHex(BattleHexCoord sourceHex, BattleHexCoord targetHex) { }
+0x42EE	line 536032	private BattleHexCellState NormalizeCellArchitectureForOpening(int playerId, BattleHexCellState cell) { }
+0x42EF	line 536158	private bool TryConsumeDebugForceNextBarracksCardCheat(int playerId, ref BattleHexCellState cell, out BattleSimulation.SelectedCard selectedCard) { }
+0x42F0	line 532530	public void .ctor(int playerId, int q, int r, int openFrame) { }
+0x42F1	line 473349	|-List<BattleSimulation.OpenedHexState>.Sort
+0x42F2	line 529801	public void SetHexOpened(BattleHexCoord coord, bool opened) { }
+0x42F3	line 539735	private void RecordGoldMineUse(int playerId) { }
+0x42F4	line 539738	private int GetGoldMineUseCount(int playerId) { }
+0x42F5	line 539741	private void RefreshGoldMinePrices(bool isEnemySide, int useCount) { }
+0x42F7	line 475407	|-List<BattleUnitState>.Sort
+0x42F9	line 472941	|-List<BattleArchitectureState>.Sort
+0x42FB	line 537830	private void RebuildSpatialUnitsFull() { }
+0x42FC	line 537836	private void UpdateSpatialUnitsDirtyIds() { }
+0x42FD	line 537839	private void ValidateSpatialDirtyUpdateWithFullRebuildIfEnabled() { }
+0x42FF	line 538121	private static bool IsRemoteAttackWay(string attackWayType) { }
+0x4300	line 538124	private int FindProjectileWallIndex(BattleSimulation.DamageSource source, BattleArchitectureState target) { }
+0x4302	line 539597	private static bool IsMeleeAttackWay(string attackWayType) { }
+0x4303	line 538130	private int FindLegacyMeleeInterceptWallIndex(BattleSimulation.DamageSource source, BattleArchitectureState target) { }
+0x4305	line 539354	private int ApplyArchitectureOnHurtDamageTalentsIfNeeded(int damage, BattleArchitectureState target, BattleSimulation.DamageSource source) { }
+0x4307	line 532506	public static BattleSimulation.DamageSource ReflectedFromArchitecture(BattleArchitectureState architecture) { }
+0x4308	line 539333	private int ApplyOnHurtPreMissTalentsIfNeeded(int damage, string[] talentIds, int hp, int maxHp, BattleSimulation.DamageSource incomingSource, BattleSimulation.DamageSource reflectedSource, int reflectorOwnerPlayerId, string reflectorId, int reflectorUnitId, int reflectorArchitectureId, int q, int r, string eventUnitTypeId) { }
+0x430A	line 535486	private bool RollPercentChance(long probabilityRaw, int rangeMaxExclusive) { }
+0x430C	line 539492	private int ApplyArchitectureDamageTakenSynergy(int damage, BattleArchitectureState target, BattleSimulation.DamageSource source) { }
+0x430D	line 538148	private int ApplyLegacyArchitectureDamageReduce(int damage, BattleArchitectureState target) { }
+0x4310	line 535507	private void ApplySingleVampire(BattleSimulation.DamageSource source) { }
+0x4312	line 538154	private void ApplyDamageReflectToSourceUnit(BattleSimulation.DamageSource incomingSource, int reflectorOwnerPlayerId, string reflectorId, int appliedDamage, long reflectRatioRaw, int reflectorUnitId, int reflectorArchitectureId, int reflectorWallId, int q, int r, string eventUnitTypeId) { }
+0x4314	line 529813	public void SetHexArchitecture(BattleHexCoord coord, bool hasArchitecture, string architectureId, string hexType) { }
+0x4316	line 405477	|-Dictionary<BattleSimulation.NoTargetTopologySignatureCacheKey, int>.Clear
+0x4317	line 531055	public void RequestFullAudit() { }
+0x4319	line 536834	private void MarkDynamicWallsDirtyAround(BattleHexCoord coord) { }
+0x431A	line 536843	private void FlushDynamicWallsIfDirty() { }
+0x431C	line 536002	private void ScheduleCombatPathArchitectureStateChanged(int architectureId, BattleHexCoord architectureCoord, bool forceRetargetLockedAttackers) { }
+0x431D	line 538646	private void RefreshUnitsAfterArchitectureDeath(BattleArchitectureState deadArchitecture) { }
+0x431F	line 525506	public BattleEconomyConfig Normalized() { }
+0x4322	line 539228	private void ApplyUnitOnKillHuntChargeTalentIfNeeded(BattleSimulation.DamageSource source, int targetOwnerPlayerId, int targetUnitId, int targetArchitectureId, int targetWallId) { }
+0x4329	line 534787	private void CollectGodSlayerLegendaryTargetIndexes(int playerId, int maxCount, List<int> targetIndexes) { }
+0x432A	line 534802	private int GetGodSlayerImpactEffectToDamageFrames() { }
+0x432B	line 534832	private BattleHexCoord ResolveGodSlayerImpactAnchorHex(BattleUnitState target) { }
+0x432C	line 534835	private void AddGodSlayerImpactPresentationEvent(int playerId, string propId, int targetUnitId, FPVector2 anchor, int q, int r, int durationFrames, int impactFrame) { }
+0x432D	line 534808	private void SchedulePendingGodSlayerSpearImpact(int playerId, string propId, bool newBranch, int targetUnitId, int damage, int targetCount, int periodicDamage, int durationFrames, int q, int r, FPVector2 impactAnchor, int impactAnchorQ, int impactAnchorR, long radiusRaw, int dueFrame) { }
+0x432F	line 534922	private bool TryCollectUnitFrameStateExpireCandidateIndexesFromBucket(List<int> candidateIndexes) { }
+0x4330	line 534925	private void AddExpiredUnitFrameStateCandidate(int unitIndex, List<int> temporarySummonIndexes, List<int> charmedIndexes, List<int> roleRetargetSuppressedIndexes, List<int> stealthIndexes, List<int> stunnedIndexes, List<int> robotSkillBoostedIndexes) { }
+0x4332	line 534928	private void ExpireTemporarySummonedUnits(List<int> candidateUnitIndexes) { }
+0x4333	line 534931	private void ExpireCharmStates(List<int> candidateUnitIndexes) { }
+0x4334	line 534934	private void ExpireRoleRetargetSuppressionStates(List<int> candidateUnitIndexes) { }
+0x4335	line 538973	private void ExpireUnitStealthStates(List<int> candidateUnitIndexes) { }
+0x4336	line 538976	private void ExpireUnitStunStates(List<int> candidateUnitIndexes) { }
+0x4337	line 538979	private void ExpireRobotSkillBoosts(List<int> candidateUnitIndexes) { }
+0x4340	line 534949	private void EnsureYggdSeedTargetScratchSlots(int requiredCount) { }
+0x4341	line 405147	|-Dictionary<int, int>.Clear
+0x4342	line 536990	private void SortUnitsById(bool publishDerivedDirtyConsumers = True) { }
+0x4343	line 535006	private void ApplyArtifactBuffToUnit(ref BattleUnitState unit, BattleSimulation.ArtifactBuffState buff, bool createdDuringBuff = False, bool preserveYggdHpRatio = True) { }
+0x4344	line 534955	private static int[] CopyIntListToReusableArray(List<int> values, int[] previous, out bool allocated) { }
+0x4345	line 440382	|-List<BattleSimulation.ArtifactBuffState>.set_Item
+0x4348	line 538352	private bool TryResolveLockedTarget(in BattleUnitState unit, FP unitRange, ref FP architectureRange, ref bool architectureRangeKnown, out BattleSimulation.CombatTarget target) { }
+0x434A	line 538406	private bool TryFindPathBlockingEnemyWallTarget(in BattleUnitState unit, FP range, bool allowFullPathBuild, bool hasAliveEnemyPathWallCandidate, out BattleSimulation.CombatTarget target) { }
+0x434C	line 538343	private static FP GetArchitectureTargetAttackRange(in BattleUnitState unit) { }
+0x434D	line 538226	private bool TryFindSameHexReplacementForDeadLockedTarget(in BattleUnitState unit, FP unitRange, FP architectureRange, out BattleSimulation.CombatTarget target) { }
+0x434F	line 538274	private bool HasRetainableAttackTarget(in BattleUnitState unit, FP unitRange, ref FP architectureRange, ref bool architectureRangeKnown) { }
+0x4351	line 538457	private bool TryFindFirstEnemyWallInCurrentPath(in BattleUnitState unit, FP range, bool allowFullPathBuild, out BattleSimulation.CombatTarget target, out bool hasBlockingWall) { }
+0x4353	line 538445	private bool TryFindPathBlockingEnemyArchitectureTarget(in BattleUnitState unit, FP range, out BattleSimulation.CombatTarget target) { }
+0x4355	line 538382	private bool TryFindNearestEnemyUnitTarget(in BattleUnitState unit, FP range, out BattleSimulation.CombatTarget target) { }
+0x4357	line 538520	private bool TryFindNearestEnemyWallTarget(in BattleUnitState unit, FP range, out BattleSimulation.CombatTarget target) { }
+0x4358	line 538574	private bool TryFindNearestEnemyArchitectureTarget(in BattleUnitState unit, FP range, out BattleSimulation.CombatTarget target) { }
+0x435B	line 538328	private bool ShouldKeepCurrentArchitectureTargetOverUnit(in BattleUnitState unit, BattleSimulation.CombatTarget nearestUnit, bool hasArchitecture, BattleSimulation.CombatTarget nearestArchitecture) { }
+0x435C	line 538325	private bool TryGetCurrentArchitectureNavigationTarget(in BattleUnitState unit, out BattleArchitectureState architecture) { }
+0x435D	line 538301	private bool TryFindLegacyNavigationUnitTarget(in BattleUnitState unit, bool roleUnitTargetingSuppressed, FP searchRange, bool hasPrecomputedNearestUnitWithinLegacyRange, BattleSimulation.CombatTarget precomputedNearestUnitWithinLegacyRange, bool allowNearestUnitQuery, out BattleSimulation.CombatTarget target) { }
+0x435F	line 538316	private void RecordRetainedLegacyNavigationLease(in BattleUnitState unit, BattleSimulation.CombatTarget target) { }
+0x4360	line 538196	private bool TryUseLegacyNavigationCombatTarget(ref BattleUnitState unit, BattleSimulation.CombatTarget legacyNavigationTarget, FP unitRange, out bool targetStateHandled, out BattleSimulation.CombatTarget target) { }
+0x4362	line 538277	private bool TrySelectNearestNonUnitCombatTarget(in BattleUnitState unit, bool hasWall, BattleSimulation.CombatTarget wallTarget, bool hasArchitecture, BattleSimulation.CombatTarget architectureTarget, out BattleSimulation.CombatTarget selected) { }
+0x4366	line 538205	private static void RecordInstantProfilerSample(string marker) { }
+0x4367	line 538175	private bool GetCombatSearchHasAliveEnemyPathWall(BattleUnitState unit, ref BattleSimulation.CombatTargetSearchContext context) { }
+0x4369	line 538208	private static void RecordFullSearchNoneCause(bool hasNearestUnitSearchCandidate, bool hasNearestUnitFoundButOutOfAttackRange, bool rejectedByArchitecturePriority, bool roleUnitTargetingSuppressed) { }
+0x436C	line 537017	private void EnsurePendingUnitRevivesSorted() { }
+0x436E	line 439660	|-List<BattleSimulation.PendingUnitReviveState>.get_Item
+0x436F	line 537008	private void EnsureFrameEventCapacityForAdditional(int additionalCount) { }
+0x4372	line 535417	private bool ApplyPendingUnitRevive(BattleSimulation.PendingUnitReviveState pending) { }
+0x4374	line 470988	|-List<BattleSimulation.PendingUnitReviveState>.RemoveRange
+0x4376	line 473397	|-List<BattleSimulation.PendingUnitReviveState>.Sort
+0x4378	line 535453	private bool TryResolveDamageSource(BattleSimulation.PendingHitState hit, out BattleSimulation.DamageSource source) { }
+0x4379	line 535444	private bool AdvanceTrackedProjectileIfNeeded(ref BattleSimulation.PendingHitState hit, BattleSimulation.DamageSource source) { }
+0x437B	line 535432	private bool ResolvePendingUnitAttackCallback(ref BattleSimulation.PendingHitState hit, ref BattleSimulation.DamageSource source, out bool hasCombatTarget) { }
+0x437D	line 535882	private void ApplyUnitAttackSkill(BattleSimulation.DamageSource source, int attackCallbackSegmentIndex) { }
+0x437F	line 535885	private void SelectArcherExtraArrowTargetsAtCallback(BattleSimulation.DamageSource source, List<BattleSimulation.CombatTarget> selectedTargets, out BattleUnitState unit) { }
+0x4382	line 532482	public BattleSimulation.DamageSource WithoutVampire() { }
+0x4385	line 535888	private void ScheduleSelectedArcherExtraArrows(BattleUnitState unit, List<BattleSimulation.CombatTarget> selectedTargets) { }
+0x4386	line 535438	private void EmitProjectileFromCallback(BattleSimulation.PendingHitState hit, BattleSimulation.DamageSource source) { }
+0x4389	line 535471	private void ApplySplashHit(BattleSimulation.PendingHitState hit, BattleSimulation.DamageSource source) { }
+0x438E	line 538586	private FPVector2 GetArchitecturePosition(BattleArchitectureState architecture) { }
+0x438F	line 535915	private void ApplyUnitHitSkill(BattleSimulation.DamageSource source, FPVector2 impactCenter) { }
+0x4395	line 535465	private bool TryReflectProjectileHit(BattleSimulation.PendingHitState hit, BattleSimulation.DamageSource source, BattleUnitState target) { }
+0x4399	line 535828	private void ApplyFreezeToUnit(int unitIndex, int sourceUnitId, FP duration, string effectId) { }
+0x439A	line 535918	private void ApplyHairyHandShockOnUnitHit(BattleSimulation.DamageSource source, int targetUnitId) { }
+0x439E	line 535891	private void ApplyUnitAttackCallbackSkill(BattleSimulation.DamageSource source, int attackNum, int attackCallbackSegmentIndex, int primaryTargetUnitId, int primaryTargetArchitectureId, int primaryTargetWallId, FPVector2 primaryTargetPosition) { }
+0x43A9	line 540260	public void EnsureStaticCapacity(int architectureCapacity, int wallCapacity) { }
+0x43AA	line 540266	public void ClearStatic() { }
+0x43AB	line 439204	|-List<BattleArchitectureState>.get_Item
+0x43AC	line 529035	public void .ctor(int q, int r) { }
+0x43AD	line 529843	public bool TryGetHexCell(BattleHexCoord coord, out BattleHexCellState cell) { }
+0x43AE	line 540278	public void AddArchitecture(int stableId, int listIndex, int ownerPlayerId, FPVector2 position) { }
+0x43AF	line 439264	|-List<BattleWallState>.get_Item
+0x43B0	line 540281	public void AddWall(int stableId, int listIndex, int ownerPlayerId, FPVector2 position) { }
+0x43B2	line 536837	private void AddDynamicWallDirtyCell(BattleHexCoord coord) { }
+0x43B3	line 536930	private bool TryGetDynamicWallOpenedEmptyComponent(BattleHexCoord start, out BattleSimulation.DynamicWallOpenedEmptyComponentInfo component) { }
+0x43B4	line 439228	|-List<BattleHexCoord>.get_Item
+0x43B5	line 529038	public BattleHexCoord GetNeighbor(int directionIndex) { }
+0x43B7	line 536846	private void RefreshDirtyDynamicWallsFromHexState() { }
+0x43B9	line 535399	private static bool IsSkeletonId(string unitTypeId, string cardId) { }
+0x43BD	line 535792	private static int CalculateRatioAmount(int baseValue, long ratioRaw) { }
+0x43BF	line 535801	private static int CalculateRoundedMultiplierAmountAtLeastOne(int baseValue, long multiplierRaw) { }
+0x43C0	line 535756	private void ApplyShieldToUnit(int targetIndex, int shield) { }
+0x43C4	line 537620	private bool HasExactUnitCenterTarget(List<int> targetIds, FPVector2 center, FP radius) { }
+0x43C9	line 538625	private int SecondsToFramesCeil(FP seconds) { }
+0x43CA	line 1115630	public int Range(int minInclusive, int maxExclusive) { }
+0x43CB	line 537194	private void ApplyOrRefreshBloodMark(int targetUnitId, BattleUnitState source, string skillId, int endFrame, long distanceUnitRaw, long ratioRaw) { }
+0x43CD	line 537215	private int CompareTargetsByDistanceThenId(FPVector2 sourcePosition, int leftId, int rightId) { }
+0x43CF	line 539852	private void PushPendingHitHeap(BattleSimulation.PendingHitState hit) { }
+0x43D1	line 538385	private bool TryFindNearestEnemyUnitTargetByOccupancy(in BattleUnitState unit, FP range, FP rangeSqr, out BattleSimulation.CombatTarget target, out bool handled) { }
+0x43D3	line 537881	private bool TryFindNearestArchitectureBySpatial(in BattleUnitState unit, FP range, out int targetIndex, out FP bestDistance) { }
+0x43D4	line 532457	public static BattleSimulation.CombatTarget ForArchitecture(BattleArchitectureState architecture, FP distanceSqr) { }
+0x43D6	line 538589	private FP GetArchitectureTargetDistanceSqr(in BattleUnitState unit, BattleArchitectureState architecture) { }
+0x43DA	line 540287	public void QueryCircleUnitsExcludingOwner(FPVector2 center, FP radius, int excludedOwnerPlayerId, List<BattleSpatialCandidate> buffer) { }
+0x43DB	line 540284	public void QueryCircle(FPVector2 center, FP radius, BattleSpatialLayerMask layerMask, List<BattleSpatialCandidate> buffer) { }
+0x43DE	line 532598	public void CopyUnitTargetAttackers(int targetUnitId, List<int> attackerIds) { }
+0x43E0	line 532595	public void RemoveUnit(int unitId) { }
+0x43E2	line 532583	public void AddOrUpdateUnit(BattleUnitState unit) { }
+0x43E4	line 535912	private bool TryFindNearestMechanicalGuardBounceTarget(int ownerPlayerId, FPVector2 origin, FP range, List<int> usedTargetIds, out int targetUnitId) { }
+0x43E8	line 532580	public void Rebuild(List<BattleUnitState> units) { }
+0x43EB	line 432804	|-List<BattleHexCoord>.get_Capacity
+0x43EC	line 529864	public bool TryBuildRemainingPath(List<BattleHexCoord> path, List<BattleUnitState> units, BattleUnitState unit) { }
+0x43ED	line 537584	private void RecordPathWallSearchPathCapacityGrowth(int oldCapacity) { }
+0x43F0	line 475371	|-List<BattleHexCellState>.Sort
+0x43F1	line 439225	|-List<BattleHexCellState>.get_Item
+0x43F2	line 536825	private bool AddDesiredDynamicWalls(BattleHexCellState cell, List<int> desiredWallIds, HashSet<int> desiredWallIdSet) { }
+0x43F3	line 536831	private bool RemoveUndesiredDynamicWalls(HashSet<int> desiredWallIds) { }
+0x43F4	line 537020	private void SortWallsById() { }
+0x43F5	line 536849	private void RebuildDynamicWallEdgeLookup() { }
+0x43F6	line 538502	private void MarkPathWallEdgeIndexDirty() { }
+0x43F7	line 871556	|-HashSet<BattleHexCoord>.Clear
+0x43F9	line 536583	private BattleUnitState[] CopyUnitStates(bool copyNestedStateArrays, BattleSnapshotBuffer buffer) { }
+0x43FA	line 536616	private BattleArchitectureState[] CopyArchitectureStates(bool copyNestedStateArrays, BattleSnapshotBuffer buffer) { }
+0x43FC	line 536619	private BattleWallState[] CopyWallStates(BattleSnapshotBuffer buffer) { }
+0x43FE	line 536604	private BattlePlayerEconomyState[] CopyEconomyStates(BattleSnapshotBuffer buffer) { }
+0x4400	line 537068	private BattleUnitAreaEffectState[] CopyActiveUnitAreaEffects(BattleSnapshotBuffer buffer) { }
+0x4402	line 536577	private BattleSoulEaterCasketSessionState[] CopySoulEaterCasketSessions(BattleSnapshotBuffer buffer) { }
+0x4403	line 536580	private BattleSoulEaterCasketProjectileState[] CopySoulEaterCasketProjectiles(BattleSnapshotBuffer buffer) { }
+0x4405	line 536595	public BattleCombatEvent[] GetFrameEvents() { }
+0x4408	line 536666	public ulong GetStateHash() { }
+0x4409	line 539973	public void .ctor(int frame, ulong stateHash, BattleUnitState[] units, BattleArchitectureState[] architectures, BattleWallState[] walls, BattlePlayerEconomyState[] economyStates, BattleUnitAreaEffectState[] unitAreaEffects, BattleSoulEaterCasketSessionState[] soulEaterCasketSessions, BattleSoulEaterCasketProjectileState[] soulEaterCasketProjectiles, BattleCombatEvent[] events, BattleResultState result, int battleCountdownRemainingFrames, int unitCount, int architectureCount, int wallCount, int economyStateCount, int unitAreaEffectCount, int soulEaterCasketSessionCount, int soulEaterCasketProjectileCount) { }
+0x440C	line 528323	public static BattleHash Create() { }
+0x440D	line 528329	public void AddInt(int value) { }
+0x440E	line 528338	public void AddUInt64(ulong value) { }
+0x440F	line 528326	public void AddBool(bool value) { }
+0x4410	line 536248	private bool HasDailyBlessSuperGoldCardState() { }
+0x4411	line 530520	public void AddToHash(ref BattleHash hash) { }
+0x4412	line 528335	public void AddString(string value) { }
+0x4413	line 529771	public ulong get_GraphHash() { }
+0x4414	line 439240	|-List<BattlePlayerEconomyState>.get_Item
+0x4415	line 439612	|-List<BattleSimulation.OpenedHexState>.get_Item
+0x4416	line 524630	public void AddToHash(ref BattleHash hash) { }
+0x4417	line 540556	public void AddToHash(ref BattleHash hash) { }
+0x4419	line 537011	private void EnsurePendingSpawnsSorted() { }
+0x441A	line 537014	private void EnsurePendingSummonsSorted() { }
+0x441B	line 473334	|-List<BattleSimulation.DebugForceNextBarracksCardState>.Sort
+0x441D	line 439597	|-List<BattleSimulation.DebugForceNextBarracksCardState>.get_Item
+0x441E	line 531649	public void AddToHash(ref BattleHash hash) { }
+0x441F	line 439630	|-List<BattleSimulation.PendingSpawnState>.get_Item
+0x4420	line 531766	public void AddToHash(ref BattleHash hash) { }
+0x4421	line 439633	|-List<BattleSimulation.PendingSummonState>.get_Item
+0x4422	line 531805	public void AddToHash(ref BattleHash hash) { }
+0x4423	line 539861	private void AddPendingHitsToHash(ref BattleHash hash) { }
+0x4424	line 473385	|-List<BattleSimulation.PendingUnitOnAttackTalentState>.Sort
+0x4425	line 439648	|-List<BattleSimulation.PendingUnitOnAttackTalentState>.get_Item
+0x4426	line 531922	public void AddToHash(ref BattleHash hash) { }
+0x4427	line 439636	|-List<BattleSimulation.PendingUnitAreaSkillState>.get_Item
+0x4428	line 531966	public void AddToHash(ref BattleHash hash) { }
+0x4429	line 439669	|-List<BattleSimulation.PendingUnitSupportSkillState>.get_Item
+0x442A	line 531996	public void AddToHash(ref BattleHash hash) { }
+0x442B	line 439678	|-List<BattleSimulation.PendingUnitVolleySkillState>.get_Item
+0x442C	line 532023	public void AddToHash(ref BattleHash hash) { }
+0x442D	line 439654	|-List<BattleSimulation.PendingUnitProjectileAreaSkillState>.get_Item
+0x442E	line 532061	public void AddToHash(ref BattleHash hash) { }
+0x442F	line 473352	|-List<BattleSimulation.PendingAlchemistPotionState>.Sort
+0x4430	line 439615	|-List<BattleSimulation.PendingAlchemistPotionState>.get_Item
+0x4431	line 532101	public void AddToHash(ref BattleHash hash) { }
+0x4432	line 439645	|-List<BattleSimulation.PendingUnitHellfireSkillState>.get_Item
+0x4433	line 532134	public void AddToHash(ref BattleHash hash) { }
+0x4434	line 439651	|-List<BattleSimulation.PendingUnitPandaSkillState>.get_Item
+0x4435	line 532340	public void AddToHash(ref BattleHash hash) { }
+0x4436	line 439675	|-List<BattleSimulation.PendingUnitValkyrieSkillState>.get_Item
+0x4437	line 532370	public void AddToHash(ref BattleHash hash) { }
+0x4438	line 439657	|-List<BattleSimulation.PendingUnitRangerSkillState>.get_Item
+0x4439	line 532264	public void AddToHash(ref BattleHash hash) { }
+0x443A	line 439666	|-List<BattleSimulation.PendingUnitSkeletonKnightSkillState>.get_Item
+0x443B	line 532301	public void AddToHash(ref BattleHash hash) { }
+0x443C	line 439639	|-List<BattleSimulation.PendingUnitCavalrySkillState>.get_Item
+0x443D	line 532176	public void AddToHash(ref BattleHash hash) { }
+0x443E	line 439642	|-List<BattleSimulation.PendingUnitEliteCavalrySkillState>.get_Item
+0x443F	line 532220	public void AddToHash(ref BattleHash hash) { }
+0x4440	line 439663	|-List<BattleSimulation.PendingUnitSiegeChargeSkillState>.get_Item
+0x4441	line 532397	public void AddToHash(ref BattleHash hash) { }
+0x4442	line 439672	|-List<BattleSimulation.PendingUnitTeleportSkillState>.get_Item
+0x4443	line 532418	public void AddToHash(ref BattleHash hash) { }
+0x4444	line 532436	public void AddToHash(ref BattleHash hash) { }
+0x4445	line 439621	|-List<BattleSimulation.PendingGodSlayerSpearState>.get_Item
+0x4446	line 531411	public void AddToHash(ref BattleHash hash) { }
+0x4447	line 473364	|-List<BattleSimulation.PendingLightningWandHitState>.Sort
+0x4448	line 439627	|-List<BattleSimulation.PendingLightningWandHitState>.get_Item
+0x4449	line 531436	public void AddToHash(ref BattleHash hash) { }
+0x444A	line 473355	|-List<BattleSimulation.PendingBeastHunterGridState>.Sort
+0x444B	line 439618	|-List<BattleSimulation.PendingBeastHunterGridState>.get_Item
+0x444C	line 531458	public void AddToHash(ref BattleHash hash) { }
+0x444D	line 472989	|-List<BattleSoulEaterCasketSessionState>.Sort
+0x444E	line 472986	|-List<BattleSoulEaterCasketProjectileState>.Sort
+0x444F	line 439252	|-List<BattleSoulEaterCasketSessionState>.get_Item
+0x4450	line 540120	internal void AddToHash(ref BattleHash hash) { }
+0x4451	line 439249	|-List<BattleSoulEaterCasketProjectileState>.get_Item
+0x4452	line 540148	internal void AddToHash(ref BattleHash hash) { }
+0x4453	line 439594	|-List<BattleSimulation.DeadUnitRecordState>.get_Item
+0x4454	line 531721	public void AddToHash(ref BattleHash hash) { }
+0x4455	line 439693	|-List<BattleSimulation.UnitAuraState>.get_Item
+0x4456	line 531378	public void AddToHash(ref BattleHash hash) { }
+0x4457	line 439258	|-List<BattleUnitAreaEffectState>.get_Item
+0x4458	line 540368	internal void AddToHash(ref BattleHash hash) { }
+0x4459	line 531521	public void AddToHash(ref BattleHash hash) { }
+0x445B	line 526569	public static void AddStringArrayToHash(ref BattleHash hash, string[] values) { }
+0x445C	line 528332	public void AddLong(long value) { }
+0x445D	line 524855	internal void AddToHash(ref BattleHash hash) { }
+0x445E	line 537035	private static void AddNavigationResultToHash(ref BattleHash hash, BattleNavigationResult result) { }
+0x4461	line 473367	|-List<BattleSimulation.PendingSpawnState>.Sort
+0x4463	line 473370	|-List<BattleSimulation.PendingSummonState>.Sort
+0x4465	line 531046	public void ResetProfilerStats() { }
+0x4466	line 536678	private BattlePlayerInput[] SortAndValidateInputs(BattlePlayerInput[] inputs) { }
+0x4469	line 534916	private void ExpireArtifactBuffs() { }
+0x446A	line 534919	private void ExpireUnitFrameStates() { }
+0x446B	line 534940	private void TickArtifactBuffPeriodicEffects() { }
+0x446D	line 536684	private bool ApplyCommandInputs(BattlePlayerInput[] inputs) { }
+0x4471	line 537674	private void InvalidateSpatialUnits() { }
+0x4472	line 534943	private void RefreshArtifactAreaBuffs() { }
+0x4473	line 539447	private void RefreshUnitLinkPacts() { }
+0x4475	line 537317	private void TickArchitectures() { }
+0x4477	line 537347	private bool ProcessPendingSpawns() { }
+0x4479	line 537350	private bool ProcessPendingSummons() { }
+0x447C	line 535414	private bool ProcessPendingUnitRevives() { }
+0x4480	line 534817	private void ProcessPendingGodSlayerSpears() { }
+0x4482	line 535534	private void TickUnitTalentAuras() { }
+0x4484	line 535573	private void TickUnitPeriodicSkills() { }
+0x4486	line 535576	private void TickUnitActiveSkills() { }
+0x4488	line 537053	private void TickActiveUnitAreaEffects() { }
+0x448A	line 538982	private bool ProcessPendingUnitTeleports() { }
+0x448C	line 539006	private bool ProcessPendingUnitPandaSkills() { }
+0x448E	line 538988	private bool ProcessPendingUnitValkyrieSkills() { }
+0x4490	line 539096	private void ProcessPendingUnitRangerSkills() { }
+0x4492	line 539036	private bool ProcessPendingUnitSkeletonKnightSkills() { }
+0x4494	line 539129	private bool ProcessPendingUnitCavalrySkills() { }
+0x4496	line 539150	private bool ProcessPendingUnitEliteCavalrySkills() { }
+0x4498	line 538910	private void PreparePendingUnitSiegeChargesForNavigation() { }
+0x449A	line 539753	private bool ApplyNavigation() { }
+0x449C	line 538715	private bool ApplyForcedMovement() { }
+0x449E	line 537116	private bool ProcessMagneticGiantSkills() { }
+0x44A0	line 537197	private void TickBloodDukeMarksAfterMovement() { }
+0x44A2	line 537635	private void RefreshFollowingUnitAreaEffectCenters() { }
+0x44A4	line 537716	private void UpdateUnitDerivedDirtyBits() { }
+0x44A5	line 537932	private void SyncTargeterInverseDirtyBits() { }
+0x44A7	line 537080	private void ResolveHexOwnershipFromUnitPresence() { }
+0x44AA	line 538913	private bool ProcessPendingUnitSiegeCharges() { }
+0x44AD	line 539759	private void TickArchitectureCombat() { }
+0x44AF	line 539768	private void TickUnitCombat() { }
+0x44B1	line 539867	private void ProcessPendingUnitOnAttackTalents() { }
+0x44B3	line 538805	private void ProcessPendingUnitVolleySkills() { }
+0x44B5	line 538826	private void ProcessPendingUnitProjectileAreaSkills() { }
+0x44B7	line 534598	private void ProcessPendingAlchemistPotions() { }
+0x44B9	line 538889	private void ProcessPendingUnitHellfireSkills() { }
+0x44BC	line 535054	private void ProcessPendingLightningWandHits() { }
+0x44BE	line 535060	private void ProcessPendingBeastHunterGrids() { }
+0x44C0	line 539864	private void ProcessPendingHits() { }
+0x44C2	line 539870	private void ProcessPendingUnitAreaSkills() { }
+0x44C4	line 539915	private void ProcessPendingUnitSupportSkills() { }
+0x44C7	line 538724	private void ResolveCollisionDamage() { }
+0x44C9	line 537644	private void ProcessPendingSoulEaterCasketProjectiles() { }
+0x44CA	line 537647	private void ProcessSoulEaterCasketSessions() { }
+0x44CC	line 539699	private void ApplyPeriodicEconomyIncome() { }
+0x44CE	line 536963	private void TryUpdateBattleResult() { }
+0x44D0	line 537401	private void FlushStepProfilerStats() { }
+0x44D1	line 537689	private void ClearUnitDirtyBits() { }
+0x44D4	line 536690	private void ApplyCommand(int playerId, BattleCommand command) { }
+0x44D6	line 439345	|-List<long>.get_Item
+0x44D7	line 539462	private bool TryGetUnitLinkPactDamageRatioRawCached(BattleUnitState unit, out long ratioRaw) { }
+0x44D8	line 440148	|-List<long>.set_Item
+0x44DB	line 537320	private void RebuildArchitectureTickQueue() { }
+0x44DF	line 537005	private void EnsureUnitCapacityForAdditional(int additionalCount) { }
+0x44E1	line 539657	private void SpawnUnits(BattleSimulation.PendingSpawnState pending) { }
+0x44E4	line 470958	|-List<BattleSimulation.PendingSpawnState>.RemoveRange
+0x44EB	line 534874	private int SpawnSummonedUnitAtPosition(int playerId, FPVector2 position, BattleHexCoord sourceHex, string unitTypeId, string cardId, int cardLevel, int rareLevel, int spawnGroupId = 0, int temporaryExpireFrame = 0, bool isClone = False, long statMultiplierRaw = 0, bool statMultiplierExplicit = False, long skillValueRaw = 0, string cardFettersType = "", string atkWayType = "", bool countsTowardRoleLimit = False, int sourceUnitId = 0, string damageSourceUnitTypeId = "", bool sortAfterAdd = True, bool applyReviveActiveSkillCooldown = False, bool isDeathBellRevivedUnit = False) { }
+0x44ED	line 470961	|-List<BattleSimulation.PendingSummonState>.RemoveRange
+0x44F1	line 537827	private void EnsureSpatialUnits() { }
+0x44F2	line 537761	private void EnsureActiveUnits() { }
+0x44F4	line 537704	private void CommitNavigationRuntimeUnits() { }
+0x44F6	line 539756	private void RollbackNavigationCrossingsBlockedByAliveEnemyWalls(List<BattleNavigationSystem.CurrentHexTransition> transitions) { }
+0x44F8	line 537929	private void SyncTargeterInverseUnits(List<int> unitIds) { }
+0x44FA	line 537677	private void InvalidateSpatialUnits(List<int> unitIds, List<int> cellDirtyUnitIds) { }
+0x44FC	line 536008	private void ScheduleCombatCellContactChangedUnits(List<int> unitIds) { }
+0x4501	line 537152	private void ClearMagneticGiantSourceState(ref BattleUnitState source, bool clearAttackBonus) { }
+0x4502	line 537149	private void ApplyMagneticGiantBonuses(ref BattleUnitState unit, long nextAttackBonusRatioRaw, long nextAttackSpeedBonusRatioRaw, long nextDamageReduceBonusRatioRaw) { }
+0x4503	line 537119	private void RefreshMagneticGiantTargets(ref BattleUnitState source) { }
+0x4504	line 537122	private bool PullMagneticGiantTargets(BattleUnitState source) { }
+0x4505	line 537125	private bool SyncMagneticDisarmSources(List<int> activeSourceIds, ref bool hasFutureRuntime) { }
+0x4508	line 537089	private void RebuildHexOwnershipPresenceCache() { }
+0x450A	line 529840	internal void CopyHexCellsSnapshot(List<BattleHexCellState> buffer) { }
+0x450B	line 537083	private void ApplyHexOwnershipChangeIfNeeded(BattleHexCellState cell) { }
+0x450E	line 475374	|-List<BattleHexCoord>.Sort
+0x4510	line 531049	public bool ShouldRunFullAudit(int currentFrame, int auditIntervalFrames) { }
+0x4512	line 531052	public void BeginFullAudit(int currentFrame, int auditIntervalFrames) { }
+0x4513	line 535963	private void AuditMissingCombatSchedules() { }
+0x4514	line 531079	public void CollectDue(int currentFrame, List<BattleSimulation.CombatSchedulerDueUnit> output) { }
+0x4516	line 539813	private void EnsureUnitAttackBurstCapacity(int scheduledCombatUnitCount) { }
+0x4518	line 531130	public static void SortDueUnits(List<BattleSimulation.CombatSchedulerDueUnit> dueUnits) { }
+0x451A	line 439588	|-List<BattleSimulation.CombatSchedulerDueUnit>.get_Item
+0x451B	line 531076	public void Remove(int unitId) { }
+0x451C	line 539774	private void ProcessUnitCombatAtIndex(int unitIndex, bool hasCombatBlockingRuntime, BattleSimulation.CombatScheduleReason scheduleReason, ref bool pendingHitsSortNeeded) { }
+0x451F	line 535420	private void ApplyPendingHit(BattleSimulation.PendingHitState hit) { }
+0x4521	line 536275	private bool IsEarlyArenaEnemyDifficultyReductionEnabled() { }
+0x4522	line 526372	public static BattleLoadoutMainTower Default() { }
+0x4523	line 526375	public BattleLoadoutMainTower Normalized() { }
+0x4524	line 525509	public int ResolveMainTowerIncomeGold(BattleLoadoutMainTower mainTower) { }
+0x4525	line 539750	private void AddGold(int playerId, int amount) { }
+0x4526	line 539705	private bool TryFindAliveMainTowerArchitecture(int playerId, out BattleArchitectureState architecture) { }
+0x4528	line 539714	private void BuildArchitectureCoordScratch() { }
+0x452A	line 539717	private void BuildOpenedFramePlayerScratch() { }
+0x452D	line 539711	private int CountResourceIncomeCells(int playerId, BattleEconomyConfig economy) { }
+0x452F	line 539702	private void ApplyHumanFetter6ArchitectureGold() { }
+0x4532	line 534628	private void AddCommandToDigest(int playerId, BattleCommand command) { }
+0x4534	line 537254	private void OpenHex(int playerId, int q, int r) { }
+0x4535	line 536693	private bool TryApplyDebugGoldCheatCommand(int playerId, BattleCommand command) { }
+0x4537	line 536696	private bool TryApplyDebugBattleResultCheatCommand(BattleCommand command) { }
+0x4538	line 536699	private bool TryApplyOfflinePveScaledTimeTimeoutCommand(BattleCommand command) { }
+0x4539	line 536702	private bool TryApplyDebugArtifactChargeCheatCommand(int playerId, BattleCommand command) { }
+0x453A	line 536705	private bool TryApplyDebugForceNextBarracksCardCheatCommand(int playerId, BattleCommand command) { }
+0x453B	line 534631	private void ApplyArtifact(int playerId, BattleCommand command) { }
+0x453C	line 537248	private void SetUnitTarget(int playerId, BattleCommand command) { }
+0x453F	line 540553	public BattleWallState Normalized() { }
+0x4540	line 536855	private bool IsDynamicWallOnDestroyedArchitectureEdge(BattleWallState wall) { }
+0x4541	line 535984	private void ScheduleCombatWallStateChanged(BattleWallState wall, bool skipLockedWallAttackers) { }
+0x4542	line 538142	private void RefreshUnitsAfterPathWallDeath(int deadWallId) { }
+0x4543	line 536906	private bool RemoveCollectedDynamicWalls() { }
+0x4547	line 440007	|-List<BattleArchitectureState>.set_Item
+0x4548	line 537323	private bool TryGetNextArchitectureTickDueFrame(BattleArchitectureState architecture, out int dueFrame) { }
+0x4549	line 531241	public void .ctor(int dueFrame, int architectureId) { }
+0x454A	line 537335	private void PushArchitectureTickQueue(BattleSimulation.ArchitectureTickQueueEntry entry) { }
+0x454C	line 539540	private int GetAllowedBarracksSpawnCount(BattleArchitectureState architecture, out bool blockedByRoleCap) { }
+0x454E	line 536137	private BattleSimulation.SelectedCard FindSelectedCardById(int playerId, string cardId) { }
+0x454F	line 539654	private void EnqueueSpawn(int playerId, BattleHexCoord sourceHex, int sourceArchitectureId, BattleSimulation.SelectedCard selectedCard, string unitTypeId, int count, int delayFrames) { }
+0x4550	line 537329	private void ScheduleNextArchitectureTick(BattleArchitectureState architecture) { }
+0x4552	line 412144	|-Dictionary<object, BattleConfigUnitDefinition>.TryGetValue
+0x4553	line 525131	public int GetCurveInt(string ownerKind, string ownerId, string statId, int level, int rareLevel, int starLevel, int fallback) { }
+0x4554	line 525134	public long GetCurveRaw(string ownerKind, string ownerId, string statId, int level, int rareLevel, int starLevel, long fallbackRaw) { }
+0x4555	line 536224	private long ResolveProjectileReflectChanceFromNormalizedTalents(string[] normalizedTalentIds, long fallbackRaw) { }
+0x4556	line 536233	private long ResolveSkillValueFromNormalizedTalents(string[] normalizedTalentIds, long fallbackRaw) { }
+0x4557	line 525137	public int GetCurveFrame(string ownerKind, string ownerId, string statId, int level, int rareLevel, int starLevel, int fallbackFrames) { }
+0x4558	line 539567	private BattleSimulation.SpawnInitBonusContext CreateSpawnInitBonusContext(int playerId) { }
+0x455A	line 536194	private void ApplyArtifactForgeTraitBonuses(ref BattleUnitState unit) { }
+0x455B	line 536239	private void ApplyDailyBlessRoleBonuses(ref BattleUnitState unit) { }
+0x455C	line 536236	private void ApplyUnitOnInitTalentBonusesFromNormalized(ref BattleUnitState unit, string[] normalizedTalentIds) { }
+0x455D	line 536446	private void ApplyUnitSynergyBonuses(ref BattleUnitState unit, BattleSimulation.SpawnInitBonusContext context) { }
+0x455E	line 536440	private void ApplyUnitInitSkillBonuses(ref BattleUnitState unit, BattleConfigUnitDefinition definition, int cardLevel, int rareLevel) { }
+0x455F	line 540571	public static bool IsMatch(string value, string unitTypeId, string unitCardId) { }
+0x4560	line 536206	private void ApplyArtifactPassiveBonusesToUnit(ref BattleUnitState unit) { }
+0x4561	line 536413	private void InitializeUnitSkillVariants(ref BattleUnitState unit) { }
+0x4562	line 536416	private void InitializeUnitActiveSkillRuntimeFields(ref BattleUnitState unit) { }
+0x4563	line 536422	private void InitializeUndeadReviveRuntimeFields(ref BattleUnitState unit, BattleSimulation.SpawnInitBonusContext context) { }
+0x4566	line 532497	public static BattleSimulation.DamageSource FromUnitSkill(BattleUnitState unit, string skillId) { }
+0x4567	line 537623	private static bool IsUnitInsideAreaEffect(BattleUnitState unit, BattleUnitAreaEffectState effect) { }
+0x456C	line 537161	private static int[] CopyIntListIfChanged(int[] current, List<int> next) { }
+0x456D	line 252681	|-Array.BinarySearch<int>
+0x456E	line 537158	private static int[] InsertSortedUnique(int[] source, int value) { }
+0x4570	line 537128	private bool PrepareMagneticPullNavigationRecovery(ref BattleUnitState target, int targetIndex) { }
+0x4572	line 538160	private bool TryRetainCooldownCombatTarget(ref BattleUnitState unit, out BattleSimulation.CombatTarget target) { }
+0x4574	line 538199	private bool TryFindCombatTarget(ref BattleUnitState unit, out BattleSimulation.CombatTarget target, out bool targetStateHandled) { }
+0x4575	line 538637	private static void ClearAttackTarget(ref BattleUnitState unit) { }
+0x4576	line 536011	private void ScheduleNextCombatCheck(BattleUnitState unit) { }
+0x4578	line 538289	private bool TryResolveLineBlockingEnemyWallGuardingArchitectureTarget(BattleUnitState unit, int architectureId, FP range, out BattleSimulation.CombatTarget target, out bool blocksArchitecture) { }
+0x4579	line 538661	private void UpdateUnitNavigationTargetForCombatTarget(ref BattleUnitState unit, BattleSimulation.CombatTarget target) { }
+0x457A	line 538376	private void UpdateRoleTargetTracking(ref BattleUnitState unit, BattleSimulation.CombatTarget target) { }
+0x457B	line 538598	private FPVector2 GetCombatTargetPosition(BattleSimulation.CombatTarget target) { }
+0x457D	line 536512	private int GetEffectiveUnitAttackIntervalFrames(BattleUnitState unit) { }
+0x457E	line 538769	private BattleSimulation.UnitAttackActionTiming ResolveConfiguredUnitAttackTiming(BattleUnitState unit, int effectiveIntervalFrames) { }
+0x457F	line 538772	private int GetEffectiveUnitAttackDamageDelayFrames(BattleUnitState unit, int delayFrames, BattleSimulation.UnitAttackActionTiming timing) { }
+0x4580	line 539810	private int ScheduleUnitAttackCallback(ref BattleUnitState unit, BattleSimulation.CombatTarget target, FPVector2 impactPosition, int callbackDelayFrames, int callbackSegmentIndex = 0) { }
+0x4582	line 539819	private int CalculateUnitAttackPresentationImpactFrame(BattleUnitState unit, FPVector2 impactPosition, int callbackDelayFrames) { }
+0x4584	line 539804	private int ScheduleSimpleUnitAttackCallback(BattleUnitState unit, BattleSimulation.CombatTarget target, FPVector2 impactPosition, int callbackDelayFrames, int callbackSegmentIndex = 0) { }
+0x4588	line 538781	private int BeginConfiguredUnitAttackRecovery(ref BattleUnitState unit, BattleSimulation.UnitAttackActionTiming timing) { }
+0x4589	line 539807	private void AddUnitAttackStartedEvent(BattleUnitState unit, BattleSimulation.CombatTarget target, int amount, int presentationImpactFrame, int presentationDurationFrames, long presentationPlaybackSpeedRatioRaw) { }
+0x458C	line 538811	private void ConsumeHelicopterLegacyBezierRandoms(int targetCount) { }
+0x458D	line 538619	private int CalculateHelicopterSkillTravelFrames(FPVector2 source, FPVector2 target) { }
+0x458F	line 535477	private int CalculateDragonKnightExplosionDamage(int attack, long critChanceRaw) { }
+0x4591	line 538844	private void CollectDragonKnightWallColliderIdsInCircle(FPVector2 center, FP radius, int ownerPlayerId, int ownerMode, List<int> ids) { }
+0x4594	line 539585	private string ResolveArchitectureCardFettersTypeCached(BattleArchitectureState architecture) { }
+0x4597	line 536657	public string GetHexOpenBlockReason(int playerId, BattleHexCellState cell, bool requireAffordable) { }
+0x4598	line 539732	private bool SpendGold(int playerId, int amount) { }
+0x459B	line 537257	private bool CommitOpenedHex(int playerId, BattleHexCellState cell, int eventAmount, bool consumeDebugForcedCard, bool claimAdjacentSpecialRewards, out BattleHexCellState openedCell) { }
+0x459D	line 539747	public bool TryApplyDebugGoldCheat(int playerId, int amount) { }
+0x45A0	line 536969	private void ApplyExternalBattleCountdownTimeout() { }
+0x45A2	line 534670	public bool TryApplyDebugArtifactChargeCheat(int playerId, int chargeCount) { }
+0x45A4	line 536173	private void RemoveDebugForceNextBarracksCardState(int playerId, int price) { }
+0x45A5	line 536143	public bool TryApplyDebugForceNextBarracksCardCheat(int playerId, string cardId, int price) { }
+0x45A7	line 536807	private static void AddDebugField(List<BattleDebugField> fields, string name, int value) { }
+0x45A8	line 536810	private static void AddDebugField(List<BattleDebugField> fields, string name, ulong value) { }
+0x45A9	line 536804	private static string FormatHexCoords(BattleHexCoord[] coords) { }
+0x45AA	line 536813	private static void AddDebugField(List<BattleDebugField> fields, string name, string value) { }
+0x45AB	line 536801	private static string FormatArray(Array values) { }
+0x45AC	line 536792	private static void AddDebugObjectFields(List<BattleDebugField> fields, string prefix, object value, int depth) { }
+0x45AD	line 536756	private void AddDebugEconomyEntities(List<BattleDebugEntitySnapshot> entities) { }
+0x45AE	line 536759	private void AddDebugHexCellEntities(List<BattleDebugEntitySnapshot> entities) { }
+0x45AF	line 536762	private void AddDebugOpenedHexEntities(List<BattleDebugEntitySnapshot> entities) { }
+0x45B0	line 536768	private void AddDebugDeadUnitRecordEntities(List<BattleDebugEntitySnapshot> entities) { }
+0x45B1	line 536765	private void AddDebugArchitectureEntities(List<BattleDebugEntitySnapshot> entities) { }
+0x45B2	line 536771	private void AddDebugWallEntities(List<BattleDebugEntitySnapshot> entities) { }
+0x45B3	line 536774	private void AddDebugUnitEntities(List<BattleDebugEntitySnapshot> entities) { }
+0x45B4	line 536780	private void AddDebugUnitAuraEntities(List<BattleDebugEntitySnapshot> entities) { }
+0x45B5	line 536783	private void AddDebugUnitAreaEffectEntities(List<BattleDebugEntitySnapshot> entities) { }
+0x45B6	line 536786	private void AddDebugPendingEntities(List<BattleDebugEntitySnapshot> entities) { }
+0x45B8	line 527147	public void .ctor(int frame, ulong stateHash, BattleDebugField[] fields, BattleDebugEntitySnapshot[] entities) { }
+0x45BB	line 469789	|-List<BattleWallState>.RemoveAt
+0x45BF	line 537776	private void UpdateTargetOccupancyDirtyUnit(int unitId) { }
+0x45C1	line 533223	public void ClearUnits() { }
+0x45C2	line 439573	|-List<BattleSimulation.ActiveStableRef>.get_Item
+0x45C3	line 537794	private bool TryResolveActiveUnit(BattleSimulation.ActiveStableRef unitRef, out int unitIndex, out BattleUnitState unit) { }
+0x45C4	line 530118	internal static bool CanUnitBeSelectedAsNavigationTarget(in BattleUnitState unit) { }
+0x45C5	line 533232	public void AddUnit(BattleSimulation.ActiveStableRef unitRef, BattleHexCoord coord, bool navigationSelectable) { }
+0x45C7	line 533229	public void ClearArchitectures() { }
+0x45C8	line 537800	private bool TryResolveActiveArchitecture(BattleSimulation.ActiveStableRef architectureRef, out int architectureIndex, out BattleArchitectureState architecture) { }
+0x45C9	line 533244	public void AddArchitecture(BattleSimulation.ActiveStableRef architectureRef, BattleHexCoord coord) { }
+0x45CE	line 538355	private bool ShouldRetainLockedUnitTarget(in BattleUnitState unit, in BattleUnitState candidate, FP range, FP distanceSqr) { }
+0x45CF	line 532454	public static BattleSimulation.CombatTarget ForUnit(in BattleUnitState unit, FP distanceSqr) { }
+0x45D1	line 537860	private int ResolveArchitectureIndexById(int stableId) { }
+0x45D2	line 538373	private bool IsTargetHexInLockedRetainBand(in BattleUnitState unit, BattleHexCoord targetHex) { }
+0x45D3	line 537863	private int ResolveWallIndexById(int stableId) { }
+0x45D4	line 538367	private bool IsLockedWallGuardingAliveEnemyArchitectureTarget(in BattleUnitState unit, BattleWallState wall) { }
+0x45D6	line 538361	private bool ShouldRetainLockedWallTarget(in BattleUnitState unit, BattleWallState candidate, FP range, FP distanceSqr) { }
+0x45D7	line 532460	public static BattleSimulation.CombatTarget ForWall(BattleWallState wall, FP distanceSqr) { }
+0x45D9	line 538466	private bool TryFindFirstEnemyWallOnNextNavigationEdge(in BattleUnitState unit, FP range, out BattleSimulation.CombatTarget target, out bool hasBlockingWall) { }
+0x45DE	line 538310	private bool TryFindRetainedLegacyNavigationUnitTarget(in BattleUnitState unit, FP searchRangeSqr, out BattleSimulation.CombatTarget target) { }
+0x45E1	line 537884	private bool TryFindNearestWallBySpatial(in BattleUnitState unit, FP range, out int targetIndex, out FP bestDistance) { }
+0x45E4	line 538511	private void RecyclePathWallEdgeIndexLists() { }
+0x45E5	line 405486	|-Dictionary<BattleSimulation.PathWallEdgeKey, object>.Clear
+0x45E6	line 538508	private void AddPathWallEdgeIndexEntry(int q, int r, int direction, int wallIndex) { }
+0x45E8	line 385419	|-Dictionary.ValueCollection.Enumerator<BattleSimulation.PathWallEdgeKey, object>.MoveNext
+0x45F3	line 537899	private void CollectUnitIdsInSegmentCapsule(FPVector2 start, FPVector2 end, FP queryRadius, int ownerPlayerId, int ownerMode, BattleSimulation.UnitStealthFilter stealthFilter, int excludedUnitId, List<int> ids) { }
+0x45F4	line 1114995	public static FP SqrDistancePointSegment(FPVector2 p, FPVector2 a, FPVector2 b) { }
+0x45F5	line 537902	private void CollectArchitectureIdsInSegmentCapsule(FPVector2 start, FPVector2 end, FP queryRadius, int ownerPlayerId, int ownerMode, List<int> ids) { }
+0x45F6	line 537905	private void CollectWallIdsInSegmentCapsule(FPVector2 start, FPVector2 end, FP queryRadius, int ownerPlayerId, int ownerMode, List<int> ids) { }
+0x45FA	line 539141	private int CalculateCavalryChargeDamage(int baseDamage, long critChanceRaw) { }
+0x45FE	line 539168	private int CalculateEliteCavalryLegacyCritDamage(int baseDamage, long critChanceRaw) { }
+0x88F0	line 47557	public string get_BattleCoreAuthorityHexType() { }
+0x88F1	line 47560	public string GetSceneViewHexContentDebugText() { }
+0x88F2	line 47563	public string GetSceneViewHexContentDebugText(GlobalInfo globalInfo) { }
+0x88F3	line 47566	public string GetSceneViewHiddenRareDebugText(GlobalInfo globalInfo) { }
+0x88F4	line 47569	private string ResolveSceneOverlayArchitectureRareText(string architectureId, GlobalInfo globalInfo) { }
+0x88F5	line 47572	private string ResolveSceneOverlayArchitectureText(string architectureId, GlobalInfo globalInfo) { }
+0x88F6	line 47575	private bool TryResolveSceneOverlayHeroCardInfo(string architectureId, GlobalInfo globalInfo, out GlobalHeroCardInfo cardInfo) { }
+0x88F7	line 47578	private bool TryResolveSceneOverlayHeroCardInfoByCardId(string cardId, GlobalInfo globalInfo, out GlobalHeroCardInfo cardInfo) { }
+0x88F8	line 47581	private bool TryResolveSceneOverlayArchitectureInfo(string architectureId, GlobalInfo globalInfo, out GlobalArchitectureInfo architectureInfo) { }
+0x88F9	line 47584	private static GlobalInfo ResolveSceneOverlayGlobalInfo() { }
+0x88FA	line 47587	private static bool IsSceneOverlayUnCharted(string hexTypeText) { }
+0x88FB	line 47590	public bool TryGetBattleCoreAuthorityContentHash(out ulong contentHash) { }
+0x88FC	line 47593	public void ApplyBattleCoreAuthoritativeCellState(BattleHexCellState cell) { }
+0x88FD	line 47599	private void SyncBattleCoreAuthoritativeHexMaterial(bool targetIsEnemyHex) { }
+0x88FE	line 47602	private void SyncBattleCoreAuthoritativeHexOwnershipLists(bool targetIsEnemyHex, bool targetIsOpened) { }
+0x88FF	line 47608	private void RefreshBattleCoreAuthoritativeCellPresentation() { }
+0x8900	line 47611	private void RefreshBattleCoreAuthoritativeHexPromptPresentation() { }
+0x8901	line 47614	private bool ShouldShowBattleCoreAuthoritativeOpponentPrompt() { }
+0x8902	line 47617	private void RefreshBattleCoreAuthoritativeEnemyHexUI(bool shouldShowOpponentPrompt) { }
+0x8903	line 47620	private void CreateBattleCoreEnemyHexUIObj(bool active) { }
+0x8904	line 47624	private UniTaskVoid LoadBattleCoreEnemyHexUIResAndRefreshAsync() { }
+0x8905	line 47630	private void HideBattleCoreAuthoritativeUiByVisibility() { }
+0x8906	line 47633	private void OnBecameVisible() { }
+0x8907	line 47636	private void OnBecameInvisible() { }
+0x8908	line 47639	private bool ShouldShowBattleCoreAuthoritativeLocalPrompt() { }
+0x8909	line 47642	private bool IsBattleCoreLocalPlayerSideHex() { }
+0x890A	line 47645	private bool ShouldUseBattleCoreAuthoritativeHexUIRefresh() { }
+0x890B	line 47648	private bool ShouldShowPriceUIPresentation() { }
+0x890C	line 47651	private void SyncBattleCoreAuthoritativePresentationFields() { }
+0x890D	line 47654	private void ReconcileBattleCoreSpecialHexPresentation(BattleHexCellState cell) { }
+0x890E	line 47657	private static bool TryResolveBattleCoreSpecialHexType(string hexType, out SpecialHexType specialType) { }
+0x890F	line 47660	private void ClearBattleCoreSpecialHexPresentation() { }
+0x8910	line 47663	private bool TryDeferBattleCoreResourceBoxClearForRewardPresentation() { }
+0x8911	line 47666	private void DestroyBattleCoreSpecialHexObjects() { }
+0x8912	line 47672	private static void DestroyBattleCoreSpecialObject(GameObject obj) { }
+0x8913	line 47676	private void CreateBattleCoreSpecialHexPresentationAsync(SpecialHexType specialType, string architectureId, ulong contentHash, string signature, int requestVersion) { }
+0x8914	line 47703	private static bool ShouldBlockBattleCoreLegacyHexAsyncAuthority(string source) { }
+0x8915	line 47706	private static bool ShouldBlockBattleCoreLegacySpecialHexOpenAuthority(string source) { }
+0x8916	line 47709	private static bool ShouldBlockBattleCoreLegacyArchitectureDeathHexAuthority(string source) { }
+0x8917	line 47712	private bool ShouldBlockBattleCoreLegacyHexCampMutation() { }
+0x8918	line 47715	public void RefreshBattleCoreAuthoritativeCellPresentationAfterBatch() { }
+0x8919	line 47718	internal static void MarkBattleCoreAuthoritativeVisibilityRefreshDirty() { }
+0x891A	line 47721	internal static void FlushBattleCoreAuthoritativeVisibilityRefreshBudgeted(int budget = 32) { }
+0x891B	line 47724	private void RegisterBattleCoreVisibilityDeferredRefresh() { }
+0x891C	line 47727	private void UnregisterBattleCoreVisibilityDeferredRefresh() { }
+0x891D	line 47730	private static void RemoveBattleCoreVisibilityDeferredHexAt(int index) { }
+0x891E	line 47733	private bool HasShowIconPresentation() { }
+0x891F	line 47736	private Quality ResolveBattleCorePresentationQuality() { }
+0x8920	line 47739	private bool IsBattleCoreAuthorityUnCharted() { }
+0x8921	line 47742	public HexBehaviour.HexPromptDisplayInfo GetCurrentPromptDisplayInfo() { }
+0x8922	line 47745	public HexBehaviour.HexPromptVisibilityInfo GetCurrentPromptVisibilityInfo() { }
+0x8923	line 47748	private bool IsGoldMineHexPromptTarget() { }
+0x8924	line 47754	private void ApplyHexPromptVisibility(HexBehaviour.HexPromptVisibilityInfo visibilityInfo) { }
+0x8925	line 47757	private void ApplyHexPromptVisibility(bool showPrice, bool showIcon, bool showEnemyPrompt) { }
+0x8DF0	line 55827	internal void OnArtifactAIReleased() { }
+0x8DF1	line 55830	private void SendEmojis() { }
+0x8DF2	line 55834	private void PlayerSendEmoji(object o) { }
+0x8DF3	line 55837	private void EnemyOpenHex(bool isHard) { }
+0x8DF4	line 55840	private static void CollectAuthoritativeOpenableEnemyHexes(IReadOnlyList<HexBehaviour> sceneEnemyHexes, BattleHexCellState[] authoritativeOpenableHexes, List<HexBehaviour> result) { }
+0x8DF5	line 55843	private void Development(bool isHard, List<HexBehaviour> resourcesHex, List<HexBehaviour> unchartedHex, List<HexBehaviour> barracksHex, List<HexBehaviour> enemyCanOpenObj) { }
+0x8DF6	line 55846	private void Gambling(bool isHard, List<HexBehaviour> resourcesHex, List<HexBehaviour> unchartedHex, List<HexBehaviour> barracksHex, List<HexBehaviour> enemyCanOpenObj) { }
+0x8DF7	line 55849	private void Offense(bool isHard, List<HexBehaviour> resourcesHex, List<HexBehaviour> unchartedHex, List<HexBehaviour> barracksHex, List<HexBehaviour> enemyCanOpenObj) { }
+0x8DF8	line 55852	private void TrySubmitOrOpenEnemyHex(HexBehaviour hex, bool isHard) { }
+0x8DF9	line 55858	private HexBehaviour TryOpenHex(List<HexBehaviour> preferredHexes, List<HexBehaviour> fallbackHexes, int hasCoin, bool unchartedPreferRandom = False, bool unchartedfallbackRandom = False) { }
+0x8DFA	line 55861	private static HexBehaviour FindAffordableAuthoritativeSpecialNearHex(IReadOnlyList<HexBehaviour> specialNearHexes, List<HexBehaviour> preferredHexes, List<HexBehaviour> fallbackHexes, int availableGold) { }
+0x8DFB	line 55864	public PropAttrSnapshot GetCurrentEnemyPropAttrSnapshot() { }
+0x8DFC	line 55867	public IReadOnlyList<EnemyPropBattleEntry> GetCurrentEnemyPropDataList() { }
+0x8DFD	line 55870	public BattlePowerSideInput BuildEnemyBattlePowerSideInput() { }
+0x8DFE	line 55873	public bool TryGetEnemyPropEntry(string infoId, out int level, out int startLevel) { }
+0x8DFF	line 55876	private void ApplyEnemyPropBattleData(EnemyBattleDataCofig enemyBattleData, GameType gameType) { }
+0x8E00	line 55879	internal void ApplyBattleCoreEnemyArtifactLoadout(EnemyBattleDataCofig enemyBattleData, PlayerBattleLoadout enemyLoadout) { }
+0x8E01	line 55882	private static List<EnemyPropBattleEntry> CreateEnemyPropEntriesFromLoadout(PlayerBattleLoadout loadout) { }
+0x8E02	line 55885	private static void AddEnemyPropEntries(List<EnemyPropBattleEntry> entries, HashSet<string> seenIds, BattleLoadoutArtifact[] artifacts) { }
+0x8E03	line 55888	private static List<EnemyPropBattleEntry> CloneEnemyPropEntries(List<EnemyPropBattleEntry> source) { }
+0x8E04	line 55891	private static PropAttrSnapshot CreatePropAttrSnapshotFromBattleCoreBonuses(BattleLoadoutArtifactPassiveBonus[] bonuses) { }
+0x8E05	line 55894	private static string PickEnemyBattleCoreEquipPropId(int propRareNum) { }
+0x8F20	line 58476	public int get_AllHexCount() { }
+0x8F21	line 58480	public override UniTask Init() { }
+0x8F22	line 58489	public bool TryGetBattleCoreEconomyState(int playerId, out BattlePlayerEconomyState state) { }
+0x8F23	line 58492	public bool TryGetOfflinePveEnemyOpenableHexStates(out BattleHexCellState[] openableHexes) { }
+0x8F24	line 58495	public bool TryGetBattleCoreArtifactCooldownRemainingFrames(int playerId, out int remainingFrames) { }
+0x8F25	line 58498	public BattleLockstepSession get_BattleCoreLockstepSession() { }
+0x8F26	line 58501	public bool TryGetBattleCoreUnitSkillParameterRaw(string unitTypeId, string parameterKey, out long valueRaw) { }
+0x8F27	line 58507	public bool IsBattleCoreLocalPlayer(int playerId) { }
+0x8F28	line 58510	public static bool IsBattleCorePlayerSideHex(int playerId, bool isEnemyHex) { }
+0x8F29	line 58513	public bool IsBattleCoreLocalPlayerSideHex(HexBehaviour hex) { }
+0x8F2A	line 58516	public void RecordMainTowerPresentationPosition(bool isEnemyTower, Vector3 position) { }
+0x8F2B	line 58525	public bool TryGetBattleCoreOpponentMainTowerPosition(out Vector3 position) { }
+0x8F2C	line 58528	private bool TryGetBattleCorePlayerMainTowerPosition(int playerId, out Vector3 position) { }
+0x8F2D	line 58531	private bool TryResolveMainTowerHexPosition(string mainTowerKey, bool isEnemyTower, out Vector3 position) { }
+0x8F2E	line 58537	public static float ResolveBattleCoreLocalPlayerCameraOffsetZ(int localPlayerId, float playerOneOffsetZ) { }
+0x8F2F	line 58540	public bool TryGetBattleCoreLocalEconomyState(out BattlePlayerEconomyState state) { }
+0x8F30	line 58546	public int GetBattleCoreOpponentPlayerId() { }
+0x8F31	line 58549	public static int GetBattleCoreOpponentPlayerId(int playerId) { }
+0x8F32	line 58552	public bool TryGetBattleCoreOpponentEconomyState(out BattlePlayerEconomyState state) { }
+0x8F33	line 58555	private static bool TryFindBattleCoreEconomyState(BattleSnapshot snapshot, int playerId, out BattlePlayerEconomyState state) { }
+0x8F34	line 58558	public bool TryGetBattleCorePlayerLoadout(int playerId, out PlayerBattleLoadout loadout) { }
+0x8F35	line 58561	public bool TryGetBattleCoreCurrentFrameForAutomation(out int frame) { }
+0xF490	line 537236	private void ApplyHeadlessFogCorrection(BattleSimulation.PendingUnitProjectileAreaSkillState pending) { }
+0xF491	line 537239	private void ApplyHeadlessFogImpact(BattleSimulation.PendingUnitProjectileAreaSkillState pending) { }
+0xF492	line 537242	private void ApplyMechanicalDinoWindup(BattleSimulation.PendingUnitProjectileAreaSkillState pending) { }
+0xF493	line 537245	private void RestoreNewHeroCaster(BattleSimulation.PendingUnitProjectileAreaSkillState pending) { }
+0xF494	line 537251	private bool IsFriendlyAliveArchitectureTarget(int playerId, BattleHexCoord targetHex) { }
+0xF495	line 537260	private void ResolveOpenedHexOutcome(int playerId, BattleHexCellState cell, bool debugForceNextBarracksCard, BattleSimulation.SelectedCard debugForcedCard) { }
+0xF496	line 537263	private bool TryClaimResourceBoxReward(int playerId, BattleHexCellState cell) { }
+0xF497	line 537266	private void TryClaimAdjacentSpecialHexRewards(int playerId, BattleHexCellState openedCell) { }
+0xF498	line 537269	private bool IsClaimableAdjacentSpecialHex(BattleHexCellState cell) { }
+0xF499	line 537272	private bool ClaimAdjacentSpecialHexReward(int playerId, BattleHexCellState cell) { }
+0xF49A	line 537275	private bool ClaimAdjacentResourceBoxReward(int playerId, BattleHexCellState cell) { }
+0xF49B	line 537278	private bool ClaimAdjacentSpecialSoldierReward(int playerId, BattleHexCellState cell) { }
+0xF49C	line 537281	private bool ClaimAdjacentGoldCardBuild(int playerId, BattleHexCellState cell) { }
+0xF49D	line 537284	private void OpenAdjacentSpecialHex(int playerId, BattleHexCellState cell, string eventArchitectureId) { }
+0xF49E	line 537287	private static bool TryResolveResourceBoxReward(BattleHexCellState cell, out int rewardGold, out string rewardId) { }
+0xF49F	line 537290	private static bool IsResourceBoxHex(BattleHexCellState cell) { }
+0xF4A0	line 537293	private static string NormalizeResourceBoxRewardId(string rawId) { }
+0xF4A1	line 537296	private static string ResolveResourceBoxRewardIdFromHash(ulong contentHash) { }
+0xF4A2	line 537299	private bool TryClaimSpecialSoldierReward(int playerId, BattleHexCellState cell) { }
+0xF4A3	line 537302	private static bool IsSpecialSoldierHex(BattleHexCellState cell) { }
+0xF4A4	line 537305	private BattleSimulation.SelectedCard CreateSpecialSoldierSelectedCard(int playerId) { }
+0xF4A5	line 537308	private bool TryClaimGoldCardBuild(int playerId, BattleHexCellState cell) { }
+0xF4A6	line 537311	private bool IsGoldCardBuildHex(BattleHexCellState cell) { }
+0xF4A7	line 537314	private BattleSimulation.SelectedCard SelectGoldCardBuildCard(int playerId, BattleHexCellState cell) { }
+0xF4A8	line 537326	private void ProcessDueArchitectureTick(int architectureIndex, BattleArchitectureState architecture) { }
+0xF4A9	line 537332	private static void TrackArchitectureDueFrame(int dueFrame, ref int nextDueFrame) { }
+0xF4AA	line 537338	private BattleSimulation.ArchitectureTickQueueEntry PopArchitectureTickQueue() { }
+0xF4AB	line 537341	private static int CompareArchitectureTickQueueEntry(BattleSimulation.ArchitectureTickQueueEntry a, BattleSimulation.ArchitectureTickQueueEntry b) { }
+0xF4AC	line 537344	private int GetBarracksSpawnDelayFrames() { }
+0xF4AD	line 537353	private static bool ShouldSpawnExpiredTemporarySummonAsPermanent(BattleSimulation.PendingSummonState pending) { }
+0xF4AE	line 537356	private bool IsPendingSummonSourceAliveAtRequiredFrame(BattleSimulation.PendingSummonState pending) { }
+0xF4AF	line 537359	private void CreateArchitecture(int playerId, BattleHexCellState cell, BattleSimulation.SelectedCard selectedCard, BattleConfigArchitectureDefinition definition) { }
+0xF4B0	line 537362	private void ApplyGuidedGameBarracksSpawnOverride(string architectureType, string spawnUnitTypeId, ref int interval) { }
+0xF4B1	line 537365	private void CreateInitialMainTowerArchitectures(BattleHexCellState[] cells) { }
+0xF4B2	line 537368	private static bool TryFindMainTowerCell(BattleHexCellState[] cells, bool playerTower, out BattleHexCellState cell) { }
+0xF4B3	line 537371	private void CreateInitialMainTowerArchitecture(int playerId, BattleHexCellState cell) { }
+0xF4B4	line 537374	private BattleLoadoutMainTower ResolveMainTowerLoadout(int playerId) { }
+0xF4B5	line 537377	private BattleConfigMainTowerDefinition ResolveMainTowerDefinition(string mainTowerId) { }
