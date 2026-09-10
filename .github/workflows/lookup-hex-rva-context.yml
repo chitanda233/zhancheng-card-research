@@ -16,13 +16,18 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
-      - name: Extract relevant RVA method names
+      - name: Extract method names and cell layout
         run: |
+          set -euo pipefail
+          OUT=outputs/hex-openable-reverse
+          DUMP='research/archive/2026-09-03/reverse-engineering/dump.cs'
+          SRC='research/archive/2026-09-03/unpacked/_wasmcode_/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br'
+          WASM=/tmp/current.wasm
+          mkdir -p "$OUT"
           python3 - <<'PY'
           import re
           from pathlib import Path
           src=Path('research/archive/2026-09-03/reverse-engineering/dump.cs')
-          out=Path('outputs/hex-openable-reverse/rva-method-contexts.txt')
           lines=src.read_text(encoding='utf-8',errors='replace').splitlines()
           ranges=[(0x4200,0x4600),(0x88f0,0x8925),(0x8df0,0x8e05),(0x8f20,0x8f35),(0xf490,0xf4b5)]
           rows=[]
@@ -34,22 +39,100 @@ jobs:
               sig=''
               for j in range(i+1,min(i+5,len(lines))):
                   t=lines[j].strip()
-                  if t and not t.startswith('//') and not t.startswith('['):
-                      sig=t; break
+                  if t and not t.startswith('//') and not t.startswith('['): sig=t; break
               rows.append((rva,i+1,sig))
-          out.parent.mkdir(parents=True,exist_ok=True)
+          out=Path('outputs/hex-openable-reverse/rva-method-contexts.txt')
           with out.open('w',encoding='utf-8') as f:
               f.write('# Relevant RVA -> method signatures from dump.cs\n')
-              for rva,ln,sig in sorted(rows):
-                  f.write(f'0x{rva:04X}\tline {ln}\t{sig}\n')
-          print('rows',len(rows))
+              for rva,ln,sig in sorted(rows): f.write(f'0x{rva:04X}\tline {ln}\t{sig}\n')
+
+          # Find every type declaration containing BattleHexCellState and retain the most relevant blocks.
+          hits=[]
+          for i,line in enumerate(lines):
+              if re.search(r'\b(class|struct)\s+BattleHexCellState\b',line): hits.append(i)
+          out2=Path('outputs/hex-openable-reverse/battle-hex-cell-state-layout.txt')
+          with out2.open('w',encoding='utf-8') as f:
+              f.write('# BattleHexCellState declarations / nearby fields\n')
+              f.write(f'hits={hits}\n\n')
+              for i in hits:
+                  f.write(f'===== around source line {i+1} =====\n')
+                  for j in range(max(0,i-10),min(len(lines),i+140)):
+                      f.write(f'{j+1}: {lines[j]}\n')
+                  f.write('\n')
           PY
+
+          node - "$SRC" "$WASM" <<'NODE'
+          const fs=require('fs'), z=require('zlib');
+          const [src,dst]=process.argv.slice(2); fs.writeFileSync(dst,z.brotliDecompressSync(fs.readFileSync(src)));
+          NODE
+
+          python3 - "$WASM" "$OUT/extended-target-map.txt" <<'PY'
+          import sys
+          b=open(sys.argv[1],'rb').read()
+          def uleb(p):
+              v=s=0
+              while True:
+                  x=b[p];p+=1;v|=(x&127)<<s
+                  if x<128:return v,p
+                  s+=7
+          def sleb(p):
+              v=s=0
+              while True:
+                  x=b[p];p+=1;v|=(x&127)<<s;s+=7
+                  if x<128:
+                      if s<32 and x&64:v|=-(1<<s)
+                      return v,p
+          p=8
+          while p<len(b):
+              sid=b[p];p+=1;n,p=uleb(p);end=p+n
+              if sid==9:break
+              p=end
+          segs,p=uleb(p); mapping={}
+          for _ in range(segs):
+              flags,p=uleb(p); assert flags==0 and b[p]==0x41; p+=1
+              off,p=sleb(p); assert b[p]==0x0b;p+=1
+              n,p=uleb(p)
+              for i in range(n):fn,p=uleb(p);mapping[off+i]=fn
+          targets=[0x42C4,0x42EE,0x42EF,0x43AD,0x43B2,0x43B3,0x43B5,0x43B7,0x4534,0x4597,0x4598,0x4599,0x459A,0x459B,0x88FC,0x88FF,0x8900,0x8918,0x8919,0x891A,0xF495,0xF497,0xF498]
+          with open(sys.argv[2],'w') as f:
+              for x in targets:f.write(f'0x{x:04X}\tfunc[{mapping.get(x)}]\n')
+              inv={}
+              for rva,fn in mapping.items():inv.setdefault(fn,[]).append(rva)
+              f.write('\n# inverse for key callees\n')
+              for fn in [11720,9275,1124,23025,23026,23038,23060,11118,11121,11123]:
+                  vals=inv.get(fn,[])
+                  f.write(f'func[{fn}]\t'+','.join(f'0x{x:04X}' for x in vals[:40])+'\n')
+          PY
+
+          wasm-objdump -d "$WASM" > /tmp/current.objdump
+          python3 - /tmp/current.objdump "$OUT/extended-target-map.txt" "$OUT/openable-gate.objdump" <<'PY'
+          import re,sys
+          dis,mf,out=sys.argv[1:4]
+          wanted=set()
+          for line in open(mf):
+              if line.startswith(('0x4597','0x43B2','0x43B3','0x43B5','0x43B7')):
+                  m=re.search(r'func\[(\d+)\]',line)
+                  if m:wanted.add(int(m.group(1)))
+          chunks={};cur=None;buf=[]
+          def flush():
+              if cur is not None:chunks[cur]=buf.copy()
+          for line in open(dis,errors='replace'):
+              m=re.search(r'func\[(\d+)\]',line)
+              if m and line.rstrip().endswith(':'):
+                  flush();cur=int(m.group(1));buf=[line]
+              elif cur is not None:buf.append(line)
+          flush()
+          with open(out,'w') as o:
+              for fn in sorted(wanted):
+                  o.write(f'\n===== func[{fn}] =====\n');o.writelines(chunks.get(fn,[]))
+          PY
+          rm -f "$WASM" /tmp/current.objdump
       - name: Commit mapping
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add outputs/hex-openable-reverse/rva-method-contexts.txt
+          git add outputs/hex-openable-reverse
           if ! git diff --cached --quiet; then
-            git commit -m 'research: add hex rva method map'
+            git commit -m 'research: recover openable gate and cell layout'
             git push
           fi
