@@ -45,10 +45,13 @@ jobs:
         shell: bash
         run: |
           test -s docs/reports/matching/index.html
+          test -s docs/reports/matching/bot.html
           test -s docs/reports/matching/report.md
           grep -q '2200 分' docs/reports/matching/index.html
           grep -q '第 5 次连续失败' docs/reports/matching/index.html
-          grep -q '匹配层与体验调节层必须分开' docs/reports/matching/index.html
+          grep -q '与机器人配置页的边界' docs/reports/matching/index.html
+          grep -q '机器人配置详表' docs/reports/matching/index.html
+          grep -q '机器人配置详表' docs/reports/matching/bot.html
 
       - name: Commit generated files
         shell: bash
