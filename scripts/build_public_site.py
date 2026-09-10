@@ -139,8 +139,8 @@ index = '''<!doctype html>
 <a class="card" href="reports/cards/index.html"><span class="num">03 / CARDS</span><h3>全卡牌图鉴</h3><p>54张配置记录、43张启用卡、等级计算、技能关联、筛选和 Excel 数据。</p><b>打开图鉴 →</b></a>
 <a class="card" href="reports/journey/index.html"><span class="num">04 / JOURNEY</span><h3>新手全路径</h3><p>训练、首局、成长、开箱、领地、神器、赛季与回访，含ID悬浮说明。</p><b>打开路径报告 →</b></a>
 <a class="card" href="reports/chests/index.html"><span class="num">05 / CHESTS</span><h3>宝箱获取与奖励</h3><p>全部8种宝箱价格、获取入口、奖励内容，以及竞技场掉落概率、计时和加速规则。</p><b>打开宝箱研究 →</b></a>
-<a class="card" href="reports/hex-random/index.html"><span class="num">06 / HEX RANDOMNESS</span><h3>地块生成与兵种随机</h3><p>开局隐藏内容、具体兵种抽取、标签权重、低价重抽和祝福保底，含概率试算。</p><b>打开随机机制复核 →</b></a>
-<a class="card" href="reports/matching/index.html"><span class="num">07 / MATCHING</span><h3>匹配与机器人完整配置</h3><p>段位候选池、分差窗口、难度档和玩家体验调节。</p><b>打开匹配专题页 →</b></a>
+<a class="card" href="reports/hex-random/index.html"><span class="num">06 / HEX RANDOMNESS</span><h3>地块生成与兵种随机</h3><p>开局预生成、邻格显现时点、SSSR一次性标签加权、低价重抽与祝福，含概率试算。</p><b>打开随机机制复核 →</b></a>
+<a class="card" href="reports/matching/index.html"><span class="num">07 / MATCHING</span><h3>匹配与机器人介入</h3><p>真人分差窗口、Bot介入参数、段位候选池与玩家状态；具体机器人配置独立维护。</p><b>打开匹配专题页 →</b></a>
 <a class="card" href="reports/matching/bot.html"><span class="num">08 / BOTS</span><h3>机器人配置详表</h3><p>86套逐卡等级与技能、神器、主城、标签和 AI 行为。</p><b>打开机器人详表 →</b></a>
 </section><section class="info"><div><h3>阅读口径</h3><p>静态配置不等于线上实时开关；教程ID只证明局部连接，不按编号大小推定播放顺序；未启用资源不代表已经上线。</p></div><div><h3>数据下载</h3><ul><li><a href="reports/cards/cards.xlsx">卡牌资料 Excel</a></li><li><a href="reports/cards/cards-data.json">卡牌 JSON</a></li><li><a href="reports/journey/journey-nodes.csv">新手节点 CSV</a></li><li><a href="reports/journey/tutorial-graph.json">教程图 JSON</a></li><li><a href="manifest.json">发布文件校验清单</a></li></ul></div></section></main></body></html>'''
 write(DOCS / 'index.html', index)

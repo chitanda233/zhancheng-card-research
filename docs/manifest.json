@@ -1,6 +1,6 @@
 {
   "title": "占城大师研究资料库发布清单",
-  "generatedAt": "2026-09-10T10:00:32+00:00",
+  "generatedAt": "2026-09-10T10:12:01+00:00",
   "snapshot": "2026-09-03",
   "files": [
     {
@@ -10,8 +10,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 5187,
-      "sha256": "aa071f935bbd27b9423b6e2c0679b50e58bd3e23b6696169ae0541c0aaf109ec"
+      "bytes": 5227,
+      "sha256": "bdfc44372b399ff1b6b9d5924f0bff29ca3244f5d419c87ed4dd25976ecef665"
     },
     {
       "path": "reports/battle/battle-rules-data.json",
@@ -20,18 +20,18 @@
     },
     {
       "path": "reports/battle/index.html",
-      "bytes": 77561,
-      "sha256": "87a8041422fee63504d8a2d0947479d04db90e58c6685d34627ca53f0d50255b"
+      "bytes": 76281,
+      "sha256": "0d09ad6daf5b2398784f83cb444158d256dbbab54f7eafeb9dffafdf65b67378"
     },
     {
       "path": "reports/battle/report.md",
-      "bytes": 28929,
-      "sha256": "36b63b869ac7867b220f980ac0cf9ef8b6ee22b9f7e1b287dbc3a6cb5e530ddd"
+      "bytes": 28477,
+      "sha256": "eb54dde74fdafe10c9b0d759b2e87e4db85d0117121d7832f19f7536b3737c8f"
     },
     {
       "path": "reports/battle/verification.json",
-      "bytes": 1866,
-      "sha256": "b8b9145e3256804a994d6a8b2c83cedadbe4166c67b60ac79eb5c0f22836be92"
+      "bytes": 1363,
+      "sha256": "a9b29beac53982cbf15dd007b79ca9be40fc8c3c7a1728b5bfab9b19147b074b"
     },
     {
       "path": "reports/cards/cards-data.json",
@@ -140,8 +140,8 @@
     },
     {
       "path": "reports/matching/index.html",
-      "bytes": 737121,
-      "sha256": "3df5e05fa836ddcb38242f1c4176527882e65e50bd90ef240e5436e4a1548c24"
+      "bytes": 737666,
+      "sha256": "5f476bc67e3e18cbee5148a5058a6b9c664e4dc4616e05a2bffdfeacd0466ce6"
     },
     {
       "path": "reports/matching/matching-data.json",
@@ -150,23 +150,23 @@
     },
     {
       "path": "reports/matching/report.md",
-      "bytes": 247750,
-      "sha256": "a8a20d41367ac06a294a7a99a0f4f4ba7fe60060cb372a25febe695fafce81a1"
+      "bytes": 248295,
+      "sha256": "2a2e429f1bd9c60e665a425b0077f51f5d29b003201f06717f2d30598472d274"
     },
     {
       "path": "reports/system/evidence.json",
       "bytes": 36270,
-      "sha256": "1f47bf6bc1647a4c60e31f547e0c9354bd87479e7e285db6bc90519a2d0680d2"
+      "sha256": "2f75c889ba5df1c23126de7145db4a7ad27371cbbd967563b990d105b61aff33"
     },
     {
       "path": "reports/system/index.html",
-      "bytes": 103537,
-      "sha256": "81b0d2509abfef9bc1a4e9b5307c5707ecd7c0590a4992c513de4a6d1bda8a97"
+      "bytes": 104029,
+      "sha256": "f4f92af37eb644a89541b0519a8c70ffe0ef7a105cb73a69106612f5852d65d1"
     },
     {
       "path": "reports/system/report.md",
-      "bytes": 79445,
-      "sha256": "c16436c7d57c0ab20a3da0642389347b1332273e64462073d5485d5e84aae717"
+      "bytes": 79926,
+      "sha256": "97e0129f92e5608da3aeca9fb0bc50d4c85ae5e32431f3fb329190f32af6f95b"
     },
     {
       "path": "tables/AIPropInfoConfig.json",

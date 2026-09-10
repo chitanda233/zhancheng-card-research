@@ -12,18 +12,18 @@
   "files": [
     {
       "file": "index.html",
-      "bytes": 78601,
-      "sha256": "b2da675563b6dce92e4a14e57e77d2ac33d0e02fc623fd0a16da58091c1e8139"
+      "bytes": 76281,
+      "sha256": "0d09ad6daf5b2398784f83cb444158d256dbbab54f7eafeb9dffafdf65b67378"
     },
     {
       "file": "report.md",
-      "bytes": 29274,
-      "sha256": "82c07148a33ba8185a2c4625e2845747d3ed69405cbd0b3a27a50a2f35144a57"
+      "bytes": 28477,
+      "sha256": "eb54dde74fdafe10c9b0d759b2e87e4db85d0117121d7832f19f7536b3737c8f"
     },
     {
       "file": "battle-rules-data.json",
-      "bytes": 1016249,
-      "sha256": "bc6d16de2b8c73abc1ad00a5d3b5bfb9bb0de2fd68e9e13ee556a90cd9a81128"
+      "bytes": 1011832,
+      "sha256": "876bcfd503271dae59b1ee6cdf56e6f69e1de345b13d5f643cc94bc8b2cf819d"
     }
   ],
   "warnings": [
@@ -33,24 +33,5 @@
     "PVP地图池的等权概率只适用于同一层级已进入候选池的记录；首局地图另有固定ID。",
     "机器人预设存在不代表所有普通竞技场或赛季对局都是机器人。",
     "旧神器30秒/每局一次规则不与新版翻格充能规则叠加。"
-  ],
-  "uiQA": {
-    "passed": true,
-    "checks": [
-      "2大内容模块+证据附录",
-      "24个分节目录",
-      "20档竞技场切换",
-      "190条多边形记录分析",
-      "132条PVP地图候选分析",
-      "具体卡牌候选链",
-      "WASM等概率抽取函数",
-      "前三次低价重抽阈值与候选池",
-      "账号标签概率加成",
-      "概率修改器与保底",
-      "ID悬浮说明",
-      "Escape关闭",
-      "390px响应式"
-    ],
-    "pageErrors": []
-  }
+  ]
 }

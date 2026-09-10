@@ -19,7 +19,9 @@ zhancheng-card-research/
 │  │  ├─ battle/                 # 局内战斗规则
 │  │  ├─ cards/                  # 卡牌图鉴、数据和 Excel
 │  │  ├─ chests/                 # 全部宝箱价格、来源、奖励与代码证据
-│  │  ├─ hex-random/             # 地块生成、兵种随机与控制机制复核
+│  │  ├─ hex-random/             # 地块生成、兵种随机与控制机制复核（随机机制权威页）
+│  │  ├─ matching/               # 匹配、Bot介入与玩家状态
+│  │  │  └─ bot.html             # 86套机器人详细配置与AI行为
 │  │  └─ journey/                # 新手全路径与教程图
 │  ├─ tables/                    # 报告实际引用的公开配置子集
 │  └─ manifest.json              # 发布文件校验清单
@@ -48,6 +50,8 @@ node scripts/test_public_site.cjs
 更新宝箱研究时，先运行 `python scripts/build_chest_report.py`，再执行上述发布整理与检查。其内容基于配置和已审阅的WASM取证，网站入口为 `reports/chests/`。
 
 更新地块随机专题时，编辑 `scripts/hex_random_report.md`，运行 `python scripts/build_hex_random_report.py`，再发布整理并执行 `node scripts/test_hex_random.cjs`。生成器复用已生成的宝箱报告样式；首次重建先生成宝箱报告。
+
+跨专题维护采用单一归属：**地块档位、隐藏内容、SSSR权重、标签消费、低价重抽和祝福统一以 `hex-random` 为权威页；匹配页只维护真人/Bot选择与玩家状态来源；机器人详细载荷与AI只在 `matching/bot.html`；战斗页和全系统页只保留摘要与链接。** CI 会先执行 `scripts/reconcile_report_sources.py`，再重建相关报告，防止旧结论重新进入发布页。
 
 生成器会：
 

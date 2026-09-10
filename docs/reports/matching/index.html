@@ -408,12 +408,12 @@
 <tr>
 <td>JustPaidUser</td>
 <td>付费回调置位，Buff 加到最多 5；结算链逐次扣减</td>
-<td>本方传说候选权重 +10；适用 AI 分支开格间隔 +5 秒</td>
+<td>本局用户标签 SSSR 权重 +10（消费位尚未使用时）；适用 AI 分支开格间隔 +5 秒</td>
 </tr>
 <tr>
 <td>InactiveUser</td>
 <td>离线超过 1 天；Buff 补到 2</td>
-<td>本方传说候选权重 +30；适用 AI 分支开格间隔 +5 秒</td>
+<td>本局用户标签 SSSR 权重 +30（消费位尚未使用时）；适用 AI 分支开格间隔 +5 秒</td>
 </tr>
 <tr>
 <td>FirstMatchUser</td>
@@ -423,16 +423,16 @@
 <tr>
 <td>LosingStreak</td>
 <td>第 5 次连续失败触发</td>
-<td>本方传说候选权重 +50</td>
+<td>本局用户标签 SSSR 权重 +50（消费位尚未使用时）</td>
 </tr>
 <tr>
 <td>Opponent WinningStreak</td>
 <td>对手连胜标签</td>
-<td>本方传说候选权重 +50</td>
+<td>本局用户标签 SSSR 权重 +50（消费位尚未使用时）</td>
 </tr>
 </tbody>
 </table></div>
-<p>这些效果说明系统确实存在“体验调节”，但它们和“选真人还是选机器人”不是同一条已恢复的函数链。具体 AI 如何执行、机器人如何翻格和释放神器，请看<a href="bot.html">机器人配置详表</a>；地块随机权重的完整链请看<a href="../hex-random/index.html">地块随机专题</a>。</p>
+<p>这些效果说明系统确实存在“体验调节”，但它们和“选真人还是选机器人”不是同一条已恢复的函数链。地块随机侧进一步确认：JustPaid／LosingStreak／Inactive／对手WinningStreak 的增量先合并为一个 B，并共用该玩家一个局内消费位；首个符合条件的 SSSR 兵营生成后，这一整组用户标签加权停止，而不是每个标签各保一张，也不是每隔 N 格重复触发。该消费只影响本局生成器，不等于清除账号标签。具体 AI 如何执行、机器人如何翻格和释放神器，请看<a href="bot.html">机器人配置详表</a>；公式、生成顺序和消费条件统一以<a href="../hex-random/index.html">地块随机专题</a>为准。</p>
 <h3 id="54">5.4 结算如何改变下一局状态</h3>
 <p>已恢复 <code>BattleGameManager.&lt;SettlementAnimationEnd&gt;d__58.MoveNext</code> 中的顺序：</p>
 <pre><code class="language-text">清除当天首局状态
