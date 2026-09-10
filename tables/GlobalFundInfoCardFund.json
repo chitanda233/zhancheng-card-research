@@ -1,0 +1,222 @@
+[
+  {
+    "id": "10001",
+    "level": 1,
+    "need": 7,
+    "reward1A": "20006:5",
+    "reward2A": "4005:1",
+    "reward3A": "",
+    "reward1B": "20006:3",
+    "reward2B": "4005:1",
+    "reward3B": ""
+  },
+  {
+    "id": "10002",
+    "level": 2,
+    "need": 8,
+    "reward1A": "20006:5",
+    "reward2A": "4005:1",
+    "reward3A": "",
+    "reward1B": "20006:3",
+    "reward2B": "4005:1",
+    "reward3B": ""
+  },
+  {
+    "id": "10003",
+    "level": 3,
+    "need": 9,
+    "reward1A": "20006:10",
+    "reward2A": "4005:1",
+    "reward3A": "",
+    "reward1B": "20006:5",
+    "reward2B": "4005:1",
+    "reward3B": ""
+  },
+  {
+    "id": "10004",
+    "level": 4,
+    "need": 10,
+    "reward1A": "20006:10",
+    "reward2A": "4005:1",
+    "reward3A": "",
+    "reward1B": "20006:5",
+    "reward2B": "4005:1",
+    "reward3B": ""
+  },
+  {
+    "id": "10005",
+    "level": 5,
+    "need": 11,
+    "reward1A": "20006:15",
+    "reward2A": "4005:1",
+    "reward3A": "",
+    "reward1B": "20006:8",
+    "reward2B": "4005:1",
+    "reward3B": ""
+  },
+  {
+    "id": "10006",
+    "level": 6,
+    "need": 12,
+    "reward1A": "20006:15",
+    "reward2A": "4006:1",
+    "reward3A": "",
+    "reward1B": "20006:8",
+    "reward2B": "4006:1",
+    "reward3B": ""
+  },
+  {
+    "id": "10007",
+    "level": 7,
+    "need": 13,
+    "reward1A": "20006:20",
+    "reward2A": "4006:1",
+    "reward3A": "",
+    "reward1B": "20006:10",
+    "reward2B": "4006:1",
+    "reward3B": ""
+  },
+  {
+    "id": "10008",
+    "level": 8,
+    "need": 14,
+    "reward1A": "20006:20",
+    "reward2A": "4006:1",
+    "reward3A": "",
+    "reward1B": "20006:10",
+    "reward2B": "4006:1",
+    "reward3B": ""
+  },
+  {
+    "id": "10009",
+    "level": 9,
+    "need": 15,
+    "reward1A": "20006:25",
+    "reward2A": "4006:1",
+    "reward3A": "",
+    "reward1B": "20006:13",
+    "reward2B": "4006:1",
+    "reward3B": ""
+  },
+  {
+    "id": "10010",
+    "level": 10,
+    "need": 16,
+    "reward1A": "20006:25",
+    "reward2A": "4006:1",
+    "reward3A": "",
+    "reward1B": "20006:13",
+    "reward2B": "4006:1",
+    "reward3B": ""
+  },
+  {
+    "id": "10011",
+    "level": 11,
+    "need": 17,
+    "reward1A": "20006:30",
+    "reward2A": "4007:1",
+    "reward3A": "",
+    "reward1B": "20006:15",
+    "reward2B": "4007:1",
+    "reward3B": ""
+  },
+  {
+    "id": "10012",
+    "level": 12,
+    "need": 18,
+    "reward1A": "20006:30",
+    "reward2A": "4007:1",
+    "reward3A": "",
+    "reward1B": "20006:15",
+    "reward2B": "4007:1",
+    "reward3B": ""
+  },
+  {
+    "id": "10013",
+    "level": 13,
+    "need": 19,
+    "reward1A": "20006:35",
+    "reward2A": "4007:1",
+    "reward3A": "",
+    "reward1B": "20006:18",
+    "reward2B": "4007:1",
+    "reward3B": ""
+  },
+  {
+    "id": "10014",
+    "level": 14,
+    "need": 20,
+    "reward1A": "20006:35",
+    "reward2A": "4007:1",
+    "reward3A": "",
+    "reward1B": "20006:18",
+    "reward2B": "4007:1",
+    "reward3B": ""
+  },
+  {
+    "id": "10015",
+    "level": 15,
+    "need": 21,
+    "reward1A": "20006:40",
+    "reward2A": "4007:1",
+    "reward3A": "",
+    "reward1B": "20006:20",
+    "reward2B": "4007:1",
+    "reward3B": ""
+  },
+  {
+    "id": "10016",
+    "level": 16,
+    "need": 22,
+    "reward1A": "20006:40",
+    "reward2A": "4008:1",
+    "reward3A": "",
+    "reward1B": "20006:20",
+    "reward2B": "4008:1",
+    "reward3B": ""
+  },
+  {
+    "id": "10017",
+    "level": 17,
+    "need": 23,
+    "reward1A": "20006:45",
+    "reward2A": "4008:1",
+    "reward3A": "",
+    "reward1B": "20006:23",
+    "reward2B": "4008:1",
+    "reward3B": ""
+  },
+  {
+    "id": "10018",
+    "level": 18,
+    "need": 24,
+    "reward1A": "20006:45",
+    "reward2A": "4008:1",
+    "reward3A": "",
+    "reward1B": "20006:23",
+    "reward2B": "4008:1",
+    "reward3B": ""
+  },
+  {
+    "id": "10019",
+    "level": 19,
+    "need": 25,
+    "reward1A": "20006:50",
+    "reward2A": "4008:1",
+    "reward3A": "",
+    "reward1B": "20006:25",
+    "reward2B": "4008:1",
+    "reward3B": ""
+  },
+  {
+    "id": "10020",
+    "level": 20,
+    "need": 26,
+    "reward1A": "20006:50",
+    "reward2A": "4008:1",
+    "reward3A": "",
+    "reward1B": "20006:25",
+    "reward2B": "4008:1",
+    "reward3B": ""
+  }
+]

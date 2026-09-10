@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "contentModules": 2,
+  "appendix": true,
+  "sections": 24,
+  "arenaRows": 20,
+  "polygonMapRows": 190,
+  "polygonLayoutSignatures": 22,
+  "pvpMapRows": 132,
+  "hexRows": 4,
+  "tutorialRows": 18,
+  "files": [
+    {
+      "file": "index.html",
+      "bytes": 78601,
+      "sha256": "b2da675563b6dce92e4a14e57e77d2ac33d0e02fc623fd0a16da58091c1e8139"
+    },
+    {
+      "file": "report.md",
+      "bytes": 29274,
+      "sha256": "82c07148a33ba8185a2c4625e2845747d3ed69405cbd0b3a27a50a2f35144a57"
+    },
+    {
+      "file": "battle-rules-data.json",
+      "bytes": 1016249,
+      "sha256": "bc6d16de2b8c73abc1ad00a5d3b5bfb9bb0de2fd68e9e13ee556a90cd9a81128"
+    }
+  ],
+  "warnings": [
+    "静态表与缓存默认值不等于服务器实时规则。",
+    "地块五项基础结果权重与具体卡牌的最终列表抽取均已恢复；账号标签、祝福等覆盖项仍需结合当局下发值计算。",
+    "190条多边形记录是跨竞技场复用记录；按几何字段去重后为22种布局签名，不能宣传成190张独立地图。",
+    "PVP地图池的等权概率只适用于同一层级已进入候选池的记录；首局地图另有固定ID。",
+    "机器人预设存在不代表所有普通竞技场或赛季对局都是机器人。",
+    "旧神器30秒/每局一次规则不与新版翻格充能规则叠加。"
+  ],
+  "uiQA": {
+    "passed": true,
+    "checks": [
+      "2大内容模块+证据附录",
+      "24个分节目录",
+      "20档竞技场切换",
+      "190条多边形记录分析",
+      "132条PVP地图候选分析",
+      "具体卡牌候选链",
+      "WASM等概率抽取函数",
+      "前三次低价重抽阈值与候选池",
+      "账号标签概率加成",
+      "概率修改器与保底",
+      "ID悬浮说明",
+      "Escape关闭",
+      "390px响应式"
+    ],
+    "pageErrors": []
+  }
+}

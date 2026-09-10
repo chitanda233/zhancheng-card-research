@@ -1,0 +1,9 @@
+﻿{"Datas":[
+{"id":1001,"Pvp_Strong_Range":200,"Pvp_Bonus_Strong":6},
+{"id":1002,"Pvp_Strong_Range":400,"Pvp_Bonus_Strong":7},
+{"id":1003,"Pvp_Strong_Range":600,"Pvp_Bonus_Strong":8},
+{"id":1004,"Pvp_Strong_Range":800,"Pvp_Bonus_Strong":9},
+{"id":1005,"Pvp_Strong_Range":1000,"Pvp_Bonus_Strong":10},
+{"id":1006,"Pvp_Strong_Range":1500,"Pvp_Bonus_Strong":11},
+{"id":1007,"Pvp_Strong_Range":2000,"Pvp_Bonus_Strong":12}]
+}

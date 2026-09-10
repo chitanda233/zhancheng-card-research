@@ -1,0 +1,2704 @@
+{
+  "Datas": [
+    {
+      "id": 1001001,
+      "Pass_Id": 1001,
+      "Pass_Level": 1,
+      "Normal_Reward": [
+        4001,
+        1
+      ],
+      "Senior_Reward": [
+        6104,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1001002,
+      "Pass_Id": 1001,
+      "Pass_Level": 2,
+      "Normal_Reward": [
+        20005,
+        200
+      ],
+      "Senior_Reward": [
+        20005,
+        2000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1001003,
+      "Pass_Id": 1001,
+      "Pass_Level": 3,
+      "Normal_Reward": [
+        20008,
+        10
+      ],
+      "Senior_Reward": [
+        20008,
+        100
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1001004,
+      "Pass_Id": 1001,
+      "Pass_Level": 4,
+      "Normal_Reward": [
+        4001,
+        1
+      ],
+      "Senior_Reward": [
+        20011,
+        20
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1001005,
+      "Pass_Id": 1001,
+      "Pass_Level": 5,
+      "Normal_Reward": [
+        20006,
+        30
+      ],
+      "Senior_Reward": [
+        1022,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1001006,
+      "Pass_Id": 1001,
+      "Pass_Level": 6,
+      "Normal_Reward": [
+        4002,
+        1
+      ],
+      "Senior_Reward": [
+        4004,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1001007,
+      "Pass_Id": 1001,
+      "Pass_Level": 7,
+      "Normal_Reward": [
+        20005,
+        300
+      ],
+      "Senior_Reward": [
+        20005,
+        3000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1001008,
+      "Pass_Id": 1001,
+      "Pass_Level": 8,
+      "Normal_Reward": [
+        20009,
+        50
+      ],
+      "Senior_Reward": [
+        20009,
+        500
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1001009,
+      "Pass_Id": 1001,
+      "Pass_Level": 9,
+      "Normal_Reward": [
+        4002,
+        1
+      ],
+      "Senior_Reward": [
+        1022,
+        10
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1001010,
+      "Pass_Id": 1001,
+      "Pass_Level": 10,
+      "Normal_Reward": [
+        20011,
+        5
+      ],
+      "Senior_Reward": [
+        20023,
+        1
+      ],
+      "Is_BigReward": 1,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1001011,
+      "Pass_Id": 1001,
+      "Pass_Level": 11,
+      "Normal_Reward": [
+        4002,
+        1
+      ],
+      "Senior_Reward": [
+        4005,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1001012,
+      "Pass_Id": 1001,
+      "Pass_Level": 12,
+      "Normal_Reward": [
+        20005,
+        400
+      ],
+      "Senior_Reward": [
+        20005,
+        4000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1001013,
+      "Pass_Id": 1001,
+      "Pass_Level": 13,
+      "Normal_Reward": [
+        20008,
+        30
+      ],
+      "Senior_Reward": [
+        20008,
+        300
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1001014,
+      "Pass_Id": 1001,
+      "Pass_Level": 14,
+      "Normal_Reward": [
+        4003,
+        1
+      ],
+      "Senior_Reward": [
+        1022,
+        10
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1001015,
+      "Pass_Id": 1001,
+      "Pass_Level": 15,
+      "Normal_Reward": [
+        20019,
+        1
+      ],
+      "Senior_Reward": [
+        20019,
+        10
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1001016,
+      "Pass_Id": 1001,
+      "Pass_Level": 16,
+      "Normal_Reward": [
+        4003,
+        1
+      ],
+      "Senior_Reward": [
+        4005,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1001017,
+      "Pass_Id": 1001,
+      "Pass_Level": 17,
+      "Normal_Reward": [
+        20005,
+        500
+      ],
+      "Senior_Reward": [
+        20005,
+        5000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1001018,
+      "Pass_Id": 1001,
+      "Pass_Level": 18,
+      "Normal_Reward": [
+        20009,
+        100
+      ],
+      "Senior_Reward": [
+        20009,
+        1000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1001019,
+      "Pass_Id": 1001,
+      "Pass_Level": 19,
+      "Normal_Reward": [
+        4004,
+        1
+      ],
+      "Senior_Reward": [
+        4006,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1001020,
+      "Pass_Id": 1001,
+      "Pass_Level": 20,
+      "Normal_Reward": [
+        20012,
+        10
+      ],
+      "Senior_Reward": [
+        1022,
+        20
+      ],
+      "Is_BigReward": 1,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1001021,
+      "Pass_Id": 1001,
+      "Pass_Level": 21,
+      "Normal_Reward": [
+        4004,
+        1
+      ],
+      "Senior_Reward": [
+        4006,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1001022,
+      "Pass_Id": 1001,
+      "Pass_Level": 22,
+      "Normal_Reward": [
+        20005,
+        1000
+      ],
+      "Senior_Reward": [
+        20005,
+        10000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1001023,
+      "Pass_Id": 1001,
+      "Pass_Level": 23,
+      "Normal_Reward": [
+        20008,
+        50
+      ],
+      "Senior_Reward": [
+        20008,
+        500
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1001024,
+      "Pass_Id": 1001,
+      "Pass_Level": 24,
+      "Normal_Reward": [
+        20012,
+        10
+      ],
+      "Senior_Reward": [
+        1022,
+        20
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1001025,
+      "Pass_Id": 1001,
+      "Pass_Level": 25,
+      "Normal_Reward": [
+        20019,
+        2
+      ],
+      "Senior_Reward": [
+        20019,
+        20
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1001026,
+      "Pass_Id": 1001,
+      "Pass_Level": 26,
+      "Normal_Reward": [
+        4004,
+        1
+      ],
+      "Senior_Reward": [
+        4006,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1001027,
+      "Pass_Id": 1001,
+      "Pass_Level": 27,
+      "Normal_Reward": [
+        20006,
+        50
+      ],
+      "Senior_Reward": [
+        20006,
+        500
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1001028,
+      "Pass_Id": 1001,
+      "Pass_Level": 28,
+      "Normal_Reward": [
+        20009,
+        100
+      ],
+      "Senior_Reward": [
+        20009,
+        1000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1001029,
+      "Pass_Id": 1001,
+      "Pass_Level": 29,
+      "Normal_Reward": [
+        4005,
+        1
+      ],
+      "Senior_Reward": [
+        4007,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1001030,
+      "Pass_Id": 1001,
+      "Pass_Level": 30,
+      "Normal_Reward": [
+        20013,
+        10
+      ],
+      "Senior_Reward": [
+        1022,
+        50
+      ],
+      "Is_BigReward": 1,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1002001,
+      "Pass_Id": 1002,
+      "Pass_Level": 1,
+      "Normal_Reward": [
+        4001,
+        1
+      ],
+      "Senior_Reward": [
+        6107,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1002002,
+      "Pass_Id": 1002,
+      "Pass_Level": 2,
+      "Normal_Reward": [
+        20005,
+        200
+      ],
+      "Senior_Reward": [
+        20005,
+        2000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1002003,
+      "Pass_Id": 1002,
+      "Pass_Level": 3,
+      "Normal_Reward": [
+        20008,
+        10
+      ],
+      "Senior_Reward": [
+        20008,
+        100
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1002004,
+      "Pass_Id": 1002,
+      "Pass_Level": 4,
+      "Normal_Reward": [
+        4001,
+        1
+      ],
+      "Senior_Reward": [
+        20011,
+        20
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1002005,
+      "Pass_Id": 1002,
+      "Pass_Level": 5,
+      "Normal_Reward": [
+        20006,
+        30
+      ],
+      "Senior_Reward": [
+        1040,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1002006,
+      "Pass_Id": 1002,
+      "Pass_Level": 6,
+      "Normal_Reward": [
+        4002,
+        1
+      ],
+      "Senior_Reward": [
+        4004,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1002007,
+      "Pass_Id": 1002,
+      "Pass_Level": 7,
+      "Normal_Reward": [
+        20005,
+        300
+      ],
+      "Senior_Reward": [
+        20005,
+        3000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1002008,
+      "Pass_Id": 1002,
+      "Pass_Level": 8,
+      "Normal_Reward": [
+        20009,
+        50
+      ],
+      "Senior_Reward": [
+        20009,
+        500
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1002009,
+      "Pass_Id": 1002,
+      "Pass_Level": 9,
+      "Normal_Reward": [
+        4002,
+        1
+      ],
+      "Senior_Reward": [
+        1040,
+        10
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1002010,
+      "Pass_Id": 1002,
+      "Pass_Level": 10,
+      "Normal_Reward": [
+        20011,
+        5
+      ],
+      "Senior_Reward": [
+        20023,
+        1
+      ],
+      "Is_BigReward": 1,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1002011,
+      "Pass_Id": 1002,
+      "Pass_Level": 11,
+      "Normal_Reward": [
+        4002,
+        1
+      ],
+      "Senior_Reward": [
+        4005,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1002012,
+      "Pass_Id": 1002,
+      "Pass_Level": 12,
+      "Normal_Reward": [
+        20005,
+        400
+      ],
+      "Senior_Reward": [
+        20005,
+        4000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1002013,
+      "Pass_Id": 1002,
+      "Pass_Level": 13,
+      "Normal_Reward": [
+        20008,
+        30
+      ],
+      "Senior_Reward": [
+        20008,
+        300
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1002014,
+      "Pass_Id": 1002,
+      "Pass_Level": 14,
+      "Normal_Reward": [
+        4003,
+        1
+      ],
+      "Senior_Reward": [
+        1040,
+        10
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1002015,
+      "Pass_Id": 1002,
+      "Pass_Level": 15,
+      "Normal_Reward": [
+        20019,
+        1
+      ],
+      "Senior_Reward": [
+        20019,
+        10
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1002016,
+      "Pass_Id": 1002,
+      "Pass_Level": 16,
+      "Normal_Reward": [
+        4003,
+        1
+      ],
+      "Senior_Reward": [
+        4005,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1002017,
+      "Pass_Id": 1002,
+      "Pass_Level": 17,
+      "Normal_Reward": [
+        20005,
+        500
+      ],
+      "Senior_Reward": [
+        20005,
+        5000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1002018,
+      "Pass_Id": 1002,
+      "Pass_Level": 18,
+      "Normal_Reward": [
+        20009,
+        100
+      ],
+      "Senior_Reward": [
+        20009,
+        1000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1002019,
+      "Pass_Id": 1002,
+      "Pass_Level": 19,
+      "Normal_Reward": [
+        4004,
+        1
+      ],
+      "Senior_Reward": [
+        4006,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1002020,
+      "Pass_Id": 1002,
+      "Pass_Level": 20,
+      "Normal_Reward": [
+        20012,
+        10
+      ],
+      "Senior_Reward": [
+        1040,
+        20
+      ],
+      "Is_BigReward": 1,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1002021,
+      "Pass_Id": 1002,
+      "Pass_Level": 21,
+      "Normal_Reward": [
+        4004,
+        1
+      ],
+      "Senior_Reward": [
+        4006,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1002022,
+      "Pass_Id": 1002,
+      "Pass_Level": 22,
+      "Normal_Reward": [
+        20005,
+        1000
+      ],
+      "Senior_Reward": [
+        20005,
+        10000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1002023,
+      "Pass_Id": 1002,
+      "Pass_Level": 23,
+      "Normal_Reward": [
+        20008,
+        50
+      ],
+      "Senior_Reward": [
+        20008,
+        500
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1002024,
+      "Pass_Id": 1002,
+      "Pass_Level": 24,
+      "Normal_Reward": [
+        20012,
+        10
+      ],
+      "Senior_Reward": [
+        1040,
+        20
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1002025,
+      "Pass_Id": 1002,
+      "Pass_Level": 25,
+      "Normal_Reward": [
+        20019,
+        2
+      ],
+      "Senior_Reward": [
+        20019,
+        20
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1002026,
+      "Pass_Id": 1002,
+      "Pass_Level": 26,
+      "Normal_Reward": [
+        4004,
+        1
+      ],
+      "Senior_Reward": [
+        4006,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1002027,
+      "Pass_Id": 1002,
+      "Pass_Level": 27,
+      "Normal_Reward": [
+        20006,
+        50
+      ],
+      "Senior_Reward": [
+        20006,
+        500
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1002028,
+      "Pass_Id": 1002,
+      "Pass_Level": 28,
+      "Normal_Reward": [
+        20009,
+        100
+      ],
+      "Senior_Reward": [
+        20009,
+        1000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1002029,
+      "Pass_Id": 1002,
+      "Pass_Level": 29,
+      "Normal_Reward": [
+        4005,
+        1
+      ],
+      "Senior_Reward": [
+        4007,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1002030,
+      "Pass_Id": 1002,
+      "Pass_Level": 30,
+      "Normal_Reward": [
+        20013,
+        10
+      ],
+      "Senior_Reward": [
+        1040,
+        50
+      ],
+      "Is_BigReward": 1,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1003001,
+      "Pass_Id": 1003,
+      "Pass_Level": 1,
+      "Normal_Reward": [
+        4001,
+        1
+      ],
+      "Senior_Reward": [
+        6106,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1003002,
+      "Pass_Id": 1003,
+      "Pass_Level": 2,
+      "Normal_Reward": [
+        20005,
+        200
+      ],
+      "Senior_Reward": [
+        20005,
+        2000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1003003,
+      "Pass_Id": 1003,
+      "Pass_Level": 3,
+      "Normal_Reward": [
+        20008,
+        10
+      ],
+      "Senior_Reward": [
+        20008,
+        100
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1003004,
+      "Pass_Id": 1003,
+      "Pass_Level": 4,
+      "Normal_Reward": [
+        4001,
+        1
+      ],
+      "Senior_Reward": [
+        20011,
+        20
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1003005,
+      "Pass_Id": 1003,
+      "Pass_Level": 5,
+      "Normal_Reward": [
+        20006,
+        30
+      ],
+      "Senior_Reward": [
+        1028,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1003006,
+      "Pass_Id": 1003,
+      "Pass_Level": 6,
+      "Normal_Reward": [
+        4002,
+        1
+      ],
+      "Senior_Reward": [
+        4004,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1003007,
+      "Pass_Id": 1003,
+      "Pass_Level": 7,
+      "Normal_Reward": [
+        20005,
+        300
+      ],
+      "Senior_Reward": [
+        20005,
+        3000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1003008,
+      "Pass_Id": 1003,
+      "Pass_Level": 8,
+      "Normal_Reward": [
+        20009,
+        50
+      ],
+      "Senior_Reward": [
+        20009,
+        500
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1003009,
+      "Pass_Id": 1003,
+      "Pass_Level": 9,
+      "Normal_Reward": [
+        4002,
+        1
+      ],
+      "Senior_Reward": [
+        1028,
+        10
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1003010,
+      "Pass_Id": 1003,
+      "Pass_Level": 10,
+      "Normal_Reward": [
+        20011,
+        5
+      ],
+      "Senior_Reward": [
+        20023,
+        1
+      ],
+      "Is_BigReward": 1,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1003011,
+      "Pass_Id": 1003,
+      "Pass_Level": 11,
+      "Normal_Reward": [
+        4002,
+        1
+      ],
+      "Senior_Reward": [
+        4005,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1003012,
+      "Pass_Id": 1003,
+      "Pass_Level": 12,
+      "Normal_Reward": [
+        20005,
+        400
+      ],
+      "Senior_Reward": [
+        20005,
+        4000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1003013,
+      "Pass_Id": 1003,
+      "Pass_Level": 13,
+      "Normal_Reward": [
+        20008,
+        30
+      ],
+      "Senior_Reward": [
+        20008,
+        300
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1003014,
+      "Pass_Id": 1003,
+      "Pass_Level": 14,
+      "Normal_Reward": [
+        4003,
+        1
+      ],
+      "Senior_Reward": [
+        1028,
+        10
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1003015,
+      "Pass_Id": 1003,
+      "Pass_Level": 15,
+      "Normal_Reward": [
+        20019,
+        1
+      ],
+      "Senior_Reward": [
+        20019,
+        10
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1003016,
+      "Pass_Id": 1003,
+      "Pass_Level": 16,
+      "Normal_Reward": [
+        4003,
+        1
+      ],
+      "Senior_Reward": [
+        4005,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1003017,
+      "Pass_Id": 1003,
+      "Pass_Level": 17,
+      "Normal_Reward": [
+        20005,
+        500
+      ],
+      "Senior_Reward": [
+        20005,
+        5000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1003018,
+      "Pass_Id": 1003,
+      "Pass_Level": 18,
+      "Normal_Reward": [
+        20009,
+        100
+      ],
+      "Senior_Reward": [
+        20009,
+        1000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1003019,
+      "Pass_Id": 1003,
+      "Pass_Level": 19,
+      "Normal_Reward": [
+        4004,
+        1
+      ],
+      "Senior_Reward": [
+        4006,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1003020,
+      "Pass_Id": 1003,
+      "Pass_Level": 20,
+      "Normal_Reward": [
+        20012,
+        10
+      ],
+      "Senior_Reward": [
+        1028,
+        20
+      ],
+      "Is_BigReward": 1,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1003021,
+      "Pass_Id": 1003,
+      "Pass_Level": 21,
+      "Normal_Reward": [
+        4004,
+        1
+      ],
+      "Senior_Reward": [
+        4006,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1003022,
+      "Pass_Id": 1003,
+      "Pass_Level": 22,
+      "Normal_Reward": [
+        20005,
+        1000
+      ],
+      "Senior_Reward": [
+        20005,
+        10000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1003023,
+      "Pass_Id": 1003,
+      "Pass_Level": 23,
+      "Normal_Reward": [
+        20008,
+        50
+      ],
+      "Senior_Reward": [
+        20008,
+        500
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1003024,
+      "Pass_Id": 1003,
+      "Pass_Level": 24,
+      "Normal_Reward": [
+        20012,
+        10
+      ],
+      "Senior_Reward": [
+        1028,
+        20
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1003025,
+      "Pass_Id": 1003,
+      "Pass_Level": 25,
+      "Normal_Reward": [
+        20019,
+        2
+      ],
+      "Senior_Reward": [
+        20019,
+        20
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1003026,
+      "Pass_Id": 1003,
+      "Pass_Level": 26,
+      "Normal_Reward": [
+        4004,
+        1
+      ],
+      "Senior_Reward": [
+        4006,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1003027,
+      "Pass_Id": 1003,
+      "Pass_Level": 27,
+      "Normal_Reward": [
+        20006,
+        50
+      ],
+      "Senior_Reward": [
+        20006,
+        500
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1003028,
+      "Pass_Id": 1003,
+      "Pass_Level": 28,
+      "Normal_Reward": [
+        20009,
+        100
+      ],
+      "Senior_Reward": [
+        20009,
+        1000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1003029,
+      "Pass_Id": 1003,
+      "Pass_Level": 29,
+      "Normal_Reward": [
+        4005,
+        1
+      ],
+      "Senior_Reward": [
+        4007,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1003030,
+      "Pass_Id": 1003,
+      "Pass_Level": 30,
+      "Normal_Reward": [
+        20013,
+        10
+      ],
+      "Senior_Reward": [
+        1028,
+        50
+      ],
+      "Is_BigReward": 1,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1004001,
+      "Pass_Id": 1004,
+      "Pass_Level": 1,
+      "Normal_Reward": [
+        4001,
+        1
+      ],
+      "Senior_Reward": [
+        6108,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1004002,
+      "Pass_Id": 1004,
+      "Pass_Level": 2,
+      "Normal_Reward": [
+        20005,
+        200
+      ],
+      "Senior_Reward": [
+        20005,
+        2000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1004003,
+      "Pass_Id": 1004,
+      "Pass_Level": 3,
+      "Normal_Reward": [
+        20008,
+        10
+      ],
+      "Senior_Reward": [
+        20008,
+        100
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1004004,
+      "Pass_Id": 1004,
+      "Pass_Level": 4,
+      "Normal_Reward": [
+        4001,
+        1
+      ],
+      "Senior_Reward": [
+        20011,
+        20
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1004005,
+      "Pass_Id": 1004,
+      "Pass_Level": 5,
+      "Normal_Reward": [
+        20006,
+        30
+      ],
+      "Senior_Reward": [
+        1026,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1004006,
+      "Pass_Id": 1004,
+      "Pass_Level": 6,
+      "Normal_Reward": [
+        4002,
+        1
+      ],
+      "Senior_Reward": [
+        4004,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1004007,
+      "Pass_Id": 1004,
+      "Pass_Level": 7,
+      "Normal_Reward": [
+        20005,
+        300
+      ],
+      "Senior_Reward": [
+        20005,
+        3000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1004008,
+      "Pass_Id": 1004,
+      "Pass_Level": 8,
+      "Normal_Reward": [
+        20009,
+        50
+      ],
+      "Senior_Reward": [
+        20009,
+        500
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1004009,
+      "Pass_Id": 1004,
+      "Pass_Level": 9,
+      "Normal_Reward": [
+        4002,
+        1
+      ],
+      "Senior_Reward": [
+        1026,
+        10
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1004010,
+      "Pass_Id": 1004,
+      "Pass_Level": 10,
+      "Normal_Reward": [
+        20011,
+        5
+      ],
+      "Senior_Reward": [
+        20023,
+        1
+      ],
+      "Is_BigReward": 1,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1004011,
+      "Pass_Id": 1004,
+      "Pass_Level": 11,
+      "Normal_Reward": [
+        4002,
+        1
+      ],
+      "Senior_Reward": [
+        4005,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1004012,
+      "Pass_Id": 1004,
+      "Pass_Level": 12,
+      "Normal_Reward": [
+        20005,
+        400
+      ],
+      "Senior_Reward": [
+        20005,
+        4000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1004013,
+      "Pass_Id": 1004,
+      "Pass_Level": 13,
+      "Normal_Reward": [
+        20008,
+        30
+      ],
+      "Senior_Reward": [
+        20008,
+        300
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1004014,
+      "Pass_Id": 1004,
+      "Pass_Level": 14,
+      "Normal_Reward": [
+        4003,
+        1
+      ],
+      "Senior_Reward": [
+        1026,
+        10
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1004015,
+      "Pass_Id": 1004,
+      "Pass_Level": 15,
+      "Normal_Reward": [
+        20019,
+        1
+      ],
+      "Senior_Reward": [
+        20019,
+        10
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1004016,
+      "Pass_Id": 1004,
+      "Pass_Level": 16,
+      "Normal_Reward": [
+        4003,
+        1
+      ],
+      "Senior_Reward": [
+        4005,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1004017,
+      "Pass_Id": 1004,
+      "Pass_Level": 17,
+      "Normal_Reward": [
+        20005,
+        500
+      ],
+      "Senior_Reward": [
+        20005,
+        5000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1004018,
+      "Pass_Id": 1004,
+      "Pass_Level": 18,
+      "Normal_Reward": [
+        20009,
+        100
+      ],
+      "Senior_Reward": [
+        20009,
+        1000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1004019,
+      "Pass_Id": 1004,
+      "Pass_Level": 19,
+      "Normal_Reward": [
+        4004,
+        1
+      ],
+      "Senior_Reward": [
+        4006,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1004020,
+      "Pass_Id": 1004,
+      "Pass_Level": 20,
+      "Normal_Reward": [
+        20012,
+        10
+      ],
+      "Senior_Reward": [
+        1026,
+        20
+      ],
+      "Is_BigReward": 1,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1004021,
+      "Pass_Id": 1004,
+      "Pass_Level": 21,
+      "Normal_Reward": [
+        4004,
+        1
+      ],
+      "Senior_Reward": [
+        4006,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1004022,
+      "Pass_Id": 1004,
+      "Pass_Level": 22,
+      "Normal_Reward": [
+        20005,
+        1000
+      ],
+      "Senior_Reward": [
+        20005,
+        10000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1004023,
+      "Pass_Id": 1004,
+      "Pass_Level": 23,
+      "Normal_Reward": [
+        20008,
+        50
+      ],
+      "Senior_Reward": [
+        20008,
+        500
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1004024,
+      "Pass_Id": 1004,
+      "Pass_Level": 24,
+      "Normal_Reward": [
+        20012,
+        10
+      ],
+      "Senior_Reward": [
+        1026,
+        20
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1004025,
+      "Pass_Id": 1004,
+      "Pass_Level": 25,
+      "Normal_Reward": [
+        20019,
+        2
+      ],
+      "Senior_Reward": [
+        20019,
+        20
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1004026,
+      "Pass_Id": 1004,
+      "Pass_Level": 26,
+      "Normal_Reward": [
+        4004,
+        1
+      ],
+      "Senior_Reward": [
+        4006,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1004027,
+      "Pass_Id": 1004,
+      "Pass_Level": 27,
+      "Normal_Reward": [
+        20006,
+        50
+      ],
+      "Senior_Reward": [
+        20006,
+        500
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1004028,
+      "Pass_Id": 1004,
+      "Pass_Level": 28,
+      "Normal_Reward": [
+        20009,
+        100
+      ],
+      "Senior_Reward": [
+        20009,
+        1000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1004029,
+      "Pass_Id": 1004,
+      "Pass_Level": 29,
+      "Normal_Reward": [
+        4005,
+        1
+      ],
+      "Senior_Reward": [
+        4007,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1004030,
+      "Pass_Id": 1004,
+      "Pass_Level": 30,
+      "Normal_Reward": [
+        20013,
+        10
+      ],
+      "Senior_Reward": [
+        1026,
+        50
+      ],
+      "Is_BigReward": 1,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1005001,
+      "Pass_Id": 1005,
+      "Pass_Level": 1,
+      "Normal_Reward": [
+        4001,
+        1
+      ],
+      "Senior_Reward": [
+        6109,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1005002,
+      "Pass_Id": 1005,
+      "Pass_Level": 2,
+      "Normal_Reward": [
+        20005,
+        200
+      ],
+      "Senior_Reward": [
+        20005,
+        2000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1005003,
+      "Pass_Id": 1005,
+      "Pass_Level": 3,
+      "Normal_Reward": [
+        20008,
+        10
+      ],
+      "Senior_Reward": [
+        20008,
+        100
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1005004,
+      "Pass_Id": 1005,
+      "Pass_Level": 4,
+      "Normal_Reward": [
+        4001,
+        1
+      ],
+      "Senior_Reward": [
+        20011,
+        20
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1005005,
+      "Pass_Id": 1005,
+      "Pass_Level": 5,
+      "Normal_Reward": [
+        20006,
+        30
+      ],
+      "Senior_Reward": [
+        1010,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1005006,
+      "Pass_Id": 1005,
+      "Pass_Level": 6,
+      "Normal_Reward": [
+        4002,
+        1
+      ],
+      "Senior_Reward": [
+        4004,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1005007,
+      "Pass_Id": 1005,
+      "Pass_Level": 7,
+      "Normal_Reward": [
+        20005,
+        300
+      ],
+      "Senior_Reward": [
+        20005,
+        3000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1005008,
+      "Pass_Id": 1005,
+      "Pass_Level": 8,
+      "Normal_Reward": [
+        20009,
+        50
+      ],
+      "Senior_Reward": [
+        20009,
+        500
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1005009,
+      "Pass_Id": 1005,
+      "Pass_Level": 9,
+      "Normal_Reward": [
+        4002,
+        1
+      ],
+      "Senior_Reward": [
+        1010,
+        10
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1005010,
+      "Pass_Id": 1005,
+      "Pass_Level": 10,
+      "Normal_Reward": [
+        20011,
+        5
+      ],
+      "Senior_Reward": [
+        20023,
+        1
+      ],
+      "Is_BigReward": 1,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1005011,
+      "Pass_Id": 1005,
+      "Pass_Level": 11,
+      "Normal_Reward": [
+        4002,
+        1
+      ],
+      "Senior_Reward": [
+        4005,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1005012,
+      "Pass_Id": 1005,
+      "Pass_Level": 12,
+      "Normal_Reward": [
+        20005,
+        400
+      ],
+      "Senior_Reward": [
+        20005,
+        4000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1005013,
+      "Pass_Id": 1005,
+      "Pass_Level": 13,
+      "Normal_Reward": [
+        20008,
+        30
+      ],
+      "Senior_Reward": [
+        20008,
+        300
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1005014,
+      "Pass_Id": 1005,
+      "Pass_Level": 14,
+      "Normal_Reward": [
+        4003,
+        1
+      ],
+      "Senior_Reward": [
+        1010,
+        10
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1005015,
+      "Pass_Id": 1005,
+      "Pass_Level": 15,
+      "Normal_Reward": [
+        20019,
+        1
+      ],
+      "Senior_Reward": [
+        20019,
+        10
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1005016,
+      "Pass_Id": 1005,
+      "Pass_Level": 16,
+      "Normal_Reward": [
+        4003,
+        1
+      ],
+      "Senior_Reward": [
+        4005,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1005017,
+      "Pass_Id": 1005,
+      "Pass_Level": 17,
+      "Normal_Reward": [
+        20005,
+        500
+      ],
+      "Senior_Reward": [
+        20005,
+        5000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1005018,
+      "Pass_Id": 1005,
+      "Pass_Level": 18,
+      "Normal_Reward": [
+        20009,
+        100
+      ],
+      "Senior_Reward": [
+        20009,
+        1000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1005019,
+      "Pass_Id": 1005,
+      "Pass_Level": 19,
+      "Normal_Reward": [
+        4004,
+        1
+      ],
+      "Senior_Reward": [
+        4006,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1005020,
+      "Pass_Id": 1005,
+      "Pass_Level": 20,
+      "Normal_Reward": [
+        20012,
+        10
+      ],
+      "Senior_Reward": [
+        1010,
+        20
+      ],
+      "Is_BigReward": 1,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1005021,
+      "Pass_Id": 1005,
+      "Pass_Level": 21,
+      "Normal_Reward": [
+        4004,
+        1
+      ],
+      "Senior_Reward": [
+        4006,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1005022,
+      "Pass_Id": 1005,
+      "Pass_Level": 22,
+      "Normal_Reward": [
+        20005,
+        1000
+      ],
+      "Senior_Reward": [
+        20005,
+        10000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1005023,
+      "Pass_Id": 1005,
+      "Pass_Level": 23,
+      "Normal_Reward": [
+        20008,
+        50
+      ],
+      "Senior_Reward": [
+        20008,
+        500
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1005024,
+      "Pass_Id": 1005,
+      "Pass_Level": 24,
+      "Normal_Reward": [
+        20012,
+        10
+      ],
+      "Senior_Reward": [
+        1010,
+        20
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1005025,
+      "Pass_Id": 1005,
+      "Pass_Level": 25,
+      "Normal_Reward": [
+        20019,
+        2
+      ],
+      "Senior_Reward": [
+        20019,
+        20
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1005026,
+      "Pass_Id": 1005,
+      "Pass_Level": 26,
+      "Normal_Reward": [
+        4004,
+        1
+      ],
+      "Senior_Reward": [
+        4006,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1005027,
+      "Pass_Id": 1005,
+      "Pass_Level": 27,
+      "Normal_Reward": [
+        20006,
+        50
+      ],
+      "Senior_Reward": [
+        20006,
+        500
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1005028,
+      "Pass_Id": 1005,
+      "Pass_Level": 28,
+      "Normal_Reward": [
+        20009,
+        100
+      ],
+      "Senior_Reward": [
+        20009,
+        1000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1005029,
+      "Pass_Id": 1005,
+      "Pass_Level": 29,
+      "Normal_Reward": [
+        4005,
+        1
+      ],
+      "Senior_Reward": [
+        4007,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1005030,
+      "Pass_Id": 1005,
+      "Pass_Level": 30,
+      "Normal_Reward": [
+        20013,
+        10
+      ],
+      "Senior_Reward": [
+        1010,
+        50
+      ],
+      "Is_BigReward": 1,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1006001,
+      "Pass_Id": 1006,
+      "Pass_Level": 1,
+      "Normal_Reward": [
+        4001,
+        1
+      ],
+      "Senior_Reward": [
+        6110,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1006002,
+      "Pass_Id": 1006,
+      "Pass_Level": 2,
+      "Normal_Reward": [
+        20005,
+        200
+      ],
+      "Senior_Reward": [
+        20005,
+        2000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1006003,
+      "Pass_Id": 1006,
+      "Pass_Level": 3,
+      "Normal_Reward": [
+        20008,
+        10
+      ],
+      "Senior_Reward": [
+        20008,
+        100
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1006004,
+      "Pass_Id": 1006,
+      "Pass_Level": 4,
+      "Normal_Reward": [
+        4001,
+        1
+      ],
+      "Senior_Reward": [
+        20011,
+        20
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1006005,
+      "Pass_Id": 1006,
+      "Pass_Level": 5,
+      "Normal_Reward": [
+        20006,
+        30
+      ],
+      "Senior_Reward": [
+        1027,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1006006,
+      "Pass_Id": 1006,
+      "Pass_Level": 6,
+      "Normal_Reward": [
+        4002,
+        1
+      ],
+      "Senior_Reward": [
+        4004,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1006007,
+      "Pass_Id": 1006,
+      "Pass_Level": 7,
+      "Normal_Reward": [
+        20005,
+        300
+      ],
+      "Senior_Reward": [
+        20005,
+        3000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1006008,
+      "Pass_Id": 1006,
+      "Pass_Level": 8,
+      "Normal_Reward": [
+        20009,
+        50
+      ],
+      "Senior_Reward": [
+        20009,
+        500
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1006009,
+      "Pass_Id": 1006,
+      "Pass_Level": 9,
+      "Normal_Reward": [
+        4002,
+        1
+      ],
+      "Senior_Reward": [
+        1027,
+        10
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1006010,
+      "Pass_Id": 1006,
+      "Pass_Level": 10,
+      "Normal_Reward": [
+        20011,
+        5
+      ],
+      "Senior_Reward": [
+        20023,
+        1
+      ],
+      "Is_BigReward": 1,
+      "Pass_Point": 200
+    },
+    {
+      "id": 1006011,
+      "Pass_Id": 1006,
+      "Pass_Level": 11,
+      "Normal_Reward": [
+        4002,
+        1
+      ],
+      "Senior_Reward": [
+        4005,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1006012,
+      "Pass_Id": 1006,
+      "Pass_Level": 12,
+      "Normal_Reward": [
+        20005,
+        400
+      ],
+      "Senior_Reward": [
+        20005,
+        4000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1006013,
+      "Pass_Id": 1006,
+      "Pass_Level": 13,
+      "Normal_Reward": [
+        20008,
+        30
+      ],
+      "Senior_Reward": [
+        20008,
+        300
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1006014,
+      "Pass_Id": 1006,
+      "Pass_Level": 14,
+      "Normal_Reward": [
+        4003,
+        1
+      ],
+      "Senior_Reward": [
+        1027,
+        10
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1006015,
+      "Pass_Id": 1006,
+      "Pass_Level": 15,
+      "Normal_Reward": [
+        20019,
+        1
+      ],
+      "Senior_Reward": [
+        20019,
+        10
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1006016,
+      "Pass_Id": 1006,
+      "Pass_Level": 16,
+      "Normal_Reward": [
+        4003,
+        1
+      ],
+      "Senior_Reward": [
+        4005,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1006017,
+      "Pass_Id": 1006,
+      "Pass_Level": 17,
+      "Normal_Reward": [
+        20005,
+        500
+      ],
+      "Senior_Reward": [
+        20005,
+        5000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1006018,
+      "Pass_Id": 1006,
+      "Pass_Level": 18,
+      "Normal_Reward": [
+        20009,
+        100
+      ],
+      "Senior_Reward": [
+        20009,
+        1000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1006019,
+      "Pass_Id": 1006,
+      "Pass_Level": 19,
+      "Normal_Reward": [
+        4004,
+        1
+      ],
+      "Senior_Reward": [
+        4006,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1006020,
+      "Pass_Id": 1006,
+      "Pass_Level": 20,
+      "Normal_Reward": [
+        20012,
+        10
+      ],
+      "Senior_Reward": [
+        1027,
+        20
+      ],
+      "Is_BigReward": 1,
+      "Pass_Point": 300
+    },
+    {
+      "id": 1006021,
+      "Pass_Id": 1006,
+      "Pass_Level": 21,
+      "Normal_Reward": [
+        4004,
+        1
+      ],
+      "Senior_Reward": [
+        4006,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1006022,
+      "Pass_Id": 1006,
+      "Pass_Level": 22,
+      "Normal_Reward": [
+        20005,
+        1000
+      ],
+      "Senior_Reward": [
+        20005,
+        10000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1006023,
+      "Pass_Id": 1006,
+      "Pass_Level": 23,
+      "Normal_Reward": [
+        20008,
+        50
+      ],
+      "Senior_Reward": [
+        20008,
+        500
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1006024,
+      "Pass_Id": 1006,
+      "Pass_Level": 24,
+      "Normal_Reward": [
+        20012,
+        10
+      ],
+      "Senior_Reward": [
+        1027,
+        20
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1006025,
+      "Pass_Id": 1006,
+      "Pass_Level": 25,
+      "Normal_Reward": [
+        20019,
+        2
+      ],
+      "Senior_Reward": [
+        20019,
+        20
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1006026,
+      "Pass_Id": 1006,
+      "Pass_Level": 26,
+      "Normal_Reward": [
+        4004,
+        1
+      ],
+      "Senior_Reward": [
+        4006,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1006027,
+      "Pass_Id": 1006,
+      "Pass_Level": 27,
+      "Normal_Reward": [
+        20006,
+        50
+      ],
+      "Senior_Reward": [
+        20006,
+        500
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1006028,
+      "Pass_Id": 1006,
+      "Pass_Level": 28,
+      "Normal_Reward": [
+        20009,
+        100
+      ],
+      "Senior_Reward": [
+        20009,
+        1000
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1006029,
+      "Pass_Id": 1006,
+      "Pass_Level": 29,
+      "Normal_Reward": [
+        4005,
+        1
+      ],
+      "Senior_Reward": [
+        4007,
+        1
+      ],
+      "Is_BigReward": 0,
+      "Pass_Point": 400
+    },
+    {
+      "id": 1006030,
+      "Pass_Id": 1006,
+      "Pass_Level": 30,
+      "Normal_Reward": [
+        20013,
+        10
+      ],
+      "Senior_Reward": [
+        1027,
+        50
+      ],
+      "Is_BigReward": 1,
+      "Pass_Point": 400
+    }
+  ]
+}

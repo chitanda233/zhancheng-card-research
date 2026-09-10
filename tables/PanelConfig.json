@@ -1,0 +1,1154 @@
+[
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 4,
+    "id": "10001",
+    "layer": 100,
+    "openEffect": 0,
+    "panelName": "MaskPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 4,
+    "id": "10002",
+    "layer": 99,
+    "openEffect": 0,
+    "panelName": "LoadingPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 4,
+    "id": "10003",
+    "layer": 100,
+    "openEffect": 0,
+    "panelName": "NoInternetPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 4,
+    "id": "10004",
+    "layer": 2,
+    "openEffect": 0,
+    "panelName": "ConfirmPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 4,
+    "id": "10005",
+    "layer": 1,
+    "openEffect": 0,
+    "panelName": "TutorialPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 4,
+    "id": "10006",
+    "layer": 1,
+    "openEffect": 0,
+    "panelName": "CollectTweenPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10007",
+    "layer": 10,
+    "openEffect": 0,
+    "panelName": "UserResourcesPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10008",
+    "layer": 9,
+    "openEffect": 0,
+    "panelName": "SeasonPassPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10009",
+    "layer": 2,
+    "openEffect": 0,
+    "panelName": "WeeklyClashPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 4,
+    "id": "10010",
+    "layer": 3,
+    "openEffect": 0,
+    "panelName": "WeeklyClashGuidePanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10010",
+    "layer": 3,
+    "openEffect": 0,
+    "panelName": "WeeklyClashRewardPreviewPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10011",
+    "layer": 11,
+    "openEffect": 0,
+    "panelName": "SettingsPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10012",
+    "layer": 3,
+    "openEffect": 0,
+    "panelName": "CardDeckChangePanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10013",
+    "layer": 3,
+    "openEffect": 0,
+    "panelName": "PropFastPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 1,
+    "id": "10015",
+    "layer": 1,
+    "openEffect": 0,
+    "panelName": "FloatingTextPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10016",
+    "layer": 2,
+    "openEffect": 0,
+    "panelName": "GoldCardAnimationPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10017",
+    "layer": 11,
+    "openEffect": 0,
+    "panelName": "HexDescribesPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10018",
+    "layer": 15,
+    "openEffect": 0,
+    "panelName": "ArenaProgressPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10019",
+    "layer": 15,
+    "openEffect": 0,
+    "panelName": "ElitePackGiftPackPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10020",
+    "layer": 30,
+    "openEffect": 0,
+    "panelName": "GiftChainPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10021",
+    "layer": 2,
+    "openEffect": 0,
+    "panelName": "MainCityEventPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10022",
+    "layer": 10,
+    "openEffect": 0,
+    "panelName": "MainCityFamilyPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10023",
+    "layer": 9,
+    "openEffect": 0,
+    "panelName": "MainCityIdleRewardPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10024",
+    "layer": 11,
+    "openEffect": 0,
+    "panelName": "MainCityLevelUpPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10025",
+    "layer": 15,
+    "openEffect": 0,
+    "panelName": "SpecialOfferGiftPackPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10026",
+    "layer": 30,
+    "openEffect": 0,
+    "panelName": "UnLockArenaTipPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10027",
+    "layer": 9,
+    "openEffect": 0,
+    "panelName": "FundPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10028",
+    "layer": 36,
+    "openEffect": 0,
+    "panelName": "AdRemovalPassPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10029",
+    "layer": 35,
+    "openEffect": 0,
+    "panelName": "MonthPassPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10030",
+    "layer": 50,
+    "openEffect": 0,
+    "panelName": "ArenaGiftPackPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10031",
+    "layer": 100,
+    "openEffect": 0,
+    "panelName": "BannerPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10032",
+    "layer": 100,
+    "openEffect": 0,
+    "panelName": "BattleResultPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10033",
+    "layer": 30,
+    "openEffect": 0,
+    "panelName": "BetPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10034",
+    "layer": 35,
+    "openEffect": 0,
+    "panelName": "BuyArtifactGiftTwoSurePanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10035",
+    "layer": 30,
+    "openEffect": 0,
+    "panelName": "BuyBoxTwoSurePanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10036",
+    "layer": 35,
+    "openEffect": 0,
+    "panelName": "BuyGiftPackTwoSurePanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10037",
+    "layer": 20,
+    "openEffect": 0,
+    "panelName": "BuyResCardTwoSurePanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10038",
+    "layer": 399,
+    "openEffect": 0,
+    "panelName": "CheatPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10039",
+    "layer": 32,
+    "openEffect": 0,
+    "panelName": "ChooseArenaProgressRewardPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10040",
+    "layer": 30,
+    "openEffect": 0,
+    "panelName": "ClimbRankPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10041",
+    "layer": 45,
+    "openEffect": 0,
+    "panelName": "CongratulationsGetGiftPackPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10042",
+    "layer": 36,
+    "openEffect": 0,
+    "panelName": "CustomSelectCardPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10043",
+    "layer": 35,
+    "openEffect": 0,
+    "panelName": "TimingPushGiftPackPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10044",
+    "layer": 40,
+    "openEffect": 0,
+    "panelName": "GeneralCardExchangePanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10045",
+    "layer": 1000,
+    "openEffect": 0,
+    "panelName": "GetNewCardPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10046",
+    "layer": 10,
+    "openEffect": 0,
+    "panelName": "HeadShotDetailPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10047",
+    "layer": 10,
+    "openEffect": 0,
+    "panelName": "MoraleBuffReachTipPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10048",
+    "layer": 31,
+    "openEffect": 0,
+    "panelName": "MoraleDefeatPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10049",
+    "layer": 20,
+    "openEffect": 0,
+    "panelName": "MoraleDescribesPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10050",
+    "layer": 25,
+    "openEffect": 0,
+    "panelName": "MoraleDetailPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10051",
+    "layer": 31,
+    "openEffect": 0,
+    "panelName": "MoraleSuccessPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10052",
+    "layer": 21,
+    "openEffect": 0,
+    "panelName": "MoraleWeeklyCardPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10053",
+    "layer": 35,
+    "openEffect": 0,
+    "panelName": "MultistageNewcomerPackagePanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10054",
+    "layer": 72,
+    "openEffect": 0,
+    "panelName": "OpenBoxAnimationPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10055",
+    "layer": 30,
+    "openEffect": 0,
+    "panelName": "OpenBoxPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 1,
+    "id": "10056",
+    "layer": 0,
+    "openEffect": 0,
+    "panelName": ""
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 1,
+    "id": "10057",
+    "layer": 15,
+    "openEffect": 0,
+    "panelName": "OutsiderCheatPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10058",
+    "layer": 40,
+    "openEffect": 0,
+    "panelName": "PlayerLevelUpPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10059",
+    "layer": 6,
+    "openEffect": 0,
+    "panelName": "PropLotteryPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10060",
+    "layer": 73,
+    "openEffect": 0,
+    "panelName": "RewardPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10061",
+    "layer": 7,
+    "openEffect": 0,
+    "panelName": "SummonOddDesPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10062",
+    "layer": 4,
+    "openEffect": 0,
+    "panelName": "UpgradeCardPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10063",
+    "layer": 35,
+    "openEffect": 0,
+    "panelName": "UpgradeRewardsPreviewPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10064",
+    "layer": 10,
+    "openEffect": 0,
+    "panelName": "WeeklyClashSettlementPopupPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 1,
+    "id": "10065",
+    "layer": 1,
+    "openEffect": 0,
+    "panelName": "MetaSwitchPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 1,
+    "id": "10066",
+    "layer": 1,
+    "openEffect": 0,
+    "panelName": "HeroCardPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 1,
+    "id": "10067",
+    "layer": 1,
+    "openEffect": 0,
+    "panelName": "RankPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 1,
+    "id": "10068",
+    "layer": 1,
+    "openEffect": 0,
+    "panelName": "MainReadyPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 1,
+    "id": "10069",
+    "layer": 1,
+    "openEffect": 0,
+    "panelName": "ShopPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 1,
+    "id": "10070",
+    "layer": 1,
+    "openEffect": 0,
+    "panelName": "UpgradeMainTowerPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 1,
+    "id": "10071",
+    "layer": 20,
+    "openEffect": 0,
+    "panelName": "FoundEnemyPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 1,
+    "id": "10072",
+    "layer": 15,
+    "openEffect": 0,
+    "panelName": "GamePanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 1,
+    "id": "10073",
+    "layer": 3,
+    "openEffect": 0,
+    "panelName": "ArtifactsSummonPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 1,
+    "id": "10074",
+    "layer": 1,
+    "openEffect": 0,
+    "panelName": "SubMetaEntryButtonsPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10075",
+    "layer": 30,
+    "openEffect": 0,
+    "panelName": "GiftChainPanel2"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10076",
+    "layer": 5,
+    "openEffect": 0,
+    "panelName": "UpgradeTalentPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10077",
+    "layer": 9,
+    "openEffect": 0,
+    "panelName": "MysteriousStorePanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10078",
+    "layer": 10,
+    "openEffect": 0,
+    "panelName": "MysteriousStoreAffirmPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10079",
+    "layer": 36,
+    "openEffect": 0,
+    "panelName": "RemoveADPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10080",
+    "layer": 36,
+    "openEffect": 0,
+    "panelName": "DailyBlessPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10081",
+    "layer": 36,
+    "openEffect": 0,
+    "panelName": "WeeklyCardActivityPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10082",
+    "layer": 37,
+    "openEffect": 0,
+    "panelName": "WeeklyGoldCardGiftPackPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 4,
+    "id": "10083",
+    "layer": 100,
+    "openEffect": 0,
+    "panelName": "PropDetailsPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10084",
+    "layer": 5,
+    "openEffect": 0,
+    "panelName": "WeeklyGoldCardVideoPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10085",
+    "layer": 29,
+    "openEffect": 0,
+    "panelName": "BoxPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 10,
+    "id": "10086",
+    "layer": 2,
+    "openEffect": 0,
+    "panelName": "PlayerFeedbackPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10087",
+    "layer": 30,
+    "openEffect": 0,
+    "panelName": "ChooseBoxToUnlockPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10088",
+    "layer": 30,
+    "openEffect": 0,
+    "panelName": "BuyBoxSlotPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10089",
+    "layer": 15,
+    "openEffect": 0,
+    "panelName": "TrophyProgressPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10090",
+    "layer": 1,
+    "openEffect": 0,
+    "panelName": "ArtifactDetailsPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10091",
+    "layer": 2,
+    "openEffect": 0,
+    "panelName": "ArtifactStarUpPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 4,
+    "id": "10092",
+    "layer": 100,
+    "openEffect": 0,
+    "panelName": "ADSBreakPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10093",
+    "layer": 4,
+    "openEffect": 0,
+    "panelName": "ArtifactTraitReforgeIntroPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10094",
+    "layer": 3,
+    "openEffect": 0,
+    "panelName": "ArtifactEntryRefreshPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10095",
+    "layer": 35,
+    "openEffect": 0,
+    "panelName": "MultistageNewcomerPackageV1Panel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10096",
+    "layer": 100,
+    "openEffect": 0,
+    "panelName": "AllIAPsPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 4,
+    "id": "10097",
+    "layer": 100,
+    "openEffect": 0,
+    "panelName": "AnnouncementPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 4,
+    "id": "10098",
+    "layer": 100,
+    "openEffect": 0,
+    "panelName": "BattlePowerChangePanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10099",
+    "layer": 7,
+    "openEffect": 0,
+    "panelName": "SpecialSummonOddDesPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10100",
+    "layer": 7,
+    "openEffect": 0,
+    "panelName": "SpecialSummonGiftPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10101",
+    "layer": 7,
+    "openEffect": 0,
+    "panelName": "SpecialSummonCustomPropUpPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10102",
+    "layer": 2,
+    "openEffect": 0,
+    "panelName": "ArtifactUseAnimPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "",
+    "group": 2,
+    "id": "10103",
+    "layer": 2,
+    "openEffect": 0,
+    "panelName": "MysteryAdventureFaceSlapPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10104",
+    "layer": 9,
+    "openEffect": 0,
+    "panelName": "MysteryAdventurePanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10105",
+    "layer": 50,
+    "openEffect": 0,
+    "panelName": "CheckInRewardPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10106",
+    "layer": 60,
+    "openEffect": 0,
+    "panelName": "ResourceObtainGuidePanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "null",
+    "group": 4,
+    "id": "10107",
+    "layer": 80,
+    "openEffect": 0,
+    "panelName": "OpponentBattleInfoPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "",
+    "group": 2,
+    "id": "10108",
+    "layer": 5,
+    "openEffect": 0,
+    "panelName": "PVPPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "",
+    "group": 2,
+    "id": "10109",
+    "layer": 101,
+    "openEffect": 0,
+    "panelName": "NormalMsgCanvas"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10110",
+    "layer": 9,
+    "openEffect": 0,
+    "panelName": "CardLevelResetPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "",
+    "group": 2,
+    "id": "10111",
+    "layer": 6,
+    "openEffect": 0,
+    "panelName": "PVPAchievementPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "",
+    "group": 2,
+    "id": "10112",
+    "layer": 6,
+    "openEffect": 0,
+    "panelName": "PVPRankDescPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "",
+    "group": 2,
+    "id": "10113",
+    "layer": 6,
+    "openEffect": 0,
+    "panelName": "PVPPassPanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "",
+    "group": 2,
+    "id": "10114",
+    "layer": 6,
+    "openEffect": 0,
+    "panelName": "PVPRulePanel"
+  },
+  {
+    "blockTutorialTrigger": false,
+    "effectRoot": "",
+    "group": 2,
+    "id": "10115",
+    "layer": 6,
+    "openEffect": 0,
+    "panelName": "PVPRankPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "",
+    "group": 2,
+    "id": "10116",
+    "layer": 0,
+    "openEffect": 0,
+    "panelName": "WorldCupFaceSlapPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "",
+    "group": 2,
+    "id": "10117",
+    "layer": 9,
+    "openEffect": 0,
+    "panelName": "WorldCupActivityPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "",
+    "group": 2,
+    "id": "10118",
+    "layer": 50,
+    "openEffect": 0,
+    "panelName": "ChangeNamePanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "",
+    "group": 2,
+    "id": "10119",
+    "layer": 10,
+    "openEffect": 0,
+    "panelName": "PVPRoomPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "",
+    "group": 2,
+    "id": "10120",
+    "layer": 0,
+    "openEffect": 0,
+    "panelName": "SummerCarnivalFaceSlapPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "",
+    "group": 2,
+    "id": "10121",
+    "layer": 9,
+    "openEffect": 0,
+    "panelName": "SummerCarnivalActivityPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "",
+    "group": 2,
+    "id": "10122",
+    "layer": 9,
+    "openEffect": 0,
+    "panelName": "SummerCarnivalGiftPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "",
+    "group": 2,
+    "id": "10123",
+    "layer": 101,
+    "openEffect": 0,
+    "panelName": "UniversalSelectCardPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "",
+    "group": 2,
+    "id": "10124",
+    "layer": 0,
+    "openEffect": 0,
+    "panelName": "S2RankRushFaceSlapPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "",
+    "group": 2,
+    "id": "10125",
+    "layer": 9,
+    "openEffect": 0,
+    "panelName": "S2RankRushActivityPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "null",
+    "group": 2,
+    "id": "10126",
+    "layer": 50,
+    "openEffect": 0,
+    "panelName": "FirstChargeGiftPackPanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "",
+    "group": 2,
+    "id": "10127",
+    "layer": 9,
+    "openEffect": 0,
+    "panelName": "BabyComeHomePanel"
+  },
+  {
+    "blockTutorialTrigger": true,
+    "effectRoot": "",
+    "group": 2,
+    "id": "10128",
+    "layer": 9,
+    "openEffect": 0,
+    "panelName": "ActivityIdCardPanel"
+  }
+]

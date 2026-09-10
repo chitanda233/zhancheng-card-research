@@ -1,0 +1,121 @@
+[
+  {
+    "iapId": "-1",
+    "id": "10001",
+    "level": 1,
+    "rewardsA": "20005:500",
+    "rewardsB": "20005:500"
+  },
+  {
+    "iapId": "-1",
+    "id": "10002",
+    "level": 2,
+    "rewardsA": "20013:10",
+    "rewardsB": "20013:10"
+  },
+  {
+    "iapId": "com.dong.hexwarriors.heroshoard1",
+    "id": "10003",
+    "level": 3,
+    "rewardsA": "20014:10",
+    "rewardsB": "20014:10"
+  },
+  {
+    "iapId": "-1",
+    "id": "10004",
+    "level": 4,
+    "rewardsA": "20005:5000",
+    "rewardsB": "20005:5000"
+  },
+  {
+    "iapId": "-1",
+    "id": "10005",
+    "level": 5,
+    "rewardsA": "20011:50",
+    "rewardsB": "20011:50"
+  },
+  {
+    "iapId": "com.dong.hexwarriors.heroshoard2",
+    "id": "10006",
+    "level": 6,
+    "rewardsA": "20014:20",
+    "rewardsB": "20014:20"
+  },
+  {
+    "iapId": "-1",
+    "id": "10007",
+    "level": 7,
+    "rewardsA": "20005:5000",
+    "rewardsB": "20005:5000"
+  },
+  {
+    "iapId": "-1",
+    "id": "10008",
+    "level": 8,
+    "rewardsA": "20012:50",
+    "rewardsB": "20012:50"
+  },
+  {
+    "iapId": "com.dong.hexwarriors.heroshoard3",
+    "id": "10009",
+    "level": 9,
+    "rewardsA": "20014:30",
+    "rewardsB": "20014:30"
+  },
+  {
+    "iapId": "-1",
+    "id": "10010",
+    "level": 10,
+    "rewardsA": "20005:10000",
+    "rewardsB": "20005:10000"
+  },
+  {
+    "iapId": "-1",
+    "id": "10011",
+    "level": 11,
+    "rewardsA": "20013:30",
+    "rewardsB": "20013:30"
+  },
+  {
+    "iapId": "com.dong.hexwarriors.heroshoard4",
+    "id": "10012",
+    "level": 12,
+    "rewardsA": "20014:40",
+    "rewardsB": "20014:40"
+  },
+  {
+    "iapId": "-1",
+    "id": "10013",
+    "level": 13,
+    "rewardsA": "20005:35000",
+    "rewardsB": "20005:35000"
+  },
+  {
+    "iapId": "-1",
+    "id": "10014",
+    "level": 14,
+    "rewardsA": "20012:150",
+    "rewardsB": "20012:150"
+  },
+  {
+    "iapId": "com.dong.hexwarriors.heroshoard5",
+    "id": "10015",
+    "level": 15,
+    "rewardsA": "20014:60",
+    "rewardsB": "20014:60"
+  },
+  {
+    "iapId": "-1",
+    "id": "10016",
+    "level": 16,
+    "rewardsA": "20005:50000",
+    "rewardsB": "20005:50000"
+  },
+  {
+    "iapId": "-1",
+    "id": "10017",
+    "level": 17,
+    "rewardsA": "20013:50",
+    "rewardsB": "20013:50"
+  }
+]

@@ -1,0 +1,114 @@
+[
+  {
+    "id": "10001",
+    "i2Loc_Des": "GoldCardWeeklySystem_PlayGameDes",
+    "taskType": "PlayGames",
+    "value": "10",
+    "reward": "20005:500",
+    "activityNumber": "10"
+  },
+  {
+    "id": "10002",
+    "i2Loc_Des": "GoldCardWeeklySystem_GameWinDes",
+    "taskType": "GameWin",
+    "value": "5",
+    "reward": "20006:20",
+    "activityNumber": "10"
+  },
+  {
+    "id": "10003",
+    "i2Loc_Des": "GoldCardWeeklySystem_CostGemDes",
+    "taskType": "CostDiamonds",
+    "value": "20",
+    "reward": "20012:50",
+    "activityNumber": "10"
+  },
+  {
+    "id": "10004",
+    "i2Loc_Des": "GoldCardWeeklySystem_CostCoinDes",
+    "taskType": "CostCoin",
+    "value": "500",
+    "reward": "20012:50",
+    "activityNumber": "10"
+  },
+  {
+    "id": "10005",
+    "i2Loc_Des": "GoldCardWeeklySystem_CostWoodDes",
+    "taskType": "CostWood",
+    "value": "500",
+    "reward": "20012:50",
+    "activityNumber": "10"
+  },
+  {
+    "id": "10006",
+    "i2Loc_Des": "GoldCardWeeklySystem_PlayGameDes",
+    "taskType": "PlayGames",
+    "value": "20",
+    "reward": "20005:1000",
+    "activityNumber": "30"
+  },
+  {
+    "id": "10007",
+    "i2Loc_Des": "GoldCardWeeklySystem_GameWinDes",
+    "taskType": "GameWin",
+    "value": "10",
+    "reward": "20006:40",
+    "activityNumber": "30"
+  },
+  {
+    "id": "10008",
+    "i2Loc_Des": "GoldCardWeeklySystem_CostGemDes",
+    "taskType": "CostDiamonds",
+    "value": "100",
+    "reward": "20013:20",
+    "activityNumber": "30"
+  },
+  {
+    "id": "10009",
+    "i2Loc_Des": "GoldCardWeeklySystem_CostCoinDes",
+    "taskType": "CostCoin",
+    "value": "2000",
+    "reward": "20013:20",
+    "activityNumber": "30"
+  },
+  {
+    "id": "10010",
+    "i2Loc_Des": "GoldCardWeeklySystem_CostWoodDes",
+    "taskType": "CostWood",
+    "value": "2000",
+    "reward": "20013:20",
+    "activityNumber": "30"
+  },
+  {
+    "id": "10011",
+    "i2Loc_Des": "GoldCardWeeklySystem_GameWinDes",
+    "taskType": "GameWin",
+    "value": "20",
+    "reward": "20014:5",
+    "activityNumber": "60"
+  },
+  {
+    "id": "10012",
+    "i2Loc_Des": "GoldCardWeeklySystem_CostGemDes",
+    "taskType": "CostDiamonds",
+    "value": "500",
+    "reward": "20014:5",
+    "activityNumber": "60"
+  },
+  {
+    "id": "10013",
+    "i2Loc_Des": "GoldCardWeeklySystem_CostCoinDes",
+    "taskType": "CostCoin",
+    "value": "10000",
+    "reward": "20014:5",
+    "activityNumber": "60"
+  },
+  {
+    "id": "10014",
+    "i2Loc_Des": "GoldCardWeeklySystem_CostWoodDes",
+    "taskType": "CostWood",
+    "value": "10000",
+    "reward": "20014:5",
+    "activityNumber": "60"
+  }
+]

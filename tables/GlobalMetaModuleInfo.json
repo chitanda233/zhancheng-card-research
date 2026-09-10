@@ -1,0 +1,57 @@
+[
+  {
+    "name": "MetaSwicthPanel_UnKonw",
+    "spineIconPath": "Assets/_Res/Addressable/Spine/MetaSwitch/Store/sd_SkeletonData.asset",
+    "showMetaPanelEvent": "ShowShopPanel",
+    "hideMetaPanelEvent": "HideShopPanel",
+    "redDotKey": "Feature_Store",
+    "spineKey_dianji": "dianji",
+    "spineKey_xunhuan": "xunhuan",
+    "spineKey_jingzhi": "jingzhi",
+    "id": "10001"
+  },
+  {
+    "name": "MetaSwicthPanel_Cards",
+    "spineIconPath": "Assets/_Res/Addressable/Spine/MetaSwitch/Cards/kz_SkeletonData.asset",
+    "showMetaPanelEvent": "ShowHeroPanel",
+    "hideMetaPanelEvent": "HideHeroPanel",
+    "redDotKey": "Feature_Card",
+    "spineKey_dianji": "dianji",
+    "spineKey_xunhuan": "xunhuan",
+    "spineKey_jingzhi": "jingzhi",
+    "id": "10002"
+  },
+  {
+    "name": "MetaSwicthPanel_Battle",
+    "spineIconPath": "Assets/_Res/Addressable/Spine/MetaSwitch/Battle/dz_SkeletonData.asset",
+    "showMetaPanelEvent": "ShowMainPanel",
+    "hideMetaPanelEvent": "HideMainPanel",
+    "redDotKey": "Feature_Battle",
+    "spineKey_dianji": "dianji",
+    "spineKey_xunhuan": "xunhuan",
+    "spineKey_jingzhi": "jingzhi",
+    "id": "10003"
+  },
+  {
+    "name": "MetaSwicthPanel_Fief",
+    "spineIconPath": "Assets/_Res/Addressable/Spine/MetaSwitch/Fief/zc_SkeletonData.asset",
+    "showMetaPanelEvent": "ShowUpgradeMainTowerPanel",
+    "hideMetaPanelEvent": "HideUpgradeMainTowerPanel",
+    "redDotKey": "Feature_Fief",
+    "spineKey_dianji": "dianji",
+    "spineKey_xunhuan": "xunhuan",
+    "spineKey_jingzhi": "jingzhi",
+    "id": "10004"
+  },
+  {
+    "name": "MetaSwicthPanel_Ranks",
+    "spineIconPath": "Assets/_Res/Addressable/Spine/MetaSwitch/Alliance/tm_SkeletonData.asset",
+    "showMetaPanelEvent": "ShowRankPanel",
+    "hideMetaPanelEvent": "HideRankPanel",
+    "redDotKey": "Feature_Ranks",
+    "spineKey_dianji": "dianji",
+    "spineKey_xunhuan": "xunhuan",
+    "spineKey_jingzhi": "jingzhi",
+    "id": "10005"
+  }
+]

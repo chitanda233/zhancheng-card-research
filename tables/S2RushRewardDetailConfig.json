@@ -1,0 +1,252 @@
+{
+  "Datas": [
+    {
+      "id": 101,
+      "channel": "dxyx",
+      "order_min": 1,
+      "order_max": 1,
+      "rewardCode": "CB_GOLD_COIN",
+      "count": 1
+    },
+    {
+      "id": 102,
+      "channel": "dxyx",
+      "order_min": 2,
+      "order_max": 2,
+      "rewardCode": "IPHONE17PM_256G",
+      "count": 1
+    },
+    {
+      "id": 103,
+      "channel": "dxyx",
+      "order_min": 3,
+      "order_max": 5,
+      "rewardCode": "IPHONE17_256G",
+      "count": 1
+    },
+    {
+      "id": 104,
+      "channel": "dxyx",
+      "order_min": 6,
+      "order_max": 10,
+      "rewardCode": "SONY_PS5",
+      "count": 1
+    },
+    {
+      "id": 105,
+      "channel": "dxyx",
+      "order_min": 11,
+      "order_max": 15,
+      "rewardCode": "HK_SOUND_CRYSTAL5",
+      "count": 1
+    },
+    {
+      "id": 106,
+      "channel": "dxyx",
+      "order_min": 16,
+      "order_max": 25,
+      "rewardCode": "MI_TV_A75_75",
+      "count": 1
+    },
+    {
+      "id": 107,
+      "channel": "dxyx",
+      "order_min": 26,
+      "order_max": 30,
+      "rewardCode": "DJI_LITO1",
+      "count": 1
+    },
+    {
+      "id": 108,
+      "channel": "dxyx",
+      "order_min": 31,
+      "order_max": 50,
+      "rewardCode": "REDMI_PAD2SE_6_128G",
+      "count": 1
+    },
+    {
+      "id": 109,
+      "channel": "dxyx",
+      "order_min": 51,
+      "order_max": 100,
+      "rewardCode": "CB_CUSTOM_KEYBOARD",
+      "count": 1
+    },
+    {
+      "id": 110,
+      "channel": "dxyx",
+      "order_min": 101,
+      "order_max": 300,
+      "rewardCode": "CUSTOM_FIGURE",
+      "count": 1
+    },
+    {
+      "id": 111,
+      "channel": "dxyx",
+      "order_min": 301,
+      "order_max": 500,
+      "rewardCode": "CUSTOM_TSHIRT",
+      "count": 1
+    },
+    {
+      "id": 201,
+      "channel": "wxyx",
+      "order_min": 1,
+      "order_max": 1,
+      "rewardCode": "ALIENWARE_16X",
+      "count": 1
+    },
+    {
+      "id": 202,
+      "channel": "wxyx",
+      "order_min": 2,
+      "order_max": 2,
+      "rewardCode": "IPHONE17PM_256G",
+      "count": 1
+    },
+    {
+      "id": 203,
+      "channel": "wxyx",
+      "order_min": 3,
+      "order_max": 3,
+      "rewardCode": "IPHONE17_256G",
+      "count": 1
+    },
+    {
+      "id": 204,
+      "channel": "wxyx",
+      "order_min": 4,
+      "order_max": 5,
+      "rewardCode": "SONY_PS5",
+      "count": 1
+    },
+    {
+      "id": 205,
+      "channel": "wxyx",
+      "order_min": 6,
+      "order_max": 15,
+      "rewardCode": "HK_SOUND_CRYSTAL5",
+      "count": 1
+    },
+    {
+      "id": 206,
+      "channel": "wxyx",
+      "order_min": 16,
+      "order_max": 20,
+      "rewardCode": "MI_TV_A75_75",
+      "count": 1
+    },
+    {
+      "id": 207,
+      "channel": "wxyx",
+      "order_min": 21,
+      "order_max": 30,
+      "rewardCode": "DJI_LITO1",
+      "count": 1
+    },
+    {
+      "id": 208,
+      "channel": "wxyx",
+      "order_min": 31,
+      "order_max": 50,
+      "rewardCode": "REDMI_PAD2SE_6_128G",
+      "count": 1
+    },
+    {
+      "id": 209,
+      "channel": "wxyx",
+      "order_min": 51,
+      "order_max": 70,
+      "rewardCode": "CB_CUSTOM_KEYBOARD",
+      "count": 1
+    },
+    {
+      "id": 210,
+      "channel": "wxyx",
+      "order_min": 71,
+      "order_max": 100,
+      "rewardCode": "diamond",
+      "count": 300
+    },
+    {
+      "id": 301,
+      "channel": "ios",
+      "order_min": 1,
+      "order_max": 1,
+      "rewardCode": "ALIENWARE_16X",
+      "count": 1
+    },
+    {
+      "id": 302,
+      "channel": "ios",
+      "order_min": 2,
+      "order_max": 2,
+      "rewardCode": "IPHONE17_256G",
+      "count": 1
+    },
+    {
+      "id": 303,
+      "channel": "ios",
+      "order_min": 3,
+      "order_max": 3,
+      "rewardCode": "SONY_PS5",
+      "count": 1
+    },
+    {
+      "id": 304,
+      "channel": "ios",
+      "order_min": 4,
+      "order_max": 4,
+      "rewardCode": "MI_TV_A75_75",
+      "count": 1
+    },
+    {
+      "id": 305,
+      "channel": "ios",
+      "order_min": 5,
+      "order_max": 5,
+      "rewardCode": "HK_SOUND_CRYSTAL5",
+      "count": 1
+    },
+    {
+      "id": 306,
+      "channel": "ios",
+      "order_min": 6,
+      "order_max": 10,
+      "rewardCode": "DJI_LITO1",
+      "count": 1
+    },
+    {
+      "id": 307,
+      "channel": "ios",
+      "order_min": 11,
+      "order_max": 15,
+      "rewardCode": "REDMI_PAD2SE_6_128G",
+      "count": 1
+    },
+    {
+      "id": 308,
+      "channel": "ios",
+      "order_min": 16,
+      "order_max": 30,
+      "rewardCode": "CB_CUSTOM_KEYBOARD",
+      "count": 1
+    },
+    {
+      "id": 309,
+      "channel": "ios",
+      "order_min": 31,
+      "order_max": 50,
+      "rewardCode": "diamond",
+      "count": 500
+    },
+    {
+      "id": 310,
+      "channel": "ios",
+      "order_min": 51,
+      "order_max": 100,
+      "rewardCode": "diamond",
+      "count": 300
+    }
+  ]
+}

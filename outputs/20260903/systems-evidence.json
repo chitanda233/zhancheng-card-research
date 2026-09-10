@@ -1,0 +1,957 @@
+{
+  "title": "占城大师全系统拆解证据索引",
+  "snapshot": "2026-09-03",
+  "appId": "wx9eed71970378b2ae",
+  "scope": "本地静态配置与中文文本；未恢复完整运行时代码、未验证服务器覆盖值",
+  "sources": [
+    {
+      "table": "AIPropInfoConfig",
+      "displayName": "AIPropInfoConfig（AI 神器配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\AIPropInfoConfig.json",
+      "sha256": "d3bfcaccfd078c008f09cfd85497f5991082b9a627dfb81e40370fdc9d1a0a4b",
+      "rows": 20
+    },
+    {
+      "table": "ArenaEnemyBalanceInfogameplay_improve_01",
+      "displayName": "ArenaEnemyBalanceInfogameplay_improve_01（竞技场敌方平衡配置·玩法优化 01 版）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\ArenaEnemyBalanceInfogameplay_improve_01.json",
+      "sha256": "a17f89ae6173089cd0393146cb45b17040ccfc85fd465417142d9d867dedeb1d",
+      "rows": 40
+    },
+    {
+      "table": "BaseConfigConfig",
+      "displayName": "BaseConfigConfig（骰子冒险基础配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\BaseConfigConfig.json",
+      "sha256": "f6afc404d9676f6c2aae435206233903c4d7f3dd9dab0865dc69536345515227",
+      "rows": null
+    },
+    {
+      "table": "BuildConfigConfig",
+      "displayName": "BuildConfigConfig（骰子冒险建筑与格子事件配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\BuildConfigConfig.json",
+      "sha256": "c2df0547b6d920f28963673e30295eda8c8cde4fc4ccde642ccb17504c42ae9b",
+      "rows": 13
+    },
+    {
+      "table": "CheckInRewardsConfig",
+      "displayName": "CheckInRewardsConfig（签到奖励配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\CheckInRewardsConfig.json",
+      "sha256": "e24367a2da2ca5cf97a4358e9ea202ad699463a36dc2410a22251a78c7b3696d",
+      "rows": 60
+    },
+    {
+      "table": "CheckInRewardsIndexConfig",
+      "displayName": "CheckInRewardsIndexConfig（签到奖励组索引）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\CheckInRewardsIndexConfig.json",
+      "sha256": "4e043094f694129b1d48f44abd8cb103d52683e7f8d1f87ead96b19c0fcc3953",
+      "rows": 2
+    },
+    {
+      "table": "ChessboardConfig",
+      "displayName": "ChessboardConfig（骰子冒险棋盘配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\ChessboardConfig.json",
+      "sha256": "4a9901a8b23dee2d5098b81e2c39a1f1d9872e1791e928842a320ca5b84c6139",
+      "rows": 24
+    },
+    {
+      "table": "CumulativeRewardConfig",
+      "displayName": "CumulativeRewardConfig（累计签到奖励配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\CumulativeRewardConfig.json",
+      "sha256": "e50792d8210498515b1403fd6c58d4157ef1b7abdadb0b9a53596e9f81a25d83",
+      "rows": 6
+    },
+    {
+      "table": "DailyTaskConfig",
+      "displayName": "DailyTaskConfig（骰子冒险每日任务配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\DailyTaskConfig.json",
+      "sha256": "a8d062ac8b5d432a76cd22acec86edc1016856ac55a05758859721b6d83e13d3",
+      "rows": 8
+    },
+    {
+      "table": "EnemyDifficultLevelInfosgameplay_improve_01",
+      "displayName": "EnemyDifficultLevelInfosgameplay_improve_01（敌方难度等级信息·玩法优化 01 版）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\EnemyDifficultLevelInfosgameplay_improve_01.json",
+      "sha256": "e7b0243db2a93c6bc8c50289781be16bd2049707bb1310f4bb7f85c852453a5c",
+      "rows": 25
+    },
+    {
+      "table": "FundIAPInfo",
+      "displayName": "FundIAPInfo（基金内购与奖励档位信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\FundIAPInfo.json",
+      "sha256": "7f219b3791615ad2cc79d1fcf8e209b1a733cb8761ffe08b87c51c5a8ac317e7",
+      "rows": 5
+    },
+    {
+      "table": "GameSettingConfig",
+      "displayName": "GameSettingConfig（游戏通用规则配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GameSettingConfig.json",
+      "sha256": "b4000b7f95e80de982a6142d17a4304d2b7387d1a4680c42b6ed9d9f1d9a143b",
+      "rows": 10
+    },
+    {
+      "table": "GlobaMultistageNewcomerPackageInfo",
+      "displayName": "GlobaMultistageNewcomerPackageInfo（分阶段新手礼包信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobaMultistageNewcomerPackageInfo.json",
+      "sha256": "b7367c811a5516a050823f59133da68468bdd87273112e90f5ca1fc51b6b82e5",
+      "rows": 4
+    },
+    {
+      "table": "GlobaUpgradeReward",
+      "displayName": "GlobaUpgradeReward（账号升级奖励配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobaUpgradeReward.json",
+      "sha256": "a1f312700d622f53fb26521a62130925e4325adfe96064bde1fc84c8ae47bc5c",
+      "rows": 100
+    },
+    {
+      "table": "GlobalArchitectureInfogameplay_improve_01",
+      "displayName": "GlobalArchitectureInfogameplay_improve_01（全局建筑信息·玩法优化 01 版）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalArchitectureInfogameplay_improve_01.json",
+      "sha256": "5e70bf56ebbd88720536d5feeeecebf2ed9db0ffd20a7f7152d80fc7b7f7746f",
+      "rows": 54
+    },
+    {
+      "table": "GlobalArenaInfoSheet2",
+      "displayName": "GlobalArenaInfoSheet2（全局竞技场信息·Sheet2 表）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalArenaInfoSheet2.json",
+      "sha256": "d68a7826ee40d71469682ad0d892f4b7a5614307e8ed2404020389578a1c8a74",
+      "rows": 20
+    },
+    {
+      "table": "GlobalArtifactAIReleaseInfo",
+      "displayName": "GlobalArtifactAIReleaseInfo（神器 AI 释放条件信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalArtifactAIReleaseInfo.json",
+      "sha256": "8d80c2ccdee4f8f94fbdc3dbc1ad3304dc3a816ff7ed7f46bf78e637a9670425",
+      "rows": 24
+    },
+    {
+      "table": "GlobalArtifactsForgeInfo",
+      "displayName": "GlobalArtifactsForgeInfo（神器重铸词条信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalArtifactsForgeInfo.json",
+      "sha256": "771f0cbdc1a16827571d329686495f591768cfd8928ad1e9bb894b3be312f31b",
+      "rows": 48
+    },
+    {
+      "table": "GlobalBaseAssetsInfo",
+      "displayName": "GlobalBaseAssetsInfo（全局基础资源信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalBaseAssetsInfo.json",
+      "sha256": "f74d96d33fb836426d6fcf8db6e0e04ace356ec057ea143ebfcf30e5286215b9",
+      "rows": 30
+    },
+    {
+      "table": "GlobalBlessInfo",
+      "displayName": "GlobalBlessInfo（全局祝福信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalBlessInfo.json",
+      "sha256": "d5d8a76ea3cd39488fd7d1ebadf297625228de818f58d603dbe02b41262694a6",
+      "rows": 35
+    },
+    {
+      "table": "GlobalBoxInfo",
+      "displayName": "GlobalBoxInfo（全局宝箱信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalBoxInfo.json",
+      "sha256": "45fedfec1aa415c0f7492d490f7b8b50e6bfc2fd435d2afe44bbf7d62e8b3463",
+      "rows": 8
+    },
+    {
+      "table": "GlobalCardTalent2Info",
+      "displayName": "GlobalCardTalent2Info（卡牌与新技能对应信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalCardTalent2Info.json",
+      "sha256": "27fbee1606101f806a3d343dab0c687a97bbc0a0581705eca493fff2d4679c28",
+      "rows": 53
+    },
+    {
+      "table": "GlobalCardTalentInfoSheet3",
+      "displayName": "GlobalCardTalentInfoSheet3（卡牌技能效果信息·Sheet3 表）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalCardTalentInfoSheet3.json",
+      "sha256": "504ef60f14230ef1bc69a6df410e420a273e4789ddde25dae6d112e604a453e3",
+      "rows": 268
+    },
+    {
+      "table": "GlobalDanInfoSheet2",
+      "displayName": "GlobalDanInfoSheet2（全局奖杯段位信息·Sheet2 表）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalDanInfoSheet2.json",
+      "sha256": "a8bd45369d98d0b0823e9d26747a512a06286b7819febfffdeb7e2fd40785401",
+      "rows": 20
+    },
+    {
+      "table": "GlobalExpression",
+      "displayName": "GlobalExpression（全局表情配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalExpression.json",
+      "sha256": "be44d81949187c8926341003d5a55695163286279f5c49f891e2f28434578ef7",
+      "rows": 38
+    },
+    {
+      "table": "GlobalFeatureUnlockInfo",
+      "displayName": "GlobalFeatureUnlockInfo（全局功能解锁信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalFeatureUnlockInfo.json",
+      "sha256": "44b44cd96286fc5b193f5fee149157e6a9fc7b70aa06aedef068a65ccbe288ca",
+      "rows": 33
+    },
+    {
+      "table": "GlobalFormulasInfo",
+      "displayName": "GlobalFormulasInfo（全局数值公式信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalFormulasInfo.json",
+      "sha256": "95c2b3e975ef96d470710a8386ceaa2f83bf032b700bfb9e313fe9bd068678f3",
+      "rows": 20
+    },
+    {
+      "table": "GlobalFundInfoAbilityFund",
+      "displayName": "GlobalFundInfoAbilityFund（技能基金奖励信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalFundInfoAbilityFund.json",
+      "sha256": "6eba4f2b6f7c7fe7d31b9f25c11baf4879dca1a739ff50469ab18a104d948271",
+      "rows": 20
+    },
+    {
+      "table": "GlobalFundInfoCardFund",
+      "displayName": "GlobalFundInfoCardFund（卡牌基金奖励信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalFundInfoCardFund.json",
+      "sha256": "a1e4d56c91d99ab375a4caebca48d8251bdf5364b3f0a718c61c59ce42581f0f",
+      "rows": 20
+    },
+    {
+      "table": "GlobalFundInfoMainCityPass",
+      "displayName": "GlobalFundInfoMainCityPass（领地通行证奖励信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalFundInfoMainCityPass.json",
+      "sha256": "810bf6595d01766cdab32b9059e8a3506a0919219d81273731963ea7c7f6c0bf",
+      "rows": 10
+    },
+    {
+      "table": "GlobalFundInfoSeasonPass",
+      "displayName": "GlobalFundInfoSeasonPass（旧赛季通行证奖励信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalFundInfoSeasonPass.json",
+      "sha256": "e52faf56ae08720eb520704552f824b7173c2de0dd7d2fe43d77d370eadedb91",
+      "rows": 99
+    },
+    {
+      "table": "GlobalFundInfoSummonFund",
+      "displayName": "GlobalFundInfoSummonFund（召唤基金奖励信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalFundInfoSummonFund.json",
+      "sha256": "340013be7418eb345ed31a8dc1b7a76563cf84bc8aed036313f610c34c7164e1",
+      "rows": 20
+    },
+    {
+      "table": "GlobalGiftChainInfo",
+      "displayName": "GlobalGiftChainInfo（链式礼包信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalGiftChainInfo.json",
+      "sha256": "ef616e9d69efcb1121e2ac16be8afac42018808c30853ccfbc9acfb4e491d7b9",
+      "rows": 10
+    },
+    {
+      "table": "GlobalGiftChainInfo2",
+      "displayName": "GlobalGiftChainInfo2（第二套链式礼包信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalGiftChainInfo2.json",
+      "sha256": "94cce3c9aac038a892f4f36133681977453b9a0c609eb8e24c847684f2133b63",
+      "rows": 17
+    },
+    {
+      "table": "GlobalHeroCardInfoSheet5",
+      "displayName": "GlobalHeroCardInfoSheet5（全局英雄卡牌信息·Sheet5 表）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalHeroCardInfoSheet5.json",
+      "sha256": "fe685dcfe2ed6ed415f713499728f059d692fb9007b5ed2a10189483b5fa6b57",
+      "rows": 54
+    },
+    {
+      "table": "GlobalMainCityAssetsInfo",
+      "displayName": "GlobalMainCityAssetsInfo（领地建筑美术资源信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalMainCityAssetsInfo.json",
+      "sha256": "a2320fccc1fdb13886197da1cdfca8cd01fad147cb932268f3aa5b6ca77ca900",
+      "rows": 34
+    },
+    {
+      "table": "GlobalMainCityBuildTalentInfoSheet2",
+      "displayName": "GlobalMainCityBuildTalentInfoSheet2（领地建筑属性加成信息·Sheet2 表）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalMainCityBuildTalentInfoSheet2.json",
+      "sha256": "187f3eb95af54f4d6aff05e8f0597d4ad9f2f57640c1d6b2ec07039f6d33bc54",
+      "rows": 16
+    },
+    {
+      "table": "GlobalMainCityHouseInfo",
+      "displayName": "GlobalMainCityHouseInfo（领地家族信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalMainCityHouseInfo.json",
+      "sha256": "e42eaf3f7e718f540c19a4ee57c9c34a001d2d24331ec56dc4f64b6561d4847e",
+      "rows": 20
+    },
+    {
+      "table": "GlobalMainCityMapInfo",
+      "displayName": "GlobalMainCityMapInfo（领地地图信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalMainCityMapInfo.json",
+      "sha256": "fdb0d1be07ce03970cb3d9b1e674443a73cc1028765dbd752e1847728d387be1",
+      "rows": 10
+    },
+    {
+      "table": "GlobalMainCityTitleInfo",
+      "displayName": "GlobalMainCityTitleInfo（领地称号与基础收益信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalMainCityTitleInfo.json",
+      "sha256": "804f74dbcc8df8e3fc2ae3cc3c0f036eef2fe28624511fbe4bd5cd2f8200f108",
+      "rows": 10
+    },
+    {
+      "table": "GlobalMysteriousStore",
+      "displayName": "GlobalMysteriousStore（全局神秘商店信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalMysteriousStore.json",
+      "sha256": "608413319760231d3a26af6aa9da6cf6a62217e7f0ed0d12c536d09c77137383",
+      "rows": 13
+    },
+    {
+      "table": "GlobalPolygonArenaInfoSheet2",
+      "displayName": "GlobalPolygonArenaInfoSheet2（多边形竞技场地图信息·Sheet2 表）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalPolygonArenaInfoSheet2.json",
+      "sha256": "c1e304c3462387535bf3e14e12dee83b8180ea8ac944acaf4ae024f8eaff1ea3",
+      "rows": 190
+    },
+    {
+      "table": "GlobalPropInfoBTest",
+      "displayName": "GlobalPropInfoBTest（全局神器信息·B 测试表）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalPropInfoBTest.json",
+      "sha256": "2a17c8e7daab7be64e128ed22ad044a21f524e212f7aa025476f9367f5d9da4f",
+      "rows": 24
+    },
+    {
+      "table": "GlobalRandomHeroCardInfo",
+      "displayName": "GlobalRandomHeroCardInfo（随机英雄卡牌奖励信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalRandomHeroCardInfo.json",
+      "sha256": "e54f704830f0f9151357d9cbc5424ce190d483a0f2cd5ad162414f2c6ef0edd7",
+      "rows": 20
+    },
+    {
+      "table": "GlobalRoleInfogameplay_improve_01",
+      "displayName": "GlobalRoleInfogameplay_improve_01（全局战斗单位信息·玩法优化 01 版）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalRoleInfogameplay_improve_01.json",
+      "sha256": "93ab3fb7d438c4d8d6572675909d94e103020265591ff9149aaed6c93c3d3628",
+      "rows": 52
+    },
+    {
+      "table": "GlobalShopInfo",
+      "displayName": "GlobalShopInfo（全局商店信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalShopInfo.json",
+      "sha256": "358d6f074a6d1f6f5e72d9c78db968f54f1da9c4a97b05b67ce4e1ec377adef9",
+      "rows": 51
+    },
+    {
+      "table": "GlobalSummonInfo",
+      "displayName": "GlobalSummonInfo（全局神器召唤信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalSummonInfo.json",
+      "sha256": "6b486dded6ec2860953baacbd650a6a78d1b6395e5e2e3653ae638a464b2bfef",
+      "rows": 50
+    },
+    {
+      "table": "GlobalTalentFormulasInfoSheet2",
+      "displayName": "GlobalTalentFormulasInfoSheet2（领主塔属性成长公式·Sheet2 表）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalTalentFormulasInfoSheet2.json",
+      "sha256": "779902ce764d0ab645de96706a041e45ffbf8aac2e09a26abbde1d67ff53a7bc",
+      "rows": 3
+    },
+    {
+      "table": "GlobalTrainingMapInfoSheet2",
+      "displayName": "GlobalTrainingMapInfoSheet2（训练地图与教程奖励信息·Sheet2 表）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalTrainingMapInfoSheet2.json",
+      "sha256": "bb34e861bda63839bea83f65ae17afdb77da72ae5a4a9a6f9f9d16a53032333c",
+      "rows": 2
+    },
+    {
+      "table": "GlobalTrophyProgressInfo",
+      "displayName": "GlobalTrophyProgressInfo（奖杯进度与节点奖励信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalTrophyProgressInfo.json",
+      "sha256": "d444353723a3875f08a76aca5f8cf56e6a3e3c0ee79f02badaaef4bc1517b2d2",
+      "rows": 206
+    },
+    {
+      "table": "GlobalTutorialInfo",
+      "displayName": "GlobalTutorialInfo（全局教程流程信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalTutorialInfo.json",
+      "sha256": "d237fdb625c9c33905aa0fc82aa3f922352cd12d769387a1d142783964d2b007",
+      "rows": 116
+    },
+    {
+      "table": "GlobalUpgradeTalentPriceInfoabilities_in_advance",
+      "displayName": "GlobalUpgradeTalentPriceInfoabilities_in_advance（额外技能解锁等级与升级价格信息·提前开放分支）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalUpgradeTalentPriceInfoabilities_in_advance.json",
+      "sha256": "abde288bcd47e29044b9e5cef031d186b435dc478b18e69a8181af283864bcb5",
+      "rows": 3
+    },
+    {
+      "table": "GlobalWeeklyCardDailyTaskInfo",
+      "displayName": "GlobalWeeklyCardDailyTaskInfo（每周主题卡每日任务信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalWeeklyCardDailyTaskInfo.json",
+      "sha256": "be39ae7270a2962c8c598af53ead1d2271c9fb5df823de6286a47f59b67b91ad",
+      "rows": 14
+    },
+    {
+      "table": "GlobalWeeklyCardStageInfo",
+      "displayName": "GlobalWeeklyCardStageInfo（每周主题卡阶段奖励信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalWeeklyCardStageInfo.json",
+      "sha256": "1f10500983f49f4dd36d271795ac3d059b380547f0757bcc28a45db14262a0ca",
+      "rows": 14
+    },
+    {
+      "table": "How2PlayConfig",
+      "displayName": "How2PlayConfig（骰子冒险玩法说明配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\How2PlayConfig.json",
+      "sha256": "3fb87f9c20d307a2407a0bbc9628d7a6fee624d0e108f64cf58f8eba7647ed71",
+      "rows": 6
+    },
+    {
+      "table": "I2Terms",
+      "displayName": "I2Terms（本地化文本词条）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\I2Terms.json",
+      "sha256": "bb5fee7ff8aadf9b43acaf99f1f6a87f49ffc6d87d2053c51b1c969b0a7d5b3a",
+      "rows": 1602
+    },
+    {
+      "table": "LapsConfigConfig",
+      "displayName": "LapsConfigConfig（骰子冒险跑圈成长配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\LapsConfigConfig.json",
+      "sha256": "bcfb5595b056e6b03599230e53b9db6d2f45f88968625ace40f8ba5b72975cb1",
+      "rows": 20
+    },
+    {
+      "table": "LimitedPropInfoConfig",
+      "displayName": "LimitedPropInfoConfig（限定神器召唤奖励池配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\LimitedPropInfoConfig.json",
+      "sha256": "ad1591ec437054cce61fbb99e77b3d6cd376b74090ab62efbca0ad9c52ed08df",
+      "rows": 8
+    },
+    {
+      "table": "LimitedPropOrderConfig",
+      "displayName": "LimitedPropOrderConfig（限定神器轮换顺序配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\LimitedPropOrderConfig.json",
+      "sha256": "bebe00b929b8156f2e0eb18608e7ceab21be41f43f2e08c6fc6d504993bbbc38",
+      "rows": 6
+    },
+    {
+      "table": "LimitedPropPackConfig",
+      "displayName": "LimitedPropPackConfig（限定神器召唤礼包配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\LimitedPropPackConfig.json",
+      "sha256": "03d5d58d7dfaa4ee0f25da46f81a22ce749f47a37fa5b9df7221876c6a841f23",
+      "rows": 8
+    },
+    {
+      "table": "PoolConfigConfig",
+      "displayName": "PoolConfigConfig（骰子冒险奖励池配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PoolConfigConfig.json",
+      "sha256": "df82b9607e177ca0995bdbd174d30f966e3a44868cc9146cd86e5e2ad48348aa",
+      "rows": 52
+    },
+    {
+      "table": "PremiumCustomGiftPackConfig",
+      "displayName": "PremiumCustomGiftPackConfig（尊享自选礼包配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PremiumCustomGiftPackConfig.json",
+      "sha256": "659b21fde73ae500089ec8e44f0131838457b60483afd49a0a51b0188bac02a8",
+      "rows": 2
+    },
+    {
+      "table": "PremiumGiftPackConfig",
+      "displayName": "PremiumGiftPackConfig（尊享礼包配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PremiumGiftPackConfig.json",
+      "sha256": "337109d6ee7be734431897955a6b84c7dd6e59176d96f363e80ee5dfb34d8033",
+      "rows": 8
+    },
+    {
+      "table": "PropAttrBuffInfoConfig",
+      "displayName": "PropAttrBuffInfoConfig（神器被动属性关联配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PropAttrBuffInfoConfig.json",
+      "sha256": "e2b8cec5f25dccef3cc763467e74280926d19f47eb80e471c2c3dba0b00bffe7",
+      "rows": 24
+    },
+    {
+      "table": "PropAttrEnumInfoConfig",
+      "displayName": "PropAttrEnumInfoConfig（神器属性成长与上限配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PropAttrEnumInfoConfig.json",
+      "sha256": "8f13f3882348b259fa4e6c596e0bc2d7ca9afa50e32a75b77893480dd0bbb4e4",
+      "rows": 49
+    },
+    {
+      "table": "PropAttrTypeConfig",
+      "displayName": "PropAttrTypeConfig（神器属性类型与换算系数配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PropAttrTypeConfig.json",
+      "sha256": "7a9ac218940eaf3b041d6b7737beeb9c53a3478f54187790303fc1c90e18cfd1",
+      "rows": 7
+    },
+    {
+      "table": "PropRankUpInfoConfig",
+      "displayName": "PropRankUpInfoConfig（神器升星升阶配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PropRankUpInfoConfig.json",
+      "sha256": "1ffbd6e65487f9150d398344d6fbee5a38f7b2cfb97a8234974d5a441198cb4a",
+      "rows": 31
+    },
+    {
+      "table": "PropUpgradeInfoConfig",
+      "displayName": "PropUpgradeInfoConfig（神器等级升级配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PropUpgradeInfoConfig.json",
+      "sha256": "be220a60b19a773488e68b9b8d8ac0f7e55dadd61ddc691a085fb893d5395bce",
+      "rows": 150
+    },
+    {
+      "table": "PvpBotConfig",
+      "displayName": "PvpBotConfig（PVP 机器人预设配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PvpBotConfig.json",
+      "sha256": "e48ea5e670c52f822aa7995c28bd68515428dfd122a9446f5356333e019b5606",
+      "rows": 86
+    },
+    {
+      "table": "PvpMapConfig",
+      "displayName": "PvpMapConfig（PVP 地图池配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PvpMapConfig.json",
+      "sha256": "3907e10e4c6bef64519bfcc809d7f17c96802be8d12cd63db0ab6946a590b891",
+      "rows": 132
+    },
+    {
+      "table": "PvpMatchingConfig",
+      "displayName": "PvpMatchingConfig（PVP 匹配窗口配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PvpMatchingConfig.json",
+      "sha256": "82fee22c72c25300e96432051a15c1eabc94f59dd226b55096c0bda9f0d26329",
+      "rows": 15
+    },
+    {
+      "table": "PvpPropPieceConfig",
+      "displayName": "PvpPropPieceConfig（PVP 神器碎片奖励权重配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PvpPropPieceConfig.json",
+      "sha256": "bb112b320547f981f3a6c706098e524e457a653a39ef510a40ba0a7c4f64b2fa",
+      "rows": 18
+    },
+    {
+      "table": "PvpRankConfig",
+      "displayName": "PvpRankConfig（PVP 段位规则配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PvpRankConfig.json",
+      "sha256": "078c8b0f35f5200fcf6d162ff04c192c1c5dcc8d258e29ab0617768fc0d2c3a9",
+      "rows": 25
+    },
+    {
+      "table": "PvpRankingListConfig",
+      "displayName": "PvpRankingListConfig（PVP 排行榜奖励配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PvpRankingListConfig.json",
+      "sha256": "113e5708acb100bf8fcdd022e5b9291dbb48fea626d9de55bdcf941398828fa4",
+      "rows": 10
+    },
+    {
+      "table": "PvpSeasonPassConfig",
+      "displayName": "PvpSeasonPassConfig（PVP 赛季通行证模板配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PvpSeasonPassConfig.json",
+      "sha256": "e2615375db90b8d5fd1df4b38c20bda62c25aff716c2dd73ddc0daebb65b3f3d",
+      "rows": 12
+    },
+    {
+      "table": "PvpSeasonPassRewardConfig",
+      "displayName": "PvpSeasonPassRewardConfig（PVP 赛季通行证奖励配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PvpSeasonPassRewardConfig.json",
+      "sha256": "963f6adc950581440fdacb248f5e1d8a50cb20518d5e9ffb49340e619c9b6ed8",
+      "rows": 180
+    },
+    {
+      "table": "PvpSeasonTaskConfig",
+      "displayName": "PvpSeasonTaskConfig（PVP 赛季任务配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PvpSeasonTaskConfig.json",
+      "sha256": "7a99842ec5363688db4566fb623fb1c61213776e5b78783a853df4e6c3ea2e84",
+      "rows": 36
+    },
+    {
+      "table": "PvpSettingConfig",
+      "displayName": "PvpSettingConfig（PVP 全局规则配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PvpSettingConfig.json",
+      "sha256": "25742289c6d2aabe9e58216b4bf3d448125b462ec422ced83663fcad0488f207",
+      "rows": null
+    },
+    {
+      "table": "PvpStateConfig",
+      "displayName": "PvpStateConfig（PVP 强敌分差与额外积分配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PvpStateConfig.json",
+      "sha256": "79502416e9a30c5fa9434d04acf00b7b40ed0dd1edf204225e6d625a14641464",
+      "rows": 7
+    },
+    {
+      "table": "RuinsConfigConfig",
+      "displayName": "RuinsConfigConfig（骰子冒险遗迹事件配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\RuinsConfigConfig.json",
+      "sha256": "fd1c618f913e2b80626003608848cf604f11c5cf20373757f44b047d75f96778",
+      "rows": 5
+    },
+    {
+      "table": "S2Rank2PlayConfig",
+      "displayName": "S2Rank2PlayConfig（S2 冲榜活动规则说明）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\S2Rank2PlayConfig.json",
+      "sha256": "f20a999ac07b6f2217ec9ec6edbc29edb2de1a9ef33d40a599d53b86a839818d",
+      "rows": 1
+    },
+    {
+      "table": "S2RankRewardListConfig",
+      "displayName": "S2RankRewardListConfig（S2 冲榜名次奖励配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\S2RankRewardListConfig.json",
+      "sha256": "ef0b36f7cbe19368d5cc8fd1ddc09ebae2489216363f4a819eb05176bb7ad41e",
+      "rows": 5
+    },
+    {
+      "table": "S2RushRewardsConfig",
+      "displayName": "S2RushRewardsConfig（S2 冲榜活动奖品配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\S2RushRewardsConfig.json",
+      "sha256": "dfbeff7a4df6a4094222de0f4bda3fb98f9afbb49001cfdaf1386ac97ebac693",
+      "rows": 13
+    },
+    {
+      "table": "SeasonRankingRewardConfigSheet2",
+      "displayName": "SeasonRankingRewardConfigSheet2（赛季排行榜奖励配置·Sheet2 表）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\SeasonRankingRewardConfigSheet2.json",
+      "sha256": "dbabd11cc0477cf81e81048e8d1a56d5b653402f61759885ff7cdbf80a35fb71",
+      "rows": 10
+    },
+    {
+      "table": "ShopArenaPackInfos",
+      "displayName": "ShopArenaPackInfos（竞技场商店礼包信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\ShopArenaPackInfos.json",
+      "sha256": "d9a22692f052fa49271a4f1dc94f52e0131ab508bde10f014970a9494d211ac8",
+      "rows": 20
+    },
+    {
+      "table": "SummerCarnival2PlayConfig",
+      "displayName": "SummerCarnival2PlayConfig（夏日嘉年华玩法说明）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\SummerCarnival2PlayConfig.json",
+      "sha256": "d148e82a4d030c19b41628ac3838780cf7933f61372601d98f58e0df0ffb733e",
+      "rows": 7
+    },
+    {
+      "table": "SummerCarnivalCheckConfig",
+      "displayName": "SummerCarnivalCheckConfig（夏日嘉年华签到配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\SummerCarnivalCheckConfig.json",
+      "sha256": "b6cf52515528a67ca05801d1fed92f6f7f4e9f12a13512e6debad701dc83b9c2",
+      "rows": 14
+    },
+    {
+      "table": "SummerCarnivaldailyTaskConfig",
+      "displayName": "SummerCarnivaldailyTaskConfig（夏日嘉年华每日任务配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\SummerCarnivaldailyTaskConfig.json",
+      "sha256": "2d71f4d3857d49824c39c49b1b3f95c20417649d3a2176d2ea78830616d82951",
+      "rows": 7
+    },
+    {
+      "table": "SummerCarnivalpointShopConfig",
+      "displayName": "SummerCarnivalpointShopConfig（夏日嘉年华积分商店配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\SummerCarnivalpointShopConfig.json",
+      "sha256": "d373dd3679f80d95e95f1072e8545317bb7498a985325142b6f186f79686de7a",
+      "rows": 13
+    },
+    {
+      "table": "TotalDiceConfig",
+      "displayName": "TotalDiceConfig（累计消耗骰子奖励配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\TotalDiceConfig.json",
+      "sha256": "1aa1c16c4ffce392a415bf09225ac574c34833c2f5475fe2f18576740d850b5b",
+      "rows": 66
+    },
+    {
+      "table": "UserLablePushPackInfo",
+      "displayName": "UserLablePushPackInfo（用户标签关联推送礼包信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\UserLablePushPackInfo.json",
+      "sha256": "601ed2e301644281944f38b01955ec81f12b6c01231ee15df8e615d74e4d57ab",
+      "rows": 2
+    },
+    {
+      "table": "UserLevelInfo",
+      "displayName": "UserLevelInfo（账号等级经验信息）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\UserLevelInfo.json",
+      "sha256": "b4c50c20062ee4c6d2d5663bc72834db3615a16f5ada39af43939768aba39ab8",
+      "rows": 100
+    },
+    {
+      "table": "VideoBtnConfig",
+      "displayName": "VideoBtnConfig（激励视频按钮与入口配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\VideoBtnConfig.json",
+      "sha256": "2ca4642f27bf443424c44e342741d28ec5837395ba62c61812bc3701b22cf189",
+      "rows": 18
+    },
+    {
+      "table": "WeeklyCardPoolConfig",
+      "displayName": "WeeklyCardPoolConfig（每周主题卡卡池配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\WeeklyCardPoolConfig.json",
+      "sha256": "075764b174dfd6d570ea9bdec09c961f6d3de22982f8751350caae3f48767f2a",
+      "rows": 2
+    },
+    {
+      "table": "WeeklyCardUIConfig",
+      "displayName": "WeeklyCardUIConfig（每周主题卡界面资源配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\WeeklyCardUIConfig.json",
+      "sha256": "8c1a342a580e6d615006030acb3f5abab3abdb6e5f280b584b1895561875a393",
+      "rows": 6
+    },
+    {
+      "table": "WeeklyClashDifficultyConfigSheet2",
+      "displayName": "WeeklyClashDifficultyConfigSheet2（周锦标赛难度与积分配置·Sheet2 表）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\WeeklyClashDifficultyConfigSheet2.json",
+      "sha256": "e961541cdf902be99699cf80dbce3bf8d261416653d85acbc0576ba836d6f63e",
+      "rows": 13
+    },
+    {
+      "table": "WordEmojiConfig",
+      "displayName": "WordEmojiConfig（文字表情配置）",
+      "path": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\WordEmojiConfig.json",
+      "sha256": "1d321f506ddd88f2801e1e55cd4fc3cc2ea64ca10aff9936f152da6edf36a285",
+      "rows": 32
+    }
+  ],
+  "remoteFlagSubset": [
+    [
+      "NewAbilitySystem",
+      1,
+      "DefaultValue"
+    ],
+    [
+      "AbilityTreeSystem",
+      0,
+      "DefaultValue"
+    ],
+    [
+      "NewArtifactsPlay",
+      1,
+      "DefaultValue"
+    ],
+    [
+      "ArtifactsSystem",
+      1,
+      "DefaultValue"
+    ],
+    [
+      "NewMainCity2",
+      1,
+      "DefaultValue"
+    ],
+    [
+      "NewMainCitySystem",
+      0,
+      "DefaultValue"
+    ],
+    [
+      "NewArenaProcess",
+      1,
+      "DefaultValue"
+    ],
+    [
+      "NoBet",
+      1,
+      "DefaultValue"
+    ],
+    [
+      "ArenaDifficultyV2",
+      1,
+      "DefaultValue"
+    ],
+    [
+      "NewArenaMap",
+      1,
+      "DefaultValue"
+    ],
+    [
+      "MinesCountLimit",
+      1,
+      "DefaultValue"
+    ],
+    [
+      "UnitsCountLimit",
+      0,
+      "DefaultValue"
+    ],
+    [
+      "Season",
+      1,
+      "DefaultValue"
+    ],
+    [
+      "WeeklyCardEvent",
+      1,
+      "DefaultValue"
+    ],
+    [
+      "DailyBless",
+      0,
+      "DefaultValue"
+    ],
+    [
+      "NewMoraleSystem",
+      0,
+      "ConfigurationRule"
+    ],
+    [
+      "UserSegmentation",
+      1,
+      "DefaultValue"
+    ],
+    [
+      "DynamicDifficulty01",
+      0,
+      "DefaultValue"
+    ],
+    [
+      "BalanceAdjustment02",
+      1,
+      "DefaultValue"
+    ],
+    [
+      "BalanceAdjustment03",
+      0,
+      "DefaultValue"
+    ]
+  ],
+  "uiVerified": [
+    "当前领地提示竞技场2解锁",
+    "当前主界面赛季模式提示竞技场4解锁",
+    "当前竞技场1进度9/25，成功+3",
+    "当前主界面4个宝箱槽，已得宝箱标注5分",
+    "当前月卡68元，奖励加成20%，每日宝石20/水晶50/木材1000",
+    "上一轮核对卡牌8/43及熊、骷髅基础属性"
+  ],
+  "keyCounts": {
+    "configuredCards": 54,
+    "enabledCards": 43,
+    "configuredArtifacts": 24,
+    "enabledArtifacts": 18,
+    "arenas": 20,
+    "pvpRanks": 25,
+    "botPresets": 86,
+    "pvpMapEntries": 132,
+    "artifactUpgradeLevels": 150,
+    "artifactRankStepsIncludingZero": 31,
+    "forgeAffixes": 48
+  },
+  "notes": [
+    "CanUse=true 表示本地表启用，不保证服务器获取渠道开放。",
+    "BotProb 是配置字段，不是当前玩家真实遭遇机器人比例。",
+    "Weight 与 ShowWeight 有差异；未确认运行时抽取与展示调用。"
+  ],
+  "switchExplanations": [
+    {
+      "name": "NewAbilitySystem",
+      "displayName": "NewAbilitySystem（新卡牌技能系统开关）",
+      "value": 1,
+      "explanation": "推测：选择新版额外技能流程；结合技能对应表与教程判断。",
+      "source": "DefaultValue"
+    },
+    {
+      "name": "AbilityTreeSystem",
+      "displayName": "AbilityTreeSystem（天赋树系统开关）",
+      "value": 0,
+      "explanation": "推测：控制旧天赋树分支的启用。",
+      "source": "DefaultValue"
+    },
+    {
+      "name": "NewArtifactsPlay",
+      "displayName": "NewArtifactsPlay（新版神器玩法开关）",
+      "value": 1,
+      "explanation": "推测：选择翻格充能等新版神器玩法；不据此保证所有旧冷却逻辑都被移除。",
+      "source": "DefaultValue"
+    },
+    {
+      "name": "ArtifactsSystem",
+      "displayName": "ArtifactsSystem（神器系统开关）",
+      "value": 1,
+      "explanation": "推测：控制神器相关功能是否启用。",
+      "source": "DefaultValue"
+    },
+    {
+      "name": "NewMainCity2",
+      "displayName": "NewMainCity2（新版领地第二套方案开关）",
+      "value": 1,
+      "explanation": "推测：选择领地探索玩法的第二套分支，具体覆盖范围未还原。",
+      "source": "DefaultValue"
+    },
+    {
+      "name": "NewMainCitySystem",
+      "displayName": "NewMainCitySystem（新版领地系统开关）",
+      "value": 0,
+      "explanation": "推测：控制另一套领地改版分支；值为 0 不代表整个领地功能关闭。",
+      "source": "DefaultValue"
+    },
+    {
+      "name": "NewArenaProcess",
+      "displayName": "NewArenaProcess（新版竞技场进度流程开关）",
+      "value": 1,
+      "explanation": "推测：选择新版竞技场推进与解锁流程。",
+      "source": "DefaultValue"
+    },
+    {
+      "name": "NoBet",
+      "displayName": "NoBet（免下注模式开关）",
+      "value": 1,
+      "explanation": "推测：使用无需下注的竞技场流程。",
+      "source": "DefaultValue"
+    },
+    {
+      "name": "ArenaDifficultyV2",
+      "displayName": "ArenaDifficultyV2（竞技场难度第二版开关）",
+      "value": 1,
+      "explanation": "推测：切换第二版对手难度规则。",
+      "source": "DefaultValue"
+    },
+    {
+      "name": "NewArenaMap",
+      "displayName": "NewArenaMap（新版竞技场地图开关）",
+      "value": 1,
+      "explanation": "推测：选择新版地图池或布局分支。",
+      "source": "DefaultValue"
+    },
+    {
+      "name": "MinesCountLimit",
+      "displayName": "MinesCountLimit（金矿数量限制开关）",
+      "value": 1,
+      "explanation": "推测：应用竞技场中的金矿数量上限。",
+      "source": "DefaultValue"
+    },
+    {
+      "name": "UnitsCountLimit",
+      "displayName": "UnitsCountLimit（单位数量限制开关）",
+      "value": 0,
+      "explanation": "推测：控制某套单位数量上限逻辑；值为 0 不证明所有模式均无上限。",
+      "source": "DefaultValue"
+    },
+    {
+      "name": "Season",
+      "displayName": "Season（赛季系统开关）",
+      "value": 1,
+      "explanation": "推测：控制赛季相关入口或规则分支。",
+      "source": "DefaultValue"
+    },
+    {
+      "name": "WeeklyCardEvent",
+      "displayName": "WeeklyCardEvent（每周主题卡活动开关）",
+      "value": 1,
+      "explanation": "推测：控制主题卡轮换活动是否启用。",
+      "source": "DefaultValue"
+    },
+    {
+      "name": "DailyBless",
+      "displayName": "DailyBless（每日祝福开关）",
+      "value": 0,
+      "explanation": "推测：控制每日祝福入口或效果流程。",
+      "source": "DefaultValue"
+    },
+    {
+      "name": "NewMoraleSystem",
+      "displayName": "NewMoraleSystem（新版士气系统开关）",
+      "value": 0,
+      "explanation": "推测：选择新版士气分支；值为 0 不足以证明旧士气系统也关闭。",
+      "source": "ConfigurationRule"
+    },
+    {
+      "name": "UserSegmentation",
+      "displayName": "UserSegmentation（用户分群开关）",
+      "value": 1,
+      "explanation": "推测：启用用户分类逻辑；具体使用哪些标签、是否影响匹配未确认。",
+      "source": "DefaultValue"
+    },
+    {
+      "name": "DynamicDifficulty01",
+      "displayName": "DynamicDifficulty01（动态难度方案 01 开关）",
+      "value": 0,
+      "explanation": "推测：控制一套动态难度调整分支；具体调节指标未确认。",
+      "source": "DefaultValue"
+    },
+    {
+      "name": "BalanceAdjustment02",
+      "displayName": "BalanceAdjustment02（平衡调整方案 02 开关）",
+      "value": 1,
+      "explanation": "推测：选择第二套平衡修正；涉及哪些卡牌、羁绊或数值未确认。",
+      "source": "DefaultValue"
+    },
+    {
+      "name": "BalanceAdjustment03",
+      "displayName": "BalanceAdjustment03（平衡调整方案 03 开关）",
+      "value": 0,
+      "explanation": "推测：选择第三套平衡修正；不能按编号推断它必然取代其他方案。",
+      "source": "DefaultValue"
+    }
+  ]
+}

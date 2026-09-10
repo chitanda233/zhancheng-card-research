@@ -1,0 +1,50 @@
+[
+  {
+    "day1RewardsA": "20005:2000,1;20006:200,2;1001:20",
+    "day1RewardsB": "20005:2000,1;20006:200,2;1001:20",
+    "day2RewardsA": "20008:500,1;20006:50,2",
+    "day2RewardsB": "20008:500,1;20006:50,2",
+    "day3RewardsA": "20008:1000,1;20006:50,2",
+    "day3RewardsB": "20008:1000,1;20006:50,2",
+    "iapId": "com.dong.hexwarriors.starterpack1",
+    "id": "10001",
+    "level": "1",
+    "price": "2.99"
+  },
+  {
+    "day1RewardsA": "20005:6000,1;20006:600,2;1001:60",
+    "day1RewardsB": "20005:6000,1;20006:600,2;1001:60",
+    "day2RewardsA": "20008:1500,1;20006:150,2",
+    "day2RewardsB": "20008:1500,1;20006:150,2",
+    "day3RewardsA": "20008:3000,1;20006:150,2",
+    "day3RewardsB": "20008:3000,1;20006:150,2",
+    "iapId": "com.dong.hexwarriors.starterpack2",
+    "id": "10002",
+    "level": "2",
+    "price": "9.99"
+  },
+  {
+    "day1RewardsA": "20005:18000,1;20006:1800,2;1001:180",
+    "day1RewardsB": "20005:18000,1;20006:1800,2;1001:180",
+    "day2RewardsA": "20008:4500,1;20006:450,2",
+    "day2RewardsB": "20008:4500,1;20006:450,2",
+    "day3RewardsA": "20008:9000,1;20006:450,2",
+    "day3RewardsB": "20008:9000,1;20006:450,2",
+    "iapId": "com.dong.hexwarriors.starterpack3",
+    "id": "10003",
+    "level": "3",
+    "price": "29.99"
+  },
+  {
+    "day1RewardsA": "20005:30000,1;20006:3000,2;1001:300",
+    "day1RewardsB": "20005:30000,1;20006:3000,2;1001:300",
+    "day2RewardsA": "20008:7500,1;20006:750,2",
+    "day2RewardsB": "20008:7500,1;20006:750,2",
+    "day3RewardsA": "20008:15000,1;20006:750,2",
+    "day3RewardsB": "20008:15000,1;20006:750,2",
+    "iapId": "com.dong.hexwarriors.starterpack4",
+    "id": "10004",
+    "level": "4",
+    "price": "29.99"
+  }
+]

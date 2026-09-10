@@ -1,0 +1,153 @@
+{
+  "tutorialRows": 116,
+  "edges": 87,
+  "danglingEdges": [],
+  "rootsNotRuntimeEntrypoints": [
+    "1007",
+    "1008",
+    "1009",
+    "1015",
+    "1016",
+    "1020",
+    "1021",
+    "2001",
+    "2002",
+    "3001",
+    "3005",
+    "4001",
+    "5001",
+    "6001",
+    "7001",
+    "8001",
+    "9001",
+    "9004",
+    "10001",
+    "12001",
+    "13001",
+    "14001",
+    "15001",
+    "16001",
+    "17001",
+    "17003",
+    "18001",
+    "19001",
+    "19003",
+    "19008",
+    "20000",
+    "20002",
+    "20003",
+    "30001"
+  ],
+  "blankFeatureTutorialStartIds": 33,
+  "actionCounts": {
+    "0": 68,
+    "1": 1,
+    "2": 47
+  },
+  "unresolvedLocalization": [
+    "SteerTutorialContent_1020"
+  ],
+  "warnings": [
+    "startTriggerEvent/endTriggerEvent appear to be lifecycle callbacks, not proven subscriptions. Do not create edges from matching event names.",
+    "No runtime root scheduler recovered. Roots are graph-theoretic only.",
+    "Conditional boolean polarity is unverified.",
+    "Static configuration snapshot is not server state."
+  ],
+  "playerNodes": 29,
+  "nodeRequiredFields": [
+    "entry",
+    "visible",
+    "actions",
+    "agency",
+    "cost",
+    "immediate",
+    "delayed",
+    "rule",
+    "next",
+    "branches",
+    "friction",
+    "evidence"
+  ],
+  "webSources": 12,
+  "brokenLinks": [],
+  "duplicateHtmlIds": false,
+  "graphCycles": false,
+  "edgeKinds": {
+    "explicit_next": 82,
+    "conditional_candidate": 5
+  },
+  "offlineNoExternalJavaScript": true,
+  "originalsUnchangedSinceFirstReportBuild": true,
+  "numberChecks": {
+    "skeletonUpgrade1to2_cards": 4,
+    "skeletonUpgrade1to2_gold": 5,
+    "skeletonUpgrade2to3_cards": 9,
+    "card1to6_gold": 1125,
+    "maxIdleTier1": [
+      480,
+      240,
+      60
+    ],
+    "artifactCumulativeFlips": [
+      8,
+      20,
+      36
+    ],
+    "newPlayerCount": 29
+  },
+  "artifacts": {
+    "journey-map.svg": 9386,
+    "journey-nodes.csv": 42443,
+    "journey-nodes.json": 49472,
+    "local-evidence.json": 538199,
+    "originals-baseline.json": 625,
+    "report-body.md": 35246,
+    "source-manifest.json": 13524,
+    "tooltip-desktop.png": 193476,
+    "tooltip-map.png": 159455,
+    "tooltip-mobile.png": 75844,
+    "tooltip-ui-verification.json": 19855,
+    "tutorial-graph.json": 73906,
+    "verification.json": 3148,
+    "web-evidence.json": 7439,
+    "占城大师_新手全路径研究.html": 528379,
+    "占城大师_新手全路径研究.md": 124082
+  },
+  "visualQA": {
+    "passed": true,
+    "checks": [
+      "mouse hover",
+      "Escape dismissal",
+      "keyboard focus",
+      "card/tutorial namespace distinction",
+      "inline SVG tooltips",
+      "viewport edge positioning",
+      "390px touch/click tooltip",
+      "offline file URL"
+    ],
+    "pageErrors": [],
+    "desktopViewport": "1360x950",
+    "mobileViewport": "390x844",
+    "report": "tooltip-ui-verification.json"
+  },
+  "tooltips": {
+    "tooltipCount": 1034,
+    "kinds": {
+      "symbol": 391,
+      "GlobalTutorialInfo": 141,
+      "GlobalHeroCardInfoSheet5": 11,
+      "tutorial": 357,
+      "GlobalBaseAssetsInfo": 17,
+      "table-record": 97,
+      "tutorial-family": 1,
+      "GlobalTrophyProgressInfo": 3,
+      "GlobalBoxInfo": 1,
+      "GlobalRandomHeroCardInfo": 4,
+      "unresolved": 7,
+      "map": 1,
+      "CheckInRewardsIndexConfig": 1,
+      "CheckInRewardsConfig": 2
+    },
+    "ambiguousIds": {}
+  }
+}

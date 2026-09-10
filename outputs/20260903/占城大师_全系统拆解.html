@@ -1,0 +1,1992 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>占城大师 · 全系统拆解</title><style>
+:root{--ink:#182b3a;--muted:#607383;--line:#dce5eb;--accent:#146c84;--paper:#fff;--bg:#eef3f6}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;color:var(--ink);background:var(--bg);font:16px/1.85 "Microsoft YaHei",system-ui,sans-serif}a{color:var(--accent);text-underline-offset:3px}aside{position:fixed;inset:0 auto 0 0;width:255px;padding:28px 22px;overflow:auto;background:#132d40;color:#d6e5ee}aside a{color:inherit;text-decoration:none}aside .brand{font-size:21px;font-weight:800;line-height:1.5;margin-bottom:20px;color:white}aside ul{padding:0;list-style:none}aside li{margin:10px 0;font-size:13px;line-height:1.55}aside .meta{font-size:12px;opacity:.7}main{margin:30px 32px 60px 288px;max-width:1180px;background:var(--paper);padding:46px 48px;border:1px solid var(--line);border-radius:15px;box-shadow:0 6px 25px #16334a08}h1{font-size:34px;line-height:1.4;margin:4px 0 20px;letter-spacing:-.5px}h2{font-size:23px;padding-top:22px;margin-top:38px;border-top:2px solid var(--line);line-height:1.5}h3{font-size:18px;margin-top:26px}p{margin:15px 0}blockquote{margin:24px 0;padding:14px 20px;border-left:4px solid #dca740;background:#fff9e9;border-radius:0 8px 8px 0}blockquote p{margin:5px 0}table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.7;margin:20px 0}th,td{padding:10px 12px;text-align:left;border:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}th{background:#eaf2f6;color:#24485e;font-weight:700}tr:nth-child(even) td{background:#f8fafb}code{font:12px/1.8 Consolas,monospace;overflow-wrap:anywhere;background:#edf3f7;padding:2px 4px;border-radius:3px}pre{background:#edf3f7;padding:16px;white-space:pre-wrap}.leadlinks{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}.leadlinks a{font-size:13px;border:1px solid #c9dbe4;padding:7px 13px;border-radius:7px;text-decoration:none}li{margin:7px 0}.table-wrap{overflow:auto}footer{font-size:12px;color:var(--muted);margin-top:38px}@media(max-width:1000px){aside{position:static;width:100%;max-height:none}aside .toc ul{columns:2}main{margin:18px;padding:26px}h1{font-size:27px}}@media(max-width:600px){aside .toc ul{columns:1}main{padding:20px;margin:10px}table{font-size:12px}th,td{padding:7px}h2{font-size:21px}}@media print{aside,.leadlinks{display:none}main{margin:0;border:0;box-shadow:none;padding:0;max-width:none}body{background:white;font-size:11px}h1{font-size:24px}h2{break-after:avoid;font-size:18px}table{font-size:10px}tr{break-inside:avoid}a{color:inherit;text-decoration:none}}
+summary{cursor:pointer;font-size:14px;margin-top:18px;font-weight:700}aside details[open] summary{margin-bottom:15px}aside .toc>ul>li>a{display:block;color:white;font-size:15px;font-weight:700;margin-top:20px}aside .toc ul ul{padding-left:12px;border-left:1px solid #426176;margin-left:3px}aside .toc ul ul li{font-size:12px}main h2{background:#eaf2f6;border-left:5px solid var(--accent);padding:18px 22px;border-top:0;border-radius:0 8px 8px 0}main h3{padding-top:12px}main h4{font-size:15px;color:#496473;margin-top:24px}@media(max-width:1000px){aside .toc ul{columns:1}}</style></head><body><aside><div class="brand">占城大师<br>全系统拆解</div><div class="meta">LOCAL RESOURCE STUDY · 2026.09.03</div><details id="report-toc" open><summary>阅读目录 · 局内循环 / 卡牌与成长 / 局外系统</summary><div class="toc">
+<ul>
+<li><a href="#_2">第一部分 · 局内循环：一局怎样进行</a><ul>
+<li><a href="#11">1.1 · 单局主循环与决策</a></li>
+<li><a href="#12">1.2 · 金币收入与投资节奏</a></li>
+<li><a href="#13">1.3 · 翻格、相邻格开放与随机结果</a></li>
+<li><a href="#14">1.4 · 自动出兵、路线与胜负条件</a></li>
+<li><a href="#15">1.5 · 神器充能与主动操作</a></li>
+<li><a href="#16">1.6 · 单局结束与下一局的衔接</a></li>
+</ul>
+</li>
+<li><a href="#_3">第二部分 · 卡牌等级与成长：哪些培养影响局内</a><ul>
+<li><a href="#21">2.1 · 成长来源与局内影响总表</a></li>
+<li><a href="#22">2.2 · 卡牌等级、基础属性、技能与重置</a></li>
+<li><a href="#23">2.3 · 卡组构建与羁绊加成</a></li>
+<li><a href="#24">2.4 · 领地培养怎样影响领主塔与经济</a></li>
+<li><a href="#25">2.5 · 神器升级、升阶、被动与重铸词条</a></li>
+<li><a href="#26">2.6 · 活动、每日祝福与士气的条件增益</a></li>
+<li><a href="#27">2.7 · 怎样核对最终战斗数值</a></li>
+<li><a href="#28">2.8 · 账号等级：经验、奖励与系统权限</a></li>
+</ul>
+</li>
+<li><a href="#_13">第三部分 · 局外周边系统：资源获取与进度</a><ul>
+<li><a href="#31">3.1 · 局外循环与材料去向</a></li>
+<li><a href="#32">3.2 · 账号经验与等级奖励的获取入口</a></li>
+<li><a href="#33">3.3 · 战斗结算：直接奖励、宝箱与达标领取</a></li>
+<li><a href="#34">3.4 · 卡牌获取：开新卡、碎片与宝箱</a></li>
+<li><a href="#35">3.5 · 神器收藏、普通召唤与限定召唤</a></li>
+<li><a href="#36">3.6 · 领地探索与挂机领取</a></li>
+<li><a href="#37-pvp">3.7 · 普通竞技场与独立PVP的推进和匹配</a></li>
+<li><a href="#38">3.8 · 赛季、通行证、周赛与排行榜</a></li>
+<li><a href="#39">3.9 · 签到、主题卡与限时活动</a></li>
+<li><a href="#310">3.10 · 商店、广告、礼包、基金与特权</a></li>
+</ul>
+</li>
+<li><a href="#_27">附录 · 版本分支与证据边界</a><ul>
+<li><a href="#_28">为什么资源里会有互相矛盾的规则</a></li>
+<li><a href="#_29">新手阅读与核对顺序</a></li>
+<li><a href="#_30">本次交付与可复核性</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details></aside><main><div class="leadlinks"><a href="占城大师_全卡牌图鉴.html">全卡牌图鉴</a><a href="占城大师_全系统拆解报告.md" download>下载 Markdown</a><a href="systems-evidence.json" download>证据索引</a></div><h1 id="_1">占城大师：全系统拆解报告</h1>
+<p>资源快照：2026 年 9 月 3 日 · 微信 AppID <code>wx9eed71970378b2ae</code> · 本地包目录版本 16 · 资源清单版本 <code>1.4.15.558-preview</code></p>
+<p>这款游戏的主体是<strong>翻格扩张、自动出兵的短局策略战斗</strong>。长期成长围绕卡牌、技能、领地和神器展开；竞技场把这些成长串起来，宝箱、挂机、任务和活动提供材料，商店与广告提供额外获取渠道。其策略空间集中在经济投入、翻格位置、部队搭配和神器释放时机。</p>
+<p>本报告按三个问题展开：<strong>局内循环：一局怎样玩；卡牌等级与成长：哪些培养会改变战斗；局外周边系统：材料怎样获得、进度怎样推进。</strong> 版本分支和证据边界放在最后的附录。</p>
+<p>配置表、开关与字段采用“英文名称（中文含义）”展示。中文括注是本次分析的释义；标注“推测”的作用尚未通过完整运行时代码确认。</p>
+<blockquote>
+<p>证据口径：<strong>画面确认</strong>＝2026年9月3日研究期间直接看到的游戏界面；<strong>资源确认</strong>＝当前电脑提取的配置、中文文本与资源关联；<strong>设计判断</strong>＝由这些规则推导的分析。没有恢复完整 C#／WASM 调用链，也没有拿到服务器当前下发的全部规则。旧表、活动残留、AB 分支不能直接当作当前实战规则。</p>
+</blockquote>
+<p>内容重整：2026年9月9日。以下界面记录仍为历史快照，未作为当前账号状态重新核验。</p>
+<h2 id="_2">第一部分 · 局内循环：一局怎样进行</h2>
+<p>先看玩家在一局里反复做什么、得到什么反馈，以及怎样结束。成长数值集中在第二部分；结算奖励的详细领取规则见第三部分。</p>
+<h3 id="11">1.1 · 单局主循环与决策</h3>
+<p><strong>领主塔／金矿产金币 → 花金币翻格 → 获得经济建筑、兵营或防御塔 → 自动产兵与对抗 → 继续积累金币、扩张与调整位置 → 达成胜负条件 → 局外结算。</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>环节</th>
+<th>玩家关注的决策</th>
+<th>对下一环节的影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经济积累</td>
+<td>当前应继续投资经济，还是立即补充战斗能力</td>
+<td>决定后续可翻格次数和当下防守压力</td>
+</tr>
+<tr>
+<td>翻格扩张</td>
+<td>地块价格、位置、随机结果</td>
+<td>改变占地、建筑布局和后续经济／兵力</td>
+</tr>
+<tr>
+<td>自动出兵与交战</td>
+<td>观察兵种、出兵间隔、敌军路线，选择补充位置</td>
+<td>形成正面优势，或创造拉扯、分兵与偷袭机会</td>
+</tr>
+<tr>
+<td>神器介入</td>
+<td>充能是否完成、目标与释放时机</td>
+<td>在关键时刻影响交战结果</td>
+</tr>
+<tr>
+<td>结束判断</td>
+<td>敌方建筑是否清空、剩余时间、双方占地</td>
+<td>决定继续进攻、防守或争夺地块</td>
+</tr>
+</tbody>
+</table></div>
+<p>这里的箭头表示玩法中的决策与反馈关系，不代表每次击杀都直接增加局内金币。具体击杀收益没有在这次分析中确认。</p>
+<h3 id="12">1.2 · 金币收入与投资节奏</h3>
+<p>领主塔与金矿持续提供局内金币，玩家把金币投入下一次翻格，选择补经济、补兵力或占据关键位置。金矿的产量和间隔受其卡牌等级影响，具体公式见第二部分2.2。</p>
+<p>前期投资金矿需要同时看敌军压力和回本时间；临近结算时，还要比较继续造矿与立即争夺占地的收益。局内金币与局外升级金币是不同资源，不应合并计算。</p>
+<h3 id="13">1.3 · 翻格、相邻格开放与随机结果</h3>
+<p>花费金币翻开地块后，得到经济建筑、兵营、防御或空结果，并改变可扩张的位置。基础价位为25、50、100、250金币，价格与兵种内部稀有度是不同概念。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>地块</th>
+<th>基础价格</th>
+<th>原始权重向量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一星</td>
+<td>50</td>
+<td>74,20,5,1,0</td>
+</tr>
+<tr>
+<td>二星</td>
+<td>100</td>
+<td>50,40,8,2,0</td>
+</tr>
+<tr>
+<td>三星</td>
+<td>250</td>
+<td>0,0,90,10,0</td>
+</tr>
+<tr>
+<td>未知</td>
+<td>25</td>
+<td>0,0,15,5,80</td>
+</tr>
+</tbody>
+</table></div>
+<p>权重向量按R／SR／SSR／SSSR／空排列；问号格的基础空权重为80。该表描述内部结果权重，不能当成整张地图的价格占比。地图固定内容、主城邻格用途、候选过滤和条件性覆盖另有规则。</p>
+<p>详细生成与翻开规则见<a href="../hex-random/index.html">地图与地块生成规则</a>。玩家反映的“后期新可开相邻格偏贵”仍在排查，暂不归因为已确认的时间或距离加权。</p>
+<h3 id="14">1.4 · 自动出兵、路线与胜负条件</h3>
+<p>教程明确写到：领主塔定期产金币；金币用于揭开地块；金矿继续产金币；兵营定期生产单位，单位自动攻击敌人。摧毁敌方所有建筑可获胜；计时结束时，还会根据占领格位数量判胜。<strong>只盯着击杀数，可能错过占地获胜路线。</strong> 平地块数如何处理尚未确认。</p>
+<p>教程也直接解释了拉扯：单位没有攻击目标时，优先受直线距离最近的建筑吸引；翻出新建筑可以短暂改变敌方行进路线。因此，翻格位置除了扩张，还承担引流、分兵和偷袭的功能。这里确认的是教程描述，目标锁定、重新索敌频率及障碍寻路细节尚未还原。</p>
+<p>来源：<code>I2Terms</code>（本地化文本词条），<code>SteerTutorialContent_1001</code>（引导教程文本·领主塔产金币）～<code>1007</code>、<code>18003</code>、<code>19003</code>～<code>19008</code>；<code>GlobalTutorialInfo</code>（全局教程流程信息）。</p>
+<p>兵营有各自的生产间隔，例如熊战士 7 秒、骷髅战士 4 秒，部分传说兵营为 35～50 秒。玩家需要观察部队形成的速度，而不只比较单体攻击力。阵容、羁绊与卡牌技能的选择和培养，见第二部分2.1～2.3。</p>
+<p>来源：<code>GlobalArchitectureInfogameplay_improve_01</code>（全局建筑信息·玩法优化 01 版）。</p>
+<h3 id="15">1.5 · 神器充能与主动操作</h3>
+<p>新版教程写明：通过翻格充能，第 <strong>8／20／36 次</strong>翻格充满，单局最多用 3 次。缓存 <code>NewArtifactsPlay=1</code>（新版神器玩法开关），因此这是目前较有依据的分析分支。第 2、3 次充能对应比前次再翻 12、16 格；经济与扩张能力会影响技能获得时机。</p>
+<p>旧教程还写“战斗 30 秒后可用”“每场一次”，神器主表也保留 <code>coolDown=30</code>（冷却时间字段；新版是否沿用待确认）。<strong>这些字段不能和新版充能规则直接相加</strong>，实际是否另有冷却需实战确认。你当前神器尚未完成本次界面核对。</p>
+<p>入场卡组的羁绊、卡牌技能，以及领地和神器养成提供的属性，也会影响局内结果。它们的获得、配置与升级属于局外准备，详见第二部分2.4～2.6；目前没有还原所有增益的完整叠加顺序。</p>
+<p>来源：<code>GlobalPropInfoBTest</code>（全局神器信息·B 测试表）、<code>I2Terms</code>（本地化文本词条） 中 <code>SteerTutorialContent_20000</code>（引导教程文本·神器翻格充能）～<code>20002</code>。</p>
+<h3 id="16">1.6 · 单局结束与下一局的衔接</h3>
+<p>战斗按对应模式判定胜负，再结算材料、账号经验、奖杯或段位分；宝箱和任务奖励可能需要后续开启或领取。</p>
+<p><strong>本局结果 → 领取与积累材料 → 调整阵容和培养 → 再次进入战斗。</strong></p>
+<p>局内胜负循环到这里结束。各模式奖励金额、日上限、宝箱条件与赛季计分，统一放在第三部分3.3，避免与交战过程混读。</p>
+<h2 id="_3">第二部分 · 卡牌等级与成长：哪些培养影响局内</h2>
+<p>这一部分把战斗数值的来源集中起来。先看影响对象，再看卡牌等级与技能、领地、神器以及临时加成；账号经验、召唤等级和通行证等级另列出它们与战斗属性的区别。</p>
+<h3 id="21">2.1 · 成长来源与局内影响总表</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>来源</th>
+<th>培养或配置方式</th>
+<th>影响的局内对象</th>
+<th>已确认范围与限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>卡牌等级</td>
+<td>同卡碎片＋金币</td>
+<td>该卡单位或建筑的基础属性；金矿产量与间隔</td>
+<td>按对应资源行的公式计算，不能用一种倍率套所有卡</td>
+</tr>
+<tr>
+<td>卡牌技能</td>
+<td>达到卡牌等级门槛，消耗符文石</td>
+<td>对应卡的技能、特性及条件效果</td>
+<td>须该卡关联相应技能；门槛与技能等级不同</td>
+</tr>
+<tr>
+<td>卡组与羁绊</td>
+<td>配置阵营、近战／远程等组合</td>
+<td>攻击、生命、生产效率、射程等组合效果</td>
+<td>A／B文案和实际激活统计口径待核对</td>
+</tr>
+<tr>
+<td>领地建筑与称号</td>
+<td>木材探索、建设与进度</td>
+<td>领主塔攻击、生命、金币每次产量</td>
+<td>有加成配置；最终叠加公式尚未完整恢复</td>
+</tr>
+<tr>
+<td>神器等级、升阶与词条</td>
+<td>水晶、碎片、重铸</td>
+<td>主动效果、单位／建筑属性、阵营加成、首次传说召唤机会</td>
+<td>背包与装备生效范围、叠加方式须按分支核查</td>
+</tr>
+<tr>
+<td>每周主题卡、每日祝福、士气</td>
+<td>活动状态或条件开关</td>
+<td>指定卡属性、召唤结果、移动／经济等</td>
+<td>临时或条件增益，不作为永久基础属性</td>
+</tr>
+<tr>
+<td>召唤等级、通行证</td>
+<td>分别积累对应经验或赛季进度</td>
+<td>主要影响召唤掉落池与赛季奖励获取</td>
+<td>不等于账号等级，也未确认按等级直接给单位增加攻击／生命</td>
+</tr>
+</tbody>
+</table></div>
+<p>上表是影响来源清单，不表示所有行同时生效，也不表示各项加成可以直接相加。</p>
+<h3 id="22">2.2 · 卡牌等级、基础属性、技能与重置</h3>
+<h4 id="_4">等级成长</h4>
+<p>升级卡牌消耗同卡碎片与金币。公式表旧名称写“钻石”，但教程及上一轮实际升级界面都指向金币，因此报告按玩家可见的金币口径记录。</p>
+<p>普通卡牌碎片需求公式为 <code>(L + R) × (L + 1)</code>，其中品质参数 R 为 1／2／3／4；金矿另用 <code>(L + 1)²</code>。当前等级 L 升下一级的金币公式为 <code>5L³</code>。多数基础属性采用线性成长，而金币成本是三次增长。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>从 1 级升至</th>
+<th>公式累计金币</th>
+<th>相关技能节点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6 级</td>
+<td>1,125</td>
+<td>第一技能槽</td>
+</tr>
+<tr>
+<td>12 级</td>
+<td>21,780</td>
+<td>第二技能槽</td>
+</tr>
+<tr>
+<td>18 级</td>
+<td>117,045</td>
+<td>第三技能槽</td>
+</tr>
+<tr>
+<td>20 级</td>
+<td>180,500</td>
+<td>展示计算节点，非等级上限</td>
+</tr>
+</tbody>
+</table></div>
+<p>累计值按 <code>5 × [N(N−1)/2]²</code> 计算，不包含技能费、碎片成本、折扣或服务器覆盖。上一轮界面只核实了低级升级价格，后期值属于配置推算。<strong>卡牌最高等级尚未确认</strong>；AI 配置中存在 21～22 级乃至更高等级范围，不能把上次图鉴的 1～20 级滑杆理解为等级上限。</p>
+<h4 id="_5">卡牌升级实际改变什么</h4>
+<p>卡牌等级要沿“卡牌 → 建筑／兵营 → 出生单位”的配置关联读取，兵营本身和它生产的单位有各自的数据。下列是本地基础公式示例，L表示该卡参与计算的等级，尚未叠加技能、羁绊或神器：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>对象</th>
+<th>基础成长公式</th>
+<th>1级 → 6级示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>持斧战士单位攻击</td>
+<td>13＋7×(L−1)</td>
+<td>13 → 48</td>
+</tr>
+<tr>
+<td>持斧战士单位生命</td>
+<td>100＋30×(L−1)</td>
+<td>100 → 250</td>
+</tr>
+<tr>
+<td>骷髅兵单位攻击</td>
+<td>10＋4×(L−1)</td>
+<td>10 → 30</td>
+</tr>
+<tr>
+<td>骷髅兵单位生命</td>
+<td>40＋18×(L−1)</td>
+<td>40 → 130</td>
+</tr>
+<tr>
+<td>金矿每次产量</td>
+<td>10＋(L−1)</td>
+<td>10 → 15金币</td>
+</tr>
+<tr>
+<td>金矿产出间隔</td>
+<td>6000−5L毫秒</td>
+<td>5.995 → 5.970秒</td>
+</tr>
+</tbody>
+</table></div>
+<p>来源：<code>GlobalRoleInfogameplay_improve_01</code>（全局战斗单位信息·玩法优化 01 版）、<code>GlobalArchitectureInfogameplay_improve_01</code>（全局建筑信息·玩法优化 01 版）。这些是具体对象的基础值，不等于战斗中最终伤害或账号面板。逐卡属性与技能另见<a href="../cards/index.html">全卡牌图鉴</a>。</p>
+<h4 id="_6">新技能系统</h4>
+<p>技能通过卡牌对应表关联具体效果，额外技能有等级门槛，并消耗符文石强化：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>技能槽</th>
+<th>卡牌等级要求</th>
+<th>I / II / III 配置价格（符文石）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>6</td>
+<td>100 / 200 / 300</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12</td>
+<td>300 / 600 / 900</td>
+</tr>
+<tr>
+<td>3</td>
+<td>18</td>
+<td>600 / 1000 / 1500</td>
+</tr>
+</tbody>
+</table></div>
+<p>这些价格按配置行逐档列出；初始特性与额外技能槽应分别处理。额外技能并非所有卡都有完全相同的完整数量，逐卡以关联表为准。旧天赋树仍在资源中，但缓存 <code>NewAbilitySystem=1</code>（新卡牌技能系统开关）、<code>AbilityTreeSystem=0</code>（天赋树系统开关），分析优先采用新系统。</p>
+<p>重置石 20023 的物品描述写明：重置兵种卡牌等级并全额返还升级材料。<strong>没有验证其是否连同技能符文石一起退还</strong>，不能把“全额”扩大解释成全部关联养成资源。</p>
+<p>设计判断：6／12／18 是值得检查技能价值的成长节点；“升一级”和“跨技能门槛”可能带来不同性质的变化。分散升级很多卡，会更快遇到金币与符文石瓶颈。</p>
+<p>来源：<code>GlobalFormulasInfo#10010</code>（全局数值公式信息，记录 10010）、<code>GlobalHeroCardInfoSheet5</code>（全局英雄卡牌信息·Sheet5 表）、<code>GlobalCardTalent2Info</code>（卡牌与新技能对应信息）、<code>GlobalCardTalentInfoSheet3</code>（卡牌技能效果信息·Sheet3 表）、<code>GlobalUpgradeTalentPriceInfoabilities_in_advance</code>（额外技能解锁等级与升级价格信息·提前开放分支）、<code>GlobalBaseAssetsInfo#20023</code>（全局基础资源信息，记录 20023）。</p>
+<h3 id="23">2.3 · 卡组构建与羁绊加成</h3>
+<p>上一轮已经整理全部 54 条卡牌记录，其中 43 条 <code>CanUse=true</code>（本地启用标记）、11 条关闭；当前账号图鉴显示 8/43，与启用表一致。43 张启用卡包含 40 个兵营、2 个防御塔、1 个金矿；四个主要阵营为人类、兽人、亡灵和机械，金矿属于中立。</p>
+<p>阵容需要同时考虑：前线承伤、远程输出、攻城能力、出兵间隔、羁绊以及经济牌的配合。兵营生产间隔差异很大，例如熊战士 7 秒、骷髅战士 4 秒；部分传说兵营为 35～50 秒。高单体属性不自动等于更快形成场上优势。</p>
+<p>羁绊文本存在两套版本：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>羁绊</th>
+<th>A 文案</th>
+<th>B 文案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人类</td>
+<td>2: 人类生产效率+10% <br>4: 人类伤害+50% <br>6: 金矿产量+20%</td>
+<td>2: 人类建筑血量+50%<br>4: 人类附近有友军时减伤20%<br>6: 人类建筑每4秒产1金币</td>
+</tr>
+<tr>
+<td>兽人</td>
+<td>2: 兽人生产效率+10% <br>4: 兽人伤害+50% <br>6: 兽人单位获得20%生命偷取</td>
+<td>2: 兽人移速+20%<br>4: 兽人血量&lt;50%时攻速+50%<br>6: 兽人对建筑伤害+75%</td>
+</tr>
+<tr>
+<td>亡灵</td>
+<td>2: 亡灵生产效率 + 10% <br>4: 亡灵伤害 + 50% <br>6: 亡灵有10%概率复活</td>
+<td>2: 亡灵产出速度+20%<br>4: 亡灵死亡后10%概率重生<br>6: 亡灵建筑每次额外产兵+1</td>
+</tr>
+<tr>
+<td>机械</td>
+<td>2: 机械生产效率+10% <br>4: 机械伤害+50% <br>6: 机械单位对建筑物伤害+50%</td>
+<td>2: 机械射程+20%<br>4: 机械伤害+50%<br>6: 机械受到远程伤害-50%</td>
+</tr>
+</tbody>
+</table></div>
+<p>近战羁绊文本为 3／5／7 档：生产效率 +10%、伤害 +50%、生命 +20%；远程对应为生产效率 +10%、伤害 +50%、射程 +10%。四阵营为 2／4／6 档。教程以“当前拥有两个兽人单位”说明激活一级协作，支持其与卡组构成相关；重复单位是否计数、矿／防御塔如何参与各类统计、所有加成的结算顺序尚未完整核对。</p>
+<p><strong>不能直接认定带 <code>_B</code>（B 分支文本后缀；不等于已确认当前启用） 的文案就一定是你当前生效的版本。</strong> 需要在游戏羁绊面板对照。两套分支都列出，是为了避免沿用过时攻略。</p>
+<p>设计判断：以足够等级的核心卡构成稳定阵容，再补羁绊和对策，比仅按颜色换入低等级传说卡更有依据。具体最强阵容仍需同条件对战验证。</p>
+<p>来源：<code>GlobalHeroCardInfoSheet5</code>（全局英雄卡牌信息·Sheet5 表）、<code>GlobalArchitectureInfogameplay_improve_01</code>（全局建筑信息·玩法优化 01 版）、<code>GlobalRoleInfogameplay_improve_01</code>（全局战斗单位信息·玩法优化 01 版）、<code>I2Terms</code>（本地化文本词条） 中 <code>HeroCardPanel_*FettersBuff</code>（卡牌面板各类羁绊效果文本）。逐卡数值另见全卡牌图鉴。</p>
+<h3 id="24">2.4 · 领地培养怎样影响领主塔与经济</h3>
+<p>消耗木材探索、建设领地后，建筑与称号配置把收益连接到领主塔攻击、生命和金币产量。领地入口及挂机领取流程见第三部分3.6。</p>
+<h4 id="_7">建筑加成</h4>
+<p><code>GlobalMainCityBuildTalentInfoSheet2</code>（领地建筑属性加成信息·Sheet2 表） 的 <code>buildType</code>（建筑加成类别） 对应 <code>GlobalTalentFormulasInfoSheet2</code>（领主塔属性成长公式·Sheet2 表）：1001 攻击、1002 生命、1003 金币／次。与建筑资源表关联后得到：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>加成类别</th>
+<th>每栋配置值</th>
+<th>对应建筑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>塔攻击</td>
+<td>50</td>
+<td>军营、训练场、法师塔、魔药塔、炮塔、骑士团</td>
+</tr>
+<tr>
+<td>塔生命</td>
+<td>200</td>
+<td>教堂、蔬菜商店、农场、喷泉、市集、牧场</td>
+</tr>
+<tr>
+<td>金币 / 次</td>
+<td>1</td>
+<td>酒馆、交易所、炼金坊、铸造坊</td>
+</tr>
+</tbody>
+</table></div>
+<p>这里说明建筑类别与表中贡献值；尚未确认当前版本最终属性如何叠加称号基础值、等级公式及其他修正，因此<strong>不可把下面称号表当作账号最终战斗面板</strong>。</p>
+<h4 id="_8">称号带来的基础属性与资源收益</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>称号</th>
+<th><code>hexLevel</code>（推测：称号对应的地块探索进度门槛）</th>
+<th><code>hexPrice</code>（推测：对应称号档位的翻格费用）</th>
+<th>塔攻击 / 生命 / 金币每次</th>
+<th>每分钟金币 / 木材 / 水晶</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>荒野长者</td>
+<td>0</td>
+<td>50</td>
+<td>30 / 200 / 11</td>
+<td>1 / 0.5 / 0.125</td>
+</tr>
+<tr>
+<td>荒野领主</td>
+<td>20</td>
+<td>100</td>
+<td>40 / 250 / 12</td>
+<td>1 / 0.5 / 0.125</td>
+</tr>
+<tr>
+<td>边疆守卫</td>
+<td>50</td>
+<td>150</td>
+<td>50 / 300 / 13</td>
+<td>2 / 1 / 0.25</td>
+</tr>
+<tr>
+<td>堡垒指挥官</td>
+<td>100</td>
+<td>200</td>
+<td>60 / 350 / 14</td>
+<td>2 / 1 / 0.25</td>
+</tr>
+<tr>
+<td>领域守护者</td>
+<td>150</td>
+<td>250</td>
+<td>70 / 400 / 15</td>
+<td>3 / 1.5 / 0.375</td>
+</tr>
+<tr>
+<td>魔法领主</td>
+<td>200</td>
+<td>300</td>
+<td>80 / 450 / 16</td>
+<td>3 / 1.5 / 0.375</td>
+</tr>
+<tr>
+<td>铁堡领主</td>
+<td>250</td>
+<td>350</td>
+<td>90 / 500 / 17</td>
+<td>4 / 2 / 0.5</td>
+</tr>
+<tr>
+<td>光辉执政官</td>
+<td>300</td>
+<td>400</td>
+<td>100 / 550 / 18</td>
+<td>4 / 2 / 0.5</td>
+</tr>
+<tr>
+<td>传奇帝君</td>
+<td>350</td>
+<td>450</td>
+<td>110 / 600 / 19</td>
+<td>5 / 2.5 / 0.625</td>
+</tr>
+<tr>
+<td>宇宙统治者</td>
+<td>400</td>
+<td>500</td>
+<td>120 / 650 / 20</td>
+<td>5 / 2.5 / 0.625</td>
+</tr>
+</tbody>
+</table></div>
+<p>十档 <code>maxRewardMins</code>（挂机奖励最多累计分钟数） 均为 480，即缓存配置的挂机存储上限为 8 小时。按基础速率计算，第一档满 8 小时为金币 480、木材 240、水晶 60；最高档为金币 2,400、木材 1,200、水晶 300。未计广告翻倍、特权及运行时变化。</p>
+<p><code>hexLevel</code>（推测：称号对应的地块探索进度门槛）、<code>hexPrice</code>（推测：对应称号档位的翻格费用） 保留字段名，避免误认为账号等级或称号升级一次性费用；其在探索进度中的具体扣费时点仍需领地解锁后对照。</p>
+<p>设计判断：领地同时增强领主塔与挂机资源流，属于影响全局的长期成长。木材不仅是装饰材料；它会通过领地连接到战斗能力和金币／水晶供给。</p>
+<p>来源：<code>GlobalMainCityTitleInfo</code>（领地称号与基础收益信息）、<code>GlobalMainCityBuildTalentInfoSheet2</code>（领地建筑属性加成信息·Sheet2 表）、<code>GlobalMainCityAssetsInfo</code>（领地建筑美术资源信息）、<code>GlobalTalentFormulasInfoSheet2</code>（领主塔属性成长公式·Sheet2 表）、<code>GlobalMainCityMapInfo</code>（领地地图信息）、<code>I2Terms</code>（本地化文本词条） 中 <code>SteerTutorialContent_6001</code>（引导教程文本·领地开放）～<code>6005</code>。</p>
+<h3 id="25">2.5 · 神器升级、升阶、被动与重铸词条</h3>
+<p>神器主动技能如何在局内释放见第一部分1.5；可收集的神器与获取入口见第三部分3.5。以下集中列出培养成本、等级限制与战斗加成。</p>
+<ul>
+<li>升级表配置 1～150 级，消耗水晶，并受 <code>NeedRank</code>（升级所需升阶条件） 限制。第 150 行要求 <code>Rank</code>（阶数；与累计升阶口径需区分） 30，四品质水晶成本分别为 800／1600／2400／4000。</li>
+<li>升阶表配置 0～30，共 31 个状态；最高行 <code>Star=5, Rank=0</code>（星级；阶数；与累计升阶口径需区分）。教程说明碎片可用于升星。末行成本 0 不应解释成可以继续免费升阶。</li>
+<li>被动属性表覆盖单位攻击、生命、攻速、移速，以及建筑生命、生产效率、建筑攻击。<strong>是否所有背包神器被动都生效、是否仅装备者生效，尚未从调用链确认。</strong></li>
+<li>重铸有 48 条词条配置，即四阵营 × 三类词条 × 四品质。三类为阵营攻击、生命、传说单位首次召唤概率；配置 <code>Level</code>（等级字段；在词条表中推测为解锁等级要求） 分组为 30／60／100。词条解锁条件及层叠方式还需要游戏面板核对。</li>
+</ul>
+<p>神器属性类型表的 <code>Factor</code>（属性换算系数） 是换算配置，不能直接当作每级增加百分比：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>配置系数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单位攻击</td>
+<td>0.4</td>
+</tr>
+<tr>
+<td>单位血量</td>
+<td>0.4</td>
+</tr>
+<tr>
+<td>单位攻速</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>单位移速</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>建筑血量</td>
+<td>0.25</td>
+</tr>
+<tr>
+<td>生产效率</td>
+<td>1.6</td>
+</tr>
+<tr>
+<td>建筑攻击</td>
+<td>0.25</td>
+</tr>
+</tbody>
+</table></div>
+<p>设计判断：神器既影响关键时刻的战局，也包含长期属性培养。治疗、群伤、位移、魅惑和攻城各有适用场景；按品质排序不能替代阵容匹配。</p>
+<p>来源：<code>GlobalPropInfoBTest</code>（全局神器信息·B 测试表）、<code>PvpPropPieceConfig</code>（PVP 神器碎片奖励权重配置）、<code>PropUpgradeInfoConfig</code>（神器等级升级配置）、<code>PropRankUpInfoConfig</code>（神器升星升阶配置）、<code>PropAttrBuffInfoConfig</code>（神器被动属性关联配置）、<code>PropAttrEnumInfoConfig</code>（神器属性成长与上限配置）、<code>PropAttrTypeConfig</code>（神器属性类型与换算系数配置）、<code>GlobalArtifactsForgeInfo</code>（神器重铸词条信息）、<code>GlobalArtifactAIReleaseInfo</code>（神器 AI 释放条件信息）、<code>I2Terms</code>（本地化文本词条） 中 <code>SteerTutorialContent_20000</code>（引导教程文本·神器翻格充能）～<code>20013</code>。</p>
+<h3 id="26">2.6 · 活动、每日祝福与士气的条件增益</h3>
+<p><strong>每周主题卡。</strong> 本地活动文本写指定卡攻击＋20%、生命＋20%、召唤概率＋1%。攻击与生命属于战斗属性加成；“召唤概率＋1%”只是文本口径，已复核的初始化函数在对应条件下加入1点SSSR权重，不能直接视为最终概率增加1个百分点。活动任务与领奖放在第三部分3.9。</p>
+<p><strong>每日祝福。</strong> 本地存在加权和累计消费后触发召唤的规则，须对局开关、祝福ID与合法目标条件成立。快照开关为0，不能默认计算进每局战力；详见<a href="../hex-random/index.html">地块随机中的条件覆盖</a>。</p>
+<p>士气旧教程为胜利 +5、失败 −20；阶段文本为 20 移速 +5%、40 攻击 +5%、60 奖杯 +5%、100 金矿产量 +5%、200 传奇召唤机会 +5%，最后一档与周特权相关。<strong>缓存 <code>NewMoraleSystem=0</code>（新版士气系统开关），且本次没有验证当前士气页面</strong>，所以把它列为待核对分支，不能把这些增益预先算进当前战力。</p>
+<p>来源：<code>WeeklyCardPoolConfig</code>（每周主题卡卡池配置）、<code>WeeklyCardUIConfig</code>（每周主题卡界面资源配置）、<code>GlobalBlessInfo</code>（全局祝福信息）、<code>I2Terms</code>（本地化文本词条）及地块随机函数复核。</p>
+<h3 id="27">2.7 · 怎样核对最终战斗数值</h3>
+<p>核对一项属性时，先确定具体单位／建筑和对应卡牌等级，得到基础公式值；再检查技能、羁绊、领地、神器和活动是否适用，最后核对局中触发条件。<strong>这是核对顺序，不是已经还原的加成计算顺序。</strong></p>
+<p>账号等级的奖励、召唤等级的掉落权重、通行证经验都应独立记录。获得材料能够支持后续培养，但材料到账本身不能记成单位立即增加属性。主城成长也不等同于全部兵种攻击提高。</p>
+<p>当前仍缺少完整的加法／乘法顺序、叠加上限、神器装备范围和当前服务器开关，暂不提供把所有加成直接相乘的“最终战力公式”。</p>
+<h3 id="28">2.8 · 账号等级：经验、奖励与系统权限</h3>
+<p>账号等级是一条独立的账号成长轴。它使用账号经验推进，和卡牌等级、领地称号等级、神器等级、召唤等级、通行证等级、竞技场奖杯分别记录。账号等级本身不是某张卡的等级，也没有证据表明“账号等级 10 级”会直接给所有单位增加攻击或生命。</p>
+<h4 id="_9">账号等级怎样获得经验</h4>
+<p><code>UserLevelInfo</code>（账号等级经验信息） 配置了 1～100 级的经验节点；<code>GameSettingConfig</code>（游戏通用规则配置） 中普通对战和赛季对战的账号经验字段均为胜利20、失败10。这个数值表示账号经验，不是奖杯、局内金币、卡牌碎片或通行证经验。实际对局还可能受到模式、活动和服务器覆盖影响，因此配置值不能直接当成当前每场固定到账值。</p>
+<h4 id="_10">账号等级提供什么</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>作用</th>
+<th>影响对象</th>
+<th>证据与边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>发放等级奖励</td>
+<td>升级宝箱、随机新卡及其他基础奖励</td>
+<td><code>GlobaUpgradeReward</code>（账号升级奖励配置）有100条升级奖励；需要逐级领取，不能把全部奖励视为一次性到账</td>
+</tr>
+<tr>
+<td>打开系统入口</td>
+<td>领地、神器、赛季等功能入口的可见或可用状态</td>
+<td><code>GlobalFeatureUnlockInfo</code>（全局功能解锁信息）有33条规则；它同时使用前置ID、竞技场／奖杯和其他条件，不能把所有条件简化为账号等级</td>
+</tr>
+<tr>
+<td>提供培养材料</td>
+<td>间接支持卡牌、技能、神器和领地成长</td>
+<td>奖励到账后仍需消耗金币、碎片、符文石、水晶或木材，账号等级不会替代这些升级成本</td>
+</tr>
+<tr>
+<td>改变局内战斗属性</td>
+<td>目前没有直接证据</td>
+<td>局内基础属性来自卡牌等级、技能、羁绊、领地、神器及临时增益；不能把账号等级直接乘进战斗公式</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="_11">它和其他系统的关系</h4>
+<p>账号等级与其他模块是“解锁和供给”的关系，不能和“属性成长”混为一条公式：</p>
+<ul>
+<li><strong>与卡牌等级：</strong>账号升级奖励可能提供新卡或材料；真正改变兵种攻击、生命、出兵间隔和金矿产出的，是卡牌及其对应建筑／单位的等级公式。</li>
+<li><strong>与卡牌技能：</strong>账号等级可能通过奖励提供符文石或解锁相关入口，但技能槽要求的是卡牌等级6／12／18等门槛，不是账号等级门槛。</li>
+<li><strong>与领地：</strong>历史界面显示领地入口在竞技场2解锁；账号经验和竞技场进度都可能参与整体解锁链，当前没有证据证明仅提升账号等级就能越过竞技场条件。</li>
+<li><strong>与神器：</strong>历史配置把神器入口放在竞技场3附近；账号升级奖励可以提供资源，但神器的等级、升阶、词条和局内技能仍按神器系统自身规则计算。</li>
+<li><strong>与宝箱：</strong>账号等级奖励可能直接给宝箱，战斗胜利宝箱则是另一条结算路径；宝箱开启得到的材料还要再投入卡牌、神器或领地。</li>
+<li><strong>与召唤等级：</strong>召唤等级改变普通神器召唤池的类别权重；账号等级只可能通过奖励或解锁间接影响召唤资源，二者不是同一等级。</li>
+<li><strong>与通行证和赛季：</strong>通行证使用独立的赛季经验，胜利100、失败30的配置不能并入账号经验20／10；赛季段位和通行证等级也不能代替账号等级。</li>
+</ul>
+<h4 id="_12">对局内的实际影响链</h4>
+<pre><code class="language-text">对战／任务／奖励
+→ 账号经验增加
+→ 账号升级并领取等级奖励或满足某些入口条件
+→ 获得卡牌、碎片、金币、符文石、水晶、木材等
+→ 进行卡牌／技能／领地／神器培养
+→ 下一局把已完成的培养结果带入战斗
+</code></pre>
+<p>这条链说明账号等级对局内主要是间接影响：它改变可用内容和资源供给，培养完成后才由具体卡牌、领地或神器属性改变战斗表现。当前快照没有恢复所有服务器解锁条件，也没有证明账号等级本身参与地块价格、地块稀有度或翻格卡牌权重。</p>
+<p>来源：<code>UserLevelInfo</code>（账号等级经验信息）、<code>GlobaUpgradeReward</code>（账号升级奖励配置）、<code>GlobalFeatureUnlockInfo</code>（全局功能解锁信息）、<code>GameSettingConfig</code>（游戏通用规则配置）、<code>GlobalTrophyProgressInfo</code>（奖杯进度与节点奖励信息）、<code>PvpSettingConfig</code>（PVP 全局规则配置）。</p>
+<h2 id="_13">第三部分 · 局外周边系统：资源获取与进度</h2>
+<p>这一部分按战斗前后的操作组织：解锁入口、对战结算、获取卡牌与神器、领取挂机、推进竞技场与赛季、完成活动和使用商店。相关培养数值统一回到第二部分查阅。</p>
+<h3 id="31">3.1 · 局外循环与材料去向</h3>
+<p><strong>对战、宝箱、挂机、任务与活动 → 获得材料 → 在第二部分对应培养线投入 → 准备下一局。</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>资源 ID</th>
+<th>名称</th>
+<th>主要用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20004</td>
+<td>奖杯</td>
+<td>胜利的证明。收集奖杯进入更高的竞技场！</td>
+</tr>
+<tr>
+<td>20005</td>
+<td>金币</td>
+<td>金闪闪的基础货币，用来升级卡牌。</td>
+</tr>
+<tr>
+<td>20006</td>
+<td>宝石</td>
+<td>高级货币，用来购买各种物品或加速宝箱开启。</td>
+</tr>
+<tr>
+<td>20007</td>
+<td>经验</td>
+<td>收集足够的经验以提升账户等级。</td>
+</tr>
+<tr>
+<td>20008</td>
+<td>木材</td>
+<td>未经加工的原木，用来升级领地的必备材料。</td>
+</tr>
+<tr>
+<td>20009</td>
+<td>水晶</td>
+<td>散发神圣能量的水晶，用于升级神器。</td>
+</tr>
+<tr>
+<td>20010</td>
+<td>召唤经验</td>
+<td>提升你的召唤等级。等级越高，掉落越好！</td>
+</tr>
+<tr>
+<td>20011</td>
+<td>通用普通卡片</td>
+<td>可以兑换你拥有的任何普通卡牌。</td>
+</tr>
+<tr>
+<td>20012</td>
+<td>稀有通用卡片</td>
+<td>可以兑换你拥有的任何稀有卡牌。</td>
+</tr>
+<tr>
+<td>20013</td>
+<td>史诗通用卡片</td>
+<td>可以兑换你拥有的任何史诗卡牌。</td>
+</tr>
+<tr>
+<td>20014</td>
+<td>传奇通用卡片</td>
+<td>可以兑换你拥有的任何传奇卡牌。</td>
+</tr>
+<tr>
+<td>20015</td>
+<td>每周锦标赛门票</td>
+<td>周锦标赛的参赛票。不要错过这场战斗！</td>
+</tr>
+<tr>
+<td>20016</td>
+<td>积分</td>
+<td>在周锦标赛中获得的积分。</td>
+</tr>
+<tr>
+<td>20017</td>
+<td>代币</td>
+<td>用来升级赛季通行证并解锁奖励。</td>
+</tr>
+<tr>
+<td>20018</td>
+<td>符文石</td>
+<td>刻有神奇符号的石头，可用来升级单位技能。</td>
+</tr>
+<tr>
+<td>20019</td>
+<td>限定召唤券</td>
+<td>稀有的限定召唤券，可用于神器限定召唤</td>
+</tr>
+<tr>
+<td>20020</td>
+<td>普通骰子</td>
+<td>用于秘境大冒险活动的投骰道具。</td>
+</tr>
+<tr>
+<td>20023</td>
+<td>重置石</td>
+<td>重置兵种卡牌的等级,并全额返还升级材料。</td>
+</tr>
+<tr>
+<td>20024</td>
+<td>赛季通行证经验</td>
+<td>用于提升赛季通行证等级</td>
+</tr>
+<tr>
+<td>20025</td>
+<td>随机神器碎片</td>
+<td>随机获得一个神器碎片</td>
+</tr>
+<tr>
+<td>20021</td>
+<td>足球</td>
+<td>用于世界杯活动的射门道具。</td>
+</tr>
+<tr>
+<td>20022</td>
+<td>足球积分</td>
+<td>用于世界杯活动的商店兑换。</td>
+</tr>
+<tr>
+<td>20029</td>
+<td>嘉年华积分</td>
+<td>用于夏日嘉年华活动的奖励兑换。</td>
+</tr>
+</tbody>
+</table></div>
+<p>金币＋碎片用于卡牌；符文石用于技能；木材连接领地；水晶和神器碎片连接神器。宝石、召唤券与活动币有各自的获取出口。局内金币20001和局外升级金币20005是不同资源。</p>
+<p>来源：<code>GlobalBaseAssetsInfo</code>（全局基础资源信息）及各升级、奖励表。</p>
+<h3 id="32">3.2 · 账号经验与等级奖励的获取入口</h3>
+<p>账号等级的作用、和其他系统的关系及局内影响链，统一见第二部分2.8。本节只记录经验与奖励从哪里进入账号：普通或赛季对战会写入账号经验配置，升级后领取<code>GlobaUpgradeReward</code>（账号升级奖励配置）对应节点；任务、活动和其他奖励是否同时给账号经验，要按具体模式的结算字段核对。</p>
+<p>账号经验与奖杯、段位分、通行证经验、召唤经验分开统计。主界面历史快照中的经验条为60/100，只能作为当时界面记录，不能推断当前账号状态。</p>
+<p>来源：<code>UserLevelInfo</code>（账号等级经验信息）、<code>GlobaUpgradeReward</code>（账号升级奖励配置）、<code>GameSettingConfig</code>（游戏通用规则配置）、<code>PvpSettingConfig</code>（PVP 全局规则配置）。</p>
+<h3 id="33">3.3 · 战斗结算：直接奖励、宝箱与达标领取</h3>
+<p>战斗结束的产出需要分清<strong>直接到账、进度变化、待开启宝箱、累计达标奖励</strong>。同一局可以同时推动多条线，但宝箱里的材料、升级奖励和活动任务奖励不应全部算成“每局固定掉落”。以下是本地配置的详细拆解，没有新增实战结算截图。</p>
+<h4 id="331">3.3.1 · 产出总览：一局结束后究竟增加什么</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>产出层次</th>
+<th>普通竞技场</th>
+<th>独立赛季 PVP</th>
+<th>到手时点与条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>局外基础材料</td>
+<td>胜利金币；拆建筑木材有旧公式支持</td>
+<td>段位奖励包中的金币、水晶；随机池另含宝石、神器碎片</td>
+<td>普通金币与 PVP 奖励包是不同配置；木材适用分支、奖励包触发条件尚待确认</td>
+</tr>
+<tr>
+<td>账号成长</td>
+<td>胜／负经验配置为 20／10</td>
+<td>另有赛季胜／负经验配置 20／10，但是否沿用至新 PVP 待确认</td>
+<td>用于账号升级；等级奖品另算</td>
+</tr>
+<tr>
+<td>模式进度</td>
+<td>胜利加奖杯、失败扣奖杯</td>
+<td>段位分数：胜利基础 20，失败扣分基数 16，另有修正</td>
+<td>增加的是进度，不是可直接消费的材料</td>
+</tr>
+<tr>
+<td>通行证进度</td>
+<td>旧通行证有前 50 胜给代币的文本</td>
+<td>新通行证胜 +100、负 +30 经验的配置明确</td>
+<td>达到等级后，领取对应免费／已开通高级奖励</td>
+</tr>
+<tr>
+<td>宝箱</td>
+<td>教程明确胜利获得宝箱；有槽位与等待过程</td>
+<td>本次尚未确认新 PVP 是否也发放同一种胜利槽位宝箱</td>
+<td>得到箱子和开启取得内容物是两步</td>
+</tr>
+<tr>
+<td>任务与活动</td>
+<td>对战次数、胜场等计数可能推进</td>
+<td>胜场、对局数、传奇召唤、神器使用等任务计数</td>
+<td>达到任务目标才有额外奖励；是否计入须看模式与活动条件</td>
+</tr>
+<tr>
+<td>后续目标</td>
+<td>奖杯节点、竞技场解锁、账号升级</td>
+<td>段位提升、通行证等级、周／赛季排名</td>
+<td>一次性或周期结算，不是每场重发</td>
+</tr>
+</tbody>
+</table></div>
+<p>来源：<code>GlobalArenaInfoSheet2</code>（全局竞技场信息·Sheet2 表）、<code>GameSettingConfig</code>（游戏通用规则配置）、<code>GlobalFormulasInfo</code>（全局数值公式信息）、<code>PvpSettingConfig</code>（PVP 全局规则配置）、<code>PvpRankConfig</code>（PVP 段位规则配置）、<code>PvpSeasonTaskConfig</code>（PVP 赛季任务配置）、<code>I2Terms</code>（本地化文本词条）。</p>
+<h4 id="332">3.3.2 · 普通竞技场：金币、奖杯、经验和宝箱</h4>
+<p><strong>A. 金币：按竞技场档位给基础胜利奖励。</strong> <code>victoryGoldNoBet</code>（免下注分支的胜利金币） 是免下注分支的胜利金币字段；<code>dailyGoldLimitNoBet</code>（免下注分支的金币日上限） 是对应金币日上限。缓存 <code>NoBet=1</code>（免下注模式开关） 支持分析这一分支，但仍不等于服务器覆盖值已验证。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>竞技场</th>
+<th>胜利基础金币</th>
+<th>金币日上限</th>
+<th>胜利奖杯 / 失败扣减基数</th>
+<th>账号经验：胜 / 负</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>5</td>
+<td>200</td>
+<td>3 / -2</td>
+<td>20 / 10</td>
+</tr>
+<tr>
+<td>2</td>
+<td>20</td>
+<td>800</td>
+<td>6 / -4</td>
+<td>20 / 10</td>
+</tr>
+<tr>
+<td>3</td>
+<td>40</td>
+<td>1600</td>
+<td>9 / -6</td>
+<td>20 / 10</td>
+</tr>
+<tr>
+<td>4</td>
+<td>60</td>
+<td>2400</td>
+<td>12 / -8</td>
+<td>20 / 10</td>
+</tr>
+<tr>
+<td>10</td>
+<td>300</td>
+<td>12000</td>
+<td>30 / -20</td>
+<td>20 / 10</td>
+</tr>
+<tr>
+<td>20</td>
+<td>800</td>
+<td>32000</td>
+<td>110 / -40</td>
+<td>20 / 10</td>
+</tr>
+</tbody>
+</table></div>
+<p>20 个竞技场档位均满足：<strong>金币日上限 = 单胜基础金币 × 40</strong>。因此，在固定档位、没有加成、额度从零开始的假设下，相当于 40 场基础胜利的金币额度。这不代表游戏每天只能打 40 局，也不能据此给经验、奖杯或宝箱套同一个上限。跨档位、月卡加成是否占用额度、最后一场如何截断，尚未确认。</p>
+<p>普通失败金币没有在这张表中找到明确的对应字段，因此记录为<strong>未确认</strong>，而不是凭空补成“失败发一半”或“必定为零”。获得的是局外升级金币，不是把本局金矿剩余金币自动带出去；本次没有找到后一种转换规则。</p>
+<p><strong>B. 奖杯：既有正产出，也有失败扣减。</strong> <code>trophyReward</code>（胜利奖杯增量） 为胜利增量，<code>trophyPunish</code>（失败奖杯扣减基数） 为失败扣减基数。你当前竞技场 1 的主界面已核对“成功 +3”；失败 −2 来自配置，尚未新增失败结算核对。零奖杯保护、升场保护、士气与月卡是否修正奖杯，不能直接从基础值确定。</p>
+<p><strong>C. 账号经验：输赢都存在产出配置。</strong> <code>NormalPVPWinExp=20</code>（普通对战胜利账号经验）、<code>NormalPVPLoseExp=10</code>（普通对战失败账号经验），供账号等级成长使用。它与卡牌碎片、卡牌等级、召唤经验不是同一种资源。<code>GlobaUpgradeReward</code>（账号升级奖励配置） 中的升级宝箱或随机新卡，是经验达到门槛后的另一笔奖励。</p>
+<p><strong>D. 胜利宝箱：先取得箱子，再等待开启。</strong> 教程写明战斗胜利后获得宝箱，结算文本包含 <code>SuccessPanel_NoEmptySpace</code>（胜利结算文本·没有空位），支持宝箱受空槽影响；此前主界面确认有 4 个槽、当前低级箱标注 5 分钟。普通竞技场表中还存在 <code>chestRange</code>（推测：胜利宝箱抽取范围配置）、<code>boxRewardFold</code>（推测：宝箱奖励倍率，作用范围待确认），表明箱子选择／奖励档位有配置差异，但其范围编码与倍率作用范围未解析完整。</p>
+<p>不能保证每胜必进一个箱子，也不能假定满槽后自动折算金币或保存在无限邮件里。箱子开启才会带来卡牌、金币、木材、水晶等内容；不同箱子的内容物与文本有版本差异，详见第三部分3.4。</p>
+<p>来源：<code>GlobalArenaInfoSheet2</code>（全局竞技场信息·Sheet2 表）、<code>GameSettingConfig</code>（游戏通用规则配置）、<code>GlobaUpgradeReward</code>（账号升级奖励配置）、<code>GlobalBoxInfo</code>（全局宝箱信息）、<code>I2Terms</code>（本地化文本词条） 中 <code>SteerTutorialContent_12002</code>（引导教程文本·战斗胜利宝箱）、<code>SuccessPanel_NoEmptySpace</code>（胜利结算文本·没有空位）。</p>
+<h4 id="333">3.3.3 · 拆建筑的木材：按表现计算的潜在产出</h4>
+<p><code>GlobalFormulasInfo</code>（全局数值公式信息） 的 10017 行写“战斗摧毁普通建筑获得木材”，数值为 <strong>5</strong>；10018 行“战斗摧毁主城”数值为 <strong>50</strong>。结合相邻字段，推测该分支的木材计算为：</p>
+<p><strong>木材 = 5 × 被计入的普通建筑摧毁数 + 50 × 被计入的敌方主城摧毁数。</strong></p>
+<p>例如，若这一分支在当前模式启用，一局计入 3 座普通建筑和 1 座主城，则为 <strong>65 木材</strong>。这是公式示例，不能写成“每赢一场必得 65”。</p>
+<p>需要保留的边界：哪些建筑计数、按己方击毁还是所有摧毁统计、失败是否保留、是否已在局中入账、结算是否只是展示，以及新 PVP 是否沿用，都没有从完整调用链确认。超时占地获胜也不代表必然拿到主城摧毁对应的 50 木材。</p>
+<p>来源：<code>GlobalFormulasInfo#10017</code>（全局数值公式信息，记录 10017）、<code>GlobalFormulasInfo#10018</code>（全局数值公式信息，记录 10018）。</p>
+<h4 id="334-pvp">3.3.4 · 独立赛季 PVP：分数、通行证经验与段位奖励包</h4>
+<p><strong>A. 段位分。</strong> <code>S_Base_Win=20</code>（PVP 胜利基础积分）、<code>S_Base_Lose=16</code>（PVP 失败扣分基数）；另有 <code>S_Bonus_Strong</code>（推测：战胜较强对手的额外积分）、<code>S_Bonus_Streak</code>（推测：连胜额外积分） 和分差档位配置。因此可说基础值为胜 +20／负扣 16，不能承诺所有对局最终都按这两个数结算。</p>
+<p><strong>B. 新通行证经验。</strong> <code>PvpPass_WinScore=[20024,100]</code>（PVP 胜利通行证经验奖励）、<code>PvpPass_LoseScore=[20024,30]</code>（PVP 失败通行证经验奖励），资源 20024 对应赛季通行证经验。按这份配置，一胜提供 100，一负提供 30。它与段位分是两条独立进度；即使输掉对局，也存在通行证经验产出。</p>
+<p><code>GameSettingConfig</code>（游戏通用规则配置） 还保存 <code>SeasonPVPWinExp=20</code>（赛季对战胜利账号经验）、<code>SeasonPVPLoseExp=10</code>（赛季对战失败账号经验） 的账号经验规则，但新 PVP 的实际沿用情况未确认；不要把这两个值和 100／30 相加成一种经验。</p>
+<p><strong>C. 金币、水晶与随机材料。</strong> <code>PvpRankConfig</code>（PVP 段位规则配置） 按段位配置 <code>FixedReward</code>（固定物品奖励配置）、<code>RandomReward1</code>（第一组随机奖励配置）、<code>RandomReward2</code>（第二组随机奖励配置） 和 <code>RewardShow</code>（奖励展示配置）。固定部分可用基础资源 ID 对应到金币和水晶；随机部分包含宝石及随机神器碎片。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>大段位</th>
+<th>固定金币（按小段位顺序）</th>
+<th>固定水晶</th>
+<th>随机项的非空候选；不是必得</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>青铜</td>
+<td>200 / 210 / 220</td>
+<td>10</td>
+<td>1 个随机神器碎片；10 宝石</td>
+</tr>
+<tr>
+<td>白银</td>
+<td>230 / 245 / 260</td>
+<td>15</td>
+<td>1～2 个随机神器碎片；10 宝石</td>
+</tr>
+<tr>
+<td>黄金</td>
+<td>275 / 295 / 315</td>
+<td>20</td>
+<td>1～2 个随机神器碎片；15 宝石</td>
+</tr>
+<tr>
+<td>铂金</td>
+<td>335 / 360 / 385</td>
+<td>25</td>
+<td>1～3 个随机神器碎片；15 宝石</td>
+</tr>
+<tr>
+<td>钻石</td>
+<td>410 / 440 / 470</td>
+<td>30</td>
+<td>1～3 个随机神器碎片；20 宝石</td>
+</tr>
+<tr>
+<td>大师</td>
+<td>500 / 540 / 580 / 620 / 660</td>
+<td>35</td>
+<td>2～3 个随机神器碎片；20 宝石</td>
+</tr>
+<tr>
+<td>荣耀</td>
+<td>700 / 750 / 800 / 850 / 900</td>
+<td>40</td>
+<td>2～3 个随机神器碎片；30 宝石</td>
+</tr>
+</tbody>
+</table></div>
+<p>表中金币用斜杠按各小段位顺序列出。例如青铜 I／II／III 分别 200／210／220；荣耀 I～V 分别 700／750／800／850／900。<strong>这些是每次符合条件的奖励包配置，不是已确认的“每赢一场、无限次数必发”。</strong></p>
+<p>关键疑点是 <code>PvpSettingConfig</code>（PVP 全局规则配置） 的 <code>Reward_Win=6</code>（推测：胜利奖励次数或门槛参数，具体含义未确认）：名字与胜利奖励相关，但只凭字段不能确认它指“每天前 6 胜”“每 6 胜领取一次”还是其他次数规则。没有看到对应调用或实际规则面板前，报告不将任何一种解释写成既定事实。新 PVP 失败是否也给这份物品奖励包，同样未确认。</p>
+<p><strong>D. 随机奖励怎样理解。</strong> 按数组呈现的“资源 ID、数量、权重”三项一组结构解析（推测）：</p>
+<ul>
+<li>青铜 I 的 <code>RandomReward1=[20025,1,2000,0,0,8000]</code>（第一组随机奖励配置）：随机神器碎片 1 个对应权重 2000，空奖励对应 8000；归一化为 20%／80%。</li>
+<li>青铜 I 的 <code>RandomReward2=[20006,10,2000,0,0,8000]</code>（第二组随机奖励配置）：宝石 10 个对应权重 2000，空奖励对应 8000，同样归一化为 20%／80%。</li>
+<li>更高段位的碎片数量分成多个分支。例如荣耀档为 2 个权重 1000、3 个权重 1000、空奖励权重 8000。</li>
+</ul>
+<p>这说明<strong>随机项不应列成固定到账</strong>。两列是否每次都抽、是否相互独立、是否受次数规则限制尚未确认，因此不计算“两个同时出”的线上概率，也不当作每局实际掉率。</p>
+<p>碎片还有下一层选择：<code>PvpPropPieceConfig</code>（PVP 神器碎片奖励权重配置） 的 18 件神器权重合计 50000。若按这张表独立归一化，每件普通／史诗神器权重 3000（6%）、每件稀有神器 5000（10%）、每件传说神器 1000（2%）。这是<strong>该选择表的条件权重</strong>，不是一局获得指定传说神器的概率，也不是直接获得完整神器。</p>
+<p><strong>E. 点赞额外奖励。</strong> <code>Like_Reward=[20006,10]</code>（推测：点赞行为奖励） 对应宝石 10 个。名字推测与对局评价／点赞行为相关；领取触发、谁获得以及次数限制未确认，所以归入条件奖励，不能加进基础胜利包。</p>
+<p>来源：<code>PvpSettingConfig</code>（PVP 全局规则配置）、<code>PvpRankConfig</code>（PVP 段位规则配置）、<code>PvpStateConfig</code>（PVP 强敌分差与额外积分配置）、<code>PvpPropPieceConfig</code>（PVP 神器碎片奖励权重配置）、<code>GameSettingConfig</code>（游戏通用规则配置）、<code>GlobalBaseAssetsInfo</code>（全局基础资源信息）。</p>
+<h4 id="335">3.3.5 · 对战会推动、但需要之后领取的奖励</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>关联系统</th>
+<th>对局带来的变化</th>
+<th>具体配置例子</th>
+<th>为什么不算每局固定掉落</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>奖杯进度</td>
+<td>胜负改变节点进度</td>
+<td>节点 1001：门槛 25，配置金币 120、宝石 15、铁制宝箱 1 个，对应竞技场 2</td>
+<td>只在到达相应节点并满足领取规则时取得；当前版本如何采用该旧进度表待确认</td>
+</tr>
+<tr>
+<td>账号升级</td>
+<td>经验增加并可能跨级</td>
+<td>升级奖励表含随机未拥有卡奖励、宝箱</td>
+<td>达级才触发，不是每次经验结算都发</td>
+</tr>
+<tr>
+<td>PVP 通行证</td>
+<td>每场增加对应经验</td>
+<td>胜 +100／负 +30；等级奖励分免费与高级轨</td>
+<td>达级后领取，付费轨还需要相应权益</td>
+</tr>
+<tr>
+<td>PVP 赛季任务</td>
+<td>胜场或对局累计</td>
+<td>赛季胜利 3 场：金币 2500 + 通行证经验 200；游玩 10 场：水晶 10 + 通行证经验 200</td>
+<td>达到 3 胜／10 局才完成该档</td>
+</tr>
+<tr>
+<td>战斗行为任务</td>
+<td>传奇召唤次数、神器使用次数累计</td>
+<td>召唤传奇 10 次：金币 1500 + 通行证经验 200；使用神器 10 次：水晶 15 + 通行证经验 200</td>
+<td>与指定行为累计有关，不等于单局使用一次即领奖</td>
+</tr>
+<tr>
+<td>每周主题卡活动</td>
+<td>对战／胜场计数</td>
+<td>进行 10 场：金币 500；赢 5 场：宝石 20，并各有活动进度值</td>
+<td>活动开启、任务达标后领取；没有确认两档任务可在同一局同时结算</td>
+</tr>
+<tr>
+<td>骰子冒险任务</td>
+<td>比赛次数计数</td>
+<td>进行 10 场比赛：普通骰子 1 个</td>
+<td>活动任务产物，不能写成每场掉骰子</td>
+</tr>
+<tr>
+<td>周／赛季榜</td>
+<td>累计积分影响最终排名</td>
+<td>排名奖励可含宝石、限定召唤券等</td>
+<td>等周期结束按名次结算</td>
+</tr>
+</tbody>
+</table></div>
+<p>旧通行证另有 <code>DailySPPointsMatches=50</code>（旧通行证每日计入对战次数参数） 与“每日前 50 次对战胜利可获得代币”的教程。<code>NormalPVPWinSeasonPassExp=5,11</code>（普通对战胜利的旧通行证经验参数） 的两项数字如何解析尚未确认，因此<strong>不把它写成每胜随机 5～11 代币</strong>，也不把旧 50 胜规则自动套给新通行证经验 20024。</p>
+<p>来源：<code>GlobalTrophyProgressInfo#1001</code>（奖杯进度与节点奖励信息，记录 1001）、<code>GlobaUpgradeReward</code>（账号升级奖励配置）、<code>PvpSeasonTaskConfig#2001</code>（PVP 赛季任务配置，记录 2001）、<code>PvpSeasonTaskConfig#3001</code>（PVP 赛季任务配置，记录 3001）、<code>PvpSeasonTaskConfig#4001</code>（PVP 赛季任务配置，记录 4001）、<code>PvpSeasonTaskConfig#5001</code>（PVP 赛季任务配置，记录 5001）、<code>GlobalWeeklyCardDailyTaskInfo</code>（每周主题卡每日任务信息）、<code>DailyTaskConfig#2</code>（骰子冒险每日任务配置，记录 2）、<code>PvpSeasonPassRewardConfig</code>（PVP 赛季通行证奖励配置）、<code>GameSettingConfig</code>（游戏通用规则配置）、<code>I2Terms</code>（本地化文本词条）。</p>
+<h4 id="336">3.3.6 · 其他模式、广告与特权的附加产出</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>场景</th>
+<th>资源中可见的产出</th>
+<th>适用限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>旧周锦标赛</td>
+<td>胜利金币固定 100；胜利积分按难度 +10～+34；失败积分 −5～−17</td>
+<td>来自 13 档旧周赛表；失败字段中未列金币，不代表已核验整个结算流程不发其他资源</td>
+</tr>
+<tr>
+<td>旧领地战斗</td>
+<td>胜利金币 <code>100 × 难度等级</code>，另有宝石 5 的公式</td>
+<td>来自旧主城玩法公式，不能直接套用普通竞技场或新版赛季 PVP</td>
+</tr>
+<tr>
+<td>训练关</td>
+<td>第一张训练地图配置骷髅卡 1003 数量 9</td>
+<td>教程奖励；另外有训练完成进度奖励，不能当作可反复刷取的普通战斗掉落</td>
+</tr>
+<tr>
+<td>月卡</td>
+<td>中文文本写胜利奖励提升 20%，之前商店画面也显示 +20%</td>
+<td>哪些资源乘 1.2、如何取整、是否突破上限未确认；不能把整张结算表全部乘 1.2</td>
+</tr>
+<tr>
+<td>结算广告礼包</td>
+<td>有胜利礼包、失败礼包的激励视频入口标签</td>
+<td>需要额外触发／观看，不属于不操作即可到账的基础奖励；数量未确认</td>
+</tr>
+<tr>
+<td>士气分支</td>
+<td>旧教程胜利 +5 士气、失败 −20，另有广告双倍／保留机制</td>
+<td>士气是战斗状态进度；当前分支未核对，不计入已确认常驻产出</td>
+</tr>
+</tbody>
+</table></div>
+<p>来源：<code>WeeklyClashDifficultyConfigSheet2</code>（周锦标赛难度与积分配置·Sheet2 表）、<code>GlobalFormulasInfo#10019</code>（全局数值公式信息，记录 10019）、<code>GlobalFormulasInfo#10020</code>（全局数值公式信息，记录 10020）、<code>GlobalTrainingMapInfoSheet2#1</code>（训练地图与教程奖励信息·Sheet2 表，记录 1）、<code>GlobalTrophyProgressInfo#0</code>（奖杯进度与节点奖励信息，记录 0）、<code>VideoBtnConfig</code>（激励视频按钮与入口配置）、<code>I2Terms</code>（本地化文本词条） 中 <code>MonthlyCardPanel_DesMoreReward</code>（月卡文本·胜利奖励提升 20%）、<code>SteerTutorialContent_5002</code>（引导教程文本·胜负士气变化）。</p>
+<h4 id="337-1">3.3.7 · 以研究快照中的竞技场1为例</h4>
+<p>在使用上述普通竞技场分支、没有特权和活动加成、金币额度未满的假设下，一次胜利的<strong>基础配置组合</strong>是：</p>
+<p><strong>金币 +5，奖杯 +3，账号经验 +20；另检查本局是否获得可放入槽位的胜利宝箱。</strong> 木材若沿用拆建筑公式，再按实际被计入的建筑摧毁数计算，不能预先写成固定值。</p>
+<p>一次失败则有<strong>奖杯扣减基数 2、账号经验 +10</strong> 的配置依据；金币、箱子及失败保留木材的规则尚未核实。失败礼包属于额外入口，不能填入基础失败奖励。</p>
+<p>若这一局恰好完成某个任务、达到账号等级或奖杯节点，界面还可能让你继续领取其他奖励。分析产出时，建议分别记录“本局直接结算”“本局得到的未开宝箱”“本局促成的后续达标奖励”，这样才不会把一次性大奖误算成每局稳定收益。</p>
+<p>这段示例中，奖杯 +3 已与主界面提示交叉核对；金币、经验以及失败扣减仍是配置口径，没有把它们冒充为本次实测到账。</p>
+<h3 id="34">3.4 · 卡牌获取：开新卡、碎片与宝箱</h3>
+<h4 id="_14">卡牌奖励要区分“开新卡”与“加碎片”</h4>
+<p><code>GlobalRandomHeroCardInfo</code>（随机英雄卡牌奖励信息） 有 20 类随机卡奖励，明确区分 <code>randomFromOwnedCards=true/false</code>（是否从已拥有卡牌中随机抽取）：一类从已拥有卡中抽，另一类对应未拥有卡的文本。四品质通用卡的物品说明都限定兑换“你拥有的”同品质卡。</p>
+<p>因此拿到传奇通用卡，不能自动理解为可以解锁任意未拥有传奇。开新卡的奖励与养成已拥有卡的奖励承担不同作用。</p>
+<h4 id="_15">宝箱是等待与回访系统</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>宝箱 ID</th>
+<th>名称</th>
+<th>解锁时间配置（分钟）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4001</td>
+<td>木箱</td>
+<td>5</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>铁制宝箱</td>
+<td>10</td>
+</tr>
+<tr>
+<td>4003</td>
+<td>青铜宝箱</td>
+<td>30</td>
+</tr>
+<tr>
+<td>4004</td>
+<td>黄金宝箱</td>
+<td>45</td>
+</tr>
+<tr>
+<td>4005</td>
+<td>宝玉宝箱</td>
+<td>60</td>
+</tr>
+<tr>
+<td>4006</td>
+<td>国王宝箱</td>
+<td>90</td>
+</tr>
+<tr>
+<td>4007</td>
+<td>大师宝箱</td>
+<td>120</td>
+</tr>
+<tr>
+<td>4008</td>
+<td>传奇宝箱</td>
+<td>180</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>画面确认：主界面有 4 个宝箱槽，当前获得的低级箱标注“5分”。</strong> 其他时间按同表单位列出；没有逐箱验证。教程要求选择空解锁栏，并有快速解锁、广告减时间相关入口。实际能同时解锁几个、广告减多少，不由“4 个槽”直接推定。</p>
+<p>宝箱奖励数量配置与部分中文描述存在差异。例如最高箱数量配置末段为 <code>200,200,30</code>，文本却描述金币 200／木材 200／水晶 50；未核清解析与版本分支前，不把任一文本当作准确到手量。青铜箱新卡权重向量总和为 90，也说明原始向量不能一概直接加百分号。</p>
+<p>设计判断：宝箱以等待限制材料发放速度，广告／宝石加速与槽位利用形成额外节奏；它与账号等级奖励、通用卡共同调节“开新卡”和“升老卡”。</p>
+<p>来源：<code>GlobalBoxInfo</code>（全局宝箱信息）、<code>GlobalRandomHeroCardInfo</code>（随机英雄卡牌奖励信息）、<code>GlobalBaseAssetsInfo</code>（全局基础资源信息）、<code>VideoBtnConfig</code>（激励视频按钮与入口配置）、<code>I2Terms</code>（本地化文本词条）。</p>
+<h3 id="35">3.5 · 神器收藏、普通召唤与限定召唤</h3>
+<p>资源共有 24 件神器，18 件 <code>CanUse=true</code>（本地启用标记）、6 件关闭。18 件启用神器中，普通 4、稀有 4、史诗 4、传说 6；<code>PvpPropPieceConfig</code>（PVP 神器碎片奖励权重配置） 的 18 个碎片掉落条目也与这些启用神器对应。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>神器</th>
+<th>品质</th>
+<th>效果定位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3001</td>
+<td>冲锋号角</td>
+<td>普通</td>
+<td>吹响此号角，可以提升部队的移动速度！</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>战争号角</td>
+<td>普通</td>
+<td>嘹亮的号角声，可以让我方单位短时间内提升攻击力。</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>祝福号角</td>
+<td>普通</td>
+<td>神圣的声音让你的单位变得灵活，赋予他们闪避攻击的能力。</td>
+</tr>
+<tr>
+<td>3004</td>
+<td>死灵之书</td>
+<td>稀有</td>
+<td>朗读禁忌的咒语，召唤一队不死族士兵为你而战。</td>
+</tr>
+<tr>
+<td>3005</td>
+<td>冲击法杖</td>
+<td>稀有</td>
+<td>保卫基地！我方建筑释放冲击波，击退并伤害附近的敌人。</td>
+</tr>
+<tr>
+<td>3006</td>
+<td>治疗图腾</td>
+<td>稀有</td>
+<td>在战场中央生成一个图腾，持续恢复附近盟友的生命值。</td>
+</tr>
+<tr>
+<td>3007</td>
+<td>冰风暴权杖</td>
+<td>史诗</td>
+<td>可以召唤覆盖全图的暴风雪，对所有敌人持续造成伤害以及减速。</td>
+</tr>
+<tr>
+<td>3008</td>
+<td>亡灵丧钟</td>
+<td>传说</td>
+<td>不要敲响此钟，钟声会散播瘟疫，召唤亡灵！</td>
+</tr>
+<tr>
+<td>3009</td>
+<td>献祭匕首</td>
+<td>史诗</td>
+<td>用黑暗的仪式献祭盟友以获得金币。</td>
+</tr>
+<tr>
+<td>3010</td>
+<td>风暴领主权杖</td>
+<td>传说</td>
+<td>驾驭雷霆闪电，发射连锁闪电，弹指间摧毁敌人！</td>
+</tr>
+<tr>
+<td>3011</td>
+<td>魅惑宝石</td>
+<td>传说</td>
+<td>实在太美了... 连敌人的心暂时都可以被它俘获。</td>
+</tr>
+<tr>
+<td>3012</td>
+<td>世界树</td>
+<td>传说</td>
+<td>在战场中央种下世界树，大幅提升附近盟友的各项属性。</td>
+</tr>
+<tr>
+<td>3013</td>
+<td>弑神之矛</td>
+<td>传说</td>
+<td>专为弑神而设计，对传说单位造成毁灭性打击。</td>
+</tr>
+<tr>
+<td>3014</td>
+<td>望远镜</td>
+<td>普通</td>
+<td>射程加持，让远程单位更具威胁。</td>
+</tr>
+<tr>
+<td>3015</td>
+<td>幻象宝石</td>
+<td>稀有</td>
+<td>复制场上的单位，让镜像大军席卷整个战场。</td>
+</tr>
+<tr>
+<td>3016</td>
+<td>攻城重锤</td>
+<td>史诗</td>
+<td>专为攻城而造的神器，极大提升军队摧毁建筑的效率。</td>
+</tr>
+<tr>
+<td>3017</td>
+<td>荆棘宝石</td>
+<td>史诗</td>
+<td>召唤荆棘，让敌人攻击建筑时受到伤害。</td>
+</tr>
+<tr>
+<td>3018</td>
+<td>传送法杖</td>
+<td>传说</td>
+<td>蕴藏空间之力的法杖，将军队传送到敌方腹地展开偷袭。</td>
+</tr>
+</tbody>
+</table></div>
+<p>关闭的六件为：血誓圣杯、泰坦蓝图、噬魂匣、猎兽电网、超频扳手、王者之盾。它们有技能文本和配置，<strong>不能因此认定当前可获得</strong>。</p>
+<p>神器的等级、升阶、被动和重铸规则统一见第二部分2.5。</p>
+<h4 id="_16">神器召唤等级</h4>
+<p>普通召唤配置有 50 个等级，掉落由水晶与四品质神器构成。下面将五个具名权重归一化得到类别占比；所选行权重和均为 100：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>召唤等级</th>
+<th>水晶</th>
+<th>普通神器</th>
+<th>稀有神器</th>
+<th>史诗神器</th>
+<th>传说神器</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>80.0%</td>
+<td>15.0%</td>
+<td>4.0%</td>
+<td>0.9%</td>
+<td>0.1%</td>
+</tr>
+<tr>
+<td>10</td>
+<td>63.0%</td>
+<td>25.25%</td>
+<td>8.5%</td>
+<td>2.7%</td>
+<td>0.55%</td>
+</tr>
+<tr>
+<td>25</td>
+<td>49.0%</td>
+<td>28.0%</td>
+<td>16.0%</td>
+<td>5.7%</td>
+<td>1.3%</td>
+</tr>
+<tr>
+<td>50</td>
+<td>37.0%</td>
+<td>21.25%</td>
+<td>28.5%</td>
+<td>10.7%</td>
+<td>2.55%</td>
+</tr>
+</tbody>
+</table></div>
+<p>这是<strong>该召唤表的类别权重</strong>，不是指定神器的获得率，也不是保底概率。等级越高，水晶类别占比下降，高品质神器类别占比上升。表里没有给出完整保底调用逻辑。</p>
+<p>新版教程写每 6 小时可观看广告免费十连一次，商店有十连／百连入口。旧教程的“每 6 小时免费召唤”没有十连限定，新版应以实际按钮为准。</p>
+<h4 id="_17">限定召唤是另一套池</h4>
+<p>限定神器有 6 个轮换配置，按配置 ID 顺序为风暴领主权杖、亡灵丧钟、世界树、传送法杖、魅惑宝石、弑神之矛，消耗限定召唤券。它不应与普通召唤的等级概率混为一谈。</p>
+<p>限定池存在两列不同权重：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>行 ID</th>
+<th><code>Item</code>（奖励类别枚举；具体映射待确认） 枚举</th>
+<th>数量</th>
+<th><code>Weight</code>（奖励权重；是否用于实际抽取待确认） / 10000</th>
+<th><code>ShowWeight</code>（推测：展示用奖励权重） / 10000</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>20</td>
+<td>10.0%</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+<td>30</td>
+<td>10.0%</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0</td>
+<td>60</td>
+<td>10.0%</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>15.0%</td>
+<td>15.0%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2</td>
+<td>2</td>
+<td>13.0%</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>6</td>
+<td>3</td>
+<td>1</td>
+<td>20.0%</td>
+<td>20.0%</td>
+</tr>
+<tr>
+<td>7</td>
+<td>3</td>
+<td>2</td>
+<td>10.0%</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>8</td>
+<td>4</td>
+<td>1</td>
+<td>12.0%</td>
+<td>15.0%</td>
+</tr>
+</tbody>
+</table></div>
+<p>第 5 行为 13%／10%，第 8 行为 12%／15%。这确认了<strong>本地 <code>Weight</code>（奖励权重；是否用于实际抽取待确认） 与 <code>ShowWeight</code>（推测：展示用奖励权重） 不一致</strong>；尚未恢复其各自抽取／展示用途及 <code>Item</code>（奖励类别枚举；具体映射待确认） 枚举的完整含义，不能据此断言线上虚标概率。</p>
+<p>来源：<code>GlobalSummonInfo</code>（全局神器召唤信息）、<code>LimitedPropInfoConfig</code>（限定神器召唤奖励池配置）、<code>LimitedPropOrderConfig</code>（限定神器轮换顺序配置）、<code>LimitedPropPackConfig</code>（限定神器召唤礼包配置）。</p>
+<h3 id="36">3.6 · 领地探索与挂机领取</h3>
+<p>历史界面提示领地在竞技场2解锁。玩家消耗木材探索区域、取得建筑与称号进度，再按挂机入口领取金币、木材和水晶。</p>
+<p>十档称号的缓存存储上限均为480分钟，即8小时；称号对应的收益速率、建筑加成和领主塔属性表集中在第二部分2.4。广告双倍、特权和当前服务器覆盖值未纳入基础收益。</p>
+<p>来源：<code>GlobalMainCityTitleInfo</code>（领地称号与基础收益信息）、<code>GlobalMainCityMapInfo</code>（领地地图信息）、<code>I2Terms</code>（本地化文本词条）。</p>
+<h3 id="37-pvp">3.7 · 普通竞技场与独立PVP的推进和匹配</h3>
+<h4 id="_18">普通竞技场</h4>
+<p>普通竞技场有 20 档。<strong>画面确认：你当前处于竞技场 1，进度 9/25，界面写“成功+3”。</strong> 这与首档配置的门槛 25、胜利奖杯 3 一致。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>竞技场</th>
+<th>完成进度门槛字段</th>
+<th>胜 / 负奖杯</th>
+<th>时限（秒）</th>
+<th>矿数量上限</th>
+<th>单胜金币 / 日金币上限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>25</td>
+<td>3 / -2</td>
+<td>180</td>
+<td>8</td>
+<td>5 / 200</td>
+</tr>
+<tr>
+<td>2</td>
+<td>75</td>
+<td>6 / -4</td>
+<td>190</td>
+<td>9</td>
+<td>20 / 800</td>
+</tr>
+<tr>
+<td>3</td>
+<td>100</td>
+<td>9 / -6</td>
+<td>200</td>
+<td>10</td>
+<td>40 / 1600</td>
+</tr>
+<tr>
+<td>4</td>
+<td>200</td>
+<td>12 / -8</td>
+<td>210</td>
+<td>11</td>
+<td>60 / 2400</td>
+</tr>
+<tr>
+<td>5</td>
+<td>400</td>
+<td>15 / -10</td>
+<td>220</td>
+<td>12</td>
+<td>80 / 3200</td>
+</tr>
+<tr>
+<td>6</td>
+<td>800</td>
+<td>18 / -12</td>
+<td>230</td>
+<td>13</td>
+<td>100 / 4000</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1600</td>
+<td>20 / -14</td>
+<td>240</td>
+<td>14</td>
+<td>150 / 6000</td>
+</tr>
+<tr>
+<td>8</td>
+<td>3200</td>
+<td>22 / -16</td>
+<td>250</td>
+<td>15</td>
+<td>200 / 8000</td>
+</tr>
+<tr>
+<td>9</td>
+<td>3200</td>
+<td>25 / -18</td>
+<td>260</td>
+<td>16</td>
+<td>250 / 10000</td>
+</tr>
+<tr>
+<td>10</td>
+<td>6400</td>
+<td>30 / -20</td>
+<td>270</td>
+<td>17</td>
+<td>300 / 12000</td>
+</tr>
+<tr>
+<td>11</td>
+<td>9600</td>
+<td>38 / -22</td>
+<td>280</td>
+<td>18</td>
+<td>350 / 14000</td>
+</tr>
+<tr>
+<td>12</td>
+<td>16000</td>
+<td>48 / -24</td>
+<td>290</td>
+<td>19</td>
+<td>400 / 16000</td>
+</tr>
+<tr>
+<td>13</td>
+<td>25600</td>
+<td>55 / -26</td>
+<td>290</td>
+<td>19</td>
+<td>450 / 18000</td>
+</tr>
+<tr>
+<td>14</td>
+<td>35200</td>
+<td>60 / -28</td>
+<td>290</td>
+<td>19</td>
+<td>500 / 20000</td>
+</tr>
+<tr>
+<td>15</td>
+<td>46000</td>
+<td>65 / -30</td>
+<td>290</td>
+<td>19</td>
+<td>550 / 22000</td>
+</tr>
+<tr>
+<td>16</td>
+<td>56800</td>
+<td>75 / -32</td>
+<td>300</td>
+<td>19</td>
+<td>600 / 24000</td>
+</tr>
+<tr>
+<td>17</td>
+<td>67600</td>
+<td>85 / -34</td>
+<td>300</td>
+<td>19</td>
+<td>650 / 26000</td>
+</tr>
+<tr>
+<td>18</td>
+<td>78400</td>
+<td>95 / -36</td>
+<td>300</td>
+<td>19</td>
+<td>700 / 28000</td>
+</tr>
+<tr>
+<td>19</td>
+<td>89200</td>
+<td>100 / -38</td>
+<td>300</td>
+<td>19</td>
+<td>750 / 30000</td>
+</tr>
+<tr>
+<td>20</td>
+<td>100000</td>
+<td>110 / -40</td>
+<td>300</td>
+<td>19</td>
+<td>800 / 32000</td>
+</tr>
+</tbody>
+</table></div>
+<p>门槛列保留 <code>completeTrophyRequire</code>（竞技场完成进度所需奖杯字段） 的语义，不将其简单累加为账号终身总奖杯。表里另外保留 <code>winCountUnLock</code>（推测：按胜场数解锁的旧条件）、旧下注字段及不同奖励字段；缓存 <code>NewArenaProcess=1</code>（新版竞技场进度流程开关）、<code>NoBet=1</code>（免下注模式开关）。因此旧版“赢够固定场次解锁”与“下注奖励”不能直接套进当前主界面。</p>
+<p>地图方面，有 190 条多边形竞技场布局记录，另有矩形、桥形等基础地图。它们是<strong>资源布局记录数</strong>，不是 190 个已开放关卡。地图包含主塔位置、不可翻格点与特殊点，因而战斗通路和扩张效率会变化。</p>
+<p>普通对手配置有 25 个难度档，控制卡牌等级、神器、技能、主城属性和行动间隔。例如首档移动／操作间隔字段为 15，后续逐步降低，末档为 0.5；卡牌等级范围也由 1～2 提升到 76～80。具体哪档被当前玩家匹配到，取决于运行时选择。</p>
+<p><code>ArenaEnemyBalanceInfogameplay_improve_01</code>（竞技场敌方平衡配置·玩法优化 01 版） 有 40 条权重记录；<code>AIPropInfoConfig</code>（AI 神器配置） 又按 20 个竞技场档配置对方神器等级／升阶范围。说明难度不是只提高敌人血量，而是同时调整操作频率、卡组和长期成长配置。</p>
+<p>设计判断：主按钮虽然写“玩家对战”，资源确认游戏确实具备完整 AI 对手体系；<strong>这不足以证明该按钮所有对战都是机器人</strong>。普通竞技场、独立 PVP 的 AI 表也不能不加区分地合并解释。</p>
+<p>来源：<code>GlobalArenaInfoSheet2</code>（全局竞技场信息·Sheet2 表）、<code>GlobalPolygonArenaInfoSheet2</code>（多边形竞技场地图信息·Sheet2 表）、<code>GlobalDanInfoSheet2</code>（全局奖杯段位信息·Sheet2 表）、<code>GlobalTrophyProgressInfo</code>（奖杯进度与节点奖励信息）、<code>EnemyDifficultLevelInfosgameplay_improve_01</code>（敌方难度等级信息·玩法优化 01 版）、<code>ArenaEnemyBalanceInfogameplay_improve_01</code>（竞技场敌方平衡配置·玩法优化 01 版）、<code>AIPropInfoConfig</code>（AI 神器配置）。</p>
+<h4 id="pvp">独立PVP</h4>
+<p><strong>画面确认：主界面赛季模式提示“竞技场 4 解锁”。</strong> <code>PvpSettingConfig</code>（PVP 全局规则配置） 也有 <code>Pvp_OpenMainLevel=4</code>（PVP 开放所需竞技场等级）。这套模式拥有独立的段位、积分、匹配、地图、赛季任务和通行证配置。</p>
+<h5 id="_19">匹配与计分</h5>
+<p>PVP 配置对局时间为 300，按战斗时间口径为 5 分钟。赛季长度字段 <code>Season_Time=14</code>（推测：赛季持续天数）；表中还留有旧的首赛季起止日期，<strong>不能据此计算当前赛季截止日</strong>。</p>
+<p>积分基础字段为胜利 20、失败扣分基数 16，另有强敌加分与连胜加分参数。不能把每场固定加 20／减 16 当作完整公式，因为分差、连胜、保护机制及覆盖配置都可能参与。</p>
+<p>匹配有 15 个时间窗口，开始 0～5 秒的分差范围为 ±100，5～10 秒为 ±200，后续继续扩大。PVP 地图池有 132 条配置。仅凭这两类表不能确认服务器实时在线池或跨区策略。</p>
+<h5 id="_20">机器人补位配置</h5>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>段位</th>
+<th>分数区间原值</th>
+<th><code>Pvp_BotTime</code>（推测：机器人补位等待时间参数）</th>
+<th><code>Pvp_BotProb</code>（推测：机器人补位概率参数）</th>
+<th>赛季重置分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>青铜I</td>
+<td>0—1100</td>
+<td>15</td>
+<td>80</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>青铜II</td>
+<td>1100—1200</td>
+<td>15</td>
+<td>80</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>青铜III</td>
+<td>1200—1300</td>
+<td>20</td>
+<td>80</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>白银I</td>
+<td>1300—1400</td>
+<td>20</td>
+<td>70</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>白银II</td>
+<td>1400—1500</td>
+<td>25</td>
+<td>60</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>白银III</td>
+<td>1500—1600</td>
+<td>25</td>
+<td>50</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>黄金I</td>
+<td>1600—1800</td>
+<td>30</td>
+<td>40</td>
+<td>1100</td>
+</tr>
+<tr>
+<td>黄金II</td>
+<td>1800—2000</td>
+<td>30</td>
+<td>30</td>
+<td>1200</td>
+</tr>
+<tr>
+<td>黄金III</td>
+<td>2000—2200</td>
+<td>35</td>
+<td>30</td>
+<td>1300</td>
+</tr>
+<tr>
+<td>铂金I</td>
+<td>2200—2400</td>
+<td>360</td>
+<td>0</td>
+<td>1400</td>
+</tr>
+<tr>
+<td>铂金II</td>
+<td>2400—2600</td>
+<td>360</td>
+<td>0</td>
+<td>1500</td>
+</tr>
+<tr>
+<td>铂金III</td>
+<td>2600—2800</td>
+<td>360</td>
+<td>0</td>
+<td>1600</td>
+</tr>
+<tr>
+<td>钻石I</td>
+<td>2800—3050</td>
+<td>360</td>
+<td>0</td>
+<td>1800</td>
+</tr>
+<tr>
+<td>钻石II</td>
+<td>3050—3300</td>
+<td>360</td>
+<td>0</td>
+<td>2000</td>
+</tr>
+<tr>
+<td>钻石III</td>
+<td>3300—3550</td>
+<td>360</td>
+<td>0</td>
+<td>2200</td>
+</tr>
+<tr>
+<td>大师I</td>
+<td>3550—3800</td>
+<td>360</td>
+<td>0</td>
+<td>2400</td>
+</tr>
+<tr>
+<td>大师II</td>
+<td>3800—4050</td>
+<td>360</td>
+<td>0</td>
+<td>2600</td>
+</tr>
+<tr>
+<td>大师III</td>
+<td>4050—4300</td>
+<td>360</td>
+<td>0</td>
+<td>2800</td>
+</tr>
+<tr>
+<td>大师IV</td>
+<td>4300—4550</td>
+<td>360</td>
+<td>0</td>
+<td>3050</td>
+</tr>
+<tr>
+<td>大师V</td>
+<td>4550—4800</td>
+<td>360</td>
+<td>0</td>
+<td>3300</td>
+</tr>
+<tr>
+<td>荣耀I</td>
+<td>4800—5100</td>
+<td>360</td>
+<td>0</td>
+<td>3550</td>
+</tr>
+<tr>
+<td>荣耀II</td>
+<td>5100—5400</td>
+<td>360</td>
+<td>0</td>
+<td>3550</td>
+</tr>
+<tr>
+<td>荣耀III</td>
+<td>5400—5700</td>
+<td>360</td>
+<td>0</td>
+<td>3550</td>
+</tr>
+<tr>
+<td>荣耀IV</td>
+<td>5700—6000</td>
+<td>360</td>
+<td>0</td>
+<td>3550</td>
+</tr>
+<tr>
+<td>荣耀V</td>
+<td>6000—6300</td>
+<td>360</td>
+<td>0</td>
+<td>3550</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>Pvp_BotTime</code>（推测：机器人补位等待时间参数） 与 <code>Pvp_BotProb</code>（推测：机器人补位概率参数） 为原字段值。青铜初档是 15／80，黄金末档为 35／30；从铂金 I 起，表中 <code>Pvp_BotProb=0</code>（推测：机器人补位概率参数）。这显示了<strong>低段位更强的机器人配置倾向</strong>，但触发时点、递增参数与全局补位规则尚未还原，不能把 80 直接解释成“你的实际对战 80% 是机器人”，也不能因铂金该字段为 0 就保证完全没有机器人。</p>
+<p>本地有 <strong>86 套机器人预设</strong>，包括卡组、等级、技能、神器、词条、领主塔属性、昵称和头像等。第 86 套预设有 21～22 级卡牌、144 级神器，说明机器人配置会模拟多条养成线。</p>
+<p>2026-09-10 补充函数复核：玩家连续胜利或失败达到 5 次会触发对应标签；刚付费 Buff 上限 5、回流 Buff 上限 2，客户端结算动画结束链会扣次。玩家状态可影响旧 AI 分支的难度、秒级开格间隔和本局 SSSR 权重，并写入战斗载荷。<strong>尚未证实服务器按这些标签选择 86 条 Bot 预设</strong>，也没有普通局、连败后、付费后的真实逐局抓包。标签共存、清除条件、协议字段和模式边界见<a href="../matching/index.html">匹配与机器人专题</a>，权重累加与局内消耗见<a href="../hex-random/index.html">地块随机专题</a>。</p>
+<p>设计判断：新手期胜率不宜作为阵容强度的唯一判断依据。评估阵容时，应同时记录竞技场／段位、双方等级、领主塔和神器差距。</p>
+<p>来源：<code>PvpSettingConfig</code>（PVP 全局规则配置）、<code>PvpMatchingConfig</code>（PVP 匹配窗口配置）、<code>PvpRankConfig</code>（PVP 段位规则配置）、<code>PvpStateConfig</code>（PVP 强敌分差与额外积分配置）、<code>PvpBotConfig</code>（PVP 机器人预设配置）、<code>PvpMapConfig</code>（PVP 地图池配置）。</p>
+<h3 id="38">3.8 · 赛季、通行证、周赛与排行榜</h3>
+<p>这里至少有两代结构，需要分开阅读。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>结构</th>
+<th>本地配置</th>
+<th>主要内容</th>
+<th>证据限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>独立 PVP 赛季</td>
+<td>25 个段位、36 项阶段任务、排名奖励</td>
+<td>对战积分、段位重置、任务、排行榜</td>
+<td>当前赛季日期、最终结算要看实时界面</td>
+</tr>
+<tr>
+<td>PVP 通行证</td>
+<td>6 套奖励模板 × 30 级，共 180 行</td>
+<td>免费轨与高级轨</td>
+<td>12 条赛季配置引用这些模板，不是 12 套独立奖励</td>
+</tr>
+<tr>
+<td>旧通行证</td>
+<td>99 级奖励表</td>
+<td>旧代币 20017、免费／付费轨</td>
+<td>不能与新经验 20024 合并</td>
+</tr>
+<tr>
+<td>周锦标赛</td>
+<td>13 个难度档，周榜／赛季榜奖励</td>
+<td>门票、固定对战数、积分排名</td>
+<td>保留旧文案与旧参数，当前是否开放待核对</td>
+</tr>
+</tbody>
+</table></div>
+<p>新 PVP 通行证配置为胜局经验 100、负局经验 30；30 级奖励表的每档所需经验有 200、400 等值。36 项任务是 6 条系列各 6 档，包括登录天数、胜场、对局、召唤传奇、使用神器、达到段位。它把日常战斗操作转换为赛季成长。</p>
+<p>旧周赛文本写周五 20 点至周日 23 点、50 场配对；配置中第一难度胜 +10 分、负 −5 分，最高列出的难度胜 +34、负 −17。旧 <code>GameSettingConfig</code>（游戏通用规则配置） 又有赛季胜 10／负 0 等字段，说明<strong>赛季基础计分与周赛难度计分不是同一口径</strong>。本报告不把这些旧数值强行解释为当前新 PVP 的加分规则。</p>
+<p>排行榜不仅有展示作用，还发放宝石、限定召唤券与其他奖励。头像、旗帜、表情等资源存在，构成表现与身份系统；没有找到足够证据确认公会、好友协作或实时聊天系统，不能补写为已存在玩法。</p>
+<p>来源：<code>PvpSeasonPassConfig</code>（PVP 赛季通行证模板配置）、<code>PvpSeasonPassRewardConfig</code>（PVP 赛季通行证奖励配置）、<code>PvpSeasonTaskConfig</code>（PVP 赛季任务配置）、<code>PvpRankingListConfig</code>（PVP 排行榜奖励配置）、<code>GlobalFundInfoSeasonPass</code>（旧赛季通行证奖励信息）、<code>WeeklyClashDifficultyConfigSheet2</code>（周锦标赛难度与积分配置·Sheet2 表）、<code>SeasonRankingRewardConfigSheet2</code>（赛季排行榜奖励配置·Sheet2 表）、<code>GameSettingConfig</code>（游戏通用规则配置）、<code>GlobalExpression</code>（全局表情配置）、<code>WordEmojiConfig</code>（文字表情配置）。</p>
+<h3 id="39">3.9 · 签到、主题卡与限时活动</h3>
+<h4 id="_21">签到</h4>
+<p>有两组签到索引、60 条日奖励记录，以及 6 条累计奖励记录。索引分别引用 1001～1030、1031～1060 两套奖励区间；累计天数包含 7、14、28 等节点，奖励涉及指定卡、通用卡与货币。还存在补签广告入口。不能据此假定每天的奖励从今天重新按第一套开始。</p>
+<h4 id="_22">每周主题卡牌活动</h4>
+<p>有 2 个卡池版本、6 张主题卡 UI 配置、14 条任务与 14 个进度奖励节点。任务包含对战、胜场及金币／宝石／木材消耗；节点阈值从 50 到 3000。</p>
+<p>主题卡对局内属性与召唤的影响统一见第二部分2.6。这里记录活动任务与材料获取；当前主题和轮换时间须以实际入口为准。</p>
+<p>来源：<code>CheckInRewardsConfig</code>（签到奖励配置）、<code>CheckInRewardsIndexConfig</code>（签到奖励组索引）、<code>CumulativeRewardConfig</code>（累计签到奖励配置）、<code>GlobalWeeklyCardDailyTaskInfo</code>（每周主题卡每日任务信息）、<code>GlobalWeeklyCardStageInfo</code>（每周主题卡阶段奖励信息）、<code>WeeklyCardPoolConfig</code>（每周主题卡卡池配置）、<code>WeeklyCardUIConfig</code>（每周主题卡界面资源配置）、<code>I2Terms</code>（本地化文本词条）。</p>
+<h4 id="_23">秘境大冒险</h4>
+<p>这是一套独立的棋盘活动：24 格棋盘、13 类建筑／格子事件、52 条奖励池条目、5 类遗迹事件、20 档跑圈成长、66 档累计投骰奖励，并配套 8 条每日任务和礼包。</p>
+<p>玩法文本明确：骰子决定前进步数，停留触发奖励／事件；每经过起点增加跑圈经验，跑圈升级提高金币格、木材格产出；骰子每 4 小时恢复 1 点、自然上限 10，活动持续 7 天，结束未使用骰子清零。</p>
+<p>通过起点有目标卡抽取机制：急袭钢翼初始 5%，每圈 +5%。<strong>中签后是否重置、是否有概率上限以及奖励池最终选择顺序，文本没有完整说明</strong>，所以不宣称第 20 圈必得或计算确定保底成本。</p>
+<p>配置字段 <code>recover_interval_hour=14400</code>（骰子自然恢复间隔；本表数值按秒解释） 名称虽写 hour，但教程明确为 4 小时，数值也对应 4 小时的秒数；这是不能仅凭字段名解释单位的实例。</p>
+<h4 id="s2">夏日嘉年华与 S2 冲榜</h4>
+<p>夏日活动包含签到、日任务、抽奖、积分兑换与实物奖励文案。规则写累计 4／8／14 次签到给抽奖机会，每累计完成 2 天任务再给机会，最多 10 次；同一份文本还留有“8 月 21 日 18 点公示”，因此更适合视为<strong>活动资源快照</strong>，不能认定今天仍开放。</p>
+<p>S2 全民冲榜存在独立规则、名次奖励与抽奖奖励资源。这里只确认其活动结构，不把本地奖品表当作当前领奖承诺，也未提交任何领奖信息。</p>
+<p>设计判断：这些活动把日常对战、材料消耗、签到与礼包串成限定周期目标，承担回访和资源投放作用；它们不是常驻战斗规则。</p>
+<p>来源：<code>BaseConfigConfig</code>（骰子冒险基础配置）、<code>How2PlayConfig</code>（骰子冒险玩法说明配置）、<code>ChessboardConfig</code>（骰子冒险棋盘配置）、<code>BuildConfigConfig</code>（骰子冒险建筑与格子事件配置）、<code>PoolConfigConfig</code>（骰子冒险奖励池配置）、<code>RuinsConfigConfig</code>（骰子冒险遗迹事件配置）、<code>LapsConfigConfig</code>（骰子冒险跑圈成长配置）、<code>TotalDiceConfig</code>（累计消耗骰子奖励配置）、<code>DailyTaskConfig</code>（骰子冒险每日任务配置）、<code>SummerCarnival2PlayConfig</code>（夏日嘉年华玩法说明）、<code>SummerCarnivalCheckConfig</code>（夏日嘉年华签到配置）、<code>SummerCarnivaldailyTaskConfig</code>（夏日嘉年华每日任务配置）、<code>SummerCarnivalpointShopConfig</code>（夏日嘉年华积分商店配置）、<code>S2Rank2PlayConfig</code>（S2 冲榜活动规则说明）、<code>S2RankRewardListConfig</code>（S2 冲榜名次奖励配置）、<code>S2RushRewardsConfig</code>（S2 冲榜活动奖品配置）。</p>
+<h3 id="310">3.10 · 商店、广告、礼包、基金与特权</h3>
+<h4 id="_24">商店与定向投放</h4>
+<p>有普通资源商店、阵营卡包、神秘商店、竞技场礼包、自选／尊享礼包、首充、新手分日礼包、链式礼包等配置。神秘商店有 13 类商品条目，包含数量范围、折扣范围、价格和权重。部分礼包字段与用户标签相连，说明资源支持定向展示；具体触发算法未恢复。</p>
+<p><strong>画面确认：当前商店月卡显示 ¥68，奖励加成 +20%，每日图示为宝石 +20、水晶 +50、木材 +1000；人类、兽人卡包同页显示 ¥68。</strong> 这是当前看到的界面报价，不推广为其他平台或未来价格。旧配置中还有 2.99／9.99 等价格，不能擅自当成人民币或替代微信实际报价。</p>
+<h4 id="_25">基金与通行证</h4>
+<p>基金根据技能消费、召唤次数、已解锁卡数等进度发奖励；领地通行证按领地档位发放。<code>FundIAPInfo</code>（基金内购与奖励档位信息） 明确区分免费奖励轨与付费商品轨。旧基金表还有 A／B 两份奖励，不能把两列相加成同一玩家应得数量。</p>
+<p>设计判断：这些产品依附已经在进行的成长行为，鼓励达到更多里程碑。材料包则同时给指定卡、金币、符文石等，绕过单一材料不足带来的停滞。</p>
+<h4 id="_26">广告在多处参与成长</h4>
+<p><code>VideoBtnConfig</code>（激励视频按钮与入口配置） 有免费资源、宝箱减时、刷新商店、召唤、胜败礼包、挂机双倍、限定召唤、补签，以及士气保持／双倍等标签。其中标签存在只说明支持该入口，不保证当前全部开启。</p>
+<p>士气的战斗增益及生效边界统一见第二部分2.6；此处只记录广告和特权入口。</p>
+<p>设计判断：资源投放与加速是主要商业化方式；已存在的士气特权、月卡奖励加成文案也表明它不只是售卖外观。是否出现插屏、实际广告频率及“去广告”具体覆盖范围，应以微信当前按钮和播放行为为准，不能直接照抄跨平台广告 SDK 默认值。</p>
+<p>来源：<code>GlobalShopInfo</code>（全局商店信息）、<code>GlobalMysteriousStore</code>（全局神秘商店信息）、<code>PremiumGiftPackConfig</code>（尊享礼包配置）、<code>PremiumCustomGiftPackConfig</code>（尊享自选礼包配置）、<code>GlobaMultistageNewcomerPackageInfo</code>（分阶段新手礼包信息）、<code>UserLablePushPackInfo</code>（用户标签关联推送礼包信息）、<code>ShopArenaPackInfos</code>（竞技场商店礼包信息）、<code>GlobalGiftChainInfo</code>（链式礼包信息）、<code>GlobalGiftChainInfo2</code>（第二套链式礼包信息）、<code>FundIAPInfo</code>（基金内购与奖励档位信息）、<code>GlobalFundInfoAbilityFund</code>（技能基金奖励信息）、<code>GlobalFundInfoSummonFund</code>（召唤基金奖励信息）、<code>GlobalFundInfoCardFund</code>（卡牌基金奖励信息）、<code>GlobalFundInfoMainCityPass</code>（领地通行证奖励信息）、<code>VideoBtnConfig</code>（激励视频按钮与入口配置）、<code>I2Terms</code>（本地化文本词条）。</p>
+<h2 id="_27">附录 · 版本分支与证据边界</h2>
+<h3 id="_28">为什么资源里会有互相矛盾的规则</h3>
+<p>缓存保留了不同时间、平台与实验分支的内容。关键开关摘录如下；多数来源标记为 <code>DefaultValue</code>（默认值来源），不能当作已确认的服务器实时配置：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>开关（中文释义）</th>
+<th>缓存值</th>
+<th>作用说明</th>
+<th>记录来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NewAbilitySystem</code>（新卡牌技能系统开关）</td>
+<td>1</td>
+<td>推测：选择新版额外技能流程；结合技能对应表与教程判断。</td>
+<td><code>DefaultValue</code>（默认值来源）</td>
+</tr>
+<tr>
+<td><code>AbilityTreeSystem</code>（天赋树系统开关）</td>
+<td>0</td>
+<td>推测：控制旧天赋树分支的启用。</td>
+<td><code>DefaultValue</code>（默认值来源）</td>
+</tr>
+<tr>
+<td><code>NewArtifactsPlay</code>（新版神器玩法开关）</td>
+<td>1</td>
+<td>推测：选择翻格充能等新版神器玩法；不据此保证所有旧冷却逻辑都被移除。</td>
+<td><code>DefaultValue</code>（默认值来源）</td>
+</tr>
+<tr>
+<td><code>ArtifactsSystem</code>（神器系统开关）</td>
+<td>1</td>
+<td>推测：控制神器相关功能是否启用。</td>
+<td><code>DefaultValue</code>（默认值来源）</td>
+</tr>
+<tr>
+<td><code>NewMainCity2</code>（新版领地第二套方案开关）</td>
+<td>1</td>
+<td>推测：选择领地探索玩法的第二套分支，具体覆盖范围未还原。</td>
+<td><code>DefaultValue</code>（默认值来源）</td>
+</tr>
+<tr>
+<td><code>NewMainCitySystem</code>（新版领地系统开关）</td>
+<td>0</td>
+<td>推测：控制另一套领地改版分支；值为 0 不代表整个领地功能关闭。</td>
+<td><code>DefaultValue</code>（默认值来源）</td>
+</tr>
+<tr>
+<td><code>NewArenaProcess</code>（新版竞技场进度流程开关）</td>
+<td>1</td>
+<td>推测：选择新版竞技场推进与解锁流程。</td>
+<td><code>DefaultValue</code>（默认值来源）</td>
+</tr>
+<tr>
+<td><code>NoBet</code>（免下注模式开关）</td>
+<td>1</td>
+<td>推测：使用无需下注的竞技场流程。</td>
+<td><code>DefaultValue</code>（默认值来源）</td>
+</tr>
+<tr>
+<td><code>ArenaDifficultyV2</code>（竞技场难度第二版开关）</td>
+<td>1</td>
+<td>推测：切换第二版对手难度规则。</td>
+<td><code>DefaultValue</code>（默认值来源）</td>
+</tr>
+<tr>
+<td><code>NewArenaMap</code>（新版竞技场地图开关）</td>
+<td>1</td>
+<td>推测：选择新版地图池或布局分支。</td>
+<td><code>DefaultValue</code>（默认值来源）</td>
+</tr>
+<tr>
+<td><code>MinesCountLimit</code>（金矿数量限制开关）</td>
+<td>1</td>
+<td>推测：应用竞技场中的金矿数量上限。</td>
+<td><code>DefaultValue</code>（默认值来源）</td>
+</tr>
+<tr>
+<td><code>UnitsCountLimit</code>（单位数量限制开关）</td>
+<td>0</td>
+<td>推测：控制某套单位数量上限逻辑；值为 0 不证明所有模式均无上限。</td>
+<td><code>DefaultValue</code>（默认值来源）</td>
+</tr>
+<tr>
+<td><code>Season</code>（赛季系统开关）</td>
+<td>1</td>
+<td>推测：控制赛季相关入口或规则分支。</td>
+<td><code>DefaultValue</code>（默认值来源）</td>
+</tr>
+<tr>
+<td><code>WeeklyCardEvent</code>（每周主题卡活动开关）</td>
+<td>1</td>
+<td>推测：控制主题卡轮换活动是否启用。</td>
+<td><code>DefaultValue</code>（默认值来源）</td>
+</tr>
+<tr>
+<td><code>DailyBless</code>（每日祝福开关）</td>
+<td>0</td>
+<td>推测：控制每日祝福入口或效果流程。</td>
+<td><code>DefaultValue</code>（默认值来源）</td>
+</tr>
+<tr>
+<td><code>NewMoraleSystem</code>（新版士气系统开关）</td>
+<td>0</td>
+<td>推测：选择新版士气分支；值为 0 不足以证明旧士气系统也关闭。</td>
+<td><code>ConfigurationRule</code>（配置规则来源）</td>
+</tr>
+<tr>
+<td><code>UserSegmentation</code>（用户分群开关）</td>
+<td>1</td>
+<td>推测：启用用户分类逻辑；具体使用哪些标签、是否影响匹配未确认。</td>
+<td><code>DefaultValue</code>（默认值来源）</td>
+</tr>
+<tr>
+<td><code>DynamicDifficulty01</code>（动态难度方案 01 开关）</td>
+<td>0</td>
+<td>推测：控制一套动态难度调整分支；具体调节指标未确认。</td>
+<td><code>DefaultValue</code>（默认值来源）</td>
+</tr>
+<tr>
+<td><code>BalanceAdjustment02</code>（平衡调整方案 02 开关）</td>
+<td>1</td>
+<td>推测：选择第二套平衡修正；涉及哪些卡牌、羁绊或数值未确认。</td>
+<td><code>DefaultValue</code>（默认值来源）</td>
+</tr>
+<tr>
+<td><code>BalanceAdjustment03</code>（平衡调整方案 03 开关）</td>
+<td>0</td>
+<td>推测：选择第三套平衡修正；不能按编号推断它必然取代其他方案。</td>
+<td><code>DefaultValue</code>（默认值来源）</td>
+</tr>
+</tbody>
+</table></div>
+<p>尤其需要区分这几组：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>混淆点</th>
+<th>本报告处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>神器 30 秒／每局一次，与 8／20／36 格充能</td>
+<td>优先分析有新版教程和开关支持的充能分支；保留旧规则待验证</td>
+</tr>
+<tr>
+<td>人口、家族、建设与探索新版领地</td>
+<td>以探索、建筑属性、称号和挂机为主体；旧人口增长公式及 20 家族记录仅视为残留证据</td>
+</tr>
+<tr>
+<td>老天赋树与新卡牌技能</td>
+<td>使用新卡牌技能对应表，旧天赋树不混入价格与效果</td>
+</tr>
+<tr>
+<td>旧周赛、旧通行证与新 PVP 赛季</td>
+<td>分开积分、奖励、门票与经验资源</td>
+</tr>
+<tr>
+<td>羁绊 A／B、宝箱文案／数量表</td>
+<td>保留冲突，不给出未经确认的唯一线上数值</td>
+</tr>
+<tr>
+<td>关闭卡牌／神器与活动资源</td>
+<td>配置存在不等于已上线、可获得或今天开放</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>GlobalMainCityHouseInfo</code>（领地家族信息）、<code>GlobalBlessInfo</code>（全局祝福信息） 等仍有家族、祝福资料，但没有足够证据证明它们在当前入口启用。每日祝福开关为 0；没有把它包装成必须参与的日常系统。</p>
+<h3 id="_29">新手阅读与核对顺序</h3>
+<ol>
+<li><strong>先理解翻格位置和胜利条件。</strong> 建筑会改变敌方单位路线，超时看占地数量，既可正面推也可争夺空间。</li>
+<li><strong>看核心卡的产兵节奏与羁绊。</strong> 结合你实际拥有的卡和等级选择阵容，随后再判断技能节点价值。</li>
+<li><strong>竞技场 2 后核对领地属性与挂机。</strong> 木材会连接长期战斗能力和资源供给。</li>
+<li><strong>竞技场 3 后理解神器充能。</strong> 翻格节奏同时影响经济、地盘和神器释放窗口。</li>
+<li><strong>竞技场 4 后区分赛季积分与普通竞技场奖杯。</strong> 新手期胜率还可能受匹配与机器人配置影响。</li>
+<li><strong>活动增益、广告奖励、礼包价值最后再与实际瓶颈比较。</strong> 通用卡、开新卡奖励、神器碎片各自解决不同问题。</li>
+</ol>
+<p>这些是依据配置作出的理解顺序，不是经过大样本测试的强度榜或消费建议。</p>
+<h3 id="_30">本次交付与可复核性</h3>
+<ul>
+<li>全系统报告：当前文档按局内循环、卡牌等级与成长、局外周边系统三部分组织。</li>
+<li>全卡牌图鉴：上一轮生成的 54 卡详情、技能与图标，可与本报告配合阅读。</li>
+<li><code>systems-evidence.json</code>（系统分析证据索引文件）：本报告引用的本地配置路径、SHA-256、记录数、关键开关摘录与界面核对记录。</li>
+</ul>
+<p>已完成本地配置交叉核对与当前早期界面核对；未替你进行对战、升级、抽卡或购买。战斗公式的完整结算顺序、线上概率、全部开关实际值及后期界面，仍属于这次静态资源分析的边界。</p><footer>来源：当前电脑提取的游戏包与缓存。此文档可离线阅读；不调用游戏接口。</footer></main><script>const mq=matchMedia("(max-width:1000px)");const sync=()=>document.getElementById("report-toc").open=!mq.matches;sync();mq.addEventListener("change",sync);</script></body></html>

@@ -1,18 +1,9 @@
-# Local acquisition and reverse-engineering workspace (large or sensitive)
-/cache/
-/extracted/
-/unpacked/
-/research/archive/
-/tools/
+# Dependencies
 /node_modules
-/card-art/
-/tables/
-/previews/
 
-# Generated working outputs. Publishable copies live in /docs.
-/outputs/
-/docs/site-preview.png
-/docs/site-verification.json
+# Build cache
+/cache/
+/unpacked/
 
 # Local verification and runtime noise
 *.inspect.ndjson

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "10001",
+    "reachStageRequire": "50",
+    "reward": "20006:50"
+  },
+  {
+    "id": "10002",
+    "reachStageRequire": "100",
+    "reward": "20011:30"
+  },
+  {
+    "id": "10003",
+    "reachStageRequire": "200",
+    "reward": "20012:50"
+  },
+  {
+    "id": "10004",
+    "reachStageRequire": "300",
+    "reward": "20013:30"
+  },
+  {
+    "id": "10005",
+    "reachStageRequire": "600",
+    "reward": "20013:50"
+  },
+  {
+    "id": "10006",
+    "reachStageRequire": "1000",
+    "reward": "20014:30"
+  },
+  {
+    "id": "10007",
+    "reachStageRequire": "1500",
+    "reward": "-1:50"
+  },
+  {
+    "id": "10008",
+    "reachStageRequire": "1700",
+    "reward": "20006:50"
+  },
+  {
+    "id": "10009",
+    "reachStageRequire": "1900",
+    "reward": "20011:30"
+  },
+  {
+    "id": "10010",
+    "reachStageRequire": "2100",
+    "reward": "20012:50"
+  },
+  {
+    "id": "10011",
+    "reachStageRequire": "2300",
+    "reward": "20013:30"
+  },
+  {
+    "id": "10012",
+    "reachStageRequire": "2500",
+    "reward": "20013:50"
+  },
+  {
+    "id": "10013",
+    "reachStageRequire": "2700",
+    "reward": "20014:30"
+  },
+  {
+    "id": "10014",
+    "reachStageRequire": "3000",
+    "reward": "-1:50"
+  }
+]

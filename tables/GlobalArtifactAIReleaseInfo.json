@@ -1,0 +1,218 @@
+[
+  {
+    "id": "3001",
+    "artifactType": "Global",
+    "baseThreshold": 30.0,
+    "distanceParam": 5,
+    "ratioParam": 0.0,
+    "hpParam": 0.0,
+    "specialParam": ""
+  },
+  {
+    "id": "3002",
+    "artifactType": "Global",
+    "baseThreshold": 30.0,
+    "distanceParam": 0,
+    "ratioParam": 0.0,
+    "hpParam": 0.0,
+    "specialParam": ""
+  },
+  {
+    "id": "3003",
+    "artifactType": "Global",
+    "baseThreshold": 30.0,
+    "distanceParam": 0,
+    "ratioParam": 0.0,
+    "hpParam": 0.0,
+    "specialParam": ""
+  },
+  {
+    "id": "3004",
+    "artifactType": "Special",
+    "baseThreshold": 0.0,
+    "distanceParam": 0,
+    "ratioParam": 0.0,
+    "hpParam": 0.0,
+    "specialParam": "necrobook"
+  },
+  {
+    "id": "3005",
+    "artifactType": "Building",
+    "baseThreshold": 30.0,
+    "distanceParam": 3,
+    "ratioParam": 0.0,
+    "hpParam": 0.0,
+    "specialParam": ""
+  },
+  {
+    "id": "3006",
+    "artifactType": "Area",
+    "baseThreshold": 15.0,
+    "distanceParam": 0,
+    "ratioParam": 0.0,
+    "hpParam": 0.0,
+    "specialParam": ""
+  },
+  {
+    "id": "3007",
+    "artifactType": "Global",
+    "baseThreshold": 15.0,
+    "distanceParam": 5,
+    "ratioParam": 1.5,
+    "hpParam": 0.0,
+    "specialParam": ""
+  },
+  {
+    "id": "3008",
+    "artifactType": "Area",
+    "baseThreshold": 30.0,
+    "distanceParam": 0,
+    "ratioParam": 0.0,
+    "hpParam": 0.3,
+    "specialParam": ""
+  },
+  {
+    "id": "3009",
+    "artifactType": "Area",
+    "baseThreshold": 3.0,
+    "distanceParam": 0,
+    "ratioParam": 3.0,
+    "hpParam": 0.0,
+    "specialParam": ""
+  },
+  {
+    "id": "3010",
+    "artifactType": "Global",
+    "baseThreshold": 20.0,
+    "distanceParam": 0,
+    "ratioParam": 0.0,
+    "hpParam": 0.0,
+    "specialParam": ""
+  },
+  {
+    "id": "3011",
+    "artifactType": "Area",
+    "baseThreshold": 25.0,
+    "distanceParam": 0,
+    "ratioParam": 0.0,
+    "hpParam": 0.0,
+    "specialParam": "1"
+  },
+  {
+    "id": "3012",
+    "artifactType": "Area",
+    "baseThreshold": 40.0,
+    "distanceParam": 0,
+    "ratioParam": 0.0,
+    "hpParam": 0.0,
+    "specialParam": ""
+  },
+  {
+    "id": "3013",
+    "artifactType": "Special",
+    "baseThreshold": 0.0,
+    "distanceParam": 0,
+    "ratioParam": 0.0,
+    "hpParam": 0.0,
+    "specialParam": "godslayer"
+  },
+  {
+    "id": "3014",
+    "artifactType": "Special",
+    "baseThreshold": 10.0,
+    "distanceParam": 1,
+    "ratioParam": 0.0,
+    "hpParam": 0.0,
+    "specialParam": ""
+  },
+  {
+    "id": "3015",
+    "artifactType": "Global",
+    "baseThreshold": 30.0,
+    "distanceParam": 0,
+    "ratioParam": 0.0,
+    "hpParam": 0.6,
+    "specialParam": ""
+  },
+  {
+    "id": "3016",
+    "artifactType": "Building",
+    "baseThreshold": 30.0,
+    "distanceParam": 3,
+    "ratioParam": 0.0,
+    "hpParam": 0.0,
+    "specialParam": ""
+  },
+  {
+    "id": "3017",
+    "artifactType": "Building",
+    "baseThreshold": 1.0,
+    "distanceParam": 0,
+    "ratioParam": 0.0,
+    "hpParam": 0.5,
+    "specialParam": ""
+  },
+  {
+    "id": "3018",
+    "artifactType": "Global",
+    "baseThreshold": 30.0,
+    "distanceParam": 5,
+    "ratioParam": 0.0,
+    "hpParam": 0.5,
+    "specialParam": ""
+  },
+  {
+    "id": "3019",
+    "artifactType": "Global",
+    "baseThreshold": 30.0,
+    "distanceParam": 0,
+    "ratioParam": 0.0,
+    "hpParam": 0.5,
+    "specialParam": ""
+  },
+  {
+    "id": "3020",
+    "artifactType": "Global",
+    "baseThreshold": 0.0,
+    "distanceParam": 0,
+    "ratioParam": 0.0,
+    "hpParam": 0.0,
+    "specialParam": ""
+  },
+  {
+    "id": "3021",
+    "artifactType": "Global",
+    "baseThreshold": 20.0,
+    "distanceParam": 0,
+    "ratioParam": 0.0,
+    "hpParam": 0.35,
+    "specialParam": ""
+  },
+  {
+    "id": "3022",
+    "artifactType": "Global",
+    "baseThreshold": 10.0,
+    "distanceParam": 0,
+    "ratioParam": 0.0,
+    "hpParam": 0.0,
+    "specialParam": ""
+  },
+  {
+    "id": "3023",
+    "artifactType": "Global",
+    "baseThreshold": 3.0,
+    "distanceParam": 0,
+    "ratioParam": 0.0,
+    "hpParam": 0.8,
+    "specialParam": ""
+  },
+  {
+    "id": "3024",
+    "artifactType": "Global",
+    "baseThreshold": 20.0,
+    "distanceParam": 0,
+    "ratioParam": 0.0,
+    "hpParam": 0.75,
+    "specialParam": ""
+  }
+]
