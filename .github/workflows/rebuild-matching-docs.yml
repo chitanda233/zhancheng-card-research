@@ -1,4 +1,4 @@
-name: Rebuild matching docs
+name: Rebuild research docs
 
 on:
   workflow_dispatch:
@@ -9,6 +9,8 @@ on:
       - 'scripts/matching_report.md'
       - 'scripts/bot_ai_rules.md'
       - 'scripts/build_matching_report.py'
+      - 'scripts/hex_random_report.md'
+      - 'scripts/build_hex_random_report.py'
       - 'scripts/build_public_site.py'
       - 'tables/**'
       - '.github/workflows/rebuild-matching-docs.yml'
@@ -17,7 +19,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: rebuild-matching-docs
+  group: rebuild-research-docs
   cancel-in-progress: true
 
 jobs:
@@ -38,10 +40,13 @@ jobs:
       - name: Rebuild matching report
         run: python scripts/build_matching_report.py
 
+      - name: Rebuild hex randomness report
+        run: python scripts/build_hex_random_report.py
+
       - name: Rebuild public docs
         run: python scripts/build_public_site.py
 
-      - name: Validate generated matching page
+      - name: Validate generated reports
         shell: bash
         run: |
           test -s docs/reports/matching/index.html
@@ -52,16 +57,21 @@ jobs:
           grep -q '与机器人配置页的边界' docs/reports/matching/index.html
           grep -q '机器人配置详表' docs/reports/matching/index.html
           grep -q '机器人配置详表' docs/reports/matching/bot.html
+          test -s docs/reports/hex-random/index.html
+          test -s docs/reports/hex-random/report.md
+          grep -q '25%到底什么时候发生' docs/reports/hex-random/index.html
+          grep -q '用户标签共用一次消费位' docs/reports/hex-random/index.html
+          grep -q '新显现格通常是在揭晓开局生成结果' docs/reports/hex-random/index.html
 
       - name: Commit generated files
         shell: bash
         run: |
-          if git diff --quiet -- outputs/matching docs; then
+          if git diff --quiet -- outputs/matching outputs/hex-random docs; then
             echo 'No generated changes.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add outputs/matching docs
-          git commit -m 'docs: rebuild matching report'
+          git add outputs/matching outputs/hex-random docs
+          git commit -m 'docs: rebuild research reports'
           git push
