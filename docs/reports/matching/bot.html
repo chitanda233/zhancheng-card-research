@@ -1067,7 +1067,7 @@
 </tr>
 </tbody>
 </table></div>
-<p>字段映射依据 <code>BattleHexCellState</code>：Coord 偏移 0，HexType 偏移 0x2C，Price 偏移 0x30；WASM 数组元素另有 16 字节数组头。证据保存在本地 <code>outputs/chest-reverse/eb89-func-22529.wat</code> 与归档 <code>dump.cs</code>。</p>
+<p>字段映射依据 <code>BattleHexCellState</code>：Coord 偏移 0，HexType 偏移 0x2C，Price 偏移 0x30；WASM 数组元素另有 16 字节数组头。函数证据统一通过 <code>research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv</code> 与 <code>module.objdump.gz</code> 复核，声明与字段名参考归档 <code>dump.cs</code>。</p>
 <h3 id="63">6.3 行动时机与神器：哪些还没核实</h3>
 <p>会话类明确声明 <code>LocalHostedBotInitialFlipDelaySeconds=5</code>，即初次翻格延迟常量为 5 秒。它不是每次翻格间隔；仍需核对初始化与调度调用链。会话还分开保存 <code>_localHostedBotNextThinkFrame</code> 和 <code>_localHostedBotNextArtifactThinkFrame</code>，说明翻格和神器有各自的下一思考帧。</p>
 <p>神器规划函数有 <code>cooldownRemainingFrames</code>、<code>titanBlueprintTarget</code> 参数，存在装备解析、充能、单位/建筑/主城目标搜索。下面是全部 24 条释放配置原值；尚未恢复每件神器的完整阈值公式，因此 baseThreshold 不直接解释为秒数。</p>

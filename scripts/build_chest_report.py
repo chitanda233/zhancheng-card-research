@@ -75,9 +75,13 @@ methods = [
 ]
 method_evidence = []
 for slot, fn, name, finding in methods:
-    path = ROOT / f'outputs/chest-reverse/{slot}-func-{fn}.wat'
-    method_evidence.append(dict(name=name, tableSlot='0x'+slot, wasmFunction=fn, finding=finding,
-                               excerptSha256=hashlib.sha256(path.read_bytes()).hexdigest() if path.exists() else None))
+    method_evidence.append(dict(
+        name=name,
+        tableSlot='0x'+slot,
+        wasmFunction=fn,
+        finding=finding,
+        evidencePath='research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv',
+        disassemblyPath='research/archive/2026-09-03/reverse-engineering/canonical/module.objdump.gz'))
 
 data = dict(snapshot='2026-09-03', researchedAt='2026-09-08', version='1.4.15.558-preview',
             notice='静态资源及WASM还原，不代表服务器当前分流；方法摘录在本地研究层。',

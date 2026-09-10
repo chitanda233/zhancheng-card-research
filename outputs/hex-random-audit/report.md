@@ -165,7 +165,7 @@ P(其他档位) = 对应基础权重/(100+B)
 
 ## 5. 可复核证据
 
-恢复元数据：`research/archive/2026-09-03/reverse-engineering/dump.cs`。函数摘录保存在本地`outputs/chest-reverse/`；沿用上次抽取器，目录名chest不代表仅分析宝箱。
+恢复元数据：`research/archive/2026-09-03/reverse-engineering/dump.cs`。完整函数反汇编与RVA映射统一保存在`research/archive/2026-09-03/reverse-engineering/canonical/`；不再保留按专题命名的函数摘录目录。
 
 |表槽|WASM函数|用途|
 |---|---:|---|

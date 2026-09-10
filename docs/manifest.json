@@ -1,6 +1,6 @@
 {
   "title": "占城大师研究资料库发布清单",
-  "generatedAt": "2026-09-10T11:34:56+00:00",
+  "generatedAt": "2026-09-10T11:59:22+00:00",
   "snapshot": "2026-09-03",
   "files": [
     {
@@ -55,8 +55,8 @@
     },
     {
       "path": "reports/chests/chests-data.json",
-      "bytes": 310600,
-      "sha256": "b2a13d8f06f04062476d40557f71c7ac6b1f4310f6388577c096dbfaf2d2033c"
+      "bytes": 312154,
+      "sha256": "dd6688f9dd6099214f4c2d2b81c2473e377ce46499aac99c4dcdc85afcf7a1f5"
     },
     {
       "path": "reports/chests/index.html",
@@ -135,13 +135,13 @@
     },
     {
       "path": "reports/matching/bot.html",
-      "bytes": 761938,
-      "sha256": "320bc2256a9dc12961f5b28a1ade5a310de3fe0e57feb0a2b1997135afa4fc93"
+      "bytes": 762037,
+      "sha256": "1b4370da0c0920ffd923af55dd445e18ae59fe8d82f86e148f7e6d27421ab13a"
     },
     {
       "path": "reports/matching/index.html",
-      "bytes": 737666,
-      "sha256": "5f476bc67e3e18cbee5148a5058a6b9c664e4dc4616e05a2bffdfeacd0466ce6"
+      "bytes": 737754,
+      "sha256": "8c22accd4c9fef891848a3654658ee84a4f0e2b2d1601bc0572d0d8512ffb072"
     },
     {
       "path": "reports/matching/matching-data.json",
@@ -150,8 +150,8 @@
     },
     {
       "path": "reports/matching/report.md",
-      "bytes": 248295,
-      "sha256": "2a2e429f1bd9c60e665a425b0077f51f5d29b003201f06717f2d30598472d274"
+      "bytes": 248383,
+      "sha256": "9fcdb855a15275a70657e86f33abf3a9efaf79ed7e6bd367a662237330107261"
     },
     {
       "path": "reports/system/evidence.json",

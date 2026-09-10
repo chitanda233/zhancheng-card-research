@@ -20,10 +20,10 @@
 
 发布脚本不会读取完整 `RemoteConfig` 输出到站点，只会使用新手路径证据中已经审核过的玩法开关白名单。
 
-匹配专题：`python scripts/build_matching_report.py` → `python scripts/build_public_site.py` → `node scripts/test_matching_report.cjs`。生成器直接解析 Bot_Json 并与卡牌/技能/段位表关联，验证全部候选 ID 和 688 个卡槽。正文、样式与交互源文件分别为 `matching_report.md/.css/.js`；新的公开配置包括 `ArenaEnemyCardsInfoSheet2`。本次函数复核可用 `node scripts/inspect_chest_wasm.cjs 3371 9D08 9D07 9D06 9CF9 9CFA 9CFF 3372 3373` 重建本地摘录。
+匹配专题：`python scripts/build_matching_report.py` → `python scripts/build_public_site.py` → `node scripts/test_matching_report.cjs`。生成器直接解析 Bot_Json 并与卡牌/技能/段位表关联，验证全部候选 ID 和 688 个卡槽。正文、样式与交互源文件分别为 `matching_report.md/.css/.js`；新的公开配置包括 `ArenaEnemyCardsInfoSheet2`。函数级复核统一使用 `research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv` 定位方法，并在同目录的 `module.objdump.gz` / `module.wat.gz` 中读取完整函数体。
 
 地块随机页：先生成宝箱页面以复用报告样式，再执行 `python scripts/build_hex_random_report.py`，随后运行发布整理与 `node scripts/test_hex_random.cjs`。正文源文件为 `scripts/hex_random_report.md`，WASM与缓存继续仅存于本地。
 
-宝箱数据另保留 `ChestImprove01` 和 `BottomChestUI` 两个默认值。反汇编脚本依赖本地 `tools/chest-wasm/node_modules/wabt`（安装：`npm install --prefix tools/chest-wasm wabt --no-save --package-lock=false --ignore-scripts`），只读取归档WASM，输出到被Git忽略的 `outputs/chest-reverse/`。方法RVA用作WASM表槽，不当作文件偏移；共享桩的多重名称无法证明函数体语义。
+宝箱数据另保留 `ChestImprove01` 和 `BottomChestUI` 两个默认值。逆向证据不再生成专题私有的 `outputs/chest-reverse/`；统一由 `.github/workflows/rebuild-canonical-reverse.yml` 从固定WASM输入生成 `research/archive/2026-09-03/reverse-engineering/canonical/`。方法RVA用作WASM表槽，不当作文件偏移；共享桩的多重名称仍不能单独证明函数体语义。
 
-宝箱页面复现顺序：`node --max-old-space-size=8192 scripts/inspect_chest_wasm.cjs` → `python scripts/build_chest_report.py` → `python scripts/build_public_site.py` → `node scripts/test_chest_report.cjs`。默认提取页面引用的14个方法；完整解包资源和缓存仍在本地归档，不随页面发布。
+宝箱页面复现顺序：先保证 canonical 逆向包已生成，再执行 `python scripts/build_chest_report.py` → `python scripts/build_public_site.py` → `node scripts/test_chest_report.cjs`。宝箱报告只记录 canonical 方法映射与完整反汇编入口，不再维护第二套函数摘录。

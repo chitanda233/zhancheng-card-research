@@ -802,7 +802,7 @@
 | 约 640～735 行及其他候选分支 | 新价格大于旧价格时比较值为 -1；负数触发替换，同价比较两个坐标 |
 | 约 1440 行至函数结尾 | 最终依次选择 local46、local47、local44、local45，生成一个翻格命令 |
 
-字段映射依据 `BattleHexCellState`：Coord 偏移 0，HexType 偏移 0x2C，Price 偏移 0x30；WASM 数组元素另有 16 字节数组头。证据保存在本地 `outputs/chest-reverse/eb89-func-22529.wat` 与归档 `dump.cs`。
+字段映射依据 `BattleHexCellState`：Coord 偏移 0，HexType 偏移 0x2C，Price 偏移 0x30；WASM 数组元素另有 16 字节数组头。函数证据统一通过 `research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv` 与 `module.objdump.gz` 复核，声明与字段名参考归档 `dump.cs`。
 
 ### 7.6.3 行动时机与神器：哪些还没核实
 
