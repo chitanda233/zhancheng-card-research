@@ -23,17 +23,18 @@ jobs:
             sudo apt-get update -qq
             sudo apt-get install -y wabt
           fi
-          wasm2wat --version || true
 
-      - name: Recover element-table mappings and target function bodies
+      - name: Recover exact target functions
         shell: bash
         run: |
           set -euo pipefail
           OUT=outputs/hex-openable-reverse
           rm -rf "$OUT"
           mkdir -p "$OUT"
-
           DUMP='research/archive/2026-09-03/reverse-engineering/dump.cs'
+          SRC='research/archive/2026-09-03/unpacked/_wasmcode_/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br'
+          WASM='/tmp/current.webgl.wasm'
+
           {
             echo '# Target method contexts from dump.cs'
             echo
@@ -49,165 +50,105 @@ jobs:
               'RefreshBattleCoreAuthoritativeCellPresentationAfterBatch' \
               'MarkBattleCoreAuthoritativeVisibilityRefreshDirty' \
               'FlushBattleCoreAuthoritativeVisibilityRefreshBudgeted' \
-              'BattleHexCellState' \
-              'GetHexOpenBlockReason'; do
+              'GetHexOpenBlockReason' \
+              'BattleHexCellState'; do
               echo "## $pat"
-              grep -n -F -B 10 -A 24 "$pat" "$DUMP" | head -n 220 || true
+              grep -n -F -B 10 -A 28 "$pat" "$DUMP" | head -n 240 || true
               echo
             done
           } > "$OUT/dump-method-contexts.txt"
 
-          cat > /tmp/map_elem.py <<'PY'
-          import sys, struct
-          src, out = sys.argv[1:3]
-          data = open(src,'rb').read()
-          assert data[:4] == b'\0asm'
-          p = 8
-          def uleb(buf, pos):
-              v=0; s=0
-              while True:
-                  b=buf[pos]; pos+=1
-                  v |= (b & 0x7f) << s
-                  if not (b & 0x80): return v,pos
-                  s += 7
-          def sleb(buf,pos):
-              v=0; s=0
-              while True:
-                  b=buf[pos]; pos+=1
-                  v |= (b & 0x7f) << s
-                  s += 7
-                  if not (b & 0x80):
-                      if s < 32 and (b & 0x40): v |= -(1 << s)
-                      return v,pos
-          elem=None
-          while p < len(data):
-              sid=data[p]; p+=1
-              size,p=uleb(data,p)
-              end=p+size
-              if sid==9:
-                  elem=data[p:end]
-                  break
-              p=end
-          if elem is None: raise SystemExit('no element section')
-          q=0; segcount,q=uleb(elem,q)
-          mapping={}
-          seginfo=[]
-          for si in range(segcount):
-              flags,q=uleb(elem,q)
-              tableidx=0
-              if flags in (0,2,4,6):
-                  if flags in (2,6): tableidx,q=uleb(elem,q)
-                  op=elem[q]; q+=1
-                  if op != 0x41: raise SystemExit(f'unsupported offset opcode {op:#x}')
-                  offset,q=sleb(elem,q)
-                  if elem[q] != 0x0b: raise SystemExit('bad const expr')
-                  q+=1
-              else:
-                  offset=None
-              if flags in (1,2,3):
-                  # elemkind byte for legacy funcidx vectors
-                  q += 1
-              elif flags in (5,6,7):
-                  # reftype byte
-                  q += 1
-              n,q=uleb(elem,q)
-              vals=[]
-              if flags <= 3:
-                  for _ in range(n):
-                      fn,q=uleb(elem,q); vals.append(fn)
-              else:
-                  raise SystemExit(f'unsupported expression element flags={flags}')
-              if offset is not None:
-                  for i,fn in enumerate(vals): mapping[offset+i]=fn
-              seginfo.append((si,flags,tableidx,offset,n))
+          node - "$SRC" "$WASM" <<'NODE'
+          const fs = require('fs');
+          const zlib = require('zlib');
+          const [src,dst] = process.argv.slice(2);
+          const dec = zlib.brotliDecompressSync(fs.readFileSync(src));
+          if (!(dec[0]===0 && dec[1]===0x61 && dec[2]===0x73 && dec[3]===0x6d)) throw new Error('not wasm');
+          fs.writeFileSync(dst,dec);
+          NODE
 
-          targets = [
+          cat > /tmp/map_elem.py <<'PY'
+          import sys
+          src,out=sys.argv[1:3]
+          b=open(src,'rb').read(); assert b[:4]==b'\0asm'
+          def uleb(p):
+              v=s=0
+              while True:
+                  x=b[p]; p+=1; v|=(x&127)<<s
+                  if x<128:return v,p
+                  s+=7
+          def sleb(p):
+              v=s=0
+              while True:
+                  x=b[p]; p+=1; v|=(x&127)<<s; s+=7
+                  if x<128:
+                      if s<32 and x&64:v|=-(1<<s)
+                      return v,p
+          p=8; es=ee=None
+          while p<len(b):
+              sid=b[p];p+=1; n,p=uleb(p); end=p+n
+              if sid==9: es,ee=p,end; break
+              p=end
+          assert es is not None
+          p=es; segs,p=uleb(p); mapping={}; info=[]
+          for si in range(segs):
+              flags,p=uleb(p)
+              if flags!=0: raise RuntimeError(f'unexpected element flags={flags} at segment {si}')
+              if b[p]!=0x41: raise RuntimeError(f'unexpected offset opcode={b[p]:#x}')
+              p+=1; offset,p=sleb(p)
+              if b[p]!=0x0b: raise RuntimeError('offset expr missing end')
+              p+=1; count,p=uleb(p); info.append((si,offset,count))
+              for i in range(count):
+                  fn,p=uleb(p); mapping[offset+i]=fn
+          targets=[
             (0x4534,'BattleSimulation.OpenHex'),
-            (0x459b,'BattleSimulation.CommitOpenedHex'),
-            (0xf495,'BattleSimulation.ResolveOpenedHexOutcome'),
-            (0xf497,'BattleSimulation.TryClaimAdjacentSpecialHexRewards'),
-            (0xf498,'BattleSimulation.IsClaimableAdjacentSpecialHex'),
-            (0x8f23,'TryGetOfflinePveEnemyOpenableHexStates'),
-            (0x8df4,'CollectAuthoritativeOpenableEnemyHexes'),
-            (0x88fc,'HexBehaviour.ApplyBattleCoreAuthoritativeCellState'),
-            (0x88ff,'HexBehaviour.RefreshBattleCoreAuthoritativeCellPresentation'),
+            (0x459B,'BattleSimulation.CommitOpenedHex'),
+            (0xF495,'BattleSimulation.ResolveOpenedHexOutcome'),
+            (0xF497,'BattleSimulation.TryClaimAdjacentSpecialHexRewards'),
+            (0xF498,'BattleSimulation.IsClaimableAdjacentSpecialHex'),
+            (0x8F23,'TryGetOfflinePveEnemyOpenableHexStates'),
+            (0x8DF4,'AIBehaviourManager.CollectAuthoritativeOpenableEnemyHexes'),
+            (0x88FC,'HexBehaviour.ApplyBattleCoreAuthoritativeCellState'),
+            (0x88FF,'HexBehaviour.RefreshBattleCoreAuthoritativeCellPresentation'),
             (0x8900,'HexBehaviour.RefreshBattleCoreAuthoritativeHexPromptPresentation'),
             (0x8918,'HexBehaviour.RefreshBattleCoreAuthoritativeCellPresentationAfterBatch'),
             (0x8919,'HexBehaviour.MarkBattleCoreAuthoritativeVisibilityRefreshDirty'),
-            (0x891a,'HexBehaviour.FlushBattleCoreAuthoritativeVisibilityRefreshBudgeted'),
-          ]
+            (0x891A,'HexBehaviour.FlushBattleCoreAuthoritativeVisibilityRefreshBudgeted')]
           with open(out,'w',encoding='utf-8') as f:
-              f.write('# WASM element table target mapping\n')
-              for x in seginfo: f.write('segment=%d flags=%d table=%d offset=%s count=%d\n' % x)
-              f.write('\n')
-              for idx,name in targets:
-                  f.write(f'0x{idx:04X}\t{idx}\tfunc[{mapping.get(idx)}]\t{name}\n')
-              f.write('\n# Known-mapping validation\n')
-              f.write(f'0x4534 expected func[43532], actual func[{mapping.get(0x4534)}]\n')
-              f.write(f'0xF495 expected func[25409], actual func[{mapping.get(0xf495)}]\n')
-          if mapping.get(0x4534)==43532 and mapping.get(0xf495)==25409:
-              print('MATCHING_BUILD')
-          else:
-              print('OTHER_BUILD')
+              f.write('# Element-table mapping for current matching build\n')
+              f.write(f'segments={segs} info={info}\n\n')
+              for idx,name in targets:f.write(f'0x{idx:04X}\t{idx}\tfunc[{mapping.get(idx)}]\t{name}\n')
+              f.write('\n# validation\n')
+              f.write(f'0x4534 expected=43532 actual={mapping.get(0x4534)}\n')
+              f.write(f'0xF495 expected=25409 actual={mapping.get(0xF495)}\n')
+          if mapping.get(0x4534)!=43532 or mapping.get(0xF495)!=25409: raise SystemExit('build mapping mismatch')
           PY
+          python3 /tmp/map_elem.py "$WASM" "$OUT/table-target-map.txt"
 
           cat > /tmp/filter_wat.py <<'PY'
           import re,sys
-          mapfile,out = sys.argv[1:3]
-          targets=set()
-          for line in open(mapfile,encoding='utf-8'):
+          mf,out=sys.argv[1:3]; targets=set()
+          for line in open(mf,encoding='utf-8'):
               m=re.search(r'func\[(\d+)\]',line)
-              if m: targets.add(int(m.group(1)))
+              if m:targets.add(int(m.group(1)))
           capture=False
-          chunks=[]
-          for line in sys.stdin:
-              m=re.match(r'\s*\(func \(;([0-9]+);\)',line)
-              if m:
-                  capture=int(m.group(1)) in targets
-              if capture: chunks.append(line)
-          open(out,'w',encoding='utf-8').writelines(chunks)
+          with open(out,'w',encoding='utf-8') as o:
+              for line in sys.stdin:
+                  m=re.match(r'\s*\(func \(;([0-9]+);\)',line)
+                  if m:capture=int(m.group(1)) in targets
+                  if capture:o.write(line)
           PY
-
-          : > "$OUT/wasm-candidates.txt"
-          find research/archive/2026-09-03 -type f -name '*.wasm.br' -size +1000000c -print0 \
-            | sort -z \
-            | while IFS= read -r -d '' SRC; do
-                NAME=$(basename "$SRC" .br)
-                KEY=$(printf '%s' "$SRC" | sha256sum | cut -c1-10)
-                WASM="/tmp/${KEY}-${NAME}"
-                echo "$SRC" >> "$OUT/wasm-candidates.txt"
-                sha256sum "$SRC" >> "$OUT/wasm-candidates.txt"
-                ls -lh "$SRC" >> "$OUT/wasm-candidates.txt"
-
-                node - "$SRC" "$WASM" <<'NODE'
-          const fs = require('fs');
-          const zlib = require('zlib');
-          const [src, dst] = process.argv.slice(2);
-          const dec = zlib.brotliDecompressSync(fs.readFileSync(src));
-          fs.writeFileSync(dst, dec);
-          if (!(dec[0]===0 && dec[1]===0x61 && dec[2]===0x73 && dec[3]===0x6d)) throw new Error('not wasm');
-          NODE
-
-                RESULT=$(python3 /tmp/map_elem.py "$WASM" "$OUT/${KEY}-table-target-map.txt")
-                {
-                  echo "# $SRC"
-                  echo "decompressed_size=$(stat -c%s "$WASM")"
-                  sha256sum "$WASM"
-                  echo "$RESULT"
-                } > "$OUT/${KEY}-module-summary.txt"
-
-                if [ "$RESULT" = 'MATCHING_BUILD' ]; then
-                  wasm2wat "$WASM" | python3 /tmp/filter_wat.py "$OUT/${KEY}-table-target-map.txt" "$OUT/${KEY}-target-functions.wat"
-                fi
-                rm -f "$WASM"
-              done
+          wasm2wat "$WASM" | python3 /tmp/filter_wat.py "$OUT/table-target-map.txt" "$OUT/target-functions.wat"
 
           {
-            echo '# Existing exact RVA-to-function artifacts relevant to this chain'
-            for f in outputs/chest-reverse/4534-func-*.wat outputs/chest-reverse/459b-func-*.wat outputs/chest-reverse/f495-func-*.wat outputs/chest-reverse/8df4-func-*.wat outputs/chest-reverse/88fc-func-*.wat outputs/chest-reverse/88ff-func-*.wat outputs/chest-reverse/8900-func-*.wat; do
-              [ -e "$f" ] && echo "$f"
-            done
-          } > "$OUT/existing-target-artifacts.txt"
+            echo '# Source and validation'
+            echo "$SRC"
+            sha256sum "$SRC"
+            echo "decompressed_size=$(stat -c%s "$WASM")"
+            sha256sum "$WASM"
+            echo "target_wat_size=$(stat -c%s "$OUT/target-functions.wat")"
+          } > "$OUT/source-build.txt"
+          rm -f "$WASM"
 
       - name: Commit recovered diagnostics
         run: |
@@ -215,9 +156,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add outputs/hex-openable-reverse
-          if git diff --cached --quiet; then
-            echo 'No diagnostic changes.'
-          else
-            git commit -m 'research: map hex openable wasm functions'
+          if ! git diff --cached --quiet; then
+            git commit -m 'research: extract exact hex openable functions'
             git push
           fi
