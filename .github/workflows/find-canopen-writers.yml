@@ -1,0 +1,111 @@
+name: Trace CanOpen writers
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/find-canopen-writers.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  trace:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Install WABT
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y wabt
+      - name: Find BattleHexCellState CanOpen writes
+        run: |
+          set -euo pipefail
+          SRC='research/archive/2026-09-03/unpacked/_wasmcode_/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br'
+          DUMP='research/archive/2026-09-03/reverse-engineering/dump.cs'
+          OUT='outputs/hex-openable-reverse'
+          WASM=/tmp/current.wasm
+          DIS=/tmp/current.objdump
+          mkdir -p "$OUT"
+          node - "$SRC" "$WASM" <<'NODE'
+          const fs=require('fs'),z=require('zlib'); const [s,d]=process.argv.slice(2); fs.writeFileSync(d,z.brotliDecompressSync(fs.readFileSync(s)));
+          NODE
+          wasm-objdump -d "$WASM" > "$DIS"
+          python3 - "$WASM" "$DIS" "$DUMP" "$OUT/canopen-writers.txt" <<'PY'
+          import re,sys
+          wasm,dis,dump,out=sys.argv[1:]
+          b=open(wasm,'rb').read()
+          def uleb(p):
+              v=s=0
+              while True:
+                  x=b[p];p+=1;v|=(x&127)<<s
+                  if x<128:return v,p
+                  s+=7
+          def sleb(p):
+              v=s=0
+              while True:
+                  x=b[p];p+=1;v|=(x&127)<<s;s+=7
+                  if x<128:
+                      if s<32 and x&64:v|=-(1<<s)
+                      return v,p
+          p=8
+          while p<len(b):
+              sid=b[p];p+=1;n,p=uleb(p);end=p+n
+              if sid==9:break
+              p=end
+          segs,p=uleb(p); mapping={}
+          for _ in range(segs):
+              flags,p=uleb(p); assert flags==0 and b[p]==0x41;p+=1
+              off,p=sleb(p);assert b[p]==0x0b;p+=1;n,p=uleb(p)
+              for i in range(n):fn,p=uleb(p);mapping[off+i]=fn
+          inv={}
+          for rva,fn in mapping.items():inv.setdefault(fn,[]).append(rva)
+          dlines=open(dump,encoding='utf-8',errors='replace').read().splitlines()
+          sig_by_rva={}
+          for i,line in enumerate(dlines):
+              m=re.search(r'RVA:\s*0x([0-9A-Fa-f]+)',line)
+              if not m:continue
+              rva=int(m.group(1),16);sig=''
+              for j in range(i+1,min(i+5,len(dlines))):
+                  t=dlines[j].strip()
+                  if t and not t.startswith('//') and not t.startswith('['):sig=t;break
+              sig_by_rva[rva]=sig
+          lines=open(dis,encoding='utf-8',errors='replace').readlines()
+          chunks={};cur=None;buf=[]
+          def flush():
+              if cur is not None:chunks[cur]=buf.copy()
+          for line in lines:
+              m=re.search(r'func\[(\d+)\]',line)
+              if m and line.rstrip().endswith(':'):
+                  flush();cur=int(m.group(1));buf=[line]
+              elif cur is not None:buf.append(line)
+          flush()
+          # Offset 0x24 / decimal36 is BattleHexCellState.CanOpen. Find stores and keep context.
+          hits=[]
+          for fn,ls in chunks.items():
+              for i,line in enumerate(ls):
+                  if re.search(r'\bi32\.store8\s+0\s+36\b',line): hits.append((fn,i))
+          with open(out,'w',encoding='utf-8') as o:
+              o.write('# Functions containing i32.store8 offset 36 (candidate CanOpen writes)\n')
+              o.write(f'hits={len(hits)}\n\n')
+              for fn,i in hits:
+                  rvas=inv.get(fn,[])
+                  named=[(r,sig_by_rva.get(r,'')) for r in rvas if sig_by_rva.get(r)]
+                  o.write(f'===== func[{fn}] rvas={",".join(hex(r) for r in rvas[:30])} =====\n')
+                  for r,s in named[:30]:o.write(f'METHOD 0x{r:X}: {s}\n')
+                  for line in chunks[fn][max(0,i-24):min(len(chunks[fn]),i+36)]:o.write(line)
+                  o.write('\n')
+          print('CanOpen-store hits',len(hits))
+          PY
+          rm -f "$WASM" "$DIS"
+      - name: Commit trace
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add outputs/hex-openable-reverse/canopen-writers.txt
+          if ! git diff --cached --quiet; then
+            git commit -m 'research: trace CanOpen state writers'
+            git push
+          fi
