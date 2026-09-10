@@ -1,0 +1,14 @@
+# research/archive/2026-09-03/unpacked/_wasmcode1_/wasmcode1/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br
+decompressed_size=53720581
+011484d38106d692477e1213430cd0533abf0bb9c69587054b3c5a0d7fda6f5b  /tmp/4534c73105-8bb243383eca8b55.webgl.wasm.code.unityweb.wasm
+
+4534c73105-8bb243383eca8b55.webgl.wasm.code.unityweb.wasm:	file format wasm 0x1
+
+Sections:
+
+     Type start=0x0000000b end=0x00002393 (size=0x00002388) count: 808
+   Import start=0x00002396 end=0x00003fb0 (size=0x00001c1a) count: 1004
+ Function start=0x00003fb4 end=0x000289ac (size=0x000249f8) count: 148286
+     Elem start=0x000289b0 end=0x00119817 (size=0x000f0e67) count: 49766
+     Code start=0x0011981c end=0x031bf5d6 (size=0x030a5dba) count: 148286
+   Custom start=0x031bf5da end=0x0333b605 (size=0x0017c02b) "name"
