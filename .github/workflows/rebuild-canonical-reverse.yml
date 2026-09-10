@@ -6,8 +6,11 @@ on:
     paths:
       - '.github/workflows/rebuild-canonical-reverse.yml'
       - 'research/archive/2026-09-03/unpacked/_wasmcode_/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br'
+      - 'research/archive/2026-09-03/unpacked/package-manifest.json'
+      - 'research/archive/2026-09-03/cache/a23078fc21f9ca79.webgl.data.unityweb.bin'
       - 'research/archive/2026-09-03/reverse-engineering/dump.cs'
       - 'research/archive/2026-09-03/reverse-engineering/global-metadata.decrypted.dat'
+      - 'scripts/recover_il2cpp_metadata.py'
 
 permissions:
   contents: write
@@ -35,8 +38,12 @@ jobs:
           ROOT='research/archive/2026-09-03/reverse-engineering'
           OUT="$ROOT/canonical"
           SRC='research/archive/2026-09-03/unpacked/_wasmcode_/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br'
+          PACKAGE_MANIFEST='research/archive/2026-09-03/unpacked/package-manifest.json'
+          RAW_META='research/archive/2026-09-03/cache/a23078fc21f9ca79.webgl.data.unityweb.bin'
+          RECOVER='scripts/recover_il2cpp_metadata.py'
           META="$ROOT/global-metadata.decrypted.dat"
           DUMP="$ROOT/dump.cs"
+          RECOVERED_META='/tmp/global-metadata.recovered.dat'
           WASM='/tmp/canonical.webgl.wasm'
           WAT='/tmp/canonical.wat'
           OBJDUMP='/tmp/canonical.objdump'
@@ -55,11 +62,41 @@ jobs:
           fs.writeFileSync(dst, dec);
           NODE
 
+          # Rebuild protected metadata from the archived UnityWebData source and
+          # require byte-exact identity with the checked-in recovered metadata.
+          python3 "$RECOVER" "$RAW_META" "$RECOVERED_META" > /tmp/metadata-recovery.json
+          cmp -s "$RECOVERED_META" "$META" || {
+            echo 'recovered metadata differs from canonical metadata' >&2
+            exit 1
+          }
+
+          # Bind the canonical WASM member to the recorded wxapkg provenance.
+          python3 - "$PACKAGE_MANIFEST" "$SRC" <<'PYMETA'
+          import hashlib, json, sys
+          from pathlib import Path
+
+          manifest_path, source_path = map(Path, sys.argv[1:3])
+          packages = json.loads(manifest_path.read_text(encoding='utf-8'))
+          package = next((x for x in packages if x.get('package') == '_wasmcode_.wxapkg'), None)
+          if package is None:
+              raise SystemExit('package-manifest.json has no _wasmcode_.wxapkg record')
+          member_name = '/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br'
+          member = next((x for x in package.get('files', []) if x.get('file') == member_name), None)
+          if member is None:
+              raise SystemExit(f'package manifest has no canonical member {member_name}')
+          raw = source_path.read_bytes()
+          digest = hashlib.sha256(raw).hexdigest()
+          if len(raw) != member.get('size') or digest != member.get('sha256'):
+              raise SystemExit('canonical WASM input does not match package-manifest member hash/size')
+          PYMETA
+
           wasm2wat "$WASM" -o "$WAT"
           wasm-objdump -d "$WASM" > "$OBJDUMP"
           wasm-objdump -x "$WASM" > "$OUT/module-info.txt"
-          gzip -9 -c "$WAT" > "$OUT/module.wat.gz"
-          gzip -9 -c "$OBJDUMP" > "$OUT/module.objdump.gz"
+          # -n removes original filename/mtime from gzip headers so identical
+          # WABT output produces byte-identical compressed artifacts.
+          gzip -n -9 -c "$WAT" > "$OUT/module.wat.gz"
+          gzip -n -9 -c "$OBJDUMP" > "$OUT/module.objdump.gz"
 
           python3 - "$WASM" "$DUMP" "$OUT" <<'PY'
           import csv, json, re, sys
@@ -119,7 +156,7 @@ jobs:
               raise SystemExit(f'element parser did not consume section exactly: {p} != {element_end}')
 
           with (out_dir/'element-map.tsv').open('w',encoding='utf-8',newline='') as f:
-              w=csv.writer(f,delimiter='\t')
+              w=csv.writer(f,delimiter='\t',lineterminator='\n')
               w.writerow(['table_slot_hex','table_slot_dec','wasm_func'])
               for slot,fn in sorted(mapping.items()):
                   w.writerow([f'0x{slot:X}',slot,fn])
@@ -149,7 +186,7 @@ jobs:
               rows.append((rva,mapping.get(rva),i+1,current_namespace,current_type,sig))
 
           with (out_dir/'method-map.tsv').open('w',encoding='utf-8',newline='') as f:
-              w=csv.writer(f,delimiter='\t')
+              w=csv.writer(f,delimiter='\t',lineterminator='\n')
               w.writerow(['rva_hex','rva_dec','wasm_func','dump_line','namespace','declaring_type_context','signature'])
               for rva,fn,ln,ns,typ,sig in rows:
                   w.writerow([f'0x{rva:X}',rva,'' if fn is None else fn,ln,ns,typ,sig])
@@ -164,6 +201,10 @@ jobs:
               by_rva.setdefault(r[0],[]).append(r)
           duplicate_primary={f'0x{k:X}':len(v) for k,v in by_rva.items() if len(v)>1}
           mapped=sum(1 for r in rows if r[1] is not None)
+          if mapped != len(rows):
+              raise SystemExit(f'dump.cs primary RVA coverage is incomplete: {mapped}/{len(rows)} mapped')
+          if duplicate_primary:
+              raise SystemExit(f'dump.cs has duplicate primary RVAs: {len(duplicate_primary)}')
           audit={
               'dump_total_lines':len(lines),
               'primary_method_rva_rows':len(rows),
@@ -227,28 +268,48 @@ jobs:
             fi
           done
 
-          python3 - "$SRC" "$WASM" "$META" "$DUMP" "$OUT" <<'PY'
+          python3 - "$SRC" "$WASM" "$META" "$DUMP" "$RAW_META" "$RECOVER" "$PACKAGE_MANIFEST" "$OUT" <<'PY'
           import hashlib, json, subprocess, sys
           from pathlib import Path
-          src,wasm,meta,dump,out = map(Path,sys.argv[1:6])
+
+          src,wasm,meta,dump,raw_meta,recover_script,package_manifest,out = map(Path,sys.argv[1:9])
           def info(p):
               h=hashlib.sha256()
               with p.open('rb') as f:
-                  for chunk in iter(lambda:f.read(1024*1024),b''):h.update(chunk)
+                  for chunk in iter(lambda:f.read(1024*1024),b''): h.update(chunk)
               return {'path':str(p),'size':p.stat().st_size,'sha256':h.hexdigest()}
+
           generated=[]
           for p in sorted(out.iterdir()):
               if p.name in ('manifest.json','README.md'): continue
               generated.append(info(p))
+
           candidates=[]
           for p in sorted(Path('research/archive/2026-09-03/unpacked').rglob('*.wasm.br')):
-              candidates.append({'path':str(p),'canonical':p==src,'size':p.stat().st_size})
+              candidate=info(p)
+              candidate['canonical']=p==src
+              candidates.append(candidate)
+
+          packages=json.loads(package_manifest.read_text(encoding='utf-8'))
+          source_pkg=next(x for x in packages if x.get('package')=='_wasmcode_.wxapkg')
+          source_member=next(x for x in source_pkg.get('files',[]) if x.get('file')=='/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br')
           manifest={
-              'schema_version':1,
+              'schema_version':2,
               'canonical_input':info(src),
+              'canonical_input_package_manifest':info(package_manifest),
+              'canonical_input_package':{
+                  'package':source_pkg['package'],
+                  'package_sha256_recorded':source_pkg['sha256'],
+                  'raw_package_archived':False,
+                  'member':source_member,
+              },
               'decompressed_wasm':info(wasm),
+              'metadata_source':info(raw_meta),
+              'metadata_recovery_script':info(recover_script),
+              'metadata_rebuild_verified_byte_exact':True,
               'metadata_reference':info(meta),
               'dump_declaration_reference':info(dump),
+              'dump_generator_provenance':'legacy artifact; exact Il2CppDumper/Cpp2IL generator and version are not recorded',
               'other_raw_wasm_candidates':candidates,
               'tools':{
                   'wasm2wat':subprocess.check_output(['wasm2wat','--version'],text=True).strip(),
@@ -268,6 +329,12 @@ jobs:
 
           作为 canonical WASM 输入。仓库中 `_wasmcode1_` 等其他 cache 保留为原始资源，但属于另一套构建/布局，不允许和本目录的 RVA / func 映射混用。
 
+          ## 来源与验证边界
+
+          - `unpacked/package-manifest.json` 记录 `_wasmcode_.wxapkg` 的包级 SHA-256，以及 canonical WASM 成员在包内的 offset、size 与 SHA-256。workflow 会重新计算成员 size/hash；原始 `.wxapkg` 本体未保留在当前归档，因此包级 SHA-256 属于采集时的 provenance 记录，不能在本仓库内独立重算。
+          - metadata 的原始来源固定为 `cache/a23078fc21f9ca79.webgl.data.unityweb.bin`。workflow 会重新运行 `scripts/recover_il2cpp_metadata.py`，并要求恢复结果与 `global-metadata.decrypted.dat` byte-for-byte 完全一致。
+          - `dump.cs` 是早期本地生成后纳入仓库的 legacy 声明快照；其精确生成工具/版本没有记录，所以不能把它当成可独立复现的 C# 反编译源码。方法语义必须由 canonical WASM 反汇编确认。
+
           ## 文件职责
 
           - `module.wat.gz`：由当前 canonical WASM 通过 `wasm2wat` 全量生成的完整 WebAssembly 文本；若超过 GitHub 单文件限制，则保存为 `module.wat.gz.part-*`，按文件名顺序拼接即可恢复。
@@ -275,9 +342,9 @@ jobs:
           - `module-info.txt`：WASM 模块、Section、函数/表等结构信息。
           - `element-map.tsv`：完整的 table slot / RVA 槽位到 WASM function index 映射。
           - `method-map.tsv`：只读取 `dump.cs` 方法头部的 `// RVA: 0x...`，把主方法 RVA、方法签名和本次 WASM function index 统一到一张表；`GenericInstMethod` 注释里的 `|-RVA:` 不会被当成独立方法签名。
-          - `dump-audit.json`：记录 `dump.cs` 总行数、主 RVA、泛型实例 RVA 注释、映射覆盖与重复 RVA，作为使用 `dump.cs` 前的风险审计。
-          - `validation.txt` / `validation.json`：已人工确认关键函数的硬校验。任一关键映射不一致，workflow 会失败，不会清理旧产物。
-          - `manifest.json`：输入、metadata、dump.cs 和生成物的 SHA-256、大小和工具版本。
+          - `dump-audit.json`：记录 `dump.cs` 总行数、主 RVA、泛型实例 RVA 注释、映射覆盖与重复 RVA；主 RVA 只要存在未映射或重复，workflow 即失败。
+          - `validation.txt` / `validation.json`：已人工确认关键函数的硬校验。任一关键映射不一致，workflow 会失败。
+          - `manifest.json`：输入 provenance、metadata 恢复链、dump.cs 边界、生成物 SHA-256/大小和工具版本。
 
           ## 关于 dump.cs
 
@@ -287,11 +354,11 @@ jobs:
 
           ## 重建
 
-          使用 `.github/workflows/rebuild-canonical-reverse.yml`。该 workflow 只在 canonical 输入、metadata、dump.cs 或自身变化时自动重建，也可以手工运行。
+          使用 `.github/workflows/rebuild-canonical-reverse.yml`。该 workflow 会验证 wxapkg 成员 provenance、从原始 UnityWebData 重建 metadata、检查全部 dump 主 RVA 覆盖，并在 canonical 输入、metadata 来源/恢复脚本、dump.cs、package manifest 或自身变化时自动重建，也可以手工运行。
           EOF
           sed -i 's/^          //' "$OUT/README.md"
 
-          rm -f "$WASM" "$WAT" "$OBJDUMP"
+          rm -f "$WASM" "$WAT" "$OBJDUMP" "$RECOVERED_META"
 
       - name: Check old reverse output references
         shell: bash
@@ -313,9 +380,8 @@ jobs:
         run: |
           set -euo pipefail
           rm -rf outputs/chest-reverse outputs/hex-openable-reverse
-          git rm --ignore-unmatch .github/workflows/recover-hex-openable.yml
 
-      - name: Validate canonical package
+      - name: Validate canonical package and Git-index bytes
         shell: bash
         run: |
           set -euo pipefail
@@ -327,7 +393,11 @@ jobs:
           test -s "$OUT/method-map.tsv"
           test -s "$OUT/dump-audit.json"
           test -s "$OUT/validation.txt"
+          grep -q '"schema_version": 2' "$OUT/manifest.json"
+          grep -q '"metadata_rebuild_verified_byte_exact": true' "$OUT/manifest.json"
           grep -q 'generic_instantiation_rva_comment_refs_excluded' "$OUT/dump-audit.json"
+          grep -q '"primary_method_rva_unmapped": 0' "$OUT/dump-audit.json"
+          grep -q '"duplicate_primary_rva_count": 0' "$OUT/dump-audit.json"
           grep -q '0x4534.*func\[43532\].*OpenHex.*OK' "$OUT/validation.txt"
           grep -q '0x459B.*func\[25588\].*CommitOpenedHex.*OK' "$OUT/validation.txt"
           grep -q '0xF495.*func\[25409\].*ResolveOpenedHexOutcome.*OK' "$OUT/validation.txt"
@@ -339,13 +409,35 @@ jobs:
           test ! -e outputs/hex-openable-reverse
           test ! -e .github/workflows/recover-hex-openable.yml
 
+          # Stage first, then validate the exact bytes Git will commit after any
+          # .gitattributes text normalization. This catches manifest/TSV drift.
+          git add "$OUT"
+          python3 - "$OUT/manifest.json" <<'PYINDEX'
+          import hashlib, json, subprocess, sys
+          from pathlib import Path
+
+          manifest=json.loads(Path(sys.argv[1]).read_text(encoding='utf-8'))
+          for item in manifest['generated']:
+              path=item['path']
+              data=subprocess.check_output(['git','show',f':{path}'])
+              actual=hashlib.sha256(data).hexdigest()
+              if len(data)!=item['size'] or actual!=item['sha256']:
+                  raise SystemExit(f'Git-index bytes disagree with manifest for {path}: size={len(data)} sha256={actual}')
+          PYINDEX
+
+      - name: Refresh archive integrity manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/build_archive_manifest.py
+
       - name: Commit canonical package
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add research/archive/2026-09-03/reverse-engineering/canonical .github/workflows outputs
+          git add research/archive/2026-09-03/reverse-engineering/canonical research/archive-manifest.json outputs
           if ! git diff --cached --quiet; then
             git commit -m 'research: consolidate canonical reverse engineering package'
             git push
