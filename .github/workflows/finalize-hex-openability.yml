@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - '.github/workflows/finalize-hex-openability.yml'
+      - '.github/hex-openability-section.md'
 
 permissions:
   contents: write
@@ -17,5 +18,62 @@ jobs:
           fetch-depth: 1
 
       - name: Patch reviewed report source
-        env:
-          NEW_SECTION_B64: IyMjIDIuNSDliankvZnmma7pgJrmoLzmiY3nrYnmpoLnjofmir3lnLDlnZfmoaPkvY3vvJoyNSXliLDlupXku4DkuYjml7blgJnlj5HnlJ8KCua²oeacieiAquaIkeWIhuW6lOWbvueahOaZrumAmuago+WcqGBSZXNvbHZlSW5pdGlhbFJhcml0eWLkuK3miYfooYzvvJoKCmBgYHRleHQKcXVhbGl0eSA9IFJhbmdlKDAsNCkKYGBgCgrlm5vkuKrmlbDmraPm¦...
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          path = Path('scripts/hex_random_report.md')
+          text = path.read_text(encoding='utf-8')
+          section = Path('.github/hex-openability-section.md').read_text(encoding='utf-8')
+          text = text.replace('研究日期：2026-09-08；2026-09-10 复核“新显现格子”和 SSSR 标签加权链。', '研究日期：2026-09-08；2026-09-10 复核“新显现格子、开放锚点”和 SSSR 标签加权链。')
+          text = text.replace('→ 玩家扩张时周围格子进入可见/可开启状态\n→ 玩家点击时读取既有隐藏结果，再执行少量重抽、引导和保底覆盖', '→ 玩家打开边界格后，邻格因新增 opened anchor 满足当前开放条件并在表现层显现\n→ 玩家点击目标格时读取既有隐藏结果，再执行少量重抽、引导和保底覆盖')
+          pattern = r'### 2\.5 剩余普通格才等概率抽地块档位：25%到底什么时候发生\n.*?\n### 2\.6 地块档位再决定内部稀有度：SSSR加权与一次性消费'
+          text, count = re.subn(pattern, section, text, count=1, flags=re.S)
+          if count != 1:
+              raise SystemExit(f'failed to replace section 2.5, matches={count}')
+          text = text.replace('实际开格函数`25409`', '`ResolveOpenedHexOutcome`（func[25409]）')
+          path.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Install report dependencies
+        run: python -m pip install --quiet markdown pillow
+
+      - name: Rebuild hex report and public site
+        run: |
+          set -euo pipefail
+          python scripts/build_hex_random_report.py
+          python scripts/build_public_site.py
+
+      - name: Validate published content
+        run: |
+          set -euo pipefail
+          test -s outputs/hex-random/index.html
+          test -s outputs/hex-random/report.md
+          test -s docs/reports/hex-random/index.html
+          test -s docs/reports/hex-random/report.md
+          grep -q 'HasPlayerOpenAnchorNeighbor' outputs/hex-random/index.html
+          grep -q 'func\[43532\]' outputs/hex-random/index.html
+          grep -q 'func\[25588\]' outputs/hex-random/index.html
+          grep -q '不是档位二次生成' outputs/hex-random/index.html
+          grep -q 'HasPlayerOpenAnchorNeighbor' docs/reports/hex-random/index.html
+
+      - name: Remove one-shot diagnostics
+        run: |
+          rm -f outputs/hex-openable-reverse/canopen-writers.txt
+          git rm --ignore-unmatch \
+            .github/workflows/lookup-hex-rva-context.yml \
+            .github/workflows/find-canopen-writers.yml \
+            .github/workflows/finalize-hex-openability.yml \
+            .github/hex-openability-section.md
+
+      - name: Commit final report
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scripts/hex_random_report.md outputs/hex-random docs outputs/hex-openable-reverse
+          if ! git diff --cached --quiet; then
+            git commit -m 'docs: finalize hex reveal and open-anchor analysis'
+            git push
+          fi
