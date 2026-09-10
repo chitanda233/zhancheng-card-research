@@ -16,6 +16,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
+      - name: Install WABT
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y wabt
       - name: Extract method names and cell layout
         run: |
           set -euo pipefail
@@ -45,8 +49,6 @@ jobs:
           with out.open('w',encoding='utf-8') as f:
               f.write('# Relevant RVA -> method signatures from dump.cs\n')
               for rva,ln,sig in sorted(rows): f.write(f'0x{rva:04X}\tline {ln}\t{sig}\n')
-
-          # Find every type declaration containing BattleHexCellState and retain the most relevant blocks.
           hits=[]
           for i,line in enumerate(lines):
               if re.search(r'\b(class|struct)\s+BattleHexCellState\b',line): hits.append(i)
@@ -60,12 +62,10 @@ jobs:
                       f.write(f'{j+1}: {lines[j]}\n')
                   f.write('\n')
           PY
-
           node - "$SRC" "$WASM" <<'NODE'
           const fs=require('fs'), z=require('zlib');
           const [src,dst]=process.argv.slice(2); fs.writeFileSync(dst,z.brotliDecompressSync(fs.readFileSync(src)));
           NODE
-
           python3 - "$WASM" "$OUT/extended-target-map.txt" <<'PY'
           import sys
           b=open(sys.argv[1],'rb').read()
@@ -103,7 +103,6 @@ jobs:
                   vals=inv.get(fn,[])
                   f.write(f'func[{fn}]\t'+','.join(f'0x{x:04X}' for x in vals[:40])+'\n')
           PY
-
           wasm-objdump -d "$WASM" > /tmp/current.objdump
           python3 - /tmp/current.objdump "$OUT/extended-target-map.txt" "$OUT/openable-gate.objdump" <<'PY'
           import re,sys
