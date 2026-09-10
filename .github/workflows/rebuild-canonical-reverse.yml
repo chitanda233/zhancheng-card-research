@@ -62,7 +62,7 @@ jobs:
           gzip -9 -c "$OBJDUMP" > "$OUT/module.objdump.gz"
 
           python3 - "$WASM" "$DUMP" "$OUT" <<'PY'
-          import csv, hashlib, json, re, sys
+          import csv, json, re, sys
           from pathlib import Path
 
           wasm_path, dump_path, out_dir = map(Path, sys.argv[1:4])
@@ -135,7 +135,10 @@ jobs:
                   current_namespace=s.partition(':')[2].strip()
               tm=type_re.match(s)
               if tm: current_type=tm.group(1)
-              m=re.search(r'RVA:\s*0x([0-9A-Fa-f]+)',line)
+              # Only method-header RVAs are safe to attribute directly.
+              # GenericInstMethod blocks contain secondary `|-RVA:` comments whose
+              # following text is not the owning method signature.
+              m=re.match(r'^\s*// RVA:\s*0x([0-9A-Fa-f]+)',line)
               if not m: continue
               rva=int(m.group(1),16)
               sig=''
@@ -150,6 +153,34 @@ jobs:
               w.writerow(['rva_hex','rva_dec','wasm_func','dump_line','namespace','declaring_type_context','signature'])
               for rva,fn,ln,ns,typ,sig in rows:
                   w.writerow([f'0x{rva:X}',rva,'' if fn is None else fn,ln,ns,typ,sig])
+
+          generic_inst_refs=[]
+          for i,line in enumerate(lines):
+              gm=re.search(r'\|-RVA:\s*0x([0-9A-Fa-f]+)',line)
+              if gm:
+                  generic_inst_refs.append((int(gm.group(1),16),i+1))
+          by_rva={}
+          for r in rows:
+              by_rva.setdefault(r[0],[]).append(r)
+          duplicate_primary={f'0x{k:X}':len(v) for k,v in by_rva.items() if len(v)>1}
+          mapped=sum(1 for r in rows if r[1] is not None)
+          audit={
+              'dump_total_lines':len(lines),
+              'primary_method_rva_rows':len(rows),
+              'primary_method_rva_unique':len(by_rva),
+              'primary_method_rva_mapped_to_canonical_wasm':mapped,
+              'primary_method_rva_unmapped':len(rows)-mapped,
+              'generic_instantiation_rva_comment_refs_excluded':len(generic_inst_refs),
+              'duplicate_primary_rva_count':len(duplicate_primary),
+              'duplicate_primary_rvas':duplicate_primary,
+              'policy':[
+                  'dump.cs is a declaration/name/layout reference, not executable behavior or recovered C# bodies',
+                  'method-map.tsv includes only top-level method header lines beginning with // RVA: 0x',
+                  'GenericInstMethod |-RVA comments are excluded from direct signature attribution',
+                  'behavior claims must be confirmed against canonical module.wat/module.objdump',
+              ],
+          }
+          (out_dir/'dump-audit.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 
           expected={
               0x4534:(43532,'OpenHex'),
@@ -197,7 +228,7 @@ jobs:
           done
 
           python3 - "$SRC" "$WASM" "$META" "$DUMP" "$OUT" <<'PY'
-          import hashlib, json, os, subprocess, sys
+          import hashlib, json, subprocess, sys
           from pathlib import Path
           src,wasm,meta,dump,out = map(Path,sys.argv[1:6])
           def info(p):
@@ -243,13 +274,14 @@ jobs:
           - `module.objdump.gz`：由 `wasm-objdump -d` 全量生成的完整函数反汇编；超限时同样拆分。
           - `module-info.txt`：WASM 模块、Section、函数/表等结构信息。
           - `element-map.tsv`：完整的 table slot / RVA 槽位到 WASM function index 映射。
-          - `method-map.tsv`：把现有 `dump.cs` 的 RVA、方法签名和本次 WASM function index 统一到一张表。
+          - `method-map.tsv`：只读取 `dump.cs` 方法头部的 `// RVA: 0x...`，把主方法 RVA、方法签名和本次 WASM function index 统一到一张表；`GenericInstMethod` 注释里的 `|-RVA:` 不会被当成独立方法签名。
+          - `dump-audit.json`：记录 `dump.cs` 总行数、主 RVA、泛型实例 RVA 注释、映射覆盖与重复 RVA，作为使用 `dump.cs` 前的风险审计。
           - `validation.txt` / `validation.json`：已人工确认关键函数的硬校验。任一关键映射不一致，workflow 会失败，不会清理旧产物。
           - `manifest.json`：输入、metadata、dump.cs 和生成物的 SHA-256、大小和工具版本。
 
           ## 关于 dump.cs
 
-          上级目录的 `dump.cs` 是项目此前已有的 IL2CPP 声明/元数据快照。本仓库没有保存生成它所用的 Il2CppDumper/Cpp2IL 工具链，所以本 workflow **不会声称重新生成了 C# 函数体**。它只把 `dump.cs` 当作声明与方法名参考，并通过 RVA 与本次完整 WASM 反汇编进行可验证映射。
+          上级目录的 `dump.cs` 是项目此前已有的 IL2CPP 声明/元数据快照。本仓库没有保存生成它所用的 Il2CppDumper/Cpp2IL 工具链，所以本 workflow **不会声称重新生成了 C# 函数体**。其中的 `{ }` 方法体不表示真实逻辑，`RVA: -1`、泛型共享/实例化 RVA、字段偏移也必须按 IL2CPP dump 语义理解。它只作为类型、字段、方法名和主 RVA 的候选参考；任何行为结论都必须回到本次 canonical WASM 反汇编验证。
 
           因此，今后应以本目录的 `module.wat(.gz)` / `module.objdump(.gz)` 作为“完整可重复生成的低层反编译/反汇编版本”，以 `method-map.tsv` 作为人类可读方法名入口；不要再新增按专题散落的 `.wat` / `.objdump` 版本。
 
@@ -265,7 +297,6 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          # Historical output directories are going away. Abort rather than leave a live code/doc reference dangling.
           refs=$(grep -R -n -E 'outputs/(chest-reverse|hex-openable-reverse)' . \
             --exclude-dir=.git \
             --exclude-dir=chest-reverse \
@@ -294,7 +325,9 @@ jobs:
           test -s "$OUT/module-info.txt"
           test -s "$OUT/element-map.tsv"
           test -s "$OUT/method-map.tsv"
+          test -s "$OUT/dump-audit.json"
           test -s "$OUT/validation.txt"
+          grep -q 'generic_instantiation_rva_comment_refs_excluded' "$OUT/dump-audit.json"
           grep -q '0x4534.*func\[43532\].*OpenHex.*OK' "$OUT/validation.txt"
           grep -q '0x459B.*func\[25588\].*CommitOpenedHex.*OK' "$OUT/validation.txt"
           grep -q '0xF495.*func\[25409\].*ResolveOpenedHexOutcome.*OK' "$OUT/validation.txt"
