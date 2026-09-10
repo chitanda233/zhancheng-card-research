@@ -1,0 +1,55 @@
+name: Map hex RVA method names
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/lookup-hex-rva-context.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  map:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Extract relevant RVA method names
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          src=Path('research/archive/2026-09-03/reverse-engineering/dump.cs')
+          out=Path('outputs/hex-openable-reverse/rva-method-contexts.txt')
+          lines=src.read_text(encoding='utf-8',errors='replace').splitlines()
+          ranges=[(0x4200,0x4600),(0x88f0,0x8925),(0x8df0,0x8e05),(0x8f20,0x8f35),(0xf490,0xf4b5)]
+          rows=[]
+          for i,line in enumerate(lines):
+              m=re.search(r'RVA:\s*0x([0-9A-Fa-f]+)',line)
+              if not m: continue
+              rva=int(m.group(1),16)
+              if not any(a<=rva<=b for a,b in ranges): continue
+              sig=''
+              for j in range(i+1,min(i+5,len(lines))):
+                  t=lines[j].strip()
+                  if t and not t.startswith('//') and not t.startswith('['):
+                      sig=t; break
+              rows.append((rva,i+1,sig))
+          out.parent.mkdir(parents=True,exist_ok=True)
+          with out.open('w',encoding='utf-8') as f:
+              f.write('# Relevant RVA -> method signatures from dump.cs\n')
+              for rva,ln,sig in sorted(rows):
+                  f.write(f'0x{rva:04X}\tline {ln}\t{sig}\n')
+          print('rows',len(rows))
+          PY
+      - name: Commit mapping
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add outputs/hex-openable-reverse/rva-method-contexts.txt
+          if ! git diff --cached --quiet; then
+            git commit -m 'research: add hex rva method map'
+            git push
+          fi
