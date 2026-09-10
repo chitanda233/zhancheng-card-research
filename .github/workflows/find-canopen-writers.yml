@@ -16,39 +16,24 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
-      - name: Identify open-gate helper names
+      - name: Isolate open-anchor helper bodies
         run: |
           python3 - <<'PY'
           import re
           from pathlib import Path
-          lines=Path('research/archive/2026-09-03/reverse-engineering/dump.cs').read_text(encoding='utf-8',errors='replace').splitlines()
-          wanted={0xF61E,0xF40D,0xF499,0x42F2,0x4319,0x4597,0x459B}
-          found=[]
-          current_type=''
-          type_re=re.compile(r'^(?:public|private|internal|protected|static|sealed|abstract|partial|\s)*(?:sealed\s+|abstract\s+|static\s+)?(?:class|struct|interface)\s+([^\s:{]+)')
-          for i,line in enumerate(lines):
-              t=line.strip(); tm=type_re.match(t)
-              if tm: current_type=tm.group(1)
-              m=re.search(r'RVA:\s*0x([0-9A-Fa-f]+)',line)
-              if not m: continue
-              rva=int(m.group(1),16)
-              if rva not in wanted: continue
-              sig=''
-              for j in range(i+1,min(i+6,len(lines))):
-                  x=lines[j].strip()
-                  if x and not x.startswith('//') and not x.startswith('['): sig=x; break
-              found.append((rva,i+1,current_type,sig))
-          out=Path('outputs/hex-openable-reverse/open-gate-helper-names.txt')
-          with out.open('w',encoding='utf-8') as f:
-              for row in sorted(found): f.write(f'0x{row[0]:X}\tline {row[1]}\ttype={row[2]}\t{row[3]}\n')
-          print('found',len(found))
+          src=Path('outputs/hex-openable-reverse/openable-gate.objdump').read_text(encoding='utf-8',errors='replace')
+          wanted=[25522,25926,6642,11720]
+          for fn in wanted:
+              m=re.search(rf'(?ms)^===== func\[{fn}\] =====\n(.*?)(?=^===== func\[|\Z)',src)
+              body=m.group(0) if m else f'# func[{fn}] not found\n'
+              Path(f'outputs/hex-openable-reverse/func-{fn}.objdump').write_text(body,encoding='utf-8')
           PY
-      - name: Commit helper names
+      - name: Commit isolated bodies
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add outputs/hex-openable-reverse/open-gate-helper-names.txt
+          git add outputs/hex-openable-reverse/func-*.objdump
           if ! git diff --cached --quiet; then
-            git commit -m 'research: identify open-gate helper names'
+            git commit -m 'research: isolate open-anchor helper bodies'
             git push
           fi
