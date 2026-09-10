@@ -32,13 +32,14 @@
 <li><a href="#6">6. 玩家体验控制：分类、难度、节奏与随机是四件事</a><ul>
 <li><a href="#61">6.1 客户端的胜率分类阈值</a></li>
 <li><a href="#611">6.1.1 真人标签完整枚举与数据字段</a></li>
-<li><a href="#612">6.1.2 连胜/连败现在能确定到什么程度</a></li>
-<li><a href="#613-buff">6.1.3 已经发现的 Buff 计数，不要和连败局数混淆</a></li>
-<li><a href="#614">6.1.4 继续挖掘连败阈值的可执行路径</a></li>
+<li><a href="#612-5">6.1.2 连胜/连败：第 5 次连续结果触发</a></li>
+<li><a href="#613">6.1.3 付费、回流与首局的设置和寿命</a></li>
+<li><a href="#614">6.1.4 结算如何影响下一局</a></li>
 <li><a href="#62">6.2 标签如何改敌方难度档</a></li>
 <li><a href="#63">6.3 标签如何改开格节奏</a></li>
 <li><a href="#64">6.4 翻格质量是另一条体验调节链</a></li>
 <li><a href="#65-86">6.5 86 套预设实际启用了哪些分类</a></li>
+<li><a href="#66">6.6 标签进入哪些协议，哪些仍不能推断</a></li>
 </ul>
 </li>
 <li><a href="#7-25-65">7. 普通竞技场：25 档成长、65 条组卡配额</a><ul>
@@ -1186,12 +1187,12 @@
 <tr>
 <td>CurrentWinStreak</td>
 <td>int</td>
-<td>当前连续胜利计数；刷新方法存在，阈值未恢复</td>
+<td>胜利时 +1 并清零连败；&gt;4 触发连胜标签</td>
 </tr>
 <tr>
 <td>CurrentLoseStreak</td>
 <td>int</td>
-<td>当前连续失败计数；刷新方法存在，阈值未恢复</td>
+<td>失败时 +1 并清零连胜；&gt;4 触发连败标签</td>
 </tr>
 <tr>
 <td>HasPaid / HasWatchedAd</td>
@@ -1216,7 +1217,7 @@
 <tr>
 <td>IsFirstMatchToday</td>
 <td>bool</td>
-<td>当天首场字段；与 FirstMatchUser 的完整同步时点未恢复</td>
+<td>结算链清除字段和 FirstMatchUser；每日置位入口待复核</td>
 </tr>
 <tr>
 <td>UserAllLables</td>
@@ -1230,92 +1231,74 @@
 </tr>
 </tbody>
 </table></div>
-<p>其中 <code>near20GameSituation</code> 最多保留 20 个整数；<code>0=胜利、1=失败</code> 是 <code>RecordPlayerNear20GameSituation(bool isVictory)</code> 的写入约定。它不是按日期的完整战绩表，不能从它恢复每一局发生的时间、模式或是否真人。<code>RecentWinRate</code> 是浮点百分比，客户端用近 20 条中 <code>0</code> 的数量计算；例如序列 <code>0,0,1,1</code>（只有 4 条）对应 50%，并不自动补成 20 局。</p>
-<h3 id="612">6.1.2 连胜/连败现在能确定到什么程度</h3>
+<p>其中 <code>near20GameSituation</code> 最多保留 20 个整数；<code>0=胜利、1=失败</code> 是 <code>RecordPlayerNear20GameSituation(bool isVictory)</code> 的写入约定。它不是按日期的完整战绩表，不能从它恢复每一局发生的时间、模式或是否真人。<code>RecentWinRate</code> 是浮点百分比，客户端用近 20 条中 <code>0</code> 的数量计算；函数体使用固定分母 20：<code>零值条目数 / 20 × 100</code>。因此仅有 <code>0,0,1,1</code> 四条时，该计算式得到 10%，不是 50%；实际初始化另有预填历史记录的分支。</p>
+<h3 id="612-5">6.1.2 连胜/连败：第 5 次连续结果触发</h3>
+<p>2026-09-10 补充复核主 WASM 函数体，替代此前“阈值未恢复”的结论：</p>
 <div class="scroll"><table>
 <thead>
 <tr>
-<th>项目</th>
-<th>已确认具体内容</th>
-<th>当前缺口</th>
+<th>更新函数</th>
+<th>写入状态</th>
+<th>标签条件与清除</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>记录窗口</td>
-<td><code>near20GameSituation</code>，循环/移位维护最近 20 条</td>
-<td>是否只记录普通竞技场，还是所有对战模式</td>
+<td><code>RefreshUserLableWinStreakData</code>，表槽 <code>3374</code> / 函数 <code>30358</code></td>
+<td><code>CurrentWinStreak += 1</code>，<code>CurrentLoseStreak = 0</code></td>
+<td>连胜数 <code>&gt;4</code> 时设置 WinningStreak；同时刷新并清除 LosingStreak</td>
 </tr>
 <tr>
-<td>单局编码</td>
-<td>胜利写 <code>0</code>，失败写 <code>1</code></td>
-<td>平局、投降、断线、训练局如何编码</td>
-</tr>
-<tr>
-<td>累计字段</td>
-<td><code>CurrentWinStreak</code>、<code>CurrentLoseStreak</code> 同时保存</td>
-<td>两个字段由哪个入口更新的完整调用顺序</td>
-</tr>
-<tr>
-<td>胜率标签</td>
-<td><code>&lt;50</code> Rookie，<code>50～&lt;90</code> NormalPlayer，<code>&gt;=90</code> Expert</td>
-<td>初始化填充历史和边界时刻的实际账号状态</td>
-</tr>
-<tr>
-<td>连胜标签</td>
-<td>枚举和刷新方法存在</td>
-<td>阈值 N 未从当前共享 WASM 入口安全恢复</td>
-</tr>
-<tr>
-<td>连败标签</td>
-<td>枚举和刷新方法存在；会被地块金卡权重读取</td>
-<td>阈值 N 未从当前共享 WASM 入口安全恢复</td>
+<td><code>RefreshUserLableLoseStreakData</code>，表槽 <code>3375</code> / 函数 <code>30359</code></td>
+<td><code>CurrentLoseStreak += 1</code>，<code>CurrentWinStreak = 0</code></td>
+<td>连败数 <code>&gt;4</code> 时设置 LosingStreak；同时刷新并清除 WinningStreak</td>
 </tr>
 </tbody>
 </table></div>
-<p>因此现在<strong>不能负责任地说“最近 3 连败”或“最近 5 连败”就一定触发保护</strong>。能确认的是：连败标签一旦为真，会进入标签系统；地块随机函数读取该标签并给本方 SSSR 权重增加 <code>+50</code>，不是直接增加 50 个百分点。这个保护和匹配到哪一个机器人是两条不同链路。</p>
-<h3 id="613-buff">6.1.3 已经发现的 Buff 计数，不要和连败局数混淆</h3>
-<p>回流和刚付费有明确计数边界，但它们不是连败计数：</p>
+<p>因此，正常更新链中第 5 次连续胜/负触发对应标签，相反结果会清零并清除。付费、回流可与连败等状态共存；连胜与连败在这条更新链中互斥。这里确认的是客户端状态条件，不是“5 连败后服务器必定换弱机器人”。</p>
+<h3 id="613">6.1.3 付费、回流与首局的设置和寿命</h3>
 <div class="scroll"><table>
 <thead>
 <tr>
-<th>标签</th>
-<th>触发/初始化证据</th>
-<th>计数原值与边界</th>
-<th>用途证据</th>
+<th>状态</th>
+<th>设置入口</th>
+<th>扣次和清除</th>
+<th>已确认用途</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>InactiveUser</code></td>
-<td>LastLoginTime 距网络时间超过 1 天</td>
-<td>初始化加 2，限制在 0～2；后续存在每次减 1</td>
-<td><code>EnmeyOpenHexOffsetHandle</code> 在标签有效时 <code>+5</code></td>
+<td>JustPaidUser</td>
+<td><code>ShopManager.PurchaseProductCallBack(productId)</code> 调用 <code>RefreshUserLableJustNowPaidData</code>，设置 <code>JustNowPaid=true</code> 并加入标签；Buff 为 <code>Clamp(原值+5,0,5)</code></td>
+<td><code>RefreshOrInitJustNowPaidUserBuff(false)</code> 每次减 1；归零同时清布尔值和标签；再次付费补到 5</td>
+<td>本方 SSSR 权重 +10；适用 AI 分支开格间隔 +5 秒</td>
 </tr>
 <tr>
-<td><code>JustPaidUser</code></td>
-<td><code>JustNowPaid</code> 与付费刷新流程</td>
-<td>初始化加 5，限制在 0～5；后续存在每次减 1</td>
-<td>开格偏移 <code>+5</code>；地块 SSSR 权重 <code>+10</code></td>
+<td>InactiveUser</td>
+<td>网络时间与 <code>LastLoginTime</code> 相差超过 1 天；Buff 补到 2，更新登录时间后重新检查枚举</td>
+<td><code>RefreshOrInitInactiveUserBuff(false)</code> 在剩余次数大于 0 时减 1；getter 为“枚举存在或 Buff&gt;0”</td>
+<td>getter 有效时本方 SSSR 权重 +30；适用 AI 分支开格间隔 +5 秒</td>
 </tr>
 <tr>
-<td><code>FirstMatchUser</code></td>
-<td>首次匹配/当天首局字段</td>
-<td>具体重置时点未恢复</td>
-<td>难度档额外 <code>-1</code>；开格偏移 <code>+5</code></td>
+<td>FirstMatchUser</td>
+<td>使用 <code>IsFirstMatchToday</code> 字段</td>
+<td>结算链调用 <code>RefreshUserLableFirstMatchData</code>，清除字段和标签；每日重新置位的完整入口未复核</td>
+<td>难度 -1；适用 AI 分支开格间隔 +5 秒</td>
 </tr>
 </tbody>
 </table></div>
-<p>“+2/+5”是 Buff 剩余次数的客户端字段推导，不是“保护 2 局/5 局”的公开承诺；调用入口、模式过滤和服务器覆盖仍需实测。</p>
-<h3 id="614">6.1.4 继续挖掘连败阈值的可执行路径</h3>
-<p>可以继续挖，而且下一步应针对四个可验证点：</p>
-<ol>
-<li>从主 WASM 的活动函数表中准确定位 <code>RefreshUserLableWinStreakData</code> 和 <code>RefreshUserLableLoseStreakData</code>，不要沿共享 <code>RVA</code> 名称猜函数体；读取它们对 <code>CurrentWinStreak/CurrentLoseStreak</code> 的比较常量。</li>
-<li>追踪 <code>RecordPlayerNear20GameSituation</code> 的所有调用者，区分普通竞技场、独立 PVP、训练和失败/断线分支。</li>
-<li>解析 <code>UserLableData</code> 的序列化读写，确认近 20 局是否跨版本保留、是否每天清空、是否按模式拆分。</li>
-<li>结合 <code>EnmeyDifficultyLevelHandle</code>、<code>UserOpenLendaryCardOddHandle</code> 和服务端匹配请求字段，确认标签是在本地只改 AI 参数，还是随匹配请求上传。</li>
-</ol>
-<p>当前证据能支持的最强表述是：系统有连胜/连败状态字段与刷新链；连败状态可影响本地金卡权重；<strong>连败触发所需的准确局数及是否影响机器人补位尚未恢复</strong>。页面不会把常见攻略里的 3 连败、5 连败当成配置事实。</p>
+<p><code>BattleGameManager.SettlementAnimationEnd</code> 的状态机中已经找到上述 Buff 扣次调用。可确认付费保护采用 <strong>5 次扣次结算</strong>、回流采用 <strong>2 次扣次结算</strong> 的计数设计；尚未逐一核对所有联网、训练、退出和断线分支，不把它扩展为所有模式统一持续 5 局/2 局。付费函数未见按小时到期条件；充值服务器响应字段、补单分支仍未追通。</p>
+<p>回流枚举与回流效果不能混同：初始化更新登录时间后，枚举可能被重新清除，但 <code>get_UserIsInactiveUser</code> 仍检查剩余 Buff，因此效果及写入战斗载荷的 InactiveUser 可以继续为真。</p>
+<h3 id="614">6.1.4 结算如何影响下一局</h3>
+<p>已恢复的入口是 <code>BattleGameManager.&lt;SettlementAnimationEnd&gt;d__58.MoveNext</code>（表槽 <code>33FC</code> / 函数 <code>19050</code>），其中存在以下调用顺序：</p>
+<pre><code class="language-text">清除当天首局状态
+→ RecordPlayerNear20GameSituation(isVictory)
+→ RefreshUserLableRecentWinRateData：刷新胜率及分类
+→ RefreshOrInitInactiveUserBuff(false)
+→ RefreshOrInitJustNowPaidUserBuff(false)
+→ 按 isVictory 刷新连胜或连败
+</code></pre>
+<p>这些调用会改变下一次读取的玩家标签、难度修正和地块权重。此入口是客户端结算动画结束；尚未把所有 BattleResultNtf、特殊模式和中途退出路径逐一接通，也没有真实逐局抓包证明线上调用次数。</p>
 <h3 id="62">6.2 标签如何改敌方难度档</h3>
 <p><code>EnmeyDifficultyLevelHandle</code> 在该客户端函数中的分支为：</p>
 <pre><code class="language-text">输入基础难度 D
@@ -1325,10 +1308,10 @@
 若 FirstMatchUser：再 D -= 1
 最后限制在 1 与当前难度表数量之间
 </code></pre>
-<p>例如基础 D=5，Rookie 得到 4，Expert 得到 6；若同时有 FirstMatchUser，分别变成 3 和 5。这证明客户端存在难度调节函数；<strong>未证明 PVP 每次选择 86 套预设时调用它</strong>。普通难度档、PVP Bot ID 是不同编号空间，不能把“减 1 档”解释为“机器人编号减 1”。</p>
+<p>例如基础 D=5，Rookie 得到 4，Expert 得到 6；若同时有 FirstMatchUser，分别变成 3 和 5。实际调用已定位到 <code>AIBehaviourManager.EnemyRandomBattleData → EnmeyDifficultyLevelHandle → RecordEnemyOpenHexTimeOffset / GetEnemyBattleDataCofig</code>；<strong>未证明 PVP 每次选择 86 套预设时调用它</strong>。普通难度档、PVP Bot ID 是不同编号空间，不能把“减 1 档”解释为“机器人编号减 1”。</p>
 <h3 id="63">6.3 标签如何改开格节奏</h3>
-<p><code>EnmeyOpenHexOffsetHandle</code> 对输入开格偏移逐项累加：JustPaidUser +5；InactiveUser 或 <code>InactiveUserGameBuff&gt;0</code> +5；FirstMatchUser +5。三项条件同时成立时，函数返回值可增加 15。这里确认的是<strong>偏移参数</strong>，尚未完整确认消费侧单位和调度方式，不能写成每个线上机器人固定慢 15 秒。</p>
-<p>回流检测函数比较网络时间和 LastLoginTime，超过 1 天置回流标签；回流 Buff 初始化加 2、限制 0～2，后续存在减 1；刚付费 Buff 初始化加 5、限制 0～5，后续存在减 1 并清标记。减次调用与每场对局的完整对应未核实，因此不把计数直接宣布为“保护两局/五局”。</p>
+<p><code>RecordEnemyOpenHexTimeOffset</code> 从难度表读取 <code>moveInterval</code>，写入 <code>_openHexTimeOffset</code>。在 <code>isPVE=false</code> 且标签功能开启的分支中，<code>EnmeyOpenHexOffsetHandle</code> 累加：刚付费 +5、回流（枚举或 Buff&gt;0）+5、首局 +5。</p>
+<p>消费端 <code>AIBehaviourManager.Update</code> 使用 <code>_logicTime - _frontTime &gt;= _openHexTimeOffset</code> 决定是否调用 <code>EnemyOpenHex(IsHard)</code>，所以这里的单位已确认是<strong>秒</strong>。三项同时适用可把该分支的尝试开格间隔增加 15 秒；仍受暂停、可行动状态、金币及候选格约束。本地托管 PVP 的 <code>LocalHostedBotCommandPlanner</code> 是另一条执行链，不能把此间隔套给全部联网机器人。</p>
 <h3 id="64">6.4 翻格质量是另一条体验调节链</h3>
 <p>此前已经复核的地块初始化函数有：本方刚付费 +10、本方连败 +50、本方回流 +30、对手连胜 +50，均加入本方传说候选权重，并改变总权重。符合条件的传说兵营生成后会消耗标签加成。详见<a href="../hex-random/index.html">地块随机专题</a>。</p>
 <p>这与“选机器人”不是同一个函数。付费/连败等标签可能影响局内质量或节奏，不能据此断言服务器必定换了某个机器人，也不能由预设标签为 false 推出全游戏没有体验调节。</p>
@@ -1407,6 +1390,50 @@
 </table></div>
 <p>86 条里 NormalPlayer 全为 true；Rookie、Expert、连胜、连败和近期付费全为 false。57～60、81～82 同时带回流和 FirstMatchUser。另有 63～69 的 ExpertLevel 为正，但 Expert 仍为 false，说明“类别标记”和“类别等级”不能互相替代。这里的标签属于<strong>机器人载荷自身</strong>，不是你作为真人玩家的账户标签。</p>
 <p>本地数据类还有 <code>IsFirstMatchToday</code>，所以 FirstMatchUser 也不能仅按字面断言为账号生涯首局。PVP 的 <code>Pvp_PlayFirstBot</code> 是另一项配置，二者触发边界应分别核对。</p>
+<h3 id="66">6.6 标签进入哪些协议，哪些仍不能推断</h3>
+<p><code>CreatePlayerLoadoutNormalized → ResolveUserLabelState</code> 会读取四个标签以及 Rookie/NormalPlayer/Expert/FirstMatchUser，写入 <code>PlayerBattleLoadout.UserLabels</code>。<code>SendRegisterBattleInfoOrThrowAsync</code> 中可见创建载荷、JSON 序列化、设置 <code>RegisterBattleInfoReq.LoadoutJson</code> 的链路。<strong>标签进入上传的战斗载荷已有证据，服务端用标签选对手仍未证实。</strong></p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>协议或数据</th>
+<th>已恢复字段</th>
+<th>证据边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>StartMatchReq</td>
+<td>ArenaLevel、RulesetId、ConfigVersion、EntryModeId、ConfigHash</td>
+<td>顶层无四个标签；不代表服务器没有其他玩家状态</td>
+</tr>
+<tr>
+<td>RegisterBattleInfoReq</td>
+<td>BattleInfos、LoadoutJson</td>
+<td>载荷可包含 UserLabels；不等于匹配评分参数</td>
+</tr>
+<tr>
+<td>MatchEnqueuePayload</td>
+<td>Mode、ClientBattleVersion、RulesetId、EntryModeId、RequestedArenaId、SetupId、ArenaId、DevMapType、DevPolygonMapId、DevLoadoutJson</td>
+<td>DevLoadoutJson 可承载标签，正式排队是否填写及消费未确认</td>
+</tr>
+<tr>
+<td>MatchSuccessNtf</td>
+<td>OpponentUserId、RoomId、SelfBasicData、OpponentBasicData</td>
+<td>协议定义，不是实际对手样本</td>
+</tr>
+<tr>
+<td>BattleResultNtf</td>
+<td>BaseScore、Win、Rewards</td>
+<td>结算通知；各模式如何连接本地结算入口仍有缺口</td>
+</tr>
+<tr>
+<td>UserLableData 存档键</td>
+<td>n2gs、rwr、cws、cls、jnp、jnpgb、iugb、ifmt</td>
+<td>近期记录、胜率、连胜、连败、付费标记/次数、回流次数和首局状态</td>
+</tr>
+</tbody>
+</table></div>
+<p>本地未找到能区分普通局、连败后、刚付费后的真实逐局战斗包；Bot_Json 是配置预设，不能当作抓包。86 条 Bot 的最终选择函数、池内权重及服务器覆盖仍未知；<code>M_Win_K/M_Win_Param/Bot_LoseTime</code> 的字段名称不能替代消费者算法。</p>
 <h2 id="7-25-65">7. 普通竞技场：25 档成长、65 条组卡配额</h2>
 <h3 id="71">7.1 每个难度档给出的完整参数</h3>
 <div class="scroll"><table>
@@ -1678,6 +1705,7 @@
 <p><code>cardLevel</code> 是范围字符串；是否闭区间、逐卡独立抽取还是统一抽值仍需选择函数。<code>moveInterval</code> 从 15→9→3→2→1→0.5，<strong>第 6 档起就一直为 0.5</strong>，因此第 6～25 档变难主要不能用“动作越来越快”解释，还要看卡等级、主城和其他字段。</p>
 <p><code>enemyCardConfig</code> 25 行均为 <code>3,3,1,1</code>。它是四段配置，但本次没有恢复其枚举顺序，不能擅自认定是四种稀有度数量。<code>enemyTalent2LevelWeight</code> 全为 <code>6,3,1</code>；若消费者做标准权重抽样，其比例为 60/30/10，但具体等级映射仍未确认。<code>enemyArtifactCofig</code> 的四段向量与独立 AI 神器等级表也不能混成一个神器等级。</p>
 <h3 id="72-65-65">7.2 65 条组卡配额，不是 65 个固定机器人</h3>
+<p>行为消费补充：旧 AI 的 <code>EnemyOpenHex</code> 按 <code>aiType</code> 分派到 <code>Development / Gambling / Offense</code>。已恢复的 Development 在前 30 秒优先资源格；Offense 主要优先兵营并有问号格随机分支；Gambling 按随机条件和已开问号数量选择偏好，最终仍经 <code>TryOpenHex</code> 检查金币与候选。难度表会改变卡等级、主城与经济范围，但本次未找到 difficulty 数字直接调整这些战术分支权重、或独立防守评分权重的证据。这些旧 AI 行为函数与本地托管 PVP 规划器分开解读。</p>
 <p><code>ArenaEnemyCardsInfoSheet2</code> 每行是数量配额：矿、四阵营近战/远程、机械防御和 <code>fetterFull</code>。65 行数量总和都为 8、矿都为 1；39 行最低竞技场字段为 4，26 行为 7。它没有具体 CardId 和 Level，因此还需要后续选卡和难度赋级，不能拿它代替 PVP 的固定 8 卡存档。</p>
 <div class="scroll"><table>
 <thead>
@@ -3394,7 +3422,7 @@
 </tr>
 <tr>
 <td>玩家近期几连败触发保护？</td>
-<td>本次对应标签刷新方法映射到共享跳板，未恢复可靠的连续局数阈值</td>
+<td>已确认 CurrentLoseStreak &gt;4，即第 5 次连续失败；尚未证明服务器据此更换 Bot</td>
 </tr>
 <tr>
 <td>一局里有几个机器人？</td>
@@ -3575,6 +3603,71 @@
 <td>EB8A</td>
 <td>14519</td>
 <td>TryCreateAutoArtifactCommand：充能、装备神器与目标解析</td>
+</tr>
+<tr>
+<td>3374</td>
+<td>30358</td>
+<td>连胜 +1、连败清零；&gt;4 触发</td>
+</tr>
+<tr>
+<td>3375</td>
+<td>30359</td>
+<td>连败 +1、连胜清零；&gt;4 触发</td>
+</tr>
+<tr>
+<td>29B1</td>
+<td>30360</td>
+<td>刚付费置位并初始化 5 次 Buff</td>
+</tr>
+<tr>
+<td>9CF3</td>
+<td>12836</td>
+<td>回流 getter：枚举存在或 Buff&gt;0</td>
+</tr>
+<tr>
+<td>33FC</td>
+<td>19050</td>
+<td>结算动画结束：战绩、分类、Buff 扣次与连胜连败</td>
+</tr>
+<tr>
+<td>5E66</td>
+<td>19082</td>
+<td>ShopManager.PurchaseProductCallBack 的付费刷新调用</td>
+</tr>
+<tr>
+<td>8E07</td>
+<td>47880</td>
+<td>EnemyRandomBattleData 实际调用难度调整</td>
+</tr>
+<tr>
+<td>334D</td>
+<td>12237</td>
+<td>读取 moveInterval 并按分支增加标签间隔</td>
+</tr>
+<tr>
+<td>8DE8</td>
+<td>47863</td>
+<td>Update 按秒比较间隔并尝试开格</td>
+</tr>
+<tr>
+<td>8EA5</td>
+<td>26304</td>
+<td>读取玩家标签形成 BattleUserLabelState</td>
+</tr>
+<tr>
+<td>8E86</td>
+<td>6670</td>
+<td>标签写入 PlayerBattleLoadout</td>
+</tr>
+<tr>
+<td>59B4</td>
+<td>19058</td>
+<td>注册战斗载荷 JSON 序列化与赋值</td>
+</tr>
+<tr>
+<td>EB95（拆分模块）</td>
+<td>103987</td>
+<td>PVP 回退：价格 25 且金币 &lt;200 时跳过</td>
 </tr>
 </tbody>
 </table></div>
