@@ -1,6 +1,6 @@
 # 《占城大师》地图与地块生成规则
 
-研究日期：2026-09-08；2026-09-10 复核“新显现格子”和 SSSR 标签加权链。材料为2026-09-03本地资源快照，版本1.4.15.558-preview。结论来自本地WASM函数、恢复后的字段布局及配置表；未抓取当前线上对局载荷，不代表所有玩家、模式和服务器实验都启用了同一组开关。
+研究日期：2026-09-08；2026-09-10 复核“新显现格子、开放锚点”和 SSSR 标签加权链。材料为2026-09-03本地资源快照，版本1.4.15.558-preview。结论来自本地WASM函数、恢复后的字段布局及配置表；未抓取当前线上对局载荷，不代表所有玩家、模式和服务器实验都启用了同一组开关。
 
 ## 先看答案
 
@@ -16,8 +16,8 @@
 → 按该档位的权重抽卡牌稀有度或空
 → 从该玩家本局牌组筛选具体建筑
 → 保存隐藏结果
-→ 玩家扩张时周围格子进入可见/可开启状态
-→ 玩家点击时读取既有隐藏结果，再执行少量重抽、引导和保底覆盖
+→ 玩家打开边界格后，邻格因新增 opened anchor 满足当前开放条件并在表现层显现
+→ 玩家点击目标格时读取既有隐藏结果，再执行少量重抽、引导和保底覆盖
 ```
 
 阅读本页时必须把四类概念分开：
@@ -117,21 +117,69 @@ quality = Range(0,4)
 
 这些25%只适用于走到普通档位随机的格子，不是整张地图的最终占比。主城邻格、金矿、防御、模板固定格和特殊资源都已在前面改变了构成。
 
-更重要的是这25%的**发生时点**。复核`BuildInitialSetupNormalized`、`BuildStableGenerationOrder`、`BuildCellContent`和实际开格函数`25409`后，当前证据链是：初始化函数先拿整组`cells`建立稳定生成顺序，再按顺序逐格进入`BuildCellContent`；普通格在其中调用`ResolveInitialRarity → Range(0,4)`。而实际开格函数读取已经存在的`BattleHexCellState`，优先调用`SelectCardForCellArchitecture`取得预生成建筑对应的卡牌，并没有再次调用决定四档的`Range(0,4)`。
-
-因此目前更准确的解释是：
+更重要的是这25%的**发生时点**。本次把初始化、开格校验、真正提交开格和邻接判定重新映射到同一份WASM后，函数链已经可以明确写成：
 
 ```text
-开局内部：A/B/C/D……普通格已经分别生成一星、二星、三星或问号
-玩家打开某个边界格
-→ 周围若干格进入可见/可开启状态
-→ UI此时才把这些格子的档位展示给玩家
-→ 但没有证据表明“显现这一刻”重新掷一次25%
+初始化：BuildInitialSetupNormalized
+→ BuildStableGenerationOrder
+→ BuildCellContent
+→ ResolveInitialRarity
+→ 普通格 Range(0,4)，确定一星 / 二星 / 三星 / 问号
+→ 隐藏结果写入 BattleHexCellState
+
+玩家点击目标格：OpenHex（RVA 0x4534 / func[43532]）
+→ GetHexOpenBlockReason（RVA 0x4597 / func[6642]）
+→ SpendGold（RVA 0x4598 / func[43468]）
+→ CommitOpenedHex（RVA 0x459B / func[25588]）
+→ ResolveOpenedHexOutcome（RVA 0xF495 / func[25409]）
 ```
 
-例如内部生成结果已经是“B=三星、C=问号、D=一星”，玩家打开A后看到B/C/D同时出现，会产生“打开A后随机出了三个新地块”的体验；从当前初始化链看，更像是A的扩张动作把三个**已经生成过档位的格子揭晓出来**。
+这里也修正旧版报告的一处命名错误：`func[25409]`不是`OpenHex`本体，而是`ResolveOpenedHexOutcome`；真正接收玩家开格动作的`OpenHex`是`func[43532]`，真正提交状态的`CommitOpenedHex`是`func[25588]`。
 
-这里保留一个证据边界：负责“打开一个格后，哪些邻格被设为可见/可开启”的完整表现层/状态更新函数还没有完全恢复，因此不能把UI显现链的每一步写死。但就目前已恢复的初始化循环和`25409`开格处理而言，没有找到“邻格刚显现时再次执行`Range(0,4)`并重置档位”的调用链。
+#### 2.5.1 `CanOpen`不是“刚显现时重新随机”的标志
+
+恢复出的`BattleHexCellState`字段布局已经确认：
+
+|字段|偏移|含义|
+|---|---:|---|
+|`IsEnemyHex`|0x22|格子属于哪一侧|
+|`IsOpened`|0x23|是否已经打开|
+|`CanOpen`|0x24|该格是否具备基础开放许可|
+|`IsBridge`|0x25|是否桥格|
+|`IsPlayerMainTower`|0x26|是否玩家主城|
+|`IsEnemyMainTower`|0x27|是否敌方主城|
+
+`GetHexOpenBlockReason`会直接读取`CanOpen`，但**不会只靠这个字段决定当前能否点击**。在基础状态、主城/桥格等条件通过后，它还会调用：
+
+```text
+HasPlayerOpenAnchorNeighbor(int playerId, BattleHexCellState target)
+RVA 0xF61E / func[25522]
+```
+
+该函数会遍历目标格的`Neighbors`，逐个读取 authoritative `BattleHexCellState`，并检查邻格的`IsEnemyHex`、`IsOpened`、`IsPlayerMainTower`和`IsEnemyMainTower`等状态，以判断目标格旁边是否存在属于该玩家的有效“已开放锚点”。因此当前证据更支持：`CanOpen`是基础许可，而“现在是否已经扩张到这个格子”由邻接锚点条件进一步决定。
+
+这解释了玩家看到的典型过程：
+
+```text
+开局内部：B、C、D的档位和隐藏内容已经生成
+A尚未打开时：B/C/D即使CanOpen允许，也可能因为没有本方opened anchor而不能操作
+玩家打开A
+→ A的IsOpened变为true
+→ B/C/D再次经过HasPlayerOpenAnchorNeighbor时可以命中A这个开放锚点
+→ 它们满足当前开放条件
+→ authoritative状态同步到表现层
+→ UI显示价格、图标或可操作提示
+```
+
+因此，“打开A以后出现B/C/D”与“系统此时重新给B/C/D各掷一次25%”是两件不同的事。当前函数级证据支持前者，不支持后者。
+
+#### 2.5.2 开格提交阶段也没有重新执行四档随机
+
+`CommitOpenedHex`会先确认目标格尚未`IsOpened`，随后进入`ResolveOpenedHexOutcome`处理已经存在的格子结果；需要时再调用`TryClaimAdjacentSpecialHexRewards`一类特殊资源逻辑，并通过`MarkDynamicWallsDirtyAround`刷新动态墙拓扑。动态墙刷新和邻接特殊奖励都属于开格后的独立阶段，不是普通地块档位生成。
+
+同时，`BattleNavigationSystem.SetHexOpened(BattleHexCoord,bool)`负责切换导航/核心状态中的opened状态并标记后续刷新。已经恢复的开格主链中没有出现决定普通四档的`Range(0,4)`再次调用。因此目前可以把结论提高到：**普通格的一星/二星/三星/问号档位在初始化阶段生成；玩家扩张后发生的是开放条件变化和表现层揭示，而不是档位二次生成。**
+
+仍需保留的证据边界是：目前没有线上实包证明服务器不会在特定实验模式下覆盖客户端初始化结果；而且UI层从 authoritative cell state 到具体动画/显隐组件的全部调用顺序尚未逐函数恢复。但这两个边界都不影响当前客户端1.4.15.558-preview主链中“25%档位随机发生在初始化而不是邻格显现时”的结论。
 
 ### 2.6 地块档位再决定内部稀有度：SSSR加权与一次性消费
 
@@ -258,7 +306,7 @@ E → B → H → A → F → C → G → D
 
 ### 3.1 正常情况：新显现格通常是在揭晓开局生成结果
 
-实际开格函数`25409`接收既有`BattleHexCellState`。正常兵营路径优先调用`SelectCardForCellArchitecture`，按格子已经保存的隐藏建筑匹配本方已拥有卡牌；内容缺失或无法匹配时，才进入`SelectCardForHex`回退。该开格函数中没有再次执行决定一星/二星/三星/问号的`Range(0,4)`。
+`ResolveOpenedHexOutcome`（func[25409]）接收既有`BattleHexCellState`。正常兵营路径优先调用`SelectCardForCellArchitecture`，按格子已经保存的隐藏建筑匹配本方已拥有卡牌；内容缺失或无法匹配时，才进入`SelectCardForHex`回退。该开格函数中没有再次执行决定一星/二星/三星/问号的`Range(0,4)`。
 
 因此当前代码证据支持把两件事分开：
 

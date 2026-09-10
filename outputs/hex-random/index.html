@@ -9,7 +9,11 @@ fieldset{border:1px solid var(--line);border-radius:8px;margin:16px 0;display:fl
 <li><a href="#22">2.2 模板固定格先保留</a></li>
 <li><a href="#23">2.3 特殊资源位置先于普通品质</a></li>
 <li><a href="#24">2.4 双方主城邻格有固定用途配额</a></li>
-<li><a href="#25-25">2.5 剩余普通格才等概率抽地块档位：25%到底什么时候发生</a></li>
+<li><a href="#25-25">2.5 剩余普通格才等概率抽地块档位：25%到底什么时候发生</a><ul>
+<li><a href="#251-canopen">2.5.1 CanOpen不是“刚显现时重新随机”的标志</a></li>
+<li><a href="#252">2.5.2 开格提交阶段也没有重新执行四档随机</a></li>
+</ul>
+</li>
 <li><a href="#26-sssr">2.6 地块档位再决定内部稀有度：SSSR加权与一次性消费</a></li>
 <li><a href="#27">2.7 从本局牌组确定具体兵营</a></li>
 <li><a href="#28">2.8 金矿数量与价格的具体规则</a></li>
@@ -34,7 +38,7 @@ fieldset{border:1px solid var(--line);border-radius:8px;margin:16px 0;display:fl
 <li><a href="#7">7. 证据附录</a></li>
 </ul>
 </div>
-</nav><article><p>研究日期：2026-09-08；2026-09-10 复核“新显现格子”和 SSSR 标签加权链。材料为2026-09-03本地资源快照，版本1.4.15.558-preview。结论来自本地WASM函数、恢复后的字段布局及配置表；未抓取当前线上对局载荷，不代表所有玩家、模式和服务器实验都启用了同一组开关。</p>
+</nav><article><p>研究日期：2026-09-08；2026-09-10 复核“新显现格子、开放锚点”和 SSSR 标签加权链。材料为2026-09-03本地资源快照，版本1.4.15.558-preview。结论来自本地WASM函数、恢复后的字段布局及配置表；未抓取当前线上对局载荷，不代表所有玩家、模式和服务器实验都启用了同一组开关。</p>
 <p class="related"><a href="../battle/index.html">查看局内整体流程与地图种类 →</a> · <a href="report.md">下载完整 Markdown</a></p>
 
 <h2 id="_1">先看答案</h2>
@@ -48,8 +52,8 @@ fieldset{border:1px solid var(--line);border-radius:8px;margin:16px 0;display:fl
 → 按该档位的权重抽卡牌稀有度或空
 → 从该玩家本局牌组筛选具体建筑
 → 保存隐藏结果
-→ 玩家扩张时周围格子进入可见/可开启状态
-→ 玩家点击时读取既有隐藏结果，再执行少量重抽、引导和保底覆盖
+→ 玩家打开边界格后，邻格因新增 opened anchor 满足当前开放条件并在表现层显现
+→ 玩家点击目标格时读取既有隐藏结果，再执行少量重抽、引导和保底覆盖
 </code></pre>
 <p>阅读本页时必须把四类概念分开：</p>
 <div class="scroll"><table>
@@ -282,16 +286,84 @@ fieldset{border:1px solid var(--line);border-radius:8px;margin:16px 0;display:fl
 </tbody>
 </table></div>
 <p>这些25%只适用于走到普通档位随机的格子，不是整张地图的最终占比。主城邻格、金矿、防御、模板固定格和特殊资源都已在前面改变了构成。</p>
-<p>更重要的是这25%的<strong>发生时点</strong>。复核<code class="idtip" tabindex="0" data-tip="规范化模板与双方牌组，然后按稳定顺序初始化每个可生成格。">BuildInitialSetupNormalized</code>、<code class="idtip" tabindex="0" data-tip="根据seed和格子Q/R坐标生成稳定的逐格处理顺序。">BuildStableGenerationOrder</code>、<code class="idtip" tabindex="0" data-tip="单格生成入口；先处理固定和特殊内容，再决定档位、稀有度、建筑与价格。">BuildCellContent</code>和实际开格函数<code>25409</code>后，当前证据链是：初始化函数先拿整组<code>cells</code>建立稳定生成顺序，再按顺序逐格进入<code class="idtip" tabindex="0" data-tip="单格生成入口；先处理固定和特殊内容，再决定档位、稀有度、建筑与价格。">BuildCellContent</code>；普通格在其中调用<code>ResolveInitialRarity → Range(0,4)</code>。而实际开格函数读取已经存在的<code>BattleHexCellState</code>，优先调用<code class="idtip" tabindex="0" data-tip="优先把开局隐藏建筑映射到玩家本局拥有的对应卡牌。">SelectCardForCellArchitecture</code>取得预生成建筑对应的卡牌，并没有再次调用决定四档的<code>Range(0,4)</code>。</p>
-<p>因此目前更准确的解释是：</p>
-<pre><code class="language-text">开局内部：A/B/C/D……普通格已经分别生成一星、二星、三星或问号
-玩家打开某个边界格
-→ 周围若干格进入可见/可开启状态
-→ UI此时才把这些格子的档位展示给玩家
-→ 但没有证据表明“显现这一刻”重新掷一次25%
+<p>更重要的是这25%的<strong>发生时点</strong>。本次把初始化、开格校验、真正提交开格和邻接判定重新映射到同一份WASM后，函数链已经可以明确写成：</p>
+<pre><code class="language-text">初始化：BuildInitialSetupNormalized
+→ BuildStableGenerationOrder
+→ BuildCellContent
+→ ResolveInitialRarity
+→ 普通格 Range(0,4)，确定一星 / 二星 / 三星 / 问号
+→ 隐藏结果写入 BattleHexCellState
+
+玩家点击目标格：OpenHex（RVA 0x4534 / func[43532]）
+→ GetHexOpenBlockReason（RVA 0x4597 / func[6642]）
+→ SpendGold（RVA 0x4598 / func[43468]）
+→ CommitOpenedHex（RVA 0x459B / func[25588]）
+→ ResolveOpenedHexOutcome（RVA 0xF495 / func[25409]）
 </code></pre>
-<p>例如内部生成结果已经是“B=三星、C=问号、D=一星”，玩家打开A后看到B/C/D同时出现，会产生“打开A后随机出了三个新地块”的体验；从当前初始化链看，更像是A的扩张动作把三个<strong>已经生成过档位的格子揭晓出来</strong>。</p>
-<p>这里保留一个证据边界：负责“打开一个格后，哪些邻格被设为可见/可开启”的完整表现层/状态更新函数还没有完全恢复，因此不能把UI显现链的每一步写死。但就目前已恢复的初始化循环和<code>25409</code>开格处理而言，没有找到“邻格刚显现时再次执行<code>Range(0,4)</code>并重置档位”的调用链。</p>
+<p>这里也修正旧版报告的一处命名错误：<code>func[25409]</code>不是<code>OpenHex</code>本体，而是<code>ResolveOpenedHexOutcome</code>；真正接收玩家开格动作的<code>OpenHex</code>是<code>func[43532]</code>，真正提交状态的<code>CommitOpenedHex</code>是<code>func[25588]</code>。</p>
+<h4 id="251-canopen">2.5.1 <code>CanOpen</code>不是“刚显现时重新随机”的标志</h4>
+<p>恢复出的<code>BattleHexCellState</code>字段布局已经确认：</p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>字段</th>
+<th style="text-align: right;">偏移</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IsEnemyHex</code></td>
+<td style="text-align: right;">0x22</td>
+<td>格子属于哪一侧</td>
+</tr>
+<tr>
+<td><code>IsOpened</code></td>
+<td style="text-align: right;">0x23</td>
+<td>是否已经打开</td>
+</tr>
+<tr>
+<td><code>CanOpen</code></td>
+<td style="text-align: right;">0x24</td>
+<td>该格是否具备基础开放许可</td>
+</tr>
+<tr>
+<td><code>IsBridge</code></td>
+<td style="text-align: right;">0x25</td>
+<td>是否桥格</td>
+</tr>
+<tr>
+<td><code>IsPlayerMainTower</code></td>
+<td style="text-align: right;">0x26</td>
+<td>是否玩家主城</td>
+</tr>
+<tr>
+<td><code>IsEnemyMainTower</code></td>
+<td style="text-align: right;">0x27</td>
+<td>是否敌方主城</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>GetHexOpenBlockReason</code>会直接读取<code>CanOpen</code>，但<strong>不会只靠这个字段决定当前能否点击</strong>。在基础状态、主城/桥格等条件通过后，它还会调用：</p>
+<pre><code class="language-text">HasPlayerOpenAnchorNeighbor(int playerId, BattleHexCellState target)
+RVA 0xF61E / func[25522]
+</code></pre>
+<p>该函数会遍历目标格的<code>Neighbors</code>，逐个读取 authoritative <code>BattleHexCellState</code>，并检查邻格的<code>IsEnemyHex</code>、<code>IsOpened</code>、<code>IsPlayerMainTower</code>和<code>IsEnemyMainTower</code>等状态，以判断目标格旁边是否存在属于该玩家的有效“已开放锚点”。因此当前证据更支持：<code>CanOpen</code>是基础许可，而“现在是否已经扩张到这个格子”由邻接锚点条件进一步决定。</p>
+<p>这解释了玩家看到的典型过程：</p>
+<pre><code class="language-text">开局内部：B、C、D的档位和隐藏内容已经生成
+A尚未打开时：B/C/D即使CanOpen允许，也可能因为没有本方opened anchor而不能操作
+玩家打开A
+→ A的IsOpened变为true
+→ B/C/D再次经过HasPlayerOpenAnchorNeighbor时可以命中A这个开放锚点
+→ 它们满足当前开放条件
+→ authoritative状态同步到表现层
+→ UI显示价格、图标或可操作提示
+</code></pre>
+<p>因此，“打开A以后出现B/C/D”与“系统此时重新给B/C/D各掷一次25%”是两件不同的事。当前函数级证据支持前者，不支持后者。</p>
+<h4 id="252">2.5.2 开格提交阶段也没有重新执行四档随机</h4>
+<p><code>CommitOpenedHex</code>会先确认目标格尚未<code>IsOpened</code>，随后进入<code>ResolveOpenedHexOutcome</code>处理已经存在的格子结果；需要时再调用<code>TryClaimAdjacentSpecialHexRewards</code>一类特殊资源逻辑，并通过<code>MarkDynamicWallsDirtyAround</code>刷新动态墙拓扑。动态墙刷新和邻接特殊奖励都属于开格后的独立阶段，不是普通地块档位生成。</p>
+<p>同时，<code>BattleNavigationSystem.SetHexOpened(BattleHexCoord,bool)</code>负责切换导航/核心状态中的opened状态并标记后续刷新。已经恢复的开格主链中没有出现决定普通四档的<code>Range(0,4)</code>再次调用。因此目前可以把结论提高到：<strong>普通格的一星/二星/三星/问号档位在初始化阶段生成；玩家扩张后发生的是开放条件变化和表现层揭示，而不是档位二次生成。</strong></p>
+<p>仍需保留的证据边界是：目前没有线上实包证明服务器不会在特定实验模式下覆盖客户端初始化结果；而且UI层从 authoritative cell state 到具体动画/显隐组件的全部调用顺序尚未逐函数恢复。但这两个边界都不影响当前客户端1.4.15.558-preview主链中“25%档位随机发生在初始化而不是邻格显现时”的结论。</p>
 <h3 id="26-sssr">2.6 地块档位再决定内部稀有度：SSSR加权与一次性消费</h3>
 <p><code>GlobalHexInfo（全局六边形地块信息）</code>给出四档基础权重：</p>
 <div class="scroll"><table>
@@ -491,7 +563,7 @@ P(其他结果) = 原权重 / (100+B)
 <p>还要注意，稳定生成顺序不等于每格完全独立哈希决定全部结果。逐格生成过程中会根据候选池、特殊用途、金矿额度等继续消费确定性随机数；若前面某格因候选变化少消费或多消费随机数，后面的结果也可能变化。当前初始化链没有读取战斗秒数；时间流逝本身不会逐渐修改已经生成的地块档位。</p>
 <h2 id="3">3. 玩家点击后哪些结果还会改</h2>
 <h3 id="31">3.1 正常情况：新显现格通常是在揭晓开局生成结果</h3>
-<p>实际开格函数<code>25409</code>接收既有<code>BattleHexCellState</code>。正常兵营路径优先调用<code class="idtip" tabindex="0" data-tip="优先把开局隐藏建筑映射到玩家本局拥有的对应卡牌。">SelectCardForCellArchitecture</code>，按格子已经保存的隐藏建筑匹配本方已拥有卡牌；内容缺失或无法匹配时，才进入<code class="idtip" tabindex="0" data-tip="隐藏建筑缺失或无法匹配时使用的回退选卡路径。">SelectCardForHex</code>回退。该开格函数中没有再次执行决定一星/二星/三星/问号的<code>Range(0,4)</code>。</p>
+<p><code>ResolveOpenedHexOutcome</code>（func[25409]）接收既有<code>BattleHexCellState</code>。正常兵营路径优先调用<code class="idtip" tabindex="0" data-tip="优先把开局隐藏建筑映射到玩家本局拥有的对应卡牌。">SelectCardForCellArchitecture</code>，按格子已经保存的隐藏建筑匹配本方已拥有卡牌；内容缺失或无法匹配时，才进入<code class="idtip" tabindex="0" data-tip="隐藏建筑缺失或无法匹配时使用的回退选卡路径。">SelectCardForHex</code>回退。该开格函数中没有再次执行决定一星/二星/三星/问号的<code>Range(0,4)</code>。</p>
 <p>因此当前代码证据支持把两件事分开：</p>
 <pre><code class="language-text">周围格子“新出现” = 扩张后进入可见/可开启状态
 格子“第一次被随机生成档位和隐藏内容” = 主要在开局初始化链完成
