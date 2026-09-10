@@ -93,13 +93,13 @@ jobs:
               off,p=sleb(p); assert b[p]==0x0b;p+=1
               n,p=uleb(p)
               for i in range(n):fn,p=uleb(p);mapping[off+i]=fn
-          targets=[0x42C4,0x42EE,0x42EF,0x43AD,0x43B2,0x43B3,0x43B5,0x43B7,0x4534,0x4597,0x4598,0x4599,0x459A,0x459B,0x88FC,0x88FF,0x8900,0x8918,0x8919,0x891A,0xF495,0xF497,0xF498]
+          targets=[0x42C4,0x42EE,0x42EF,0x42F2,0x4319,0x43AD,0x43B2,0x43B3,0x43B5,0x43B7,0x4528,0x4534,0x4597,0x4598,0x4599,0x459A,0x459B,0x88FC,0x88FF,0x8900,0x8918,0x8919,0x891A,0xF495,0xF497,0xF498]
           with open(sys.argv[2],'w') as f:
               for x in targets:f.write(f'0x{x:04X}\tfunc[{mapping.get(x)}]\n')
               inv={}
               for rva,fn in mapping.items():inv.setdefault(fn,[]).append(rva)
               f.write('\n# inverse for key callees\n')
-              for fn in [11720,9275,1124,23025,23026,23038,23060,11118,11121,11123]:
+              for fn in [11720,9275,1124,23025,23026,23038,23060,11118,11121,11123,25522,9267,25605,24305]:
                   vals=inv.get(fn,[])
                   f.write(f'func[{fn}]\t'+','.join(f'0x{x:04X}' for x in vals[:40])+'\n')
           PY
@@ -107,9 +107,9 @@ jobs:
           python3 - /tmp/current.objdump "$OUT/extended-target-map.txt" "$OUT/openable-gate.objdump" <<'PY'
           import re,sys
           dis,mf,out=sys.argv[1:4]
-          wanted=set()
+          wanted=set([25522,9267,25605,11720])
           for line in open(mf):
-              if line.startswith(('0x4597','0x43B2','0x43B3','0x43B5','0x43B7')):
+              if line.startswith(('0x4597','0x42F2','0x4319','0x43B2','0x43B3','0x43B5','0x43B7')):
                   m=re.search(r'func\[(\d+)\]',line)
                   if m:wanted.add(int(m.group(1)))
           chunks={};cur=None;buf=[]
@@ -132,6 +132,6 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add outputs/hex-openable-reverse
           if ! git diff --cached --quiet; then
-            git commit -m 'research: recover openable gate and cell layout'
+            git commit -m 'research: map open adjacency helpers'
             git push
           fi
