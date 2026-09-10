@@ -1,0 +1,135 @@
+name: Recover hex openable call chain
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/recover-hex-openable.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Install WABT
+        run: |
+          if ! command -v wasm-objdump >/dev/null 2>&1; then
+            sudo apt-get update -qq
+            sudo apt-get install -y wabt
+          fi
+          wasm-objdump --version || true
+
+      - name: Recover candidate functions and metadata context
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT=outputs/hex-openable-reverse
+          rm -rf "$OUT"
+          mkdir -p "$OUT"
+
+          DUMP='research/archive/2026-09-03/reverse-engineering/dump.cs'
+          {
+            echo '# Target method contexts from dump.cs'
+            echo
+            for pat in \
+              'BattleSimulation.OpenHex' \
+              'CommitOpenedHex' \
+              'ResolveOpenedHexOutcome' \
+              'TryGetOfflinePveEnemyOpenableHexStates' \
+              'CollectAuthoritativeOpenableEnemyHexes' \
+              'ApplyBattleCoreAuthoritativeCellState' \
+              'RefreshBattleCoreAuthoritativeCellPresentation' \
+              'RefreshBattleCoreAuthoritativeHexPromptPresentation' \
+              'BattleHexCellState' \
+              'GetHexOpenBlockReason'; do
+              echo "## $pat"
+              grep -n -F -B 8 -A 18 "$pat" "$DUMP" | head -n 160 || true
+              echo
+            done
+          } > "$OUT/dump-method-contexts.txt"
+
+          {
+            echo '# Existing reverse-extraction provenance hits'
+            grep -R -n -E 'func-25409|f495|CommitOpenedHex|ResolveOpenedHexOutcome' \
+              scripts tools outputs research/archive/2026-09-03/reverse-engineering \
+              --exclude='dump.cs' --exclude='*.wasm.br' --exclude='*.wasm' 2>/dev/null | head -n 1000 || true
+          } > "$OUT/provenance-hits.txt"
+
+          find research/archive/2026-09-03 -type f -name '*.wasm.br' -size +1000000c -print0 \
+            | sort -z \
+            | while IFS= read -r -d '' SRC; do
+                NAME=$(basename "$SRC" .br)
+                KEY=$(printf '%s' "$SRC" | sha256sum | cut -c1-10)
+                WASM="/tmp/${KEY}-${NAME}"
+                echo "$SRC" >> "$OUT/wasm-candidates.txt"
+                sha256sum "$SRC" >> "$OUT/wasm-candidates.txt"
+                ls -lh "$SRC" >> "$OUT/wasm-candidates.txt"
+
+                node - "$SRC" "$WASM" <<'NODE'
+          const fs = require('fs');
+          const zlib = require('zlib');
+          const [src, dst] = process.argv.slice(2);
+          const raw = fs.readFileSync(src);
+          const dec = zlib.brotliDecompressSync(raw);
+          fs.writeFileSync(dst, dec);
+          if (!(dec[0]===0 && dec[1]===0x61 && dec[2]===0x73 && dec[3]===0x6d)) {
+            throw new Error('decompressed file is not a wasm module: ' + src);
+          }
+          console.log(src, '=>', dst, dec.length);
+          NODE
+
+                {
+                  echo "# $SRC"
+                  echo "decompressed_size=$(stat -c%s "$WASM")"
+                  sha256sum "$WASM"
+                  wasm-objdump -h "$WASM"
+                } > "$OUT/${KEY}-module-summary.txt"
+
+                # Stream the disassembly and retain only functions near known open-cell
+                # and randomness functions. This avoids committing a giant full disassembly.
+                wasm-objdump -d "$WASM" | python3 - "$OUT/${KEY}-target-functions.objdump" <<'PY'
+          import re, sys
+          out = sys.argv[1]
+          # 25409 is an already-recovered open-cell-related function. Keep a generous
+          # neighborhood. Also retain neighborhoods around known HEX generation functions.
+          ranges = [(25280, 25580), (25950, 26150), (43780, 43980)]
+          cur = None
+          keep = False
+          buf = []
+          for line in sys.stdin:
+              m = re.search(r'func\[(\d+)\]', line)
+              if m:
+                  cur = int(m.group(1))
+                  keep = any(a <= cur <= b for a,b in ranges)
+              if keep:
+                  buf.append(line)
+          with open(out, 'w', encoding='utf-8') as f:
+              f.writelines(buf)
+          PY
+
+                rm -f "$WASM"
+              done
+
+          {
+            echo '# Existing targeted WAT artifacts'
+            find outputs -type f \( -name '*func-*.wat' -o -name '*.wat' \) -printf '%p\n' | sort
+          } > "$OUT/existing-wat-files.txt"
+
+      - name: Commit recovered diagnostics
+        run: |
+          set -e
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add outputs/hex-openable-reverse
+          if git diff --cached --quiet; then
+            echo 'No diagnostic changes.'
+          else
+            git commit -m 'research: extract hex openable diagnostics'
+            git push
+          fi
