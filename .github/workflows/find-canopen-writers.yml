@@ -16,96 +16,72 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
-      - name: Install WABT
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y wabt
-      - name: Find BattleHexCellState CanOpen writes
+      - name: Summarize candidate writers by owning type
         run: |
           set -euo pipefail
-          SRC='research/archive/2026-09-03/unpacked/_wasmcode_/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br'
-          DUMP='research/archive/2026-09-03/reverse-engineering/dump.cs'
-          OUT='outputs/hex-openable-reverse'
-          WASM=/tmp/current.wasm
-          DIS=/tmp/current.objdump
-          mkdir -p "$OUT"
-          node - "$SRC" "$WASM" <<'NODE'
-          const fs=require('fs'),z=require('zlib'); const [s,d]=process.argv.slice(2); fs.writeFileSync(d,z.brotliDecompressSync(fs.readFileSync(s)));
-          NODE
-          wasm-objdump -d "$WASM" > "$DIS"
-          python3 - "$WASM" "$DIS" "$DUMP" "$OUT/canopen-writers.txt" <<'PY'
-          import re,sys
-          wasm,dis,dump,out=sys.argv[1:]
-          b=open(wasm,'rb').read()
-          def uleb(p):
-              v=s=0
-              while True:
-                  x=b[p];p+=1;v|=(x&127)<<s
-                  if x<128:return v,p
-                  s+=7
-          def sleb(p):
-              v=s=0
-              while True:
-                  x=b[p];p+=1;v|=(x&127)<<s;s+=7
-                  if x<128:
-                      if s<32 and x&64:v|=-(1<<s)
-                      return v,p
-          p=8
-          while p<len(b):
-              sid=b[p];p+=1;n,p=uleb(p);end=p+n
-              if sid==9:break
-              p=end
-          segs,p=uleb(p); mapping={}
-          for _ in range(segs):
-              flags,p=uleb(p); assert flags==0 and b[p]==0x41;p+=1
-              off,p=sleb(p);assert b[p]==0x0b;p+=1;n,p=uleb(p)
-              for i in range(n):fn,p=uleb(p);mapping[off+i]=fn
-          inv={}
-          for rva,fn in mapping.items():inv.setdefault(fn,[]).append(rva)
-          dlines=open(dump,encoding='utf-8',errors='replace').read().splitlines()
-          sig_by_rva={}
-          for i,line in enumerate(dlines):
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          raw=Path('outputs/hex-openable-reverse/canopen-writers.txt').read_text(encoding='utf-8',errors='replace')
+          dump=Path('research/archive/2026-09-03/reverse-engineering/dump.cs').read_text(encoding='utf-8',errors='replace').splitlines()
+          # RVA -> (line, signature, approximate enclosing type)
+          meta={}
+          current_type=''
+          type_re=re.compile(r'^(?:public|private|internal|protected|static|sealed|abstract|partial|\s)*(?:sealed\s+|abstract\s+|static\s+)?(?:class|struct|interface)\s+([^\s:{]+)')
+          for i,line in enumerate(dump):
+              t=line.strip()
+              tm=type_re.match(t)
+              if tm: current_type=tm.group(1)
               m=re.search(r'RVA:\s*0x([0-9A-Fa-f]+)',line)
-              if not m:continue
-              rva=int(m.group(1),16);sig=''
-              for j in range(i+1,min(i+5,len(dlines))):
-                  t=dlines[j].strip()
-                  if t and not t.startswith('//') and not t.startswith('['):sig=t;break
-              sig_by_rva[rva]=sig
-          lines=open(dis,encoding='utf-8',errors='replace').readlines()
-          chunks={};cur=None;buf=[]
-          def flush():
-              if cur is not None:chunks[cur]=buf.copy()
-          for line in lines:
-              m=re.search(r'func\[(\d+)\]',line)
-              if m and line.rstrip().endswith(':'):
-                  flush();cur=int(m.group(1));buf=[line]
-              elif cur is not None:buf.append(line)
-          flush()
-          # Offset 0x24 / decimal36 is BattleHexCellState.CanOpen. Find stores and keep context.
-          hits=[]
-          for fn,ls in chunks.items():
-              for i,line in enumerate(ls):
-                  if re.search(r'\bi32\.store8\s+0\s+36\b',line): hits.append((fn,i))
-          with open(out,'w',encoding='utf-8') as o:
-              o.write('# Functions containing i32.store8 offset 36 (candidate CanOpen writes)\n')
-              o.write(f'hits={len(hits)}\n\n')
-              for fn,i in hits:
-                  rvas=inv.get(fn,[])
-                  named=[(r,sig_by_rva.get(r,'')) for r in rvas if sig_by_rva.get(r)]
-                  o.write(f'===== func[{fn}] rvas={",".join(hex(r) for r in rvas[:30])} =====\n')
-                  for r,s in named[:30]:o.write(f'METHOD 0x{r:X}: {s}\n')
-                  for line in chunks[fn][max(0,i-24):min(len(chunks[fn]),i+36)]:o.write(line)
-                  o.write('\n')
-          print('CanOpen-store hits',len(hits))
+              if not m: continue
+              rva=int(m.group(1),16); sig=''
+              for j in range(i+1,min(i+6,len(dump))):
+                  x=dump[j].strip()
+                  if x and not x.startswith('//') and not x.startswith('['): sig=x; break
+              meta[rva]=(i+1,sig,current_type)
+
+          sections=re.split(r'(?=^===== func\[)',raw,flags=re.M)
+          all_rows=[]; likely=[]
+          for sec in sections:
+              hm=re.match(r'===== func\[(\d+)\] rvas=([^=]*) =====',sec)
+              if not hm: continue
+              fn=int(hm.group(1)); rvas=[]
+              for tok in hm.group(2).split(','):
+                  tok=tok.strip()
+                  if tok:
+                      try:rvas.append(int(tok,16))
+                      except:pass
+              named=[]
+              for rva in rvas:
+                  if rva in meta: named.append((rva,*meta[rva]))
+              if not named: continue
+              all_rows.append((fn,named))
+              text=' '.join([x[3]+' '+x[2] for x in named]).lower()
+              if any(k in text for k in ['battlesimulation','battlehex','hexcell','openhex','openable','canopen','initialsetup','cellcontent','setupbuilder','battlemap']):
+                  likely.append((fn,named))
+
+          out=Path('outputs/hex-openable-reverse/canopen-writer-summary.txt')
+          with out.open('w',encoding='utf-8') as f:
+              f.write('# Candidate offset-0x24 byte writers mapped back to dump.cs\n')
+              f.write(f'named_writer_functions={len(all_rows)} likely_hex_writer_functions={len(likely)}\n\n')
+              f.write('## Likely hex / battle candidates\n')
+              for fn,named in likely:
+                  f.write(f'func[{fn}]\n')
+                  for rva,ln,sig,typ in named:
+                      f.write(f'  0x{rva:X}\tline {ln}\ttype={typ}\t{sig}\n')
+              f.write('\n## All named candidates\n')
+              for fn,named in all_rows:
+                  f.write(f'func[{fn}]\n')
+                  for rva,ln,sig,typ in named:
+                      f.write(f'  0x{rva:X}\tline {ln}\ttype={typ}\t{sig}\n')
+          print('named',len(all_rows),'likely',len(likely))
           PY
-          rm -f "$WASM" "$DIS"
-      - name: Commit trace
+      - name: Commit summary
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add outputs/hex-openable-reverse/canopen-writers.txt
+          git add outputs/hex-openable-reverse/canopen-writer-summary.txt
           if ! git diff --cached --quiet; then
-            git commit -m 'research: trace CanOpen state writers'
+            git commit -m 'research: summarize CanOpen writer candidates'
             git push
           fi
