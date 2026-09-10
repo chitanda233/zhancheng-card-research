@@ -1,0 +1,20 @@
+# Element-table mapping for current matching build
+segments=1 info=[(0, 1, 367136)]
+
+0x4534	17716	func[43532]	BattleSimulation.OpenHex
+0x459B	17819	func[25588]	BattleSimulation.CommitOpenedHex
+0xF495	62613	func[25409]	BattleSimulation.ResolveOpenedHexOutcome
+0xF497	62615	func[11698]	BattleSimulation.TryClaimAdjacentSpecialHexRewards
+0xF498	62616	func[25510]	BattleSimulation.IsClaimableAdjacentSpecialHex
+0x8F23	36643	func[26069]	TryGetOfflinePveEnemyOpenableHexStates
+0x8DF4	36340	func[28184]	AIBehaviourManager.CollectAuthoritativeOpenableEnemyHexes
+0x88FC	35068	func[14763]	HexBehaviour.ApplyBattleCoreAuthoritativeCellState
+0x88FF	35071	func[48173]	HexBehaviour.RefreshBattleCoreAuthoritativeCellPresentation
+0x8900	35072	func[4767]	HexBehaviour.RefreshBattleCoreAuthoritativeHexPromptPresentation
+0x8918	35096	func[23036]	HexBehaviour.RefreshBattleCoreAuthoritativeCellPresentationAfterBatch
+0x8919	35097	func[23047]	HexBehaviour.MarkBattleCoreAuthoritativeVisibilityRefreshDirty
+0x891A	35098	func[23056]	HexBehaviour.FlushBattleCoreAuthoritativeVisibilityRefreshBudgeted
+
+# validation
+0x4534 expected=43532 actual=43532
+0xF495 expected=25409 actual=25409

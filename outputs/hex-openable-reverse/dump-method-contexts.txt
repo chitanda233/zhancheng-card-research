@@ -1,8 +1,8 @@
 # Target method contexts from dump.cs
 
-## BattleSimulation.OpenHex
-
 ## CommitOpenedHex
+537248-	// RVA: 0x453C Offset: 0x453C VA: 0x453C
+537249-	private void SetUnitTarget(int playerId, BattleCommand command) { }
 537250-
 537251-	// RVA: 0xF494 Offset: 0xF494 VA: 0xF494
 537252-	private bool IsFriendlyAliveArchitectureTarget(int playerId, BattleHexCoord targetHex) { }
@@ -30,8 +30,20 @@
 537274-
 537275-	// RVA: 0xF49A Offset: 0xF49A VA: 0xF49A
 537276-	private bool ClaimAdjacentResourceBoxReward(int playerId, BattleHexCellState cell) { }
+537277-
+537278-	// RVA: 0xF49B Offset: 0xF49B VA: 0xF49B
+537279-	private bool ClaimAdjacentSpecialSoldierReward(int playerId, BattleHexCellState cell) { }
+537280-
+537281-	// RVA: 0xF49C Offset: 0xF49C VA: 0xF49C
+537282-	private bool ClaimAdjacentGoldCardBuild(int playerId, BattleHexCellState cell) { }
+537283-
+537284-	// RVA: 0xF49D Offset: 0xF49D VA: 0xF49D
+537285-	private void OpenAdjacentSpecialHex(int playerId, BattleHexCellState cell, string eventArchitectureId) { }
+537286-
 
 ## ResolveOpenedHexOutcome
+537251-	// RVA: 0xF494 Offset: 0xF494 VA: 0xF494
+537252-	private bool IsFriendlyAliveArchitectureTarget(int playerId, BattleHexCoord targetHex) { }
 537253-
 537254-	// RVA: 0x4534 Offset: 0x4534 VA: 0x4534
 537255-	private void OpenHex(int playerId, int q, int r) { }
@@ -59,8 +71,61 @@
 537277-
 537278-	// RVA: 0xF49B Offset: 0xF49B VA: 0xF49B
 537279-	private bool ClaimAdjacentSpecialSoldierReward(int playerId, BattleHexCellState cell) { }
+537280-
+537281-	// RVA: 0xF49C Offset: 0xF49C VA: 0xF49C
+537282-	private bool ClaimAdjacentGoldCardBuild(int playerId, BattleHexCellState cell) { }
+537283-
+537284-	// RVA: 0xF49D Offset: 0xF49D VA: 0xF49D
+537285-	private void OpenAdjacentSpecialHex(int playerId, BattleHexCellState cell, string eventArchitectureId) { }
+537286-
+537287-	// RVA: 0xF49E Offset: 0xF49E VA: 0xF49E
+537288-	private static bool TryResolveResourceBoxReward(BattleHexCellState cell, out int rewardGold, out string rewardId) { }
+537289-
+
+## TryClaimAdjacentSpecialHexRewards
+537257-	// RVA: 0x459B Offset: 0x459B VA: 0x459B
+537258-	private bool CommitOpenedHex(int playerId, BattleHexCellState cell, int eventAmount, bool consumeDebugForcedCard, bool claimAdjacentSpecialRewards, out BattleHexCellState openedCell) { }
+537259-
+537260-	// RVA: 0xF495 Offset: 0xF495 VA: 0xF495
+537261-	private void ResolveOpenedHexOutcome(int playerId, BattleHexCellState cell, bool debugForceNextBarracksCard, BattleSimulation.SelectedCard debugForcedCard) { }
+537262-
+537263-	// RVA: 0xF496 Offset: 0xF496 VA: 0xF496
+537264-	private bool TryClaimResourceBoxReward(int playerId, BattleHexCellState cell) { }
+537265-
+537266-	// RVA: 0xF497 Offset: 0xF497 VA: 0xF497
+537267:	private void TryClaimAdjacentSpecialHexRewards(int playerId, BattleHexCellState openedCell) { }
+537268-
+537269-	// RVA: 0xF498 Offset: 0xF498 VA: 0xF498
+537270-	private bool IsClaimableAdjacentSpecialHex(BattleHexCellState cell) { }
+537271-
+537272-	// RVA: 0xF499 Offset: 0xF499 VA: 0xF499
+537273-	private bool ClaimAdjacentSpecialHexReward(int playerId, BattleHexCellState cell) { }
+537274-
+537275-	// RVA: 0xF49A Offset: 0xF49A VA: 0xF49A
+537276-	private bool ClaimAdjacentResourceBoxReward(int playerId, BattleHexCellState cell) { }
+537277-
+537278-	// RVA: 0xF49B Offset: 0xF49B VA: 0xF49B
+537279-	private bool ClaimAdjacentSpecialSoldierReward(int playerId, BattleHexCellState cell) { }
+537280-
+537281-	// RVA: 0xF49C Offset: 0xF49C VA: 0xF49C
+537282-	private bool ClaimAdjacentGoldCardBuild(int playerId, BattleHexCellState cell) { }
+537283-
+537284-	// RVA: 0xF49D Offset: 0xF49D VA: 0xF49D
+537285-	private void OpenAdjacentSpecialHex(int playerId, BattleHexCellState cell, string eventArchitectureId) { }
+537286-
+537287-	// RVA: 0xF49E Offset: 0xF49E VA: 0xF49E
+537288-	private static bool TryResolveResourceBoxReward(BattleHexCellState cell, out int rewardGold, out string rewardId) { }
+537289-
+537290-	// RVA: 0xF49F Offset: 0xF49F VA: 0xF49F
+537291-	private static bool IsResourceBoxHex(BattleHexCellState cell) { }
+537292-
+537293-	// RVA: 0xF4A0 Offset: 0xF4A0 VA: 0xF4A0
+537294-	private static string NormalizeResourceBoxRewardId(string rawId) { }
+537295-
 
 ## TryGetOfflinePveEnemyOpenableHexStates
+58483-	// RVA: 0x2518 Offset: 0x2518 VA: 0x2518
+58484-	public static bool get_UseBattleCoreLockstepNavigation() { }
 58485-
 58486-	// RVA: 0x335D Offset: 0x335D VA: 0x335D
 58487-	public static bool get_IsApplyingAuthoritativeLockstepCommand() { }
@@ -88,8 +153,20 @@
 58509-
 58510-	// RVA: 0x8F28 Offset: 0x8F28 VA: 0x8F28
 58511-	public static bool IsBattleCorePlayerSideHex(int playerId, bool isEnemyHex) { }
+58512-
+58513-	// RVA: 0x8F29 Offset: 0x8F29 VA: 0x8F29
+58514-	public bool IsBattleCoreLocalPlayerSideHex(HexBehaviour hex) { }
+58515-
+58516-	// RVA: 0x8F2A Offset: 0x8F2A VA: 0x8F2A
+58517-	public void RecordMainTowerPresentationPosition(bool isEnemyTower, Vector3 position) { }
+58518-
+58519-	// RVA: 0x38CD Offset: 0x38CD VA: 0x38CD
+58520-	public Vector3 GetBattleCoreLocalPlayerMainTowerPosition() { }
+58521-
 
 ## CollectAuthoritativeOpenableEnemyHexes
+55831-	private void SendEmojis() { }
+55832-
 55833-	[AsyncStateMachine(typeof(AIBehaviourManager.<PlayerSendEmoji>d__123))]
 55834-	// RVA: 0x8DF2 Offset: 0x8DF2 VA: 0x8DF2
 55835-	private void PlayerSendEmoji(object o) { }
@@ -117,8 +194,20 @@
 55857-
 55858-	// RVA: 0x8DF9 Offset: 0x8DF9 VA: 0x8DF9
 55859-	private HexBehaviour TryOpenHex(List<HexBehaviour> preferredHexes, List<HexBehaviour> fallbackHexes, int hasCoin, bool unchartedPreferRandom = False, bool unchartedfallbackRandom = False) { }
+55860-
+55861-	// RVA: 0x8DFA Offset: 0x8DFA VA: 0x8DFA
+55862-	private static HexBehaviour FindAffordableAuthoritativeSpecialNearHex(IReadOnlyList<HexBehaviour> specialNearHexes, List<HexBehaviour> preferredHexes, List<HexBehaviour> fallbackHexes, int availableGold) { }
+55863-
+55864-	// RVA: 0x8DFB Offset: 0x8DFB VA: 0x8DFB
+55865-	public PropAttrSnapshot GetCurrentEnemyPropAttrSnapshot() { }
+55866-
+55867-	// RVA: 0x8DFC Offset: 0x8DFC VA: 0x8DFC
+55868-	public IReadOnlyList<EnemyPropBattleEntry> GetCurrentEnemyPropDataList() { }
+55869-
 
 ## ApplyBattleCoreAuthoritativeCellState
+47584-	// RVA: 0x88F9 Offset: 0x88F9 VA: 0x88F9
+47585-	private static GlobalInfo ResolveSceneOverlayGlobalInfo() { }
 47586-
 47587-	// RVA: 0x88FA Offset: 0x88FA VA: 0x88FA
 47588-	private static bool IsSceneOverlayUnCharted(string hexTypeText) { }
@@ -146,8 +235,20 @@
 47610-
 47611-	// RVA: 0x8900 Offset: 0x8900 VA: 0x8900
 47612-	private void RefreshBattleCoreAuthoritativeHexPromptPresentation() { }
+47613-
+47614-	// RVA: 0x8901 Offset: 0x8901 VA: 0x8901
+47615-	private bool ShouldShowBattleCoreAuthoritativeOpponentPrompt() { }
+47616-
+47617-	// RVA: 0x8902 Offset: 0x8902 VA: 0x8902
+47618-	private void RefreshBattleCoreAuthoritativeEnemyHexUI(bool shouldShowOpponentPrompt) { }
+47619-
+47620-	// RVA: 0x8903 Offset: 0x8903 VA: 0x8903
+47621-	private void CreateBattleCoreEnemyHexUIObj(bool active) { }
+47622-
 
 ## RefreshBattleCoreAuthoritativeCellPresentation
+47599-	// RVA: 0x88FD Offset: 0x88FD VA: 0x88FD
+47600-	private void SyncBattleCoreAuthoritativeHexMaterial(bool targetIsEnemyHex) { }
 47601-
 47602-	// RVA: 0x88FE Offset: 0x88FE VA: 0x88FE
 47603-	private void SyncBattleCoreAuthoritativeHexOwnershipLists(bool targetIsEnemyHex, bool targetIsOpened) { }
@@ -175,7 +276,19 @@
 47625-	private UniTaskVoid LoadBattleCoreEnemyHexUIResAndRefreshAsync() { }
 47626-
 47627-	// RVA: 0x253C Offset: 0x253C VA: 0x253C
+47628-	private bool IsBattleCoreAuthoritativePresentationVisible() { }
+47629-
+47630-	// RVA: 0x8905 Offset: 0x8905 VA: 0x8905
+47631-	private void HideBattleCoreAuthoritativeUiByVisibility() { }
+47632-
+47633-	// RVA: 0x8906 Offset: 0x8906 VA: 0x8906
+47634-	private void OnBecameVisible() { }
+47635-
+47636-	// RVA: 0x8907 Offset: 0x8907 VA: 0x8907
+47637-	private void OnBecameInvisible() { }
 --
+47706-	// RVA: 0x8915 Offset: 0x8915 VA: 0x8915
+47707-	private static bool ShouldBlockBattleCoreLegacySpecialHexOpenAuthority(string source) { }
 47708-
 47709-	// RVA: 0x8916 Offset: 0x8916 VA: 0x8916
 47710-	private static bool ShouldBlockBattleCoreLegacyArchitectureDeathHexAuthority(string source) { }
@@ -203,8 +316,20 @@
 47732-
 47733-	// RVA: 0x891E Offset: 0x891E VA: 0x891E
 47734-	private bool HasShowIconPresentation() { }
+47735-
+47736-	// RVA: 0x891F Offset: 0x891F VA: 0x891F
+47737-	private Quality ResolveBattleCorePresentationQuality() { }
+47738-
+47739-	// RVA: 0x8920 Offset: 0x8920 VA: 0x8920
+47740-	private bool IsBattleCoreAuthorityUnCharted() { }
+47741-
+47742-	// RVA: 0x8921 Offset: 0x8921 VA: 0x8921
+47743-	public HexBehaviour.HexPromptDisplayInfo GetCurrentPromptDisplayInfo() { }
+47744-
 
 ## RefreshBattleCoreAuthoritativeHexPromptPresentation
+47602-	// RVA: 0x88FE Offset: 0x88FE VA: 0x88FE
+47603-	private void SyncBattleCoreAuthoritativeHexOwnershipLists(bool targetIsEnemyHex, bool targetIsOpened) { }
 47604-
 47605-	// RVA: 0x2563 Offset: 0x2563 VA: 0x2563
 47606-	private void ClearBattleCoreAuthoritativeCellState() { }
@@ -232,170 +357,143 @@
 47628-	private bool IsBattleCoreAuthoritativePresentationVisible() { }
 47629-
 47630-	// RVA: 0x8905 Offset: 0x8905 VA: 0x8905
+47631-	private void HideBattleCoreAuthoritativeUiByVisibility() { }
+47632-
+47633-	// RVA: 0x8906 Offset: 0x8906 VA: 0x8906
+47634-	private void OnBecameVisible() { }
+47635-
+47636-	// RVA: 0x8907 Offset: 0x8907 VA: 0x8907
+47637-	private void OnBecameInvisible() { }
+47638-
+47639-	// RVA: 0x8908 Offset: 0x8908 VA: 0x8908
+47640-	private bool ShouldShowBattleCoreAuthoritativeLocalPrompt() { }
 
-## BattleHexCellState
-44874-
-44875-	// RVA: 0x87BE Offset: 0x87BE VA: 0x87BE Slot: 9
-44876-	public void OnReleased() { }
-44877-
-44878-	// RVA: 0x87BF Offset: 0x87BF VA: 0x87BF Slot: 10
-44879-	public bool HandleBattleCoreEvent(BattleCombatEvent combatEvent) { }
-44880-
-44881-	// RVA: 0x87C0 Offset: 0x87C0 VA: 0x87C0 Slot: 5
-44882:	public void ApplyHexState(BattleHexCellState state) { }
-44883-
-44884-	// RVA: 0x87C1 Offset: 0x87C1 VA: 0x87C1
-44885-	private void PlayHexOpenedPresentation(bool isEnemy) { }
-44886-
-44887-	// RVA: 0x87C2 Offset: 0x87C2 VA: 0x87C2
-44888-	public void .ctor() { }
-44889-}
-44890-
-44891-// Namespace: 
-44892-private struct BattleCoreLegacyProjectilePresentationUtility.BattleCoreProjectileImpactPresentationProfile // TypeDefIndex: 1190
-44893-{
-44894-	// Fields
-44895-	public readonly string EffectPath; // 0x0
-44896-	public readonly float BaseScale; // 0x4
-44897-	public readonly float RadiusScaleMultiplier; // 0x8
-44898-	public readonly float RecycleSeconds; // 0xC
-44899-	public readonly float RadiusRecycleSeconds; // 0x10
-44900-
---
-46149-
-46150-	// RVA: 0x88AC Offset: 0x88AC VA: 0x88AC
-46151-	public static BattleSetupConfig BuildFromCurrentScene(string setupId, string arenaId) { }
-46152-
-46153-	// RVA: 0x88AD Offset: 0x88AD VA: 0x88AD
-46154-	public static BattleInitialState BuildInitialStateFromCurrentScene(string setupId, string arenaId, ulong seed) { }
-46155-
-46156-	// RVA: 0x88AE Offset: 0x88AE VA: 0x88AE
-46157:	public static BattleHexCellState[] ExportCurrentSceneHexCellStatesForValidation() { }
-46158-
-46159-	// RVA: 0x88AF Offset: 0x88AF VA: 0x88AF
-46160-	private static BattleSetupHexCell[] ExportHexCells(BattleGameSceneManager manager) { }
-46161-
-46162-	// RVA: 0x88B0 Offset: 0x88B0 VA: 0x88B0
-46163-	private static BattleHexCoord[] ExportNeighbors(HexBehaviour hex) { }
-46164-
-46165-	// RVA: 0x88B1 Offset: 0x88B1 VA: 0x88B1
-46166-	private static BattleSetupUnit[] ExportUnits(BattleGameSceneManager manager) { }
-46167-
-46168-	// RVA: 0x88B2 Offset: 0x88B2 VA: 0x88B2
-46169-	public static bool TryExportUnit(RoleBehaviour role, out BattleSetupUnit unit) { }
-46170-
-46171-	// RVA: 0x88B3 Offset: 0x88B3 VA: 0x88B3
-46172-	private static bool TryExportUnit(RoleBehaviour role, int legacyRoleListOrder, out BattleSetupUnit unit) { }
-46173-
-46174-	// RVA: 0x88B4 Offset: 0x88B4 VA: 0x88B4
-46175-	private static int ResolveLegacyRoleListOrder(RoleBehaviour role) { }
---
-47586-
-47587-	// RVA: 0x88FA Offset: 0x88FA VA: 0x88FA
-47588-	private static bool IsSceneOverlayUnCharted(string hexTypeText) { }
-47589-
-47590-	// RVA: 0x88FB Offset: 0x88FB VA: 0x88FB
-47591-	public bool TryGetBattleCoreAuthorityContentHash(out ulong contentHash) { }
-47592-
-47593-	// RVA: 0x88FC Offset: 0x88FC VA: 0x88FC
-47594:	public void ApplyBattleCoreAuthoritativeCellState(BattleHexCellState cell) { }
-47595-
-47596-	// RVA: 0x2520 Offset: 0x2520 VA: 0x2520
-47597-	private Vector3 ResolveBattleCoreAuthorityWorldPosition(float y = 0) { }
-47598-
-47599-	// RVA: 0x88FD Offset: 0x88FD VA: 0x88FD
-47600-	private void SyncBattleCoreAuthoritativeHexMaterial(bool targetIsEnemyHex) { }
-47601-
-47602-	// RVA: 0x88FE Offset: 0x88FE VA: 0x88FE
-47603-	private void SyncBattleCoreAuthoritativeHexOwnershipLists(bool targetIsEnemyHex, bool targetIsOpened) { }
-47604-
-47605-	// RVA: 0x2563 Offset: 0x2563 VA: 0x2563
-47606-	private void ClearBattleCoreAuthoritativeCellState() { }
-47607-
-47608-	// RVA: 0x88FF Offset: 0x88FF VA: 0x88FF
-47609-	private void RefreshBattleCoreAuthoritativeCellPresentation() { }
-47610-
-47611-	// RVA: 0x8900 Offset: 0x8900 VA: 0x8900
-47612-	private void RefreshBattleCoreAuthoritativeHexPromptPresentation() { }
---
-47647-
-47648-	// RVA: 0x890B Offset: 0x890B VA: 0x890B
-47649-	private bool ShouldShowPriceUIPresentation() { }
-47650-
-47651-	// RVA: 0x890C Offset: 0x890C VA: 0x890C
-47652-	private void SyncBattleCoreAuthoritativePresentationFields() { }
-47653-
-47654-	// RVA: 0x890D Offset: 0x890D VA: 0x890D
-47655:	private void ReconcileBattleCoreSpecialHexPresentation(BattleHexCellState cell) { }
-47656-
-47657-	// RVA: 0x890E Offset: 0x890E VA: 0x890E
-47658-	private static bool TryResolveBattleCoreSpecialHexType(string hexType, out SpecialHexType specialType) { }
-47659-
-47660-	// RVA: 0x890F Offset: 0x890F VA: 0x890F
-47661-	private void ClearBattleCoreSpecialHexPresentation() { }
-47662-
-47663-	// RVA: 0x8910 Offset: 0x8910 VA: 0x8910
-47664-	private bool TryDeferBattleCoreResourceBoxClearForRewardPresentation() { }
-47665-
-47666-	// RVA: 0x8911 Offset: 0x8911 VA: 0x8911
-47667-	private void DestroyBattleCoreSpecialHexObjects() { }
-47668-
-47669-	// RVA: 0x2596 Offset: 0x2596 VA: 0x2596
-47670-	private void InvalidateLegacySpecialHexPresentationRequests() { }
-47671-
-47672-	// RVA: 0x8912 Offset: 0x8912 VA: 0x8912
-47673-	private static void DestroyBattleCoreSpecialObject(GameObject obj) { }
---
-55833-	[AsyncStateMachine(typeof(AIBehaviourManager.<PlayerSendEmoji>d__123))]
-55834-	// RVA: 0x8DF2 Offset: 0x8DF2 VA: 0x8DF2
-55835-	private void PlayerSendEmoji(object o) { }
-55836-
-55837-	// RVA: 0x8DF3 Offset: 0x8DF3 VA: 0x8DF3
-55838-	private void EnemyOpenHex(bool isHard) { }
-55839-
-55840-	// RVA: 0x8DF4 Offset: 0x8DF4 VA: 0x8DF4
-55841:	private static void CollectAuthoritativeOpenableEnemyHexes(IReadOnlyList<HexBehaviour> sceneEnemyHexes, BattleHexCellState[] authoritativeOpenableHexes, List<HexBehaviour> result) { }
-55842-
-55843-	// RVA: 0x8DF5 Offset: 0x8DF5 VA: 0x8DF5
-55844-	private void Development(bool isHard, List<HexBehaviour> resourcesHex, List<HexBehaviour> unchartedHex, List<HexBehaviour> barracksHex, List<HexBehaviour> enemyCanOpenObj) { }
-55845-
-55846-	// RVA: 0x8DF6 Offset: 0x8DF6 VA: 0x8DF6
-55847-	private void Gambling(bool isHard, List<HexBehaviour> resourcesHex, List<HexBehaviour> unchartedHex, List<HexBehaviour> barracksHex, List<HexBehaviour> enemyCanOpenObj) { }
-55848-
-55849-	// RVA: 0x8DF7 Offset: 0x8DF7 VA: 0x8DF7
-55850-	private void Offense(bool isHard, List<HexBehaviour> resourcesHex, List<HexBehaviour> unchartedHex, List<HexBehaviour> barracksHex, List<HexBehaviour> enemyCanOpenObj) { }
-55851-
-55852-	// RVA: 0x8DF8 Offset: 0x8DF8 VA: 0x8DF8
-55853-	private void TrySubmitOrOpenEnemyHex(HexBehaviour hex, bool isHard) { }
-55854-
-55855-	// RVA: 0x334B Offset: 0x334B VA: 0x334B
-55856-	private static bool ShouldSuppressDeletedEnemyAutomationForBattleCoreReadOnly() { }
-55857-
-55858-	// RVA: 0x8DF9 Offset: 0x8DF9 VA: 0x8DF9
-55859-	private HexBehaviour TryOpenHex(List<HexBehaviour> preferredHexes, List<HexBehaviour> fallbackHexes, int hasCoin, bool unchartedPreferRandom = False, bool unchartedfallbackRandom = False) { }
---
-58196-	private const string OfflinePveApplicationPauseSource = "BattleGameSceneManager.ApplicationPause";
-58197-	private const string OfflinePveApplicationFocusSource = "BattleGameSceneManager.ApplicationFocus";
-58198-	private const int BattleCoreMissingUnitViewQueueInitialCapacity = 2048;
-58199-	private const int BattleCoreRolePrefabCacheInitialCapacity = 64;
-58200-	private GameObject _destroyObjRoot; // 0x40
-58201-	private readonly Dictionary<BattleGameSceneManager.RoleTargetFrameCacheKey, BattleGameSceneManager.RoleTargetFrameCacheValue> _roleTargetFrameCache; // 0x44
-58202-	private int _roleTargetFrameCacheFrame; // 0x48
-58203-	private readonly Dictionary<int, BattlePlayerEconomyState> _battleCoreEconomyStatesByPlayer; // 0x4C
-58204:	private readonly List<BattleHexCellState> _battleCoreHexCellSnapshotScratch; // 0x50
-58205:	private readonly Dictionary<BattleHexCoord, BattleHexCellState> _battleCoreHexCellByCoordScratch; // 0x54
-58206-	private bool _battleCoreCoinStatisticsInitialized; // 0x58
-58207-	private int _battleCoreInitialCoin; // 0x5C
-58208-	public List<GameObject> allPlayerStayOpenHexObj; // 0x60
-58209-	public List<GameObject> allEnemyStayOpenHexObj; // 0x64
-58210-	public List<HexBehaviour> allEnemyStayOpenHexObjBehaviours; // 0x68
-58211-	public List<GameObject> allHexObj; // 0x6C
-58212-	public List<HexBehaviour> allHexObjBehaviour; // 0x70
-58213-	public List<MeshRenderer> allHexObjMat; // 0x74
-58214-	public List<GameObject> allPlayerHasOpenHexObj; // 0x78
-58215-	public List<GameObject> allEnemyHasOpenHexObj; // 0x7C
+## RefreshBattleCoreAuthoritativeCellPresentationAfterBatch
+47706-	// RVA: 0x8915 Offset: 0x8915 VA: 0x8915
+47707-	private static bool ShouldBlockBattleCoreLegacySpecialHexOpenAuthority(string source) { }
+47708-
+47709-	// RVA: 0x8916 Offset: 0x8916 VA: 0x8916
+47710-	private static bool ShouldBlockBattleCoreLegacyArchitectureDeathHexAuthority(string source) { }
+47711-
+47712-	// RVA: 0x8917 Offset: 0x8917 VA: 0x8917
+47713-	private bool ShouldBlockBattleCoreLegacyHexCampMutation() { }
+47714-
+47715-	// RVA: 0x8918 Offset: 0x8918 VA: 0x8918
+47716:	public void RefreshBattleCoreAuthoritativeCellPresentationAfterBatch() { }
+47717-
+47718-	// RVA: 0x8919 Offset: 0x8919 VA: 0x8919
+47719-	internal static void MarkBattleCoreAuthoritativeVisibilityRefreshDirty() { }
+47720-
+47721-	// RVA: 0x891A Offset: 0x891A VA: 0x891A
+47722-	internal static void FlushBattleCoreAuthoritativeVisibilityRefreshBudgeted(int budget = 32) { }
+47723-
+47724-	// RVA: 0x891B Offset: 0x891B VA: 0x891B
+47725-	private void RegisterBattleCoreVisibilityDeferredRefresh() { }
+47726-
+47727-	// RVA: 0x891C Offset: 0x891C VA: 0x891C
+47728-	private void UnregisterBattleCoreVisibilityDeferredRefresh() { }
+47729-
+47730-	// RVA: 0x891D Offset: 0x891D VA: 0x891D
+47731-	private static void RemoveBattleCoreVisibilityDeferredHexAt(int index) { }
+47732-
+47733-	// RVA: 0x891E Offset: 0x891E VA: 0x891E
+47734-	private bool HasShowIconPresentation() { }
+47735-
+47736-	// RVA: 0x891F Offset: 0x891F VA: 0x891F
+47737-	private Quality ResolveBattleCorePresentationQuality() { }
+47738-
+47739-	// RVA: 0x8920 Offset: 0x8920 VA: 0x8920
+47740-	private bool IsBattleCoreAuthorityUnCharted() { }
+47741-
+47742-	// RVA: 0x8921 Offset: 0x8921 VA: 0x8921
+47743-	public HexBehaviour.HexPromptDisplayInfo GetCurrentPromptDisplayInfo() { }
+47744-
+
+## MarkBattleCoreAuthoritativeVisibilityRefreshDirty
+47709-	// RVA: 0x8916 Offset: 0x8916 VA: 0x8916
+47710-	private static bool ShouldBlockBattleCoreLegacyArchitectureDeathHexAuthority(string source) { }
+47711-
+47712-	// RVA: 0x8917 Offset: 0x8917 VA: 0x8917
+47713-	private bool ShouldBlockBattleCoreLegacyHexCampMutation() { }
+47714-
+47715-	// RVA: 0x8918 Offset: 0x8918 VA: 0x8918
+47716-	public void RefreshBattleCoreAuthoritativeCellPresentationAfterBatch() { }
+47717-
+47718-	// RVA: 0x8919 Offset: 0x8919 VA: 0x8919
+47719:	internal static void MarkBattleCoreAuthoritativeVisibilityRefreshDirty() { }
+47720-
+47721-	// RVA: 0x891A Offset: 0x891A VA: 0x891A
+47722-	internal static void FlushBattleCoreAuthoritativeVisibilityRefreshBudgeted(int budget = 32) { }
+47723-
+47724-	// RVA: 0x891B Offset: 0x891B VA: 0x891B
+47725-	private void RegisterBattleCoreVisibilityDeferredRefresh() { }
+47726-
+47727-	// RVA: 0x891C Offset: 0x891C VA: 0x891C
+47728-	private void UnregisterBattleCoreVisibilityDeferredRefresh() { }
+47729-
+47730-	// RVA: 0x891D Offset: 0x891D VA: 0x891D
+47731-	private static void RemoveBattleCoreVisibilityDeferredHexAt(int index) { }
+47732-
+47733-	// RVA: 0x891E Offset: 0x891E VA: 0x891E
+47734-	private bool HasShowIconPresentation() { }
+47735-
+47736-	// RVA: 0x891F Offset: 0x891F VA: 0x891F
+47737-	private Quality ResolveBattleCorePresentationQuality() { }
+47738-
+47739-	// RVA: 0x8920 Offset: 0x8920 VA: 0x8920
+47740-	private bool IsBattleCoreAuthorityUnCharted() { }
+47741-
+47742-	// RVA: 0x8921 Offset: 0x8921 VA: 0x8921
+47743-	public HexBehaviour.HexPromptDisplayInfo GetCurrentPromptDisplayInfo() { }
+47744-
+47745-	// RVA: 0x8922 Offset: 0x8922 VA: 0x8922
+47746-	public HexBehaviour.HexPromptVisibilityInfo GetCurrentPromptVisibilityInfo() { }
+47747-
+
+## FlushBattleCoreAuthoritativeVisibilityRefreshBudgeted
+47712-	// RVA: 0x8917 Offset: 0x8917 VA: 0x8917
+47713-	private bool ShouldBlockBattleCoreLegacyHexCampMutation() { }
+47714-
+47715-	// RVA: 0x8918 Offset: 0x8918 VA: 0x8918
+47716-	public void RefreshBattleCoreAuthoritativeCellPresentationAfterBatch() { }
+47717-
+47718-	// RVA: 0x8919 Offset: 0x8919 VA: 0x8919
+47719-	internal static void MarkBattleCoreAuthoritativeVisibilityRefreshDirty() { }
+47720-
+47721-	// RVA: 0x891A Offset: 0x891A VA: 0x891A
+47722:	internal static void FlushBattleCoreAuthoritativeVisibilityRefreshBudgeted(int budget = 32) { }
+47723-
+47724-	// RVA: 0x891B Offset: 0x891B VA: 0x891B
+47725-	private void RegisterBattleCoreVisibilityDeferredRefresh() { }
+47726-
+47727-	// RVA: 0x891C Offset: 0x891C VA: 0x891C
+47728-	private void UnregisterBattleCoreVisibilityDeferredRefresh() { }
+47729-
+47730-	// RVA: 0x891D Offset: 0x891D VA: 0x891D
+47731-	private static void RemoveBattleCoreVisibilityDeferredHexAt(int index) { }
+47732-
+47733-	// RVA: 0x891E Offset: 0x891E VA: 0x891E
+47734-	private bool HasShowIconPresentation() { }
+47735-
+47736-	// RVA: 0x891F Offset: 0x891F VA: 0x891F
+47737-	private Quality ResolveBattleCorePresentationQuality() { }
+47738-
+47739-	// RVA: 0x8920 Offset: 0x8920 VA: 0x8920
+47740-	private bool IsBattleCoreAuthorityUnCharted() { }
+47741-
+47742-	// RVA: 0x8921 Offset: 0x8921 VA: 0x8921
+47743-	public HexBehaviour.HexPromptDisplayInfo GetCurrentPromptDisplayInfo() { }
+47744-
+47745-	// RVA: 0x8922 Offset: 0x8922 VA: 0x8922
+47746-	public HexBehaviour.HexPromptVisibilityInfo GetCurrentPromptVisibilityInfo() { }
+47747-
+47748-	// RVA: 0x8923 Offset: 0x8923 VA: 0x8923
+47749-	private bool IsGoldMineHexPromptTarget() { }
+47750-
 
 ## GetHexOpenBlockReason
+536648-	// RVA: 0xF412 Offset: 0xF412 VA: 0xF412
+536649-	public BattleHexCellState[] GetHexCellsSnapshot() { }
 536650-
 536651-	// RVA: 0xF413 Offset: 0xF413 VA: 0xF413
 536652-	public void CopyHexCellsSnapshot(List<BattleHexCellState> buffer) { }
@@ -426,4 +524,256 @@
 536677-
 536678-	// RVA: 0x4466 Offset: 0x4466 VA: 0x4466
 536679-	private BattlePlayerInput[] SortAndValidateInputs(BattlePlayerInput[] inputs) { }
+536680-
+536681-	// RVA: 0xF41A Offset: 0xF41A VA: 0xF41A
+536682-	private BattleCommand[] SortAndValidateCommands(BattleCommand[] commands) { }
+536683-
+536684-	// RVA: 0x446D Offset: 0x446D VA: 0x446D
+536685-	private bool ApplyCommandInputs(BattlePlayerInput[] inputs) { }
+536686-
+536687-	// RVA: 0xF41B Offset: 0xF41B VA: 0xF41B
+536688-	private static bool CommandMayMutateUnitSpatialState(BattleCommandType type) { }
+536689-
+
+## BattleHexCellState
+44872-	// RVA: 0x87BD Offset: 0x87BD VA: 0x87BD Slot: 8
+44873-	public void OnRegistered(BattleCoreViewRegistry registry) { }
+44874-
+44875-	// RVA: 0x87BE Offset: 0x87BE VA: 0x87BE Slot: 9
+44876-	public void OnReleased() { }
+44877-
+44878-	// RVA: 0x87BF Offset: 0x87BF VA: 0x87BF Slot: 10
+44879-	public bool HandleBattleCoreEvent(BattleCombatEvent combatEvent) { }
+44880-
+44881-	// RVA: 0x87C0 Offset: 0x87C0 VA: 0x87C0 Slot: 5
+44882:	public void ApplyHexState(BattleHexCellState state) { }
+44883-
+44884-	// RVA: 0x87C1 Offset: 0x87C1 VA: 0x87C1
+44885-	private void PlayHexOpenedPresentation(bool isEnemy) { }
+44886-
+44887-	// RVA: 0x87C2 Offset: 0x87C2 VA: 0x87C2
+44888-	public void .ctor() { }
+44889-}
+44890-
+44891-// Namespace: 
+44892-private struct BattleCoreLegacyProjectilePresentationUtility.BattleCoreProjectileImpactPresentationProfile // TypeDefIndex: 1190
+44893-{
+44894-	// Fields
+44895-	public readonly string EffectPath; // 0x0
+44896-	public readonly float BaseScale; // 0x4
+44897-	public readonly float RadiusScaleMultiplier; // 0x8
+44898-	public readonly float RecycleSeconds; // 0xC
+44899-	public readonly float RadiusRecycleSeconds; // 0x10
+44900-
+44901-	// Methods
+44902-
+44903-	// RVA: 0x87DE Offset: 0x87DE VA: 0x87DE
+44904-	public void .ctor(string effectPath, float baseScale, float radiusScaleMultiplier, float recycleSeconds, float radiusRecycleSeconds) { }
+44905-}
+44906-
+44907-// Namespace: GameModule
+44908-internal static class BattleCoreLegacyProjectilePresentationUtility // TypeDefIndex: 1191
+44909-{
+44910-	// Fields
+--
+46147-{
+46148-	// Methods
+46149-
+46150-	// RVA: 0x88AC Offset: 0x88AC VA: 0x88AC
+46151-	public static BattleSetupConfig BuildFromCurrentScene(string setupId, string arenaId) { }
+46152-
+46153-	// RVA: 0x88AD Offset: 0x88AD VA: 0x88AD
+46154-	public static BattleInitialState BuildInitialStateFromCurrentScene(string setupId, string arenaId, ulong seed) { }
+46155-
+46156-	// RVA: 0x88AE Offset: 0x88AE VA: 0x88AE
+46157:	public static BattleHexCellState[] ExportCurrentSceneHexCellStatesForValidation() { }
+46158-
+46159-	// RVA: 0x88AF Offset: 0x88AF VA: 0x88AF
+46160-	private static BattleSetupHexCell[] ExportHexCells(BattleGameSceneManager manager) { }
+46161-
+46162-	// RVA: 0x88B0 Offset: 0x88B0 VA: 0x88B0
+46163-	private static BattleHexCoord[] ExportNeighbors(HexBehaviour hex) { }
+46164-
+46165-	// RVA: 0x88B1 Offset: 0x88B1 VA: 0x88B1
+46166-	private static BattleSetupUnit[] ExportUnits(BattleGameSceneManager manager) { }
+46167-
+46168-	// RVA: 0x88B2 Offset: 0x88B2 VA: 0x88B2
+46169-	public static bool TryExportUnit(RoleBehaviour role, out BattleSetupUnit unit) { }
+46170-
+46171-	// RVA: 0x88B3 Offset: 0x88B3 VA: 0x88B3
+46172-	private static bool TryExportUnit(RoleBehaviour role, int legacyRoleListOrder, out BattleSetupUnit unit) { }
+46173-
+46174-	// RVA: 0x88B4 Offset: 0x88B4 VA: 0x88B4
+46175-	private static int ResolveLegacyRoleListOrder(RoleBehaviour role) { }
+46176-
+46177-	// RVA: 0x88B5 Offset: 0x88B5 VA: 0x88B5
+46178-	private static ulong BuildHexContentHash(HexBehaviour hex, BattleSetupHexCell cell) { }
+46179-}
+46180-
+46181-// Namespace: GameModule
+46182-public enum MapType // TypeDefIndex: 1214
+46183-{
+46184-	// Fields
+46185-	public int value__; // 0x0
+--
+47584-	// RVA: 0x88F9 Offset: 0x88F9 VA: 0x88F9
+47585-	private static GlobalInfo ResolveSceneOverlayGlobalInfo() { }
+47586-
+47587-	// RVA: 0x88FA Offset: 0x88FA VA: 0x88FA
+47588-	private static bool IsSceneOverlayUnCharted(string hexTypeText) { }
+47589-
+47590-	// RVA: 0x88FB Offset: 0x88FB VA: 0x88FB
+47591-	public bool TryGetBattleCoreAuthorityContentHash(out ulong contentHash) { }
+47592-
+47593-	// RVA: 0x88FC Offset: 0x88FC VA: 0x88FC
+47594:	public void ApplyBattleCoreAuthoritativeCellState(BattleHexCellState cell) { }
+47595-
+47596-	// RVA: 0x2520 Offset: 0x2520 VA: 0x2520
+47597-	private Vector3 ResolveBattleCoreAuthorityWorldPosition(float y = 0) { }
+47598-
+47599-	// RVA: 0x88FD Offset: 0x88FD VA: 0x88FD
+47600-	private void SyncBattleCoreAuthoritativeHexMaterial(bool targetIsEnemyHex) { }
+47601-
+47602-	// RVA: 0x88FE Offset: 0x88FE VA: 0x88FE
+47603-	private void SyncBattleCoreAuthoritativeHexOwnershipLists(bool targetIsEnemyHex, bool targetIsOpened) { }
+47604-
+47605-	// RVA: 0x2563 Offset: 0x2563 VA: 0x2563
+47606-	private void ClearBattleCoreAuthoritativeCellState() { }
+47607-
+47608-	// RVA: 0x88FF Offset: 0x88FF VA: 0x88FF
+47609-	private void RefreshBattleCoreAuthoritativeCellPresentation() { }
+47610-
+47611-	// RVA: 0x8900 Offset: 0x8900 VA: 0x8900
+47612-	private void RefreshBattleCoreAuthoritativeHexPromptPresentation() { }
+47613-
+47614-	// RVA: 0x8901 Offset: 0x8901 VA: 0x8901
+47615-	private bool ShouldShowBattleCoreAuthoritativeOpponentPrompt() { }
+47616-
+47617-	// RVA: 0x8902 Offset: 0x8902 VA: 0x8902
+47618-	private void RefreshBattleCoreAuthoritativeEnemyHexUI(bool shouldShowOpponentPrompt) { }
+47619-
+47620-	// RVA: 0x8903 Offset: 0x8903 VA: 0x8903
+47621-	private void CreateBattleCoreEnemyHexUIObj(bool active) { }
+47622-
+--
+47645-	// RVA: 0x890A Offset: 0x890A VA: 0x890A
+47646-	private bool ShouldUseBattleCoreAuthoritativeHexUIRefresh() { }
+47647-
+47648-	// RVA: 0x890B Offset: 0x890B VA: 0x890B
+47649-	private bool ShouldShowPriceUIPresentation() { }
+47650-
+47651-	// RVA: 0x890C Offset: 0x890C VA: 0x890C
+47652-	private void SyncBattleCoreAuthoritativePresentationFields() { }
+47653-
+47654-	// RVA: 0x890D Offset: 0x890D VA: 0x890D
+47655:	private void ReconcileBattleCoreSpecialHexPresentation(BattleHexCellState cell) { }
+47656-
+47657-	// RVA: 0x890E Offset: 0x890E VA: 0x890E
+47658-	private static bool TryResolveBattleCoreSpecialHexType(string hexType, out SpecialHexType specialType) { }
+47659-
+47660-	// RVA: 0x890F Offset: 0x890F VA: 0x890F
+47661-	private void ClearBattleCoreSpecialHexPresentation() { }
+47662-
+47663-	// RVA: 0x8910 Offset: 0x8910 VA: 0x8910
+47664-	private bool TryDeferBattleCoreResourceBoxClearForRewardPresentation() { }
+47665-
+47666-	// RVA: 0x8911 Offset: 0x8911 VA: 0x8911
+47667-	private void DestroyBattleCoreSpecialHexObjects() { }
+47668-
+47669-	// RVA: 0x2596 Offset: 0x2596 VA: 0x2596
+47670-	private void InvalidateLegacySpecialHexPresentationRequests() { }
+47671-
+47672-	// RVA: 0x8912 Offset: 0x8912 VA: 0x8912
+47673-	private static void DestroyBattleCoreSpecialObject(GameObject obj) { }
+47674-
+47675-	[AsyncStateMachine(typeof(HexBehaviour.<CreateBattleCoreSpecialHexPresentationAsync>d__121))]
+47676-	// RVA: 0x8913 Offset: 0x8913 VA: 0x8913
+47677-	private void CreateBattleCoreSpecialHexPresentationAsync(SpecialHexType specialType, string architectureId, ulong contentHash, string signature, int requestVersion) { }
+47678-
+47679-	// RVA: 0x2539 Offset: 0x2539 VA: 0x2539
+47680-	private bool IsBattleCoreSpecialPresentationRequestCurrent(string signature, int requestVersion, SpecialHexType specialType) { }
+47681-
+47682-	// RVA: 0x2536 Offset: 0x2536 VA: 0x2536
+47683-	private static CouncilBoxType ResolveBattleCoreResourceBoxType(string rewardId, ulong contentHash) { }
+--
+55831-	private void SendEmojis() { }
+55832-
+55833-	[AsyncStateMachine(typeof(AIBehaviourManager.<PlayerSendEmoji>d__123))]
+55834-	// RVA: 0x8DF2 Offset: 0x8DF2 VA: 0x8DF2
+55835-	private void PlayerSendEmoji(object o) { }
+55836-
+55837-	// RVA: 0x8DF3 Offset: 0x8DF3 VA: 0x8DF3
+55838-	private void EnemyOpenHex(bool isHard) { }
+55839-
+55840-	// RVA: 0x8DF4 Offset: 0x8DF4 VA: 0x8DF4
+55841:	private static void CollectAuthoritativeOpenableEnemyHexes(IReadOnlyList<HexBehaviour> sceneEnemyHexes, BattleHexCellState[] authoritativeOpenableHexes, List<HexBehaviour> result) { }
+55842-
+55843-	// RVA: 0x8DF5 Offset: 0x8DF5 VA: 0x8DF5
+55844-	private void Development(bool isHard, List<HexBehaviour> resourcesHex, List<HexBehaviour> unchartedHex, List<HexBehaviour> barracksHex, List<HexBehaviour> enemyCanOpenObj) { }
+55845-
+55846-	// RVA: 0x8DF6 Offset: 0x8DF6 VA: 0x8DF6
+55847-	private void Gambling(bool isHard, List<HexBehaviour> resourcesHex, List<HexBehaviour> unchartedHex, List<HexBehaviour> barracksHex, List<HexBehaviour> enemyCanOpenObj) { }
+55848-
+55849-	// RVA: 0x8DF7 Offset: 0x8DF7 VA: 0x8DF7
+55850-	private void Offense(bool isHard, List<HexBehaviour> resourcesHex, List<HexBehaviour> unchartedHex, List<HexBehaviour> barracksHex, List<HexBehaviour> enemyCanOpenObj) { }
+55851-
+55852-	// RVA: 0x8DF8 Offset: 0x8DF8 VA: 0x8DF8
+55853-	private void TrySubmitOrOpenEnemyHex(HexBehaviour hex, bool isHard) { }
+55854-
+55855-	// RVA: 0x334B Offset: 0x334B VA: 0x334B
+55856-	private static bool ShouldSuppressDeletedEnemyAutomationForBattleCoreReadOnly() { }
+55857-
+55858-	// RVA: 0x8DF9 Offset: 0x8DF9 VA: 0x8DF9
+55859-	private HexBehaviour TryOpenHex(List<HexBehaviour> preferredHexes, List<HexBehaviour> fallbackHexes, int hasCoin, bool unchartedPreferRandom = False, bool unchartedfallbackRandom = False) { }
+55860-
+55861-	// RVA: 0x8DFA Offset: 0x8DFA VA: 0x8DFA
+55862-	private static HexBehaviour FindAffordableAuthoritativeSpecialNearHex(IReadOnlyList<HexBehaviour> specialNearHexes, List<HexBehaviour> preferredHexes, List<HexBehaviour> fallbackHexes, int availableGold) { }
+55863-
+55864-	// RVA: 0x8DFB Offset: 0x8DFB VA: 0x8DFB
+55865-	public PropAttrSnapshot GetCurrentEnemyPropAttrSnapshot() { }
+55866-
+55867-	// RVA: 0x8DFC Offset: 0x8DFC VA: 0x8DFC
+55868-	public IReadOnlyList<EnemyPropBattleEntry> GetCurrentEnemyPropDataList() { }
+55869-
+--
+58194-	private const float BattleCoreAuthoritativeFrameTimeoutSeconds = 8;
+58195-	private const float OnlinePvpPlayerLoopSuspensionThresholdSeconds = 1;
+58196-	private const string OfflinePveApplicationPauseSource = "BattleGameSceneManager.ApplicationPause";
+58197-	private const string OfflinePveApplicationFocusSource = "BattleGameSceneManager.ApplicationFocus";
+58198-	private const int BattleCoreMissingUnitViewQueueInitialCapacity = 2048;
+58199-	private const int BattleCoreRolePrefabCacheInitialCapacity = 64;
+58200-	private GameObject _destroyObjRoot; // 0x40
+58201-	private readonly Dictionary<BattleGameSceneManager.RoleTargetFrameCacheKey, BattleGameSceneManager.RoleTargetFrameCacheValue> _roleTargetFrameCache; // 0x44
+58202-	private int _roleTargetFrameCacheFrame; // 0x48
+58203-	private readonly Dictionary<int, BattlePlayerEconomyState> _battleCoreEconomyStatesByPlayer; // 0x4C
+58204:	private readonly List<BattleHexCellState> _battleCoreHexCellSnapshotScratch; // 0x50
+58205:	private readonly Dictionary<BattleHexCoord, BattleHexCellState> _battleCoreHexCellByCoordScratch; // 0x54
+58206-	private bool _battleCoreCoinStatisticsInitialized; // 0x58
+58207-	private int _battleCoreInitialCoin; // 0x5C
+58208-	public List<GameObject> allPlayerStayOpenHexObj; // 0x60
+58209-	public List<GameObject> allEnemyStayOpenHexObj; // 0x64
+58210-	public List<HexBehaviour> allEnemyStayOpenHexObjBehaviours; // 0x68
+58211-	public List<GameObject> allHexObj; // 0x6C
+58212-	public List<HexBehaviour> allHexObjBehaviour; // 0x70
+58213-	public List<MeshRenderer> allHexObjMat; // 0x74
+58214-	public List<GameObject> allPlayerHasOpenHexObj; // 0x78
+58215-	public List<GameObject> allEnemyHasOpenHexObj; // 0x7C
+58216-	public List<GameObject> allPlayerArchitectureObj; // 0x80
+58217-	public List<GameObject> allEnemyArchitectureObj; // 0x84
+58218-	public List<GameObject> allPlayerRoleObj; // 0x88
+58219-	public List<GameObject> allEnemyRoleObj; // 0x8C
+58220-	public List<RoleBehaviour> allEnemyRoleBehaviour; // 0x90
+58221-	public List<RoleBehaviour> allPlayerRoleBehaviour; // 0x94
+58222-	public List<RoleBehaviour> allRoleBehaviour; // 0x98
+58223-	private readonly List<RoleBehaviour> _battleCorePresentationActiveRoles; // 0x9C
+58224-	private int _battleCorePresentationTickCursor; // 0xA0
+58225-	public List<ArchitectureBehaviour> allArchitectureBehaviours; // 0xA4
+58226-	public List<ArchitectureBehaviour> allPlayerArchitectureBehaviours; // 0xA8
+58227-	public List<ArchitectureBehaviour> allEnemyArchitectureBehaviours; // 0xAC
+58228-	private GameObject _waterPlane; // 0xB0
+58229-	private GameObject _groundPlane; // 0xB4
+58230-	private List<GameObject> needDestroyPoolPrefabOnEndGame; // 0xB8
+58231-	private GameObject _playerArchitectureRoot; // 0xBC
+58232-	private GameObject _enemyArchitectureRoot; // 0xC0
+58233-	private GameObject _playerRoleRoot; // 0xC4
 

@@ -1,0 +1,6 @@
+# Source and validation
+research/archive/2026-09-03/unpacked/_wasmcode_/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br
+63c975b04a35b32e292143ae4dbc95067423d46a31a22e5646c4ade909a527e2  research/archive/2026-09-03/unpacked/_wasmcode_/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br
+decompressed_size=38009451
+52b679d02a884ce14782dd4fadf06e610b39d79070dcd41699f6cc0522aec19e  /tmp/current.webgl.wasm
+target_wat_size=0
