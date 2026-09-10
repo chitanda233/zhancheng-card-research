@@ -1,4 +1,4 @@
-"""Create a tracked integrity manifest for ignored local research archives."""
+"""Create a tracked integrity manifest for the committed research snapshot archive."""
 import hashlib
 import json
 from datetime import datetime, timezone
@@ -26,10 +26,10 @@ for snapshot in sorted(p for p in ARCHIVE_ROOT.iterdir() if p.is_dir()):
     })
 
 OUTPUT.write_text(json.dumps({
-    'title': '占城大师本地研究归档完整性清单',
+    'title': '占城大师研究快照完整性清单',
     'generatedAt': datetime.now(timezone.utc).isoformat(timespec='seconds'),
     'archiveRoot': 'research/archive',
-    'note': '归档实体被Git忽略；本清单用于验证本地备份是否完整。',
+    'note': '当前研究快照与 canonical 逆向产物已纳入 Git；本清单用于验证归档字节完整性。',
     'snapshots': snapshots,
 }, ensure_ascii=False, indent=2), encoding='utf-8')
 
