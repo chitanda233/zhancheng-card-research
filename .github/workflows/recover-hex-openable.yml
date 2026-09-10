@@ -19,13 +19,13 @@ jobs:
 
       - name: Install WABT
         run: |
-          if ! command -v wasm-objdump >/dev/null 2>&1; then
+          if ! command -v wasm2wat >/dev/null 2>&1; then
             sudo apt-get update -qq
             sudo apt-get install -y wabt
           fi
-          wasm-objdump --version || true
+          wasm2wat --version || true
 
-      - name: Recover candidate functions and metadata context
+      - name: Recover element-table mappings and target function bodies
         shell: bash
         run: |
           set -euo pipefail
@@ -38,29 +38,137 @@ jobs:
             echo '# Target method contexts from dump.cs'
             echo
             for pat in \
-              'BattleSimulation.OpenHex' \
               'CommitOpenedHex' \
               'ResolveOpenedHexOutcome' \
+              'TryClaimAdjacentSpecialHexRewards' \
               'TryGetOfflinePveEnemyOpenableHexStates' \
               'CollectAuthoritativeOpenableEnemyHexes' \
               'ApplyBattleCoreAuthoritativeCellState' \
               'RefreshBattleCoreAuthoritativeCellPresentation' \
               'RefreshBattleCoreAuthoritativeHexPromptPresentation' \
+              'RefreshBattleCoreAuthoritativeCellPresentationAfterBatch' \
+              'MarkBattleCoreAuthoritativeVisibilityRefreshDirty' \
+              'FlushBattleCoreAuthoritativeVisibilityRefreshBudgeted' \
               'BattleHexCellState' \
               'GetHexOpenBlockReason'; do
               echo "## $pat"
-              grep -n -F -B 8 -A 18 "$pat" "$DUMP" | head -n 160 || true
+              grep -n -F -B 10 -A 24 "$pat" "$DUMP" | head -n 220 || true
               echo
             done
           } > "$OUT/dump-method-contexts.txt"
 
-          {
-            echo '# Existing reverse-extraction provenance hits'
-            grep -R -n -E 'func-25409|f495|CommitOpenedHex|ResolveOpenedHexOutcome' \
-              scripts tools outputs research/archive/2026-09-03/reverse-engineering \
-              --exclude='dump.cs' --exclude='*.wasm.br' --exclude='*.wasm' 2>/dev/null | head -n 1000 || true
-          } > "$OUT/provenance-hits.txt"
+          cat > /tmp/map_elem.py <<'PY'
+          import sys, struct
+          src, out = sys.argv[1:3]
+          data = open(src,'rb').read()
+          assert data[:4] == b'\0asm'
+          p = 8
+          def uleb(buf, pos):
+              v=0; s=0
+              while True:
+                  b=buf[pos]; pos+=1
+                  v |= (b & 0x7f) << s
+                  if not (b & 0x80): return v,pos
+                  s += 7
+          def sleb(buf,pos):
+              v=0; s=0
+              while True:
+                  b=buf[pos]; pos+=1
+                  v |= (b & 0x7f) << s
+                  s += 7
+                  if not (b & 0x80):
+                      if s < 32 and (b & 0x40): v |= -(1 << s)
+                      return v,pos
+          elem=None
+          while p < len(data):
+              sid=data[p]; p+=1
+              size,p=uleb(data,p)
+              end=p+size
+              if sid==9:
+                  elem=data[p:end]
+                  break
+              p=end
+          if elem is None: raise SystemExit('no element section')
+          q=0; segcount,q=uleb(elem,q)
+          mapping={}
+          seginfo=[]
+          for si in range(segcount):
+              flags,q=uleb(elem,q)
+              tableidx=0
+              if flags in (0,2,4,6):
+                  if flags in (2,6): tableidx,q=uleb(elem,q)
+                  op=elem[q]; q+=1
+                  if op != 0x41: raise SystemExit(f'unsupported offset opcode {op:#x}')
+                  offset,q=sleb(elem,q)
+                  if elem[q] != 0x0b: raise SystemExit('bad const expr')
+                  q+=1
+              else:
+                  offset=None
+              if flags in (1,2,3):
+                  # elemkind byte for legacy funcidx vectors
+                  q += 1
+              elif flags in (5,6,7):
+                  # reftype byte
+                  q += 1
+              n,q=uleb(elem,q)
+              vals=[]
+              if flags <= 3:
+                  for _ in range(n):
+                      fn,q=uleb(elem,q); vals.append(fn)
+              else:
+                  raise SystemExit(f'unsupported expression element flags={flags}')
+              if offset is not None:
+                  for i,fn in enumerate(vals): mapping[offset+i]=fn
+              seginfo.append((si,flags,tableidx,offset,n))
 
+          targets = [
+            (0x4534,'BattleSimulation.OpenHex'),
+            (0x459b,'BattleSimulation.CommitOpenedHex'),
+            (0xf495,'BattleSimulation.ResolveOpenedHexOutcome'),
+            (0xf497,'BattleSimulation.TryClaimAdjacentSpecialHexRewards'),
+            (0xf498,'BattleSimulation.IsClaimableAdjacentSpecialHex'),
+            (0x8f23,'TryGetOfflinePveEnemyOpenableHexStates'),
+            (0x8df4,'CollectAuthoritativeOpenableEnemyHexes'),
+            (0x88fc,'HexBehaviour.ApplyBattleCoreAuthoritativeCellState'),
+            (0x88ff,'HexBehaviour.RefreshBattleCoreAuthoritativeCellPresentation'),
+            (0x8900,'HexBehaviour.RefreshBattleCoreAuthoritativeHexPromptPresentation'),
+            (0x8918,'HexBehaviour.RefreshBattleCoreAuthoritativeCellPresentationAfterBatch'),
+            (0x8919,'HexBehaviour.MarkBattleCoreAuthoritativeVisibilityRefreshDirty'),
+            (0x891a,'HexBehaviour.FlushBattleCoreAuthoritativeVisibilityRefreshBudgeted'),
+          ]
+          with open(out,'w',encoding='utf-8') as f:
+              f.write('# WASM element table target mapping\n')
+              for x in seginfo: f.write('segment=%d flags=%d table=%d offset=%s count=%d\n' % x)
+              f.write('\n')
+              for idx,name in targets:
+                  f.write(f'0x{idx:04X}\t{idx}\tfunc[{mapping.get(idx)}]\t{name}\n')
+              f.write('\n# Known-mapping validation\n')
+              f.write(f'0x4534 expected func[43532], actual func[{mapping.get(0x4534)}]\n')
+              f.write(f'0xF495 expected func[25409], actual func[{mapping.get(0xf495)}]\n')
+          if mapping.get(0x4534)==43532 and mapping.get(0xf495)==25409:
+              print('MATCHING_BUILD')
+          else:
+              print('OTHER_BUILD')
+          PY
+
+          cat > /tmp/filter_wat.py <<'PY'
+          import re,sys
+          mapfile,out = sys.argv[1:3]
+          targets=set()
+          for line in open(mapfile,encoding='utf-8'):
+              m=re.search(r'func\[(\d+)\]',line)
+              if m: targets.add(int(m.group(1)))
+          capture=False
+          chunks=[]
+          for line in sys.stdin:
+              m=re.match(r'\s*\(func \(;([0-9]+);\)',line)
+              if m:
+                  capture=int(m.group(1)) in targets
+              if capture: chunks.append(line)
+          open(out,'w',encoding='utf-8').writelines(chunks)
+          PY
+
+          : > "$OUT/wasm-candidates.txt"
           find research/archive/2026-09-03 -type f -name '*.wasm.br' -size +1000000c -print0 \
             | sort -z \
             | while IFS= read -r -d '' SRC; do
@@ -75,51 +183,31 @@ jobs:
           const fs = require('fs');
           const zlib = require('zlib');
           const [src, dst] = process.argv.slice(2);
-          const raw = fs.readFileSync(src);
-          const dec = zlib.brotliDecompressSync(raw);
+          const dec = zlib.brotliDecompressSync(fs.readFileSync(src));
           fs.writeFileSync(dst, dec);
-          if (!(dec[0]===0 && dec[1]===0x61 && dec[2]===0x73 && dec[3]===0x6d)) {
-            throw new Error('decompressed file is not a wasm module: ' + src);
-          }
-          console.log(src, '=>', dst, dec.length);
+          if (!(dec[0]===0 && dec[1]===0x61 && dec[2]===0x73 && dec[3]===0x6d)) throw new Error('not wasm');
           NODE
 
+                RESULT=$(python3 /tmp/map_elem.py "$WASM" "$OUT/${KEY}-table-target-map.txt")
                 {
                   echo "# $SRC"
                   echo "decompressed_size=$(stat -c%s "$WASM")"
                   sha256sum "$WASM"
-                  wasm-objdump -h "$WASM"
+                  echo "$RESULT"
                 } > "$OUT/${KEY}-module-summary.txt"
 
-                # Stream the disassembly and retain only functions near known open-cell
-                # and randomness functions. This avoids committing a giant full disassembly.
-                wasm-objdump -d "$WASM" | python3 - "$OUT/${KEY}-target-functions.objdump" <<'PY'
-          import re, sys
-          out = sys.argv[1]
-          # 25409 is an already-recovered open-cell-related function. Keep a generous
-          # neighborhood. Also retain neighborhoods around known HEX generation functions.
-          ranges = [(25280, 25580), (25950, 26150), (43780, 43980)]
-          cur = None
-          keep = False
-          buf = []
-          for line in sys.stdin:
-              m = re.search(r'func\[(\d+)\]', line)
-              if m:
-                  cur = int(m.group(1))
-                  keep = any(a <= cur <= b for a,b in ranges)
-              if keep:
-                  buf.append(line)
-          with open(out, 'w', encoding='utf-8') as f:
-              f.writelines(buf)
-          PY
-
+                if [ "$RESULT" = 'MATCHING_BUILD' ]; then
+                  wasm2wat "$WASM" | python3 /tmp/filter_wat.py "$OUT/${KEY}-table-target-map.txt" "$OUT/${KEY}-target-functions.wat"
+                fi
                 rm -f "$WASM"
               done
 
           {
-            echo '# Existing targeted WAT artifacts'
-            find outputs -type f \( -name '*func-*.wat' -o -name '*.wat' \) -printf '%p\n' | sort
-          } > "$OUT/existing-wat-files.txt"
+            echo '# Existing exact RVA-to-function artifacts relevant to this chain'
+            for f in outputs/chest-reverse/4534-func-*.wat outputs/chest-reverse/459b-func-*.wat outputs/chest-reverse/f495-func-*.wat outputs/chest-reverse/8df4-func-*.wat outputs/chest-reverse/88fc-func-*.wat outputs/chest-reverse/88ff-func-*.wat outputs/chest-reverse/8900-func-*.wat; do
+              [ -e "$f" ] && echo "$f"
+            done
+          } > "$OUT/existing-target-artifacts.txt"
 
       - name: Commit recovered diagnostics
         run: |
@@ -130,6 +218,6 @@ jobs:
           if git diff --cached --quiet; then
             echo 'No diagnostic changes.'
           else
-            git commit -m 'research: extract hex openable diagnostics'
+            git commit -m 'research: map hex openable wasm functions'
             git push
           fi
