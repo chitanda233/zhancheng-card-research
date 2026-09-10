@@ -1,0 +1,238 @@
+name: Apply canonical reverse audit fixes
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/review-canonical-fix.yml'
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Patch audited reverse pipeline and provenance docs
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          def replace(path, old, new, count=None):
+              p = Path(path)
+              text = p.read_text(encoding='utf-8')
+              if old not in text:
+                  raise SystemExit(f'expected patch anchor not found in {path}: {old[:100]!r}')
+              text = text.replace(old, new, -1 if count is None else count)
+              p.write_text(text, encoding='utf-8')
+
+          wf = '.github/workflows/rebuild-canonical-reverse.yml'
+
+          replace(wf,
+              "      - 'research/archive/2026-09-03/reverse-engineering/global-metadata.decrypted.dat'\n",
+              "      - 'research/archive/2026-09-03/reverse-engineering/global-metadata.decrypted.dat'\n"
+              "      - 'research/archive/2026-09-03/cache/a23078fc21f9ca79.webgl.data.unityweb.bin'\n"
+              "      - 'research/archive/2026-09-03/unpacked/package-manifest.json'\n"
+              "      - 'scripts/recover_il2cpp_metadata.py'\n")
+
+          replace(wf,
+              "          META=\"$ROOT/global-metadata.decrypted.dat\"\n          DUMP=\"$ROOT/dump.cs\"\n          WASM='/tmp/canonical.webgl.wasm'\n",
+              "          META=\"$ROOT/global-metadata.decrypted.dat\"\n"
+              "          DUMP=\"$ROOT/dump.cs\"\n"
+              "          RAW_META='research/archive/2026-09-03/cache/a23078fc21f9ca79.webgl.data.unityweb.bin'\n"
+              "          RECOVER='scripts/recover_il2cpp_metadata.py'\n"
+              "          PACKAGE_MANIFEST='research/archive/2026-09-03/unpacked/package-manifest.json'\n"
+              "          RECOVERED_META='/tmp/global-metadata.recovered.dat'\n"
+              "          WASM='/tmp/canonical.webgl.wasm'\n")
+
+          replace(wf,
+              "          NODE\n\n          wasm2wat \"$WASM\" -o \"$WAT\"\n",
+              "          NODE\n\n"
+              "          # Rebuild metadata from the archived UnityWebData source and require byte-exact identity.\n"
+              "          python3 \"$RECOVER\" \"$RAW_META\" \"$RECOVERED_META\" > /tmp/metadata-recovery.json\n"
+              "          cmp -s \"$RECOVERED_META\" \"$META\" || { echo 'recovered metadata differs from canonical metadata' >&2; exit 1; }\n\n"
+              "          # Bind the canonical WASM byte stream to the recorded wxapkg member provenance.\n"
+              "          python3 - \"$PACKAGE_MANIFEST\" \"$SRC\" <<'PYMETA'\n"
+              "          import hashlib, json, sys\n"
+              "          from pathlib import Path\n"
+              "          manifest_path, source_path = map(Path, sys.argv[1:3])\n"
+              "          packages = json.loads(manifest_path.read_text(encoding='utf-8'))\n"
+              "          pkg = next((x for x in packages if x.get('package') == '_wasmcode_.wxapkg'), None)\n"
+              "          if pkg is None:\n"
+              "              raise SystemExit('package-manifest.json has no _wasmcode_.wxapkg record')\n"
+              "          member_name = '/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br'\n"
+              "          member = next((x for x in pkg.get('files', []) if x.get('file') == member_name), None)\n"
+              "          if member is None:\n"
+              "              raise SystemExit(f'package manifest has no canonical member {member_name}')\n"
+              "          raw = source_path.read_bytes()\n"
+              "          digest = hashlib.sha256(raw).hexdigest()\n"
+              "          if len(raw) != member.get('size') or digest != member.get('sha256'):\n"
+              "              raise SystemExit('canonical WASM input does not match package-manifest member hash/size')\n"
+              "          PYMETA\n\n"
+              "          wasm2wat \"$WASM\" -o \"$WAT\"\n")
+
+          replace(wf,
+              "          gzip -9 -c \"$WAT\" > \"$OUT/module.wat.gz\"\n          gzip -9 -c \"$OBJDUMP\" > \"$OUT/module.objdump.gz\"\n",
+              "          # -n removes filename/mtime from gzip headers so canonical hashes are reproducible.\n"
+              "          gzip -n -9 -c \"$WAT\" > \"$OUT/module.wat.gz\"\n"
+              "          gzip -n -9 -c \"$OBJDUMP\" > \"$OUT/module.objdump.gz\"\n")
+
+          replace(wf,
+              "              w=csv.writer(f,delimiter='\\t')",
+              "              w=csv.writer(f,delimiter='\\t',lineterminator='\\n')")
+
+          replace(wf,
+              "          mapped=sum(1 for r in rows if r[1] is not None)\n          audit={\n",
+              "          mapped=sum(1 for r in rows if r[1] is not None)\n"
+              "          if mapped != len(rows):\n"
+              "              raise SystemExit(f'dump.cs primary RVA coverage is incomplete: {mapped}/{len(rows)} mapped')\n"
+              "          if duplicate_primary:\n"
+              "              raise SystemExit(f'dump.cs has duplicate primary RVAs: {len(duplicate_primary)}')\n"
+              "          audit={\n")
+
+          replace(wf,
+              "          python3 - \"$SRC\" \"$WASM\" \"$META\" \"$DUMP\" \"$OUT\" <<'PY'\n          import hashlib, json, subprocess, sys\n          from pathlib import Path\n          src,wasm,meta,dump,out = map(Path,sys.argv[1:6])\n",
+              "          python3 - \"$SRC\" \"$WASM\" \"$META\" \"$DUMP\" \"$RAW_META\" \"$RECOVER\" \"$PACKAGE_MANIFEST\" \"$OUT\" <<'PY'\n"
+              "          import hashlib, json, subprocess, sys\n"
+              "          from pathlib import Path\n"
+              "          src,wasm,meta,dump,raw_meta,recover_script,package_manifest,out = map(Path,sys.argv[1:9])\n")
+
+          replace(wf,
+              "          candidates=[]\n          for p in sorted(Path('research/archive/2026-09-03/unpacked').rglob('*.wasm.br')):\n              candidates.append({'path':str(p),'canonical':p==src,'size':p.stat().st_size})\n          manifest={\n              'schema_version':1,\n              'canonical_input':info(src),\n              'decompressed_wasm':info(wasm),\n              'metadata_reference':info(meta),\n              'dump_declaration_reference':info(dump),\n",
+              "          candidates=[]\n"
+              "          for p in sorted(Path('research/archive/2026-09-03/unpacked').rglob('*.wasm.br')):\n"
+              "              candidate=info(p)\n"
+              "              candidate['canonical']=p==src\n"
+              "              candidates.append(candidate)\n"
+              "          packages=json.loads(package_manifest.read_text(encoding='utf-8'))\n"
+              "          source_pkg=next(x for x in packages if x.get('package')=='_wasmcode_.wxapkg')\n"
+              "          source_member=next(x for x in source_pkg.get('files',[]) if x.get('file')=='/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br')\n"
+              "          manifest={\n"
+              "              'schema_version':2,\n"
+              "              'canonical_input':info(src),\n"
+              "              'canonical_input_package_manifest':info(package_manifest),\n"
+              "              'canonical_input_package':{\n"
+              "                  'package':source_pkg['package'],\n"
+              "                  'package_sha256_recorded':source_pkg['sha256'],\n"
+              "                  'raw_package_archived':False,\n"
+              "                  'member':source_member,\n"
+              "              },\n"
+              "              'decompressed_wasm':info(wasm),\n"
+              "              'metadata_source':info(raw_meta),\n"
+              "              'metadata_recovery_script':info(recover_script),\n"
+              "              'metadata_rebuild_verified_byte_exact':True,\n"
+              "              'metadata_reference':info(meta),\n"
+              "              'dump_declaration_reference':info(dump),\n"
+              "              'dump_generator_provenance':'legacy artifact; exact Il2CppDumper/Cpp2IL generator and version are not recorded',\n")
+
+          replace(wf,
+              "          作为 canonical WASM 输入。仓库中 `_wasmcode1_` 等其他 cache 保留为原始资源，但属于另一套构建/布局，不允许和本目录的 RVA / func 映射混用。\n\n          ## 文件职责\n",
+              "          作为 canonical WASM 输入。仓库中 `_wasmcode1_` 等其他 cache 保留为原始资源，但属于另一套构建/布局，不允许和本目录的 RVA / func 映射混用。\n\n"
+              "          ## 来源与验证边界\n\n"
+              "          - `unpacked/package-manifest.json` 记录 `_wasmcode_.wxapkg` 的包级 SHA-256，以及 canonical WASM 成员在包内的 offset、size 与 SHA-256。workflow 会逐字节重算成员 size/hash；原始 `.wxapkg` 本体未保留在当前归档，因此包级 SHA-256 属于采集时的 provenance 记录，不能在本仓库内重新计算。\n"
+              "          - metadata 的原始来源固定为 `cache/a23078fc21f9ca79.webgl.data.unityweb.bin`。workflow 会重新运行 `scripts/recover_il2cpp_metadata.py`，并要求恢复结果与 `global-metadata.decrypted.dat` byte-for-byte 完全一致。\n"
+              "          - `dump.cs` 是早期本地生成后纳入仓库的 legacy 声明快照；其精确生成工具/版本没有记录，所以不能把它当成可独立复现的 C# 反编译源码。方法语义只由 canonical WASM 反汇编确认。\n\n"
+              "          ## 文件职责\n")
+
+          replace(wf,
+              "          使用 `.github/workflows/rebuild-canonical-reverse.yml`。该 workflow 只在 canonical 输入、metadata、dump.cs 或自身变化时自动重建，也可以手工运行。\n",
+              "          使用 `.github/workflows/rebuild-canonical-reverse.yml`。该 workflow 会验证 wxapkg 成员 provenance、从原始 UnityWebData 重建 metadata、检查全部 dump 主 RVA 覆盖，并在 canonical 输入、metadata 来源/恢复脚本、dump.cs、package manifest 或自身变化时自动重建，也可以手工运行。\n")
+
+          replace(wf,
+              "          test ! -e .github/workflows/recover-hex-openable.yml\n\n      - name: Commit canonical package\n",
+              "          test ! -e .github/workflows/recover-hex-openable.yml\n\n"
+              "          # Validate the exact bytes Git will commit, after .gitattributes normalization.\n"
+              "          git add \"$OUT\"\n"
+              "          python3 - \"$OUT/manifest.json\" <<'PYINDEX'\n"
+              "          import hashlib, json, subprocess, sys\n"
+              "          from pathlib import Path\n"
+              "          manifest=json.loads(Path(sys.argv[1]).read_text(encoding='utf-8'))\n"
+              "          for item in manifest['generated']:\n"
+              "              path=item['path']\n"
+              "              data=subprocess.check_output(['git','show',f':{path}'])\n"
+              "              actual=hashlib.sha256(data).hexdigest()\n"
+              "              if len(data)!=item['size'] or actual!=item['sha256']:\n"
+              "                  raise SystemExit(f'Git-index bytes disagree with manifest for {path}: size={len(data)} sha256={actual}')\n"
+              "          PYINDEX\n\n"
+              "      - name: Refresh archive integrity manifest\n"
+              "        shell: bash\n"
+              "        run: |\n"
+              "          set -euo pipefail\n"
+              "          python3 scripts/build_archive_manifest.py\n\n"
+              "      - name: Commit canonical package\n")
+
+          replace(wf,
+              "          git add research/archive/2026-09-03/reverse-engineering/canonical .github/workflows outputs\n",
+              "          git add research/archive/2026-09-03/reverse-engineering/canonical research/archive-manifest.json .github/workflows outputs\n")
+
+          replace('scripts/build_archive_manifest.py',
+              '"""Create a tracked integrity manifest for ignored local research archives."""',
+              '"""Create a tracked integrity manifest for the committed research snapshot archive."""')
+          replace('scripts/build_archive_manifest.py',
+              "'title': '占城大师本地研究归档完整性清单',",
+              "'title': '占城大师研究快照完整性清单',")
+          replace('scripts/build_archive_manifest.py',
+              "'note': '归档实体被Git忽略；本清单用于验证本地备份是否完整。',",
+              "'note': '当前研究快照与 canonical 逆向产物已纳入 Git；本清单用于验证归档字节完整性。',")
+
+          replace('research/reverse-engineering.md',
+              '本页记录2026-09-03快照的可复现静态分析结论。大型二进制、解密元数据和40 MB方法转储只保存在本机归档，不进入Git或公开站点。',
+              '本页记录2026-09-03快照的可复现静态分析结论。为便于协作复核，当前仓库已纳入主WASM相关快照、恢复后的metadata、dump.cs及canonical低层逆向产物；这些研究归档不属于GitHub Pages发布内容。')
+          replace('research/reverse-engineering.md',
+              '## 本地备份\n\n恢复结果保存在 `research/archive/2026-09-03/reverse-engineering/`。该目录受 `.gitignore` 保护，只用于后续研究和校验；更新后需重建 `research/archive-manifest.json`。',
+              '## 归档与完整性\n\n恢复结果保存在 `research/archive/2026-09-03/reverse-engineering/`，当前快照已纳入 Git 供协作复核。`canonical/` 是唯一统一的低层逆向产物；更新归档或 canonical 内容后必须重建 `research/archive-manifest.json`。`dump.cs` 的精确生成工具/版本未记录，因此只作为声明、名称与主RVA参考，不作为真实 C# 函数体。')
+
+          root = Path('README.md')
+          text = root.read_text(encoding='utf-8')
+          replacements = {
+              '│  └─ archive/2026-09-03/        # 解包与缓存备份（保留本机、Git 忽略）': '│  └─ archive/2026-09-03/        # 固定研究快照与 canonical 逆向产物（进入 Git）',
+              '├─ outputs/                      # 工作输出（被 Git 忽略）': '├─ outputs/                      # 工作输出（当前协作快照进入 Git）',
+              '├─ tables/                       # 完整解析表（被 Git 忽略）': '├─ tables/                       # 完整解析表（当前协作快照进入 Git）',
+              '├─ card-art/                     # 导出的卡牌图（被 Git 忽略）': '├─ card-art/                     # 导出的卡牌图（当前协作快照进入 Git）',
+              '├─ extracted/                    # Unity 提取中间物（被 Git 忽略）': '├─ extracted/                    # Unity 提取中间物（当前协作快照进入 Git）',
+              '└─ tools, node_modules/          # 本地工具与依赖（被 Git 忽略）': '└─ tools, node_modules/          # 工具快照进入 Git；node_modules 仍忽略',
+              '缓存和解包文件按研究快照移入 `research/archive/2026-09-03/`，内容完整保留；相关脚本已改用该路径。Git 只看到可维护源码和经过筛选的发布物。': '缓存和解包文件按研究快照移入 `research/archive/2026-09-03/`，内容完整保留；相关脚本已改用该路径。当前仓库还提交了用于协作复核的研究快照与逆向资产，但 `docs/` 仍是唯一 GitHub Pages 发布根目录。',
+              '- `docs/` 是 GitHub Pages 的发布根目录；其他生成结果和原始工作区不需要上传。': '- `docs/` 是 GitHub Pages 的发布根目录；研究归档与逆向资产仅作为仓库内协作证据，不属于 Pages 发布站点。',
+          }
+          for old,new in replacements.items():
+              if old not in text:
+                  raise SystemExit(f'README.md patch anchor missing: {old!r}')
+              text=text.replace(old,new)
+          root.write_text(text,encoding='utf-8')
+
+          Path('research/README.md').write_text('''# 研究归档层\n\n当前仓库把 2026-09-03 固定研究快照及用于复核的逆向/提取资产纳入 Git，以便协作校验；`docs/` 仍是唯一 GitHub Pages 发布根目录。下列目录不是 Pages 发布内容，也不应被误认为官方游戏源码。\n\n| 目录 | 用途 | 当前策略 |\n| --- | --- | --- |\n| `research/archive/2026-09-03/cache/` | 游戏缓存和 Unity bundle 的固定快照 | 当前协作快照纳入 Git，作为原始取证输入 |\n| `research/archive/2026-09-03/unpacked/` | 微信小游戏包解包快照 | 当前协作快照纳入 Git，保存包内成员与哈希关系 |\n| `research/archive/2026-09-03/reverse-engineering/` | metadata、legacy dump 与 canonical WASM 逆向包 | 当前协作快照纳入 Git；canonical 为低层逆向权威入口 |\n| `extracted/` | Unity 对象与文本提取物 | 当前协作快照纳入 Git，不进入 Pages |\n| `tables/` | 完整解析配置 | 当前协作快照纳入 Git；发布脚本只筛选引用子集到 `docs/` |\n| `card-art/` | 卡牌图片中间资产 | 当前协作快照纳入 Git；图鉴发布时按需内嵌 |\n| `outputs/` | 构建和验证工作输出 | 当前协作快照纳入 Git；发布脚本只复制稳定交付物 |\n| `tools/` | 研究工具快照 | 当前协作快照纳入 Git；`node_modules/` 仍忽略 |\n\n`archive/<日期>/` 以提取快照日期分组；将来重新抓取时应新建日期目录，不覆盖旧快照。`research/archive-manifest.json` 保存归档文件大小和 SHA-256；归档或 canonical 产物发生变化后运行 `python scripts/build_archive_manifest.py` 更新。\n''',encoding='utf-8')
+
+          Path('NOTICE.md').write_text('''# 使用说明\n\n本仓库用于团队内部产品研究与技术复核。游戏名称、图像、文案及原始配置的相关权利归各自权利人所有。\n\n`docs/` 是 GitHub Pages 的发布根目录，只包含研究交付物和报告实际引用的配置子集。为支持协作复核，当前 Git 仓库同时保存了 2026-09-03 固定研究快照、解包/提取资产、恢复后的 metadata、legacy dump.cs 与 canonical WASM 逆向产物；这些仓库内研究资产不等同于 Pages 发布内容，也不代表官方源码。\n\n发布或调整仓库可见范围前，请确认 GitHub 仓库及 Pages 的访问范围符合团队要求，并单独检查原始配置、SDK 配置及其他可能不适合对外分发的研究材料。\n''',encoding='utf-8')
+          PY
+
+      - name: Commit audited pipeline changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/review-canonical-fix.yml
+          git add .github/workflows/rebuild-canonical-reverse.yml scripts/build_archive_manifest.py README.md research/README.md research/reverse-engineering.md NOTICE.md
+          git commit -m 'research: harden canonical reverse provenance and reproducibility'
+          git push
+
+      - name: Dispatch canonical rebuild
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail-with-body -L \
+            -X POST \
+            -H 'Accept: application/vnd.github+json' \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H 'X-GitHub-Api-Version: 2022-11-28' \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/rebuild-canonical-reverse.yml/dispatches" \
+            -d '{"ref":"master"}'
