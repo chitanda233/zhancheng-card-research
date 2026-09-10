@@ -320,6 +320,103 @@
  31fe35: 0f                         | return
  31fe36: 0b                         | end
 
+===== func[9267] =====
+61a6e5 func[9267] <j19201>:
+ 61a6e6: 02 7f                      | local[2..3] type=i32
+ 61a6e8: 23 00                      | global.get 0 <primary.global$0>
+ 61a6ea: 41 40                      | i32.const 4294967232
+ 61a6ec: 6a                         | i32.add
+ 61a6ed: 21 03                      | local.set 3
+ 61a6ef: 20 03                      | local.get 3
+ 61a6f1: 24 00                      | global.set 0 <primary.global$0>
+ 61a6f3: 41 f9 d0 b4 05             | i32.const 11348089
+ 61a6f8: 2d 00 00                   | i32.load8_u 0 0
+ 61a6fb: 45                         | i32.eqz
+ 61a6fc: 04 40                      | if
+ 61a6fe: 41 98 b5 db 04             |   i32.const 9886360
+ 61a703: 10 e5 07                   |   call 997 <j996>
+ 61a706: 41 f9 d0 b4 05             |   i32.const 11348089
+ 61a70b: 41 01                      |   i32.const 1
+ 61a70d: 3a 00 00                   |   i32.store8 0 0
+ 61a710: 0b                         | end
+ 61a711: 41 8e d5 b4 05             | i32.const 11348622
+ 61a716: 2d 00 00                   | i32.load8_u 0 0
+ 61a719: 45                         | i32.eqz
+ 61a71a: 04 40                      | if
+ 61a71c: 41 94 b5 db 04             |   i32.const 9886356
+ 61a721: 10 e5 07                   |   call 997 <j996>
+ 61a724: 41 98 b5 db 04             |   i32.const 9886360
+ 61a729: 10 e5 07                   |   call 997 <j996>
+ 61a72c: 41 8e d5 b4 05             |   i32.const 11348622
+ 61a731: 41 01                      |   i32.const 1
+ 61a733: 3a 00 00                   |   i32.store8 0 0
+ 61a736: 0b                         | end
+ 61a737: 20 00                      | local.get 0
+ 61a739: 28 02 c8 08                | i32.load 2 1096
+ 61a73d: 21 04                      | local.set 4
+ 61a73f: 41 00                      | i32.const 0
+ 61a741: 21 02                      | local.set 2
+ 61a743: 02 40                      | block
+ 61a745: 20 04                      |   local.get 4
+ 61a747: 28 02 0c                   |   i32.load 2 12
+ 61a74a: 41 00                      |   i32.const 0
+ 61a74c: 4c                         |   i32.le_s
+ 61a74d: 0d 00                      |   br_if 0
+ 61a74f: 41 00                      |   i32.const 0
+ 61a751: 21 02                      |   local.set 2
+ 61a753: 02 40                      |   block
+ 61a755: 03 40                      |     loop
+ 61a757: 20 03                      |       local.get 3
+ 61a759: 41 08                      |       i32.const 8
+ 61a75b: 6a                         |       i32.add
+ 61a75c: 20 04                      |       local.get 4
+ 61a75e: 20 02                      |       local.get 2
+ 61a760: 41 98 b5 db 04             |       i32.const 9886360
+ 61a765: 28 02 00                   |       i32.load 2 0
+ 61a768: 10 f8 12                   |       call 2424 <j3332>
+ 61a76b: 20 03                      |       local.get 3
+ 61a76d: 28 02 08                   |       i32.load 2 8
+ 61a770: 20 01                      |       local.get 1
+ 61a772: 46                         |       i32.eq
+ 61a773: 0d 01                      |       br_if 1
+ 61a775: 20 02                      |       local.get 2
+ 61a777: 41 01                      |       i32.const 1
+ 61a779: 6a                         |       i32.add
+ 61a77a: 21 02                      |       local.set 2
+ 61a77c: 20 00                      |       local.get 0
+ 61a77e: 28 02 c8 08                |       i32.load 2 1096
+ 61a782: 21 04                      |       local.set 4
+ 61a784: 20 02                      |       local.get 2
+ 61a786: 20 04                      |       local.get 4
+ 61a788: 28 02 0c                   |       i32.load 2 12
+ 61a78b: 48                         |       i32.lt_s
+ 61a78c: 0d 00                      |       br_if 0
+ 61a78e: 0b                         |     end
+ 61a78f: 41 00                      |     i32.const 0
+ 61a791: 21 02                      |     local.set 2
+ 61a793: 0c 01                      |     br 1
+ 61a795: 0b                         |   end
+ 61a796: 20 03                      |   local.get 3
+ 61a798: 41 08                      |   i32.const 8
+ 61a79a: 6a                         |   i32.add
+ 61a79b: 20 00                      |   local.get 0
+ 61a79d: 28 02 c8 08                |   i32.load 2 1096
+ 61a7a1: 20 02                      |   local.get 2
+ 61a7a3: 41 98 b5 db 04             |   i32.const 9886360
+ 61a7a8: 28 02 00                   |   i32.load 2 0
+ 61a7ab: 10 f8 12                   |   call 2424 <j3332>
+ 61a7ae: 20 03                      |   local.get 3
+ 61a7b0: 28 02 0c                   |   i32.load 2 12
+ 61a7b3: 21 02                      |   local.set 2
+ 61a7b5: 0b                         | end
+ 61a7b6: 20 03                      | local.get 3
+ 61a7b8: 41 40                      | i32.const 4294967232
+ 61a7ba: 6b                         | i32.sub
+ 61a7bb: 24 00                      | global.set 0 <primary.global$0>
+ 61a7bd: 20 02                      | local.get 2
+ 61a7bf: 0f                         | return
+ 61a7c0: 0b                         | end
+
 ===== func[11691] =====
 7e3114 func[11691] <j25843>:
  7e3115: 09 7f                      | local[2..10] type=i32
@@ -2074,6 +2171,1570 @@
  7e41f1: 0f                         | return
  7e41f2: 0b                         | end
 
+===== func[11720] =====
+7e9127 func[11720] <j25875>:
+ 7e9128: 01 7e                      | local[2] type=i64
+ 7e912a: 04 7f                      | local[3..6] type=i32
+ 7e912c: 23 00                      | global.get 0 <primary.global$0>
+ 7e912e: 41 80 01                   | i32.const 128
+ 7e9131: 6b                         | i32.sub
+ 7e9132: 21 02                      | local.set 2
+ 7e9134: 20 02                      | local.get 2
+ 7e9136: 24 00                      | global.set 0 <primary.global$0>
+ 7e9138: 20 02                      | local.get 2
+ 7e913a: 20 00                      | local.get 0
+ 7e913c: 36 02 54                   | i32.store 2 84
+ 7e913f: 41 b3 d1 b4 05             | i32.const 11348147
+ 7e9144: 2d 00 00                   | i32.load8_u 0 0
+ 7e9147: 45                         | i32.eqz
+ 7e9148: 04 40                      | if
+ 7e914a: 41 b8 96 d7 04             |   i32.const 9816888
+ 7e914f: 10 e5 07                   |   call 997 <j996>
+ 7e9152: 41 b3 d1 b4 05             |   i32.const 11348147
+ 7e9157: 41 01                      |   i32.const 1
+ 7e9159: 3a 00 00                   |   i32.store8 0 0
+ 7e915c: 0b                         | end
+ 7e915d: 41 b8 96 d7 04             | i32.const 9816888
+ 7e9162: 28 02 00                   | i32.load 2 0
+ 7e9165: 21 00                      | local.set 0
+ 7e9167: 20 00                      | local.get 0
+ 7e9169: 28 02 74                   | i32.load 2 116
+ 7e916c: 45                         | i32.eqz
+ 7e916d: 04 40                      | if
+ 7e916f: 20 00                      |   local.get 0
+ 7e9171: 10 e6 07                   |   call 998 <j997>
+ 7e9174: 0b                         | end
+ 7e9175: 02 40                      | block
+ 7e9177: 02 40                      |   block
+ 7e9179: 02 40                      |     block
+ 7e917b: 02 40                      |       block
+ 7e917d: 20 01                      |         local.get 1
+ 7e917f: 28 02 00                   |         i32.load 2 0
+ 7e9182: 41 80 80 80 80 78          |         i32.const 2147483648
+ 7e9188: 46                         |         i32.eq
+ 7e9189: 04 40                      |         if
+ 7e918b: 20 01                      |           local.get 1
+ 7e918d: 28 02 04                   |           i32.load 2 4
+ 7e9190: 41 80 80 80 80 78          |           i32.const 2147483648
+ 7e9196: 47                         |           i32.ne
+ 7e9197: 21 00                      |           local.set 0
+ 7e9199: 05                         |         else
+ 7e919a: 41 01                      |           i32.const 1
+ 7e919c: 21 00                      |           local.set 0
+ 7e919e: 0b                         |         end
+ 7e919f: 20 00                      |         local.get 0
+ 7e91a1: 04 40                      |         if
+ 7e91a3: 20 02                      |           local.get 2
+ 7e91a5: 28 02 54                   |           i32.load 2 84
+ 7e91a8: 21 00                      |           local.set 0
+ 7e91aa: 20 00                      |           local.get 0
+ 7e91ac: 20 02                      |           local.get 2
+ 7e91ae: 10 bb 48                   |           call 9275 <j19210>
+ 7e91b1: 20 00                      |           local.get 0
+ 7e91b3: 41 01                      |           i32.const 1
+ 7e91b5: 3a 00 c0 04                |           i32.store8 0 576
+ 7e91b9: 41 ce d1 b4 05             |           i32.const 11348174
+ 7e91be: 2d 00 00                   |           i32.load8_u 0 0
+ 7e91c1: 45                         |           i32.eqz
+ 7e91c2: 04 40                      |           if
+ 7e91c4: 41 fc e5 d9 04             |             i32.const 9859836
+ 7e91c9: 10 e5 07                   |             call 997 <j996>
+ 7e91cc: 41 98 b4 db 04             |             i32.const 9886232
+ 7e91d1: 10 e5 07                   |             call 997 <j996>
+ 7e91d4: 41 b4 98 dc 04             |             i32.const 9899060
+ 7e91d9: 10 e5 07                   |             call 997 <j996>
+ 7e91dc: 41 ce d1 b4 05             |             i32.const 11348174
+ 7e91e1: 41 01                      |             i32.const 1
+ 7e91e3: 3a 00 00                   |             i32.store8 0 0
+ 7e91e6: 0b                         |           end
+ 7e91e7: 20 00                      |           local.get 0
+ 7e91e9: 28 02 b0 04                |           i32.load 2 560
+ 7e91ed: 41 fc e5 d9 04             |           i32.const 9859836
+ 7e91f2: 28 02 00                   |           i32.load 2 0
+ 7e91f5: 10 e4 08                   |           call 1124 <j1154>
+ 7e91f8: 20 00                      |           local.get 0
+ 7e91fa: 28 02 b4 04                |           i32.load 2 564
+ 7e91fe: 21 04                      |           local.set 4
+ 7e9200: 20 04                      |           local.get 4
+ 7e9202: 41 00                      |           i32.const 0
+ 7e9204: 36 02 0c                   |           i32.store 2 12
+ 7e9207: 20 04                      |           local.get 4
+ 7e9209: 20 04                      |           local.get 4
+ 7e920b: 28 02 10                   |           i32.load 2 16
+ 7e920e: 41 01                      |           i32.const 1
+ 7e9210: 6a                         |           i32.add
+ 7e9211: 36 02 10                   |           i32.store 2 16
+ 7e9214: 20 00                      |           local.get 0
+ 7e9216: 28 02 b8 04                |           i32.load 2 568
+ 7e921a: 21 00                      |           local.set 0
+ 7e921c: 20 00                      |           local.get 0
+ 7e921e: 41 00                      |           i32.const 0
+ 7e9220: 36 02 0c                   |           i32.store 2 12
+ 7e9223: 20 00                      |           local.get 0
+ 7e9225: 20 00                      |           local.get 0
+ 7e9227: 28 02 10                   |           i32.load 2 16
+ 7e922a: 41 01                      |           i32.const 1
+ 7e922c: 6a                         |           i32.add
+ 7e922d: 36 02 10                   |           i32.store 2 16
+ 7e9230: 20 02                      |           local.get 2
+ 7e9232: 41 00                      |           i32.const 0
+ 7e9234: 36 02 48                   |           i32.store 2 72
+ 7e9237: 20 02                      |           local.get 2
+ 7e9239: 20 02                      |           local.get 2
+ 7e923b: 41 d4 00                   |           i32.const 84
+ 7e923e: 6a                         |           i32.add
+ 7e923f: 36 02 4c                   |           i32.store 2 76
+ 7e9242: 20 01                      |           local.get 1
+ 7e9244: 28 02 00                   |           i32.load 2 0
+ 7e9247: ad                         |           i64.extend_i32_u
+ 7e9248: 20 01                      |           local.get 1
+ 7e924a: 28 02 04                   |           i32.load 2 4
+ 7e924d: ad                         |           i64.extend_i32_u
+ 7e924e: 42 20                      |           i64.const 32
+ 7e9250: 86                         |           i64.shl
+ 7e9251: 84                         |           i64.or
+ 7e9252: 21 03                      |           local.set 3
+ 7e9254: 20 02                      |           local.get 2
+ 7e9256: 20 03                      |           local.get 3
+ 7e9258: 37 03 40                   |           i64.store 3 64
+ 7e925b: 41 b4 b4 92 05             |           i32.const 10787380
+ 7e9260: 41 00                      |           i32.const 0
+ 7e9262: 36 02 00                   |           i32.store 2 0
+ 7e9265: 20 02                      |           local.get 2
+ 7e9267: 20 03                      |           local.get 3
+ 7e9269: 37 03 30                   |           i64.store 3 48
+ 7e926c: 41 b2 87 01                |           i32.const 17330
+ 7e9270: 20 02                      |           local.get 2
+ 7e9272: 28 02 54                   |           i32.load 2 84
+ 7e9275: 20 02                      |           local.get 2
+ 7e9277: 41 30                      |           i32.const 48
+ 7e9279: 6a                         |           i32.add
+ 7e927a: 20 02                      |           local.get 2
+ 7e927c: 10 05                      |           call 5 <fimport$5>
+ 7e927e: 41 b4 b4 92 05             |           i32.const 10787380
+ 7e9283: 28 02 00                   |           i32.load 2 0
+ 7e9286: 21 00                      |           local.set 0
+ 7e9288: 41 b4 b4 92 05             |           i32.const 10787380
+ 7e928d: 41 00                      |           i32.const 0
+ 7e928f: 36 02 00                   |           i32.store 2 0
+ 7e9292: 02 40                      |           block
+ 7e9294: 02 40                      |             block
+ 7e9296: 20 00                      |               local.get 0
+ 7e9298: 41 01                      |               i32.const 1
+ 7e929a: 47                         |               i32.ne
+ 7e929b: 04 40                      |               if
+ 7e929d: 20 01                      |                 local.get 1
+ 7e929f: 28 02 00                   |                 i32.load 2 0
+ 7e92a2: ad                         |                 i64.extend_i32_u
+ 7e92a3: 20 01                      |                 local.get 1
+ 7e92a5: 28 02 04                   |                 i32.load 2 4
+ 7e92a8: ad                         |                 i64.extend_i32_u
+ 7e92a9: 42 20                      |                 i64.const 32
+ 7e92ab: 86                         |                 i64.shl
+ 7e92ac: 84                         |                 i64.or
+ 7e92ad: 21 03                      |                 local.set 3
+ 7e92af: 20 02                      |                 local.get 2
+ 7e92b1: 28 02 54                   |                 i32.load 2 84
+ 7e92b4: 21 04                      |                 local.set 4
+ 7e92b6: 02 40                      |                 block
+ 7e92b8: 02 40                      |                   block
+ 7e92ba: 41 b5 d1 b4 05             |                     i32.const 11348149
+ 7e92bf: 2d 00 00                   |                     i32.load8_u 0 0
+ 7e92c2: 45                         |                     i32.eqz
+ 7e92c3: 04 40                      |                     if
+ 7e92c5: 41 b4 b4 92 05             |                       i32.const 10787380
+ 7e92ca: 41 00                      |                       i32.const 0
+ 7e92cc: 36 02 00                   |                       i32.store 2 0
+ 7e92cf: 41 a1 0b                   |                       i32.const 1441
+ 7e92d2: 41 b0 b4 db 04             |                       i32.const 9886256
+ 7e92d7: 10 04                      |                       call 4 <fimport$4>
+ 7e92d9: 41 b4 b4 92 05             |                       i32.const 10787380
+ 7e92de: 28 02 00                   |                       i32.load 2 0
+ 7e92e1: 21 00                      |                       local.set 0
+ 7e92e3: 41 b4 b4 92 05             |                       i32.const 10787380
+ 7e92e8: 41 00                      |                       i32.const 0
+ 7e92ea: 36 02 00                   |                       i32.store 2 0
+ 7e92ed: 20 00                      |                       local.get 0
+ 7e92ef: 41 01                      |                       i32.const 1
+ 7e92f1: 46                         |                       i32.eq
+ 7e92f2: 0d 01                      |                       br_if 1
+ 7e92f4: 41 b5 d1 b4 05             |                       i32.const 11348149
+ 7e92f9: 41 01                      |                       i32.const 1
+ 7e92fb: 3a 00 00                   |                       i32.store8 0 0
+ 7e92fe: 0b                         |                     end
+ 7e92ff: 20 02                      |                     local.get 2
+ 7e9301: 41 00                      |                     i32.const 0
+ 7e9303: 36 02 78                   |                     i32.store 2 120
+ 7e9306: 20 02                      |                     local.get 2
+ 7e9308: 42 00                      |                     i64.const 0
+ 7e930a: 37 03 70                   |                     i64.store 3 112
+ 7e930d: 20 02                      |                     local.get 2
+ 7e930f: 20 03                      |                     local.get 3
+ 7e9311: 37 03 68                   |                     i64.store 3 104
+ 7e9314: 41 b4 b4 92 05             |                     i32.const 10787380
+ 7e9319: 41 00                      |                     i32.const 0
+ 7e931b: 36 02 00                   |                     i32.store 2 0
+ 7e931e: 20 02                      |                     local.get 2
+ 7e9320: 20 03                      |                     local.get 3
+ 7e9322: 37 03 28                   |                     i64.store 3 40
+ 7e9325: 41 b3 87 01                |                     i32.const 17331
+ 7e9329: 20 04                      |                     local.get 4
+ 7e932b: 20 02                      |                     local.get 2
+ 7e932d: 41 28                      |                     i32.const 40
+ 7e932f: 6a                         |                     i32.add
+ 7e9330: 20 02                      |                     local.get 2
+ 7e9332: 41 f0 00                   |                     i32.const 112
+ 7e9335: 6a                         |                     i32.add
+ 7e9336: 20 02                      |                     local.get 2
+ 7e9338: 10 10                      |                     call 16 <fimport$16>
+ 7e933a: 21 00                      |                     local.set 0
+ 7e933c: 41 b4 b4 92 05             |                     i32.const 10787380
+ 7e9341: 28 02 00                   |                     i32.load 2 0
+ 7e9344: 21 06                      |                     local.set 6
+ 7e9346: 41 b4 b4 92 05             |                     i32.const 10787380
+ 7e934b: 41 00                      |                     i32.const 0
+ 7e934d: 36 02 00                   |                     i32.store 2 0
+ 7e9350: 20 06                      |                     local.get 6
+ 7e9352: 41 01                      |                     i32.const 1
+ 7e9354: 46                         |                     i32.eq
+ 7e9355: 0d 00                      |                     br_if 0
+ 7e9357: 02 40                      |                     block
+ 7e9359: 20 00                      |                       local.get 0
+ 7e935b: 45                         |                       i32.eqz
+ 7e935c: 0d 00                      |                       br_if 0
+ 7e935e: 20 02                      |                       local.get 2
+ 7e9360: 28 02 70                   |                       i32.load 2 112
+ 7e9363: 21 00                      |                       local.set 0
+ 7e9365: 20 00                      |                       local.get 0
+ 7e9367: 20 02                      |                       local.get 2
+ 7e9369: 28 02 74                   |                       i32.load 2 116
+ 7e936c: 6a                         |                       i32.add
+ 7e936d: 21 06                      |                       local.set 6
+ 7e936f: 20 00                      |                       local.get 0
+ 7e9371: 20 06                      |                       local.get 6
+ 7e9373: 4e                         |                       i32.ge_s
+ 7e9374: 0d 00                      |                       br_if 0
+ 7e9376: 03 40                      |                       loop
+ 7e9378: 20 04                      |                         local.get 4
+ 7e937a: 28 02 b8 04                |                         i32.load 2 568
+ 7e937e: 21 05                      |                         local.set 5
+ 7e9380: 41 b4 b4 92 05             |                         i32.const 10787380
+ 7e9385: 41 00                      |                         i32.const 0
+ 7e9387: 36 02 00                   |                         i32.store 2 0
+ 7e938a: 41 b4 87 01                |                         i32.const 17332
+ 7e938e: 20 02                      |                         local.get 2
+ 7e9390: 41 e0 00                   |                         i32.const 96
+ 7e9393: 6a                         |                         i32.add
+ 7e9394: 20 05                      |                         local.get 5
+ 7e9396: 20 00                      |                         local.get 0
+ 7e9398: 41 b0 b4 db 04             |                         i32.const 9886256
+ 7e939d: 28 02 00                   |                         i32.load 2 0
+ 7e93a0: 10 0d                      |                         call 13 <fimport$13>
+ 7e93a2: 41 b4 b4 92 05             |                         i32.const 10787380
+ 7e93a7: 28 02 00                   |                         i32.load 2 0
+ 7e93aa: 21 05                      |                         local.set 5
+ 7e93ac: 41 b4 b4 92 05             |                         i32.const 10787380
+ 7e93b1: 41 00                      |                         i32.const 0
+ 7e93b3: 36 02 00                   |                         i32.store 2 0
+ 7e93b6: 20 05                      |                         local.get 5
+ 7e93b8: 41 01                      |                         i32.const 1
+ 7e93ba: 46                         |                         i32.eq
+ 7e93bb: 0d 03                      |                         br_if 3
+ 7e93bd: 20 02                      |                         local.get 2
+ 7e93bf: 29 03 60                   |                         i64.load 3 96
+ 7e93c2: 21 03                      |                         local.set 3
+ 7e93c4: 20 02                      |                         local.get 2
+ 7e93c6: 20 03                      |                         local.get 3
+ 7e93c8: 37 03 58                   |                         i64.store 3 88
+ 7e93cb: 41 b4 b4 92 05             |                         i32.const 10787380
+ 7e93d0: 41 00                      |                         i32.const 0
+ 7e93d2: 36 02 00                   |                         i32.store 2 0
+ 7e93d5: 20 02                      |                         local.get 2
+ 7e93d7: 20 03                      |                         local.get 3
+ 7e93d9: 37 03 20                   |                         i64.store 3 32
+ 7e93dc: 41 b2 87 01                |                         i32.const 17330
+ 7e93e0: 20 04                      |                         local.get 4
+ 7e93e2: 20 02                      |                         local.get 2
+ 7e93e4: 41 20                      |                         i32.const 32
+ 7e93e6: 6a                         |                         i32.add
+ 7e93e7: 20 02                      |                         local.get 2
+ 7e93e9: 10 05                      |                         call 5 <fimport$5>
+ 7e93eb: 41 b4 b4 92 05             |                         i32.const 10787380
+ 7e93f0: 28 02 00                   |                         i32.load 2 0
+ 7e93f3: 21 05                      |                         local.set 5
+ 7e93f5: 41 b4 b4 92 05             |                         i32.const 10787380
+ 7e93fa: 41 00                      |                         i32.const 0
+ 7e93fc: 36 02 00                   |                         i32.store 2 0
+ 7e93ff: 20 05                      |                         local.get 5
+ 7e9401: 41 01                      |                         i32.const 1
+ 7e9403: 46                         |                         i32.eq
+ 7e9404: 0d 03                      |                         br_if 3
+ 7e9406: 20 00                      |                         local.get 0
+ 7e9408: 41 01                      |                         i32.const 1
+ 7e940a: 6a                         |                         i32.add
+ 7e940b: 21 00                      |                         local.set 0
+ 7e940d: 20 00                      |                         local.get 0
+ 7e940f: 20 06                      |                         local.get 6
+ 7e9411: 47                         |                         i32.ne
+ 7e9412: 0d 00                      |                         br_if 0
+ 7e9414: 0b                         |                       end
+ 7e9415: 0b                         |                     end
+ 7e9416: 41 00                      |                     i32.const 0
+ 7e9418: 21 04                      |                     local.set 4
+ 7e941a: 02 40                      |                     block
+ 7e941c: 02 40                      |                       block
+ 7e941e: 02 40                      |                         block
+ 7e9420: 03 40                      |                           loop
+ 7e9422: 02 40                      |                             block
+ 7e9424: 41 b8 96 d7 04             |                               i32.const 9816888
+ 7e9429: 28 02 00                   |                               i32.load 2 0
+ 7e942c: 21 00                      |                               local.set 0
+ 7e942e: 20 00                      |                               local.get 0
+ 7e9430: 28 02 74                   |                               i32.load 2 116
+ 7e9433: 0d 00                      |                               br_if 0
+ 7e9435: 41 b4 b4 92 05             |                               i32.const 10787380
+ 7e943a: 41 00                      |                               i32.const 0
+ 7e943c: 36 02 00                   |                               i32.store 2 0
+ 7e943f: 41 a3 0b                   |                               i32.const 1443
+ 7e9442: 20 00                      |                               local.get 0
+ 7e9444: 10 04                      |                               call 4 <fimport$4>
+ 7e9446: 41 b4 b4 92 05             |                               i32.const 10787380
+ 7e944b: 28 02 00                   |                               i32.load 2 0
+ 7e944e: 21 00                      |                               local.set 0
+ 7e9450: 41 b4 b4 92 05             |                               i32.const 10787380
+ 7e9455: 41 00                      |                               i32.const 0
+ 7e9457: 36 02 00                   |                               i32.store 2 0
+ 7e945a: 20 00                      |                               local.get 0
+ 7e945c: 41 01                      |                               i32.const 1
+ 7e945e: 47                         |                               i32.ne
+ 7e945f: 0d 00                      |                               br_if 0
+ 7e9461: 41 d0 87 92 04             |                               i32.const 8684496
+ 7e9466: 10 00                      |                               call 0 <fimport$0>
+ 7e9468: 21 01                      |                               local.set 1
+ 7e946a: 0c 08                      |                               br 8
+ 7e946c: 0b                         |                             end
+ 7e946d: 41 b4 b4 92 05             |                             i32.const 10787380
+ 7e9472: 41 00                      |                             i32.const 0
+ 7e9474: 36 02 00                   |                             i32.store 2 0
+ 7e9477: 41 b5 87 01                |                             i32.const 17333
+ 7e947b: 20 02                      |                             local.get 2
+ 7e947d: 41 f0 00                   |                             i32.const 112
+ 7e9480: 6a                         |                             i32.add
+ 7e9481: 20 01                      |                             local.get 1
+ 7e9483: 20 04                      |                             local.get 4
+ 7e9485: 41 00                      |                             i32.const 0
+ 7e9487: 10 0d                      |                             call 13 <fimport$13>
+ 7e9489: 41 b4 b4 92 05             |                             i32.const 10787380
+ 7e948e: 28 02 00                   |                             i32.load 2 0
+ 7e9491: 21 00                      |                             local.set 0
+ 7e9493: 41 b4 b4 92 05             |                             i32.const 10787380
+ 7e9498: 41 00                      |                             i32.const 0
+ 7e949a: 36 02 00                   |                             i32.store 2 0
+ 7e949d: 20 00                      |                             local.get 0
+ 7e949f: 41 01                      |                             i32.const 1
+ 7e94a1: 47                         |                             i32.ne
+ 7e94a2: 04 40                      |                             if
+ 7e94a4: 20 02                      |                               local.get 2
+ 7e94a6: 29 03 70                   |                               i64.load 3 112
+ 7e94a9: 21 03                      |                               local.set 3
+ 7e94ab: 20 02                      |                               local.get 2
+ 7e94ad: 20 03                      |                               local.get 3
+ 7e94af: 37 03 38                   |                               i64.store 3 56
+ 7e94b2: 41 b4 b4 92 05             |                               i32.const 10787380
+ 7e94b7: 41 00                      |                               i32.const 0
+ 7e94b9: 36 02 00                   |                               i32.store 2 0
+ 7e94bc: 20 02                      |                               local.get 2
+ 7e94be: 20 03                      |                               local.get 3
+ 7e94c0: 37 03 18                   |                               i64.store 3 24
+ 7e94c3: 41 b2 87 01                |                               i32.const 17330
+ 7e94c7: 20 02                      |                               local.get 2
+ 7e94c9: 28 02 54                   |                               i32.load 2 84
+ 7e94cc: 20 02                      |                               local.get 2
+ 7e94ce: 41 18                      |                               i32.const 24
+ 7e94d0: 6a                         |                               i32.add
+ 7e94d1: 20 02                      |                               local.get 2
+ 7e94d3: 10 05                      |                               call 5 <fimport$5>
+ 7e94d5: 41 b4 b4 92 05             |                               i32.const 10787380
+ 7e94da: 28 02 00                   |                               i32.load 2 0
+ 7e94dd: 21 00                      |                               local.set 0
+ 7e94df: 41 b4 b4 92 05             |                               i32.const 10787380
+ 7e94e4: 41 00                      |                               i32.const 0
+ 7e94e6: 36 02 00                   |                               i32.store 2 0
+ 7e94e9: 20 00                      |                               local.get 0
+ 7e94eb: 41 01                      |                               i32.const 1
+ 7e94ed: 46                         |                               i32.eq
+ 7e94ee: 0d 02                      |                               br_if 2
+ 7e94f0: 20 02                      |                               local.get 2
+ 7e94f2: 28 02 54                   |                               i32.load 2 84
+ 7e94f5: 21 06                      |                               local.set 6
+ 7e94f7: 41 b5 d1 b4 05             |                               i32.const 11348149
+ 7e94fc: 2d 00 00                   |                               i32.load8_u 0 0
+ 7e94ff: 45                         |                               i32.eqz
+ 7e9500: 04 40                      |                               if
+ 7e9502: 41 b4 b4 92 05             |                                 i32.const 10787380
+ 7e9507: 41 00                      |                                 i32.const 0
+ 7e9509: 36 02 00                   |                                 i32.store 2 0
+ 7e950c: 41 a1 0b                   |                                 i32.const 1441
+ 7e950f: 41 b0 b4 db 04             |                                 i32.const 9886256
+ 7e9514: 10 04                      |                                 call 4 <fimport$4>
+ 7e9516: 41 b4 b4 92 05             |                                 i32.const 10787380
+ 7e951b: 28 02 00                   |                                 i32.load 2 0
+ 7e951e: 21 00                      |                                 local.set 0
+ 7e9520: 41 b4 b4 92 05             |                                 i32.const 10787380
+ 7e9525: 41 00                      |                                 i32.const 0
+ 7e9527: 36 02 00                   |                                 i32.store 2 0
+ 7e952a: 20 00                      |                                 local.get 0
+ 7e952c: 41 01                      |                                 i32.const 1
+ 7e952e: 46                         |                                 i32.eq
+ 7e952f: 0d 05                      |                                 br_if 5
+ 7e9531: 41 b5 d1 b4 05             |                                 i32.const 11348149
+ 7e9536: 41 01                      |                                 i32.const 1
+ 7e9538: 3a 00 00                   |                                 i32.store8 0 0
+ 7e953b: 0b                         |                               end
+ 7e953c: 20 02                      |                               local.get 2
+ 7e953e: 41 00                      |                               i32.const 0
+ 7e9540: 36 02 78                   |                               i32.store 2 120
+ 7e9543: 20 02                      |                               local.get 2
+ 7e9545: 42 00                      |                               i64.const 0
+ 7e9547: 37 03 70                   |                               i64.store 3 112
+ 7e954a: 20 02                      |                               local.get 2
+ 7e954c: 20 03                      |                               local.get 3
+ 7e954e: 37 03 68                   |                               i64.store 3 104
+ 7e9551: 41 b4 b4 92 05             |                               i32.const 10787380
+ 7e9556: 41 00                      |                               i32.const 0
+ 7e9558: 36 02 00                   |                               i32.store 2 0
+ 7e955b: 20 02                      |                               local.get 2
+ 7e955d: 20 03                      |                               local.get 3
+ 7e955f: 37 03 10                   |                               i64.store 3 16
+ 7e9562: 41 b3 87 01                |                               i32.const 17331
+ 7e9566: 20 06                      |                               local.get 6
+ 7e9568: 20 02                      |                               local.get 2
+ 7e956a: 41 10                      |                               i32.const 16
+ 7e956c: 6a                         |                               i32.add
+ 7e956d: 20 02                      |                               local.get 2
+ 7e956f: 41 f0 00                   |                               i32.const 112
+ 7e9572: 6a                         |                               i32.add
+ 7e9573: 20 02                      |                               local.get 2
+ 7e9575: 10 10                      |                               call 16 <fimport$16>
+ 7e9577: 21 00                      |                               local.set 0
+ 7e9579: 41 b4 b4 92 05             |                               i32.const 10787380
+ 7e957e: 28 02 00                   |                               i32.load 2 0
+ 7e9581: 21 05                      |                               local.set 5
+ 7e9583: 41 b4 b4 92 05             |                               i32.const 10787380
+ 7e9588: 41 00                      |                               i32.const 0
+ 7e958a: 36 02 00                   |                               i32.store 2 0
+ 7e958d: 20 05                      |                               local.get 5
+ 7e958f: 41 01                      |                               i32.const 1
+ 7e9591: 46                         |                               i32.eq
+ 7e9592: 0d 04                      |                               br_if 4
+ 7e9594: 02 40                      |                               block
+ 7e9596: 20 00                      |                                 local.get 0
+ 7e9598: 45                         |                                 i32.eqz
+ 7e9599: 0d 00                      |                                 br_if 0
+ 7e959b: 20 02                      |                                 local.get 2
+ 7e959d: 28 02 70                   |                                 i32.load 2 112
+ 7e95a0: 21 00                      |                                 local.set 0
+ 7e95a2: 20 00                      |                                 local.get 0
+ 7e95a4: 20 02                      |                                 local.get 2
+ 7e95a6: 28 02 74                   |                                 i32.load 2 116
+ 7e95a9: 6a                         |                                 i32.add
+ 7e95aa: 21 05                      |                                 local.set 5
+ 7e95ac: 20 00                      |                                 local.get 0
+ 7e95ae: 20 05                      |                                 local.get 5
+ 7e95b0: 4e                         |                                 i32.ge_s
+ 7e95b1: 0d 00                      |                                 br_if 0
+ 7e95b3: 03 40                      |                                 loop
+ 7e95b5: 20 06                      |                                   local.get 6
+ 7e95b7: 28 02 b8 04                |                                   i32.load 2 568
+ 7e95bb: 21 07                      |                                   local.set 7
+ 7e95bd: 41 b4 b4 92 05             |                                   i32.const 10787380
+ 7e95c2: 41 00                      |                                   i32.const 0
+ 7e95c4: 36 02 00                   |                                   i32.store 2 0
+ 7e95c7: 41 b4 87 01                |                                   i32.const 17332
+ 7e95cb: 20 02                      |                                   local.get 2
+ 7e95cd: 41 e0 00                   |                                   i32.const 96
+ 7e95d0: 6a                         |                                   i32.add
+ 7e95d1: 20 07                      |                                   local.get 7
+ 7e95d3: 20 00                      |                                   local.get 0
+ 7e95d5: 41 b0 b4 db 04             |                                   i32.const 9886256
+ 7e95da: 28 02 00                   |                                   i32.load 2 0
+ 7e95dd: 10 0d                      |                                   call 13 <fimport$13>
+ 7e95df: 41 b4 b4 92 05             |                                   i32.const 10787380
+ 7e95e4: 28 02 00                   |                                   i32.load 2 0
+ 7e95e7: 21 07                      |                                   local.set 7
+ 7e95e9: 41 b4 b4 92 05             |                                   i32.const 10787380
+ 7e95ee: 41 00                      |                                   i32.const 0
+ 7e95f0: 36 02 00                   |                                   i32.store 2 0
+ 7e95f3: 20 07                      |                                   local.get 7
+ 7e95f5: 41 01                      |                                   i32.const 1
+ 7e95f7: 46                         |                                   i32.eq
+ 7e95f8: 0d 05                      |                                   br_if 5
+ 7e95fa: 20 02                      |                                   local.get 2
+ 7e95fc: 29 03 60                   |                                   i64.load 3 96
+ 7e95ff: 21 03                      |                                   local.set 3
+ 7e9601: 20 02                      |                                   local.get 2
+ 7e9603: 20 03                      |                                   local.get 3
+ 7e9605: 37 03 58                   |                                   i64.store 3 88
+ 7e9608: 41 b4 b4 92 05             |                                   i32.const 10787380
+ 7e960d: 41 00                      |                                   i32.const 0
+ 7e960f: 36 02 00                   |                                   i32.store 2 0
+ 7e9612: 20 02                      |                                   local.get 2
+ 7e9614: 20 03                      |                                   local.get 3
+ 7e9616: 37 03 08                   |                                   i64.store 3 8
+ 7e9619: 41 b2 87 01                |                                   i32.const 17330
+ 7e961d: 20 06                      |                                   local.get 6
+ 7e961f: 20 02                      |                                   local.get 2
+ 7e9621: 41 08                      |                                   i32.const 8
+ 7e9623: 6a                         |                                   i32.add
+ 7e9624: 20 02                      |                                   local.get 2
+ 7e9626: 10 05                      |                                   call 5 <fimport$5>
+ 7e9628: 41 b4 b4 92 05             |                                   i32.const 10787380
+ 7e962d: 28 02 00                   |                                   i32.load 2 0
+ 7e9630: 21 07                      |                                   local.set 7
+ 7e9632: 41 b4 b4 92 05             |                                   i32.const 10787380
+ 7e9637: 41 00                      |                                   i32.const 0
+ 7e9639: 36 02 00                   |                                   i32.store 2 0
+ 7e963c: 20 07                      |                                   local.get 7
+ 7e963e: 41 01                      |                                   i32.const 1
+ 7e9640: 46                         |                                   i32.eq
+ 7e9641: 0d 05                      |                                   br_if 5
+ 7e9643: 20 00                      |                                   local.get 0
+ 7e9645: 41 01                      |                                   i32.const 1
+ 7e9647: 6a                         |                                   i32.add
+ 7e9648: 21 00                      |                                   local.set 0
+ 7e964a: 20 00                      |                                   local.get 0
+ 7e964c: 20 05                      |                                   local.get 5
+ 7e964e: 47                         |                                   i32.ne
+ 7e964f: 0d 00                      |                                   br_if 0
+ 7e9651: 0b                         |                                 end
+ 7e9652: 0b                         |                               end
+ 7e9653: 20 04                      |                               local.get 4
+ 7e9655: 41 01                      |                               i32.const 1
+ 7e9657: 6a                         |                               i32.add
+ 7e9658: 21 04                      |                               local.set 4
+ 7e965a: 20 04                      |                               local.get 4
+ 7e965c: 41 06                      |                               i32.const 6
+ 7e965e: 47                         |                               i32.ne
+ 7e965f: 0d 01                      |                               br_if 1
+ 7e9661: 0c 09                      |                               br 9
+ 7e9663: 0b                         |                             end
+ 7e9664: 0b                         |                           end
+ 7e9665: 41 d0 87 92 04             |                           i32.const 8684496
+ 7e966a: 10 00                      |                           call 0 <fimport$0>
+ 7e966c: 21 01                      |                           local.set 1
+ 7e966e: 0c 06                      |                           br 6
+ 7e9670: 0b                         |                         end
+ 7e9671: 41 d0 87 92 04             |                         i32.const 8684496
+ 7e9676: 10 00                      |                         call 0 <fimport$0>
+ 7e9678: 21 01                      |                         local.set 1
+ 7e967a: 0c 05                      |                         br 5
+ 7e967c: 0b                         |                       end
+ 7e967d: 41 d0 87 92 04             |                       i32.const 8684496
+ 7e9682: 10 00                      |                       call 0 <fimport$0>
+ 7e9684: 21 01                      |                       local.set 1
+ 7e9686: 0c 04                      |                       br 4
+ 7e9688: 0b                         |                     end
+ 7e9689: 41 d0 87 92 04             |                     i32.const 8684496
+ 7e968e: 10 00                      |                     call 0 <fimport$0>
+ 7e9690: 21 01                      |                     local.set 1
+ 7e9692: 0c 03                      |                     br 3
+ 7e9694: 0b                         |                   end
+ 7e9695: 41 d0 87 92 04             |                   i32.const 8684496
+ 7e969a: 10 00                      |                   call 0 <fimport$0>
+ 7e969c: 21 01                      |                   local.set 1
+ 7e969e: 0c 02                      |                   br 2
+ 7e96a0: 0b                         |                 end
+ 7e96a1: 41 d0 87 92 04             |                 i32.const 8684496
+ 7e96a6: 10 00                      |                 call 0 <fimport$0>
+ 7e96a8: 21 01                      |                 local.set 1
+ 7e96aa: 0c 01                      |                 br 1
+ 7e96ac: 0b                         |               end
+ 7e96ad: 41 d0 87 92 04             |               i32.const 8684496
+ 7e96b2: 10 00                      |               call 0 <fimport$0>
+ 7e96b4: 21 01                      |               local.set 1
+ 7e96b6: 0b                         |             end
+ 7e96b7: 10 01                      |             call 1 <fimport$1>
+ 7e96b9: 41 d0 87 92 04             |             i32.const 8684496
+ 7e96be: 10 09                      |             call 9 <fimport$9>
+ 7e96c0: 47                         |             i32.ne
+ 7e96c1: 0d 03                      |             br_if 3
+ 7e96c3: 20 01                      |             local.get 1
+ 7e96c5: 10 08                      |             call 8 <fimport$8>
+ 7e96c7: 28 02 00                   |             i32.load 2 0
+ 7e96ca: 21 00                      |             local.set 0
+ 7e96cc: 41 b4 b4 92 05             |             i32.const 10787380
+ 7e96d1: 41 00                      |             i32.const 0
+ 7e96d3: 36 02 00                   |             i32.store 2 0
+ 7e96d6: 20 02                      |             local.get 2
+ 7e96d8: 20 00                      |             local.get 0
+ 7e96da: 36 02 48                   |             i32.store 2 72
+ 7e96dd: 41 3a                      |             i32.const 58
+ 7e96df: 10 07                      |             call 7 <fimport$7>
+ 7e96e1: 41 b4 b4 92 05             |             i32.const 10787380
+ 7e96e6: 28 02 00                   |             i32.load 2 0
+ 7e96e9: 21 00                      |             local.set 0
+ 7e96eb: 41 b4 b4 92 05             |             i32.const 10787380
+ 7e96f0: 41 00                      |             i32.const 0
+ 7e96f2: 36 02 00                   |             i32.store 2 0
+ 7e96f5: 20 00                      |             local.get 0
+ 7e96f7: 41 01                      |             i32.const 1
+ 7e96f9: 46                         |             i32.eq
+ 7e96fa: 0d 02                      |             br_if 2
+ 7e96fc: 0b                         |           end
+ 7e96fd: 20 02                      |           local.get 2
+ 7e96ff: 28 02 54                   |           i32.load 2 84
+ 7e9702: 20 02                      |           local.get 2
+ 7e9704: 10 b7 48                   |           call 9271 <j19206>
+ 7e9707: 20 02                      |           local.get 2
+ 7e9709: 28 02 48                   |           i32.load 2 72
+ 7e970c: 21 00                      |           local.set 0
+ 7e970e: 20 00                      |           local.get 0
+ 7e9710: 0d 03                      |           br_if 3
+ 7e9712: 0b                         |         end
+ 7e9713: 20 02                      |         local.get 2
+ 7e9715: 41 80 01                   |         i32.const 128
+ 7e9718: 6a                         |         i32.add
+ 7e9719: 24 00                      |         global.set 0 <primary.global$0>
+ 7e971b: 0f                         |         return
+ 7e971c: 0b                         |       end
+ 7e971d: 10 0a                      |       call 10 <fimport$10>
+ 7e971f: 21 01                      |       local.set 1
+ 7e9721: 10 01                      |       call 1 <fimport$1>
+ 7e9723: 1a                         |       drop
+ 7e9724: 0b                         |     end
+ 7e9725: 41 b4 b4 92 05             |     i32.const 10787380
+ 7e972a: 41 00                      |     i32.const 0
+ 7e972c: 36 02 00                   |     i32.store 2 0
+ 7e972f: 41 b6 87 01                |     i32.const 17334
+ 7e9733: 20 02                      |     local.get 2
+ 7e9735: 41 c8 00                   |     i32.const 72
+ 7e9738: 6a                         |     i32.add
+ 7e9739: 10 02                      |     call 2 <fimport$2>
+ 7e973b: 1a                         |     drop
+ 7e973c: 41 b4 b4 92 05             |     i32.const 10787380
+ 7e9741: 28 02 00                   |     i32.load 2 0
+ 7e9744: 21 00                      |     local.set 0
+ 7e9746: 41 b4 b4 92 05             |     i32.const 10787380
+ 7e974b: 41 00                      |     i32.const 0
+ 7e974d: 36 02 00                   |     i32.store 2 0
+ 7e9750: 20 00                      |     local.get 0
+ 7e9752: 41 01                      |     i32.const 1
+ 7e9754: 47                         |     i32.ne
+ 7e9755: 0d 01                      |     br_if 1
+ 7e9757: 41 00                      |     i32.const 0
+ 7e9759: 10 00                      |     call 0 <fimport$0>
+ 7e975b: 1a                         |     drop
+ 7e975c: 10 01                      |     call 1 <fimport$1>
+ 7e975e: 1a                         |     drop
+ 7e975f: 41 81 e9 15                |     i32.const 357505
+ 7e9763: 24 03                      |     global.set 3 <__wasm_split_waitTableId>
+ 7e9765: 41 81 e9 15                |     i32.const 357505
+ 7e9769: 11 05 00                   |     call_indirect 0 <primary.table> (type 5)
+ 7e976c: 00                         |     unreachable
+ 7e976d: 0b                         |   end
+ 7e976e: 20 00                      |   local.get 0
+ 7e9770: 10 f4 07                   |   call 1012 <j1012>
+ 7e9773: 00                         |   unreachable
+ 7e9774: 0b                         | end
+ 7e9775: 20 01                      | local.get 1
+ 7e9777: 10 0b                      | call 11 <fimport$11>
+ 7e9779: 00                         | unreachable
+ 7e977a: 0b                         | end
+
+===== func[25522] =====
+114820f func[25522] <j71638>:
+ 1148210: 08 7f                      | local[2..9] type=i32
+ 1148212: 02 7e                      | local[10..11] type=i64
+ 1148214: 23 00                      | global.get 0 <primary.global$0>
+ 1148216: 41 f0 00                   | i32.const 112
+ 1148219: 6b                         | i32.sub
+ 114821a: 21 03                      | local.set 3
+ 114821c: 20 03                      | local.get 3
+ 114821e: 24 00                      | global.set 0 <primary.global$0>
+ 1148220: 41 91 d5 b4 05             | i32.const 11348625
+ 1148225: 2d 00 00                   | i32.load8_u 0 0
+ 1148228: 45                         | i32.eqz
+ 1148229: 04 40                      | if
+ 114822b: 41 fc ba dd 04             |   i32.const 9919868
+ 1148230: 10 e5 07                   |   call 997 <j996>
+ 1148233: 41 b8 96 d7 04             |   i32.const 9816888
+ 1148238: 10 e5 07                   |   call 997 <j996>
+ 114823b: 41 88 99 d7 04             |   i32.const 9817224
+ 1148240: 10 e5 07                   |   call 997 <j996>
+ 1148243: 41 91 d5 b4 05             |   i32.const 11348625
+ 1148248: 41 01                      |   i32.const 1
+ 114824a: 3a 00 00                   |   i32.store8 0 0
+ 114824d: 0b                         | end
+ 114824e: 20 03                      | local.get 3
+ 1148250: 42 00                      | i64.const 0
+ 1148252: 37 03 68                   | i64.store 3 104
+ 1148255: 20 03                      | local.get 3
+ 1148257: 42 00                      | i64.const 0
+ 1148259: 37 03 60                   | i64.store 3 96
+ 114825c: 20 03                      | local.get 3
+ 114825e: 42 00                      | i64.const 0
+ 1148260: 37 03 58                   | i64.store 3 88
+ 1148263: 20 03                      | local.get 3
+ 1148265: 42 00                      | i64.const 0
+ 1148267: 37 03 50                   | i64.store 3 80
+ 114826a: 20 03                      | local.get 3
+ 114826c: 42 00                      | i64.const 0
+ 114826e: 37 03 48                   | i64.store 3 72
+ 1148271: 20 03                      | local.get 3
+ 1148273: 41 40                      | i32.const 4294967232
+ 1148275: 6b                         | i32.sub
+ 1148276: 42 00                      | i64.const 0
+ 1148278: 37 03 00                   | i64.store 3 0
+ 114827b: 20 03                      | local.get 3
+ 114827d: 42 00                      | i64.const 0
+ 114827f: 37 03 38                   | i64.store 3 56
+ 1148282: 20 03                      | local.get 3
+ 1148284: 42 00                      | i64.const 0
+ 1148286: 37 03 30                   | i64.store 3 48
+ 1148289: 20 02                      | local.get 2
+ 114828b: 28 02 18                   | i32.load 2 24
+ 114828e: 21 06                      | local.set 6
+ 1148290: 20 06                      | local.get 6
+ 1148292: 45                         | i32.eqz
+ 1148293: 04 40                      | if
+ 1148295: 41 fc ba dd 04             |   i32.const 9919868
+ 114829a: 28 02 00                   |   i32.load 2 0
+ 114829d: 21 05                      |   local.set 5
+ 114829f: 20 05                      |   local.get 5
+ 11482a1: 28 02 1c                   |   i32.load 2 28
+ 11482a4: 21 04                      |   local.set 4
+ 11482a6: 20 04                      |   local.get 4
+ 11482a8: 45                         |   i32.eqz
+ 11482a9: 04 40                      |   if
+ 11482ab: 20 05                      |     local.get 5
+ 11482ad: 10 f3 07                   |     call 1011 <j1011>
+ 11482b0: 1a                         |     drop
+ 11482b1: 20 05                      |     local.get 5
+ 11482b3: 28 02 1c                   |     i32.load 2 28
+ 11482b6: 21 04                      |     local.set 4
+ 11482b8: 0b                         |   end
+ 11482b9: 20 04                      |   local.get 4
+ 11482bb: 28 02 08                   |   i32.load 2 8
+ 11482be: 21 04                      |   local.set 4
+ 11482c0: 20 04                      |   local.get 4
+ 11482c2: 2d 00 bd 01                |   i32.load8_u 0 189
+ 11482c6: 41 01                      |   i32.const 1
+ 11482c8: 71                         |   i32.and
+ 11482c9: 45                         |   i32.eqz
+ 11482ca: 04 40                      |   if
+ 11482cc: 20 04                      |     local.get 4
+ 11482ce: 10 e7 07                   |     call 999 <j998>
+ 11482d1: 21 04                      |     local.set 4
+ 11482d3: 0b                         |   end
+ 11482d4: 20 04                      |   local.get 4
+ 11482d6: 28 02 74                   |   i32.load 2 116
+ 11482d9: 45                         |   i32.eqz
+ 11482da: 04 40                      |   if
+ 11482dc: 20 04                      |     local.get 4
+ 11482de: 10 e6 07                   |     call 998 <j997>
+ 11482e1: 0b                         |   end
+ 11482e2: 20 05                      |   local.get 5
+ 11482e4: 28 02 1c                   |   i32.load 2 28
+ 11482e7: 28 02 08                   |   i32.load 2 8
+ 11482ea: 21 04                      |   local.set 4
+ 11482ec: 20 04                      |   local.get 4
+ 11482ee: 2d 00 bd 01                |   i32.load8_u 0 189
+ 11482f2: 41 01                      |   i32.const 1
+ 11482f4: 71                         |   i32.and
+ 11482f5: 45                         |   i32.eqz
+ 11482f6: 04 40                      |   if
+ 11482f8: 20 04                      |     local.get 4
+ 11482fa: 10 e7 07                   |     call 999 <j998>
+ 11482fd: 21 04                      |     local.set 4
+ 11482ff: 0b                         |   end
+ 1148300: 20 04                      |   local.get 4
+ 1148302: 28 02 5c                   |   i32.load 2 92
+ 1148305: 28 02 00                   |   i32.load 2 0
+ 1148308: 21 06                      |   local.set 6
+ 114830a: 0b                         | end
+ 114830b: 20 06                      | local.get 6
+ 114830d: 28 02 0c                   | i32.load 2 12
+ 1148310: 21 07                      | local.set 7
+ 1148312: 02 40                      | block
+ 1148314: 20 07                      |   local.get 7
+ 1148316: 41 00                      |   i32.const 0
+ 1148318: 4a                         |   i32.gt_s
+ 1148319: 04 40                      |   if
+ 114831b: 20 01                      |     local.get 1
+ 114831d: 41 01                      |     i32.const 1
+ 114831f: 6b                         |     i32.sub
+ 1148320: 21 09                      |     local.set 9
+ 1148322: 41 00                      |     i32.const 0
+ 1148324: 21 04                      |     local.set 4
+ 1148326: 03 40                      |     loop
+ 1148328: 20 00                      |       local.get 0
+ 114832a: 28 02 dc 07                |       i32.load 2 988
+ 114832e: 21 05                      |       local.set 5
+ 1148330: 20 06                      |       local.get 6
+ 1148332: 20 04                      |       local.get 4
+ 1148334: 41 03                      |       i32.const 3
+ 1148336: 74                         |       i32.shl
+ 1148337: 6a                         |       i32.add
+ 1148338: 29 03 10                   |       i64.load 3 16
+ 114833b: 21 0c                      |       local.set 12
+ 114833d: 20 03                      |       local.get 3
+ 114833f: 20 0c                      |       local.get 12
+ 1148341: 37 03 10                   |       i64.store 3 16
+ 1148344: 20 03                      |       local.get 3
+ 1148346: 20 0c                      |       local.get 12
+ 1148348: 37 03 28                   |       i64.store 3 40
+ 114834b: 02 40                      |       block
+ 114834d: 20 05                      |         local.get 5
+ 114834f: 20 03                      |         local.get 3
+ 1148351: 41 10                      |         i32.const 16
+ 1148353: 6a                         |         i32.add
+ 1148354: 20 03                      |         local.get 3
+ 1148356: 41 30                      |         i32.const 48
+ 1148358: 6a                         |         i32.add
+ 1148359: 41 00                      |         i32.const 0
+ 114835b: 10 c7 0c                   |         call 1607 <j1856>
+ 114835e: 45                         |         i32.eqz
+ 114835f: 0d 00                      |         br_if 0
+ 1148361: 20 03                      |         local.get 3
+ 1148363: 2d 00 57                   |         i32.load8_u 0 87
+ 1148366: 21 07                      |         local.set 7
+ 1148368: 20 03                      |         local.get 3
+ 114836a: 2d 00 56                   |         i32.load8_u 0 86
+ 114836d: 21 0a                      |         local.set 10
+ 114836f: 20 03                      |         local.get 3
+ 1148371: 2d 00 53                   |         i32.load8_u 0 83
+ 1148374: 21 0b                      |         local.set 11
+ 1148376: 20 03                      |         local.get 3
+ 1148378: 2d 00 52                   |         i32.load8_u 0 82
+ 114837b: 21 05                      |         local.set 5
+ 114837d: 41 88 99 d7 04             |         i32.const 9817224
+ 1148382: 28 02 00                   |         i32.load 2 0
+ 1148385: 21 08                      |         local.set 8
+ 1148387: 20 08                      |         local.get 8
+ 1148389: 28 02 74                   |         i32.load 2 116
+ 114838c: 45                         |         i32.eqz
+ 114838d: 04 40                      |         if
+ 114838f: 20 08                      |           local.get 8
+ 1148391: 10 e6 07                   |           call 998 <j997>
+ 1148394: 0b                         |         end
+ 1148395: 41 d0 d1 b4 05             |         i32.const 11348176
+ 114839a: 2d 00 00                   |         i32.load8_u 0 0
+ 114839d: 45                         |         i32.eqz
+ 114839e: 04 40                      |         if
+ 11483a0: 41 88 99 d7 04             |           i32.const 9817224
+ 11483a5: 10 e5 07                   |           call 997 <j996>
+ 11483a8: 41 d0 d1 b4 05             |           i32.const 11348176
+ 11483ad: 41 01                      |           i32.const 1
+ 11483af: 3a 00 00                   |           i32.store8 0 0
+ 11483b2: 0b                         |         end
+ 11483b3: 41 88 99 d7 04             |         i32.const 9817224
+ 11483b8: 28 02 00                   |         i32.load 2 0
+ 11483bb: 21 08                      |         local.set 8
+ 11483bd: 20 08                      |         local.get 8
+ 11483bf: 28 02 74                   |         i32.load 2 116
+ 11483c2: 45                         |         i32.eqz
+ 11483c3: 04 40                      |         if
+ 11483c5: 20 08                      |           local.get 8
+ 11483c7: 10 e6 07                   |           call 998 <j997>
+ 11483ca: 0b                         |         end
+ 11483cb: 02 40                      |         block
+ 11483cd: 02 40                      |           block
+ 11483cf: 02 40                      |             block
+ 11483d1: 20 09                      |               local.get 9
+ 11483d3: 0e 02 00 01 03             |               br_table 0 1 3
+ 11483d8: 0b                         |             end
+ 11483d9: 20 05                      |             local.get 5
+ 11483db: 41 01                      |             i32.const 1
+ 11483dd: 71                         |             i32.and
+ 11483de: 0d 02                      |             br_if 2
+ 11483e0: 41 01                      |             i32.const 1
+ 11483e2: 21 05                      |             local.set 5
+ 11483e4: 20 0a                      |             local.get 10
+ 11483e6: 41 01                      |             i32.const 1
+ 11483e8: 71                         |             i32.and
+ 11483e9: 45                         |             i32.eqz
+ 11483ea: 0d 01                      |             br_if 1
+ 11483ec: 0c 05                      |             br 5
+ 11483ee: 0b                         |           end
+ 11483ef: 20 05                      |           local.get 5
+ 11483f1: 41 01                      |           i32.const 1
+ 11483f3: 71                         |           i32.and
+ 11483f4: 45                         |           i32.eqz
+ 11483f5: 0d 01                      |           br_if 1
+ 11483f7: 41 01                      |           i32.const 1
+ 11483f9: 21 05                      |           local.set 5
+ 11483fb: 20 07                      |           local.get 7
+ 11483fd: 41 01                      |           i32.const 1
+ 11483ff: 71                         |           i32.and
+ 1148400: 0d 04                      |           br_if 4
+ 1148402: 0b                         |         end
+ 1148403: 20 0b                      |         local.get 11
+ 1148405: 41 01                      |         i32.const 1
+ 1148407: 71                         |         i32.and
+ 1148408: 0d 03                      |         br_if 3
+ 114840a: 0b                         |       end
+ 114840b: 20 04                      |       local.get 4
+ 114840d: 41 01                      |       i32.const 1
+ 114840f: 6a                         |       i32.add
+ 1148410: 21 04                      |       local.set 4
+ 1148412: 20 06                      |       local.get 6
+ 1148414: 28 02 0c                   |       i32.load 2 12
+ 1148417: 21 07                      |       local.set 7
+ 1148419: 20 04                      |       local.get 4
+ 114841b: 20 07                      |       local.get 7
+ 114841d: 48                         |       i32.lt_s
+ 114841e: 0d 00                      |       br_if 0
+ 1148420: 0b                         |     end
+ 1148421: 0b                         |   end
+ 1148422: 41 00                      |   i32.const 0
+ 1148424: 21 05                      |   local.set 5
+ 1148426: 20 07                      |   local.get 7
+ 1148428: 0d 00                      |   br_if 0
+ 114842a: 20 00                      |   local.get 0
+ 114842c: 28 02 dc 07                |   i32.load 2 988
+ 1148430: 41 00                      |   i32.const 0
+ 1148432: 10 ae 18                   |   call 3118 <j4631>
+ 1148435: 21 06                      |   local.set 6
+ 1148437: 20 06                      |   local.get 6
+ 1148439: 28 02 0c                   |   i32.load 2 12
+ 114843c: 41 00                      |   i32.const 0
+ 114843e: 4c                         |   i32.le_s
+ 114843f: 0d 00                      |   br_if 0
+ 1148441: 20 02                      |   local.get 2
+ 1148443: 29 03 00                   |   i64.load 3 0
+ 1148446: 21 0c                      |   local.set 12
+ 1148448: 20 01                      |   local.get 1
+ 114844a: 41 01                      |   i32.const 1
+ 114844c: 6b                         |   i32.sub
+ 114844d: 21 01                      |   local.set 1
+ 114844f: 41 00                      |   i32.const 0
+ 1148451: 21 04                      |   local.set 4
+ 1148453: 03 40                      |   loop
+ 1148455: 20 06                      |     local.get 6
+ 1148457: 20 04                      |     local.get 4
+ 1148459: 41 06                      |     i32.const 6
+ 114845b: 74                         |     i32.shl
+ 114845c: 6a                         |     i32.add
+ 114845d: 21 00                      |     local.set 0
+ 114845f: 20 00                      |     local.get 0
+ 1148461: 29 03 10                   |     i64.load 3 16
+ 1148464: 21 0d                      |     local.set 13
+ 1148466: 41 b8 96 d7 04             |     i32.const 9816888
+ 114846b: 28 02 00                   |     i32.load 2 0
+ 114846e: 21 02                      |     local.set 2
+ 1148470: 20 02                      |     local.get 2
+ 1148472: 28 02 74                   |     i32.load 2 116
+ 1148475: 45                         |     i32.eqz
+ 1148476: 04 40                      |     if
+ 1148478: 20 02                      |       local.get 2
+ 114847a: 10 e6 07                   |       call 998 <j997>
+ 114847d: 0b                         |     end
+ 114847e: 20 03                      |     local.get 3
+ 1148480: 20 0d                      |     local.get 13
+ 1148482: 37 03 18                   |     i64.store 3 24
+ 1148485: 20 03                      |     local.get 3
+ 1148487: 20 0c                      |     local.get 12
+ 1148489: 37 03 20                   |     i64.store 3 32
+ 114848c: 20 03                      |     local.get 3
+ 114848e: 20 0c                      |     local.get 12
+ 1148490: 37 03 08                   |     i64.store 3 8
+ 1148493: 20 03                      |     local.get 3
+ 1148495: 20 0d                      |     local.get 13
+ 1148497: 37 03 00                   |     i64.store 3 0
+ 114849a: 02 40                      |     block
+ 114849c: 20 03                      |       local.get 3
+ 114849e: 41 08                      |       i32.const 8
+ 11484a0: 6a                         |       i32.add
+ 11484a1: 20 03                      |       local.get 3
+ 11484a3: 41 00                      |       i32.const 0
+ 11484a5: 10 8c 1d                   |       call 3724 <j5787>
+ 11484a8: 41 01                      |       i32.const 1
+ 11484aa: 47                         |       i32.ne
+ 11484ab: 0d 00                      |       br_if 0
+ 11484ad: 20 00                      |       local.get 0
+ 11484af: 2d 00 37                   |       i32.load8_u 0 55
+ 11484b2: 21 02                      |       local.set 2
+ 11484b4: 20 00                      |       local.get 0
+ 11484b6: 2d 00 36                   |       i32.load8_u 0 54
+ 11484b9: 21 07                      |       local.set 7
+ 11484bb: 20 00                      |       local.get 0
+ 11484bd: 2d 00 33                   |       i32.load8_u 0 51
+ 11484c0: 21 09                      |       local.set 9
+ 11484c2: 20 00                      |       local.get 0
+ 11484c4: 2d 00 32                   |       i32.load8_u 0 50
+ 11484c7: 21 00                      |       local.set 0
+ 11484c9: 41 88 99 d7 04             |       i32.const 9817224
+ 11484ce: 28 02 00                   |       i32.load 2 0
+ 11484d1: 21 05                      |       local.set 5
+ 11484d3: 20 05                      |       local.get 5
+ 11484d5: 28 02 74                   |       i32.load 2 116
+ 11484d8: 45                         |       i32.eqz
+ 11484d9: 04 40                      |       if
+ 11484db: 20 05                      |         local.get 5
+ 11484dd: 10 e6 07                   |         call 998 <j997>
+ 11484e0: 0b                         |       end
+ 11484e1: 41 d0 d1 b4 05             |       i32.const 11348176
+ 11484e6: 2d 00 00                   |       i32.load8_u 0 0
+ 11484e9: 45                         |       i32.eqz
+ 11484ea: 04 40                      |       if
+ 11484ec: 41 88 99 d7 04             |         i32.const 9817224
+ 11484f1: 10 e5 07                   |         call 997 <j996>
+ 11484f4: 41 d0 d1 b4 05             |         i32.const 11348176
+ 11484f9: 41 01                      |         i32.const 1
+ 11484fb: 3a 00 00                   |         i32.store8 0 0
+ 11484fe: 0b                         |       end
+ 11484ff: 41 88 99 d7 04             |       i32.const 9817224
+ 1148504: 28 02 00                   |       i32.load 2 0
+ 1148507: 21 05                      |       local.set 5
+ 1148509: 20 05                      |       local.get 5
+ 114850b: 28 02 74                   |       i32.load 2 116
+ 114850e: 45                         |       i32.eqz
+ 114850f: 04 40                      |       if
+ 1148511: 20 05                      |         local.get 5
+ 1148513: 10 e6 07                   |         call 998 <j997>
+ 1148516: 0b                         |       end
+ 1148517: 02 40                      |       block
+ 1148519: 02 40                      |         block
+ 114851b: 02 40                      |           block
+ 114851d: 20 01                      |             local.get 1
+ 114851f: 0e 02 00 01 03             |             br_table 0 1 3
+ 1148524: 0b                         |           end
+ 1148525: 20 00                      |           local.get 0
+ 1148527: 41 01                      |           i32.const 1
+ 1148529: 71                         |           i32.and
+ 114852a: 0d 02                      |           br_if 2
+ 114852c: 41 01                      |           i32.const 1
+ 114852e: 21 05                      |           local.set 5
+ 1148530: 20 07                      |           local.get 7
+ 1148532: 41 01                      |           i32.const 1
+ 1148534: 71                         |           i32.and
+ 1148535: 45                         |           i32.eqz
+ 1148536: 0d 01                      |           br_if 1
+ 1148538: 0c 04                      |           br 4
+ 114853a: 0b                         |         end
+ 114853b: 20 00                      |         local.get 0
+ 114853d: 41 01                      |         i32.const 1
+ 114853f: 71                         |         i32.and
+ 1148540: 45                         |         i32.eqz
+ 1148541: 0d 01                      |         br_if 1
+ 1148543: 41 01                      |         i32.const 1
+ 1148545: 21 05                      |         local.set 5
+ 1148547: 20 02                      |         local.get 2
+ 1148549: 41 01                      |         i32.const 1
+ 114854b: 71                         |         i32.and
+ 114854c: 0d 03                      |         br_if 3
+ 114854e: 0b                         |       end
+ 114854f: 20 09                      |       local.get 9
+ 1148551: 41 01                      |       i32.const 1
+ 1148553: 71                         |       i32.and
+ 1148554: 0d 02                      |       br_if 2
+ 1148556: 0b                         |     end
+ 1148557: 20 04                      |     local.get 4
+ 1148559: 41 01                      |     i32.const 1
+ 114855b: 6a                         |     i32.add
+ 114855c: 21 04                      |     local.set 4
+ 114855e: 20 04                      |     local.get 4
+ 1148560: 20 06                      |     local.get 6
+ 1148562: 28 02 0c                   |     i32.load 2 12
+ 1148565: 48                         |     i32.lt_s
+ 1148566: 0d 00                      |     br_if 0
+ 1148568: 0b                         |   end
+ 1148569: 41 00                      |   i32.const 0
+ 114856b: 21 05                      |   local.set 5
+ 114856d: 0b                         | end
+ 114856e: 20 03                      | local.get 3
+ 1148570: 41 f0 00                   | i32.const 112
+ 1148573: 6a                         | i32.add
+ 1148574: 24 00                      | global.set 0 <primary.global$0>
+ 1148576: 20 05                      | local.get 5
+ 1148578: 0f                         | return
+ 1148579: 0b                         | end
+
+===== func[25605] =====
+115d95c func[25605] <j71742>:
+ 115d95d: 03 7f                      | local[2..4] type=i32
+ 115d95f: 06 7e                      | local[5..10] type=i64
+ 115d961: 23 00                      | global.get 0 <primary.global$0>
+ 115d963: 41 90 03                   | i32.const 400
+ 115d966: 6b                         | i32.sub
+ 115d967: 21 04                      | local.set 4
+ 115d969: 20 04                      | local.get 4
+ 115d96b: 24 00                      | global.set 0 <primary.global$0>
+ 115d96d: 41 af d2 b4 05             | i32.const 11348271
+ 115d972: 2d 00 00                   | i32.load8_u 0 0
+ 115d975: 45                         | i32.eqz
+ 115d976: 04 40                      | if
+ 115d978: 41 88 99 d7 04             |   i32.const 9817224
+ 115d97d: 10 e5 07                   |   call 997 <j996>
+ 115d980: 41 af d2 b4 05             |   i32.const 11348271
+ 115d985: 41 01                      |   i32.const 1
+ 115d987: 3a 00 00                   |   i32.store8 0 0
+ 115d98a: 0b                         | end
+ 115d98b: 20 02                      | local.get 2
+ 115d98d: 28 02 2c                   | i32.load 2 44
+ 115d990: 21 03                      | local.set 3
+ 115d992: 41 88 99 d7 04             | i32.const 9817224
+ 115d997: 28 02 00                   | i32.load 2 0
+ 115d99a: 21 05                      | local.set 5
+ 115d99c: 20 05                      | local.get 5
+ 115d99e: 28 02 74                   | i32.load 2 116
+ 115d9a1: 45                         | i32.eqz
+ 115d9a2: 04 40                      | if
+ 115d9a4: 20 05                      |   local.get 5
+ 115d9a6: 10 e6 07                   |   call 998 <j997>
+ 115d9a9: 0b                         | end
+ 115d9aa: 41 b5 d2 b4 05             | i32.const 11348277
+ 115d9af: 2d 00 00                   | i32.load8_u 0 0
+ 115d9b2: 45                         | i32.eqz
+ 115d9b3: 04 40                      | if
+ 115d9b5: 41 fc 98 d8 04             |   i32.const 9833596
+ 115d9ba: 10 e5 07                   |   call 997 <j996>
+ 115d9bd: 41 bc cc e9 04             |   i32.const 10118716
+ 115d9c2: 10 e5 07                   |   call 997 <j996>
+ 115d9c5: 41 b5 d2 b4 05             |   i32.const 11348277
+ 115d9ca: 41 01                      |   i32.const 1
+ 115d9cc: 3a 00 00                   |   i32.store8 0 0
+ 115d9cf: 0b                         | end
+ 115d9d0: 41 00                      | i32.const 0
+ 115d9d2: 21 05                      | local.set 5
+ 115d9d4: 20 03                      | local.get 3
+ 115d9d6: 04 40                      | if
+ 115d9d8: 20 03                      |   local.get 3
+ 115d9da: 21 06                      |   local.set 6
+ 115d9dc: 05                         | else
+ 115d9dd: 41 fc 98 d8 04             |   i32.const 9833596
+ 115d9e2: 28 02 00                   |   i32.load 2 0
+ 115d9e5: 28 02 5c                   |   i32.load 2 92
+ 115d9e8: 28 02 00                   |   i32.load 2 0
+ 115d9eb: 21 06                      |   local.set 6
+ 115d9ed: 0b                         | end
+ 115d9ee: 02 40                      | block
+ 115d9f0: 02 40                      |   block
+ 115d9f2: 20 06                      |     local.get 6
+ 115d9f4: 41 bc cc e9 04             |     i32.const 10118716
+ 115d9f9: 28 02 00                   |     i32.load 2 0
+ 115d9fc: 41 05                      |     i32.const 5
+ 115d9fe: 41 00                      |     i32.const 0
+ 115da00: 10 a6 08                   |     call 1062 <j1070>
+ 115da03: 45                         |     i32.eqz
+ 115da04: 04 40                      |     if
+ 115da06: 41 88 99 d7 04             |       i32.const 9817224
+ 115da0b: 28 02 00                   |       i32.load 2 0
+ 115da0e: 21 05                      |       local.set 5
+ 115da10: 20 05                      |       local.get 5
+ 115da12: 28 02 74                   |       i32.load 2 116
+ 115da15: 45                         |       i32.eqz
+ 115da16: 04 40                      |       if
+ 115da18: 20 05                      |         local.get 5
+ 115da1a: 10 e6 07                   |         call 998 <j997>
+ 115da1d: 0b                         |       end
+ 115da1e: 41 b9 d2 b4 05             |       i32.const 11348281
+ 115da23: 2d 00 00                   |       i32.load8_u 0 0
+ 115da26: 45                         |       i32.eqz
+ 115da27: 04 40                      |       if
+ 115da29: 41 fc 98 d8 04             |         i32.const 9833596
+ 115da2e: 10 e5 07                   |         call 997 <j996>
+ 115da31: 41 d8 80 e7 04             |         i32.const 10076248
+ 115da36: 10 e5 07                   |         call 997 <j996>
+ 115da39: 41 a8 dc e9 04             |         i32.const 10120744
+ 115da3e: 10 e5 07                   |         call 997 <j996>
+ 115da41: 41 b9 d2 b4 05             |         i32.const 11348281
+ 115da46: 41 01                      |         i32.const 1
+ 115da48: 3a 00 00                   |         i32.store8 0 0
+ 115da4b: 0b                         |       end
+ 115da4c: 02 40                      |       block
+ 115da4e: 20 03                      |         local.get 3
+ 115da50: 04 40                      |         if
+ 115da52: 20 03                      |           local.get 3
+ 115da54: 21 05                      |           local.set 5
+ 115da56: 05                         |         else
+ 115da57: 41 fc 98 d8 04             |           i32.const 9833596
+ 115da5c: 28 02 00                   |           i32.load 2 0
+ 115da5f: 28 02 5c                   |           i32.load 2 92
+ 115da62: 28 02 00                   |           i32.load 2 0
+ 115da65: 21 05                      |           local.set 5
+ 115da67: 0b                         |         end
+ 115da68: 20 05                      |         local.get 5
+ 115da6a: 41 00                      |         i32.const 0
+ 115da6c: 10 f8 08                   |         call 1144 <j1180>
+ 115da6f: 21 05                      |         local.set 5
+ 115da71: 20 05                      |         local.get 5
+ 115da73: 41 a8 dc e9 04             |         i32.const 10120744
+ 115da78: 28 02 00                   |         i32.load 2 0
+ 115da7b: 41 05                      |         i32.const 5
+ 115da7d: 41 00                      |         i32.const 0
+ 115da7f: 10 a6 08                   |         call 1062 <j1070>
+ 115da82: 45                         |         i32.eqz
+ 115da83: 04 40                      |         if
+ 115da85: 20 05                      |           local.get 5
+ 115da87: 41 d8 80 e7 04             |           i32.const 10076248
+ 115da8c: 28 02 00                   |           i32.load 2 0
+ 115da8f: 41 04                      |           i32.const 4
+ 115da91: 41 00                      |           i32.const 0
+ 115da93: 10 a6 08                   |           call 1062 <j1070>
+ 115da96: 45                         |           i32.eqz
+ 115da97: 0d 01                      |           br_if 1
+ 115da99: 0b                         |         end
+ 115da9a: 20 02                      |         local.get 2
+ 115da9c: 28 02 28                   |         i32.load 2 40
+ 115da9f: 21 03                      |         local.set 3
+ 115daa1: 20 02                      |         local.get 2
+ 115daa3: 29 03 00                   |         i64.load 3 0
+ 115daa6: 21 07                      |         local.set 7
+ 115daa8: 41 b1 d2 b4 05             |         i32.const 11348273
+ 115daad: 2d 00 00                   |         i32.load8_u 0 0
+ 115dab0: 45                         |         i32.eqz
+ 115dab1: 04 40                      |         if
+ 115dab3: 41 fc 98 d8 04             |           i32.const 9833596
+ 115dab8: 10 e5 07                   |           call 997 <j996>
+ 115dabb: 41 b8 8c e3 04             |           i32.const 10012216
+ 115dac0: 10 e5 07                   |           call 997 <j996>
+ 115dac3: 41 b1 d2 b4 05             |           i32.const 11348273
+ 115dac8: 41 01                      |           i32.const 1
+ 115daca: 3a 00 00                   |           i32.store8 0 0
+ 115dacd: 0b                         |         end
+ 115dace: 02 40                      |         block
+ 115dad0: 20 03                      |           local.get 3
+ 115dad2: 04 40                      |           if
+ 115dad4: 20 04                      |             local.get 4
+ 115dad6: 20 07                      |             local.get 7
+ 115dad8: 37 03 d0 02                |             i64.store 3 336
+ 115dadc: 20 03                      |             local.get 3
+ 115dade: 21 05                      |             local.set 5
+ 115dae0: 0c 01                      |             br 1
+ 115dae2: 0b                         |           end
+ 115dae3: 41 fc 98 d8 04             |           i32.const 9833596
+ 115dae8: 28 02 00                   |           i32.load 2 0
+ 115daeb: 28 02 5c                   |           i32.load 2 92
+ 115daee: 28 02 00                   |           i32.load 2 0
+ 115daf1: 21 05                      |           local.set 5
+ 115daf3: 20 04                      |           local.get 4
+ 115daf5: 20 07                      |           local.get 7
+ 115daf7: 37 03 d0 02                |           i64.store 3 336
+ 115dafb: 0b                         |         end
+ 115dafc: 20 02                      |         local.get 2
+ 115dafe: 29 03 08                   |         i64.load 3 8
+ 115db01: 21 09                      |         local.set 9
+ 115db03: 20 04                      |         local.get 4
+ 115db05: 20 09                      |         local.get 9
+ 115db07: 37 03 d8 02                |         i64.store 3 344
+ 115db0b: 20 02                      |         local.get 2
+ 115db0d: 29 03 20                   |         i64.load 3 32
+ 115db10: 21 0a                      |         local.set 10
+ 115db12: 20 04                      |         local.get 4
+ 115db14: 20 0a                      |         local.get 10
+ 115db16: 37 03 f0 02                |         i64.store 3 368
+ 115db1a: 20 02                      |         local.get 2
+ 115db1c: 29 03 18                   |         i64.load 3 24
+ 115db1f: 21 0b                      |         local.set 11
+ 115db21: 20 04                      |         local.get 4
+ 115db23: 20 0b                      |         local.get 11
+ 115db25: 37 03 e8 02                |         i64.store 3 360
+ 115db29: 20 02                      |         local.get 2
+ 115db2b: 29 03 10                   |         i64.load 3 16
+ 115db2e: 21 0c                      |         local.set 12
+ 115db30: 20 04                      |         local.get 4
+ 115db32: 20 0c                      |         local.get 12
+ 115db34: 37 03 e0 02                |         i64.store 3 352
+ 115db38: 20 02                      |         local.get 2
+ 115db3a: 28 02 34                   |         i32.load 2 52
+ 115db3d: ad                         |         i64.extend_i32_u
+ 115db3e: 20 02                      |         local.get 2
+ 115db40: 28 02 38                   |         i32.load 2 56
+ 115db43: ad                         |         i64.extend_i32_u
+ 115db44: 42 20                      |         i64.const 32
+ 115db46: 86                         |         i64.shl
+ 115db47: 84                         |         i64.or
+ 115db48: 21 08                      |         local.set 8
+ 115db4a: 20 04                      |         local.get 4
+ 115db4c: 20 08                      |         local.get 8
+ 115db4e: a7                         |         i32.wrap_i64
+ 115db4f: 36 02 84 03                |         i32.store 2 388
+ 115db53: 20 04                      |         local.get 4
+ 115db55: 20 08                      |         local.get 8
+ 115db57: 42 20                      |         i64.const 32
+ 115db59: 88                         |         i64.shr_u
+ 115db5a: a7                         |         i32.wrap_i64
+ 115db5b: 36 02 88 03                |         i32.store 2 392
+ 115db5f: 20 02                      |         local.get 2
+ 115db61: 28 02 3c                   |         i32.load 2 60
+ 115db64: 21 06                      |         local.set 6
+ 115db66: 20 02                      |         local.get 2
+ 115db68: 28 02 2c                   |         i32.load 2 44
+ 115db6b: ad                         |         i64.extend_i32_u
+ 115db6c: 20 02                      |         local.get 2
+ 115db6e: 28 02 30                   |         i32.load 2 48
+ 115db71: ad                         |         i64.extend_i32_u
+ 115db72: 42 20                      |         i64.const 32
+ 115db74: 86                         |         i64.shl
+ 115db75: 84                         |         i64.or
+ 115db76: 21 08                      |         local.set 8
+ 115db78: 20 04                      |         local.get 4
+ 115db7a: 20 03                      |         local.get 3
+ 115db7c: 36 02 f8 02                |         i32.store 2 376
+ 115db80: 20 04                      |         local.get 4
+ 115db82: 20 06                      |         local.get 6
+ 115db84: 36 02 8c 03                |         i32.store 2 396
+ 115db88: 20 04                      |         local.get 4
+ 115db8a: 20 0a                      |         local.get 10
+ 115db8c: 37 03 a8 01                |         i64.store 3 168
+ 115db90: 20 04                      |         local.get 4
+ 115db92: 20 0b                      |         local.get 11
+ 115db94: 37 03 a0 01                |         i64.store 3 160
+ 115db98: 20 04                      |         local.get 4
+ 115db9a: 20 0c                      |         local.get 12
+ 115db9c: 37 03 98 01                |         i64.store 3 152
+ 115dba0: 20 04                      |         local.get 4
+ 115dba2: 20 09                      |         local.get 9
+ 115dba4: 37 03 90 01                |         i64.store 3 144
+ 115dba8: 20 04                      |         local.get 4
+ 115dbaa: 20 08                      |         local.get 8
+ 115dbac: a7                         |         i32.wrap_i64
+ 115dbad: 36 02 fc 02                |         i32.store 2 380
+ 115dbb1: 20 04                      |         local.get 4
+ 115dbb3: 20 08                      |         local.get 8
+ 115dbb5: 42 20                      |         i64.const 32
+ 115dbb7: 88                         |         i64.shr_u
+ 115dbb8: a7                         |         i32.wrap_i64
+ 115dbb9: 36 02 80 03                |         i32.store 2 384
+ 115dbbd: 20 04                      |         local.get 4
+ 115dbbf: 20 04                      |         local.get 4
+ 115dbc1: 29 03 80 03                |         i64.load 3 384
+ 115dbc5: 37 03 b8 01                |         i64.store 3 184
+ 115dbc9: 20 04                      |         local.get 4
+ 115dbcb: 20 04                      |         local.get 4
+ 115dbcd: 29 03 f8 02                |         i64.load 3 376
+ 115dbd1: 37 03 b0 01                |         i64.store 3 176
+ 115dbd5: 20 04                      |         local.get 4
+ 115dbd7: 20 04                      |         local.get 4
+ 115dbd9: 29 03 88 03                |         i64.load 3 392
+ 115dbdd: 37 03 c0 01                |         i64.store 3 192
+ 115dbe1: 20 04                      |         local.get 4
+ 115dbe3: 20 04                      |         local.get 4
+ 115dbe5: 29 03 d0 02                |         i64.load 3 336
+ 115dbe9: 37 03 88 01                |         i64.store 3 136
+ 115dbed: 20 00                      |         local.get 0
+ 115dbef: 20 01                      |         local.get 1
+ 115dbf1: 20 04                      |         local.get 4
+ 115dbf3: 41 88 01                   |         i32.const 136
+ 115dbf6: 6a                         |         i32.add
+ 115dbf7: 20 05                      |         local.get 5
+ 115dbf9: 20 04                      |         local.get 4
+ 115dbfb: 10 a5 48                   |         call 9253 <j19182>
+ 115dbfe: 20 04                      |         local.get 4
+ 115dc00: 41 98 02                   |         i32.const 280
+ 115dc03: 6a                         |         i32.add
+ 115dc04: 20 00                      |         local.get 0
+ 115dc06: 20 01                      |         local.get 1
+ 115dc08: 20 04                      |         local.get 4
+ 115dc0a: 10 e4 5b                   |         call 11748 <j25907>
+ 115dc0d: 20 04                      |         local.get 4
+ 115dc0f: 20 04                      |         local.get 4
+ 115dc11: 29 03 a0 02                |         i64.load 3 288
+ 115dc15: 37 03 50                   |         i64.store 3 80
+ 115dc18: 20 04                      |         local.get 4
+ 115dc1a: 20 04                      |         local.get 4
+ 115dc1c: 29 03 a8 02                |         i64.load 3 296
+ 115dc20: 37 03 58                   |         i64.store 3 88
+ 115dc23: 20 04                      |         local.get 4
+ 115dc25: 20 04                      |         local.get 4
+ 115dc27: 29 03 b0 02                |         i64.load 3 304
+ 115dc2b: 37 03 60                   |         i64.store 3 96
+ 115dc2e: 20 04                      |         local.get 4
+ 115dc30: 20 04                      |         local.get 4
+ 115dc32: 29 03 b8 02                |         i64.load 3 312
+ 115dc36: 37 03 68                   |         i64.store 3 104
+ 115dc39: 20 04                      |         local.get 4
+ 115dc3b: 20 04                      |         local.get 4
+ 115dc3d: 29 03 c0 02                |         i64.load 3 320
+ 115dc41: 37 03 70                   |         i64.store 3 112
+ 115dc44: 20 04                      |         local.get 4
+ 115dc46: 20 04                      |         local.get 4
+ 115dc48: 28 02 c8 02                |         i32.load 2 328
+ 115dc4c: 36 02 78                   |         i32.store 2 120
+ 115dc4f: 20 04                      |         local.get 4
+ 115dc51: 20 07                      |         local.get 7
+ 115dc53: 37 03 90 02                |         i64.store 3 272
+ 115dc57: 20 04                      |         local.get 4
+ 115dc59: 20 07                      |         local.get 7
+ 115dc5b: 37 03 80 01                |         i64.store 3 128
+ 115dc5f: 20 04                      |         local.get 4
+ 115dc61: 20 04                      |         local.get 4
+ 115dc63: 29 03 98 02                |         i64.load 3 280
+ 115dc67: 37 03 48                   |         i64.store 3 72
+ 115dc6a: 20 00                      |         local.get 0
+ 115dc6c: 20 01                      |         local.get 1
+ 115dc6e: 20 04                      |         local.get 4
+ 115dc70: 41 80 01                   |         i32.const 128
+ 115dc73: 6a                         |         i32.add
+ 115dc74: 41 00                      |         i32.const 0
+ 115dc76: 20 04                      |         local.get 4
+ 115dc78: 41 c8 00                   |         i32.const 72
+ 115dc7b: 6a                         |         i32.add
+ 115dc7c: 41 b8 8c e3 04             |         i32.const 10012216
+ 115dc81: 28 02 00                   |         i32.load 2 0
+ 115dc84: 41 03                      |         i32.const 3
+ 115dc86: 41 00                      |         i32.const 0
+ 115dc88: 20 04                      |         local.get 4
+ 115dc8a: 10 b6 48                   |         call 9270 <j19205>
+ 115dc8d: 0c 02                      |         br 2
+ 115dc8f: 0b                         |       end
+ 115dc90: 41 bc d2 b4 05             |       i32.const 11348284
+ 115dc95: 2d 00 00                   |       i32.load8_u 0 0
+ 115dc98: 45                         |       i32.eqz
+ 115dc99: 04 40                      |       if
+ 115dc9b: 41 fc 98 d8 04             |         i32.const 9833596
+ 115dca0: 10 e5 07                   |         call 997 <j996>
+ 115dca3: 41 b0 87 e9 04             |         i32.const 10109872
+ 115dca8: 10 e5 07                   |         call 997 <j996>
+ 115dcab: 41 84 81 e5 04             |         i32.const 10043524
+ 115dcb0: 10 e5 07                   |         call 997 <j996>
+ 115dcb3: 41 bc d2 b4 05             |         i32.const 11348284
+ 115dcb8: 41 01                      |         i32.const 1
+ 115dcba: 3a 00 00                   |         i32.store8 0 0
+ 115dcbd: 0b                         |       end
+ 115dcbe: 41 00                      |       i32.const 0
+ 115dcc0: 21 05                      |       local.set 5
+ 115dcc2: 20 03                      |       local.get 3
+ 115dcc4: 45                         |       i32.eqz
+ 115dcc5: 04 40                      |       if
+ 115dcc7: 41 fc 98 d8 04             |         i32.const 9833596
+ 115dccc: 28 02 00                   |         i32.load 2 0
+ 115dccf: 28 02 5c                   |         i32.load 2 92
+ 115dcd2: 28 02 00                   |         i32.load 2 0
+ 115dcd5: 21 03                      |         local.set 3
+ 115dcd7: 0b                         |       end
+ 115dcd8: 20 03                      |       local.get 3
+ 115dcda: 41 00                      |       i32.const 0
+ 115dcdc: 10 f8 08                   |       call 1144 <j1180>
+ 115dcdf: 21 03                      |       local.set 3
+ 115dce1: 20 03                      |       local.get 3
+ 115dce3: 41 b0 87 e9 04             |       i32.const 10109872
+ 115dce8: 28 02 00                   |       i32.load 2 0
+ 115dceb: 41 05                      |       i32.const 5
+ 115dced: 41 00                      |       i32.const 0
+ 115dcef: 10 a6 08                   |       call 1062 <j1070>
+ 115dcf2: 45                         |       i32.eqz
+ 115dcf3: 04 40                      |       if
+ 115dcf5: 20 03                      |         local.get 3
+ 115dcf7: 41 84 81 e5 04             |         i32.const 10043524
+ 115dcfc: 28 02 00                   |         i32.load 2 0
+ 115dcff: 41 04                      |         i32.const 4
+ 115dd01: 41 00                      |         i32.const 0
+ 115dd03: 10 a6 08                   |         call 1062 <j1070>
+ 115dd06: 45                         |         i32.eqz
+ 115dd07: 0d 03                      |         br_if 3
+ 115dd09: 0b                         |       end
+ 115dd0a: 20 04                      |       local.get 4
+ 115dd0c: 20 02                      |       local.get 2
+ 115dd0e: 29 03 38                   |       i64.load 3 56
+ 115dd11: 37 03 80 02                |       i64.store 3 256
+ 115dd15: 20 04                      |       local.get 4
+ 115dd17: 20 02                      |       local.get 2
+ 115dd19: 29 03 30                   |       i64.load 3 48
+ 115dd1c: 37 03 f8 01                |       i64.store 3 248
+ 115dd20: 20 04                      |       local.get 4
+ 115dd22: 20 02                      |       local.get 2
+ 115dd24: 29 03 28                   |       i64.load 3 40
+ 115dd27: 37 03 f0 01                |       i64.store 3 240
+ 115dd2b: 20 04                      |       local.get 4
+ 115dd2d: 20 02                      |       local.get 2
+ 115dd2f: 29 03 20                   |       i64.load 3 32
+ 115dd32: 37 03 e8 01                |       i64.store 3 232
+ 115dd36: 20 04                      |       local.get 4
+ 115dd38: 20 02                      |       local.get 2
+ 115dd3a: 29 03 18                   |       i64.load 3 24
+ 115dd3d: 37 03 e0 01                |       i64.store 3 224
+ 115dd41: 20 04                      |       local.get 4
+ 115dd43: 20 02                      |       local.get 2
+ 115dd45: 29 03 10                   |       i64.load 3 16
+ 115dd48: 37 03 d8 01                |       i64.store 3 216
+ 115dd4c: 20 04                      |       local.get 4
+ 115dd4e: 20 02                      |       local.get 2
+ 115dd50: 29 03 08                   |       i64.load 3 8
+ 115dd53: 37 03 d0 01                |       i64.store 3 208
+ 115dd57: 20 04                      |       local.get 4
+ 115dd59: 20 02                      |       local.get 2
+ 115dd5b: 29 03 00                   |       i64.load 3 0
+ 115dd5e: 37 03 c8 01                |       i64.store 3 200
+ 115dd62: 20 00                      |       local.get 0
+ 115dd64: 20 01                      |       local.get 1
+ 115dd66: 20 04                      |       local.get 4
+ 115dd68: 41 c8 01                   |       i32.const 200
+ 115dd6b: 6a                         |       i32.add
+ 115dd6c: 20 04                      |       local.get 4
+ 115dd6e: 10 87 c8 01                |       call 25607 <j71744>
+ 115dd72: 0d 01                      |       br_if 1
+ 115dd74: 0c 02                      |       br 2
+ 115dd76: 0b                         |     end
+ 115dd77: 20 04                      |     local.get 4
+ 115dd79: 41 40                      |     i32.const 4294967232
+ 115dd7b: 6b                         |     i32.sub
+ 115dd7c: 20 02                      |     local.get 2
+ 115dd7e: 29 03 38                   |     i64.load 3 56
+ 115dd81: 37 03 00                   |     i64.store 3 0
+ 115dd84: 20 04                      |     local.get 4
+ 115dd86: 20 02                      |     local.get 2
+ 115dd88: 29 03 30                   |     i64.load 3 48
+ 115dd8b: 37 03 38                   |     i64.store 3 56
+ 115dd8e: 20 04                      |     local.get 4
+ 115dd90: 20 02                      |     local.get 2
+ 115dd92: 29 03 28                   |     i64.load 3 40
+ 115dd95: 37 03 30                   |     i64.store 3 48
+ 115dd98: 20 04                      |     local.get 4
+ 115dd9a: 20 02                      |     local.get 2
+ 115dd9c: 29 03 20                   |     i64.load 3 32
+ 115dd9f: 37 03 28                   |     i64.store 3 40
+ 115dda2: 20 04                      |     local.get 4
+ 115dda4: 20 02                      |     local.get 2
+ 115dda6: 29 03 18                   |     i64.load 3 24
+ 115dda9: 37 03 20                   |     i64.store 3 32
+ 115ddac: 20 04                      |     local.get 4
+ 115ddae: 20 02                      |     local.get 2
+ 115ddb0: 29 03 10                   |     i64.load 3 16
+ 115ddb3: 37 03 18                   |     i64.store 3 24
+ 115ddb6: 20 04                      |     local.get 4
+ 115ddb8: 20 02                      |     local.get 2
+ 115ddba: 29 03 08                   |     i64.load 3 8
+ 115ddbd: 37 03 10                   |     i64.store 3 16
+ 115ddc0: 20 04                      |     local.get 4
+ 115ddc2: 20 02                      |     local.get 2
+ 115ddc4: 29 03 00                   |     i64.load 3 0
+ 115ddc7: 37 03 08                   |     i64.store 3 8
+ 115ddca: 20 00                      |     local.get 0
+ 115ddcc: 20 01                      |     local.get 1
+ 115ddce: 20 04                      |     local.get 4
+ 115ddd0: 41 08                      |     i32.const 8
+ 115ddd2: 6a                         |     i32.add
+ 115ddd3: 20 04                      |     local.get 4
+ 115ddd5: 10 86 c8 01                |     call 25606 <j71743>
+ 115ddd9: 45                         |     i32.eqz
+ 115ddda: 0d 01                      |     br_if 1
+ 115dddc: 0b                         |   end
+ 115dddd: 20 02                      |   local.get 2
+ 115dddf: 29 03 00                   |   i64.load 3 0
+ 115dde2: 21 07                      |   local.set 7
+ 115dde4: 20 04                      |   local.get 4
+ 115dde6: 20 07                      |   local.get 7
+ 115dde8: 37 03 00                   |   i64.store 3 0
+ 115ddeb: 20 04                      |   local.get 4
+ 115dded: 20 07                      |   local.get 7
+ 115ddef: 37 03 88 02                |   i64.store 3 264
+ 115ddf3: 20 00                      |   local.get 0
+ 115ddf5: 20 04                      |   local.get 4
+ 115ddf7: 20 04                      |   local.get 4
+ 115ddf9: 10 c8 5b                   |   call 11720 <j25875>
+ 115ddfc: 41 01                      |   i32.const 1
+ 115ddfe: 21 05                      |   local.set 5
+ 115de00: 0b                         | end
+ 115de01: 20 04                      | local.get 4
+ 115de03: 41 90 03                   | i32.const 400
+ 115de06: 6a                         | i32.add
+ 115de07: 24 00                      | global.set 0 <primary.global$0>
+ 115de09: 20 05                      | local.get 5
+ 115de0b: 0f                         | return
+ 115de0c: 0b                         | end
+
 ===== func[25728] =====
 1184bec func[25728] <j71889>:
  1184bed: 02 7f                      | local[2..3] type=i32
@@ -2226,6 +3887,134 @@
  1184d3b: 6a                         | i32.add
  1184d3c: 24 00                      | global.set 0 <primary.global$0>
  1184d3e: 0b                         | end
+
+===== func[25926] =====
+119a476 func[25926] <j72304>:
+ 119a477: 01 7e                      | local[2] type=i64
+ 119a479: 02 7f                      | local[3..4] type=i32
+ 119a47b: 23 00                      | global.get 0 <primary.global$0>
+ 119a47d: 41 20                      | i32.const 32
+ 119a47f: 6b                         | i32.sub
+ 119a480: 21 03                      | local.set 3
+ 119a482: 20 03                      | local.get 3
+ 119a484: 24 00                      | global.set 0 <primary.global$0>
+ 119a486: 20 00                      | local.get 0
+ 119a488: 28 02 08                   | i32.load 2 8
+ 119a48b: 21 05                      | local.set 5
+ 119a48d: 20 01                      | local.get 1
+ 119a48f: 28 02 00                   | i32.load 2 0
+ 119a492: ad                         | i64.extend_i32_u
+ 119a493: 20 01                      | local.get 1
+ 119a495: 28 02 04                   | i32.load 2 4
+ 119a498: ad                         | i64.extend_i32_u
+ 119a499: 42 20                      | i64.const 32
+ 119a49b: 86                         | i64.shl
+ 119a49c: 84                         | i64.or
+ 119a49d: 21 04                      | local.set 4
+ 119a49f: 20 03                      | local.get 3
+ 119a4a1: 41 00                      | i32.const 0
+ 119a4a3: 36 02 14                   | i32.store 2 20
+ 119a4a6: 41 cd c6 b5 05             | i32.const 11363149
+ 119a4ab: 2d 00 00                   | i32.load8_u 0 0
+ 119a4ae: 45                         | i32.eqz
+ 119a4af: 04 40                      | if
+ 119a4b1: 41 b8 96 d7 04             |   i32.const 9816888
+ 119a4b6: 10 e5 07                   |   call 997 <j996>
+ 119a4b9: 41 d4 e5 d9 04             |   i32.const 9859796
+ 119a4be: 10 e5 07                   |   call 997 <j996>
+ 119a4c1: 41 cd c6 b5 05             |   i32.const 11363149
+ 119a4c6: 41 01                      |   i32.const 1
+ 119a4c8: 3a 00 00                   |   i32.store8 0 0
+ 119a4cb: 0b                         | end
+ 119a4cc: 41 b8 96 d7 04             | i32.const 9816888
+ 119a4d1: 28 02 00                   | i32.load 2 0
+ 119a4d4: 21 01                      | local.set 1
+ 119a4d6: 20 01                      | local.get 1
+ 119a4d8: 28 02 74                   | i32.load 2 116
+ 119a4db: 45                         | i32.eqz
+ 119a4dc: 04 40                      | if
+ 119a4de: 20 01                      |   local.get 1
+ 119a4e0: 10 e6 07                   |   call 998 <j997>
+ 119a4e3: 0b                         | end
+ 119a4e4: 02 40                      | block
+ 119a4e6: 20 04                      |   local.get 4
+ 119a4e8: a7                         |   i32.wrap_i64
+ 119a4e9: 41 80 80 80 80 78          |   i32.const 2147483648
+ 119a4ef: 46                         |   i32.eq
+ 119a4f0: 20 04                      |   local.get 4
+ 119a4f2: 42 80 80 80 80 70          |   i64.const -4294967296
+ 119a4f8: 83                         |   i64.and
+ 119a4f9: 42 80 80 80 80 80 80 80 80 |   i64.const -9223372036854775808
+ 119a502: 80 7f                      | 
+ 119a504: 51                         |   i64.eq
+ 119a505: 71                         |   i32.and
+ 119a506: 0d 00                      |   br_if 0
+ 119a508: 20 05                      |   local.get 5
+ 119a50a: 28 02 14                   |   i32.load 2 20
+ 119a50d: 21 01                      |   local.set 1
+ 119a50f: 20 03                      |   local.get 3
+ 119a511: 20 04                      |   local.get 4
+ 119a513: 37 03 08                   |   i64.store 3 8
+ 119a516: 41 d4 e5 d9 04             |   i32.const 9859796
+ 119a51b: 28 02 00                   |   i32.load 2 0
+ 119a51e: 21 06                      |   local.set 6
+ 119a520: 20 03                      |   local.get 3
+ 119a522: 20 04                      |   local.get 4
+ 119a524: 37 03 18                   |   i64.store 3 24
+ 119a527: 20 01                      |   local.get 1
+ 119a529: 20 03                      |   local.get 3
+ 119a52b: 41 08                      |   i32.const 8
+ 119a52d: 6a                         |   i32.add
+ 119a52e: 20 03                      |   local.get 3
+ 119a530: 41 14                      |   i32.const 20
+ 119a532: 6a                         |   i32.add
+ 119a533: 20 06                      |   local.get 6
+ 119a535: 10 98 10                   |   call 2072 <j2715>
+ 119a538: 45                         |   i32.eqz
+ 119a539: 0d 00                      |   br_if 0
+ 119a53b: 20 05                      |   local.get 5
+ 119a53d: 28 02 08                   |   i32.load 2 8
+ 119a540: 20 03                      |   local.get 3
+ 119a542: 28 02 14                   |   i32.load 2 20
+ 119a545: 41 06                      |   i32.const 6
+ 119a547: 74                         |   i32.shl
+ 119a548: 6a                         |   i32.add
+ 119a549: 21 01                      |   local.set 1
+ 119a54b: 20 01                      |   local.get 1
+ 119a54d: 2d 00 33                   |   i32.load8_u 0 51
+ 119a550: 20 02                      |   local.get 2
+ 119a552: 73                         |   i32.xor
+ 119a553: 41 01                      |   i32.const 1
+ 119a555: 71                         |   i32.and
+ 119a556: 45                         |   i32.eqz
+ 119a557: 0d 00                      |   br_if 0
+ 119a559: 20 01                      |   local.get 1
+ 119a55b: 20 02                      |   local.get 2
+ 119a55d: 3a 00 33                   |   i32.store8 0 51
+ 119a560: 20 00                      |   local.get 0
+ 119a562: 41 01                      |   i32.const 1
+ 119a564: 3a 00 f4 01                |   i32.store8 0 244
+ 119a568: 20 00                      |   local.get 0
+ 119a56a: 21 01                      |   local.set 1
+ 119a56c: 20 00                      |   local.get 0
+ 119a56e: 28 02 fc 01                |   i32.load 2 252
+ 119a572: 21 00                      |   local.set 0
+ 119a574: 20 01                      |   local.get 1
+ 119a576: 20 00                      |   local.get 0
+ 119a578: 41 01                      |   i32.const 1
+ 119a57a: 6a                         |   i32.add
+ 119a57b: 41 01                      |   i32.const 1
+ 119a57d: 20 00                      |   local.get 0
+ 119a57f: 41 ff ff ff ff 07          |   i32.const 2147483647
+ 119a585: 49                         |   i32.lt_u
+ 119a586: 1b                         |   select
+ 119a587: 36 02 fc 01                |   i32.store 2 252
+ 119a58b: 0b                         | end
+ 119a58c: 20 03                      | local.get 3
+ 119a58e: 41 20                      | i32.const 32
+ 119a590: 6a                         | i32.add
+ 119a591: 24 00                      | global.set 0 <primary.global$0>
+ 119a593: 0b                         | end
 
 ===== func[43493] =====
 18581a2 func[43493] <j176947>:

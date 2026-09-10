@@ -1,11 +1,14 @@
 0x42C4	func[1305]
 0x42EE	func[43533]
 0x42EF	func[43448]
+0x42F2	func[25926]
+0x4319	func[11720]
 0x43AD	func[1607]
 0x43B2	func[25728]
 0x43B3	func[11691]
 0x43B5	func[1725]
 0x43B7	func[43493]
+0x4528	func[9275]
 0x4534	func[43532]
 0x4597	func[6642]
 0x4598	func[43468]
@@ -33,3 +36,7 @@ func[23060]	0x2519
 func[11118]	0x891B
 func[11121]	0x253C
 func[11123]	0x896B
+func[25522]	0xF61E
+func[9267]	0xF40D
+func[25605]	0xF499
+func[24305]	0x2AA69
