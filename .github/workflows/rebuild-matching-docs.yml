@@ -8,6 +8,7 @@ on:
     paths:
       - 'README.md'
       - 'scripts/reconcile_report_sources.py'
+      - 'scripts/consolidate_battle_hex_boundary.py'
       - 'scripts/systems_report_template.md'
       - 'scripts/build_systems_report.py'
       - 'scripts/build_battle_rules_report.py'
@@ -45,6 +46,9 @@ jobs:
       - name: Reconcile cross-report source conclusions
         run: python scripts/reconcile_report_sources.py
 
+      - name: Consolidate battle and hex ownership
+        run: python scripts/consolidate_battle_hex_boundary.py
+
       - name: Rebuild system report
         run: python scripts/build_systems_report.py
 
@@ -69,8 +73,11 @@ jobs:
           test -s docs/reports/matching/bot.html
           test -s docs/reports/hex-random/index.html
           grep -q '目前没有证据表明周围格在“刚显现”那一刻重新掷一次25%' docs/reports/system/report.md
-          grep -q '随机修正与保护：细节统一归地块随机专题' docs/reports/battle/report.md
+          grep -q '地图与翻格：摘要与专题入口' docs/reports/battle/report.md
+          grep -q '没有找到邻格显现时重新掷一次25%的调用链' docs/reports/battle/report.md
           grep -q '共用该玩家一个局内消费位' docs/reports/battle/report.md
+          ! grep -q '已找到的概率修改器与保护' docs/reports/battle/report.md
+          ! grep -q '这次怎样把未还原函数打开的' docs/reports/battle/report.md
           grep -q '并共用该玩家一个局内消费位' docs/reports/matching/report.md
           grep -q '25%到底什么时候发生' docs/reports/hex-random/index.html
           grep -q '用户标签共用一次消费位' docs/reports/hex-random/index.html
