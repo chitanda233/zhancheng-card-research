@@ -376,135 +376,37 @@ md = '''# 《占城大师》局内战斗规则
 - 结算广告礼包需要额外触发，不属于无条件基础结算；
 - 本局剩余金币没有已确认的局外换算规则。
 
-## 模块二：地图与翻格子规则
+## 模块二：地图与翻格：摘要与专题入口
 
-这一模块把两个容易混在一起的问题拆开：先说明“本局会抽到哪张地图、地图骨架怎样生成”，再说明“某个格子翻开后会抽到什么”。
+本页不再维护第二份地图模板清单、四档概率表、具体卡牌抽取函数和SSSR修正细表。它们统一归入[地块生成与兵种随机专题](../hex-random/index.html)。本页只保留玩家理解一局战斗所需的结论，避免同一底层机制在两个页面分别更新后产生冲突。
 
-### 1. 地图体系总览
+### 1. 玩家在一局里需要知道什么
 
-| 体系 | 当前表中记录 | 实际含义 | 是否随机 |
-| --- | ---: | --- | --- |
-| 普通竞技场经典版型 | 20档 × 3形状 = 60套 | 矩形、桥形、圆形；高档竞技场会复用较早尺寸 | 表内没有地图权重，不能直接断言三等分 |
-| 新版多边形版型 | 190条ID | 02～20号源版型向同档或更高档复用 | 190是引用记录，不是190张独立几何图 |
-| 赛季PVP地图池 | 132条候选 | 11个层级（5～15），每层是经典三形＋逐档增加的多边形 | 同层候选权重均为1000，配置内等权 |
-| 训练地图 | Sheet1三条＋Sheet2两条 | 固定尺寸、固定格内容，部分还有固定敌方翻格顺序 | 教学脚本，不走普通随机地图流程 |
+| 玩家看到的现象 | 当前采用的底层解释 | 完整细节归属 |
+| --- | --- | --- |
+| 一局进入某张地图 | 模式、竞技场／PVP层级、服务器或本地候选池共同决定地图；训练局可以固定编排 | [地块随机专题：地图选择与模板](../hex-random/index.html) |
+| 扩张后周围出现一星／二星／三星／未知格 | 未被固定用途覆盖的普通格在开局初始化时已通过`Range(0,4)`生成四档，各25%；当前没有证据表明显现瞬间重新抽档位 | [地块随机专题：25%发生时点](../hex-random/index.html) |
+| 支付金币打开格子后得到兵营／资源／空 | 常规路径主要揭晓开局保存的隐藏结果；少数引导、占领重生成和点击后修正规则可以覆盖 | [地块随机专题：隐藏内容与点击覆盖](../hex-random/index.html) |
+| 某些局很早出现SSSR | 基础品质权重可被用户标签、周卡、每日祝福等不同分支修正；这些修正不是统一的固定百分点 | [地块随机专题：SSSR权重](../hex-random/index.html) |
 
-另有 `ChessboardConfig` 一类24格活动棋盘数据，但它属于局外/活动棋盘，不计入本页的局内对战地图。
+### 2. 新显现格与25%的当前证据边界
 
-### 2. 普通竞技场：三种经典版型全部清单
+当前函数级证据支持“**开局预生成，扩张时揭晓**”：`BuildStableGenerationOrder`先按seed与Q/R坐标确定内部生成顺序，普通格在初始化的`ResolveInitialRarity`里执行`Range(0,4)`；实际开格函数读取已经存在的`BattleHexCellState`并优先按隐藏建筑结算，没有再次调用四档随机。
 
-经典版型固定是 `RectangleMap（矩形）`、`BridgeMap（桥形）`、`CircleMap（圆形）`。20档竞技场的60套引用如下；竞技场13～15复用12档，16～20也会回用4/8/10/12/5档资源，说明“竞技场更高”不等于地图一定更大。
+但负责“打开一个格后，哪些邻格被设为可见／可开启”的完整状态更新函数仍未完全恢复，所以这里只采用强证据结论：**目前没有找到邻格显现时重新掷一次25%的调用链**，而不把表现层每一步写成已完全确认。
 
-<!--CLASSIC_TABLE-->
+### 3. SSSR保护与点击后修正只保留一句话结论
 
-这里能确认候选内容，却没有找到普通竞技场经典三形的选择权重或调用分支；因此不能把它写成每种固定 `33.33%`。默认开关 `NewArenaMap=1` 说明客户端预留了新版地图分支，但缓存只保留默认值，不代表每个账号线上实时取值。
+用户标签侧，刚付费`+10`、连败`+50`、回流`+30`、对手连胜`+50`是加到SSSR段的**权重值**而非百分点；有效项先合并为B，并共用该玩家一个局内消费位。首个符合条件的SSSR兵营在内部生成序列中出现后，这整组用户标签加权停止。没有发现“固定每隔N格重新触发”“连续N格没出就递增”或“普通SSSR之间强制间隔N格”的规则。
 
-### 3. 新版多边形：190条记录怎样还原成版型
+玩家真正点击时仍有独立后置逻辑，例如前几次低价格的部分SSR／SSSR结果可能尝试重抽为R。因此“内部第几个格生成SSSR”和“玩家第几次实际翻到SSSR”不是同一个指标。公式、叠加示例、消费条件和其他祝福分支全部以[地块随机专题](../hex-random/index.html)为准。
 
-多边形ID符合 `PolygonArena_SSTT`：`SS` 是源版型族，`TT` 是可引用的目标竞技场。这个语义由ID与复用模式推得，属于高置信分析推导。源版型02可供02～20档引用，源版型20只有20档一条，所以总数是 `19+18+…+1=190`。
+### 4. 页面职责
 
-<!--POLYGON_TABLE-->
-
-进一步按 `地图尺寸＋双方主塔坐标＋排除格坐标＋特殊点位` 去重，190条只对应**22种几何布局签名**；按地面Prefab路径去重是17种。差异来自早期02～04族存在随目标档变化的几何版本，以及12～15族共用同一套几何。完整190条ID、坐标和Prefab已保留在可下载的 [battle-rules-data.json](battle-rules-data.json)，不用把190行塞进正文。
-
-### 4. 赛季PVP：逐档扩池与地图概率
-
-`PvpMapConfig（PVP地图配置）` 覆盖层级5～15。每层都有矩形、桥形、圆形三张经典地图，再加入02号到当前层级号的多边形地图；所有候选 `Weight=1000`，因此同一层候选在配置层面等权。
-
-<!--PVP_TABLE-->
-
-这说明地图概率会随**玩家所处PVP层级**改变：层级5时单图 `1/7=14.29%`，多边形合计57.14%；层级15时单图 `1/17=5.88%`，多边形合计82.35%。这是“进度变化”，不是“对局时间越久概率越高”。另外 `Pvp_PlayFirstMap=1001` 指向 `pvp-1005-rectangleMap`，首场PVP是固定矩形图，绕过常规随机池。
-
-### 5. 训练地图：固定编排与保护
-
-训练地图两张表共5条配置记录，代表两个版本/分支的教学方案，不能简单相加成线上同时存在5张地图。它们通过 `hexConfigs` 固定位置、品质与内容；部分关卡还固定敌方翻格坐标与间隔，从根源上避免新手教程被随机结果卡住。
-
-<!--TRAINING_TABLE-->
-
-### 6. 地图生成链与已确认边界
-
-普通对局可还原的链路是：**模式/层级选择候选池 → 按权重选择地图记录 → 读取尺寸、主塔点、排除点和特殊点 → 建立可用六边格 → 按稳定顺序预生成普通格档位与隐藏内容 → 玩家扩张时揭晓周围可见格 → 玩家支付金币打开并结算**。其中PVP池权重、经典与多边形的坐标骨架、训练固定格都有直接表证据。
-
-2026-09-10函数链复核：未被预置用途覆盖的普通格在开局初始化的`ResolveInitialRarity`中调用`Range(0,4)`，四种地块档位初始机会各25%；主城邻位用途、固定内容、金矿和特殊资源等会覆盖生成，因此整图最终外观比例不等于各25%。`BuildStableGenerationOrder`先确定内部逐格生成顺序，实际开格函数读取既有`BattleHexCellState`并优先按隐藏建筑结算，没有再次执行四档`Range(0,4)`。所以周围新显现格目前更有证据支持是在揭晓预生成档位，而不是显现瞬间重新随机；邻格可见状态更新函数仍未完整恢复。随机机制细节统一见[地块生成与兵种随机专题](../hex-random/index.html)。
-
-### 7. 翻格价格与基础结果权重
-
-| 地块外观 | 价格 | 普通 R | 稀有 SR | 史诗 SSR | 传说 SSSR | 空 |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| 一星 `1001` | 50 | 74% | 20% | 5% | 1% | 0% |
-| 二星 `1002` | 100 | 50% | 40% | 8% | 2% | 0% |
-| 三星 `1003` | 250 | 0% | 0% | 90% | 10% | 0% |
-| 未知 `1004` | 25 | 0% | 0% | 15% | 5% | 80% |
-
-五个权重来自 `GlobalHexInfo（全局六边形地块信息）` 的 `probabilityProfile`，每行合计100。字段语义沿用已恢复的品质顺序“普通、稀有、史诗、传说、空”。因此当前快照的未知格非空率是20%，不是80%或25%；它一旦非空，条件概率是75%史诗、25%传说。
-
-这张表只证明**结果品质层**，不证明某一张具体卡的独立概率。具体卡牌还要经过下面的本局牌组候选筛选。
-
-### 8. 具体卡牌是怎样抽出来的
-
-核心结论：**常规地块不是点击瞬间从全卡库重新抽一张，而是在开局按确定性随机种子生成隐藏内容，点击时再把该内容结算成玩家牌组中的卡。** 编译符号把链路拆得很清楚：
-
-| 顺序 | 代码路径 | 实际作用 |
-| ---: | --- | --- |
-| 1 | `BuildStableGenerationOrder`、`CalculateGenerationOrderKey` | 用战斗种子和稳定顺序决定各格的生成先后，保证双方与回放结果一致 |
-| 2 | `ResolveInitialRarity`、`TryFindHexRarityProfile` | 按当前地块的五段权重先抽普通、稀有、史诗、传说或空 |
-| 3 | `CountCardsByRare` | 从本局牌组按品质建立候选池，不是从54张全卡表直接抽 |
-| 4 | `IsInitialCardCandidateAllowedByRare` | 排除品质不符的牌 |
-| 5 | `IsInitialCardCandidateAllowedByGoldMineLimit` | 达到金矿随机上限后排除金矿 |
-| 6 | `IsInitialCardCandidateAllowedByHiddenRestrictions` | 按隐藏格类型继续排除不允许的资源、防御或兵营候选 |
-| 7 | `ResolveRandomArchitecture` | 从剩余候选中选择建筑/卡牌，并把结果写进格子隐藏内容 |
-| 8 | `SelectCardForHex`、`ResolveOpenedHexOutcome` | 玩家点击时找到与隐藏建筑对应的已装备卡，完成揭晓和建造 |
-
-旧版展示层还保留了更直白的四个牌池：`cardRInfoList`、`cardSrInfoList`、`cardSsrInfoList`、`cardSssrInfoList`，以及 `cardRNoGoldMineInfoList`、`RandomSRArchitectureLevelInfoAndNoDef`、`RandomBarracksArchitectureInfo` 等过滤池。这与新版BattleCore的候选切片逻辑相互印证。
-
-#### 同品质内是不是每张卡等概率
-
-现在可以给出源码级结论：**在所有限制处理完之后，对剩余候选按列表索引均匀抽取。** `ResolveRandomArchitecture`（表槽 `0xEFFC` → WASM `func[15972]`）把 `0` 和 `candidates.Count` 直接传给 `FPRandom.Range`，再用返回值读取候选列表；中间没有读取单卡权重字段。
-
-`FPRandom.Range`（表槽 `0x43CA` → WASM `func[1693]`）使用PCG状态推进，并通过拒绝采样消除简单取模偏差。因此在基础、无覆盖分支中，若某格抽中史诗的概率为 `P(SSR)`，过滤后有 `N` 张合法史诗候选，则 `P(某张卡 | 已抽中SSR且进入该池)=1/N`，整体概率为 `P(某张卡)=P(SSR)×1/N`。
-
-例如未知格基础是15%史诗；过滤后若有3张合法史诗牌，且没有触发任何覆盖路径，每张就是5%。若某张牌被类型限制排除，或触发账号标签、金卡加成、首次召唤、周卡指定牌等覆盖路径，就要先重算品质或候选池，不能直接套这个5%。
-
-#### 这次怎样把未还原函数打开的
-
-原始 `global-metadata.dat` 的保护范围比预想的小：魔数被替换成 `0995`，IL2CPP v31头部和字符串字面量索引表按字节异或 `0x91`，其余方法、类型和字段表没有整体加密。恢复魔数与这两个区段后，配合带完整Data段的主WASM，成功定位 `CodeRegistration=0x0CF1EC`、`MetadataRegistration=0x09490C`，生成了方法签名与函数表映射。由此可以从方法名落到具体WASM函数体，而不再只靠字符串邻接推断。
-
-#### 点击时会不会重新随机
-
-- 常规未翻格：隐藏内容在开局已生成，点击主要是揭晓；
-- 被占领的特殊隐藏格：存在 `TryRegenerateCapturedHiddenHexContent` 和独立候选缓存，可能重新生成；
-- 调试/引导：可通过强制兵营牌、龙骑士引导等路径覆盖普通结果；
-- 前三次低价翻格：存在单独重抽路径，见下一节。
-
-### 9. 随机修正与保护：细节统一归地块随机专题
-
-本页只保留玩家理解一局战斗所需的摘要；SSSR权重公式、用户标签消费位、周卡／每日祝福条件、低价重抽与超级召唤的完整函数链统一维护在[地块生成与兵种随机专题](../hex-random/index.html)，不再在局内规则页维护第二份细表。
-
-| 机制 | 本页采用的确定结论 |
-| --- | --- |
-| 用户标签 SSSR 加权 | 刚付费 +10、连败 +50、回流 +30、对手连胜 +50 都是权重增量，不是百分点；有效项先合并为 B，并共用该玩家一个局内消费位。首个符合条件的 SSSR 兵营生成后，这一整组标签加权停止；没有发现“每隔 N 格重新触发”的规则。 |
-| 普通格四档 | 未被固定用途覆盖的普通格在开局初始化时由 `Range(0,4)` 各25%生成一星／二星／三星／未知；目前没有证据表明邻格显现时重新掷一次四档随机。 |
-| 前几次低价翻格 | 属于玩家实际点击阶段的后置重抽：价格低于250、本方低价开格计数≤3、原结果为SSR/SSSR且不是资源或防御时，尝试改抽不含金矿的R卡；没有合法替换时不保证降级。 |
-| 周卡与每日祝福 | 已恢复到初始化函数的独立加权分支；它们有各自的开关／ID／卡牌条件，不属于用户标签的共用消费位。具体换算统一看地块随机专题。 |
-| 超级召唤与神器首次传说 | 属于消费进度或后置替换路径，不应和基础地块概率、用户标签一次性加权混成一个固定百分比。 |
-
-因此评估“这一局为什么早出或晚出 SSSR”时，要区分**内部生成序列位置**与**玩家第几次实际翻到它**。用户标签可能在开局内部较早生成 SSSR 时已经被消费，而玩家由于扩张路线不同，可能很晚才看到那个格子。
-
-### 10. 概率是否随对局时间变化
-
-当前没有发现“战斗进行到第N秒后，四类地块基础权重自动上升/下降”的配置。能确认的动态因素是：
-
-- 随PVP层级上升，地图候选池扩大，多边形地图总占比提高；
-- 累计花费可能触发2000金币金卡保底，这是事件进度变化，不是秒数变化；
-- “首次传说召唤”锻造属性只针对一次性节点；
-- 周卡、士气、祝福和远程开关可能按账号、活动周期或服务端实验切换；
-- 教程/首场PVP会覆盖随机流程，随后才进入普通候选池。
-
-### 11. 版本变化：目前能证明到哪里
-
-本地缓存有 `2026.08.05.09.26.16` 与 `2026.08.28.09.05.24` 两个Addressables目录哈希，证明资源目录至少更新过一次；但只保留了一份完整动态配置包，所以无法把两个日期的地图与概率逐项做数值Diff。
-
-[游戏那点事的2026年6月玩法观察](https://app.myzaker.com/news/article.php?pk=6a27422a8e9f092a9c2d91c5)称25金币随机格“产出建筑总概率25%”，而2026-09-03本地快照是20%非空（15%史诗＋5%传说）。这是一条**疑似版本变化线索**，也可能是媒体简化/误差；没有旧版配置前不能定论。[App Store版本历史](https://apps.apple.com/cn/app/id6760402564)显示期间持续发版，但公开更新说明多为笼统的修复与体验优化，没有点名地图池或翻格概率调整。
+- **本页 BATTLE：**局内经济、空间扩张、兵线、神器、胜负与模式差异。
+- **HEX RANDOMNESS：**地图模板与选图、开局稳定生成顺序、四档25%、R／SR／SSR／SSSR、具体建筑候选、用户标签、祝福、低价重抽和随机证据。
+- **MATCHING：**真人搜索窗口、Bot介入参数、段位候选池和玩家状态是否进入匹配选择。
+- **BOT：**86套机器人逐卡载荷、神器、主城和AI行为。
 
 ## 证据与附录
 
@@ -619,16 +521,16 @@ toc_items='''
 <li><a href="#module-overview"><strong>模块一：局内整体流程</strong></a><ul>
 <li><a href="#rule-1">一句话理解</a></li><li><a href="#rule-2">单局规则链</a></li><li><a href="#rule-3">玩家能控制什么</a></li><li><a href="#rule-4">局内经济</a></li><li><a href="#rule-5">建筑、出兵与路线</a></li><li><a href="#rule-6">两条胜利路线</a></li><li><a href="#rule-7">神器规则</a></li><li><a href="#rule-8">竞技场参数</a></li><li><a href="#rule-9">普通场与赛季PVP</a></li><li><a href="#rule-10">局内/局外结算</a></li>
 </ul></li>
-<li><a href="#module-hex"><strong>模块二：地图与翻格子规则</strong></a><ul>
-<li><a href="#hex-1">地图体系总览</a></li><li><a href="#hex-2">经典版型全清单</a></li><li><a href="#hex-3">190条多边形记录</a></li><li><a href="#hex-4">PVP地图概率</a></li><li><a href="#hex-5">训练固定地图</a></li><li><a href="#hex-6">地图生成链</a></li><li><a href="#hex-7">翻格基础概率</a></li><li><a href="#hex-8">具体卡牌选择</a></li><li><a href="#hex-9">概率修改器与保护</a></li><li><a href="#hex-10">局内时间变化</a></li><li><a href="#hex-11">版本变化证据</a></li>
+<li><a href="#module-hex"><strong>模块二：地图与翻格摘要</strong></a><ul>
+<li><a href="#hex-1">玩家需要知道什么</a></li><li><a href="#hex-2">新显现格与25%</a></li><li><a href="#hex-3">SSSR与后置修正</a></li><li><a href="#hex-4">页面职责</a></li>
 </ul></li>
 <li><a href="#appendix"><strong>证据与附录</strong></a><ul>
 <li><a href="#appendix-1">常见误读</a></li><li><a href="#appendix-2">证据与待验证</a></li><li><a href="#appendix-3">数据来源</a></li>
 </ul></li>'''
 module_ids=iter(['module-overview','module-hex','appendix'])
 body=re.sub(r'<h2(?: id="[^"]*")?>',lambda _:f'<h2 id="{next(module_ids)}">',body,count=3)
-subsection_ids=iter([*[f'rule-{i}' for i in range(1,11)],*[f'hex-{i}' for i in range(1,12)],*[f'appendix-{i}' for i in range(1,4)]])
-body=re.sub(r'<h3(?: id="[^"]*")?>',lambda _:f'<h3 id="{next(subsection_ids)}">',body,count=24)
+subsection_ids=iter([*[f'rule-{i}' for i in range(1,11)],*[f'hex-{i}' for i in range(1,5)],*[f'appendix-{i}' for i in range(1,4)]])
+body=re.sub(r'<h3(?: id="[^"]*")?>',lambda _:f'<h3 id="{next(subsection_ids)}">',body,count=17)
 body=body.replace('<p>玩家不直接操纵', '<p class="summary">玩家不直接操纵',1)
 body=body.replace('</p>', '</p>',1)
 body=body.replace('<p><code>BattleConfigHexRarityProfile（战斗地块品质概率配置）</code>', '<p class="callout"><code>BattleConfigHexRarityProfile（战斗地块品质概率配置）</code>')
@@ -638,12 +540,12 @@ flow='''<div class="flow" aria-label="一局战斗流程"><div><b>① 入场</b>
 body=body.replace('<div class="scroll"><table>',flow+'<div class="scroll"><table>',1)
 arena_tool='''<section class="arena-tool"><label for="arenaSelect">查看全部竞技场参数</label><select id="arenaSelect"></select><div class="arena-stats"><div>时限<b><span data-arena="countDownTime"></span>秒</b></div><div>地图候选<b data-arena="arenaMapSize"></b></div><div>金矿上限候选<b data-arena="minesCountLimit"></b></div><div>胜利进度<b>+<span data-arena="trophyReward"></span></b></div><div>失败扣减基数<b>-<span data-arena="trophyPunish"></span></b></div><div>胜利局外金币<b data-arena="victoryGoldNoBet"></b></div></div></section>'''
 body=body.replace('<h3 id="rule-9">',arena_tool+'<h3 id="rule-9">')
-page=f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="占城大师局内战斗规则：经济、地图池、翻格概率、自动出兵、胜负、神器与版本变化"><title>占城大师 · 局内战斗规则</title><style>{css}</style></head><body><header><div class="hero"><div class="eyebrow">IN-BATTLE RULEBOOK</div><h1>《占城大师》局内战斗规则</h1><p>把一局战斗拆成经济、空间、兵线、目标和时间五个维度；单列地图类型、选图权重、翻格概率、保护机制与版本证据。</p><div class="chips"><span>20档经典竞技场</span><span>22种多边形布局</span><span>132条PVP地图候选</span><span>4种地块结果表</span></div></div></header><main><nav><strong>页面目录</strong><ul>{toc_items}</ul></nav><article>{body}</article></main><a class="back" href="../../index.html">← 研究首页</a><aside id="tooltip" role="tooltip" hidden><b></b><span></span></aside><script>{js}</script></body></html>'''
+page=f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="占城大师局内战斗规则：经济、地图池、翻格概率、自动出兵、胜负、神器与版本变化"><title>占城大师 · 局内战斗规则</title><style>{css}</style></head><body><header><div class="hero"><div class="eyebrow">IN-BATTLE RULEBOOK</div><h1>《占城大师》局内战斗规则</h1><p>把一局战斗拆成经济、空间、兵线、目标和时间五个维度；地图与地块随机只保留玩家视角摘要，底层概率统一进入独立专题。</p><div class="chips"><span>局内经济</span><span>空间扩张</span><span>自动兵线</span><span>随机专题分离</span></div></div></header><main><nav><strong>页面目录</strong><ul>{toc_items}</ul></nav><article>{body}</article></main><a class="back" href="../../index.html">← 研究首页</a><aside id="tooltip" role="tooltip" hidden><b></b><span></span></aside><script>{js}</script></body></html>'''
 (OUT/'index.html').write_text(page,encoding='utf-8')
 
 manifest=[]
 for name in ('index.html','report.md','battle-rules-data.json'):
     raw=(OUT/name).read_bytes();manifest.append({'file':name,'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()})
-verification={'passed':True,'contentModules':2,'appendix':True,'sections':24,'arenaRows':len(arenas),'polygonMapRows':len(polygon_arenas),'polygonLayoutSignatures':len(all_polygon_layout_signatures),'pvpMapRows':len(pvp_maps),'hexRows':len(hexes),'tutorialRows':len(data['tutorials']),'files':manifest,'warnings':data['warnings']}
+verification={'passed':True,'contentModules':2,'appendix':True,'sections':17,'arenaRows':len(arenas),'polygonMapRows':len(polygon_arenas),'polygonLayoutSignatures':len(all_polygon_layout_signatures),'pvpMapRows':len(pvp_maps),'hexRows':len(hexes),'tutorialRows':len(data['tutorials']),'files':manifest,'warnings':data['warnings']}
 (OUT/'verification.json').write_text(json.dumps(verification,ensure_ascii=False,indent=2),encoding='utf-8')
-print(json.dumps({'output':str(OUT),'contentModules':2,'sections':24,'arenas':len(arenas),'polygonRecords':len(polygon_arenas),'polygonLayouts':len(all_polygon_layout_signatures),'pvpMapRecords':len(pvp_maps),'tutorials':len(data['tutorials'])},ensure_ascii=False))
+print(json.dumps({'output':str(OUT),'contentModules':2,'sections':17,'arenas':len(arenas),'polygonRecords':len(polygon_arenas),'polygonLayouts':len(all_polygon_layout_signatures),'pvpMapRecords':len(pvp_maps),'tutorials':len(data['tutorials'])},ensure_ascii=False))

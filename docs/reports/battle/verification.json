@@ -2,7 +2,7 @@
   "passed": true,
   "contentModules": 2,
   "appendix": true,
-  "sections": 24,
+  "sections": 17,
   "arenaRows": 20,
   "polygonMapRows": 190,
   "polygonLayoutSignatures": 22,
@@ -12,13 +12,13 @@
   "files": [
     {
       "file": "index.html",
-      "bytes": 76281,
-      "sha256": "0d09ad6daf5b2398784f83cb444158d256dbbab54f7eafeb9dffafdf65b67378"
+      "bytes": 35178,
+      "sha256": "7d62d6c6aa437ec8e778b96118dcd6319150748d6c935a4ff15ec94cbeb0384d"
     },
     {
       "file": "report.md",
-      "bytes": 28477,
-      "sha256": "eb54dde74fdafe10c9b0d759b2e87e4db85d0117121d7832f19f7536b3737c8f"
+      "bytes": 14585,
+      "sha256": "22995aad28d569122ca7cfe725ec5254b78506d03cacf1927febd489bb4cfa6c"
     },
     {
       "file": "battle-rules-data.json",
