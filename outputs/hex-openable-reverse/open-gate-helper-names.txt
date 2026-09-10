@@ -1,0 +1,7 @@
+0x42F2	line 529801	type=BattleNavigationSystem	public void SetHexOpened(BattleHexCoord coord, bool opened) { }
+0x4319	line 536834	type=BattleSimulation	private void MarkDynamicWallsDirtyAround(BattleHexCoord coord) { }
+0x4597	line 536657	type=BattleSimulation	public string GetHexOpenBlockReason(int playerId, BattleHexCellState cell, bool requireAffordable) { }
+0x459B	line 537257	type=BattleSimulation	private bool CommitOpenedHex(int playerId, BattleHexCellState cell, int eventAmount, bool consumeDebugForcedCard, bool claimAdjacentSpecialRewards, out BattleHexCellState openedCell) { }
+0xF40D	line 536598	type=BattleSimulation	public int GetPlayerGold(int playerId) { }
+0xF499	line 537272	type=BattleSimulation	private bool ClaimAdjacentSpecialHexReward(int playerId, BattleHexCellState cell) { }
+0xF61E	line 538739	type=BattleSimulation	private bool HasPlayerOpenAnchorNeighbor(int playerId, BattleHexCellState target) { }
