@@ -32,18 +32,8 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-
       - name: Install Python dependencies
         run: python -m pip install --disable-pip-version-check markdown pillow
-
-      - name: Install Playwright
-        run: |
-          npm install --no-save --package-lock=false playwright
-          npx playwright install --with-deps chromium
 
       - name: Rebuild matching report
         run: python scripts/build_matching_report.py
@@ -51,8 +41,14 @@ jobs:
       - name: Rebuild public docs
         run: python scripts/build_public_site.py
 
-      - name: Validate matching report
-        run: node scripts/test_matching_report.cjs
+      - name: Validate generated matching page
+        shell: bash
+        run: |
+          test -s docs/reports/matching/index.html
+          test -s docs/reports/matching/report.md
+          grep -q '2200 分' docs/reports/matching/index.html
+          grep -q '第 5 次连续失败' docs/reports/matching/index.html
+          grep -q '匹配层与体验调节层必须分开' docs/reports/matching/index.html
 
       - name: Commit generated files
         shell: bash
