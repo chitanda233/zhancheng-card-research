@@ -6,7 +6,7 @@
 
 - 本地直接打开 [`docs/index.html`](docs/index.html)，进入发布版研究门户。
 - 开启本地服务器：`python -m http.server 8000 --directory docs`，然后访问 `http://127.0.0.1:8000/`。
-- `docs/` 是 GitHub Pages 的发布根目录；其他生成结果和原始工作区不需要上传。
+- `docs/` 是 GitHub Pages 的发布根目录；研究归档与逆向资产仅作为仓库内协作证据，不属于 Pages 发布站点。
 
 ## 项目结构
 
@@ -27,16 +27,16 @@ zhancheng-card-research/
 │  └─ manifest.json              # 发布文件校验清单
 ├─ scripts/                      # 提取、分析、报告和发布脚本（进入 Git）
 ├─ research/
-│  ├─ README.md                  # 本地研究层说明（进入 Git）
-│  └─ archive/2026-09-03/        # 解包与缓存备份（保留本机、Git 忽略）
-├─ outputs/                      # 工作输出（被 Git 忽略）
-├─ tables/                       # 完整解析表（被 Git 忽略）
-├─ card-art/                     # 导出的卡牌图（被 Git 忽略）
-├─ extracted/                    # Unity 提取中间物（被 Git 忽略）
-└─ tools, node_modules/          # 本地工具与依赖（被 Git 忽略）
+│  ├─ README.md                  # 研究归档层说明（进入 Git）
+│  └─ archive/2026-09-03/        # 固定研究快照与 canonical 逆向产物（进入 Git）
+├─ outputs/                      # 工作输出（当前协作快照进入 Git）
+├─ tables/                       # 完整解析表（当前协作快照进入 Git）
+├─ card-art/                     # 导出的卡牌图（当前协作快照进入 Git）
+├─ extracted/                    # Unity 提取中间物（当前协作快照进入 Git）
+└─ tools, node_modules/          # 工具快照进入 Git；node_modules 仍忽略
 ```
 
-缓存和解包文件按研究快照移入 `research/archive/2026-09-03/`，内容完整保留；相关脚本已改用该路径。Git 只看到可维护源码和经过筛选的发布物。
+缓存和解包文件按研究快照移入 `research/archive/2026-09-03/`，内容完整保留；相关脚本已改用该路径。当前仓库还提交了用于协作复核的研究快照与逆向资产，但 `docs/` 仍是唯一 GitHub Pages 发布根目录。
 
 ## 更新发布版
 
