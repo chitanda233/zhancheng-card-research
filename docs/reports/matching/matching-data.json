@@ -35331,87 +35331,87 @@
     {
       "table": "PvpBotConfig",
       "rows": 86,
-      "sha256": "e48ea5e670c52f822aa7995c28bd68515428dfd122a9446f5356333e019b5606"
+      "sha256": "748c6a5ee35f645a26ee52450d8beda324c2bb4883eec30b9144c6035673bc2b"
     },
     {
       "table": "PvpRankConfig",
       "rows": 25,
-      "sha256": "078c8b0f35f5200fcf6d162ff04c192c1c5dcc8d258e29ab0617768fc0d2c3a9"
+      "sha256": "e74a52853736704950d9ebc9b38cdca47bc388661009efe3648a3a731441f646"
     },
     {
       "table": "PvpMatchingConfig",
       "rows": 15,
-      "sha256": "82fee22c72c25300e96432051a15c1eabc94f59dd226b55096c0bda9f0d26329"
+      "sha256": "1760716ee73e53374e1e6504b65ec3cfe0c111d41c0864a5a16bc86dae33aacb"
     },
     {
       "table": "PvpSettingConfig",
       "rows": 28,
-      "sha256": "25742289c6d2aabe9e58216b4bf3d448125b462ec422ced83663fcad0488f207"
+      "sha256": "c786eb3ceae39f1a0ab050822601da9c91c0e3531fd35ffa2de932098f19736b"
     },
     {
       "table": "EnemyDifficultLevelInfosgameplay_improve_01",
       "rows": 25,
-      "sha256": "e7b0243db2a93c6bc8c50289781be16bd2049707bb1310f4bb7f85c852453a5c"
+      "sha256": "0f0be6e97e8c0a4388d8139e9ea0894dbf4d1b4c8aa49e08ec5d6fed33ee4b31"
     },
     {
       "table": "ArenaEnemyCardsInfoSheet2",
       "rows": 65,
-      "sha256": "fc3028780fc67ac1726eba1e6f30602c713789bfc4d276cb52d91cb3475b5ca6"
+      "sha256": "3e2a80468ea7d3e78f9b8004bce4faa4418e142502d81c71557f7dc3bb221fca"
     },
     {
       "table": "ArenaEnemyBalanceInfogameplay_improve_01",
       "rows": 40,
-      "sha256": "a17f89ae6173089cd0393146cb45b17040ccfc85fd465417142d9d867dedeb1d"
+      "sha256": "368fb52691079647b26f14078b4c1f46bd5cd3d0d269de82cf61e6119a15ce72"
     },
     {
       "table": "AIPropInfoConfig",
       "rows": 20,
-      "sha256": "d3bfcaccfd078c008f09cfd85497f5991082b9a627dfb81e40370fdc9d1a0a4b"
+      "sha256": "88c1680dc65a4203b19855ea9a5762ad97d68746770011170926d873b09f604b"
     },
     {
       "table": "GlobalArtifactAIReleaseInfo",
       "rows": 24,
-      "sha256": "8d80c2ccdee4f8f94fbdc3dbc1ad3304dc3a816ff7ed7f46bf78e637a9670425"
+      "sha256": "ff95cd7da6a41c4755bdf0852da87e5c73654095dd7ee5a7f42ec41fa0857ec9"
     },
     {
       "table": "GlobalHeroCardInfoSheet5",
       "rows": 54,
-      "sha256": "fe685dcfe2ed6ed415f713499728f059d692fb9007b5ed2a10189483b5fa6b57"
+      "sha256": "96ae795c7753c477a2dd619cae5ba524f98e7a24f3244918232c40d8571e348c"
     },
     {
       "table": "GlobalTrainingMapInfoSheet1",
       "rows": 3,
-      "sha256": "82fe2bcf1982c0ddeb1f505f9411d64324c5dc733d140a843c6289af1ece84ef"
+      "sha256": "aabcec18dee4e3d48b89bd27d0477608c2a77a68474ab531d4f145ed13bee87f"
     },
     {
       "table": "GlobalTrainingMapInfoSheet2",
       "rows": 2,
-      "sha256": "bb34e861bda63839bea83f65ae17afdb77da72ae5a4a9a6f9f9d16a53032333c"
+      "sha256": "7cb816e3846a1ca686858594eb68e657a61050cd0c8ea87b499249f7b5e33162"
     },
     {
       "table": "GlobalCardTalentInfoSheet3",
       "rows": 268,
-      "sha256": "504ef60f14230ef1bc69a6df410e420a273e4789ddde25dae6d112e604a453e3"
+      "sha256": "e271f55483960fe4578ce782285253dd4ceabca167de438890263cf42f02fafb"
     },
     {
       "table": "GlobalPropInfoBTest",
       "rows": 24,
-      "sha256": "2a17c8e7daab7be64e128ed22ad044a21f524e212f7aa025476f9367f5d9da4f"
+      "sha256": "d3e1e695cdf6eea1fcc43baff4edd6e79a8522b1eec6da022a87d699b8728b78"
     },
     {
       "table": "GlobalArtifactsForgeInfo",
       "rows": 48,
-      "sha256": "771f0cbdc1a16827571d329686495f591768cfd8928ad1e9bb894b3be312f31b"
+      "sha256": "4feaf9a5ddbcf68888bb20ae149cbd993ea62883af6f2780f489e41753042ce4"
     },
     {
       "table": "PropAttrTypeConfig",
       "rows": 7,
-      "sha256": "7a9ac218940eaf3b041d6b7737beeb9c53a3478f54187790303fc1c90e18cfd1"
+      "sha256": "7576458a447f6581c94670eb281f98a48f4469786e6ef3448959f9098b0a5cb8"
     },
     {
       "table": "PropRankUpInfoConfig",
       "rows": 31,
-      "sha256": "1ffbd6e65487f9150d398344d6fbee5a38f7b2cfb97a8234974d5a441198cb4a"
+      "sha256": "a2a7ff86009bdcdefa5e9b0145db27d1c68a7a3fd4dcb549f0683120c7f6d7bd"
     }
   ]
 }

@@ -6,11 +6,11 @@
 
 **机器人有多少？** `PvpBotConfig` 有 86 条身份记录，但不等于 86 种不同强度：解析后有 29 种完整战斗载荷、22 种不计等级的卡组。每条都带 8 张卡，共 688 个卡牌槽。普通竞技场另有 25 档难度、65 条组卡配额、40 条平衡记录；这些是不同用途的表，不能相加成机器人账号总数。
 
-**什么时候遇到哪种机器人？** PVP 段位表明确列出 `Pvp_BotDiff` 编号池，全部编号都能对应到机器人预设；例如青铜 I 指向 1～10，白银 II 指向 30～40，大师和荣耀指向 81～86。能据此查看候选的真实卡片和等级。但最终是否补机器人、是否走这个池、池内抽取权重和服务器覆盖，仍缺少完整线上选择链。
+**什么时候遇到哪种机器人？** PVP 段位表不是只给了一个“没人就补机器人”的总开关，而是按段位同时配置 `Pvp_BotTime`、`Pvp_BotProb`、`Pvp_BotProbPlus`、`Pvp_BotDiff` 和 `Pvp_BotTypeProb`。青铜到黄金的 BotTime 从 15 秒逐步延长到 35 秒，BotProb 从 80 逐步降到 30；2200 分进入铂金后 BotTime 直接变为 360，BotProb 与 Plus 同时归零。由配置结构可以确认：**低段位机器人并非只承担超长等待后的最终兜底，而是在真人搜索窗口仍在扩张时就已经存在提前介入的配置条件；2200 分是非常明显的常规 Bot 概率分界。** 但服务器最终何时 roll、真人和 Bot 谁优先、Plus 如何累加仍缺最终消费者函数。
 
 **机器人成长是什么？** 预设直接写每张卡的等级、技能 ID、装备神器和背包神器、被动原始值、主城攻防与收入。这证明系统可以组装出不同养成阶段的对手；未证明一个固定机器人会随时间挣经验、花材料自动升级。
 
-**分类是什么？** 要分清三层：段位候选池属于匹配配置；卡组阵营属于战斗风格；`Rookie/NormalPlayer/Expert` 属于用户状态标签。标签不是卡牌等级，也不能把 `ExpertLevel=1` 当成“机器人难度 1”。
+**分类是什么？** 要分清三层：段位候选池属于匹配配置；卡组阵营属于战斗风格；`Rookie/NormalPlayer/Expert` 属于用户状态标签。标签不是卡牌等级，也不能把 `ExpertLevel=1` 当成“机器人难度 1”。客户端已经确认第 5 次连续失败会设置 `LosingStreak`，但这条状态目前能证明的是影响局内体验调节；**不能把“5 连败”直接写成“下一局必给机器人”。**
 
 ## 2. PVP 匹配的四层配置
 
@@ -44,13 +44,13 @@
 
 | 字段 | 可以确认的内容 | 尚不能确定的部分 |
 | --- | --- | --- |
-| `Pvp_BotTime` | 每段位配置了不同等待参数 | 实际触发时刻、单位和重试周期 |
-| `Pvp_BotProb` | 青铜 80，随后降低，铂金起 0 | 是否按百分数判定、判定次数、真人优先顺序 |
-| `Pvp_BotProbPlus` | 青铜到黄金为 20，铂金起为 0 | 每过多久/失败几次加一次，是否封顶 |
+| `Pvp_BotTime` | 青铜到黄金为 15～35，铂金起为 360；与真人搜索窗口同时存在 | 最终判定时刻、单位是否统一为秒、重试周期 |
+| `Pvp_BotProb` | 青铜 80，随后 70/60/50/40/30，铂金起 0 | 是否按百分数判定、判定次数、真人优先顺序 |
+| `Pvp_BotProbPlus` | 青铜到黄金为 20，铂金起为 0 | 每过多久/匹配失败几次加一次，是否封顶；尚不能证明与连败标签有关 |
 | `Pvp_BotDiff` | 整数候选列表，所有值都能关联机器人 ID | 最终选择是否等权、是否存在池外回退 |
-| `Pvp_BotTypeProb` | 从青铜 I 的 100 到大师的 20 | Type 的枚举和分支含义；不能称为高手占比 |
+| `Pvp_BotTypeProb` | 从青铜 I 的 100 到大师的 20 | Type 的枚举和分支含义；不能称为高手占比，也不能当作 Bot 总概率 |
 
-**不能把 BotProb、BotProbPlus、BotTypeProb 相加或相乘来计算个人遇到机器人的概率。** 例如 80 和 20 可能是某次判定的基值与增量，但没有触发算法就不能宣布“第二次必定机器人”。
+**不能把 BotProb、BotProbPlus、BotTypeProb 相加或相乘来计算个人遇到机器人的概率。** 例如青铜 I 的 `80 + 20` 从命名和配置形态上很像“80 基值 + 20 增量”，但没有恢复到消费 `Pvp_BotProbPlus` 的最终服务器判定函数，因此目前只能写“高度疑似增量参数”，不能宣布“15 秒后 80%，下一轮自动 100%”，更不能把这 20 直接解释为连败加成。
 
 ### 2.3 所有段位对应哪些卡牌等级
 
@@ -86,6 +86,8 @@
 
 几个不符合“段位越高每项都越强”的细节：白银 II 有 11 个候选、白银 III 有 12 个；黄金 III 回用 46～55；铂金池 61～70 的卡牌范围为 6～12，低于黄金池最高 18 级。因此只按卡牌等级排序，会漏掉技能、神器被动、经济和模板复用的差异。
 
+从段位参数本身还可以看到一个很清楚的产品分层：常规 Bot 概率序列大致是 `80 → 80 → 80 → 70 → 60 → 50 → 40 → 30 → 30 → 0`，而 BotTime 则从 `15 → 15 → 20 → 20 → 25 → 25 → 30 → 30 → 35` 跳到 `360`。这说明青铜、白银、黄金更重视“快速开局与可控体验”，铂金以后明显提高真人匹配纯度。这个结论是对配置结构的产品判断，不等于已经掌握线上每个时刻的实际 Bot 占比。
+
 ### 2.4 全局参数和首局
 
 | 字段 | 原值 | 说明 |
@@ -96,7 +98,7 @@
 | Bot_Time | 60 | 全局机器人时间参数 |
 | Bot_LoseTime | 9999999 | 名称含 Lose 的全局时间参数 |
 
-`Pvp_PlayFirstBot=1` 与预设 ID 1 能对上，是“首局指定机器人”的配置证据；实际首局判断与执行链仍需载荷确认。全局 `Bot_Time=60` 与段位的 15～360 同时存在，不能只读其中一处便断言“等 60 秒必定补位”。`Bot_LoseTime=9999999` 很大，但它的名字本身不足以证明“连败就给机器人”。
+`Pvp_PlayFirstBot=1` 与预设 ID 1 能对上，是“首局指定机器人”的强配置证据；`Pvp_PlayFirstMap=1001` 又为首局单独指定地图，因此首场 PVP 很可能是独立引导/保护路径，而不是普通 matchmaking 随机抽到 Bot 1。实际首局判断与执行链仍需载荷确认。全局 `Bot_Time=60` 与段位的 15～360 同时存在，不能只读其中一处便断言“等 60 秒必定补位”。`Bot_LoseTime=9999999` 是一个极大的值；它至少**不能支持“连败后迅速给机器人”**这一说法，但在消费者函数恢复前也不能仅凭名字宣布该功能被禁用。
 
 全局表的其余字段也完整列在下面。`M_` 系列涉及匹配分参数，`S_` 系列涉及计分，但当前没有恢复完整公式；保留原值比凭名字拼公式更可靠。旧首赛季日期不是当前赛季日期。
 
@@ -134,9 +136,16 @@
 ### 2.5 按具体场景理解
 
 - **青铜 I，刚开始排队：** 表内时间窗是 0～5，分差为 ±100；机器人候选为 1～10，卡牌 1～6 级。不能从“候选池存在”推出排队刚开始就已经选中机器人。
-- **青铜 I，已经等待 15：** 段位等待参数为 15、BotProb 为 80；此时也存在 15～20 的真人搜索窗口。两条分支谁先执行、如何竞争，当前未确认。
-- **铂金 I：** 段位 BotProb 和 Plus 均为 0，但仍有 61～70 的候选池与全局补位参数。因此只能说这条段位概率字段为零，不能保证所有模式和回退都没有机器人。
+- **青铜 I，已经等待 15：** 真人搜索已经从 ±100 扩到大约 ±400，同时段位 BotTime=15、BotProb=80。也就是说，从配置时序看，此时真人搜索和 Bot 介入条件已经发生重叠，机器人不是必须等到 60 秒之后才有机会出现；两条分支谁先执行、如何竞争仍未确认。
+- **黄金 III，已经等待 35：** 真人搜索范围已经放到约 ±1200，BotTime=35、BotProb=30、Plus=20。相比青铜，系统给真人匹配更长时间、Bot 基值也明显更低。
+- **铂金 I：** 2200 分以后 BotTime 直接为 360，BotProb 和 Plus 均为 0；这是常规概率配置上的明显分界。但仍有 61～70 的候选池与全局参数，因此不能写成“铂金绝对没有机器人”。
 - **大师/荣耀：** 池里有 81～86，卡牌 12～24 级，其中 86 的神器是 144 级；并非六套都具有这个强度，更没有证据表明六套等概率出现。
+
+### 2.6 匹配层与体验调节层必须分开
+
+目前证据最容易被误读的地方，是把“客户端会记录玩家状态”直接等同于“服务器据此换机器人”。两者现在还不能画等号。客户端明确记录最近 20 场胜率、连续胜负、近期付费、回流和首局状态，并且第 5 次连续失败会设置 `LosingStreak`；这些状态已经能追到难度修正、AI 开格节奏和地块稀有度权重等局内体验调节。但 `StartMatchReq` 顶层没有这些标签，虽然 `PlayerBattleLoadout.UserLabels` 可以通过其他载荷上传，**目前仍未恢复“服务端读取 LosingStreak/Rookie → 提高 Pvp_BotProb 或选择某个 Bot ID”的消费者链。**
+
+因此现在最稳妥的模型是：**匹配层**用段位、等待时间、搜索分差以及 Bot 概率/候选池控制“真人还是预制机器人”；**体验调节层**用 Rookie/Expert、连胜连败、付费、回流、首局等标签控制“这一局有多难、AI 多快、随机资源有多友好”。两套系统可能在服务端还有未恢复的交叉点，但现有证据不能先把它们合并成一条 EOMM 公式。
 
 ## 3. 机器人完整配置查询
 
@@ -734,6 +743,9 @@
 | --- | --- |
 | 机器人每张卡是什么、几级、什么技能？ | 查询区列出全部 86 条×8 张原始配置，并关联卡牌中文和效果 |
 | 某段位有哪些候选机器人？ | 段位表可关联完整 ID 列表及等级范围 |
+| 低段位是不是“等很久没人”才补机器人？ | 不是这种简单结构；青铜～黄金的 BotTime 只有 15～35，同时真人搜索窗口仍在扩张，说明存在提前介入配置 |
+| 2200 分为什么重要？ | 铂金起 BotTime=360、BotProb=0、Plus=0，是常规概率配置上的明显分界；不代表绝对无 Bot |
+| BotProb=80、Plus=20 是否等于第二次必定 100%？ | 尚不能；Plus 的消费者、累加条件和封顶逻辑未恢复 |
 | 是不是严格按玩家卡等级镜像生成？ | PVP 表是固定多卡存档，本次没有确认镜像生成规则 |
 | 连胜/低胜率是否影响体验？ | 已确认客户端胜率分类、难度调整函数及地块权重链；是否接入每个线上入口待确认 |
 | 玩家近期几连败触发保护？ | 已确认 CurrentLoseStreak >4，即第 5 次连续失败；尚未证明服务器据此更换 Bot |
@@ -745,23 +757,23 @@
 
 | 配置表 | 记录数 | SHA-256 前 12 位 |
 | --- | --- | --- |
-| [PvpBotConfig](../../tables/PvpBotConfig.json) | 86 | `e48ea5e670c5` |
-| [PvpRankConfig](../../tables/PvpRankConfig.json) | 25 | `078c8b0f35f5` |
-| [PvpMatchingConfig](../../tables/PvpMatchingConfig.json) | 15 | `82fee22c72c2` |
-| [PvpSettingConfig](../../tables/PvpSettingConfig.json) | 28 | `25742289c6d2` |
-| [EnemyDifficultLevelInfosgameplay_improve_01](../../tables/EnemyDifficultLevelInfosgameplay_improve_01.json) | 25 | `e7b0243db2a9` |
-| [ArenaEnemyCardsInfoSheet2](../../tables/ArenaEnemyCardsInfoSheet2.json) | 65 | `fc3028780fc6` |
-| [ArenaEnemyBalanceInfogameplay_improve_01](../../tables/ArenaEnemyBalanceInfogameplay_improve_01.json) | 40 | `a17f89ae6173` |
-| [AIPropInfoConfig](../../tables/AIPropInfoConfig.json) | 20 | `d3bfcaccfd07` |
-| [GlobalArtifactAIReleaseInfo](../../tables/GlobalArtifactAIReleaseInfo.json) | 24 | `8d80c2ccdee4` |
-| [GlobalHeroCardInfoSheet5](../../tables/GlobalHeroCardInfoSheet5.json) | 54 | `fe685dcfe2ed` |
-| [GlobalTrainingMapInfoSheet1](../../tables/GlobalTrainingMapInfoSheet1.json) | 3 | `82fe2bcf1982` |
-| [GlobalTrainingMapInfoSheet2](../../tables/GlobalTrainingMapInfoSheet2.json) | 2 | `bb34e861bda6` |
-| [GlobalCardTalentInfoSheet3](../../tables/GlobalCardTalentInfoSheet3.json) | 268 | `504ef60f1423` |
-| [GlobalPropInfoBTest](../../tables/GlobalPropInfoBTest.json) | 24 | `2a17c8e7daab` |
-| [GlobalArtifactsForgeInfo](../../tables/GlobalArtifactsForgeInfo.json) | 48 | `771f0cbdc1a1` |
-| [PropAttrTypeConfig](../../tables/PropAttrTypeConfig.json) | 7 | `7a9ac218940e` |
-| [PropRankUpInfoConfig](../../tables/PropRankUpInfoConfig.json) | 31 | `1ffbd6e65487` |
+| [PvpBotConfig](../../tables/PvpBotConfig.json) | 86 | `748c6a5ee35f` |
+| [PvpRankConfig](../../tables/PvpRankConfig.json) | 25 | `e74a52853736` |
+| [PvpMatchingConfig](../../tables/PvpMatchingConfig.json) | 15 | `1760716ee73e` |
+| [PvpSettingConfig](../../tables/PvpSettingConfig.json) | 28 | `c786eb3ceae3` |
+| [EnemyDifficultLevelInfosgameplay_improve_01](../../tables/EnemyDifficultLevelInfosgameplay_improve_01.json) | 25 | `0f0be6e97e8c` |
+| [ArenaEnemyCardsInfoSheet2](../../tables/ArenaEnemyCardsInfoSheet2.json) | 65 | `3e2a80468ea7` |
+| [ArenaEnemyBalanceInfogameplay_improve_01](../../tables/ArenaEnemyBalanceInfogameplay_improve_01.json) | 40 | `368fb5269107` |
+| [AIPropInfoConfig](../../tables/AIPropInfoConfig.json) | 20 | `88c1680dc65a` |
+| [GlobalArtifactAIReleaseInfo](../../tables/GlobalArtifactAIReleaseInfo.json) | 24 | `ff95cd7da6a4` |
+| [GlobalHeroCardInfoSheet5](../../tables/GlobalHeroCardInfoSheet5.json) | 54 | `96ae795c7753` |
+| [GlobalTrainingMapInfoSheet1](../../tables/GlobalTrainingMapInfoSheet1.json) | 3 | `aabcec18dee4` |
+| [GlobalTrainingMapInfoSheet2](../../tables/GlobalTrainingMapInfoSheet2.json) | 2 | `7cb816e3846a` |
+| [GlobalCardTalentInfoSheet3](../../tables/GlobalCardTalentInfoSheet3.json) | 268 | `e271f5548396` |
+| [GlobalPropInfoBTest](../../tables/GlobalPropInfoBTest.json) | 24 | `d3e1e695cdf6` |
+| [GlobalArtifactsForgeInfo](../../tables/GlobalArtifactsForgeInfo.json) | 48 | `4feaf9a5ddbc` |
+| [PropAttrTypeConfig](../../tables/PropAttrTypeConfig.json) | 7 | `7576458a447f` |
+| [PropRankUpInfoConfig](../../tables/PropRankUpInfoConfig.json) | 31 | `a2a7ff86009b` |
 
 | WASM 表槽 | 函数号 | 本次复核内容 |
 | --- | --- | --- |
@@ -792,7 +804,6 @@
 | EB95（拆分模块） | 103987 | PVP 回退：价格 25 且金币 <200 时跳过 |
 
 完整二进制和反汇编摘录留在本地研究目录，不随网站发布。表关联可用 [matching-data.json](matching-data.json) 复核；[完整文字版](report.md)包含静态统计与所有候选列表。页面的筛选不写入游戏或修改任何配置。
-
 ## 附录：86 条预设逐卡清单
 
 ### ID 1 · 今天吃什么
