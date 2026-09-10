@@ -1,17 +1,16 @@
-# 本地研究层
+# 研究归档层
 
-下列目录是本地研究工作区，不提交到 GitHub：
+当前仓库把 2026-09-03 固定研究快照及用于复核的逆向/提取资产纳入 Git，以便协作校验；`docs/` 仍是唯一 GitHub Pages 发布根目录。下列目录不是 Pages 发布内容，也不应被误认为官方游戏源码。
 
-| 目录 | 用途 | 公开策略 |
+| 目录 | 用途 | 当前策略 |
 | --- | --- | --- |
-| `research/archive/2026-09-03/cache/` | 游戏缓存和 Unity bundle 的快照备份 | 保留本机，不公开 |
-| `research/archive/2026-09-03/unpacked/` | 小游戏包解包结果的快照备份 | 保留本机，不公开 |
-| `extracted/` | Unity 对象与文本提取物 | 不公开 |
-| `tables/` | 完整解析配置 | 仅由发布脚本筛选引用子集 |
-| `card-art/` | 卡牌图片中间资产 | 图鉴已内嵌，不单独公开 |
-| `outputs/` | 构建和验证工作输出 | 发布脚本复制所需成果 |
-| `tools/`, `node_modules/` | 本地工具和依赖 | 不公开 |
+| `research/archive/2026-09-03/cache/` | 游戏缓存和 Unity bundle 的固定快照 | 当前协作快照纳入 Git，作为原始取证输入 |
+| `research/archive/2026-09-03/unpacked/` | 微信小游戏包解包快照 | 当前协作快照纳入 Git，保存包内成员与哈希关系 |
+| `research/archive/2026-09-03/reverse-engineering/` | metadata、legacy dump 与 canonical WASM 逆向包 | 当前协作快照纳入 Git；canonical 为低层逆向权威入口 |
+| `extracted/` | Unity 对象与文本提取物 | 当前协作快照纳入 Git，不进入 Pages |
+| `tables/` | 完整解析配置 | 当前协作快照纳入 Git；发布脚本只筛选引用子集到 `docs/` |
+| `card-art/` | 卡牌图片中间资产 | 当前协作快照纳入 Git；图鉴发布时按需内嵌 |
+| `outputs/` | 构建和验证工作输出 | 当前协作快照纳入 Git；发布脚本只复制稳定交付物 |
+| `tools/` | 研究工具快照 | 当前协作快照纳入 Git；`node_modules/` 仍忽略 |
 
-`archive/<日期>/` 以提取快照日期分组；将来重新抓取时新建日期目录，不覆盖旧快照。不要把上述目录强制加入 Git。需要分享新证据时，应先在报告中明确引用，再通过 `scripts/build_public_site.py` 生成发布副本。
-
-`archive-manifest.json` 保存每个归档文件的大小和 SHA-256。归档内容发生新增或迁移后，运行 `python scripts/build_archive_manifest.py` 更新校验清单。
+`archive/<日期>/` 以提取快照日期分组；将来重新抓取时应新建日期目录，不覆盖旧快照。`research/archive-manifest.json` 保存归档文件大小和 SHA-256；归档或 canonical 产物发生变化后运行 `python scripts/build_archive_manifest.py` 更新。
