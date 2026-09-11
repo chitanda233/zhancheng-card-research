@@ -9,6 +9,7 @@ on:
       - 'research/archive/2026-09-11/raw/local/**/a23078fc21f9ca79.webgl.data.unityweb.bin'
       - 'research/archive/2026-09-11/manifest.json'
       - 'scripts/rebuild_unified_reverse.sh'
+      - 'scripts/strip_reverse_commit_footer.py'
       - 'scripts/build_wasmcode2_package.py'
       - 'scripts/prune_reverse_outputs.py'
       - 'scripts/analyze_split_payload.py'
@@ -55,16 +56,17 @@ jobs:
           test "$(dotnet --version)" = '10.0.400'
           dotnet --list-runtimes | grep -q '^Microsoft.NETCore.App 7\.'
 
+      - name: Migrate legacy reverse shell footer
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/strip_reverse_commit_footer.py
+
       - name: Rebuild raw to canonical baseline
         shell: bash
         run: |
           set -euo pipefail
-          # The legacy shell still contains its historical commit/push footer.
-          # CI executes only the build/verification core so the workflow owns the
-          # single final commit after wasmcode2 finalization and pruning.
-          sed '/^git config user.name/,$d' scripts/rebuild_unified_reverse.sh > /tmp/rebuild_unified_reverse_core.sh
-          test -s /tmp/rebuild_unified_reverse_core.sh
-          bash /tmp/rebuild_unified_reverse_core.sh
+          bash scripts/rebuild_unified_reverse.sh
 
       - name: Finalize wasmcode2 archive and crosswalk
         shell: bash
@@ -101,6 +103,7 @@ jobs:
         run: |
           set -euo pipefail
           git add -A \
+            scripts/rebuild_unified_reverse.sh \
             research/archive/2026-09-11/unpacked \
             research/archive/2026-09-11/reverse-engineering \
             research/archive-manifest.json
