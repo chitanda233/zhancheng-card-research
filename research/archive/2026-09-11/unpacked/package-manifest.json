@@ -92,6 +92,37 @@
     ]
   },
   {
+    "package": "_wasmcode2_.wxapkg",
+    "size": 12744150,
+    "sha256": "cf0a158e34bedfbbdd5427a4fb48b3915df9d86056f4b80c6226886783f01535",
+    "storage_encoding": "V1MMWX",
+    "appid_used_for_decode": "wx9eed71970378b2ae",
+    "decoded_size": 12744143,
+    "decoded_sha256": "b1ecb7e3c86fffeecaa6371e884c6110b05be94fb06cc48e7b636173f89a24b1",
+    "header": {
+      "unknown_be_u32": 0,
+      "index_length": 106,
+      "body_length": 12744023,
+      "index_end": 120,
+      "unreferenced_trailer_bytes": 0
+    },
+    "count": 2,
+    "files": [
+      {
+        "file": "/wasmcode2/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
+        "offset": 120,
+        "size": 12742905,
+        "sha256": "c541581100f0a891ba8b8aaad3fde780e3b03cc48218537c143d33580987e34d"
+      },
+      {
+        "file": "/wasmcode2/game.js",
+        "offset": 12743025,
+        "size": 1118,
+        "sha256": "04e89969ef39f7a4f0ad949e16c0fb459edcc8a3ea411cbdc30bc486c3a1906c"
+      }
+    ]
+  },
+  {
     "package": "_wasmcode_.wxapkg",
     "size": 6788029,
     "sha256": "13e5d1fa468ae73f09bc2c63f2e4fca79f68c51ec329d6e99ee03d287ee17bc6",

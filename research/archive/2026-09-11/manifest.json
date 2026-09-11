@@ -9,8 +9,8 @@
     "local\\wx9eed71970378b2ae\\usrmmkvstorage0\\wx9eed71970378b2ae",
     "local\\wx9eed71970378b2ae\\usrmmkvstorage0\\wx9eed71970378b2ae.crc"
   ],
-  "fileCount": 104,
-  "totalBytes": 188059236,
+  "fileCount": 105,
+  "totalBytes": 200803386,
   "files": [
     {
       "relativePath": "icon\\wx9eed71970378b2ae_ee037200596d28604630fd571df98b25.png",
@@ -635,6 +635,12 @@
       "bytes": 7707396,
       "sha256": "722C0A1586CF52DEE2414E6AD689DF68976C90EDA890C455BFA24F5D9E487310",
       "verifiedUtc": "2026-09-11T02:30:27.6697288Z"
+    },
+    {
+      "relativePath": "packages\\wx9eed71970378b2ae\\16\\_wasmcode2_.wxapkg",
+      "bytes": 12744150,
+      "sha256": "CF0A158E34BEDFBBDD5427A4FB48B3915DF9D86056F4B80C6226886783F01535",
+      "verifiedUtc": "2026-09-11T04:45:13Z"
     }
   ],
   "groups": [
