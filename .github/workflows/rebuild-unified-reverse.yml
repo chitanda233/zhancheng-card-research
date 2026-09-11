@@ -11,6 +11,8 @@ on:
       - 'scripts/rebuild_unified_reverse.sh'
       - 'scripts/analyze_split_payload.py'
       - 'scripts/probe_split_brotli.js'
+      - 'scripts/analyze_wasmcode2_archive.js'
+      - 'scripts/build_wasmcode2_method_crosswalk.py'
       - 'scripts/unpack_wxapkg.py'
       - 'scripts/build_wasm_method_maps.py'
       - 'scripts/recover_il2cpp_metadata.py'
@@ -49,13 +51,15 @@ jobs:
         shell: bash
         run: bash scripts/rebuild_unified_reverse.sh
 
-      - name: Probe wasmcode2 archive framing
+      - name: Rebuild wasmcode2 archive map and C# crosswalk
         shell: bash
         run: |
           set -euo pipefail
           PAYLOAD='research/archive/2026-09-11/unpacked/_wasmcode2_/wasmcode2/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br'
           OUT='research/archive/2026-09-11/reverse-engineering/modules/wasmcode2'
+          CANON='research/archive/2026-09-11/reverse-engineering/canonical'
           mkdir -p "$OUT"
+
           node scripts/probe_split_brotli.js "$PAYLOAD" "$OUT/brotli-framing-probe.json" /tmp/wasmcode2-framing
           if [ -s /tmp/wasmcode2-framing.decoded.bin ]; then
             python3 scripts/analyze_split_payload.py /tmp/wasmcode2-framing.decoded.bin "$OUT/decoded-body-analysis.json" \
@@ -63,12 +67,33 @@ jobs:
           else
             rm -f "$OUT/decoded-body-analysis.json"
           fi
+
+          node scripts/analyze_wasmcode2_archive.js \
+            "$PAYLOAD" "$OUT/archive-format.json" "$OUT/table-value-map.tsv" 367137
+
+          python3 scripts/build_wasmcode2_method_crosswalk.py \
+            "$OUT/table-value-map.tsv" \
+            "$CANON/method-map.tsv" \
+            "$OUT/method-crosswalk.tsv" \
+            "$OUT/method-crosswalk-summary.json"
+
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add "$OUT/brotli-framing-probe.json" "$OUT/decoded-body-analysis.json" 2>/dev/null || true
+          git add \
+            "$OUT/brotli-framing-probe.json" \
+            "$OUT/decoded-body-analysis.json" \
+            "$OUT/archive-format.json" \
+            "$OUT/table-value-map.tsv" \
+            "$OUT/method-crosswalk.tsv" \
+            "$OUT/method-crosswalk-summary.json" 2>/dev/null || true
           if git diff --cached --quiet; then
-            echo 'No framing-probe changes to commit.'
+            echo 'No wasmcode2 analysis changes to commit.'
             exit 0
           fi
-          git commit -m 'research: probe wasmcode2 archive framing'
+          git fetch origin master
+          if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/master)" ]; then
+            echo 'master advanced during unified reverse analysis; refusing stale push' >&2
+            exit 1
+          fi
+          git commit -m 'research: rebuild wasmcode2 archive crosswalk'
           git push origin HEAD:master
