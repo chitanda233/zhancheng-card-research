@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "join_key": "wasmcode2 table_id == canonical primary method rva_dec/shared table slot",
+  "semantic_boundary": "archive_value is intentionally left uninterpreted. Runtime evidence proves table-id keyed function-split lookup, but does not yet prove whether archive_value is a function ordinal, record id, offset, or another manager-private identifier.",
+  "counts": {
+    "wasmcode2_non_sentinel_table_slots": 247542,
+    "canonical_primary_methods": 121448,
+    "primary_methods_present_in_wasmcode2_table_map": 76073,
+    "primary_methods_absent_from_wasmcode2_table_map": 45375,
+    "wasmcode2_slots_without_primary_csharp_method": 171469,
+    "unique_archive_values_among_primary_methods": 67691,
+    "duplicate_archive_values_among_primary_methods": 2988
+  },
+  "key_method_checks": [
+    {
+      "method_name": "OpenHex",
+      "matches": [
+        {
+          "table_id_hex": "0x2594",
+          "table_id_dec": 9620,
+          "archive_value": 39529,
+          "primary_wasm_func": "39691",
+          "dump_line": "47959",
+          "namespace": "GameModule",
+          "declaring_type_context": "HexBehaviour",
+          "signature": "private void RollbackBattleCorePendingOpenHexPresentation() { }"
+        },
+        {
+          "table_id_hex": "0x892B",
+          "table_id_dec": 35115,
+          "archive_value": 113039,
+          "primary_wasm_func": "48186",
+          "dump_line": "47778",
+          "namespace": "GameModule",
+          "declaring_type_context": "HexBehaviour",
+          "signature": "internal bool get_IsBattleCoreOpenHexPresentationRunning() { }"
+        },
+        {
+          "table_id_hex": "0x892C",
+          "table_id_dec": 35116,
+          "archive_value": 113041,
+          "primary_wasm_func": "48186",
+          "dump_line": "47781",
+          "namespace": "GameModule",
+          "declaring_type_context": "HexBehaviour",
+          "signature": "internal bool get_IsBattleCorePendingOpenHexPresentation() { }"
+        },
+        {
+          "table_id_hex": "0x8954",
+          "table_id_dec": 35156,
+          "archive_value": 113106,
+          "primary_wasm_func": "39704",
+          "dump_line": "47953",
+          "namespace": "GameModule",
+          "declaring_type_context": "HexBehaviour",
+          "signature": "private void HandleBattleCorePendingOpenHexPresentationComplete() { }"
+        },
+        {
+          "table_id_hex": "0x8958",
+          "table_id_dec": 35160,
+          "archive_value": 113098,
+          "primary_wasm_func": "23022",
+          "dump_line": "47968",
+          "namespace": "GameModule",
+          "declaring_type_context": "HexBehaviour",
+          "signature": "private void TryFlushBattleCoreOpenHexRevealDuringFlip() { }"
+        },
+        {
+          "table_id_hex": "0x895B",
+          "table_id_dec": 35163,
+          "archive_value": 113051,
+          "primary_wasm_func": "23064",
+          "dump_line": "47978",
+          "namespace": "GameModule",
+          "declaring_type_context": "HexBehaviour",
+          "signature": "private void ApplyBattleCoreConfirmedOpenHexPresentation(bool isLocalPlayerOpen) { }"
+        },
+        {
+          "table_id_hex": "0x8973",
+          "table_id_dec": 35187,
+          "archive_value": 113089,
+          "primary_wasm_func": "23044",
+          "dump_line": "48105",
+          "namespace": "GameModule",
+          "declaring_type_context": "HexBehaviour",
+          "signature": "public void OpenHex(bool isEnemy, bool isHard = False) { }"
+        },
+        {
+          "table_id_hex": "0x8E0F",
+          "table_id_dec": 36367,
+          "archive_value": 148227,
+          "primary_wasm_func": "47883",
+          "dump_line": "55934",
+          "namespace": "GameModule",
+          "declaring_type_context": "AIBehaviourManager",
+          "signature": "private void AllowOpenHex(object o) { }"
+        },
+        {
+          "table_id_hex": "0x903B",
+          "table_id_dec": 36923,
+          "archive_value": 134766,
+          "primary_wasm_func": "48194",
+          "dump_line": "59677",
+          "namespace": "GameModule",
+          "declaring_type_context": "BattleGameSceneManager",
+          "signature": "public void RecordPlayerOpenHexTypeCount(Quality quality) { }"
+        },
+        {
+          "table_id_hex": "0x91D9",
+          "table_id_dec": 37337,
+          "archive_value": 30786,
+          "primary_wasm_func": "32589",
+          "dump_line": "61676",
+          "namespace": "GameModule",
+          "declaring_type_context": "TrainingGroundManager",
+          "signature": "private void OnEnemyBeginOpenHexForThirdGameTutorial(object _) { }"
+        },
+        {
+          "table_id_hex": "0x91E7",
+          "table_id_dec": 37351,
+          "archive_value": 72874,
+          "primary_wasm_func": "32587",
+          "dump_line": "61738",
+          "namespace": "GameModule",
+          "declaring_type_context": "TrainingGroundManager",
+          "signature": "private void OnPlayerBeginOpenHexForNewGameDefenseTutorial(object _) { }"
+        },
+        {
+          "table_id_hex": "0x9492",
+          "table_id_dec": 38034,
+          "archive_value": 95393,
+          "primary_wasm_func": "48194",
+          "dump_line": "66312",
+          "namespace": "GameModule",
+          "declaring_type_context": "OutsiderHexBehaviour",
+          "signature": "public void OpenHex(int woodNum) { }"
+        },
+        {
+          "table_id_hex": "0x9499",
+          "table_id_dec": 38041,
+          "archive_value": 55,
+          "primary_wasm_func": "48173",
+          "dump_line": "66343",
+          "namespace": "GameModule",
+          "declaring_type_context": "OutsiderHexBehaviour",
+          "signature": "private void <OpenHex>b__34_0() { }"
+        }
+      ],
+      "present_in_wasmcode2_table_map": true
+    },
+    {
+      "method_name": "GetHexOpenBlockReason",
+      "matches": [],
+      "present_in_wasmcode2_table_map": false
+    },
+    {
+      "method_name": "SpendGold",
+      "matches": [],
+      "present_in_wasmcode2_table_map": false
+    },
+    {
+      "method_name": "CommitOpenedHex",
+      "matches": [],
+      "present_in_wasmcode2_table_map": false
+    },
+    {
+      "method_name": "ResolveOpenedHexOutcome",
+      "matches": [
+        {
+          "table_id_hex": "0xF495",
+          "table_id_dec": 62613,
+          "archive_value": 133371,
+          "primary_wasm_func": "25409",
+          "dump_line": "537260",
+          "namespace": "BattleCore",
+          "declaring_type_context": "BattleSimulation",
+          "signature": "private void ResolveOpenedHexOutcome(int playerId, BattleHexCellState cell, bool debugForceNextBarracksCard, BattleSimulation.SelectedCard debugForcedCard) { }"
+        }
+      ],
+      "present_in_wasmcode2_table_map": true
+    },
+    {
+      "method_name": "HasPlayerOpenAnchorNeighbor",
+      "matches": [
+        {
+          "table_id_hex": "0xF61E",
+          "table_id_dec": 63006,
+          "archive_value": 46079,
+          "primary_wasm_func": "25522",
+          "dump_line": "538739",
+          "namespace": "BattleCore",
+          "declaring_type_context": "BattleSimulation",
+          "signature": "private bool HasPlayerOpenAnchorNeighbor(int playerId, BattleHexCellState target) { }"
+        }
+      ],
+      "present_in_wasmcode2_table_map": true
+    },
+    {
+      "method_name": "SetHexOpened",
+      "matches": [],
+      "present_in_wasmcode2_table_map": false
+    },
+    {
+      "method_name": "MarkDynamicWallsDirtyAround",
+      "matches": [],
+      "present_in_wasmcode2_table_map": false
+    },
+    {
+      "method_name": "ApplyBattleCoreAuthoritativeCellState",
+      "matches": [],
+      "present_in_wasmcode2_table_map": false
+    }
+  ]
+}
