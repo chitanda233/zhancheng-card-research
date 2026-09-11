@@ -132,16 +132,20 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--reverse-only", action="store_true")
     ap.add_argument("--docs-only", action="store_true")
+    ap.add_argument("--historical-only", action="store_true")
     ap.add_argument("--output", type=Path)
     args = ap.parse_args()
-    if args.reverse_only and args.docs_only:
-        raise SystemExit("choose at most one of --reverse-only / --docs-only")
+    if sum(bool(x) for x in (args.reverse_only, args.docs_only, args.historical_only)) > 1:
+        raise SystemExit("choose at most one of --reverse-only / --docs-only / --historical-only")
     errors: list[str] = []
     result: dict[str, object] = {"schema_version": 1, "errors": errors}
-    if not args.docs_only:
-        result["reverse"] = audit_reverse(errors)
-    if not args.reverse_only:
-        result["docs"] = audit_docs(errors)
+    if args.historical_only:
+        result["historical"] = audit_historical_snapshot(errors)
+    else:
+        if not args.docs_only:
+            result["reverse"] = audit_reverse(errors)
+        if not args.reverse_only:
+            result["docs"] = audit_docs(errors)
     result["ok"] = not errors
     text = json.dumps(result, ensure_ascii=False, indent=2) + "\n"
     if args.output:
