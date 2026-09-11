@@ -129,6 +129,10 @@ patch("scripts/build_matching_report.py", [
 
 patch("scripts/build_systems_report.py", [
     (
+        "OUT=ROOT/'outputs'/'20260903'",
+        "OUT=ROOT/'outputs'/'system'\nOUT.mkdir(parents=True, exist_ok=True)",
+    ),
+    (
         "evidence={'title':'占城大师全系统拆解证据索引','snapshot':'2026-09-03','appId':'wx9eed71970378b2ae','scope':'本地静态配置与中文文本；未恢复完整运行时代码、未验证服务器覆盖值',",
         "evidence={'title':'占城大师全系统拆解证据索引','snapshot':'2026-09-03','reverseBaseline':'2026-09-11','appId':'wx9eed71970378b2ae','scope':'静态配置与界面样本来自2026-09-03；关键函数链使用2026-09-11统一逆向基准复核；未验证服务器实时覆盖值',",
     ),
@@ -150,12 +154,16 @@ patch("outputs/new-player-journey/report-body.md", [
 
 patch("scripts/build_public_site.py", [
     (
+        "SYSTEM_SRC = ROOT / 'outputs/20260903'",
+        "SYSTEM_SRC = ROOT / 'outputs/system'\nCARDS_SRC = ROOT / 'outputs/20260903'",
+    ),
+    (
         "<div class=\"meta\"><span>快照 2026-09-03</span><span>资源 1.4.15.558-preview</span>",
         "<div class=\"meta\"><span>配置/界面快照 2026-09-03</span><span>逆向基准 2026-09-11</span><span>资源 1.4.15.558-preview</span>",
     ),
     (
-        "cards_html = (SYSTEM_SRC / '占城大师_全卡牌图鉴.html').read_text(encoding='utf-8')\nwrite(CARDS_DIR / 'index.html', add_portal_link(cards_html))\ncopy(SYSTEM_SRC / '占城大师_卡牌拆解报告.md', CARDS_DIR / 'report.md')",
-        "cards_html = (SYSTEM_SRC / '占城大师_全卡牌图鉴.html').read_text(encoding='utf-8')\ncards_html = cards_html.replace('<body>', '<body><div style=\"padding:8px 16px;background:#173e43;color:#eef8f5;font:13px/1.5 Microsoft YaHei,sans-serif\">配置/界面快照 2026-09-03 · 当前函数级逆向基准 2026-09-11</div>', 1)\nwrite(CARDS_DIR / 'index.html', add_portal_link(cards_html))\ncards_report = (SYSTEM_SRC / '占城大师_卡牌拆解报告.md').read_text(encoding='utf-8')\ncards_report = cards_report.replace('本地快照：2026-09-03。微信包版本 16，AppID wx9eed71970378b2ae。', '配置/界面快照：2026-09-03；当前函数级逆向基准：2026-09-11。微信包版本 16，AppID wx9eed71970378b2ae。', 1)\nwrite(CARDS_DIR / 'report.md', cards_report)",
+        "cards_html = (SYSTEM_SRC / '占城大师_全卡牌图鉴.html').read_text(encoding='utf-8')\nwrite(CARDS_DIR / 'index.html', add_portal_link(cards_html))\ncopy(SYSTEM_SRC / '占城大师_卡牌拆解报告.md', CARDS_DIR / 'report.md')\ncopy(SYSTEM_SRC / '占城大师_全卡牌资料.xlsx', CARDS_DIR / 'cards.xlsx')\ncopy(SYSTEM_SRC / 'cards-data.json', CARDS_DIR / 'cards-data.json')",
+        "cards_html = (CARDS_SRC / '占城大师_全卡牌图鉴.html').read_text(encoding='utf-8')\ncards_html = cards_html.replace('<body>', '<body><div style=\"padding:8px 16px;background:#173e43;color:#eef8f5;font:13px/1.5 Microsoft YaHei,sans-serif\">配置/界面快照 2026-09-03 · 当前函数级逆向基准 2026-09-11</div>', 1)\nwrite(CARDS_DIR / 'index.html', add_portal_link(cards_html))\ncards_report = (CARDS_SRC / '占城大师_卡牌拆解报告.md').read_text(encoding='utf-8')\ncards_report = cards_report.replace('本地快照：2026-09-03。微信包版本 16，AppID wx9eed71970378b2ae。', '配置/界面快照：2026-09-03；当前函数级逆向基准：2026-09-11。微信包版本 16，AppID wx9eed71970378b2ae。', 1)\nwrite(CARDS_DIR / 'report.md', cards_report)\ncopy(CARDS_SRC / '占城大师_全卡牌资料.xlsx', CARDS_DIR / 'cards.xlsx')\ncopy(CARDS_SRC / 'cards-data.json', CARDS_DIR / 'cards-data.json')",
     ),
 ])
 
