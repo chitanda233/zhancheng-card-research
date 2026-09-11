@@ -13,7 +13,8 @@ const [input, reportPath, outputPrefix] = process.argv.slice(2);
 const raw = fs.readFileSync(input);
 const u32le0 = raw.length >= 4 ? raw.readUInt32LE(0) : null;
 const candidates = [];
-const offsets = Array.from({length: 65}, (_, i) => i);
+const maxPrefixProbe = 64;
+const offsets = Array.from({length: maxPrefixProbe + 1}, (_, i) => i);
 let firstSuccess = null;
 
 function digest(buf) {
@@ -54,6 +55,7 @@ const report = {
   input_size: raw.length,
   input_sha256: digest(raw),
   leading_u32le: u32le0,
+  max_prefix_bytes_tested: maxPrefixProbe,
   hypothesis: 'Probe whether the runtime split payload consists of a short custom prefix followed by a standard Brotli stream.',
   first_success: firstSuccess,
   candidates,
