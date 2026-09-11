@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 
@@ -16,6 +17,38 @@ def load_json(path: str):
 def require(condition: bool, message: str, errors: list[str]) -> None:
     if not condition:
         errors.append(message)
+
+
+def sha256_file(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def audit_historical_snapshot(errors: list[str]) -> dict[str, object]:
+    baseline_path = ROOT / "outputs/new-player-journey/originals-baseline.json"
+    frozen_root = ROOT / "outputs/20260903"
+    baseline = json.loads(baseline_path.read_text(encoding="utf-8"))
+    checked: dict[str, str] = {}
+    for name, expected in baseline.items():
+        path = frozen_root / name
+        require(path.is_file(), f"historical snapshot file missing: outputs/20260903/{name}", errors)
+        if not path.is_file():
+            continue
+        actual = sha256_file(path)
+        checked[name] = actual
+        require(
+            actual == expected,
+            f"historical snapshot hash drift: outputs/20260903/{name} expected={expected} actual={actual}",
+            errors,
+        )
+    return {
+        "baseline": "outputs/new-player-journey/originals-baseline.json",
+        "frozen_root": "outputs/20260903",
+        "checked_files": len(checked),
+    }
 
 
 def scan_forbidden(errors: list[str]) -> None:
@@ -64,6 +97,7 @@ def audit_reverse(errors: list[str]) -> dict[str, object]:
 
 
 def audit_docs(errors: list[str]) -> dict[str, object]:
+    historical = audit_historical_snapshot(errors)
     scan_forbidden(errors)
     mixed_pages = ["system", "battle", "chests", "hex-random", "matching"]
     for name in mixed_pages:
@@ -85,7 +119,13 @@ def audit_docs(errors: list[str]) -> dict[str, object]:
     for path, key in json_checks:
         data = load_json(path)
         require(data.get(key) == "2026-09-11", f"{path} missing {key}=2026-09-11", errors)
-    return {"mixed_reports": mixed_pages, "static_reports": ["cards", "journey"], "reverse_baseline": "2026-09-11", "config_snapshot": "2026-09-03"}
+    return {
+        "mixed_reports": mixed_pages,
+        "static_reports": ["cards", "journey"],
+        "reverse_baseline": "2026-09-11",
+        "config_snapshot": "2026-09-03",
+        "historical_snapshot": historical,
+    }
 
 
 def main() -> None:
