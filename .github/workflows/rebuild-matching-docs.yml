@@ -8,7 +8,6 @@ on:
     paths:
       - 'README.md'
       - 'scripts/reconcile_current_baseline.py'
-      - 'scripts/reconcile_report_sources.py'
       - 'scripts/consolidate_battle_hex_boundary.py'
       - 'scripts/systems_report_template.md'
       - 'scripts/build_systems_report.py'
@@ -54,9 +53,6 @@ jobs:
 
       - name: Reconcile current evidence baseline
         run: python scripts/reconcile_current_baseline.py
-
-      - name: Reconcile cross-report source conclusions
-        run: python scripts/reconcile_report_sources.py
 
       - name: Consolidate battle and hex ownership
         run: python scripts/consolidate_battle_hex_boundary.py
