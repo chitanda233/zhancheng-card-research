@@ -387,18 +387,3 @@ print('unified runtime-split Git-index verification OK')
 PY
 
 python3 scripts/build_archive_manifest.py
-
-git config user.name 'github-actions[bot]'
-git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-git add "$UNPACKED" "$ROOT" research/archive-manifest.json
-if git diff --cached --quiet; then
-  echo 'No generated changes to commit.'
-  exit 0
-fi
-git fetch origin master
-if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/master)" ]; then
-  echo 'master advanced during rebuild; refusing a non-fast-forward generated commit' >&2
-  exit 1
-fi
-git commit -m 'research: integrate wasmcode2 runtime split archive'
-git push origin HEAD:master

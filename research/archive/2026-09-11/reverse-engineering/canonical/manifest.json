@@ -51,7 +51,7 @@
   "csharp_manifest": {
     "path": "research/archive/2026-09-11/reverse-engineering/csharp/manifest.json",
     "size": 25844,
-    "sha256": "d066948e22d4f5ed7bb6ee84b25b309208ef0efc3bb838a1d0a18c6f40fc8355"
+    "sha256": "314cbeb6790b4936b1f295b76e8b0e40b675f6f725e70b07e4dc01ec0be88c59"
   },
   "csharp_dump": {
     "path": "research/archive/2026-09-11/reverse-engineering/csharp/dump.cs",
