@@ -7,11 +7,16 @@
   ],
   "archived_code_subpackages": [
     "wasmcode",
-    "wasmcode1"
-  ],
-  "declared_but_not_present_as_wxapkg": [
-    "data-package",
+    "wasmcode1",
     "wasmcode2"
   ],
-  "scope_note": "Complete for the three locally archived wxapkg files; absence of other declared subpackages only means they were not present in this local cache snapshot."
+  "runtime_captured_subpackages": [
+    "wasmcode2"
+  ],
+  "declared_but_not_present_as_wxapkg": [
+    "data-package"
+  ],
+  "wasmcode2_status": "RESOLVED: controlled wx.loadSubpackage capture archived the raw V1MMWX package and matching CDN transfer evidence. Loader analysis identifies the member as a function-split archive.",
+  "data_package_status": "DECLARED_BUT_NOT_OBSERVED: current runtime evidence records loadDataPackageFromSubpackage=false and uses DATA_CDN/__GAME_FILE_CACHE instead.",
+  "scope_note": "All three observed code subpackages (wasmcode, wasmcode1, wasmcode2) are now archived. data-package is the only declared subpackage without an observed package entity or active subpackage-load path in this build."
 }

@@ -1,11 +1,11 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "snapshot": "2026-09-11",
   "authoritative_baseline": true,
   "raw_snapshot_manifest": {
     "path": "research/archive/2026-09-11/manifest.json",
-    "size": 35422,
-    "sha256": "b7ee10bcd114e5dd73fef50ec251834c169482c8410df9ce8e41933432dfb223"
+    "size": 35666,
+    "sha256": "63bc6b9b301a85dc93db3e20622240ebb447afc32e6164ed238f8efa8a850f8f"
   },
   "raw_main_wxapkg": {
     "path": "research/archive/2026-09-11/raw/packages/wx9eed71970378b2ae/16/_wasmcode_.wxapkg",
@@ -14,8 +14,8 @@
   },
   "unpacked_package_manifest": {
     "path": "research/archive/2026-09-11/unpacked/package-manifest.json",
-    "size": 4073,
-    "sha256": "149747e9eaa311b16c9fedbd55023084836143f650f884c006d03d6367ae13e1"
+    "size": 5055,
+    "sha256": "035cbfa06aab204d09e2f6c7dc7f1aa6a05444eca23c8b1f2ff2893565fff802"
   },
   "canonical_input_member": {
     "file": "/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
@@ -29,7 +29,7 @@
     "sha256": "63c975b04a35b32e292143ae4dbc95067423d46a31a22e5646c4ade909a527e2"
   },
   "decompressed_wasm": {
-    "path": "/tmp/current.webgl.wasm",
+    "path": "/tmp/current-main.webgl.wasm",
     "size": 38009451,
     "sha256": "52b679d02a884ce14782dd4fadf06e610b39d79070dcd41699f6cc0522aec19e"
   },
@@ -50,8 +50,8 @@
   },
   "csharp_manifest": {
     "path": "research/archive/2026-09-11/reverse-engineering/csharp/manifest.json",
-    "size": 25343,
-    "sha256": "59d431a41937670d043a349ef44aef3ce48ff4231443ca7837c2c9c9f09cb38c"
+    "size": 25724,
+    "sha256": "4749dfb5fc77de1d67bf3926e2504fcefc8169f2ad0a3b083acdf7a36ec693be"
   },
   "csharp_dump": {
     "path": "research/archive/2026-09-11/reverse-engineering/csharp/dump.cs",
@@ -59,6 +59,23 @@
     "sha256": "5a8048902c797bcf28e55627e4b6d2d71fc809fc409b2662dfd72a382d172853"
   },
   "method_map_name_source": "research/archive/2026-09-11/reverse-engineering/csharp/dump.cs",
+  "runtime_split_architecture": {
+    "path": "research/archive/2026-09-11/reverse-engineering/modules/split-runtime.md",
+    "size": 1341,
+    "sha256": "3ba971e276559aece9a0f261a353242e13bb57ae0cac53eb0d9870077de95487"
+  },
+  "split_payload_manifests": {
+    "wasmcode1": {
+      "path": "research/archive/2026-09-11/reverse-engineering/modules/wasmcode1/manifest.json",
+      "size": 2550,
+      "sha256": "a63aa4ddc718d236681bc548124c4e59f83daa66ba091a4f1f44b46bc9bc1f77"
+    },
+    "wasmcode2": {
+      "path": "research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/manifest.json",
+      "size": 1469,
+      "sha256": "cb23e0e3193be91c749609d786142998eb54ad5d19b94ff843b21b3152d233ea"
+    }
+  },
   "legacy_2026_09_03_dump_used": false,
   "capture_completeness": {
     "declared_subpackages": [
@@ -69,13 +86,18 @@
     ],
     "archived_code_subpackages": [
       "wasmcode",
-      "wasmcode1"
-    ],
-    "declared_but_not_present_as_wxapkg": [
-      "data-package",
+      "wasmcode1",
       "wasmcode2"
     ],
-    "scope_note": "Complete for the three locally archived wxapkg files; absence of other declared subpackages only means they were not present in this local cache snapshot."
+    "runtime_captured_subpackages": [
+      "wasmcode2"
+    ],
+    "declared_but_not_present_as_wxapkg": [
+      "data-package"
+    ],
+    "wasmcode2_status": "RESOLVED: controlled wx.loadSubpackage capture archived the raw V1MMWX package and matching CDN transfer evidence. Loader analysis identifies the member as a function-split archive.",
+    "data_package_status": "DECLARED_BUT_NOT_OBSERVED: current runtime evidence records loadDataPackageFromSubpackage=false and uses DATA_CDN/__GAME_FILE_CACHE instead.",
+    "scope_note": "All three observed code subpackages (wasmcode, wasmcode1, wasmcode2) are now archived. data-package is the only declared subpackage without an observed package entity or active subpackage-load path in this build."
   },
   "tools": {
     "Il2CppDumper": {
@@ -104,13 +126,13 @@
     },
     {
       "path": "research/archive/2026-09-11/reverse-engineering/canonical/module-info.txt",
-      "size": 68853563,
-      "sha256": "ece987e31ea44f483873948400c17d33194b12fcfb73cc7d5722de3eb0d145fb"
+      "size": 68853568,
+      "sha256": "bfb6ae01ac0268d56a7d43551713edabfef01e875eabd37be6a5b1c3e256f4b1"
     },
     {
       "path": "research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz",
-      "size": 67129269,
-      "sha256": "2595cc915ffb1543016fe7320f37c7482b47c1e8786a468de66376b8239724d5"
+      "size": 67128717,
+      "sha256": "89cf6b73be7b19946683029beda1325488429b18525d6565eee78f52d4f7d196"
     },
     {
       "path": "research/archive/2026-09-11/reverse-engineering/canonical/module.wat.gz",
