@@ -13,5 +13,5 @@
     "data-package",
     "wasmcode2"
   ],
-  "scope_note": "The Git snapshot is complete for the three locally archived wxapkg files. Missing declared subpackages may have been on-demand/not cached; this does not prove online absence."
+  "scope_note": "Complete for the three locally archived wxapkg files; absence of other declared subpackages only means they were not present in this local cache snapshot."
 }
