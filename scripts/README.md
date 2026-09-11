@@ -4,27 +4,35 @@
 
 | 阶段 | 脚本 | 主要产物 |
 | --- | --- | --- |
-| 资源解析 | `unpack.mjs`, `decode_tables.py`, `parse_i2.py` | 本地 `research/archive/<日期>/unpacked/`, `extracted/`, `tables/` |
+| 资源解析 | `unpack.mjs`, `decode_tables.py`, `parse_i2.py` | `research/archive/<日期>/unpacked/`, `extracted/`, `tables/` |
 | 卡牌数据 | `prepare_report.mjs`, `card_art.py` | 卡牌 JSON 与图像 |
 | 卡牌交付 | `build_html.mjs`, `build_workbook.mjs` | 图鉴 HTML、Excel、Markdown |
 | 系统报告 | `build_systems_report.py` | 全系统 HTML/Markdown/证据索引 |
 | 局内规则 | `build_battle_rules_report.py`, `test_battle_rules.cjs` | 独立战斗规则页、精简证据数据与交互验证 |
-| 宝箱规则 | `build_chest_report.py`, `test_chest_report.cjs` | 宝箱价格、来源、奖励、计时及函数取证、交互验证 |
-| 地块随机复核 | `hex_random_report.md`, `build_hex_random_report.py`, `test_hex_random.cjs` | 独立随机机制页、标签权重计算器、键盘与手机验证 |
-| 匹配与机器人 | `matching_report.md`, `build_matching_report.py`, `test_matching_report.cjs` | 86套逐卡数据、段位候选池、普通难度与组卡配额、标签函数复核 |
+| 宝箱规则 | `build_chest_report.py`, `test_chest_report.cjs` | 宝箱规则、函数取证与交互验证 |
+| 地块随机 | `hex_random_report.md`, `build_hex_random_report.py`, `test_hex_random.cjs` | 独立随机机制页与验证 |
+| 匹配与机器人 | `matching_report.md`, `build_matching_report.py`, `test_matching_report.cjs` | 匹配专题、Bot 配置与验证 |
 | 新手路径 | `build_journey_evidence.py`, `build_journey_report.py` | 路径 HTML/Markdown/图数据 |
-| 交互验证 | `test_journey_tooltips.cjs` | 悬浮提示和响应式验证 |
 | 发布整理 | `build_public_site.py`, `test_public_site.cjs` | `docs/` GitHub Pages 站点 |
 | 归档校验 | `build_archive_manifest.py` | `research/archive-manifest.json` |
-| IL2CPP元数据恢复 | `recover_il2cpp_metadata.py` | 本地可供Il2CppDumper读取的v31元数据 |
-| 统一逆向包 | `.github/workflows/rebuild-unified-reverse.yml` | `research/archive/2026-09-11/reverse-engineering/` 下的 C# 声明、主 canonical WAT/objdump/RVA 映射及 split-module 取证 |
+| IL2CPP metadata | `recover_il2cpp_metadata.py` | 当前 snapshot 的恢复 metadata |
+| 主模块映射 | `build_wasm_method_maps.py` | canonical method/element map、`dump-audit.json`、`validation.json` |
+| wasmcode2 最终化 | `build_wasmcode2_package.py` | archive format、table map、method crosswalk 与最终 manifest/README |
+| 逆向产物收敛 | `prune_reverse_outputs.py` | 删除重复/可重建大文本，规范长期 provenance |
+| 当前基准审计 | `audit_current_baseline.py` | reverse + docs provenance 校验 |
 
-发布脚本不会读取完整 `RemoteConfig` 输出到站点，只会使用新手路径证据中已经审核过的玩法开关白名单。
+## 逆向链的维护原则
 
-匹配专题：`python scripts/build_matching_report.py` → `python scripts/build_public_site.py` → `node scripts/test_matching_report.cjs`。生成器直接解析 Bot_Json 并与卡牌/技能/段位表关联，验证全部候选 ID 和 688 个卡槽。正文、样式与交互源文件分别为 `matching_report.md/.css/.js`；新的公开配置包括 `ArenaEnemyCardsInfoSheet2`。函数级复核统一使用 `research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv` 定位方法，并在同目录的 `module.objdump.gz` / `module.wat.gz` 中读取完整函数体。
+唯一 CI 入口是 `.github/workflows/rebuild-unified-reverse.yml`。workflow 本身只负责编排：依赖安装 → raw 到 canonical 基础重建 → wasmcode2 最终化 → 产物去重 → archive manifest → reverse + docs audit → Git-index provenance 校验 → 单次最终提交。
 
-地块随机页：先生成宝箱页面以复用报告样式，再执行 `python scripts/build_hex_random_report.py`，随后运行发布整理与 `node scripts/test_hex_random.cjs`。正文源文件为 `scripts/hex_random_report.md`。原始 WASM/cache 保留在归档层，函数级证据统一从 canonical 逆向包读取，不再按专题生成第二套反汇编目录。
+`rebuild_unified_reverse.sh` 仍承载 raw 解包、metadata 恢复、Il2CppDumper、主 WAT/objdump、基础 split-runtime 生成等底层步骤；CI 只执行它的构建/校验部分，历史上的脚本内 commit/push footer 不再决定 CI 提交流程。新的 wasmcode2 archive/crosswalk 逻辑集中在 `build_wasmcode2_package.py`，不再以大段 heredoc 散落在 workflow 中。
 
-宝箱数据另保留 `ChestImprove01` 和 `BottomChestUI` 两个默认值。逆向证据统一由 `.github/workflows/rebuild-unified-reverse.yml` 从固定 WASM 输入生成 `research/archive/2026-09-11/reverse-engineering/canonical/`。方法 RVA 用作 WASM 表槽，不当作文件偏移；共享桩的多重名称仍不能单独证明函数体语义。
+最终 Git 产物保留完整 `module.wat.gz` / `module.objdump.gz`、方法映射、C# 声明和机器校验。`wasm-objdump -x` 生成的 `module-info.txt`、`validation.json` 的文本副本等可重建且不提供独立证据的文件由 `prune_reverse_outputs.py` 移除。机器事实优先读取 JSON/TSV/manifest，不要在 README 或专题报告里复制同一组硬校验数字。
 
-宝箱页面复现顺序：先保证 canonical 逆向包已生成，再执行 `python scripts/build_chest_report.py` → `python scripts/build_public_site.py` → `node scripts/test_chest_report.cjs`。宝箱报告只记录 canonical 方法映射与完整反汇编入口，不再维护第二套函数摘录。
+函数级复核统一使用 `research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv` 定位方法，再从同目录 `module.objdump.gz` / `module.wat.gz` 读取完整函数体；涉及 runtime split 时结合 `modules/split-runtime.md` 和对应模块 manifest/crosswalk。方法 RVA 用作 WASM table slot 映射入口，不当作文件偏移；`wasmcode2 archive_value` 未证明为地址或 offset。
+
+## 报告源与发布
+
+发布脚本不会把完整 `RemoteConfig` 原样输出到站点，只使用各报告已经审核过的字段。专题正文继续按单一归属维护：地块随机规则在 `hex_random_report.md`；匹配正文在 `matching_report.md`；战斗、宝箱、系统和新手路径由各自 builder 生成。正式发布前执行 `build_public_site.py` 和对应测试。
+
+逆向技术说明只维护在 `research/reverse-engineering.md`；已结束的问题复核与验收记录进入 `research/archive/<日期>/audits/`，不要继续在 `research/` 根目录新增并行的“最终报告”。
