@@ -8,6 +8,7 @@
 # Local verification and runtime noise
 *.inspect.ndjson
 *.log
+!research/archive/2026-09-11/reverse-engineering/csharp/il2cppdumper.log
 __pycache__/
 *.py[cod]
 .DS_Store
