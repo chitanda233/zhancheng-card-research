@@ -1,94 +1,75 @@
-# IL2CPP / WASM 深入还原记录
+# IL2CPP / WASM 逆向基准
 
-本页记录当前唯一的可复现静态分析基准。自 2026-09-11 起，所有新的逆向分析统一使用 `research/archive/2026-09-11/`：该快照保存 Windows 微信本机实际归档的原始 `V1MMWX` `.wxapkg`、UnityWebData、本地资源缓存，以及从这些 raw 输入重新生成的解包、metadata、C# 声明和 canonical WASM 逆向产物；同日又通过受控 `wx.loadSubpackage` 捕获补齐 `wasmcode2`。`research/archive/2026-09-03/` 仅保留为历史证据，不再参与当前生成、方法映射或行为判断。
+本页只维护**当前逆向技术基准、产物职责和证据边界**，不再重复各专题的玩法结论。自 2026-09-11 起，所有新的函数级逆向分析统一使用 `research/archive/2026-09-11/`；`research/archive/2026-09-03/` 只保留为历史证据，不再参与当前生成、方法映射或行为判断。
 
-## 唯一重建链路
+已完成的问题复核与最终 Docs 核对属于历史审计记录，统一归档在 `research/archive/2026-09-11/audits/`，不再与当前技术说明并列维护。
 
-当前统一链路为：`2026-09-11 raw V1MMWX wxapkg` → `scripts/unpack_wxapkg.py` 解密/解包 → 主 WASM + raw UnityWebData → `scripts/recover_il2cpp_metadata.py` 恢复 metadata → 固定版本 Il2CppDumper 从 WASM + metadata 重新生成 `csharp/dump.cs` 和 `DummyDll/` → WABT 重新生成完整 WAT/objdump → `scripts/build_wasm_method_maps.py` 使用新的 `csharp/dump.cs` 建立 RVA / function / 方法名映射 → 解码 `wasmcode2` function-split archive 的共享 table map → `scripts/build_wasmcode2_method_crosswalk.py` 将 shared table id 与 canonical primary method map 做交叉映射。
+## 当前唯一重建链路
 
-唯一自动重建入口是 `.github/workflows/rebuild-unified-reverse.yml`。旧的 2026-09-03 canonical workflow、中间的“复用 legacy dump” workflow，以及原先独立的 `wasmcode2` archive workflow 均已退出使用。
+当前统一链路为：
 
-## 元数据保护
+`2026-09-11 raw V1MMWX wxapkg / UnityWebData` → `scripts/unpack_wxapkg.py` 解包 → `scripts/recover_il2cpp_metadata.py` 恢复 metadata → 固定版本 Il2CppDumper 生成 `csharp/dump.cs` / `DummyDll` → WABT 生成主模块 WAT/objdump → `scripts/build_wasm_method_maps.py` 建立 C# RVA / table slot / WASM function 映射 → 分析 `wasmcode1` / `wasmcode2` 运行时 split → `wasmcode2` shared-table crosswalk → provenance / audit。
 
-- Unity 数据容器中的 `global-metadata.dat` 长度为 16,795,612 字节。
-- 文件魔数从标准 IL2CPP 魔数 `AF 1B B1 FA` 替换成 ASCII `0995`。
-- 元数据版本为 31。
-- `0x000004..0x0000ff` 的头字段和 `0x000100..0x0439c7` 的字符串字面量索引表按字节异或 `0x91`。
-- 方法、类型、字段等主要元数据表没有整体加密。
-- 当前恢复结果固定保存为 `research/archive/2026-09-11/reverse-engineering/global-metadata.decrypted.dat`，由 raw UnityWebData 每次重新生成，而不是复制历史产物。
+唯一 CI 入口为 `.github/workflows/rebuild-unified-reverse.yml`。旧的 2026-09-03 canonical workflow、复用 legacy dump 的中间流程和独立 wasmcode2 workflow 均不再使用。
 
-## 原始 wxapkg、分包与解包
+## 证据层职责
 
-Windows 微信保存的原始包使用 `V1MMWX` 包装，并不是可直接按标准 `0xBE ... 0xED` 结构读取的明文 wxapkg。`scripts/unpack_wxapkg.py` 使用 AppID 派生密钥先恢复标准 wxapkg，再校验文件表、offset、size、路径安全与成员 SHA-256，输出到 `research/archive/2026-09-11/unpacked/` 并生成 `package-manifest.json`。
+| 位置 | 用途 | 能证明什么 |
+| --- | --- | --- |
+| `raw/` | 原始微信本地包、UnityWebData、缓存 | 采集输入与字节级 provenance |
+| `unpacked/` | 从 raw 包可重复生成的成员 | 包结构、loader 与实际 WASM/data 成员 |
+| `reverse-engineering/csharp/` | Il2CppDumper 声明恢复 | 类型、字段、属性、签名、RVA/offset；**不是原始 C# 方法体** |
+| `reverse-engineering/canonical/` | 主 IL2CPP WASM 的 WAT/objdump 与映射 | 当前主要函数行为与 RVA → WASM function 关系 |
+| `reverse-engineering/modules/wasmcode1/` | WXWebAssembly split executable | split 运行时模块本身，不建立第二套主模块 RVA 命名空间 |
+| `reverse-engineering/modules/wasmcode2/` | function-split archive 与 shared-table crosswalk | shared table slot 是否在 archive map 中存在；不自动等同于独占函数体或代码地址 |
+| `capture-completeness.json` | 分包捕获范围 | 当前构建实际观察到的代码分包与仍保留的采集边界 |
 
-当前原始包目录 `research/archive/2026-09-11/raw/packages/wx9eed71970378b2ae/16/` 已保存四个包：`__WITHOUT_MULTI_PLUGINCODE__.wxapkg`、`_wasmcode_.wxapkg`、`_wasmcode1_.wxapkg`、`_wasmcode2_.wxapkg`。`wasmcode2` 是在 2026-09-11 同日受控运行中主动调用 `wx.loadSubpackage({name:"wasmcode2"})` 后补齐；原始 V1MMWX 包与捕获到的 CDN Zstd 传输体均保留，可独立验证传输体解码结果与 wxapkg decoded bytes 一致。详细捕获过程见 `research/archive/2026-09-11/runtime-capture/result.md`。
+`dump.cs` / `DummyDll` 是 IL2CPP 声明恢复。空方法体不代表真实业务实现不存在；涉及行为的结论必须回到 canonical WAT/objdump，涉及 runtime split 时再结合 `modules/` 证据。
 
-`app-config.json` 声明 `wasmcode`、`data-package`、`wasmcode1`、`wasmcode2` 四个 subPackages。三个代码分包 `wasmcode` / `wasmcode1` / `wasmcode2` 现已全部归档；唯一仍未观察到独立 wxapkg 的声明项是 `data-package`。当前 loader 记录 `loadDataPackageFromSubpackage=false`，并通过 `DATA_CDN` / `__GAME_FILE_CACHE` 使用 Unity data，因此它目前属于“声明存在但本构建没有观察到活跃 subpackage 加载路径”的采集边界，而不是已确认缺失的运行时代码包。该状态记录在 `reverse-engineering/capture-completeness.json`。
+## metadata 与 C# 声明
 
-## 新 C# 声明基准
+Unity 数据容器中的 `global-metadata.dat` 使用受保护头部：标准 IL2CPP 魔数被替换，部分头字段和 string-literal index 区域按固定方式处理。恢复逻辑由 `scripts/recover_il2cpp_metadata.py` 负责，结果固定输出到 `research/archive/2026-09-11/reverse-engineering/global-metadata.decrypted.dat`，每次从 raw UnityWebData 重建，不复制历史结果。
 
-当前唯一 C# / IL2CPP 声明入口为 `research/archive/2026-09-11/reverse-engineering/csharp/`。`dump.cs` 不再来自历史未知工具链，而是每次从当前主 WASM + 当前恢复 metadata 重新生成。生成器固定为 `Perfare/Il2CppDumper v6.7.46`、commit `8a521b9c180cf13499253f0818cbc729dca767cb`，workflow 从该 commit 的源码构建工具。
+当前 C# 声明固定由 `Perfare/Il2CppDumper v6.7.46`、commit `8a521b9c180cf13499253f0818cbc729dca767cb` 生成。`GenerateStruct` 因本项目受保护 metadata 的 string-literal index 兼容问题关闭；这不影响 `dump.cs` 与 `DummyDll` 生成。具体生成器版本、输入 hash 和输出 hash 以 `csharp/manifest.json` 为唯一机器可读事实源。
 
-Il2CppDumper 对当前输入自动识别 metadata/IL2CPP version 31，并自动定位 `CodeRegistration = 0x0CF1EC`、`MetadataRegistration = 0x09490C`。输出包括新的 `csharp/dump.cs`、`csharp/DummyDll/`、生成日志与 `csharp/manifest.json`；manifest 固定记录生成器 commit、输入 WASM/metadata hash 和全部 C# 产物 hash。
+## 主 WASM 与 split runtime
 
-Il2CppDumper v6.7.46 的可选 `GenerateStruct` 在本项目受保护 metadata 的 string-literal 索引上存在越界，因此统一流程明确关闭该项。这个限制发生在 dump.cs 生成之后，并不影响 `dump.cs` 或 `DummyDll`；低层结构与真实行为统一由 canonical WAT/objdump 承担。
+主 `_wasmcode_` 成员是当前 IL2CPP canonical 输入，包含建立 C#/RVA 映射所需的信息。`wasmcode1` 是通过 `WXWebAssembly.Instance` / `WXWebAssembly.instantiate` 与 `wasm_split_info` 载入的 split executable；`wasmcode2` 则由文件系统读取字节并传入 `innerInitFuncSplitWasm({archiveArray})`，缺失函数通过 shared table id 请求。
 
-这里的 C# 仍是 IL2CPP 的“声明恢复”，不是原作者源码。类型、字段、属性、方法签名、RVA/offset 可以作为可靠入口，但 IL2CPP 编译后丢失的局部变量名、注释与高级语法无法无损恢复，`{ }` 也不代表真实业务方法体。具体行为必须回到 canonical `module.wat.gz` / `module.objdump.gz`；涉及 function-split 的方法还应同时检查 `reverse-engineering/modules/wasmcode2/`。
+因此：
 
-## 主 WASM、拆分模块与函数映射
+- 主模块 RVA / 方法名映射只来自 canonical 主 WASM + 当前 `csharp/dump.cs`；
+- `wasmcode1` / `wasmcode2` 不建立第二套可直接替代主模块 RVA 的命名空间；
+- `wasmcode2` crosswalk 的 join key 是已证明共享的 table id；
+- `archive_value` 的具体语义目前仍未证明，不能解释为 function ordinal、record id、byte offset 或代码地址；
+- “某 table slot 出现在 wasmcode2 map 中”不等于“函数体只存在于 wasmcode2”。
 
-必须使用 `_wasmcode_/wasmcode/` 中的主 WASM 作为 IL2CPP canonical 主输入：它含 Memory、Export 和 Data 段。`_wasmcode1_` 是导入内存、没有 Data 段的拆分代码模块，不能单独用于注册表扫描。`_wasmcode2_` 则不是一个可独立实例化的标准 WASM 模块；运行时 loader 把其成员作为字节 archive 传入 `GameGlobal.manager.wasmsplit.innerInitFuncSplitWasm(...)`，缺失函数按共享 table id 经 `innerInvokeWasmBuffer` 请求，因此应视为 function-split archive，而不是第二套独立 C#/RVA 命名空间。
+split loader 关系以 `reverse-engineering/modules/split-runtime.md` 为人读摘要；wasmcode2 的机器事实以 `archive-format.json`、`method-crosswalk-summary.json` 和 `method-crosswalk.tsv` 为准。
 
-当前 canonical 输入成员 `/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br` 的 SHA-256 为 `63c975b04a35b32e292143ae4dbc95067423d46a31a22e5646c4ade909a527e2`；Brotli 解压后的 WASM 为 38,009,451 字节，SHA-256 为 `52b679d02a884ce14782dd4fadf06e610b39d79070dcd41699f6cc0522aec19e`。
+## Canonical 校验
 
-恢复后的 metadata 配合主 WASM 可定位：
+`canonical/method-map.tsv` 是当前完整 C# primary method → RVA/table slot → WASM function 映射。映射脚本只接受 `dump.cs` 顶层方法头的 `// RVA:`，明确排除 `GenericInstMethod` 的 `|-RVA:` 注释，避免把泛型实例注释误归属为主方法。
 
-| 项目 | 值 |
-| --- | --- |
-| CodeRegistration | `0x0CF1EC` |
-| MetadataRegistration | `0x09490C` |
-| `ResolveRandomArchitecture` | 表槽 `0xEFFC` / `func[15972]` |
-| `FPRandom.Range` | 表槽 `0x43CA` / `func[1693]` |
-| `TryApplyFirstThreeCheapOpenReroll` | 表槽 `0xF384` / `func[25362]` |
-| `SelectFirstThreeRCardWithoutGoldMine` | 表槽 `0xF385` / `func[25388]` |
+关键函数映射的硬校验统一保存在 `canonical/validation.json`；映射覆盖与重复 RVA 审计统一保存在 `canonical/dump-audit.json`。人读文档不再复制这些逐行结果，避免以后同一组数字在多处漂移。canonical 输入、工具版本、生成文件 hash 与当前 capture 摘要统一由 `canonical/manifest.json` 记录。
 
-统一 workflow 使用新生成的 `csharp/dump.cs` 重新建立完整方法映射：121,448 个 primary method RVA 全部映射，0 unmapped、0 duplicate；139,677 个 `GenericInstMethod` 的 `|-RVA:` 注释被排除，不直接绑定方法签名。原有 9 个关键函数硬校验全部通过。canonical `manifest.json` 明确记录 `authoritative_baseline: true`、`method_map_name_source = .../csharp/dump.cs`、`legacy_2026_09_03_dump_used: false`。
+## 当前采集边界
 
-### wasmcode2 function-split archive
+`app-config.json` 声明 `wasmcode`、`data-package`、`wasmcode1`、`wasmcode2`。当前三个代码分包 `wasmcode`、`wasmcode1`、`wasmcode2` 均已归档；`data-package` 未观察到独立 wxapkg，但当前 loader 记录 `loadDataPackageFromSubpackage=false`，Unity data 通过 `DATA_CDN` / `__GAME_FILE_CACHE` 路径使用。
 
-`research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/` 保存当前可重复生成的 archive 分析。共享 table 共 367,137 个 slot，其中 247,542 个为非 sentinel，119,595 个为 `0xffffffff` sentinel。`table-value-map.tsv` 记录 `table_id → archive_value`；当前证据只证明运行时按共享 table id 查询 function-split archive，**尚未证明 `archive_value` 是函数序号、record id、字节 offset 或其他 manager 私有标识**，因此禁止直接把它解释成 archive 内代码地址。
+所以 `data-package` 当前应描述为“声明存在，但本构建没有观察到活跃 subpackage 加载路径”，不能写成“漏抓了一个运行时代码包”。完整状态只维护在 `capture-completeness.json`，其他文档只引用该结论。
 
-`scripts/build_wasmcode2_method_crosswalk.py` 用 shared table id 与 canonical primary method RVA/table slot 严格 join。当前 247,542 个非 sentinel slot 中，76,073 个能直接对应到 121,448 个 primary C# 方法；45,375 个 primary 方法没有对应的非 sentinel `wasmcode2` slot；另有 171,469 个非 sentinel slot 没有直接对应 primary C# method。这个 join 只表达“共享 table slot 在 archive map 中存在”，**不代表函数体只存在于 wasmcode2，也不代表 archive_value 已经被解释为函数地址**。
+服务器最终消费者、实时 RemoteConfig / AB 分流和线上对局 payload 不属于当前静态逆向包的完整覆盖范围。静态配置或客户端可见逻辑不能因此自动升级为所有线上玩家的确定事实。
 
-对此前 9 个硬校验方法按精确 RVA 检查后，只有两个出现在 `wasmcode2` 非 sentinel table map 中：
+## 与正式研究报告的关系
 
-| 方法 | RVA | canonical func | wasmcode2 archive_value | 结果 |
-| --- | --- | --- | --- | --- |
-| `ResolveOpenedHexOutcome` | `0xF495` | `func[25409]` | `133371` | present |
-| `HasPlayerOpenAnchorNeighbor` | `0xF61E` | `func[25522]` | `46079` | present |
-| `OpenHex` | `0x4534` | `func[43532]` | — | absent |
-| `GetHexOpenBlockReason` | `0x4597` | `func[6642]` | — | absent |
-| `SpendGold` | `0x4598` | `func[43468]` | — | absent |
-| `CommitOpenedHex` | `0x459B` | `func[25588]` | — | absent |
-| `SetHexOpened` | `0x42F2` | `func[25926]` | — | absent |
-| `MarkDynamicWallsDirtyAround` | `0x4319` | `func[11720]` | — | absent |
-| `ApplyBattleCoreAuthoritativeCellState` | `0x88FC` | `func[14763]` | — | absent |
+本页不再维护玩法结论。正式研究结论按专题单一归属：地块生成、隐藏内容、SSSR 权重与低价重抽看 `docs/reports/hex-random/`；匹配与 Bot 介入看 `docs/reports/matching/`；宝箱看 `docs/reports/chests/`；局内规则看 `docs/reports/battle/`；全系统摘要看 `docs/reports/system/`。
 
-上述检查使用精确 RVA，不按方法名子串匹配，因此不会把同名 UI/rollback 方法误算进去。权威机器可读结果为 `modules/wasmcode2/method-crosswalk-summary.json` 和 `method-crosswalk.tsv`。
+`docs/` 报告会区分 2026-09-03 的配置/界面快照与 2026-09-11 的函数级逆向基准。逆向技术层只提供可追溯证据，不在这里复制专题结论。
 
-## 已确认的规则
+## 当前维护规则
 
-1. `ResolveRandomArchitecture` 最终调用 `FPRandom.Range(0, candidates.Count)`，然后读取对应列表索引。过滤后的同池候选为等概率，不存在单卡权重读取。
-2. `FPRandom.Range` 使用 PCG 状态推进与拒绝采样，避免简单取模产生的偏差；同一战斗种子可确定性复现。
-3. 前三次低价翻格的价格上限为 250（实际条件为价格小于 250）。若原结果为 SSR/SSSR 非防御建筑，则会尝试改抽 R 卡；替换候选同时排除卡牌 ID 与建筑 ID 为 `1001` 的金矿，池内仍为等概率。
-4. 2026-09-08 更正：本方刚付费 +10、本方连败 +50、本方回流 +30、对手连胜 +50，是金卡权重增量，不是百分点；总权重也增加。首次生成符合条件的 SSSR 兵营类结果后，该玩家的这条标签加成会被标记为已重置。完整复核正文见 `scripts/hex_random_report.md`，网页见 `docs/reports/hex-random/index.html`。
-
-## 当前目录职责
-
-- `research/archive/2026-09-11/raw/`：不可替代的原始取证输入，当前包含主包及三个代码分包的 raw V1MMWX 包。
-- `research/archive/2026-09-11/unpacked/`：由 raw wxapkg 可重复生成的解包结果。
-- `research/archive/2026-09-11/reverse-engineering/global-metadata.decrypted.dat`：由 raw UnityWebData 可重复恢复的 metadata。
-- `research/archive/2026-09-11/reverse-engineering/csharp/`：当前唯一 C# / DummyDll 声明参考。
-- `research/archive/2026-09-11/reverse-engineering/canonical/`：当前唯一主 WASM 低层行为分析与 RVA/function 映射基准。
-- `research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/`：function-split archive、shared-table map 与 C# method crosswalk。
-- `research/archive/2026-09-03/`：历史归档，仅用于追溯，不再作为当前分析输入。
+1. 新 raw 抓取使用新的日期目录，不覆盖旧快照。
+2. 新函数级分析只从当前 canonical / csharp / modules 机器产物取证。
+3. 玩法结论只在对应正式专题维护；逆向文档只写技术边界和入口。
+4. 历史问题复核与一次性验收记录进入 `archive/<日期>/audits/`，不再留在 `research/` 根目录。
+5. 修改 raw、metadata、主 WASM、split payload 或映射脚本后，必须重新运行统一 reverse workflow，并执行 reverse + docs provenance audit。
