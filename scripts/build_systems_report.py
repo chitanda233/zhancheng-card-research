@@ -5,7 +5,8 @@ import markdown
 from system_labels import TABLE_LABELS, SWITCHES, annotate_markdown, display_label
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'outputs'/'20260903'
+OUT=ROOT/'outputs'/'system'
+OUT.mkdir(parents=True, exist_ok=True)
 def read(n):
  d=json.loads((ROOT/'tables'/(n+'.json')).read_text(encoding='utf8'))
  return d.get('Datas',d) if isinstance(d,dict) else d
@@ -79,7 +80,7 @@ for name in names:
  if not p.exists() or name=='RemoteConfig':continue
  data=read(name)
  sources.append({'table':name,'displayName':display_label(name),'path':str(p),'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'rows':len(data) if isinstance(data,list) else None})
-evidence={'title':'占城大师全系统拆解证据索引','snapshot':'2026-09-03','appId':'wx9eed71970378b2ae','scope':'本地静态配置与中文文本；未恢复完整运行时代码、未验证服务器覆盖值','sources':sources,'remoteFlagSubset':flags,'uiVerified':['当前领地提示竞技场2解锁','当前主界面赛季模式提示竞技场4解锁','当前竞技场1进度9/25，成功+3','当前主界面4个宝箱槽，已得宝箱标注5分','当前月卡68元，奖励加成20%，每日宝石20/水晶50/木材1000','上一轮核对卡牌8/43及熊、骷髅基础属性'],'keyCounts':{'configuredCards':54,'enabledCards':43,'configuredArtifacts':24,'enabledArtifacts':18,'arenas':20,'pvpRanks':25,'botPresets':86,'pvpMapEntries':132,'artifactUpgradeLevels':150,'artifactRankStepsIncludingZero':31,'forgeAffixes':48},'notes':['CanUse=true 表示本地表启用，不保证服务器获取渠道开放。','BotProb 是配置字段，不是当前玩家真实遭遇机器人比例。','Weight 与 ShowWeight 有差异；未确认运行时抽取与展示调用。']}
+evidence={'title':'占城大师全系统拆解证据索引','snapshot':'2026-09-03','reverseBaseline':'2026-09-11','appId':'wx9eed71970378b2ae','scope':'静态配置与界面样本来自2026-09-03；关键函数链使用2026-09-11统一逆向基准复核；未验证服务器实时覆盖值','sources':sources,'remoteFlagSubset':flags,'uiVerified':['当前领地提示竞技场2解锁','当前主界面赛季模式提示竞技场4解锁','当前竞技场1进度9/25，成功+3','当前主界面4个宝箱槽，已得宝箱标注5分','当前月卡68元，奖励加成20%，每日宝石20/水晶50/木材1000','上一轮核对卡牌8/43及熊、骷髅基础属性'],'keyCounts':{'configuredCards':54,'enabledCards':43,'configuredArtifacts':24,'enabledArtifacts':18,'arenas':20,'pvpRanks':25,'botPresets':86,'pvpMapEntries':132,'artifactUpgradeLevels':150,'artifactRankStepsIncludingZero':31,'forgeAffixes':48},'notes':['CanUse=true 表示本地表启用，不保证服务器获取渠道开放。','BotProb 是配置字段，不是当前玩家真实遭遇机器人比例。','Weight 与 ShowWeight 有差异；未确认运行时抽取与展示调用。']}
 evidence['switchExplanations']=[{'name':name,'displayName':display_label(name),'value':value,'explanation':SWITCHES[name][1],'source':source} for name,value,source in flags]
 (OUT/'systems-evidence.json').write_text(json.dumps(evidence,ensure_ascii=False,indent=2),encoding='utf8')
 parser=markdown.Markdown(extensions=['tables','toc','fenced_code'],extension_configs={'toc':{'toc_depth':'2-3','permalink':False}})

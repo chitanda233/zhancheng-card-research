@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "errors": [],
+  "docs": {
+    "mixed_reports": [
+      "system",
+      "battle",
+      "chests",
+      "hex-random",
+      "matching"
+    ],
+    "static_reports": [
+      "cards",
+      "journey"
+    ],
+    "reverse_baseline": "2026-09-11",
+    "config_snapshot": "2026-09-03",
+    "historical_snapshot": {
+      "baseline": "outputs/new-player-journey/originals-baseline.json",
+      "frozen_root": "outputs/20260903",
+      "checked_files": 6
+    }
+  },
+  "ok": true
+}

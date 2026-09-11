@@ -1,6 +1,7 @@
 {
   "snapshot": "2026-09-03",
-  "reviewed": "2026-09-10",
+  "reverseBaseline": "2026-09-11",
+  "reviewed": "2026-09-11",
   "version": "1.4.15.558-preview",
   "bots": [
     {

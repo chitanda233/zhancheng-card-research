@@ -96,40 +96,24 @@
     "newPlayerCount": 29
   },
   "artifacts": {
-    "journey-map.svg": 9386,
-    "journey-nodes.csv": 42443,
-    "journey-nodes.json": 49472,
-    "local-evidence.json": 538199,
-    "originals-baseline.json": 625,
-    "report-body.md": 35246,
-    "source-manifest.json": 13524,
     "tooltip-desktop.png": 193476,
+    "verification.json": 1045,
+    "tooltip-ui-verification.json": 349,
+    "journey-map.svg": 9386,
+    "local-evidence.json": 519185,
+    "originals-baseline.json": 618,
+    "report-body.md": 35385,
     "tooltip-map.png": 159455,
+    "journey-nodes.csv": 42443,
+    "source-manifest.json": 14343,
+    "占城大师_新手全路径研究.html": 522830,
+    "占城大师_新手全路径研究.md": 122917,
     "tooltip-mobile.png": 75844,
-    "tooltip-ui-verification.json": 19855,
-    "tutorial-graph.json": 73906,
-    "verification.json": 3148,
-    "web-evidence.json": 7439,
-    "占城大师_新手全路径研究.html": 528379,
-    "占城大师_新手全路径研究.md": 124082
+    "journey-nodes.json": 49472,
+    "tutorial-graph.json": 71495,
+    "web-evidence.json": 7439
   },
-  "visualQA": {
-    "passed": true,
-    "checks": [
-      "mouse hover",
-      "Escape dismissal",
-      "keyboard focus",
-      "card/tutorial namespace distinction",
-      "inline SVG tooltips",
-      "viewport edge positioning",
-      "390px touch/click tooltip",
-      "offline file URL"
-    ],
-    "pageErrors": [],
-    "desktopViewport": "1360x950",
-    "mobileViewport": "390x844",
-    "report": "tooltip-ui-verification.json"
-  },
+  "visualQA": "pending",
   "tooltips": {
     "tooltipCount": 1034,
     "kinds": {

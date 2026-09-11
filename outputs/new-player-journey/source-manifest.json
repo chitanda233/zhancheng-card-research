@@ -1,248 +1,248 @@
 [
   {
     "table": "GlobalTutorialInfo",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalTutorialInfo.json",
-    "sha256": "d237fdb625c9c33905aa0fc82aa3f922352cd12d769387a1d142783964d2b007",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobalTutorialInfo.json",
+    "sha256": "74f8b2398e8466d21e32ee454ab529f51cae4c97ef4f81b60f46ee1837d7412c",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobalTutorialInfo__89.txt"
   },
   {
     "table": "I2Terms",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\I2Terms.json",
-    "sha256": "bb5fee7ff8aadf9b43acaf99f1f6a87f49ffc6d87d2053c51b1c969b0a7d5b3a",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/I2Terms.json",
+    "sha256": "e52c0369b09517e1808f7e2d7adb840b4e60a768239159506e938ba78309024d",
     "source": "I2Languages.bin / parse_i2.py"
   },
   {
     "table": "RemoteConfig",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\RemoteConfig.json",
-    "sha256": "f7767e8b0e8ddd01ea9a917ac8610633199e451b8a832a59facb056db1721d39",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/RemoteConfig.json",
+    "sha256": "fea4afa675dbd685bc190b5d008575850583bbffd2f129db247f698dcde19eb3",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\RemoteConfig__100.txt"
   },
   {
     "table": "GlobalTrainingMapInfoSheet1",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalTrainingMapInfoSheet1.json",
-    "sha256": "82fe2bcf1982c0ddeb1f505f9411d64324c5dc733d140a843c6289af1ece84ef",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobalTrainingMapInfoSheet1.json",
+    "sha256": "aabcec18dee4e3d48b89bd27d0477608c2a77a68474ab531d4f145ed13bee87f",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobalTrainingMapInfoSheet1__151.txt"
   },
   {
     "table": "GlobalTrainingMapInfoSheet2",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalTrainingMapInfoSheet2.json",
-    "sha256": "bb34e861bda63839bea83f65ae17afdb77da72ae5a4a9a6f9f9d16a53032333c",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobalTrainingMapInfoSheet2.json",
+    "sha256": "7cb816e3846a1ca686858594eb68e657a61050cd0c8ea87b499249f7b5e33162",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobalTrainingMapInfoSheet2__115.txt"
   },
   {
     "table": "GlobalFeatureUnlockInfo",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalFeatureUnlockInfo.json",
-    "sha256": "44b44cd96286fc5b193f5fee149157e6a9fc7b70aa06aedef068a65ccbe288ca",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobalFeatureUnlockInfo.json",
+    "sha256": "53702ca9750d27937d3c53ed10af91c191b8f01295f7c640d029357c5080cccf",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobalFeatureUnlockInfo__91.txt"
   },
   {
     "table": "GlobalTrophyProgressInfo",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalTrophyProgressInfo.json",
-    "sha256": "d444353723a3875f08a76aca5f8cf56e6a3e3c0ee79f02badaaef4bc1517b2d2",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobalTrophyProgressInfo.json",
+    "sha256": "64cf865712977eadedade4203d8166b7c1229c5323152490b7d4d638adf26efe",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobalTrophyProgressInfo__117.txt"
   },
   {
     "table": "UserLevelInfo",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\UserLevelInfo.json",
-    "sha256": "b4c50c20062ee4c6d2d5663bc72834db3615a16f5ada39af43939768aba39ab8",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/UserLevelInfo.json",
+    "sha256": "99c3921ffb88c761dd4ecbae1926770596c49ff03524a6ae031aec26d86ae196",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\UserLevelInfo__145.txt"
   },
   {
     "table": "GlobaUpgradeReward",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobaUpgradeReward.json",
-    "sha256": "a1f312700d622f53fb26521a62130925e4325adfe96064bde1fc84c8ae47bc5c",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobaUpgradeReward.json",
+    "sha256": "f748ed8be92c93ffaaa7f65a21bb89c345b2eeab141dae62f01283d2d2e98335",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobaUpgradeReward__90.txt"
   },
   {
     "table": "GlobalRandomHeroCardInfo",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalRandomHeroCardInfo.json",
-    "sha256": "e54f704830f0f9151357d9cbc5424ce190d483a0f2cd5ad162414f2c6ef0edd7",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobalRandomHeroCardInfo.json",
+    "sha256": "fa09da3d4932210c6ba876494ddf64bb77e5d646e2d3e43e1b763a629cc1aa6b",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobalRandomHeroCardInfo__102.txt"
   },
   {
     "table": "GlobalArenaInfoSheet2",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalArenaInfoSheet2.json",
-    "sha256": "d68a7826ee40d71469682ad0d892f4b7a5614307e8ed2404020389578a1c8a74",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobalArenaInfoSheet2.json",
+    "sha256": "a6d4319c406223768ef4c4dbc83201186ec72138c5ad37e9031ff7b9b602fd0a",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobalArenaInfoSheet2__158.txt"
   },
   {
     "table": "GlobalBoxInfo",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalBoxInfo.json",
-    "sha256": "45fedfec1aa415c0f7492d490f7b8b50e6bfc2fd435d2afe44bbf7d62e8b3463",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobalBoxInfo.json",
+    "sha256": "b545f8a42ee804df2ebf26c11b1f8548618c18ba8259b90046cdac5c9dc20ed0",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobalBoxInfo__137.txt"
   },
   {
     "table": "GlobalHexInfo",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalHexInfo.json",
-    "sha256": "d6978c3a516088c67f8c9779c240d802c4c80c092f1c50497a12231c1ae9ddd8",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobalHexInfo.json",
+    "sha256": "d496dd17074d2d4bc462e78d623da5f8a1efb06ce367baff805689ea0e753e84",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobalHexInfo__105.txt"
   },
   {
     "table": "GameSettingConfig",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GameSettingConfig.json",
-    "sha256": "b4000b7f95e80de982a6142d17a4304d2b7387d1a4680c42b6ed9d9f1d9a143b",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GameSettingConfig.json",
+    "sha256": "a6d203f977be9ceb6a437a30ae9d7f20b4492ce86002987223b47be071f16b64",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GameSettingConfig__103.txt"
   },
   {
     "table": "GlobalFormulasInfo",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalFormulasInfo.json",
-    "sha256": "95c2b3e975ef96d470710a8386ceaa2f83bf032b700bfb9e313fe9bd068678f3",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobalFormulasInfo.json",
+    "sha256": "1314048e1b49e2d96e6ae62203035c6e2dd22683c0cf33e5d0b84ff677cf2644",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobalFormulasInfo__161.txt"
   },
   {
     "table": "GlobalMainCityTitleInfo",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalMainCityTitleInfo.json",
-    "sha256": "804f74dbcc8df8e3fc2ae3cc3c0f036eef2fe28624511fbe4bd5cd2f8200f108",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobalMainCityTitleInfo.json",
+    "sha256": "42c5ee2c3398c7e67aeddc853f768844874f10535b5614686e969d6393ba1ee9",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobalMainCityTitleInfo__94.txt"
   },
   {
     "table": "GlobalMainCityBuildTalentInfoSheet2",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalMainCityBuildTalentInfoSheet2.json",
-    "sha256": "187f3eb95af54f4d6aff05e8f0597d4ad9f2f57640c1d6b2ec07039f6d33bc54",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobalMainCityBuildTalentInfoSheet2.json",
+    "sha256": "150e542d6086b7e022db7c262b2535329069575a6fe5ef868b4efa4b4e12e021",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobalMainCityBuildTalentInfoSheet2__139.txt"
   },
   {
     "table": "GlobalUpgradeTalentPriceInfoabilities_in_advance",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalUpgradeTalentPriceInfoabilities_in_advance.json",
-    "sha256": "abde288bcd47e29044b9e5cef031d186b435dc478b18e69a8181af283864bcb5",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobalUpgradeTalentPriceInfoabilities_in_advance.json",
+    "sha256": "4a0b8559694e19f6df62d847f752f4d4f84f6d7068aea29181eb379f43d38f95",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobalUpgradeTalentPriceInfoabilities_in_advance__160.txt"
   },
   {
     "table": "GlobalBaseAssetsInfo",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalBaseAssetsInfo.json",
-    "sha256": "f74d96d33fb836426d6fcf8db6e0e04ace356ec057ea143ebfcf30e5286215b9",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobalBaseAssetsInfo.json",
+    "sha256": "6a7037d848667500897bf0ae98606e780970b106bf8c7a88dfd8c7576aa79f9f",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobalBaseAssetsInfo__142.txt"
   },
   {
     "table": "CheckInRewardsConfig",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\CheckInRewardsConfig.json",
-    "sha256": "e24367a2da2ca5cf97a4358e9ea202ad699463a36dc2410a22251a78c7b3696d",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/CheckInRewardsConfig.json",
+    "sha256": "7ec90faba70443dd76ec4bfb0fac83504ede1d061421215a4ad03b9229dd2842",
     "source": "extracted\\config_b0f5e3dd0a9c4d70113144d682a85db3.unity3d\\CheckInRewardsConfig__6875984641219043976.txt"
   },
   {
     "table": "CheckInRewardsIndexConfig",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\CheckInRewardsIndexConfig.json",
-    "sha256": "4e043094f694129b1d48f44abd8cb103d52683e7f8d1f87ead96b19c0fcc3953",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/CheckInRewardsIndexConfig.json",
+    "sha256": "565bd5449a841ab46fbbde432d342fecdd9f3b9289319398b7248cab303a5879",
     "source": "extracted\\config_b0f5e3dd0a9c4d70113144d682a85db3.unity3d\\CheckInRewardsIndexConfig__4222556348009934766.txt"
   },
   {
     "table": "CumulativeRewardConfig",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\CumulativeRewardConfig.json",
-    "sha256": "e50792d8210498515b1403fd6c58d4157ef1b7abdadb0b9a53596e9f81a25d83",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/CumulativeRewardConfig.json",
+    "sha256": "eac96f417a793f00e5356c1a3d82f4b1153e9d4215f0be51f3d1f2afca53e098",
     "source": "extracted\\config_b0f5e3dd0a9c4d70113144d682a85db3.unity3d\\CumulativeRewardConfig__3513299299263607210.txt"
   },
   {
     "table": "DailyTaskConfig",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\DailyTaskConfig.json",
-    "sha256": "a8d062ac8b5d432a76cd22acec86edc1016856ac55a05758859721b6d83e13d3",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/DailyTaskConfig.json",
+    "sha256": "358a5911c1a3fda095deb96012156c65d492a8048eb34b1c557e69d2c8b52c65",
     "source": "extracted\\config_b0f5e3dd0a9c4d70113144d682a85db3.unity3d\\DailyTaskConfig__2190451955512027853.txt"
   },
   {
     "table": "GlobalWeeklyCardDailyTaskInfo",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalWeeklyCardDailyTaskInfo.json",
-    "sha256": "be39ae7270a2962c8c598af53ead1d2271c9fb5df823de6286a47f59b67b91ad",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobalWeeklyCardDailyTaskInfo.json",
+    "sha256": "41e0577841be21a1ceaa71c474c30d3ccc543cddb4884c40fffbcfcf6edc5e3d",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobalWeeklyCardDailyTaskInfo__126.txt"
   },
   {
     "table": "GlobalWeeklyCardStageInfo",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalWeeklyCardStageInfo.json",
-    "sha256": "1f10500983f49f4dd36d271795ac3d059b380547f0757bcc28a45db14262a0ca",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobalWeeklyCardStageInfo.json",
+    "sha256": "bd9edd975ca16a7e8776fd39a034f663f1a5f959bbbf46e0449c199494607112",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobalWeeklyCardStageInfo__163.txt"
   },
   {
     "table": "GlobalShopInfo",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalShopInfo.json",
-    "sha256": "358d6f074a6d1f6f5e72d9c78db968f54f1da9c4a97b05b67ce4e1ec377adef9",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobalShopInfo.json",
+    "sha256": "39e3e9cb7de49b136f281dfd4c39756429d497a97cb5a112fecac419e9a2eb4e",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobalShopInfo__134.txt"
   },
   {
     "table": "GlobaMultistageNewcomerPackageInfo",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobaMultistageNewcomerPackageInfo.json",
-    "sha256": "b7367c811a5516a050823f59133da68468bdd87273112e90f5ca1fc51b6b82e5",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobaMultistageNewcomerPackageInfo.json",
+    "sha256": "c4092d3996a101e9e4d70999b145292fc261f363c88ca1fad479afa30e348705",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobaMultistageNewcomerPackageInfo__148.txt"
   },
   {
     "table": "VideoBtnConfig",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\VideoBtnConfig.json",
-    "sha256": "2ca4642f27bf443424c44e342741d28ec5837395ba62c61812bc3701b22cf189",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/VideoBtnConfig.json",
+    "sha256": "0bd177ec4873826d0b2fe04cd8e5c11d3d9236912c09f0045d97168bdc069b39",
     "source": "extracted\\config_b0f5e3dd0a9c4d70113144d682a85db3.unity3d\\VideoBtnConfig__5844618410705625657.txt"
   },
   {
     "table": "PvpSettingConfig",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PvpSettingConfig.json",
-    "sha256": "25742289c6d2aabe9e58216b4bf3d448125b462ec422ced83663fcad0488f207",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/PvpSettingConfig.json",
+    "sha256": "c786eb3ceae39f1a0ab050822601da9c91c0e3531fd35ffa2de932098f19736b",
     "source": "extracted\\config_b0f5e3dd0a9c4d70113144d682a85db3.unity3d\\PvpSettingConfig__2799277099229432250.txt"
   },
   {
     "table": "PvpSeasonTaskConfig",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PvpSeasonTaskConfig.json",
-    "sha256": "7a99842ec5363688db4566fb623fb1c61213776e5b78783a853df4e6c3ea2e84",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/PvpSeasonTaskConfig.json",
+    "sha256": "1ef5ba8566d1884c4dea5f3a4d9cd9a8dfb1189b71c771f679646f8e81bc381e",
     "source": "extracted\\config_b0f5e3dd0a9c4d70113144d682a85db3.unity3d\\PvpSeasonTaskConfig__-8356002072730677299.txt"
   },
   {
     "table": "PvpSeasonPassConfig",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PvpSeasonPassConfig.json",
-    "sha256": "e2615375db90b8d5fd1df4b38c20bda62c25aff716c2dd73ddc0daebb65b3f3d",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/PvpSeasonPassConfig.json",
+    "sha256": "43a23fbc77bea26882dff101bd9aee768decb4a4af45cffaeb403ab85f99ebfc",
     "source": "extracted\\config_b0f5e3dd0a9c4d70113144d682a85db3.unity3d\\PvpSeasonPassConfig__2938448607260109267.txt"
   },
   {
     "table": "SeasonInfo",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\SeasonInfo.json",
-    "sha256": "fb8cd21b383aeba9239365bcc1e97e9768f60185e67473774bd4f1a2c5de0538",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/SeasonInfo.json",
+    "sha256": "a6e8786d44ff75aa1cf96bdcdf4a58ce90ccc3a749b078c028e5dc6bbd4eaa1c",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\SeasonInfo__129.txt"
   },
   {
     "table": "GlobalSummonInfo",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalSummonInfo.json",
-    "sha256": "6b486dded6ec2860953baacbd650a6a78d1b6395e5e2e3653ae638a464b2bfef",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobalSummonInfo.json",
+    "sha256": "9609e22b8f6d8375e397af2fd3c3ecd133908ab27bc52b5a7d6cde6ad9325e7a",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobalSummonInfo__144.txt"
   },
   {
     "table": "GlobalHeroCardInfoSheet5",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalHeroCardInfoSheet5.json",
-    "sha256": "fe685dcfe2ed6ed415f713499728f059d692fb9007b5ed2a10189483b5fa6b57",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobalHeroCardInfoSheet5.json",
+    "sha256": "96ae795c7753c477a2dd619cae5ba524f98e7a24f3244918232c40d8571e348c",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobalHeroCardInfoSheet5__150.txt"
   },
   {
     "table": "GlobalArchitectureInfogameplay_improve_01",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalArchitectureInfogameplay_improve_01.json",
-    "sha256": "5e70bf56ebbd88720536d5feeeecebf2ed9db0ffd20a7f7152d80fc7b7f7746f",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobalArchitectureInfogameplay_improve_01.json",
+    "sha256": "99b035ca6401b5ce0a7d214a78f767e7f3fcd72edb26b1ebcc4815deeff228c1",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobalArchitectureInfogameplay_improve_01__88.txt"
   },
   {
     "table": "GlobalCardTalent2Info",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalCardTalent2Info.json",
-    "sha256": "27fbee1606101f806a3d343dab0c687a97bbc0a0581705eca493fff2d4679c28",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobalCardTalent2Info.json",
+    "sha256": "6a2616519c15bc5f17ec5cde4140a71966f10388f4de8fea792d268b17a85796",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobalCardTalent2Info__108.txt"
   },
   {
     "table": "PropUpgradeInfoConfig",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PropUpgradeInfoConfig.json",
-    "sha256": "be220a60b19a773488e68b9b8d8ac0f7e55dadd61ddc691a085fb893d5395bce",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/PropUpgradeInfoConfig.json",
+    "sha256": "6c084cf4841cdeba4bc0ebaeebe1017c243da4b12a6246bd48a81f44ff4f7347",
     "source": "extracted\\config_b0f5e3dd0a9c4d70113144d682a85db3.unity3d\\PropUpgradeInfoConfig__6553460198265105891.txt"
   },
   {
     "table": "PropRankUpInfoConfig",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PropRankUpInfoConfig.json",
-    "sha256": "1ffbd6e65487f9150d398344d6fbee5a38f7b2cfb97a8234974d5a441198cb4a",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/PropRankUpInfoConfig.json",
+    "sha256": "a2a7ff86009bdcdefa5e9b0145db27d1c68a7a3fd4dcb549f0683120c7f6d7bd",
     "source": "extracted\\config_b0f5e3dd0a9c4d70113144d682a85db3.unity3d\\PropRankUpInfoConfig__493715344127590288.txt"
   },
   {
     "table": "GlobalPropInfoBTest",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\GlobalPropInfoBTest.json",
-    "sha256": "2a17c8e7daab7be64e128ed22ad044a21f524e212f7aa025476f9367f5d9da4f",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/GlobalPropInfoBTest.json",
+    "sha256": "d3e1e695cdf6eea1fcc43baff4edd6e79a8522b1eec6da022a87d699b8728b78",
     "source": "extracted\\a23078fc21f9ca79.webgl.data.unityweb.bin\\GlobalPropInfoBTest__114.txt"
   },
   {
     "table": "PvpRankConfig",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PvpRankConfig.json",
-    "sha256": "078c8b0f35f5200fcf6d162ff04c192c1c5dcc8d258e29ab0617768fc0d2c3a9",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/PvpRankConfig.json",
+    "sha256": "e74a52853736704950d9ebc9b38cdca47bc388661009efe3648a3a731441f646",
     "source": "extracted\\config_b0f5e3dd0a9c4d70113144d682a85db3.unity3d\\PvpRankConfig__2322109308249208779.txt"
   },
   {
     "table": "PvpSeasonPassRewardConfig",
-    "file": "F:\\PC-AGENT\\zhancheng-card-research\\tables\\PvpSeasonPassRewardConfig.json",
-    "sha256": "963f6adc950581440fdacb248f5e1d8a50cb20518d5e9ffb49340e619c9b6ed8",
+    "file": "/home/runner/work/zhancheng-card-research/zhancheng-card-research/tables/PvpSeasonPassRewardConfig.json",
+    "sha256": "bbeca39177b10da42bb6bf4200acaca399b371886e790d299d0ee30fdfe1967b",
     "source": "extracted\\config_b0f5e3dd0a9c4d70113144d682a85db3.unity3d\\PvpSeasonPassRewardConfig__6468496494342123166.txt"
   }
 ]

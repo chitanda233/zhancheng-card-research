@@ -17,14 +17,14 @@
 | 发布整理 | `build_public_site.py`, `test_public_site.cjs` | `docs/` GitHub Pages 站点 |
 | 归档校验 | `build_archive_manifest.py` | `research/archive-manifest.json` |
 | IL2CPP元数据恢复 | `recover_il2cpp_metadata.py` | 本地可供Il2CppDumper读取的v31元数据 |
-| 统一逆向包 | `.github/workflows/rebuild-canonical-reverse.yml` | `research/archive/2026-09-03/reverse-engineering/canonical/` 下的完整 WAT、objdump、RVA/函数映射、manifest 与校验 |
+| 统一逆向包 | `.github/workflows/rebuild-unified-reverse.yml` | `research/archive/2026-09-11/reverse-engineering/` 下的 C# 声明、主 canonical WAT/objdump/RVA 映射及 split-module 取证 |
 
 发布脚本不会读取完整 `RemoteConfig` 输出到站点，只会使用新手路径证据中已经审核过的玩法开关白名单。
 
-匹配专题：`python scripts/build_matching_report.py` → `python scripts/build_public_site.py` → `node scripts/test_matching_report.cjs`。生成器直接解析 Bot_Json 并与卡牌/技能/段位表关联，验证全部候选 ID 和 688 个卡槽。正文、样式与交互源文件分别为 `matching_report.md/.css/.js`；新的公开配置包括 `ArenaEnemyCardsInfoSheet2`。函数级复核统一使用 `research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv` 定位方法，并在同目录的 `module.objdump.gz` / `module.wat.gz` 中读取完整函数体。
+匹配专题：`python scripts/build_matching_report.py` → `python scripts/build_public_site.py` → `node scripts/test_matching_report.cjs`。生成器直接解析 Bot_Json 并与卡牌/技能/段位表关联，验证全部候选 ID 和 688 个卡槽。正文、样式与交互源文件分别为 `matching_report.md/.css/.js`；新的公开配置包括 `ArenaEnemyCardsInfoSheet2`。函数级复核统一使用 `research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv` 定位方法，并在同目录的 `module.objdump.gz` / `module.wat.gz` 中读取完整函数体。
 
 地块随机页：先生成宝箱页面以复用报告样式，再执行 `python scripts/build_hex_random_report.py`，随后运行发布整理与 `node scripts/test_hex_random.cjs`。正文源文件为 `scripts/hex_random_report.md`。原始 WASM/cache 保留在归档层，函数级证据统一从 canonical 逆向包读取，不再按专题生成第二套反汇编目录。
 
-宝箱数据另保留 `ChestImprove01` 和 `BottomChestUI` 两个默认值。逆向证据统一由 `.github/workflows/rebuild-canonical-reverse.yml` 从固定 WASM 输入生成 `research/archive/2026-09-03/reverse-engineering/canonical/`。方法 RVA 用作 WASM 表槽，不当作文件偏移；共享桩的多重名称仍不能单独证明函数体语义。
+宝箱数据另保留 `ChestImprove01` 和 `BottomChestUI` 两个默认值。逆向证据统一由 `.github/workflows/rebuild-unified-reverse.yml` 从固定 WASM 输入生成 `research/archive/2026-09-11/reverse-engineering/canonical/`。方法 RVA 用作 WASM 表槽，不当作文件偏移；共享桩的多重名称仍不能单独证明函数体语义。
 
 宝箱页面复现顺序：先保证 canonical 逆向包已生成，再执行 `python scripts/build_chest_report.py` → `python scripts/build_public_site.py` → `node scripts/test_chest_report.cjs`。宝箱报告只记录 canonical 方法映射与完整反汇编入口，不再维护第二套函数摘录。

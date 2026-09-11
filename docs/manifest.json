@@ -1,6 +1,6 @@
 {
   "title": "占城大师研究资料库发布清单",
-  "generatedAt": "2026-09-10T11:59:22+00:00",
+  "generatedAt": "2026-09-11T07:43:27+00:00",
   "snapshot": "2026-09-03",
   "files": [
     {
@@ -10,28 +10,28 @@
     },
     {
       "path": "index.html",
-      "bytes": 5227,
-      "sha256": "bdfc44372b399ff1b6b9d5924f0bff29ca3244f5d419c87ed4dd25976ecef665"
+      "bytes": 5276,
+      "sha256": "670a55c4ab3b896a17512242d21d208e48ddf42e18f61e7c0efc8864c00170af"
     },
     {
       "path": "reports/battle/battle-rules-data.json",
-      "bytes": 1011832,
-      "sha256": "876bcfd503271dae59b1ee6cdf56e6f69e1de345b13d5f643cc94bc8b2cf819d"
+      "bytes": 1011867,
+      "sha256": "598847792c7b8243fdb888c2c7f8ff0501255fea1ea6c899c8b7ab85630ade00"
     },
     {
       "path": "reports/battle/index.html",
-      "bytes": 35178,
-      "sha256": "7d62d6c6aa437ec8e778b96118dcd6319150748d6c935a4ff15ec94cbeb0384d"
+      "bytes": 35222,
+      "sha256": "c983961054f7c849e86c8b5ab10f5e0d492e473a8d104696d5b597f47574b9ce"
     },
     {
       "path": "reports/battle/report.md",
-      "bytes": 14585,
-      "sha256": "22995aad28d569122ca7cfe725ec5254b78506d03cacf1927febd489bb4cfa6c"
+      "bytes": 14629,
+      "sha256": "1fbdc055dff1c67e954eac5e0b12991d2a513ffb5b0b4e32526595cc812a9927"
     },
     {
       "path": "reports/battle/verification.json",
       "bytes": 1363,
-      "sha256": "c47875ff8ed063fc1b7ebf3b3444a6b2398c7b1113b5fe30085549caf86fef1e"
+      "sha256": "3a7526e23310b8e177ec2805fa38178fb27344b323b61a037aeca8738ebe51cf"
     },
     {
       "path": "reports/cards/cards-data.json",
@@ -45,43 +45,43 @@
     },
     {
       "path": "reports/cards/index.html",
-      "bytes": 11427752,
-      "sha256": "afbcd892f90f54a1ed3fd522b4cd6dfe9bf15b999261b9dcaf4612efe93a8b28"
+      "bytes": 11427934,
+      "sha256": "70b161c7b15c2934d3339107724e9c9352c0d7dbddced85e91c2a4a714105112"
     },
     {
       "path": "reports/cards/report.md",
-      "bytes": 9946,
-      "sha256": "1924d46f567df7605f4f89dfe44570aaf9d8074841c484aace69f567e1458744"
+      "bytes": 9996,
+      "sha256": "ce05028f1e776da16d3e126b39a3a1915c6c0a179d63336263827c12aa8617cd"
     },
     {
       "path": "reports/chests/chests-data.json",
-      "bytes": 312154,
-      "sha256": "dd6688f9dd6099214f4c2d2b81c2473e377ce46499aac99c4dcdc85afcf7a1f5"
+      "bytes": 312189,
+      "sha256": "d87a9c973ecae13bef1d005c72a639f18d0b9481f236d0a9c0cfd1ce2c3a3f62"
     },
     {
       "path": "reports/chests/index.html",
-      "bytes": 98152,
-      "sha256": "9c1debef6904d87e4dd6f559add2b6216f52789ff20cfc611a6d131f9797021b"
+      "bytes": 98197,
+      "sha256": "80070d8b32d8dab5b82740ab203512cc1b4392de9a196a33c56a35d7db3c08ec"
     },
     {
       "path": "reports/chests/report.md",
-      "bytes": 74668,
-      "sha256": "0bec3560f994b5fc905da02938d7d616f547ed7393fb63a2b0c74ad0e8bbf584"
+      "bytes": 74713,
+      "sha256": "d87916517057501958159e8cc41ae18fd0c45b44bde623279334400f8082e448"
     },
     {
       "path": "reports/hex-random/index.html",
-      "bytes": 202060,
-      "sha256": "57a0364d88153e670561a3cbcc50a13d70b67a104383ab6b0380cc74c2cab1cf"
+      "bytes": 202197,
+      "sha256": "a44f9f3d709dbf76b17c7229df32c89c450cb02d7bc27b1fef45e14ac283be6c"
     },
     {
       "path": "reports/hex-random/report.md",
-      "bytes": 179437,
-      "sha256": "dca7680d7233166820e43c1042247d4fbd34c9c25e525b0d629629b57990e8ed"
+      "bytes": 179574,
+      "sha256": "2b6b512493efd8f46b833a4cc7ca8d8d80e772cf66682cf1abaf08beadbf668a"
     },
     {
       "path": "reports/journey/index.html",
-      "bytes": 523075,
-      "sha256": "5eb498ac4d5ddc2e40dc96651256b56caee49c799747eb290b8d9d1ce3078b30"
+      "bytes": 523214,
+      "sha256": "19ff7bec82be6160af304e56e29588f50caf8e2aff63da36ae4ce4c3978e751b"
     },
     {
       "path": "reports/journey/journey-map.svg",
@@ -90,8 +90,8 @@
     },
     {
       "path": "reports/journey/journey-nodes.csv",
-      "bytes": 42413,
-      "sha256": "321fbec7e577e7172f7def3951f55f1a060752c123120c9fb764b8e9182cacfa"
+      "bytes": 42443,
+      "sha256": "8bf7c3588b888d9d08012815df4c7271bfbfc4a082f663ca33029a20232706b7"
     },
     {
       "path": "reports/journey/journey-nodes.json",
@@ -100,18 +100,18 @@
     },
     {
       "path": "reports/journey/local-evidence.json",
-      "bytes": 519150,
-      "sha256": "527076b9e09f9621568168b87320e575d5325df86aa0d6046d0c84a7bd970438"
+      "bytes": 519185,
+      "sha256": "6c7df9cad6a2b50d68ac57c6ecd2923de830f8c4363bb0af87a5e3921029e2aa"
     },
     {
       "path": "reports/journey/report.md",
-      "bytes": 122778,
-      "sha256": "ab71e0727e07234afdc2e98b168bf476b96329f335cc285efd2bbcc8beb90542"
+      "bytes": 122917,
+      "sha256": "2c3a0a7a846e7b26f0c641765f81487ecd82035b7e3235f0f27a6349f535d8ff"
     },
     {
       "path": "reports/journey/source-manifest.json",
       "bytes": 10523,
-      "sha256": "73f21470e5bcc6ea9f007f5589dd466c821d04448995e2ec60b8aa73a85f50c9"
+      "sha256": "e03c158ae38b515c1ec24acea9958cc36f590decc55743d26b8ae837dba1d566"
     },
     {
       "path": "reports/journey/tooltip-ui-verification.json",
@@ -125,8 +125,8 @@
     },
     {
       "path": "reports/journey/verification.json",
-      "bytes": 3382,
-      "sha256": "a1b023541a87880e37ea41498217a9608866010007b1026a00eca619da27a587"
+      "bytes": 2966,
+      "sha256": "a4cb1995e69c059c38526744fdc2ed42b4c21d555a129cbd4bbe5e5aea876499"
     },
     {
       "path": "reports/journey/web-evidence.json",
@@ -135,38 +135,38 @@
     },
     {
       "path": "reports/matching/bot.html",
-      "bytes": 762037,
-      "sha256": "1b4370da0c0920ffd923af55dd445e18ae59fe8d82f86e148f7e6d27421ab13a"
+      "bytes": 762271,
+      "sha256": "af4ae889863a2d3bbfe1dc6833bfb396389ecc00e8244296cd782a999624f41d"
     },
     {
       "path": "reports/matching/index.html",
-      "bytes": 737754,
-      "sha256": "8c22accd4c9fef891848a3654658ee84a4f0e2b2d1601bc0572d0d8512ffb072"
+      "bytes": 737978,
+      "sha256": "46c3b62e1c4fa2bbac0b60dff1f6ae466d18e7d8ee75bf3fe854f43e1b06523b"
     },
     {
       "path": "reports/matching/matching-data.json",
-      "bytes": 841310,
-      "sha256": "363703dc89720bec37cbd4916c899946f25501978900aa726b46ddeeefca6502"
+      "bytes": 841345,
+      "sha256": "1adb273ff58e53ac91a64a083d5833d213de2be5be9d939fea4f566a6967e847"
     },
     {
       "path": "reports/matching/report.md",
-      "bytes": 248383,
-      "sha256": "9fcdb855a15275a70657e86f33abf3a9efaf79ed7e6bd367a662237330107261"
+      "bytes": 248576,
+      "sha256": "0eeec001cb046b547735cec5a6e3634fbf6b5eba75c1b33e59d746d44feed9bf"
     },
     {
       "path": "reports/system/evidence.json",
-      "bytes": 36270,
-      "sha256": "2f75c889ba5df1c23126de7145db4a7ad27371cbbd967563b990d105b61aff33"
+      "bytes": 36346,
+      "sha256": "6889082cb7206e83fae33b3991b4ec3113616e3c93bc71d3113034b1d9bef68e"
     },
     {
       "path": "reports/system/index.html",
-      "bytes": 104029,
-      "sha256": "f4f92af37eb644a89541b0519a8c70ffe0ef7a105cb73a69106612f5852d65d1"
+      "bytes": 104212,
+      "sha256": "936de5859394479abcd23a2722c5e1e16ec4d32ae8f045bcac61cba803b726f3"
     },
     {
       "path": "reports/system/report.md",
-      "bytes": 79926,
-      "sha256": "97e0129f92e5608da3aeca9fb0bc50d4c85ae5e32431f3fb329190f32af6f95b"
+      "bytes": 80096,
+      "sha256": "5d3a56c2e399a85253efb1002cc25426055037cdd1d0447d60f85b131cd65413"
     },
     {
       "path": "tables/AIPropInfoConfig.json",

@@ -102,7 +102,7 @@ for cid in used_ids:
     cards[cid]['image'] = 'data:image/webp;base64,' + base64.b64encode(buffer.getvalue()).decode('ascii')
 
 source_info = [{'table': n, 'rows': len(v), 'sha256': hashlib.sha256((ROOT / 'tables' / (n + '.json')).read_bytes()).hexdigest()} for n, v in tables.items()]
-data = {'snapshot': '2026-09-03', 'reviewed': '2026-09-10', 'version': '1.4.15.558-preview',
+data = {'snapshot': '2026-09-03', 'reverseBaseline': '2026-09-11', 'reviewed': '2026-09-11', 'version': '1.4.15.558-preview',
         'bots': bots, 'ranks': ranks, 'cards': cards, 'skills': skills, 'artifacts': artifacts,
         'affixes': affixes, 'tables': {k: v for k, v in tables.items() if k not in ('PvpBotConfig', 'GlobalHeroCardInfoSheet5', 'GlobalCardTalentInfoSheet3')},
         'counts': {'botRecords': len(bots), 'distinctLoadouts': len(body_groups), 'distinctCardSets': len(deck_groups), 'cardSlots': 688, 'cardTypes': len(used_ids)}, 'sources': source_info}

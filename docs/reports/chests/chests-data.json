@@ -1,6 +1,7 @@
 {
   "snapshot": "2026-09-03",
-  "researchedAt": "2026-09-08",
+  "reverseBaseline": "2026-09-11",
+  "researchedAt": "2026-09-11",
   "version": "1.4.15.558-preview",
   "notice": "静态资源及WASM还原，不代表服务器当前分流；方法摘录在本地研究层。",
   "boxes": [
@@ -469,112 +470,112 @@
       "tableSlot": "0x22b5",
       "wasmFunction": 25158,
       "finding": "按竞技场区间随机生成宝箱；前四个卡牌配额和资源配额乘 boxRewardFold × customFold，第五列原样保留。",
-      "evidencePath": "research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv",
-      "disassemblyPath": "research/archive/2026-09-03/reverse-engineering/canonical/module.objdump.gz"
+      "evidencePath": "research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv",
+      "disassemblyPath": "research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz"
     },
     {
       "name": "BoxManager.GetArenaChestIndexRange",
       "tableSlot": "0x9316",
       "wasmFunction": 15645,
       "finding": "ChestImprove01>0 取 chestRange 第二段，否则取第一段；上限为不包含端点。",
-      "evidencePath": "research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv",
-      "disassemblyPath": "research/archive/2026-09-03/reverse-engineering/canonical/module.objdump.gz"
+      "evidencePath": "research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv",
+      "disassemblyPath": "research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz"
     },
     {
       "name": "BoxManager.GetBoxByNowPlayEdArenaID",
       "tableSlot": "0x2741",
       "wasmFunction": 25163,
       "finding": "普通分支检查槽列表含空位；改进分支检查 userGetBoxCount<20，并在成功后加一。此函数没有计数重置逻辑。",
-      "evidencePath": "research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv",
-      "disassemblyPath": "research/archive/2026-09-03/reverse-engineering/canonical/module.objdump.gz"
+      "evidencePath": "research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv",
+      "disassemblyPath": "research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz"
     },
     {
       "name": "BoxManager.GetOneBox",
       "tableSlot": "0x930b",
       "wasmFunction": 25156,
       "finding": "普通分支填入第一个空槽；改进分支加入 userHasAllBoxdata 收藏列表。",
-      "evidencePath": "research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv",
-      "disassemblyPath": "research/archive/2026-09-03/reverse-engineering/canonical/module.objdump.gz"
+      "evidencePath": "research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv",
+      "disassemblyPath": "research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz"
     },
     {
       "name": "BoxManager.StartOpenBox",
       "tableSlot": "0x9306",
       "wasmFunction": 15643,
       "finding": "创建倒计时：unLockTime + 10×int(arenaID) − 10010 分钟；将 isUnlockIng 置为 true 并保存。",
-      "evidencePath": "research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv",
-      "disassemblyPath": "research/archive/2026-09-03/reverse-engineering/canonical/module.objdump.gz"
+      "evidencePath": "research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv",
+      "disassemblyPath": "research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz"
     },
     {
       "name": "OpenBoxPanel.AdCallBack",
       "tableSlot": "0xb77c",
       "wasmFunction": 37596,
       "finding": "watchAD=false 才减去30分钟并置为true；清除教学免费领取标记并保存。",
-      "evidencePath": "research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv",
-      "disassemblyPath": "research/archive/2026-09-03/reverse-engineering/canonical/module.objdump.gz"
+      "evidencePath": "research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv",
+      "disassemblyPath": "research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz"
     },
     {
       "name": "OpenBoxPanel.UpdateRequireKeyAndUI",
       "tableSlot": "0x48d5",
       "wasmFunction": 21832,
       "finding": "剩余整秒计费：不足一分钟但至少一秒收1钻；一分钟及以上按不足一分钟进位，每分钟2钻；到期0钻。",
-      "evidencePath": "research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv",
-      "disassemblyPath": "research/archive/2026-09-03/reverse-engineering/canonical/module.objdump.gz"
+      "evidencePath": "research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv",
+      "disassemblyPath": "research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz"
     },
     {
       "name": "OpenBoxPanel.OnButtonExtendBtnFeeDiamondToUnLockClicked",
       "tableSlot": "0xb782",
       "wasmFunction": 37590,
       "finding": "检查钻石余额，扣除 requireKey，调用 OpenBoxComplete；不足时打开资源获取引导。",
-      "evidencePath": "research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv",
-      "disassemblyPath": "research/archive/2026-09-03/reverse-engineering/canonical/module.objdump.gz"
+      "evidencePath": "research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv",
+      "disassemblyPath": "research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz"
     },
     {
       "name": "BoxManager.OpenBoxComplete",
       "tableSlot": "0x9308",
       "wasmFunction": 11647,
       "finding": "检查箱子仍在槽内，清计时器，使用存储的 boxRewardCofig 生成奖励并移除箱子。",
-      "evidencePath": "research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv",
-      "disassemblyPath": "research/archive/2026-09-03/reverse-engineering/canonical/module.objdump.gz"
+      "evidencePath": "research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv",
+      "disassemblyPath": "research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz"
     },
     {
       "name": "BoxManager.GetBoxRewardList",
       "tableSlot": "0x484c",
       "wasmFunction": 25160,
       "finding": "分号后资源段生成奖励；随后进入卡牌分配。",
-      "evidencePath": "research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv",
-      "disassemblyPath": "research/archive/2026-09-03/reverse-engineering/canonical/module.objdump.gz"
+      "evidencePath": "research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv",
+      "disassemblyPath": "research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz"
     },
     {
       "name": "BoxManager.GetCrystalCountFromBoxConfig",
       "tableSlot": "0x92ff",
       "wasmFunction": 25159,
       "finding": "水晶取资源段第三列 × 竞技场倍率 × customFold，缺第三列返回0。",
-      "evidencePath": "research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv",
-      "disassemblyPath": "research/archive/2026-09-03/reverse-engineering/canonical/module.objdump.gz"
+      "evidencePath": "research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv",
+      "disassemblyPath": "research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz"
     },
     {
       "name": "BoxManager.TryPatchBoxRewardCrystalOnly",
       "tableSlot": "0x92fe",
       "wasmFunction": 9224,
       "finding": "保留旧金币与木材字段，用配置和箱子 arenaID 重算水晶；此修补调用 customFold=1。",
-      "evidencePath": "research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv",
-      "disassemblyPath": "research/archive/2026-09-03/reverse-engineering/canonical/module.objdump.gz"
+      "evidencePath": "research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv",
+      "disassemblyPath": "research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz"
     },
     {
       "name": "BoxManager.GetBoxCardCofigReward",
       "tableSlot": "0x9309",
       "wasmFunction": 25162,
       "finding": "存在新卡筛选、卡池过滤、数量拆分；橙卡配额K先取floor(K/2)，为0时跳过，否则抽到K的上界不含。",
-      "evidencePath": "research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv",
-      "disassemblyPath": "research/archive/2026-09-03/reverse-engineering/canonical/module.objdump.gz"
+      "evidencePath": "research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv",
+      "disassemblyPath": "research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz"
     },
     {
       "name": "随机数辅助类.Range",
       "tableSlot": "0x742d",
       "wasmFunction": 3192,
       "finding": "从保存的随机数列表取值后取模映射；与宝箱档位的 UnityEngine.Random.Range 是不同调用。",
-      "evidencePath": "research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv",
-      "disassemblyPath": "research/archive/2026-09-03/reverse-engineering/canonical/module.objdump.gz"
+      "evidencePath": "research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv",
+      "disassemblyPath": "research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz"
     }
   ],
   "sources": {

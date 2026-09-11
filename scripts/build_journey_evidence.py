@@ -33,7 +33,7 @@ flag_names=['NewbieTutorial','BottomChestUI','ChestImprove01','NewArenaProcess',
 remote=read('RemoteConfig')
 evidence['RemoteConfig_allowlisted']={n:remote.get(f'SDKModule.{n}Class',[]) for n in flag_names}
 evidence['I2Terms_selected']={k:v for k,v in terms.items() if k.startswith('SteerTutorialContent_') or re.search(r'^(DefeatPanel_|TipPanel_NotEnough|ShoPanel_CompleteGuid|SuccessPanel_|UpgradeRewardsPreviewPanelHint|TipTxt_|GameAssetExp|MainReadyPanel_Training|GameAssetUniversalCard|HeroCardPanel_.*FettersBuff|CantEquipCardTip_GoldMine|AbilitySystem2_NotEnoughStone)',k)}
-save('local-evidence.json',{'snapshot':'2026-09-03','resourceVersion':'1.4.15.558-preview','appId':'wx9eed71970378b2ae','tables':evidence})
+save('local-evidence.json',{'snapshot':'2026-09-03','reverseBaseline':'2026-09-11','resourceVersion':'1.4.15.558-preview','appId':'wx9eed71970378b2ae','tables':evidence})
 manifest=[]
 for n in ['GlobalTutorialInfo','I2Terms','RemoteConfig']+names:
     path=ROOT/'tables'/f'{n}.json'

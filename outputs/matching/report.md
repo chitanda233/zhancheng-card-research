@@ -1,6 +1,6 @@
 # 占城大师：匹配体验与机器人介入规则
 
-研究更新：2026-09-10。资源快照：2026-09-03，版本 1.4.15.558-preview。本文只回答**玩家如何被搜索、机器人什么时候可能介入、不同段位使用哪个机器人候选池、玩家状态是否会改变匹配或对局体验**。机器人逐套卡组、等级、技能、神器、主城、词缀和具体 AI 行为不在本页重复，统一查看[机器人配置详表](bot.html)。
+研究更新：2026-09-11。配置/界面快照：2026-09-03，版本 1.4.15.558-preview；函数级逆向基准：2026-09-11。本文只回答**玩家如何被搜索、机器人什么时候可能介入、不同段位使用哪个机器人候选池、玩家状态是否会改变匹配或对局体验**。机器人逐套卡组、等级、技能、神器、主城、词缀和具体 AI 行为不在本页重复，统一查看[机器人配置详表](bot.html)。
 
 ## 1. 先给结论
 
@@ -267,7 +267,7 @@ PVP 并不是一个简单的“先找真人，长时间找不到才补机器人�
 | 约 640～735 行及其他候选分支 | 新价格大于旧价格时比较值为 -1；负数触发替换，同价比较两个坐标 |
 | 约 1440 行至函数结尾 | 最终依次选择 local46、local47、local44、local45，生成一个翻格命令 |
 
-字段映射依据 `BattleHexCellState`：Coord 偏移 0，HexType 偏移 0x2C，Price 偏移 0x30；WASM 数组元素另有 16 字节数组头。函数证据统一通过 `research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv` 与 `module.objdump.gz` 复核，声明与字段名参考归档 `dump.cs`。
+字段映射依据 `BattleHexCellState`：Coord 偏移 0，HexType 偏移 0x2C，Price 偏移 0x30；WASM 数组元素另有 16 字节数组头。函数证据统一通过 `research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv` 与 `module.objdump.gz` 复核，声明与字段名参考 `research/archive/2026-09-11/reverse-engineering/csharp/dump.cs`；涉及运行时拆分函数时同时检查 `reverse-engineering/modules/` 的 split-module 证据。
 
 ### 7.6.3 行动时机与神器：哪些还没核实
 

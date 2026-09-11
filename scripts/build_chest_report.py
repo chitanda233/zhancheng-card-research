@@ -80,10 +80,10 @@ for slot, fn, name, finding in methods:
         tableSlot='0x'+slot,
         wasmFunction=fn,
         finding=finding,
-        evidencePath='research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv',
-        disassemblyPath='research/archive/2026-09-03/reverse-engineering/canonical/module.objdump.gz'))
+        evidencePath='research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv',
+        disassemblyPath='research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz'))
 
-data = dict(snapshot='2026-09-03', researchedAt='2026-09-08', version='1.4.15.558-preview',
+data = dict(snapshot='2026-09-03', reverseBaseline='2026-09-11', researchedAt='2026-09-11', version='1.4.15.558-preview',
             notice='静态资源及WASM还原，不代表服务器当前分流；方法摘录在本地研究层。',
             boxes=catalogue, arenas=[{k:r[k] for k in ['id','chestRange','boxRewardFold','completeBoxRewardType']} for r in arenas],
             methods=method_evidence, sources=sources)
@@ -91,7 +91,7 @@ data = dict(snapshot='2026-09-03', researchedAt='2026-09-08', version='1.4.15.55
 
 md = '''# 《占城大师》宝箱价格、获取与奖励
 
-研究更新：2026-09-08 · 资源快照：2026-09-03 · 版本：`1.4.15.558-preview`。
+研究更新：2026-09-11 · 配置/界面快照：2026-09-03 · 函数级逆向基准：2026-09-11 · 版本：`1.4.15.558-preview`。
 
 本页收齐 `GlobalBoxInfo（全局宝箱信息）` 中的 **8种宝箱**，同时整理商店、胜利、升级、奖杯进度、通行证和活动池等获取入口。同一箱型可有多个来源，“时间宝箱”是这些箱子进入解锁流程后的称呼。未找到另一个名为“时间宝箱”的独立配置ID。
 
