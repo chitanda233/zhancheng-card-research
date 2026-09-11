@@ -1,0 +1,721 @@
+{
+  "schema_version": 1,
+  "input": {
+    "path": "research/archive/2026-09-11/unpacked/_wasmcode2_/wasmcode2/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
+    "size": 12742905,
+    "sha256": "c541581100f0a891ba8b8aaad3fde780e3b03cc48218537c143d33580987e34d"
+  },
+  "framing": {
+    "leading_u32le": 16024,
+    "first_brotli_offset": 4,
+    "first_brotli_stream_end_exclusive": 342460,
+    "first_brotli_compressed_size": 342456,
+    "minimal_prefix_verified": true,
+    "decoded_size": 1468552,
+    "decoded_sha256": "f4ea9262cb96c26f63386e211651884d4729e309971152c72eb1efcbe045e7a0",
+    "expected_table_shaped_size": 1468552,
+    "matches_4_plus_table_size_u32_shape": true,
+    "decoded_leading_u32le": 4294967295
+  },
+  "table_map": {
+    "table_size": 367137,
+    "sentinel_u32": 4294967295,
+    "non_sentinel_slots": 247542,
+    "sentinel_slots": 119595,
+    "leading_count_matches_non_sentinel_slots": false,
+    "first_64_mapped_slots": [
+      {
+        "table_id": 1,
+        "value": 52028
+      },
+      {
+        "table_id": 7,
+        "value": 2113
+      },
+      {
+        "table_id": 8,
+        "value": 55834
+      },
+      {
+        "table_id": 9,
+        "value": 2113
+      },
+      {
+        "table_id": 10,
+        "value": 55652
+      },
+      {
+        "table_id": 11,
+        "value": 101657
+      },
+      {
+        "table_id": 12,
+        "value": 101656
+      },
+      {
+        "table_id": 14,
+        "value": 391
+      },
+      {
+        "table_id": 31,
+        "value": 23165
+      },
+      {
+        "table_id": 34,
+        "value": 31786
+      },
+      {
+        "table_id": 35,
+        "value": 75889
+      },
+      {
+        "table_id": 46,
+        "value": 75894
+      },
+      {
+        "table_id": 48,
+        "value": 75890
+      },
+      {
+        "table_id": 50,
+        "value": 75895
+      },
+      {
+        "table_id": 51,
+        "value": 75892
+      },
+      {
+        "table_id": 53,
+        "value": 75891
+      },
+      {
+        "table_id": 54,
+        "value": 75893
+      },
+      {
+        "table_id": 56,
+        "value": 26531
+      },
+      {
+        "table_id": 58,
+        "value": 55833
+      },
+      {
+        "table_id": 60,
+        "value": 72
+      },
+      {
+        "table_id": 61,
+        "value": 51821
+      },
+      {
+        "table_id": 62,
+        "value": 25206
+      },
+      {
+        "table_id": 63,
+        "value": 15309
+      },
+      {
+        "table_id": 65,
+        "value": 15308
+      },
+      {
+        "table_id": 66,
+        "value": 51817
+      },
+      {
+        "table_id": 68,
+        "value": 15309
+      },
+      {
+        "table_id": 69,
+        "value": 15309
+      },
+      {
+        "table_id": 70,
+        "value": 51842
+      },
+      {
+        "table_id": 71,
+        "value": 759
+      },
+      {
+        "table_id": 74,
+        "value": 759
+      },
+      {
+        "table_id": 80,
+        "value": 820
+      },
+      {
+        "table_id": 81,
+        "value": 55394
+      },
+      {
+        "table_id": 83,
+        "value": 54235
+      },
+      {
+        "table_id": 85,
+        "value": 54234
+      },
+      {
+        "table_id": 86,
+        "value": 54232
+      },
+      {
+        "table_id": 88,
+        "value": 54892
+      },
+      {
+        "table_id": 89,
+        "value": 53572
+      },
+      {
+        "table_id": 90,
+        "value": 55244
+      },
+      {
+        "table_id": 91,
+        "value": 55393
+      },
+      {
+        "table_id": 93,
+        "value": 26166
+      },
+      {
+        "table_id": 95,
+        "value": 55159
+      },
+      {
+        "table_id": 97,
+        "value": 54180
+      },
+      {
+        "table_id": 98,
+        "value": 54181
+      },
+      {
+        "table_id": 99,
+        "value": 53567
+      },
+      {
+        "table_id": 100,
+        "value": 55080
+      },
+      {
+        "table_id": 101,
+        "value": 55388
+      },
+      {
+        "table_id": 107,
+        "value": 53571
+      },
+      {
+        "table_id": 108,
+        "value": 53501
+      },
+      {
+        "table_id": 110,
+        "value": 55020
+      },
+      {
+        "table_id": 111,
+        "value": 55387
+      },
+      {
+        "table_id": 112,
+        "value": 55158
+      },
+      {
+        "table_id": 114,
+        "value": 7850
+      },
+      {
+        "table_id": 119,
+        "value": 54218
+      },
+      {
+        "table_id": 120,
+        "value": 54219
+      },
+      {
+        "table_id": 122,
+        "value": 54958
+      },
+      {
+        "table_id": 123,
+        "value": 54891
+      },
+      {
+        "table_id": 124,
+        "value": 55832
+      },
+      {
+        "table_id": 125,
+        "value": 125443
+      },
+      {
+        "table_id": 127,
+        "value": 54222
+      },
+      {
+        "table_id": 129,
+        "value": 54221
+      },
+      {
+        "table_id": 132,
+        "value": 54220
+      },
+      {
+        "table_id": 133,
+        "value": 25969
+      },
+      {
+        "table_id": 134,
+        "value": 54231
+      },
+      {
+        "table_id": 136,
+        "value": 50993
+      }
+    ],
+    "last_32_mapped_slots": [
+      {
+        "table_id": 366398,
+        "value": 50412
+      },
+      {
+        "table_id": 366401,
+        "value": 50422
+      },
+      {
+        "table_id": 366402,
+        "value": 50423
+      },
+      {
+        "table_id": 366403,
+        "value": 50531
+      },
+      {
+        "table_id": 366406,
+        "value": 50549
+      },
+      {
+        "table_id": 366407,
+        "value": 50550
+      },
+      {
+        "table_id": 366410,
+        "value": 50552
+      },
+      {
+        "table_id": 366412,
+        "value": 50553
+      },
+      {
+        "table_id": 366414,
+        "value": 50554
+      },
+      {
+        "table_id": 366416,
+        "value": 50555
+      },
+      {
+        "table_id": 366417,
+        "value": 50556
+      },
+      {
+        "table_id": 366418,
+        "value": 50557
+      },
+      {
+        "table_id": 366423,
+        "value": 50560
+      },
+      {
+        "table_id": 366424,
+        "value": 50604
+      },
+      {
+        "table_id": 366425,
+        "value": 50665
+      },
+      {
+        "table_id": 366427,
+        "value": 50705
+      },
+      {
+        "table_id": 366428,
+        "value": 50706
+      },
+      {
+        "table_id": 366430,
+        "value": 50707
+      },
+      {
+        "table_id": 366432,
+        "value": 50708
+      },
+      {
+        "table_id": 366436,
+        "value": 50922
+      },
+      {
+        "table_id": 366437,
+        "value": 50954
+      },
+      {
+        "table_id": 366438,
+        "value": 50955
+      },
+      {
+        "table_id": 366439,
+        "value": 50956
+      },
+      {
+        "table_id": 366442,
+        "value": 50957
+      },
+      {
+        "table_id": 366443,
+        "value": 50958
+      },
+      {
+        "table_id": 366444,
+        "value": 50959
+      },
+      {
+        "table_id": 366445,
+        "value": 50960
+      },
+      {
+        "table_id": 366446,
+        "value": 51745
+      },
+      {
+        "table_id": 366447,
+        "value": 51826
+      },
+      {
+        "table_id": 366452,
+        "value": 52020
+      },
+      {
+        "table_id": 367120,
+        "value": 54462
+      },
+      {
+        "table_id": 367121,
+        "value": 54463
+      }
+    ],
+    "first_mapped_table_id": 1,
+    "last_mapped_table_id": 367121,
+    "value_stats": {
+      "min": 0,
+      "max": 148285,
+      "unique_count": 148286,
+      "duplicate_value_count": 15100,
+      "occurrences_with_value_lt_leading_count": 104079,
+      "occurrences_with_value_lt_121448": 220704,
+      "occurrences_with_value_lt_table_size": 247542,
+      "dense_value_span": 148286,
+      "top_duplicate_values": [
+        {
+          "value": 9,
+          "count": 1076
+        },
+        {
+          "value": 10,
+          "count": 1076
+        },
+        {
+          "value": 11,
+          "count": 1076
+        },
+        {
+          "value": 12,
+          "count": 1076
+        },
+        {
+          "value": 13,
+          "count": 1076
+        },
+        {
+          "value": 14,
+          "count": 1075
+        },
+        {
+          "value": 15,
+          "count": 1069
+        },
+        {
+          "value": 16,
+          "count": 1069
+        },
+        {
+          "value": 17,
+          "count": 1069
+        },
+        {
+          "value": 18,
+          "count": 1066
+        },
+        {
+          "value": 19,
+          "count": 1060
+        },
+        {
+          "value": 20,
+          "count": 1039
+        },
+        {
+          "value": 22,
+          "count": 927
+        },
+        {
+          "value": 27,
+          "count": 725
+        },
+        {
+          "value": 34,
+          "count": 596
+        },
+        {
+          "value": 36,
+          "count": 587
+        },
+        {
+          "value": 38,
+          "count": 536
+        },
+        {
+          "value": 39,
+          "count": 520
+        },
+        {
+          "value": 47,
+          "count": 419
+        },
+        {
+          "value": 48,
+          "count": 419
+        },
+        {
+          "value": 49,
+          "count": 419
+        },
+        {
+          "value": 50,
+          "count": 413
+        },
+        {
+          "value": 51,
+          "count": 412
+        },
+        {
+          "value": 55,
+          "count": 394
+        },
+        {
+          "value": 56,
+          "count": 393
+        },
+        {
+          "value": 60,
+          "count": 382
+        },
+        {
+          "value": 62,
+          "count": 340
+        },
+        {
+          "value": 63,
+          "count": 338
+        },
+        {
+          "value": 66,
+          "count": 323
+        },
+        {
+          "value": 68,
+          "count": 303
+        },
+        {
+          "value": 69,
+          "count": 302
+        },
+        {
+          "value": 70,
+          "count": 296
+        },
+        {
+          "value": 71,
+          "count": 293
+        },
+        {
+          "value": 72,
+          "count": 292
+        },
+        {
+          "value": 73,
+          "count": 290
+        },
+        {
+          "value": 75,
+          "count": 286
+        },
+        {
+          "value": 74,
+          "count": 270
+        },
+        {
+          "value": 76,
+          "count": 270
+        },
+        {
+          "value": 77,
+          "count": 268
+        },
+        {
+          "value": 78,
+          "count": 268
+        },
+        {
+          "value": 79,
+          "count": 266
+        },
+        {
+          "value": 81,
+          "count": 266
+        },
+        {
+          "value": 80,
+          "count": 265
+        },
+        {
+          "value": 82,
+          "count": 265
+        },
+        {
+          "value": 83,
+          "count": 265
+        },
+        {
+          "value": 84,
+          "count": 264
+        },
+        {
+          "value": 85,
+          "count": 263
+        },
+        {
+          "value": 86,
+          "count": 262
+        },
+        {
+          "value": 87,
+          "count": 262
+        },
+        {
+          "value": 88,
+          "count": 262
+        }
+      ]
+    }
+  },
+  "remainder": {
+    "offset": 342460,
+    "size": 12400445,
+    "sha256": "ce2f8e5462f25c78f6318295f712490041e345e0c001fb4cf8e628a4e5db568b",
+    "prefix_hex_128": "5ff70c89ff48add5dc70af01380000d402a0138020055106007b0206f80a00042a02848810a3c5851b0f5e7c848912234e822469b234e83263cd8d373ffe02c449942a4d864cf9aa3568d3a947af3e83a6ad58b566c3a62d7b0e1c3b71e6d6bd47ff81818204030e0244c44891a146830e3d26a2a4489325479e22252a54a9d3",
+    "suffix_hex_128": "4faf9051510332de1595a839d734a9ebdb44aa85215b5e8ede5d48f8890e741b463d0a681cfe44f3c964322814422b175cc9b3d96f87835e70832c47e54ff833c36bc1c47f23ab10b6806d83dcd99bd75d2f7b3ef7811d023f02730cf204dc29a433b8973caf55dcd17c25f99b69f07f721039a12bc22546c494861ad3476079",
+    "entropy_bits_per_byte": 7.998594,
+    "magic_offsets": {
+      "wasm": [],
+      "gzip": [
+        314776,
+        334678,
+        345154,
+        388078,
+        433077,
+        481705,
+        499828,
+        537067,
+        557108,
+        557963,
+        564293,
+        848270,
+        950618,
+        1110703,
+        1171540,
+        1193043,
+        1261905,
+        1296079,
+        1404304,
+        1420528,
+        1453086,
+        1584859,
+        1619453,
+        1789681,
+        1847550,
+        1949674,
+        1990054,
+        2024811,
+        2052546,
+        2205803,
+        2496097,
+        2529592,
+        2837853,
+        2960660,
+        3002741,
+        3122567,
+        3379648,
+        3485525,
+        3496537,
+        3743323,
+        3774472,
+        3846551,
+        4032285,
+        4037536,
+        4084352,
+        4144915,
+        4149185,
+        4196038,
+        4238747,
+        4485539,
+        4517462,
+        4552088,
+        4554182,
+        4636479,
+        4650011,
+        4741199,
+        4758077,
+        4781435,
+        4836132,
+        4913815,
+        5068795,
+        5189973,
+        5266459,
+        5345878
+      ],
+      "zstd": [],
+      "zip": []
+    },
+    "brotli_from_offset_0": {
+      "decoded_size": 593144,
+      "decoded_sha256": "0e929fde111417c10d937ee79c311efc0b6f06faad467d41c103d4a1fa51303e",
+      "prefix_hex_64": "f2030000fa0300000004000015040000200400002104000022040000230400002d0400003a0400003b0400003c0400003d0400003e0400004304000045040000"
+    },
+    "first_brotli_success_within_64_bytes": {
+      "offset": 0,
+      "decoded_size": 593144,
+      "decoded_sha256": "0e929fde111417c10d937ee79c311efc0b6f06faad467d41c103d4a1fa51303e",
+      "prefix_hex_64": "f2030000fa0300000004000015040000200400002104000022040000230400002d0400003a0400003b0400003c0400003d0400003e0400004304000045040000",
+      "starts_with_wasm_magic": false
+    }
+  },
+  "interpretation_boundary": "The first decoded block is proven to have exactly one u32 plus tableSize u32 values. The semantic meaning of each non-sentinel value is intentionally left unnamed until correlated with the remaining archive payload or runtime manager behavior."
+}
