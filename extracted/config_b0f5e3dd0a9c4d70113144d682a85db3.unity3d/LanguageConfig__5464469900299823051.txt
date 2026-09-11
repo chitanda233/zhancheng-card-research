@@ -1,3 +1,0 @@
-﻿{"Datas":[
-{"id":"NormalUI.GameStart","zh_cn":"开始游戏","zh_tw":"","en":"XXXXXXXXXXX","ja":"","ko":"","ru":"","sp":"","fr":"","po":"","ge":"","ar":"","It":"","Ma":"","Vi":"","Th":""}]
-}

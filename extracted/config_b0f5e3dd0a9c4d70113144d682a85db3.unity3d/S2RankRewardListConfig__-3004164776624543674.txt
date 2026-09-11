@@ -1,7 +1,0 @@
-﻿{"Datas":[
-{"id":1,"order1":1,"index2":1,"des":"足金金条 20g"},
-{"id":2,"order1":2,"index2":5,"des":"iPhone17pm 256g 橙色"},
-{"id":3,"order1":6,"index2":20,"des":"AirPods 4"},
-{"id":4,"order1":21,"index2":50,"des":"200 京东卡"},
-{"id":5,"order1":51,"index2":100,"des":"100 京东卡"}]
-}

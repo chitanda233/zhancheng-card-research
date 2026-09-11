@@ -1,3617 +1,0 @@
-	battlecore-v1"dev(™ˆÆ¡ÁóÖ·£2default-1v1:AË(ò≥0ÄÄ 8ÄÄ @ÄÄHÄPXÄÄ b¢· Ãô(¢·0ò≥8ò≥@éÖH≤fB&(08d@J1001J1002PXhàò≥êJ[
-AIPropInfoConfig;Assets/GameRes/BundleRes/Data/Config/AIPropInfoConfig.bytes∞∑≤ÂµË≠÷\ Jq
-ArenaEnemyBalanceInfoLAssets/_DBT/Resources/JsonData/ArenaEnemyBalanceInfogameplay_improve_01.jsonΩ‡ƒ∆°Àå≈+ (Jl
-BattleUnitSkillParameterInfo@Assets/_DBT/Resources/JsonData/BattleUnitSkillParameterInfo.jsonÃ›óîó´ãä |Jw
-EnemyDifficultLevelInfosOAssets/_DBT/Resources/JsonData/EnemyDifficultLevelInfosgameplay_improve_01.jsoní˙∂ÓÓ»∫∑H Js
-GlobalArchitectureInfoMAssets/_DBT/Resources/JsonData/GlobalArchitectureInfogameplay_improve_01.json∏´ˆ≈‚ÓìÉ 6JX
-GlobalArenaInfo9Assets/_DBT/Resources/JsonData/GlobalArenaInfoSheet2.json©≠á¡˚Óò˚7 Jj
-GlobalArtifactAIReleaseInfo?Assets/_DBT/Resources/JsonData/GlobalArtifactAIReleaseInfo.jsonÓµƒ€“„π5 Jd
-GlobalArtifactsForgeInfo<Assets/_DBT/Resources/JsonData/GlobalArtifactsForgeInfo.jsonÁàÀÖáÜÎÁ 0JQ
-GlobalBlessInfo3Assets/_DBT/Resources/JsonData/GlobalBlessInfo.json©òˆíËÍ§N #Jh
-GlobalCardTalenTreeInfoAAssets/_DBT/Resources/JsonData/GlobalCardTalenTreeInfoSheet2.json¬€∞¯˛›ú™> 6J_
-GlobalCardTalent2Info9Assets/_DBT/Resources/JsonData/GlobalCardTalent2Info.json®Ü¸¨ñ ÒË˙ 5Jd
-GlobalCardTalentInfo>Assets/_DBT/Resources/JsonData/GlobalCardTalentInfoSheet3.json´Ø∆‘”Àå⁄⁄ åJW
-GlobalFormulaInfo6Assets/_DBT/Resources/JsonData/GlobalFormulasInfo.json‡€Ω ö¨∑Î J_
-GlobalHeroCardInfo<Assets/_DBT/Resources/JsonData/GlobalHeroCardInfoSheet5.json±ı≤Ë£ùÏÁ® 6JO
-GlobalHexInfo1Assets/_DBT/Resources/JsonData/GlobalHexInfo.jsonä°™Œﬂ©‘£ Jt
-GlobalMainCityBuildTalentInfoGAssets/_DBT/Resources/JsonData/GlobalMainCityBuildTalentInfoSheet2.jsonŸ√πË˛ﬂ£≠b Jh
-GlobalPolygonArenaInfo@Assets/_DBT/Resources/JsonData/GlobalPolygonArenaInfoSheet2.jsonΩûôµ∆•†“∫ æJU
-GlobalPropInfo7Assets/_DBT/Resources/JsonData/GlobalPropInfoBTest.jsonÒôÄèÚ£í® Jd
-GlobalRoleInfoEAssets/_DBT/Resources/JsonData/GlobalRoleInfogameplay_improve_01.jsonÊ§∫£û·˛Äã 4Jk
-GlobalTalentFormulasInfoBAssets/_DBT/Resources/JsonData/GlobalTalentFormulasInfoSheet2.jsonïàé◊µÏ§ôﬁ Jj
-GlobalTrainingMapInfoSheet1?Assets/_DBT/Resources/JsonData/GlobalTrainingMapInfoSheet1.jsonÇìúÎ¥ êŒ, Jk
-GlobalTrainingMapInfoSheet2?Assets/_DBT/Resources/JsonData/GlobalTrainingMapInfoSheet2.jsonàã—Ä§•¬˛ƒ JÄ
-GlobalUpgradeTalentPriceInfoTAssets/_DBT/Resources/JsonData/GlobalUpgradeTalentPriceInfoabilities_in_advance.jsoníÓéµ∂øÕÇ Jh
-PropAttrBuffInfoConfigAAssets/GameRes/BundleRes/Data/Config/PropAttrBuffInfoConfig.bytes–æ¥¿ø˚£‹Ë Jg
-PropAttrEnumInfoConfigAAssets/GameRes/BundleRes/Data/Config/PropAttrEnumInfoConfig.bytesùùöﬂ‰ãÀΩd 1Jd
-PropRankUpInfoConfig?Assets/GameRes/BundleRes/Data/Config/PropRankUpInfoConfig.bytes∆£ËÒµ‚ÕôÉ Jg
-PropUpgradeInfoConfig@Assets/GameRes/BundleRes/Data/Config/PropUpgradeInfoConfig.bytesØ«êáŒ≤Øà÷ ñR:2Ä≠‚» 
-(K082HRbarracksRsoldierpileZ	resources`h2ZJ (Z
-2( (Z Z(
-Z (0Pb—
-10011001	resources"0(24:2@HcRR	RRR$R1R@RQR	dR
-yRêR©RƒR·RÄR°RƒRÈRêRπR‰RëR¿RÒR§RŸRêR…RÑR¡RÄR ¡R!Ñ	R"…	R#ê
-R$Ÿ
-R%§R&ÒR'¿R(ëR)‰R*πR+êR,ÈR-ƒR.°R/ÄR0·R1ƒR2©R3êR4˘R5‰R6—R7¿R8±R9§R:ôR;êR<âR=ÑR>ÅR?Ä R@Å!RAÑ"RBâ#RCê$RDô%RE§&RF±'RG¿(RH—)RI‰*RJ˘+RKê-RL©.RMƒ/RN·0ROÄ2RP°3RQƒ4RRÈ5RSê7RTπ8RU‰9RVë;RW¿<RXÒ=RY§?RZŸ@R[êBR\…CR]ÑER^¡FR_ÄHR`¡IRaÑKRb…LRcêNb¥
-10021002barracks"1001(20:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10031003barracks"1002(21:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10041004barracks"1003(22:1@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10051005barracks"1004(22:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10061006barracks"1005(22:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10071007barracks"1006(22:1@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10081008barracks"1007(23:1@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10091009barracks"1008(23:1@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10101010barracks"1009(22:1@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10111011barracks"1010(20:1@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10121012barracks"1011(22:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10131013barracks"1012(22:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb∞
-10141014defense"0(23:1@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb∞
-10151015defense"0(23:1@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10161016barracks"1013(21:1@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10171017barracks"1014(21:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10181018barracks"1015(21:1@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10191019barracks"1016(22:1@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10201020barracks"1017(21:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10211021barracks"1018(20:1@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10221022barracks"1019(21:1@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10231023barracks"1021(20:1@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10241024barracks"1022(20:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10251025barracks"1023(20:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10261026barracks"1024(21:1@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10271027barracks"1025(23:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10281028barracks"1026(23:1@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10291029barracks"1027(22:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10301030barracks"1028(22:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10311031barracks"1029(20:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10321032barracks"1030(20:1@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10331033barracks"1031(21:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10341034barracks"1032(21:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10351035barracks"1033(20:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10361036barracks"1034(21:1@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10371037barracks"1035(20:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10381038barracks"1036(23:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10391039barracks"1037(23:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10401040barracks"1038(22:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10481048barracks"1046(23:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10491049barracks"1047(23:1@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcb¥
-10501050barracks"1048(23:0@HcRRRRRRRRR	R
-RRRRRRRRRRRRRRRRRRRRRR R!R"R#R$R%R&R'R(R)R*R+R,R-R.R/R0R1R2R3R4R5R6R7R8R9R:R;R<R=R>R?R@RARBRCRDRERFRGRHRIRJRKRLRMRNRORPRQRRRSRTRURVRWRXRYRZR[R\R]R^R_R`RaRbRcj@
-1001dÑÆ ò≥(ÊÃ	@p xÇäí0öland¢0®∞∏¿»j@
-1002(ò≥ ò≥(ÄÄ@
-p!xÇäí0öland¢0®∞∏¿»jF
-1003Çò≥ ò≥(ÄÄ(8ÄÄ»@p2xÇäí1öland¢1®∞∏¿»jA
-1004Ñò≥ ò≥(ÄÄ@p#xÇäí0öland¢0®∞∏¿»jA
-1005à∞Ê ò≥(ÄÄ@(p#xÇäí0öland¢0®∞∏¿»jE
-1006äò≥ ò≥(ÄÄ 8ÄÄP@dpKxÇäí1öland¢1®∞∏¿»jG
-1007åﬁ  ò≥(ÄÄ@8ÄÄ»@dpñxÇä	í1öland¢1®∞∏¿»jL
-1008ò‘« ò≥(ÄÄ80ÊÃ8ÄÄ»@»p˙x	Ç	äí1öland¢1®∞∏¿»jF
-1009êÇ◊ ò≥(ÄÄ88ÄÄ»@xp2xÇäí1öland¢1®∞∏¿»jD
-1010ÑÆ ò≥(ÄÄ8ÄÄP@4p?xÇäí1ösky¢1®∞∏¿»jA
-1011î
-∞Ê ò≥(ÄÄ@xp#xÇäí0öland¢0®∞∏¿»j@
-1012î
-ÑÆ ò≥(ÄÄ@dp#xÇäí0ösky¢0®∞∏¿»jE
-1013ò≥ ò≥(ÄÄ 8ÄÄ»@pPxÇäí1öland¢1®∞∏¿»j@
-1014dÇ◊ ò≥(ÄÄ@p xÇäí0öland¢0®∞∏¿»jD
-1015<ò≥ ò≥(ÄÄ8ÄÄP@pdxÇä
-í1öland¢1®∞∏¿»jF
-1016–ò≥ ò≥(ÄÄ@8ÄÄ»@(pXx	Ç	äí1öland¢1®∞∏¿»jA
-1017¨ò≥ ò≥(ÄÄ@pFx"Ç"äí0öland¢0®∞∏¿»jF
-1018ÙÑÆ ò≥(ÄÄ8ÄÄP@ÇpXxÇäí1öland¢1®∞∏¿»jE
-1019¨ò≥ ò≥(ÄÄ8ÄÄP@dpKxÇäí1öland¢1®∞∏¿»j:
-1020êàÖ ò≥(ÄÄ@4p#xÇäí0öland∞∏¿»jE
-1021xÑÆ ò≥(ÄÄ8ÄÄ»@pXxÇä	í1öland¢1®∞∏¿»jC
-1022»»ô ò≥(ÄÄ@p-xÇäí0öland¢0®∞∏¿»jB
-1023Ë»ô ò≥(ÄÄ@úpxÇäí0öland¢0®∞∏¿»jE
-1024»Ç◊ ò≥(ÄÄ8ÄÄP@åpKx	Ç	äí1ösky¢1®∞∏¿»jB
-1025∞	ò≥ ò≥(ÄÄ@»p#x	Ç	äí0öland¢0®∞∏¿»jF
-1026ﬁÇ◊ ò≥(ÄÄ08ÄÄ»@†pKxÇäí1ösky¢1®∞∏¿»jA
-1027Çò≥ ò≥(ÊÃ	@
-p xÇä	í0öland¢0®∞∏¿»jC
-1028Çò≥ ò≥(ÄÄ@
-p#xÇ2äí0öland¢0®∞∏¿»j@
-1029dÑÆ ò≥(ÄÄ@pxÇäí0öland¢0®∞∏¿»jF
-1030»ÑÆ ò≥(ÄÄ8ÄÄ»@4pXxÇäí1öland¢1®∞∏¿»j@
-1031†ò≥ ò≥(ÄÄ@#pxÇä	í0ösky¢0®∞∏¿»jA
-1032ÃÇ◊ ò≥(ÄÄ@Pp#xÇä
-í0öland¢0®∞∏¿»jB
-1033Ë»ô ò≥(ÄÄ@Çp xÇäí0öland¢0®∞∏¿»jE
-1034ò≥ ò≥(ÄÄ 8ÄÄP@xp?xÇäí1öland¢1®∞∏¿»jB
-1035Ë»ô ò≥(ÊÃ	@©p#x	Ç	äí0öland¢0®∞∏¿»j@
-1036xÇ◊ ò≥(ÊÃ	@p xÇäí0öland¢0®∞∏¿»jA
-1037¥Ç◊ ò≥(ÊÃ	@p#xÇäí0öland¢0®∞∏¿»jB
-1038öÇ◊ ò≥(ÄÄ@ñp#x	Ç	äí0öland¢0®∞∏¿»jâ
-1039î
-Ç◊ ò≥(ÄÄ@Np&xÇäí0öland®∞∏¿»“
-rangeÄÄ(“
-shieldAttackMultiplierÄÄ“
-terranShieldMultiplierò≥
-j‘
-1040ä†· ò≥(ÄÄ@$p&xÇäí0öland®∞∏¿»“
-cooldownSecondsÄÄx“
-healIntervalSecondsÄÄ“
-healMaxHpRatioº“
-rangeÄÄ(“
-shieldAttackRatioò≥“"
-shieldRefreshIntervalSecondsÊÃj•
-1041¿ò≥ ò≥(ÄÄ @.p2x8Ç8äí1öland®∞∏¿»“ 
-auraRefreshIntervalSecondsÊÃ“
-cooldownSecondsÄÄx“
-damageMultiplierÊÃ“
-damageMultiplier.40411ÊÃ“
-damageMultiplier.40412ÄÄ“
-damageMultiplier.40413ò≥“
-durationSecondsÄÄ“
-healMultiplierÊÃ“
-healMultiplier.40411ÊÃ“
-healMultiplier.40412ÄÄ“
-healMultiplier.40413ò≥“
-projectileArcHeightÄÄ“$
-projectileMinimumTravelSeconds ô“
-projectileSpeedÄÄP“
-projectileStartHeightÄÄ“
-rangeÄÄ“
-	slowRatioò≥“
-slowRatio.40411ò≥“
-slowRatio.40412ò≥“
-slowRatio.40413ÄÄ“
-targetSearchRangeÄÄ(“
-throwDelaySeconds∞Ê“
-tickIntervalSecondsÄÄjó
-1042†ò≥ ò≥(ÄÄ @p2xÇäí1öland®∞∏¿»“
-cooldownSecondsÄÄx“
-durationSecondsÄÄ(“
-rangeÄÄ(“
-tickIntervalSecondsÄÄjÄ
-1043x™è ò≥(ÊÃ	@p!xÇäí0öland®∞∏¿»“
-centerForwardOffsetÄÄ“
-cooldownSecondsÄÄx“
-damageMultiplier≤Ê“
-effectRecycleSeconds˛ˇ“
-effectYOffsetÄÄ“
-goldRewardAmountÄÄ“
-rangeÄÄ“
-skillRecoverySeconds∂˜
-jÿ
-1044Ñ‰Ã	 ò≥(ÄÄ(@dp2xÇäí1öland®∞∏¿»“ 
-auraRefreshIntervalSecondsÊÃ“
-cooldownSecondsÄÄx“
-damageMultiplierÄÄ“
-damageTickIntervalSecondsÄÄ“
-rangeÄÄ(“
-slowMultiplierÊÃjÀ
-1045¶∞Ê ò≥(ÄÄ@Ap&xÇäí0öland®∞∏¿»“
-centerForwardOffsetÄÄ“
-cooldownSecondsÄÄx“
-damageMultiplier≤Ê“
-effectRecycleSecondsÄÄ(“
-effectYOffsetÄÄ“
-rangeÄÄj÷
-1046‹‰Ã	 ò≥(ÄÄ@xp-xÇí0öland¢0®∞∏¿»“ 
-attackBonusDurationSecondsÄÄ(“
-attackDurationSeconds–™“
-cooldownSecondsÄÄx“
-durationSecondsÄÄ(“
-effectYOffsetò≥“
-maxAttackBonusRatioò≥“
-maxAttackBonusRatio.40461“
-maxAttackBonusRatio.40462“
-maxAttackBonusRatio.40463“
-maxAttackSpeedBonusRatioò≥“$
-maxAttackSpeedBonusRatio.40461ÄÄ“$
-maxAttackSpeedBonusRatio.40462ÄÄ“$
-maxAttackSpeedBonusRatio.40463ÄÄ“
-maxDamageReduceBonusRatioò≥“%
-maxDamageReduceBonusRatio.40461˛ˇ“%
-maxDamageReduceBonusRatio.40462ÄÄ“%
-maxDamageReduceBonusRatio.40463˛ˇ“
-	pullRangeÄÄ(“
-	pullSpeedÄÄ@“
-pullStopDistance∞Ê“
-refreshIntervalSecondså"“
-releaseRangeÄÄ(“
-stackAttackRatio≤f“
-stackAttackRatio.40461“
-stackAttackRatio.40462“
-stackAttackRatio.40463“
-stackAttackSpeedRatio≤f“ 
-stackAttackSpeedRatio.40461≤f“!
-stackAttackSpeedRatio.40462ÊÃ“!
-stackAttackSpeedRatio.40463ò≥“
-stackDamageReduceRatio≤f“!
-stackDamageReduceRatio.40461ò3“!
-stackDamageReduceRatio.40462≤f“"
-stackDamageReduceRatio.40463 ôj
-1047¬Ç◊ ò≥(ÄÄ(8ÄÄ»@xpKxÇí1ösky¢1®∞∏¿»“
-bombIntervalSeconds≤Ê“
-flightSpeedÄÄ`“
-rangeÄÄjK
-1048ñÇ◊ ò≥(ÄÄ@p!xÇí0öland¢0®∞∏¿»“
-rangeÄÄjµ
-1049ñò≥ ò≥(ÄÄ@PpKxÇí1öland∞∏¿»“
-cooldownSecondsÄÄx“
-firstDelaySecondsÄÄ“
-markDurationSecondsÄÄx“
-movementDistanceUnitÄÄ“
-targetCountÄÄPjÈ
-1050dÇ◊ ò≥(ÄÄ@#p2x	Ç	í0öland∞∏¿»“ 
-auraRefreshIntervalSecondsò≥“
-cooldownSecondsÄÄx“
-damageTickIntervalSecondsÄÄ“
-firstDelaySecondsÄÄ“ 
-minimumReleaseDelaySecondsò≥“
-slowMultiplierò≥“
-travelCorrectionSeconds ô“
-travelHoldSeconds ô“
-travelMoveSeconds≤Ê“
-zoneDurationSecondsÄÄ(“
-
-zoneRadius≤Êj®
-1051¬ò≥ ò≥(ÄÄ(@¥pPxÇí1ösky∞∏¿»“
-cooldownSecondsÄÄx“
-damageMultiplier.40681ÄÄ“
-damageMultiplier.40682ÄÄ“
-damageMultiplier.40683ÄÄ“
-droneCount.40681ÄÄ(“
-droneCount.40682ÄÄP“
-droneCount.40683ÄÄx“
-explosionRadiusÄÄ“
-firstDelaySecondsÄÄjª
-1052¸ò≥ ò≥(ÄÄ@»p2xÇí0öland∞∏¿»“
-actionDurationSeconds÷™“
-cooldownSecondsÄÄx“
-firstDelaySecondsÄÄ“
-projectileSpeedÄÄd“
-releaseDelaySeconds÷™	r$
-10011001	resources"0(åHñP
-X
-r&
-10021002barracks"1001(¨08Ø@2r%
-10031003barracks"1002(¥08d@2r&
-10041004barracks"1003(Ü08¨@2r&
-10051005barracks"1004(å08¨@2r&
-10061006barracks"1005(ò08¶@2r&
-10071007barracks"1006(û08Ë@2r&
-10081008barracks"1007(§08¬@2r&
-10091009barracks"1008(»08Ó@2r&
-10101010barracks"1009(∞08Ë@2r&
-10111011barracks"1010(–08¬@2r&
-10121012barracks"1011(º08Î@2r&
-10131013barracks"1012(º08Ë@2r+
-10141014defense"0(§XxÄÄÄ@êÄÄ»òKr1
-10151015defense"0(»XÄÄÄ@àÊÃêÄÄ»òKr%
-10161016barracks"1013(¥08}@2r&
-10171017barracks"1014(Ë08ñ@2r&
-10181018barracks"1015(é08»@2r&
-10191019barracks"1016(08¶@2r&
-10201020barracks"1017(ú08˙@2r&
-10211021barracks"1018(‹08º@2r&
-10221022barracks"1019(∞	08ê@2r&
-10231023barracks"1021(Ë08ì@2r&
-10241024barracks"1022(ÿ08ì@2r&
-10251025barracks"1023(∏08º@2r&
-10261026barracks"1024(Ñ08ê@2r&
-10271027barracks"1025(¥08Â@2r&
-10281028barracks"1026(ö08‚	@2r&
-10291029barracks"1027(Ü08·@2r&
-10301030barracks"1028(Ü08·@2r&
-10311031barracks"1029(¨08Ø@2r&
-10321032barracks"1030(ÿ08¬@2r&
-10331033barracks"1031(–08˙@2r&
-10341034barracks"1032(à08ê@2r&
-10351035barracks"1033(∏08º@2r&
-10361036barracks"1034(∞	08ê@2r&
-10371037barracks"1035(∏08º@2r&
-10381038barracks"1036( 08»@2r&
-10391039barracks"1037(§08»@2r&
-10401040barracks"1038(Œ08Î@2r&
-10481048barracks"1046(Ä08Â@2r&
-10491049barracks"1047(‚	08‚	@2r&
-10501050barracks"1048(ˆ08·@2z
-soldierpilez
-soldierpilez
-soldierpilez
-soldierpileÇ
-3001ñ(0:ÄÄ(≤ÊˇˇÄÄÇ
-3002ñ(0:ÄÄ(ÊÃˇˇÄÄÇ
-3003ñ(0:ÄÄ(ÊÃˇˇÄÄÇ
-3004ñ(0:ÄÄ†ÄÄˇˇÄÄÇ
-3005ñ(0:ÄÄÄÄêˇˇÄÄÇ
-3006ñ(0:ÄÄ(û
-ÄÄ(ÄÄÇ
-3007ñ(0:ÄÄ ÄÄ†ˇˇÄÄÇ
-3008ñ(0:ÄÄPÄÄ†ˇˇÄÄÇ
-3009ñ(0:ÄÄÊÃÄÄ(ÄÄÇ
-3010ñ(0:ÄÄ@ÄÄÄÄÄ(ÄÄÇ
-3011ñ(0:ÄÄPÄÄ(ÄÄ(ÄÄÇ
-3012ñ(0:ÄÄP˛ˇÄÄ@ÄÄÇ
-3013ñ(0:ÄÄPÄÄ‡ÄÄxÄÄÇ
-3014ñ(0:ÄÄ(ÊÃˇˇÄÄÇ
-3015ñ(0:ÊÃ≤fˇˇÄÄÇ
-3016ñ(0:ÄÄPÄÄˇˇÄÄÇ
-3017ñ(0:ÄÄ(ò3ˇˇÄÄÇ
-3018ñ(0:≤fÄÄ@ÄÄ(ÄÄä
-3001GlobalÄÄ ä
-3002GlobalÄÄä
-3003GlobalÄÄä
-3004SpecialB	necrobookä
-3005BuildingÄÄ ä
-3006AreaÄÄxä
-3007GlobalÄÄx (ÄÄä
-3008AreaÄÄ0ò≥ä
-3009AreaÄÄ(ÄÄä
-3010GlobalÄÄ†ä
-3011AreaÄÄ»B1ä
-3012AreaÄÄ¿ä
-3013SpecialB	godslayerä
-3014SpecialÄÄP ä
-3015GlobalÄÄ0≤Êä
-3016BuildingÄÄ ä
-3017BuildingÄÄ0ÄÄä
-3018GlobalÄÄ 0ÄÄä
-3019GlobalÄÄ0ÄÄä
-3020Globalä
-3021GlobalÄÄ†0™Êä
-3022GlobalÄÄPä
-3023GlobalÄÄ0ò≥ä
-3024GlobalÄÄ†0˛ˇí
-1001 (0≤f8í
-1002 (0ÊÃ8í
-1003 (0ò≥8í
-1004 (0Ãô8í
-1005(0≤f8í
-1006(0ÊÃ8í
-1007(0ò≥8í
-1008(0Ãô8í
-1009 (0≤f8í
-1010 (0ÊÃ8í
-1011 (0ò≥8í
-1012 (0Ãô8í
-1013 (0≤f8í
-1014 (0ÊÃ8í
-1015 (0ò≥8í
-1016 (0Ãô8í
-1017< (0≤f8í
-1018< (0ÊÃ8í
-1019< (0ò≥8í
-1020< (0Ãô8í
-1021<(0≤f8í
-1022<(0ÊÃ8í
-1023<(0ò≥8í
-1024<(0Ãô8í
-1025< (0≤f8í
-1026< (0ÊÃ8í
-1027< (0ò≥8í
-1028< (0Ãô8í
-1029< (0≤f8í
-1030< (0ÊÃ8í
-1031< (0ò≥8í
-1032< (0Ãô8í
-1033d (0Ç8í
-1034d (0Ü8í
-1035d (0à8í
-1036d (0å8í
-1037d(0Ç8í
-1038d(0Ü8í
-1039d(0à8í
-1040d(0å8í
-1041d (0Ç8í
-1042d (0Ü8í
-1043d (0à8í
-1044d (0å8í
-1045d (0Ç8í
-1046d (0Ü8í
-1047d (0à8í
-1048d (0å8ö 
-1001	RoleBlessò≥"Percent(ö 
-1002	RoleBless ô"Percent(ö
-1003	RoleBless∏="Percent(ö
-1004	RoleBlessº"Percent(ö 
-1005	RoleBlessò≥"Percent(ö 
-1006	RoleBless ô"Percent(ö
-1007	RoleBless∏="Percent(ö
-1008	RoleBlessº"Percent(ö'
-1009GoldCardSummonOddò3"Percent(ö'
-1010GoldCardSummonOddº"Percent(ö%
-1011GoldMineOutPutÄÄ"Percent(ö%
-1012GoldMineOutPut˛ˇ"Percent(ö$
-1013GoldMineOutPut≤f"Percent(ö$
-1014GoldMineOutPutò3"Percent(ö 
-1015	RoleBlessÄÄ"Percent(ö 
-1016	RoleBless˛ˇ"Percent(ö
-1017	RoleBless≤f"Percent(ö
-1018	RoleBlessò3"Percent(ö 
-1019	RoleBlessÄÄ"Percent(ö 
-1020	RoleBless˛ˇ"Percent(ö
-1021	RoleBless≤f"Percent(ö
-1022	RoleBlessò3"Percent(ö 
-1023	RoleBlessÄÄ"Percent(ö 
-1024	RoleBless˛ˇ"Percent(ö
-1025	RoleBless≤f"Percent(ö
-1026	RoleBlessò3"Percent(ö 
-1027	RoleBlessÄÄ"Percent(ö 
-1028	RoleBless˛ˇ"Percent(ö
-1029	RoleBless≤f"Percent(ö
-1030	RoleBlessò3"Percent(ö!
-1031KillGetCoinÄÄ("Number(ö!
-1032KillGetCoinÄÄ"Number(ö!
-1033KillGetCoinÄÄ"Number(ö!
-1034KillGetCoinÄÄ"Number(ö$
-1035SuperGoldCardÄÄÄ}"Number(¢9 (0
-8@HRc  Xbj1,1;1,1;1,1;1,1r3,3,1,1¢9 (
-08@HRc  X	bj1,2;1,2;1,2;1,1r3,3,1,1¢9	 
-(08@HR^  Xbj2,4;2,4;2,4;1,2r3,3,1,1¢9
- (08@HR
-(Xbj3,6;3,6;3,6;1,2r3,3,1,1¢9 (08@HR
-(Xbj4,8;4,8;4,8;1,3r3,3,1,1¢: (08@H	R 2bj5,10;5,10;5,10;1,3r3,3,1,1¢: (#08@	HR -#bj6,12;6,12;6,12;1,4r3,3,1,1¢:  #((08@HR ((bj6,13;6,13;6,13;1,4r3,3,1,1¢:	% ((-08@HR 2-bj7,14;7,14;7,14;1,5r3,3,1,1¢:
-"* -(208!@HR -2bj8,15;8,15;8,15;1,6r3,3,1,1¢:&/ 2(708#@HR  22bj8,16;8,16;8,16;4,7r3,3,1,1¢:*4 7(<0 8%@HR  -7bj9,17;9,17;9,17;4,8r3,3,1,1¢:.9 <(A0"8'@HR  (<bj9,18;9,18;9,18;5,9r3,3,1,1¢>2> A(F0$8)@H"R  #Abj10,19;10,19;10,19;5,10r3,3,1,1¢>6C F(K0&8+@"H&R  Fbj10,20;10,20;10,20;6,11r3,3,1,1¢>:H K(P0(8-@&H*R  Kbj11,21;11,21;11,21;6,12r3,3,1,1¢>>M P(U0*8/@*H.R  Pbj11,22;11,22;11,22;7,13r3,3,1,1¢>BR U(Z0,81@.H4R  Ubj12,23;12,23;12,23;7,14r3,3,1,1¢>FW Z(_0.83@4H8R  
-Zbj12,24;12,24;12,24;8,15r3,3,1,1¢>J\ _(d0085@8H<R  _bj13,25;13,25;13,25;8,16r3,3,1,1¢>Na d(i0287@<H@R   dbj13,26;13,26;13,26;9,17r3,3,1,1¢>Rf i(n0489@@HDR   dbj14,27;14,27;14,27;9,18r3,3,1,1¢?Vk n(s068;@DHHR   dbj14,28;14,28;14,28;10,19r3,3,1,1¢?Zp s(x088=@HHLR   dbj15,29;15,29;15,29;10,20r3,3,1,1¢?^u x(}0:8?@LHPR   dbj15,30;15,30;15,30;11,21r3,3,1,1™ê
-default-main-towerd"€¸ƒå‘ú	‰
-¨ÙºÑÃî‹§Ï¥¸ƒå‘ ú"‰#¨%Ù&º(Ñ*Ã+î-‹.§0Ï1¥3¸4ƒ6å8‘9ú;‰<¨>Ù?ºAÑCÃDîF‹G§IÏJ¥L¸MƒOåQ‘RúT‰U¨WÙXºZÑ\Ã]î_‹`§bÏc¥e¸fƒhåj‘kúm‰n¨pÙqºsÑuÃvîx‹y§{Ï|¥~¸ƒÅåÉ‘ÑúÜ‰á¨âÙäºåÑéÃèîë‹í§îÏï¥ó¸òƒöåú‘ù*ÃÄÄÿÄÄËÄÄ¯
-ÄÄàÄÄòÄÄ®ÄÄ∏ÄÄ»ÄÄÿÄÄË ÄÄ¯#ÄÄà'ÄÄò*ÄÄ®-ÄÄ∏0ÄÄ»3ÄÄÿ6ÄÄË9ÄÄ¯<ÄÄà@ÄÄòCÄÄ®FÄÄ∏IÄÄ»LÄÄÿOÄÄËRÄÄ¯UÄÄàYÄÄò\ÄÄ®_ÄÄ∏bÄÄ»eÄÄÿhÄÄËkÄÄ¯nÄÄàrÄÄòuÄÄ®xÄÄ∏{ÄÄ»~ÄÄÿÅÄÄËÑÄÄ¯áÄÄàãÄÄòéÄÄ®ëÄÄ∏îÄÄ»óÄÄÿöÄÄËùÄÄ¯†ÄÄà§ÄÄòßÄÄ®™ÄÄ∏≠ÄÄ»∞ÄÄÿ≥ÄÄË∂ÄÄ¯πÄÄàΩÄÄò¿ÄÄ®√ÄÄ∏∆ÄÄ»…ÄÄÿÃÄÄËœÄÄ¯“ÄÄà÷ÄÄòŸÄÄ®‹ÄÄ∏ﬂÄÄ»‚ÄÄÿÂÄÄËËÄÄ¯ÎÄÄàÔÄÄòÚÄÄ®ıÄÄ∏¯ÄÄ»˚ÄÄÿ˛ÄÄËÅÄÄ¯ÑÄÄààÄÄòãÄÄ®éÄÄ∏ëÄÄ»îÄÄÿóÄÄËöÄÄ¯ùÄÄà°ÄÄò§ÄÄ®ßÄÄ∏™ÄÄ»≠ÄÄÿ∞ÄÄË≥ÄÄ¯∂ÄÄà∫2»ì¨≈ﬁ˜ê©¬€Ùç¶øÿÒä£º’Óá†π“ÎÑù∂œËÅö≥ÃÂ˛ó	∞	…	‚	˚	î
-≠
-∆
-ﬂ
-¯
-ë™√‹ıéß¿ŸÚã§Ω÷Ôà°∫”ÏÖû∑–ÈÇõ¥ÕÊˇò± „¸ïÆ«‡˘í´ƒ›ˆè®¡⁄Ûå•æ≤B
-100011054buildingDamageBonusRatio ò≥*Percent2OnAttack8@c≤<
-10002buildingDamageBonusRatio ò≥*Percent2OnAttack8@c≤
-100110028@c≤E
-100111053conditionalDamageBonusRatio ò≥*Percent2OnAttack8@c≤?
-10012conditionalDamageBonusRatio ò≥*Percent2OnAttack8@c≤
-100210028@c≤D
-100211015conditionalDamageReduceRatio ÊÃ*Percent2OnHurt8@c≤>
-10022conditionalDamageReduceRatio ÊÃ*Percent2OnHurt8@c≤
-100310028@c≤G
-100311053conditionalMissChanceBonusRatio ÊÃ*Percent2OnHurt8@c≤A
-10032conditionalMissChanceBonusRatio ÊÃ*Percent2OnHurt8@c≤
-100410028@c≤E
-100411047conditionalDamageBonusRatio ÊÃ*Percent2OnAttack8@c≤?
-10042conditionalDamageBonusRatio ÊÃ*Percent2OnAttack8@c≤
-100510028@c≤E
-100511052conditionalDamageBonusRatio ÊÃ*Percent2OnAttack8@c≤?
-10052conditionalDamageBonusRatio ÊÃ*Percent2OnAttack8@c≤
-100610028@c≤E
-100611045conditionalDamageBonusRatio ÊÃ*Percent2OnAttack8@c≤?
-10062conditionalDamageBonusRatio ÊÃ*Percent2OnAttack8@c≤
-100710018@c≤E
-100711054conditionalDamageBonusRatio ÊÃ*Percent2OnAttack8@c≤?
-10072conditionalDamageBonusRatio ÊÃ*Percent2OnAttack8@c≤
-100810018@c≤
-100910018@c≤
-101010018@c≤
-101110018@c≤
-101210018@c≤
-101310038@c≤
-101410038@c≤
-101510038@c≤
-101610038@c≤'
-20001attack ò3*Percent2OnInit8@c≤'
-20002attack ò3*Percent2OnInit8@c≤'
-20003attack ò3*Percent2OnInit8@c≤+
-20011
-missChance ò3*Percent2OnInit8@c≤+
-20012
-missChance ò3*Percent2OnInit8@c≤+
-20013
-missChance ò3*Percent2OnInit8@c≤+
-20021
-critChance ò3*Percent2OnInit8@c≤+
-20022
-critChance ò3*Percent2OnInit8@c≤+
-20023
-critChance ò3*Percent2OnInit8@c≤-
-20031vampireRatio ò3*Percent2OnInit8@c≤-
-20032vampireRatio ò3*Percent2OnInit8@c≤-
-20033vampireRatio ò3*Percent2OnInit8@c≤2
-20041damageReduceRatio ≤f*Percent2OnInit8@c≤2
-20042damageReduceRatio ≤f*Percent2OnInit8@c≤2
-20043damageReduceRatio ≤f*Percent2OnInit8@c≤#
-20051hp ≤f*Percent2OnInit8@c≤#
-20052hp ≤f*Percent2OnInit8@c≤#
-20053hp ≤f*Percent2OnInit8@c≤*
-20061	moveSpeed ≤f*Percent2OnInit8@c≤*
-20062	moveSpeed ≤f*Percent2OnInit8@c≤*
-20063	moveSpeed ≤f*Percent2OnInit8@c≤#
-20071hp ≤f*Percent2OnInit8@c≤#
-20072hp ≤f*Percent2OnInit8@c≤#
-20073hp ≤f*Percent2OnInit8@c≤&
-20081range ò3*Percent2OnInit8@c≤&
-20082range ò3*Percent2OnInit8@c≤&
-20083range ò3*Percent2OnInit8@c≤K
-3000111052#onHurtLowHealthDamageImmunityChance ò3*Percent2OnHurt8@c≤E
-300012#onHurtLowHealthDamageImmunityChance ÙQ*Percent2OnHurt8@c≤E
-300013#onHurtLowHealthDamageImmunityChance ≤f*Percent2OnHurt8@c≤A
-3000211054onHurtDamageReflectChance ≤f*Percent2OnHurt8@c≤<
-300022onHurtDamageReflectChance  ô*Percent2OnHurt8@c≤<
-300023onHurtDamageReflectChance ÊÃ*Percent2OnHurt8@c≤C
-300031onHurtLinkPactDamageRatio ≤f*Percent2OnHealthChange8@c≤D
-300032onHurtLinkPactDamageRatio ÊÃ*Percent2OnHealthChange8@c≤D
-300033onHurtLinkPactDamageRatio ò≥*Percent2OnHealthChange8@c≤L
-3000411054!onAttackLowHealthDamageBonusRatio ÊÃ*Percent2OnAttack8@c≤F
-300042!onAttackLowHealthDamageBonusRatio ˛ˇ*Percent2OnAttack8@c≤F
-300043!onAttackLowHealthDamageBonusRatio ò≥*Percent2OnAttack8@c≤M
-3001111019#onAttackExtraProjectileTriggerCount ÄÄ(*Number2OnAttack8@c≤G
-300112#onAttackExtraProjectileTriggerCount ÄÄ *Number2OnAttack8@c≤G
-300113#onAttackExtraProjectileTriggerCount ÄÄ*Number2OnAttack8@c≤3
-3001211053attackRange ò3*Percent2OnInit8@c≤-
-300122attackRange ≤f*Percent2OnInit8@c≤.
-300123attackRange  ô*Percent2OnInit8@c≤K
-3001311046 onAttackDistanceDamageBonusRatio ò≥*Percent2OnAttack8@c≤E
-300132 onAttackDistanceDamageBonusRatio Ãô*Percent2OnAttack8@c≤E
-300133 onAttackDistanceDamageBonusRatio ÄÄ*Percent2OnAttack8@c≤L
-3001411016"onAttackSameTargetDamageBonusRatio ò3*Percent2OnAttack8@c≤F
-300142"onAttackSameTargetDamageBonusRatio ≤f*Percent2OnAttack8@c≤G
-300143"onAttackSameTargetDamageBonusRatio  ô*Percent2OnAttack8@c≤J
-3002111045 onAttackTargetHalfHpDamageChance ò3*Percent2OnAttack8@c≤D
-300212 onAttackTargetHalfHpDamageChance ≤f*Percent2OnAttack8@c≤E
-300213 onAttackTargetHalfHpDamageChance  ô*Percent2OnAttack8@c≤B
-3002211040onKillMoveSpeedBonusRatio ˛ˇ*Percent2OnKill8@c≤<
-300222onKillMoveSpeedBonusRatio ÄÄ*Percent2OnKill8@c≤<
-300223onKillMoveSpeedBonusRatio ˛ˇ	*Percent2OnKill8@c≤M
-3002311051"onAttackLoneTargetDamageBonusRatio ˛ˇ*Percent2OnAttack8@c≤G
-300232"onAttackLoneTargetDamageBonusRatio ÄÄ*Percent2OnAttack8@c≤G
-300233"onAttackLoneTargetDamageBonusRatio ˛ˇ*Percent2OnAttack8@c≤L
-3002411031#onInitStealthAmbushDamageMultiplier ÄÄ*Percent2OnInit8@c≤F
-300242#onInitStealthAmbushDamageMultiplier ˛ˇ*Percent2OnInit8@c≤F
-300243#onInitStealthAmbushDamageMultiplier ÄÄ*Percent2OnInit8@c≤J
-3003111051onAttackMoveSpeedReductionRatio ÊÃ*Percent2OnAttack8@c≤D
-300312onAttackMoveSpeedReductionRatio ò≥*Percent2OnAttack8@c≤D
-300313onAttackMoveSpeedReductionRatio ÄÄ*Percent2OnAttack8@c≤>
-300321onTimeAllyMoveSpeedAuraRatio ò3*Percent2OnInit8@c≤>
-300322onTimeAllyMoveSpeedAuraRatio ≤f*Percent2OnInit8@c≤?
-300323onTimeAllyMoveSpeedAuraRatio  ô*Percent2OnInit8@c≤C
-3004111032periodicNearbyAllyHealRatio ò3*Percent2OnInit8@c≤=
-300412periodicNearbyAllyHealRatio ≤f*Percent2OnInit8@c≤>
-300413periodicNearbyAllyHealRatio  ô*Percent2OnInit8@c≤>
-300421periodicNearestAllyHealRatio ≤f*Percent2OnInit8@c≤?
-300422periodicNearestAllyHealRatio ÊÃ*Percent2OnInit8@c≤?
-300423periodicNearestAllyHealRatio ò≥*Percent2OnInit8@c≤F
-3005111048onAttackSecondaryDamageRatio ≤f*Percent2OnAttack8@c≤A
-300512onAttackSecondaryDamageRatio ÊÃ*Percent2OnAttack8@c≤A
-300513onAttackSecondaryDamageRatio ò≥*Percent2OnAttack8@c≤A
-3005211052onAttackStunChanceRatio ò3*Percent2OnAttack8@c≤;
-300522onAttackStunChanceRatio ≤f*Percent2OnAttack8@c≤<
-300523onAttackStunChanceRatio  ô*Percent2OnAttack8@c≤]
-3005313onHealthChangeLowHealthAttackIntervalReductionRatio ≤f*Percent2OnHealthChange8@c≤^
-3005323onHealthChangeLowHealthAttackIntervalReductionRatio ÊÃ*Percent2OnHealthChange8@c≤^
-3005333onHealthChangeLowHealthAttackIntervalReductionRatio ò≥*Percent2OnHealthChange8@c≤0
-3005411047attack û
-*Percent2OnAttack8@c≤*
-300542attack º*Percent2OnAttack8@c≤*
-300543attack ‹*Percent2OnAttack8@c≤G
-3006111015onTimeAllyDamageReduceAuraRatio ò3*Percent2OnInit8@c≤A
-300612onTimeAllyDamageReduceAuraRatio ≤f*Percent2OnInit8@c≤B
-300613onTimeAllyDamageReduceAuraRatio  ô*Percent2OnInit8@c≤F
-3006411053onInitMoveSpeedReductionRatio ÊÃ*Percent2OnInit8@c≤@
-300642onInitMoveSpeedReductionRatio ò≥*Percent2OnInit8@c≤@
-300643onInitMoveSpeedReductionRatio Ãô*Percent2OnInit8@c≤7
-400011004unitSkillValue ÄÄ*Number2OnAttack8@c≤1
-40002unitSkillValue ÄÄ *Number2OnAttack8@c≤1
-40003unitSkillValue ÄÄ0*Number2OnAttack8@c≤?
-400111005projectileReflectChance  ô*Percent2OnHurt8@c≤9
-40012projectileReflectChance ò≥*Percent2OnHurt8@c≤9
-40013projectileReflectChance ÄÄ*Percent2OnHurt8@c≤6
-400211006unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40022unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40023unitSkillValue ÄÄ*Percent2OnTime8@c≤6
-400311019unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40032unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40033unitSkillValue ÄÄ *Percent2OnTime8@c≤6
-400411010unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40042unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40043unitSkillValue ÄÄ*Percent2OnTime8@c≤5
-400511007unitSkillValue ÄÄ*Number2OnTime8@c≤/
-40052unitSkillValue ÄÄ*Number2OnTime8@c≤/
-40053unitSkillValue ÄÄ*Number2OnTime8@c≤6
-400611012unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40062unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40063unitSkillValue ÄÄ*Percent2OnTime8@c≤6
-400711013unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40072unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40073unitSkillValue ÄÄ*Percent2OnTime8@c≤6
-400811002unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40082unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40083unitSkillValue ÄÄ*Percent2OnTime8@c≤7
-400911024unitSkillValue ÄÄ*Number2OnAttack8@c≤1
-40092unitSkillValue ÄÄ *Number2OnAttack8@c≤1
-40093unitSkillValue ÄÄ0*Number2OnAttack8@c≤8
-401011023unitSkillValue ˛ˇ*Percent2OnAttack8@c≤2
-40102unitSkillValue ÄÄ*Percent2OnAttack8@c≤2
-40103unitSkillValue ÄÄ*Percent2OnAttack8@c≤8
-401111011unitSkillValue ˛ˇ*Percent2OnAttack8@c≤2
-40112unitSkillValue ÄÄ*Percent2OnAttack8@c≤2
-40113unitSkillValue ˛ˇ*Percent2OnAttack8@c≤6
-401211021unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40122unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40123unitSkillValue ÄÄ*Percent2OnTime8@c≤6
-401311025unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40132unitSkillValue ˛ˇ*Percent2OnTime8@c≤0
-40133unitSkillValue ÄÄ*Percent2OnTime8@c≤5
-401411016unitSkillValue ÄÄ*Number2OnTime8@c≤/
-40142unitSkillValue ÄÄ*Number2OnTime8@c≤/
-40143unitSkillValue ÄÄ *Number2OnTime8@c≤6
-401511003unitSkillValue ÄÄ*Percent2OnDead8@c≤0
-40152unitSkillValue ÄÄ*Percent2OnDead8@c≤0
-40153unitSkillValue ÄÄ*Percent2OnDead8@c≤5
-401611017unitSkillValue ÄÄ*Number2OnTime8@c≤/
-40162unitSkillValue ÄÄ *Number2OnTime8@c≤/
-40163unitSkillValue ÄÄ0*Number2OnTime8@c≤5
-401711018unitSkillValue ÄÄ*Number2OnTime8@c≤/
-40172unitSkillValue ÄÄ*Number2OnTime8@c≤/
-40173unitSkillValue ÄÄ*Number2OnTime8@c≤6
-401811020unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40182unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40183unitSkillValue ÄÄ*Percent2OnTime8@c≤5
-401911022unitSkillValue ÄÄ(*Number2OnTime8@c≤/
-40192unitSkillValue ÄÄP*Number2OnTime8@c≤0
-40193unitSkillValue ÄÄ†*Number2OnTime8@c≤5
-402011026unitSkillValue ÄÄ(*Number2OnTime8@c≤/
-40202unitSkillValue ÄÄP*Number2OnTime8@c≤0
-40203unitSkillValue ÄÄ†*Number2OnTime8@c≤6
-402111008unitSkillValue ÄÄ*Percent2OnInit8@c≤0
-40212unitSkillValue ÄÄ*Percent2OnInit8@c≤0
-40213unitSkillValue ÄÄ*Percent2OnInit8@c≤6
-402211014unitSkillValue ÄÄ*Percent2OnInit8@c≤0
-40222unitSkillValue ÄÄ*Percent2OnInit8@c≤0
-40223unitSkillValue ÄÄ*Percent2OnInit8@c≤6
-402311009unitSkillValue ÄÄ*Percent2OnInit8@c≤0
-40232unitSkillValue ÄÄ*Percent2OnInit8@c≤0
-40233unitSkillValue ÄÄ*Percent2OnInit8@c≤6
-402411015unitSkillValue ÄÄ*Percent2OnInit8@c≤0
-40242unitSkillValue ÄÄ*Percent2OnInit8@c≤0
-40243unitSkillValue ÄÄ*Percent2OnInit8@c≤5
-402511027unitSkillValue ÄÄ(*Number2OnTime8@c≤/
-40252unitSkillValue ÄÄ@*Number2OnTime8@c≤/
-40253unitSkillValue ÄÄP*Number2OnTime8@c≤5
-402611028unitSkillValue ÄÄ(*Number2OnTime8@c≤/
-40262unitSkillValue ÄÄ@*Number2OnTime8@c≤/
-40263unitSkillValue ÄÄP*Number2OnTime8@c≤>
-402711029unitSkillValue ˛ˇ*Percent2OnHealthChange8@c≤8
-40272unitSkillValue ÄÄ*Percent2OnHealthChange8@c≤8
-40273unitSkillValue ÄÄ*Percent2OnHealthChange8@c≤8
-402811030unitSkillValue ÄÄ*Percent2OnAttack8@c≤2
-40282unitSkillValue ÄÄ*Percent2OnAttack8@c≤2
-40283unitSkillValue ÄÄ*Percent2OnAttack8@c≤6
-402911031unitSkillValue ÄÄ*Percent2OnDead8@c≤0
-40292unitSkillValue ÄÄ*Percent2OnDead8@c≤0
-40293unitSkillValue ÄÄ*Percent2OnDead8@c≤6
-403011032unitSkillValue ˛ˇ*Percent2OnTime8@c≤0
-40302unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40303unitSkillValue ÄÄ*Percent2OnTime8@c≤5
-403111033unitSkillValue ≤f*Percent2OnInit8@c≤0
-40312unitSkillValue ˛ˇ*Percent2OnInit8@c≤0
-40313unitSkillValue ÄÄ*Percent2OnInit8@c≤8
-403211034unitSkillValue ÄÄ*Percent2OnUpdate8@c≤2
-40322unitSkillValue ÄÄ*Percent2OnUpdate8@c≤2
-40323unitSkillValue ÄÄ*Percent2OnUpdate8@c≤6
-403311035unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40332unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40333unitSkillValue ÄÄ*Percent2OnTime8@c≤6
-403411036unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40342unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40343unitSkillValue ÄÄ*Percent2OnTime8@c≤6
-403511037unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40352unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40353unitSkillValue ÄÄ*Percent2OnTime8@c≤>
-403611038unitSkillValue Ãô*Percent2OnHealthChange8@c≤8
-40362unitSkillValue ≤Ê*Percent2OnHealthChange8@c≤8
-40363unitSkillValue ò≥*Percent2OnHealthChange8@c≤6
-403711039unitSkillValue ò≥*Percent2OnInit8@c≤0
-40372unitSkillValue ÄÄ*Percent2OnInit8@c≤0
-40373unitSkillValue ÊÃ	*Percent2OnInit8@c≤6
-403811040unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40382unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40383unitSkillValue ÄÄ *Percent2OnTime8@c≤5
-403911041unitSkillValue ÄÄ*Number2OnTime8@c≤/
-40392unitSkillValue ÄÄ *Number2OnTime8@c≤/
-40393unitSkillValue ÄÄ(*Number2OnTime8@c≤5
-404011042unitSkillValue ÄÄ(*Number2OnTime8@c≤/
-40402unitSkillValue ÄÄ@*Number2OnTime8@c≤/
-40403unitSkillValue ÄÄP*Number2OnTime8@c≤6
-404111043unitSkillValue ÊÃ*Percent2OnTime8@c≤0
-40412unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40413unitSkillValue ò≥*Percent2OnTime8@c≤6
-404211044unitSkillValue ÊÃ*Percent2OnTime8@c≤0
-40422unitSkillValue ò≥*Percent2OnTime8@c≤0
-40423unitSkillValue ÄÄ*Percent2OnTime8@c≤6
-404311045unitSkillValue ò≥*Percent2OnTime8@c≤0
-40432unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40433unitSkillValue ò≥*Percent2OnTime8@c≤5
-404411046unitSkillValue ÄÄ(*Number2OnTime8@c≤/
-40442unitSkillValue ÄÄ8*Number2OnTime8@c≤/
-40443unitSkillValue ÄÄH*Number2OnTime8@c≤5
-404511047unitSkillValue ÄÄ*Number2OnTime8@c≤/
-40452unitSkillValue ÄÄ*Number2OnTime8@c≤/
-40453unitSkillValue ÄÄ(*Number2OnTime8@c≤5
-404611048unitSkillValue ≤f*Percent2OnTime8@c≤0
-40462unitSkillValue ÊÃ*Percent2OnTime8@c≤0
-40463unitSkillValue ò≥*Percent2OnTime8@c≤6
-404711049unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40472unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40473unitSkillValue ÄÄ*Percent2OnTime8@c≤8
-404811050unitSkillValue ÄÄ*Percent2OnAttack8@c≤2
-40482unitSkillValue ÄÄ*Percent2OnAttack8@c≤2
-40483unitSkillValue ÄÄ*Percent2OnAttack8@c≤5
-406611051unitSkillValue ò3*Percent2OnTime8@c≤/
-40662unitSkillValue ≤f*Percent2OnTime8@c≤0
-40663unitSkillValue  ô*Percent2OnTime8@c≤6
-406711052unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40672unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40673unitSkillValue ÄÄ*Percent2OnTime8@c≤5
-406811053unitSkillValue ÄÄ(*Number2OnTime8@c≤/
-40682unitSkillValue ÄÄP*Number2OnTime8@c≤/
-40683unitSkillValue ÄÄx*Number2OnTime8@c≤6
-406911054unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40692unitSkillValue ÄÄ*Percent2OnTime8@c≤0
-40693unitSkillValue ÄÄ*Percent2OnTime8@c∫+
-10021000110041300021300041"40081∫+
-10031000110051300221300521"40151∫+
-10041001110061300121300131"40001∫+
-10051000110061300021300011"40011∫+
-10061000110061300221300231"40021∫+
-10071001110061300121300641"40051∫+
-10081001110071300121300131"40211∫+
-10091001110071300121300041"40231∫+
-10101001110061300111300121"40041∫2
-1011100111003110041300121300141"40111∫+
-10121000110061300521300541"40061∫2
-1013100011003110061300521300541"40071∫2
-1014100111002110071300021300611"40221∫2
-1015100111002110071300021300611"40241∫+
-10161001110051300141300211"40141∫+
-10171000110051300221300241"40161∫+
-10181001110051300311300411"40171∫+
-10191001110061300111300131"40031∫+
-10201000110051300021300011"40181∫+
-10211001110041300121300641"40121∫+
-10221001110051300311300641"40191∫+
-10231001110041300121300131"40101∫+
-10241000110041300511300221"40091∫+
-10251000110041300511300221"40131∫2
-1026100111003110051300021300011"40201∫+
-10271000110071300021300011"40251∫2
-1028100111003110071300121300211"40261∫+
-10291000110061300221300511"40271∫+
-10301000110061300211300231"40281∫+
-10311000110041300221300241"40291∫+
-10321001110041300311300411"40301∫2
-1033100011003110051300521300541"40311∫+
-10341000110051300521300541"40321∫+
-10351000110041300541300011"40331∫+
-10361001110051300231300641"40341∫+
-10371000110041300521300541"40351∫+
-10381000110071300021300011"40361∫+
-10391000110071300021300011"40371∫+
-10401000110061300221300231"40381∫+
-10411000110061300521300541"40391∫+
-10421000110061300021300011"40401∫+
-10431001110061300121300641"40411∫+
-10441001110061300121300131"40421∫+
-10451000110061300211300231"40431∫+
-10461001110041300121300131"40441∫+
-10471000110041300541300011"40451∫+
-10481000110071300021300511"40461∫2
-1049100111003110071300021300011"40471∫+
-10501000110071300021300011"40481∫+
-10511001110051300231300311"40661∫+
-10521000110051300011300521"40671∫2
-1053100111003110071300641300121"40681∫+
-10541000110071300021300041"40691¬¬¬ 
-1001 Ó
-100210041
-1004110001
-100012000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613000230003
-3000220071
-3000320071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140081
-2003140081
-400812000220062
-2000220003
-2006220063
-2000330001
-2006330052
-300012001220032
-300522003220072
-2001220013
-2003220033
-2007220073
-2001330004
-2003330004
-2007330004
-3000410042
-1004210002
-10002200432005320023
-2004340082
-2005340082
-2002340082
-40082 Ó
-100310051
-1005110001
-100012000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613005130052
-3005120071
-3005220071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140151
-2003140151
-401512000220062
-2000220003
-2006220063
-2000330053
-2006330022
-300532001220032
-300222003220072
-2001220013
-2003220033
-2007220073
-2001330054
-2003330054
-2007330054
-3005410052
-1005210002
-10002200432005320023
-2004340152
-2005340152
-2002340152
-40152 Ó
-100410061
-1006110011
-100112000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613001130012
-3001120071
-3001220071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140001
-2003140001
-400012000220062
-2000220003
-2006220063
-2000330013
-2006330021
-300132001220032
-300212003220072
-2001220013
-2003220033
-2007220073
-2001330014
-2003330014
-2007330014
-3001410062
-1006210012
-10012200432005320023
-2004340002
-2005340002
-2002340002
-40002 Ó
-100510061
-1006110001
-100012000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613000230003
-3000220071
-3000320071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140011
-2003140011
-400112000220062
-2000220003
-2006220063
-2000330001
-2006330052
-300012001220032
-300522003220072
-2001220013
-2003220033
-2007220073
-2001330004
-2003330004
-2007330004
-3000410062
-1006210002
-10002200432005320023
-2004340012
-2005340012
-2002340012
-40012 Ó
-100610061
-1006110001
-100012000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613002130022
-3002120071
-3002220071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140021
-2003140021
-400212000220062
-2000220003
-2006220063
-2000330023
-2006330051
-300232001220032
-300512003220072
-2001220013
-2003220033
-2007220073
-2001330024
-2003330024
-2007330024
-3002410062
-1006210002
-10002200432005320023
-2004340022
-2005340022
-2002340022
-40022 Ö
-10071006140051
-1006110011
-4005110011
-100112000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613003130012
-3003120071
-3001220071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140052
-2003140052
-400522000220062
-2000220003
-2006220063
-2000330013
-2006330042
-300132001220032
-300422003220072
-2001220013
-2003220033
-2007220073
-2001330064
-2003330064
-2007330064
-3006410062
-1006210012
-10012200432005320023
-2004340053
-2005340053
-2002340053
-40053 Ó
-100810071
-1007110011
-100112000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613001130012
-3001120071
-3001220071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140211
-2003140211
-402112000220062
-2000220003
-2006220063
-2000330013
-2006330021
-300132001220032
-300212003220072
-2001220013
-2003220033
-2007220073
-2001330014
-2003330014
-2007330014
-3001410072
-1007210012
-10012200432005320023
-2004340212
-2005340212
-2002340212
-40212 Ó
-100910071
-1007110021
-100212000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613000130012
-3000120071
-3001220071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140231
-2003140231
-402312000220062
-2000220003
-2006220063
-2000330002
-2006330003
-300022001220032
-300032003220072
-2001220013
-2003220033
-2007220073
-2001330004
-2003330004
-2007330004
-3000410072
-1007210022
-10022200432005320023
-2004340232
-2005340232
-2002340232
-40232 Ö
-10101006140041
-1006110011
-4004110011
-100112000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613001130012
-3001120071
-3001220071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140042
-2003140042
-400422000220062
-2000220003
-2006220063
-2000330013
-2006330021
-300132001220032
-300212003220072
-2001220013
-2003220033
-2007220073
-2001330014
-2003330014
-2007330014
-3001410062
-1006210012
-10012200432005320023
-2004340043
-2005340043
-2002340043
-40043 Ó
-101110041
-1004110011
-100112000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613001130012
-3001120071
-3001220071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140111
-2003140111
-401112000220062
-2000220003
-2006220063
-2000330013
-2006330021
-300132001220032
-300212003220072
-2001220013
-2003220033
-2007220073
-2001330014
-2003330014
-2007330014
-3001410042
-1004210012
-10012200432005320023
-2004340112
-2005340112
-2002340112
-40112 Ö
-10121006140061
-1006110001
-4006110001
-100012000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613005130052
-3005120071
-3005220071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140062
-2003140062
-400622000220062
-2000220003
-2006220063
-2000330053
-2006330022
-300532001220032
-300222003220072
-2001220013
-2003220033
-2007220073
-2001330054
-2003330054
-2007330054
-3005410062
-1006210002
-10002200432005320023
-2004340063
-2005340063
-2002340063
-40063 Ö
-10131006140071
-1006110001
-4007110001
-100012000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613000230003
-3000220071
-3000320071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140072
-2003140072
-400722000220062
-2000220003
-2006220063
-2000330001
-2006330052
-300012001220032
-300522003220072
-2001220013
-2003220033
-2007220073
-2001330004
-2003330004
-2007330004
-3000410062
-1006210002
-10002200432005320023
-2004340073
-2005340073
-2002340073
-40073 Ó
-101410071
-1007110011
-100112000120051
-2000120021
-2005120041
-2002120081
-2004120081
-200813000230041
-3000220071
-3004120071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140221
-2003140221
-402212000220082
-2000220003
-2008220083
-2000330001
-2008330061
-300012001220032
-300612003220072
-2001220013
-2003220033
-2007220073
-2001330014
-2003330014
-2007330014
-3001410072
-1007210012
-10012200432005320023
-2004340222
-2005340222
-2002340222
-40222 Ó
-101510071
-1007110021
-100212000120051
-2000120021
-2005120041
-2002120081
-2004120081
-200813000230041
-3000220071
-3004120071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140241
-2003140241
-402412000220082
-2000220003
-2008220083
-2000330001
-2008330061
-300012001220032
-300612003220072
-2001220013
-2003220033
-2007220073
-2001330004
-2003330004
-2007330004
-3000410072
-1007210022
-10022200432005320023
-2004340242
-2005340242
-2002340242
-40242 Ó
-101610051
-1005110011
-100112000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613001130012
-3001120071
-3001220071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140141
-2003140141
-401412000220062
-2000220003
-2006220063
-2000330013
-2006330021
-300132001220032
-300212003220072
-2001220013
-2003220033
-2007220073
-2001330014
-2003330014
-2007330014
-3001410052
-1005210012
-10012200432005320023
-2004340142
-2005340142
-2002340142
-40142 Ó
-101710051
-1005110001
-100012000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613002130022
-3002120071
-3002220071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140161
-2003140161
-401612000220062
-2000220003
-2006220063
-2000330023
-2006330051
-300232001220032
-300512003220072
-2001220013
-2003220033
-2007220073
-2001330024
-2003330024
-2007330024
-3002410052
-1005210002
-10002200432005320023
-2004340162
-2005340162
-2002340162
-40162 Ó
-101810051
-1005110011
-100112000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613003130012
-3003120071
-3001220071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140171
-2003140171
-401712000220062
-2000220003
-2006220063
-2000330013
-2006330041
-300132001220032
-300412003220072
-2001220013
-2003220033
-2007220073
-2001330064
-2003330064
-2007330064
-3006410052
-1005210012
-10012200432005320023
-2004340172
-2005340172
-2002340172
-40172 Ó
-101910061
-1006110011
-100112000120051
-2000120021
-2005110021
-2002120061
-2004120061
-200613001130012
-3001120071
-3001220071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140031
-2003140031
-400312000220062
-2000220003
-2006220063
-2000330013
-2006330021
-300132001220032
-300212003220072
-2001220013
-2003220033
-2007220073
-2001330014
-2003330014
-2007330014
-3001410062
-1006210012
-10012200432005320023
-2004340031
-2005340032
-2002340032
-40032 Ó
-102010051
-1005110001
-100012000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613000230003
-3000220071
-3000320071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140181
-2003140181
-401812000220062
-2000220003
-2006220063
-2000330001
-2006330052
-300012001220032
-300522003220072
-2001220013
-2003220033
-2007220073
-2001330004
-2003330004
-2007330004
-3000410052
-1005210002
-10002200432005320023
-2004340182
-2005340182
-2002340182
-40182 Ö
-10211004140121
-1004110011
-4012110011
-100112000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613003130012
-3003120071
-3001220071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140122
-2003140122
-401222000220062
-2000220003
-2006220063
-2000330013
-2006330041
-300132001220032
-300412003220072
-2001220013
-2003220033
-2007220073
-2001330064
-2003330064
-2007330064
-3006410042
-1004210012
-10012200432005320023
-2004340123
-2005340123
-2002340123
-40123 Ö
-10221005140191
-1005110011
-4019110011
-100112000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613003130012
-3003120071
-3001220071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140192
-2003140192
-401922000220062
-2000220003
-2006220063
-2000330013
-2006330041
-300132001220032
-300412003220072
-2001220013
-2003220033
-2007220073
-2001330064
-2003330064
-2007330064
-3006410052
-1005210012
-10012200432005320023
-2004340193
-2005340193
-2002340193
-40193 Ó
-102310041
-1004110011
-100112000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613001130012
-3001120071
-3001220071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140101
-2003140101
-401012000220062
-2000220003
-2006220063
-2000330013
-2006330021
-300132001220032
-300212003220072
-2001220013
-2003220033
-2007220073
-2001330014
-2003330014
-2007330014
-3001410042
-1004210012
-10012200432005320023
-2004340102
-2005340102
-2002340102
-40102 Ó
-102410041
-1004110001
-100012000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613005130052
-3005120071
-3005220071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140091
-2003140091
-400912000220062
-2000220003
-2006220063
-2000330053
-2006330022
-300532001220032
-300222003220072
-2001220013
-2003220033
-2007220073
-2001330054
-2003330054
-2007330054
-3005410042
-1004210002
-10002200432005320023
-2004340092
-2005340092
-2002340092
-40092 Ö
-10251004140131
-1004110001
-4013110001
-100012000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613005130052
-3005120071
-3005220071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140132
-2003140132
-401322000220062
-2000220003
-2006220063
-2000330053
-2006330022
-300532001220032
-300222003220072
-2001220013
-2003220033
-2007220073
-2001330054
-2003330054
-2007330054
-3005410042
-1004210002
-10002200432005320023
-2004340133
-2005340133
-2002340133
-40133 ˛
-10261005140201
-1005110011
-4020110011
-100112000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613000230003
-3000220071
-3000320071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140202
-2003140202
-402022000220062
-2000220003
-2006220063
-2000330001
-2006330052
-300012001220032
-300522003220072
-2001220013
-2003220033
-2007220073
-2001330064
-2003330064
-2007330064
-3006410052
-1005210012
-10012200432005320023
-2004340203
-20053
-2002340203
-40203 Ö
-10271007140251
-1007110001
-4025110001
-100012000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613005130052
-3005120071
-3005220071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140252
-2003140252
-402522000220062
-2000220003
-2006220063
-2000330053
-2006330022
-300532001220032
-300222003220072
-2001220013
-2003220033
-2007220073
-2001330054
-2003330054
-2007330054
-3005410072
-1007210002
-10002200432005320023
-2004340253
-2005340253
-2002340253
-40253 Ö
-10281007140261
-1007110021
-4026110021
-100212000120051
-2000120021
-2005120041
-2002120061
-2004120061
-200613000130012
-3000120071
-3001220071
-20071200422005220022
-20042
-200522001120031
-20022
-2001140262
-2003140262
-402622000220062
-2000220003
-2006220063
-2000330003
-2006330003
-300022001220032
-300032003220072
-2001220013
-2003220033
-2007220073
-2001330004
-2003330004
-2007330004
-3000410072
-1007210022
-10022200432005320023
-2004340263
-2005340263
-2002340263
-40263 
-102910061 
-103010061 
-103110041 
-103210041 
-103310051 
-10341005140321 
-10351004140331 
-10361005140341 
-10371004140351 
-10381004140351 
-10391004140351 
-10401005140321 
-10411004140331 
-10421005140341 
-10431005140321 
-10441004140331 
-10451005140341 
-10461004140351 
-10471004140351 
-10481004140351 
-10491004140351 
-10501004140351 
-10511004140351 
-10521004140351 
-10531004140351 
-10541004140351“"
-1001activity-default (08“7
-1002%pvp-1002-polygonMap-PolygonArena_0202 (08“7
-1003%pvp-1003-polygonMap-PolygonArena_0303 
-(08“,
-1004seasonPvp-weekly-rectangle 
-(08“7
-1005%pvp-1005-polygonMap-PolygonArena_0505 (08“7
-1006%pvp-1006-polygonMap-PolygonArena_0606 (08“7
-1007%pvp-1007-polygonMap-PolygonArena_0707 (08“7
-1008%pvp-1008-polygonMap-PolygonArena_0808 (08“7
-1009%pvp-1009-polygonMap-PolygonArena_0909 (08	“7
-1010%pvp-1010-polygonMap-PolygonArena_1010 (08
-“7
-1011%pvp-1011-polygonMap-PolygonArena_1111 (0	8“7
-1012%pvp-1012-polygonMap-PolygonArena_1212 (0	8“7
-1013%pvp-1013-polygonMap-PolygonArena_1313 (0	8“7
-1014%pvp-1014-polygonMap-PolygonArena_1414 (0	8“7
-1015%pvp-1015-polygonMap-PolygonArena_1515 (0	8“7
-1016%pvp-1016-polygonMap-PolygonArena_1516 (0	8“7
-1017%pvp-1017-polygonMap-PolygonArena_1617 (0	8“7
-1018%pvp-1018-polygonMap-PolygonArena_1718 (0	8“7
-1019%pvp-1019-polygonMap-PolygonArena_1819 (0	8“7
-1020%pvp-1020-polygonMap-PolygonArena_1920 (0	8‚q
-activity-defaultactivity1001"rectangleMap21001:1001B1001PXêî#®ˇˇˇˇˇˇˇˇˇ¿»Ø»·≠à“ƒÙè–Œ‹¸˘·ı∏¡Ú‚d
-default-1v1pvp1004"rectangleMap21004:1004B1004PXêÇ)®ˇˇˇˇˇˇˇˇˇ»‰¶†î≠˚∏Ï√–ÿØÍ•∞ﬁ£ˇø‚i
-pvp-1001-bridgeMappvp1001"	bridgeMap21001:1001B1001PXêî#®ˇˇˇˇˇˇˇˇˇ¿»Ü“Ùó„îí÷–Ù«€–ä¶»¥r‚k
-pvp-1001-circleMappvp1001"	circleMap21001:1001B1001PXêî#®ˇˇˇˇˇˇˇˇˇ¿»Ä˛¥¿∑Ω‡œ£–⁄€⁄ıˇÆØî∑‚p
-pvp-1001-rectangleMappvp1001"rectangleMap21001:1001B1001PXêî#®ˇˇˇˇˇˇˇˇˇ¿»Ê¢Ûûî±ñË]–Œ‹¸˘·ı∏¡Ú‚k
-pvp-1002-bridgeMappvp1002"	bridgeMap21002:1002B1002PXêé%®ˇˇˇˇˇˇˇˇˇ¿»çê˘√Û◊◊Æ‚–ˇÚÄÁ´â”éˆ‚j
-pvp-1002-circleMappvp1002"	circleMap21002:1002B1002PXêé%®ˇˇˇˇˇˇˇˇˇ¿»•æïÏÍâõ‡Y–ÛπûÔÑœ¶ˇÊ‚í
-%pvp-1002-polygonMap-PolygonArena_0202pvp1002"
-polygonMap*PolygonArena_020221002:1002B1002PXêé%®ˇˇˇˇˇˇˇˇˇ¿»ËæïÀ≠Ú‚©ﬁ–∫åßº—∏€ ù‚o
-pvp-1002-rectangleMappvp1002"rectangleMap21002:1002B1002PXêé%®ˇˇˇˇˇˇˇˇˇ¿»ıÂ∞ﬁÖ‚∑õ$–…€Âì≤óºæ<‚k
-pvp-1003-bridgeMappvp1003"	bridgeMap21003:1003B1003PXêà'®ˇˇˇˇˇˇˇˇˇ¿	»ÿÖ≠¡äÅÔå˘–≤ˆÁ®û∫ü°‚‚k
-pvp-1003-circleMappvp1003"	circleMap21003:1003B1003PXêà'®ˇˇˇˇˇˇˇˇˇ¿
-»ä‚…îˇÂ‘∏Ω–ÑÄ¿©ëùÿ÷´‚í
-%pvp-1003-polygonMap-PolygonArena_0203pvp1003"
-polygonMap*PolygonArena_020321003:1003B1003PXêà'®ˇˇˇˇˇˇˇˇˇ¿»˘µœ«û∆ˆú◊–≥Ó¯∏ä¶‘ ¡‚ê
-%pvp-1003-polygonMap-PolygonArena_0303pvp1003"
-polygonMap*PolygonArena_030321003:1003B1003PXêà'®ˇˇˇˇˇˇˇˇˇ¿»ß‡ÎáÕ÷˝øp–≈¨ìÅ«›ŒÌ4‚o
-pvp-1003-rectangleMappvp1003"rectangleMap21003:1003B1003PXêà'®ˇˇˇˇˇˇˇˇˇ¿»¯ÓµÅƒË‡h–¥Ú¥Î˜ÄÙ§È‚k
-pvp-1004-bridgeMappvp1004"	bridgeMap21004:1004B1004PXêÇ)®ˇˇˇˇˇˇˇˇˇ¿»∆èû¿‘ÖÁÛ§–Ù˛Î°πÕ”πÌ‚j
-pvp-1004-circleMappvp1004"	circleMap21004:1004B1004PXêÇ)®ˇˇˇˇˇˇˇˇˇ¿»º∞◊œúÿÔ«Ó–Í≤”ëπ¢õﬁy‚í
-%pvp-1004-polygonMap-PolygonArena_0204pvp1004"
-polygonMap*PolygonArena_020421004:1004B1004PXêÇ)®ˇˇˇˇˇˇˇˇˇ¿»∏≈Ä§ñ‡îÛÊ–Œ»æéùÏ¯ÇÛ‚í
-%pvp-1004-polygonMap-PolygonArena_0304pvp1004"
-polygonMap*PolygonArena_030421004:1004B1004PXêÇ)®ˇˇˇˇˇˇˇˇˇ¿»Ã–Ã§á“¸ˇ–‚÷õÎÆô≤®˝‚í
-%pvp-1004-polygonMap-PolygonArena_0404pvp1004"
-polygonMap*PolygonArena_040421004:1004B1004PXêÇ)®ˇˇˇˇˇˇˇˇˇ¿»Åâˇ≠ÛÈì‘Í–ßÔõØ“íô¢æ‚n
-pvp-1004-rectangleMappvp1004"rectangleMap21004:1004B1004PXêÇ)®ˇˇˇˇˇˇˇˇˇ»Ù˝√Ê®“«‚µ–ÿØÍ•∞ﬁ£ˇø‚j
-pvp-1005-bridgeMappvp1005"	bridgeMap21005:1005B1005PXê¸*®ˇˇˇˇˇˇˇˇˇ¿»ﬁÀ˜˘∫€Õ§€–ò⁄Íê˙Á’V‚i
-pvp-1005-circleMappvp1005"	circleMap21005:1005B1005PXê¸*®ˇˇˇˇˇˇˇˇˇ¿»á†©óŸıáÉ8–ÒÑôñ æ£ˇ%‚í
-%pvp-1005-polygonMap-PolygonArena_0205pvp1005"
-polygonMap*PolygonArena_020521005:1005B1005PXê¸*®ˇˇˇˇˇˇˇˇˇ¿»—Üı©≥Ú”∏¶–€æËªÁÇÌó¿‚ê
-%pvp-1005-polygonMap-PolygonArena_0305pvp1005"
-polygonMap*PolygonArena_030521005:1005B1005PXê¸*®ˇˇˇˇˇˇˇˇˇ¿»ã†ıë©œ◊!–ÒäÕñàíØ¢2‚í
-%pvp-1005-polygonMap-PolygonArena_0405pvp1005"
-polygonMap*PolygonArena_040521005:1005B1005PXê¸*®ˇˇˇˇˇˇˇˇˇ¿»™¨÷ÿ≠…¿ùæ–¥–é¥ﬂï‚Áã‚í
-%pvp-1005-polygonMap-PolygonArena_0505pvp1005"
-polygonMap*PolygonArena_050521005:1005B1005PXê¸*®ˇˇˇˇˇˇˇˇˇ¿»˙¸¬˛–§©∑ä–‰¸ûÒ˘†√ˇõ‚p
-pvp-1005-rectangleMappvp1005"rectangleMap21005:1005B1005PXê¸*®ˇˇˇˇˇˇˇˇˇ¿»¯Ï’ß›Œ„∆F–†ô∫ı˙ﬂ‰î˘‚i
-pvp-1006-bridgeMappvp1006"	bridgeMap21006:1005B1005PXêˆ,®ˇˇˇˇˇˇˇˇˇ¿»ŒÇüÛ€£‰Æ5–ò⁄Íê˙Á’V‚i
-pvp-1006-circleMappvp1006"	circleMap21006:1005B1005PXêˆ,®ˇˇˇˇˇˇˇˇˇ¿»∑ØÍÎ˚ë≠Ï@–ÒÑôñ æ£ˇ%‚ë
-%pvp-1006-polygonMap-PolygonArena_0206pvp1006"
-polygonMap*PolygonArena_020621006:1006B1006PXêˆ,®ˇˇˇˇˇˇˇˇˇ¿»±„ì“ù‡ΩØH–€æËªÁÇÌó¿‚ë
-%pvp-1006-polygonMap-PolygonArena_0306pvp1006"
-polygonMap*PolygonArena_030621006:1006B1006PXêˆ,®ˇˇˇˇˇˇˇˇˇ¿»ãÌÆŒìÕ¨Àõ–ÒäÕñàíØ¢2‚ë
-%pvp-1006-polygonMap-PolygonArena_0406pvp1006"
-polygonMap*PolygonArena_040621006:1006B1006PXêˆ,®ˇˇˇˇˇˇˇˇˇ¿» Äêä±åŒÔF–¥–é¥ﬂï‚Áã‚í
-%pvp-1006-polygonMap-PolygonArena_0506pvp1006"
-polygonMap*PolygonArena_050621006:1006B1006PXêˆ,®ˇˇˇˇˇˇˇˇˇ¿»∫íé≈À’£„–‰¸ûÒ˘†√ˇõ‚ë
-%pvp-1006-polygonMap-PolygonArena_0606pvp1006"
-polygonMap*PolygonArena_060621006:1006B1006PXêˆ,®ˇˇˇˇˇˇˇˇˇ¿»™•†…ßÉ°ÜJ–îÇ≤ë°‚ò˚á‚p
-pvp-1006-rectangleMappvp1006"rectangleMap21006:1005B1005PXêˆ,®ˇˇˇˇˇˇˇˇˇ¿»¸∞§—Ññóíx–†ô∫ı˙ﬂ‰î˘‚i
-pvp-1007-bridgeMappvp1007"	bridgeMap21007:1005B1005PXê.®ˇˇˇˇˇˇˇˇˇ¿»“ †«§àüñ–ò⁄Íê˙Á’V‚j
-pvp-1007-circleMappvp1007"	circleMap21007:1005B1005PXê.®ˇˇˇˇˇˇˇˇˇ¿»Éò…¨›∆Ç¥©–ÒÑôñ æ£ˇ%‚ë
-%pvp-1007-polygonMap-PolygonArena_0207pvp1007"
-polygonMap*PolygonArena_020721007:1007B1007PXê.®ˇˇˇˇˇˇˇˇˇ¿»µóÉπˆœúﬂ–€æËªÁÇÌó¿‚ë
-%pvp-1007-polygonMap-PolygonArena_0307pvp1007"
-polygonMap*PolygonArena_030721007:1007B1007PXê.®ˇˇˇˇˇˇˇˇˇ¿»ü≠õ—·å‚ÌŸ–ÒäÕñàíØ¢2‚í
-%pvp-1007-polygonMap-PolygonArena_0407pvp1007"
-polygonMap*PolygonArena_040721007:1007B1007PXê.®ˇˇˇˇˇˇˇˇˇ¿»˛µ˙âÕ· ∂∑–¥–é¥ﬂï‚Áã‚í
-%pvp-1007-polygonMap-PolygonArena_0507pvp1007"
-polygonMap*PolygonArena_050721007:1007B1007PXê.®ˇˇˇˇˇˇˇˇˇ¿»¶¬ßÈ€»±≈π–‰¸ûÒ˘†√ˇõ‚í
-%pvp-1007-polygonMap-PolygonArena_0607pvp1007"
-polygonMap*PolygonArena_060721007:1007B1007PXê.®ˇˇˇˇˇˇˇˇˇ¿»∂≠¶§ªöº˙ë–îÇ≤ë°‚ò˚á‚ë
-%pvp-1007-polygonMap-PolygonArena_0707pvp1007"
-polygonMap*PolygonArena_070721007:1007B1007PXê.®ˇˇˇˇˇˇˇˇˇ¿»ã√¯È¨ÍòÚO–çóÂ§Û§Âﬁ‚q
-pvp-1007-rectangleMappvp1007"rectangleMap21007:1005B1005PXê.®ˇˇˇˇˇˇˇˇˇ¿»îº≤’ø¶–ªœ–†ô∫ı˙ﬂ‰î˘‚j
-pvp-1008-bridgeMappvp1008"	bridgeMap21008:1005B1005PXêÍ0®ˇˇˇˇˇˇˇˇˇ¿»éﬁóÇ¸±≠Î–ò⁄Íê˙Á’V‚i
-pvp-1008-circleMappvp1008"	circleMap21008:1005B1005PXêÍ0®ˇˇˇˇˇˇˇˇˇ¿»ó˜Û¡ø≤„ÊJ–ÒÑôñ æ£ˇ%‚ë
-%pvp-1008-polygonMap-PolygonArena_0208pvp1008"
-polygonMap*PolygonArena_020821008:1008B1008PXêÍ0®ˇˇˇˇˇˇˇˇˇ¿»Å‚´æ‹◊≤é]–€æËªÁÇÌó¿‚ë
-%pvp-1008-polygonMap-PolygonArena_0308pvp1008"
-polygonMap*PolygonArena_030821008:1008B1008PXêÍ0®ˇˇˇˇˇˇˇˇˇ¿»õ¡¯Î™ß±˛–ÒäÕñàíØ¢2‚í
-%pvp-1008-polygonMap-PolygonArena_0408pvp1008"
-polygonMap*PolygonArena_040821008:1008B1008PXêÍ0®ˇˇˇˇˇˇˇˇˇ¿»˙Èµ≈¨Øÿ˘§–¥–é¥ﬂï‚Áã‚í
-%pvp-1008-polygonMap-PolygonArena_0508pvp1008"
-polygonMap*PolygonArena_050821008:1008B1008PXêÍ0®ˇˇˇˇˇˇˇˇˇ¿» ⁄≈ÍÎ«ë¨Æ–‰¸ûÒ˘†√ˇõ‚í
-%pvp-1008-polygonMap-PolygonArena_0608pvp1008"
-polygonMap*PolygonArena_060821008:1008B1008PXêÍ0®ˇˇˇˇˇˇˇˇˇ¿»˙˜õÑ◊∫ˇ©‘–îÇ≤ë°‚ò˚á‚ë
-%pvp-1008-polygonMap-PolygonArena_0708pvp1008"
-polygonMap*PolygonArena_070821008:1008B1008PXêÍ0®ˇˇˇˇˇˇˇˇˇ¿»∑◊ü¿—¡Ê‰U–çóÂ§Û§Âﬁ‚ë
-%pvp-1008-polygonMap-PolygonArena_0808pvp1008"
-polygonMap*PolygonArena_080821008:1008B1008PXêÍ0®ˇˇˇˇˇˇˇˇˇ¿»ûÌìâÚ’¯ë˜–®¨á·ÙáÇÚK‚p
-pvp-1008-rectangleMappvp1008"rectangleMap21008:1005B1005PXêÍ0®ˇˇˇˇˇˇˇˇˇ¿»ú⁄Êü¬—èòG–†ô∫ı˙ﬂ‰î˘‚j
-pvp-1009-bridgeMappvp1009"	bridgeMap21009:1005B1005PXê‰2®ˇˇˇˇˇˇˇˇˇ¿»ÆòÁÌ¬Œ§ë†–ò⁄Íê˙Á’V‚i
-pvp-1009-circleMappvp1009"	circleMap21009:1005B1005PXê‰2®ˇˇˇˇˇˇˇˇˇ¿»∑„•¯ÅÂ˙‚)–ÒÑôñ æ£ˇ%‚ë
-%pvp-1009-polygonMap-PolygonArena_0209pvp1009"
-polygonMap*PolygonArena_020921009:1009B1009PXê‰2®ˇˇˇˇˇˇˇˇˇ¿»±†ÚÒù‰˘å"–€æËªÁÇÌó¿‚ê
-%pvp-1009-polygonMap-PolygonArena_0309pvp1009"
-polygonMap*PolygonArena_030921009:1009B1009PXê‰2®ˇˇˇˇˇˇˇˇˇ¿»Î—œ⁄∂¸ßÑ–ÒäÕñàíØ¢2‚í
-%pvp-1009-polygonMap-PolygonArena_0409pvp1009"
-polygonMap*PolygonArena_040921009:1009B1009PXê‰2®ˇˇˇˇˇˇˇˇˇ¿»äéÊ√ö¯±êˇ–¥–é¥ﬂï‚Áã‚í
-%pvp-1009-polygonMap-PolygonArena_0509pvp1009"
-polygonMap*PolygonArena_050921009:1009B1009PXê‰2®ˇˇˇˇˇˇˇˇˇ¿»öÏØáˆ∏†¸À–‰¸ûÒ˘†√ˇõ‚ë
-%pvp-1009-polygonMap-PolygonArena_0609pvp1009"
-polygonMap*PolygonArena_060921009:1009B1009PXê‰2®ˇˇˇˇˇˇˇˇˇ¿»™ÕïáÙ˜‡∑–îÇ≤ë°‚ò˚á‚í
-%pvp-1009-polygonMap-PolygonArena_0709pvp1009"
-polygonMap*PolygonArena_070921009:1009B1009PXê‰2®ˇˇˇˇˇˇˇˇˇ¿»á¸¡£á˚˝¯–çóÂ§Û§Âﬁ‚ë
-%pvp-1009-polygonMap-PolygonArena_0809pvp1009"
-polygonMap*PolygonArena_080921009:1009B1009PXê‰2®ˇˇˇˇˇˇˇˇˇ¿»ŒÃƒ—Ωº≤ƒ–®¨á·ÙáÇÚK‚ë
-%pvp-1009-polygonMap-PolygonArena_0909pvp1009"
-polygonMap*PolygonArena_090921009:1009B1009PXê‰2®ˇˇˇˇˇˇˇˇˇ¿»ÜÇÇôÒœ–Î¶–ƒöøÓÿû÷Ó3‚p
-pvp-1009-rectangleMappvp1009"rectangleMap21009:1005B1005PXê‰2®ˇˇˇˇˇˇˇˇˇ¿»ÿÊıáú⁄û„–†ô∫ı˙ﬂ‰î˘‚i
-pvp-1010-bridgeMappvp1010"	bridgeMap21010:1005B1005PXêﬁ4®ˇˇˇˇˇˇˇˇˇ¿»≠≥˜∞—π◊ô–ò⁄Íê˙Á’V‚i
-pvp-1010-circleMappvp1010"	circleMap21010:1005B1005PXêﬁ4®ˇˇˇˇˇˇˇˇˇ¿»Ùöß„ª∆Ωªm–ÒÑôñ æ£ˇ%‚ë
-%pvp-1010-polygonMap-PolygonArena_0210pvp1010"
-polygonMap*PolygonArena_021021010:1010B1010PXêﬁ4®ˇˇˇˇˇˇˇˇˇ¿»Üò≤†∞—·¥j–€æËªÁÇÌó¿‚ê
-%pvp-1010-polygonMap-PolygonArena_0310pvp1010"
-polygonMap*PolygonArena_031021010:1010B1010PXêﬁ4®ˇˇˇˇˇˇˇˇˇ¿»ò ˜ˇ¶è¥∫m–ÒäÕñàíØ¢2‚í
-%pvp-1010-polygonMap-PolygonArena_0410pvp1010"
-polygonMap*PolygonArena_041021010:1010B1010PXêﬁ4®ˇˇˇˇˇˇˇˇˇ¿»≠®ÅçÚ©ö—’–¥–é¥ﬂï‚Áã‚ë
-%pvp-1010-polygonMap-PolygonArena_0510pvp1010"
-polygonMap*PolygonArena_051021010:1010B1010PXêﬁ4®ˇˇˇˇˇˇˇˇˇ¿»•ï¡ŸˆïÉﬂ'–‰¸ûÒ˘†√ˇõ‚ë
-%pvp-1010-polygonMap-PolygonArena_0610pvp1010"
-polygonMap*PolygonArena_061021010:1010B1010PXêﬁ4®ˇˇˇˇˇˇˇˇˇ¿»ÅßÿÖç’¶›–îÇ≤ë°‚ò˚á‚í
-%pvp-1010-polygonMap-PolygonArena_0710pvp1010"
-polygonMap*PolygonArena_071021010:1010B1010PXêﬁ4®ˇˇˇˇˇˇˇˇˇ¿»¨¶„Å∆¡†⁄æ–çóÂ§Û§Âﬁ‚ë
-%pvp-1010-polygonMap-PolygonArena_0810pvp1010"
-polygonMap*PolygonArena_081021010:1010B1010PXêﬁ4®ˇˇˇˇˇˇˇˇˇ¿»’„ëÿ¥Ï¿òù–®¨á·ÙáÇÚK‚ë
-%pvp-1010-polygonMap-PolygonArena_0910pvp1010"
-polygonMap*PolygonArena_091021010:1010B1010PXêﬁ4®ˇˇˇˇˇˇˇˇˇ¿»•Ì‹∂«˜œÖø–ƒöøÓÿû÷Ó3‚ë
-%pvp-1010-polygonMap-PolygonArena_1010pvp1010"
-polygonMap*PolygonArena_101021010:1010B1010PXêﬁ4®ˇˇˇˇˇˇˇˇˇ¿»ò«ÙÆâ›√Ís–Ÿı¶ÛçÚæπƒ‚p
-pvp-1010-rectangleMappvp1010"rectangleMap21010:1005B1005PXêﬁ4®ˇˇˇˇˇˇˇˇˇ¿»ì¡ñÊäãêõo–†ô∫ı˙ﬂ‰î˘‚j
-pvp-1011-bridgeMappvp1011"	bridgeMap21011:1005B1005PXêÿ6®ˇˇˇˇˇˇˇˇˇ¿»±ÙˇÔÿÛ∞ü–ò⁄Íê˙Á’V‚i
-pvp-1011-circleMappvp1011"	circleMap21011:1005B1005PXêÿ6®ˇˇˇˇˇˇˇˇˇ¿»êò†ï ˘Ëu–ÒÑôñ æ£ˇ%‚í
-%pvp-1011-polygonMap-PolygonArena_0211pvp1011"
-polygonMap*PolygonArena_021121011:1011B1011PXêÿ6®ˇˇˇˇˇˇˇˇˇ¿» Õ◊é∫¬óÍå–€æËªÁÇÌó¿‚ë
-%pvp-1011-polygonMap-PolygonArena_0311pvp1011"
-polygonMap*PolygonArena_031121011:1011B1011PXêÿ6®ˇˇˇˇˇˇˇˇˇ¿»Ã∞ÏıÎ‘ñ›Â–ÒäÕñàíØ¢2‚ë
-%pvp-1011-polygonMap-PolygonArena_0411pvp1011"
-polygonMap*PolygonArena_041121011:1011B1011PXêÿ6®ˇˇˇˇˇˇˇˇˇ¿»±ãÇÎπó◊©D–¥–é¥ﬂï‚Áã‚ë
-%pvp-1011-polygonMap-PolygonArena_0511pvp1011"
-polygonMap*PolygonArena_051121011:1011B1011PXêÿ6®ˇˇˇˇˇˇˇˇˇ¿»¡ßúªÌúÙ›"–‰¸ûÒ˘†√ˇõ‚í
-%pvp-1011-polygonMap-PolygonArena_0611pvp1011"
-polygonMap*PolygonArena_061121011:1011B1011PXêÿ6®ˇˇˇˇˇˇˇˇˇ¿»ÌŸŒ‘™ﬁÏ®∂–îÇ≤ë°‚ò˚á‚í
-%pvp-1011-polygonMap-PolygonArena_0711pvp1011"
-polygonMap*PolygonArena_071121011:1011B1011PXêÿ6®ˇˇˇˇˇˇˇˇˇ¿»¿ïÁﬂ˜·Ωƒã–çóÂ§Û§Âﬁ‚ê
-%pvp-1011-polygonMap-PolygonArena_0811pvp1011"
-polygonMap*PolygonArena_081121011:1011B1011PXêÿ6®ˇˇˇˇˇˇˇˇˇ¿»°π…‘Ïï÷öB–®¨á·ÙáÇÚK‚ê
-%pvp-1011-polygonMap-PolygonArena_0911pvp1011"
-polygonMap*PolygonArena_091121011:1011B1011PXêÿ6®ˇˇˇˇˇˇˇˇˇ¿»Ÿø¿ñ≥›Íú.–ƒöøÓÿû÷Ó3‚ë
-%pvp-1011-polygonMap-PolygonArena_1011pvp1011"
-polygonMap*PolygonArena_101121011:1011B1011PXêÿ6®ˇˇˇˇˇˇˇˇˇ¿»Ù¥¨‘ÿ¥±Ô$–Ÿı¶ÛçÚæπƒ‚ë
-%pvp-1011-polygonMap-PolygonArena_1111pvp1011"
-polygonMap*PolygonArena_111121011:1011B1011PXêÿ6®ˇˇˇˇˇˇˇˇˇ¿»’®∞û†ÎÌ„]–‘≈Àèö˙Ö¸‚p
-pvp-1011-rectangleMappvp1011"rectangleMap21011:1005B1005PXêÿ6®ˇˇˇˇˇˇˇˇˇ¿»€∞˝ÈΩÑÎÏ–†ô∫ı˙ﬂ‰î˘‚i
-pvp-1012-bridgeMappvp1012"	bridgeMap21012:1005B1005PXê“8®ˇˇˇˇˇˇˇˇˇ¿»Ö∂ﬂ∏°Ω∂¨q–ò⁄Íê˙Á’V‚j
-pvp-1012-circleMappvp1012"	circleMap21012:1005B1005PXê“8®ˇˇˇˇˇˇˇˇˇ¿»åÖøÈ¬éè£ã–ÒÑôñ æ£ˇ%‚í
-%pvp-1012-polygonMap-PolygonArena_0212pvp1012"
-polygonMap*PolygonArena_021221012:1012B1012PXê“8®ˇˇˇˇˇˇˇˇˇ¿»˛˜Ô◊ﬁÃÍè˛–€æËªÁÇÌó¿‚ê
-%pvp-1012-polygonMap-PolygonArena_0312pvp1012"
-polygonMap*PolygonArena_031221012:1012B1012PXê“8®ˇˇˇˇˇˇˇˇˇ¿»É≥Ç∞ôæÂ–ÒäÕñàíØ¢2‚ë
-%pvp-1012-polygonMap-PolygonArena_0412pvp1012"
-polygonMap*PolygonArena_041221012:1012B1012PXê“8®ˇˇˇˇˇˇˇˇˇ¿»ıã®¶˛µ¶Å.–¥–é¥ﬂï‚Áã‚í
-%pvp-1012-polygonMap-PolygonArena_0512pvp1012"
-polygonMap*PolygonArena_051221012:1012B1012PXê“8®ˇˇˇˇˇˇˇˇˇ¿»˝¯ˆ‰ßîù⁄∫–‰¸ûÒ˘†√ˇõ‚ë
-%pvp-1012-polygonMap-PolygonArena_0612pvp1012"
-polygonMap*PolygonArena_061221012:1012B1012PXê“8®ˇˇˇˇˇˇˇˇˇ¿»ŸÇ’â†‚Ç±n–îÇ≤ë°‚ò˚á‚í
-%pvp-1012-polygonMap-PolygonArena_0712pvp1012"
-polygonMap*PolygonArena_071221012:1012B1012PXê“8®ˇˇˇˇˇˇˇˇˇ¿»¥¸ÅÂ‚«øΩÊ–çóÂ§Û§Âﬁ‚ê
-%pvp-1012-polygonMap-PolygonArena_0812pvp1012"
-polygonMap*PolygonArena_081221012:1012B1012PXê“8®ˇˇˇˇˇˇˇˇˇ¿»ùçÉ≥„ÌÎ£o–®¨á·ÙáÇÚK‚ë
-%pvp-1012-polygonMap-PolygonArena_0912pvp1012"
-polygonMap*PolygonArena_091221012:1012B1012PXê“8®ˇˇˇˇˇˇˇˇˇ¿»ù¸¢ÏÕ√Ñˆà–ƒöøÓÿû÷Ó3‚ë
-%pvp-1012-polygonMap-PolygonArena_1012pvp1012"
-polygonMap*PolygonArena_101221012:1012B1012PXê“8®ˇˇˇˇˇˇˇˇˇ¿»‡ÈÊˇÉÀ÷˝t–Ÿı¶ÛçÚæπƒ‚ë
-%pvp-1012-polygonMap-PolygonArena_1112pvp1012"
-polygonMap*PolygonArena_111221012:1012B1012PXê“8®ˇˇˇˇˇˇˇˇˇ¿»°ƒ◊¢ˆ˝≈Ω{–‘≈Àèö˙Ö¸‚ë
-%pvp-1012-polygonMap-PolygonArena_1212pvp1012"
-polygonMap*PolygonArena_121221012:1012B1012PXê“8®ˇˇˇˇˇˇˇˇˇ¿»§Ìˆåˆ Òâ√–ë»¯∑ä—Îé‚p
-pvp-1012-rectangleMappvp1012"rectangleMap21012:1005B1005PXê“8®ˇˇˇˇˇˇˇˇˇ¿»ªìíé»ø⁄ì)–†ô∫ı˙ﬂ‰î˘‚j
-pvp-1013-bridgeMappvp1013"	bridgeMap21013:1005B1005PXê“8®ˇˇˇˇˇˇˇˇˇ¿»–óÔèäŸ¥œ¬–ò⁄Íê˙Á’V‚j
-pvp-1013-circleMappvp1013"	circleMap21013:1005B1005PXê“8®ˇˇˇˇˇˇˇˇˇ¿»˘ÌªãäÎ˛‚±–ÒÑôñ æ£ˇ%‚ë
-%pvp-1013-polygonMap-PolygonArena_0213pvp1013"
-polygonMap*PolygonArena_021321013:1013B1013PXê“8®ˇˇˇˇˇˇˇˇˇ¿»õéªæïâÓ>–€æËªÁÇÌó¿‚ë
-%pvp-1013-polygonMap-PolygonArena_0313pvp1013"
-polygonMap*PolygonArena_031321013:1013B1013PXê“8®ˇˇˇˇˇˇˇˇˇ¿»—ÿ¥ÄÙåú‹ú–ÒäÕñàíØ¢2‚ë
-%pvp-1013-polygonMap-PolygonArena_0413pvp1013"
-polygonMap*PolygonArena_041321013:1013B1013PXê“8®ˇˇˇˇˇˇˇˇˇ¿»‘ßÎ˛òŒ„◊p–¥–é¥ﬂï‚Áã‚ë
-%pvp-1013-polygonMap-PolygonArena_0513pvp1013"
-polygonMap*PolygonArena_051321013:1013B1013PXê“8®ˇˇˇˇˇˇˇˇˇ¿»‰–‚©áÑ∆˘–‰¸ûÒ˘†√ˇõ‚í
-%pvp-1013-polygonMap-PolygonArena_0613pvp1013"
-polygonMap*PolygonArena_061321013:1013B1013PXê“8®ˇˇˇˇˇˇˇˇˇ¿»Ù…‘˘ﬂ”ˆ≠Õ–îÇ≤ë°‚ò˚á‚ë
-%pvp-1013-polygonMap-PolygonArena_0713pvp1013"
-polygonMap*PolygonArena_071321013:1013B1013PXê“8®ˇˇˇˇˇˇˇˇˇ¿»Ì◊ŒÌœÜ’—+–çóÂ§Û§Âﬁ‚ê
-%pvp-1013-polygonMap-PolygonArena_0813pvp1013"
-polygonMap*PolygonArena_081321013:1013B1013PXê“8®ˇˇˇˇˇˇˇˇˇ¿»»Î„√ ’è¥–®¨á·ÙáÇÚK‚ë
-%pvp-1013-polygonMap-PolygonArena_0913pvp1013"
-polygonMap*PolygonArena_091321013:1013B1013PXê“8®ˇˇˇˇˇˇˇˇˇ¿»ƒ•‘îΩÑËŒ∑–ƒöøÓÿû÷Ó3‚ë
-%pvp-1013-polygonMap-PolygonArena_1013pvp1013"
-polygonMap*PolygonArena_101321013:1013B1013PXê“8®ˇˇˇˇˇˇˇˇˇ¿»πåÀËåÛì…5–Ÿı¶ÛçÚæπƒ‚ë
-%pvp-1013-polygonMap-PolygonArena_1113pvp1013"
-polygonMap*PolygonArena_111321013:1013B1013PXê“8®ˇˇˇˇˇˇˇˇˇ¿»îÍÑ±¸ â¯–‘≈Àèö˙Ö¸‚ë
-%pvp-1013-polygonMap-PolygonArena_1213pvp1013"
-polygonMap*PolygonArena_121321013:1013B1013PXê“8®ˇˇˇˇˇˇˇˇˇ¿»±ÌÎÒ¬È®øÃ–ë»¯∑ä—Îé‚ë
-%pvp-1013-polygonMap-PolygonArena_1313pvp1013"
-polygonMap*PolygonArena_131321013:1013B1013PXê“8®ˇˇˇˇˇˇˇˇˇ¿»±ìŒ ˇä˙·í–ë»¯∑ä—Îé‚p
-pvp-1013-rectangleMappvp1013"rectangleMap21013:1005B1005PXê“8®ˇˇˇˇˇˇˇˇˇ¿»∂Ì£óõõ≠—{–†ô∫ı˙ﬂ‰î˘‚i
-pvp-1014-bridgeMappvp1014"	bridgeMap21014:1005B1005PXê“8®ˇˇˇˇˇˇˇˇˇ¿»£Ò¿Ä©ﬂÙ∫A–ò⁄Íê˙Á’V‚i
-pvp-1014-circleMappvp1014"	circleMap21014:1005B1005PXê“8®ˇˇˇˇˇˇˇˇˇ¿»™ √ßÚ˛ü‹–ÒÑôñ æ£ˇ%‚í
-%pvp-1014-polygonMap-PolygonArena_0214pvp1014"
-polygonMap*PolygonArena_021421014:1014B1014PXê“8®ˇˇˇˇˇˇˇˇˇ¿»îÚ¢¡≠«ÁÀÚ–€æËªÁÇÌó¿‚ë
-%pvp-1014-polygonMap-PolygonArena_0314pvp1014"
-polygonMap*PolygonArena_031421014:1014B1014PXê“8®ˇˇˇˇˇˇˇˇˇ¿»˙ª∏î’˛ï±ó–ÒäÕñàíØ¢2‚ë
-%pvp-1014-polygonMap-PolygonArena_0414pvp1014"
-polygonMap*PolygonArena_041421014:1014B1014PXê“8®ˇˇˇˇˇˇˇˇˇ¿»ÉÓ«•Ë —Ü–¥–é¥ﬂï‚Áã‚ë
-%pvp-1014-polygonMap-PolygonArena_0514pvp1014"
-polygonMap*PolygonArena_051421014:1014B1014PXê“8®ˇˇˇˇˇˇˇˇˇ¿»õ®ßÑã”¥√j–‰¸ûÒ˘†√ˇõ‚ë
-%pvp-1014-polygonMap-PolygonArena_0614pvp1014"
-polygonMap*PolygonArena_061421014:1014B1014PXê“8®ˇˇˇˇˇˇˇˇˇ¿»◊ÜÅÓïµØ˛–îÇ≤ë°‚ò˚á‚í
-%pvp-1014-polygonMap-PolygonArena_0714pvp1014"
-polygonMap*PolygonArena_071421014:1014B1014PXê“8®ˇˇˇˇˇˇˇˇˇ¿»ˆ‡´öÙÚÑÍå–çóÂ§Û§Âﬁ‚ë
-%pvp-1014-polygonMap-PolygonArena_0814pvp1014"
-polygonMap*PolygonArena_081421014:1014B1014PXê“8®ˇˇˇˇˇˇˇˇˇ¿»≥¶Áüëå„©˘–®¨á·ÙáÇÚK‚ê
-%pvp-1014-polygonMap-PolygonArena_0914pvp1014"
-polygonMap*PolygonArena_091421014:1014B1014PXê“8®ˇˇˇˇˇˇˇˇˇ¿»ˇ˜‹…≤äÈád–ƒöøÓÿû÷Ó3‚í
-%pvp-1014-polygonMap-PolygonArena_1014pvp1014"
-polygonMap*PolygonArena_101421014:1014B1014PXê“8®ˇˇˇˇˇˇˇˇˇ¿»⁄Â∞ë≤¿à›±–Ÿı¶ÛçÚæπƒ‚í
-%pvp-1014-polygonMap-PolygonArena_1114pvp1014"
-polygonMap*PolygonArena_111421014:1014B1014PXê“8®ˇˇˇˇˇˇˇˇˇ¿»”ŒñÂ‡†Ú˛∆–‘≈Àèö˙Ö¸‚ê
-%pvp-1014-polygonMap-PolygonArena_1214pvp1014"
-polygonMap*PolygonArena_121421014:1014B1014PXê“8®ˇˇˇˇˇˇˇˇˇ¿»Í∏ŸÀÛ¡›±N–ë»¯∑ä—Îé‚ê
-%pvp-1014-polygonMap-PolygonArena_1314pvp1014"
-polygonMap*PolygonArena_131421014:1014B1014PXê“8®ˇˇˇˇˇˇˇˇˇ¿» ¡–¥‘®Î–ë»¯∑ä—Îé‚ë
-%pvp-1014-polygonMap-PolygonArena_1414pvp1014"
-polygonMap*PolygonArena_141421014:1014B1014PXê“8®ˇˇˇˇˇˇˇˇˇ¿»Í‡‡ÿ¥éµ¸ô–ë»¯∑ä—Îé‚q
-pvp-1014-rectangleMappvp1014"rectangleMap21014:1005B1005PXê“8®ˇˇˇˇˇˇˇˇˇ¿»—é“õ¡´≥Ë˚–†ô∫ı˙ﬂ‰î˘‚i
-pvp-1015-bridgeMappvp1015"	bridgeMap21015:1005B1005PXê“8®ˇˇˇˇˇˇˇˇˇ¿»ŒÔÔ√—ÌÇ˚]–ò⁄Íê˙Á’V‚i
-pvp-1015-circleMappvp1015"	circleMap21015:1005B1005PXê“8®ˇˇˇˇˇˇˇˇˇ¿»óØºíÈñı§–ÒÑôñ æ£ˇ%‚ë
-%pvp-1015-polygonMap-PolygonArena_0215pvp1015"
-polygonMap*PolygonArena_021521015:1015B1015PXê“8®ˇˇˇˇˇˇˇˇˇ¿»°⁄ºÖÁ¿⁄ÆN–€æËªÁÇÌó¿‚ê
-%pvp-1015-polygonMap-PolygonArena_0315pvp1015"
-polygonMap*PolygonArena_031521015:1015B1015PXê“8®ˇˇˇˇˇˇˇˇˇ¿»ª‡◊Åëú©ñb–ÒäÕñàíØ¢2‚í
-%pvp-1015-polygonMap-PolygonArena_0415pvp1015"
-polygonMap*PolygonArena_041521015:1015B1015PXê“8®ˇˇˇˇˇˇˇˇˇ¿»öœ«®‘ŸŒ¨ö–¥–é¥ﬂï‚Áã‚í
-%pvp-1015-polygonMap-PolygonArena_0515pvp1015"
-polygonMap*PolygonArena_051521015:1015B1015PXê“8®ˇˇˇˇˇˇˇˇˇ¿»™¶“êëèª†ÿ–‰¸ûÒ˘†√ˇõ‚ë
-%pvp-1015-polygonMap-PolygonArena_0615pvp1015"
-polygonMap*PolygonArena_061521015:1015B1015PXê“8®ˇˇˇˇˇˇˇˇˇ¿»öƒ√ÅÕ·Å∂#–îÇ≤ë°‚ò˚á‚ë
-%pvp-1015-polygonMap-PolygonArena_0715pvp1015"
-polygonMap*PolygonArena_071521015:1015B1015PXê“8®ˇˇˇˇˇˇˇˇˇ¿»◊î∞∂†ÓÕ©Z–çóÂ§Û§Âﬁ‚ë
-%pvp-1015-polygonMap-PolygonArena_0815pvp1015"
-polygonMap*PolygonArena_081521015:1015B1015PXê“8®ˇˇˇˇˇˇˇˇˇ¿»æ»˛€ø—Üπñ–®¨á·ÙáÇÚK‚ë
-%pvp-1015-polygonMap-PolygonArena_0915pvp1015"
-polygonMap*PolygonArena_091521015:1015B1015PXê“8®ˇˇˇˇˇˇˇˇˇ¿»∂–·˛øÉœ˘±–ƒöøÓÿû÷Ó3‚ë
-%pvp-1015-polygonMap-PolygonArena_1015pvp1015"
-polygonMap*PolygonArena_101521015:1015B1015PXê“8®ˇˇˇˇˇˇˇˇˇ¿»√ëË∫Ä∆ö´,–Ÿı¶ÛçÚæπƒ‚ë
-%pvp-1015-polygonMap-PolygonArena_1115pvp1015"
-polygonMap*PolygonArena_111521015:1015B1015PXê“8®ˇˇˇˇˇˇˇˇˇ¿»é‰≤•ı…ŒÔ–‘≈Àèö˙Ö¸‚ë
-%pvp-1015-polygonMap-PolygonArena_1215pvp1015"
-polygonMap*PolygonArena_121521015:1015B1015PXê“8®ˇˇˇˇˇˇˇˇˇ¿»èããÁíô©ı—–ë»¯∑ä—Îé‚ê
-%pvp-1015-polygonMap-PolygonArena_1315pvp1015"
-polygonMap*PolygonArena_131521015:1015B1015PXê“8®ˇˇˇˇˇˇˇˇˇ¿»èΩá˙ùÇå«{–ë»¯∑ä—Îé‚ë
-%pvp-1015-polygonMap-PolygonArena_1415pvp1015"
-polygonMap*PolygonArena_141521015:1015B1015PXê“8®ˇˇˇˇˇˇˇˇˇ¿»èº£÷πÉ»∏–ë»¯∑ä—Îé‚ë
-%pvp-1015-polygonMap-PolygonArena_1515pvp1015"
-polygonMap*PolygonArena_151521015:1015B1015PXê“8®ˇˇˇˇˇˇˇˇˇ¿»èÂµ®±”ˇ‹É–ë»¯∑ä—Îé‚q
-pvp-1015-rectangleMappvp1015"rectangleMap21015:1005B1005PXê“8®ˇˇˇˇˇˇˇˇˇ¿»¥Ñô«Ê®—ÕÜ–†ô∫ı˙ﬂ‰î˘‚j
-pvp-1016-bridgeMappvp1016"	bridgeMap21016:1005B1005PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»òæì¨Ωˆ“ –ò⁄Íê˙Á’V‚j
-pvp-1016-circleMappvp1016"	circleMap21016:1005B1005PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»Å…íàŸÈ€Í–ÒÑôñ æ£ˇ%‚í
-%pvp-1016-polygonMap-PolygonArena_0216pvp1016"
-polygonMap*PolygonArena_021621016:1016B1016PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»Éáñ⁄ô¢•Öá–€æËªÁÇÌó¿‚ë
-%pvp-1016-polygonMap-PolygonArena_0316pvp1016"
-polygonMap*PolygonArena_031621016:1016B1016PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»ôª¿ÊµﬁäΩë–ÒäÕñàíØ¢2‚í
-%pvp-1016-polygonMap-PolygonArena_0416pvp1016"
-polygonMap*PolygonArena_041621016:1016B1016PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»¨·…ÿàÿñûÂ–¥–é¥ﬂï‚Áã‚ë
-%pvp-1016-polygonMap-PolygonArena_0516pvp1016"
-polygonMap*PolygonArena_051621016:1016B1016PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»¨ÎﬁΩ»Êﬁ¥–‰¸ûÒ˘†√ˇõ‚í
-%pvp-1016-polygonMap-PolygonArena_0616pvp1016"
-polygonMap*PolygonArena_061621016:1016B1016PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»¸ôàïÒ’¯ö≠–îÇ≤ë°‚ò˚á‚ë
-%pvp-1016-polygonMap-PolygonArena_0716pvp1016"
-polygonMap*PolygonArena_071621016:1016B1016PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»•Îçµæªúó?–çóÂ§Û§Âﬁ‚ë
-%pvp-1016-polygonMap-PolygonArena_0816pvp1016"
-polygonMap*PolygonArena_081621016:1016B1016PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»†ÕË´„êéÏÑ–®¨á·ÙáÇÚK‚ê
-%pvp-1016-polygonMap-PolygonArena_0916pvp1016"
-polygonMap*PolygonArena_091621016:1016B1016PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»Ã·ã•≥ÜµÀ	–ƒöøÓÿû÷Ó3‚ë
-%pvp-1016-polygonMap-PolygonArena_1016pvp1016"
-polygonMap*PolygonArena_101621016:1016B1016PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»—çÇ‚≈ ®¿$–Ÿı¶ÛçÚæπƒ‚ë
-%pvp-1016-polygonMap-PolygonArena_1116pvp1016"
-polygonMap*PolygonArena_111621016:1016B1016PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»Ï‰üôÛ«∑_–‘≈Àèö˙Ö¸‚ê
-%pvp-1016-polygonMap-PolygonArena_1216pvp1016"
-polygonMap*PolygonArena_121621016:1016B1016PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»©ﬁ‚Ωﬂà±à=–ë»¯∑ä—Îé‚ê
-%pvp-1016-polygonMap-PolygonArena_1316pvp1016"
-polygonMap*PolygonArena_131621016:1016B1016PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»â∂ﬁÇìäÂ•I–ë»¯∑ä—Îé‚ê
-%pvp-1016-polygonMap-PolygonArena_1416pvp1016"
-polygonMap*PolygonArena_141621016:1016B1016PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»Èù™∫øÌ¸ùl–ë»¯∑ä—Îé‚ë
-%pvp-1016-polygonMap-PolygonArena_1516pvp1016"
-polygonMap*PolygonArena_151621016:1016B1016PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»…É÷ç–æÆÕÖ–ë»¯∑ä—Îé‚í
-%pvp-1016-polygonMap-PolygonArena_1616pvp1016"
-polygonMap*PolygonArena_161621016:1016B1016PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿ »πê∏çÂ…˙ˆÖ–·ÌÀ€ú˛ŸÃà‚p
-pvp-1016-rectangleMappvp1016"rectangleMap21016:1005B1005PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»™Ç—Éì˜”›:–†ô∫ı˙ﬂ‰î˘‚j
-pvp-1017-bridgeMappvp1017"	bridgeMap21017:1005B1005PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»©˜›Ë…£◊ß∆–ò⁄Íê˙Á’V‚i
-pvp-1017-circleMappvp1017"	circleMap21017:1005B1005PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»ËŒ ≤Ö≥Î®%–ÒÑôñ æ£ˇ%‚í
-%pvp-1017-polygonMap-PolygonArena_0217pvp1017"
-polygonMap*PolygonArena_021721017:1017B1017PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»“‰≠é‘Ñƒ¡â–€æËªÁÇÌó¿‚ê
-%pvp-1017-polygonMap-PolygonArena_0317pvp1017"
-polygonMap*PolygonArena_031721017:1017B1017PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»Ù–◊®ˇ¶ÊË-–ÒäÕñàíØ¢2‚ë
-%pvp-1017-polygonMap-PolygonArena_0417pvp1017"
-polygonMap*PolygonArena_041721017:1017B1017PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»È≠ÍÇéŒ˝˘9–¥–é¥ﬂï‚Áã‚ë
-%pvp-1017-polygonMap-PolygonArena_0517pvp1017"
-polygonMap*PolygonArena_051721017:1017B1017PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»âﬁŸÌ™ﬁà…I–‰¸ûÒ˘†√ˇõ‚ë
-%pvp-1017-polygonMap-PolygonArena_0617pvp1017"
-polygonMap*PolygonArena_061721017:1017B1017PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»ıû∞”ÎﬁÈ¬A–îÇ≤ë°‚ò˚á‚ë
-%pvp-1017-polygonMap-PolygonArena_0717pvp1017"
-polygonMap*PolygonArena_071721017:1017B1017PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»∏âè¬ù¬ﬁ 
-–çóÂ§Û§Âﬁ‚ë
-%pvp-1017-polygonMap-PolygonArena_0817pvp1017"
-polygonMap*PolygonArena_081721017:1017B1017PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»Ÿ¨Ãò—ÏÿΩï–®¨á·ÙáÇÚK‚ê
-%pvp-1017-polygonMap-PolygonArena_0917pvp1017"
-polygonMap*PolygonArena_091721017:1017B1017PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»Å¸Ü™∑œŒπ–ƒöøÓÿû÷Ó3‚ë
-%pvp-1017-polygonMap-PolygonArena_1017pvp1017"
-polygonMap*PolygonArena_101721017:1017B1017PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»ÃÑºËõÏ¡ô-–Ÿı¶ÛçÚæπƒ‚ë
-%pvp-1017-polygonMap-PolygonArena_1117pvp1017"
-polygonMap*PolygonArena_111721017:1017B1017PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»çƒ¢«¬ä»—s–‘≈Àèö˙Ö¸‚ë
-%pvp-1017-polygonMap-PolygonArena_1217pvp1017"
-polygonMap*PolygonArena_121721017:1017B1017PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»†±í¶æÏåıà–ë»¯∑ä—Îé‚è
-%pvp-1017-polygonMap-PolygonArena_1317pvp1017"
-polygonMap*PolygonArena_131721017:1017B1017PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»†∑ØºÑ¨†v–ë»¯∑ä—Îé‚ë
-%pvp-1017-polygonMap-PolygonArena_1417pvp1017"
-polygonMap*PolygonArena_141721017:1017B1017PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»‡ÎÍ¶π‘ü˚°–ë»¯∑ä—Îé‚ê
-%pvp-1017-polygonMap-PolygonArena_1517pvp1017"
-polygonMap*PolygonArena_151721017:1017B1017PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»‡‰¬»îµÁù–ë»¯∑ä—Îé‚ë
-%pvp-1017-polygonMap-PolygonArena_1617pvp1017"
-polygonMap*PolygonArena_161721017:1017B1017PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿ »ºìΩô—ƒ‹Å–·ÌÀ€ú˛ŸÃà‚í
-%pvp-1017-polygonMap-PolygonArena_1717pvp1017"
-polygonMap*PolygonArena_171721017:1017B1017PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿!»øë¬≥∫‹ˇ·ß–≤ƒ≤úú‰À∞ã‚p
-pvp-1017-rectangleMappvp1017"rectangleMap21017:1005B1005PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»É”“‚ûÿ˝«8–†ô∫ı˙ﬂ‰î˘‚i
-pvp-1018-bridgeMappvp1018"	bridgeMap21018:1005B1005PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»“›óÒÕÃıä]–ò⁄Íê˙Á’V‚j
-pvp-1018-circleMappvp1018"	circleMap21018:1005B1005PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»Éª“œÓÃ∆©–ÒÑôñ æ£ˇ%‚í
-%pvp-1018-polygonMap-PolygonArena_0218pvp1018"
-polygonMap*PolygonArena_021821018:1018B1018PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»•€Îˇïë’Ä€–€æËªÁÇÌó¿‚ë
-%pvp-1018-polygonMap-PolygonArena_0318pvp1018"
-polygonMap*PolygonArena_031821018:1018B1018PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»œ–óøÖ˚˘ù°–ÒäÕñàíØ¢2‚ë
-%pvp-1018-polygonMap-PolygonArena_0418pvp1018"
-polygonMap*PolygonArena_041821018:1018B1018PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»ŒñòÏÚÛ√∫_–¥–é¥ﬂï‚Áã‚í
-%pvp-1018-polygonMap-PolygonArena_0518pvp1018"
-polygonMap*PolygonArena_051821018:1018B1018PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»÷Œ™…˘êüı‡–‰¸ûÒ˘†√ˇõ‚í
-%pvp-1018-polygonMap-PolygonArena_0618pvp1018"
-polygonMap*PolygonArena_061821018:1018B1018PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»¶Å≥ÕÚøÖµ∑–îÇ≤ë°‚ò˚á‚í
-%pvp-1018-polygonMap-PolygonArena_0718pvp1018"
-polygonMap*PolygonArena_071821018:1018B1018PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»˚óÕÚ’ßΩä‘–çóÂ§Û§Âﬁ‚ê
-%pvp-1018-polygonMap-PolygonArena_0818pvp1018"
-polygonMap*PolygonArena_081821018:1018B1018PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»ä ÓçÄ¢¢ª–®¨á·ÙáÇÚK‚ë
-%pvp-1018-polygonMap-PolygonArena_0918pvp1018"
-polygonMap*PolygonArena_091821018:1018B1018PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»∫È˜”î·∑Ü©–ƒöøÓÿû÷Ó3‚ë
-%pvp-1018-polygonMap-PolygonArena_1018pvp1018"
-polygonMap*PolygonArena_101821018:1018B1018PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»ÔÊÆ∞æÅƒız–Ÿı¶ÛçÚæπƒ‚í
-%pvp-1018-polygonMap-PolygonArena_1118pvp1018"
-polygonMap*PolygonArena_111821018:1018B1018PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»ö™®ß’Îöòó–‘≈Àèö˙Ö¸‚ë
-%pvp-1018-polygonMap-PolygonArena_1218pvp1018"
-polygonMap*PolygonArena_121821018:1018B1018PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»õüå•ΩåÑùû–ë»¯∑ä—Îé‚ë
-%pvp-1018-polygonMap-PolygonArena_1318pvp1018"
-polygonMap*PolygonArena_131821018:1018B1018PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»˚´‡Çàˆ·ë‹–ë»¯∑ä—Îé‚ê
-%pvp-1018-polygonMap-PolygonArena_1418pvp1018"
-polygonMap*PolygonArena_141821018:1018B1018PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»õƒµÎãáÔ˙–ë»¯∑ä—Îé‚ë
-%pvp-1018-polygonMap-PolygonArena_1518pvp1018"
-polygonMap*PolygonArena_151821018:1018B1018PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»˚∂£ÇÄﬁ˛˜Ê–ë»¯∑ä—Îé‚ë
-%pvp-1018-polygonMap-PolygonArena_1618pvp1018"
-polygonMap*PolygonArena_161821018:1018B1018PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿ »ÁíÎ≥√¸◊‚A–·ÌÀ€ú˛ŸÃà‚ë
-%pvp-1018-polygonMap-PolygonArena_1718pvp1018"
-polygonMap*PolygonArena_171821018:1018B1018PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿!»¥ˆ⁄·„◊Á≥g–≤ƒ≤úú‰À∞ã‚í
-%pvp-1018-polygonMap-PolygonArena_1818pvp1018"
-polygonMap*PolygonArena_181821018:1018B1018PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿"»Äø¬õò«µÁ„–Íæÿã•˚õÜ◊‚q
-pvp-1018-rectangleMappvp1018"rectangleMap21018:1005B1005PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»¥‚°’ÎüßÊ´–†ô∫ı˙ﬂ‰î˘‚i
-pvp-1019-bridgeMappvp1019"	bridgeMap21019:1005B1005PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»£ˆ ‘â°âÒH–ò⁄Íê˙Á’V‚i
-pvp-1019-circleMappvp1019"	circleMap21019:1005B1005PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»ä’Ïµˇ˘™Ωb–ÒÑôñ æ£ˇ%‚í
-%pvp-1019-polygonMap-PolygonArena_0219pvp1019"
-polygonMap*PolygonArena_021921019:1019B1019PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»îÀœèÄô“ÈÍ–€æËªÁÇÌó¿‚ë
-%pvp-1019-polygonMap-PolygonArena_0319pvp1019"
-polygonMap*PolygonArena_031921019:1019B1019PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»öïÆ•üîÖÌ¸–ÒäÕñàíØ¢2‚í
-%pvp-1019-polygonMap-PolygonArena_0419pvp1019"
-polygonMap*PolygonArena_041921019:1019B1019PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»É˜–Åë‰’ŸÍ–¥–é¥ﬂï‚Áã‚ë
-%pvp-1019-polygonMap-PolygonArena_0519pvp1019"
-polygonMap*PolygonArena_051921019:1019B1019PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»˚Éÿ¨≤ÀÒ‡X–‰¸ûÒ˘†√ˇõ‚í
-%pvp-1019-polygonMap-PolygonArena_0619pvp1019"
-polygonMap*PolygonArena_061921019:1019B1019PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»◊¢Áÿ≠Å ëÚ–îÇ≤ë°‚ò˚á‚í
-%pvp-1019-polygonMap-PolygonArena_0719pvp1019"
-polygonMap*PolygonArena_071921019:1019B1019PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»ñÓËû®ª≤Ì¢–çóÂ§Û§Âﬁ‚ê
-%pvp-1019-polygonMap-PolygonArena_0819pvp1019"
-polygonMap*PolygonArena_081921019:1019B1019PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»≥ÜÏﬁ÷ÒœÀx–®¨á·ÙáÇÚK‚ë
-%pvp-1019-polygonMap-PolygonArena_0919pvp1019"
-polygonMap*PolygonArena_091921019:1019B1019PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»üá∆ìƒä»∫Ö–ƒöøÓÿû÷Ó3‚í
-%pvp-1019-polygonMap-PolygonArena_1019pvp1019"
-polygonMap*PolygonArena_101921019:1019B1019PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»∫º¶Å√ƒ†˚ƒ–Ÿı¶ÛçÚæπƒ‚ë
-%pvp-1019-polygonMap-PolygonArena_1119pvp1019"
-polygonMap*PolygonArena_111921019:1019B1019PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»ìòƒüÑÏîüL–‘≈Àèö˙Ö¸‚ë
-%pvp-1019-polygonMap-PolygonArena_1219pvp1019"
-polygonMap*PolygonArena_121921019:1019B1019PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»äúÛäåîÕ¢£–ë»¯∑ä—Îé‚ê
-%pvp-1019-polygonMap-PolygonArena_1319pvp1019"
-polygonMap*PolygonArena_131921019:1019B1019PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»äË√°ôíµ8–ë»¯∑ä—Îé‚ê
-%pvp-1019-polygonMap-PolygonArena_1419pvp1019"
-polygonMap*PolygonArena_141921019:1019B1019PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»ä¿ÅçÑÊñ‘L–ë»¯∑ä—Îé‚ë
-%pvp-1019-polygonMap-PolygonArena_1519pvp1019"
-polygonMap*PolygonArena_151921019:1019B1019PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»ä≠¥ÍññÚ‡∏–ë»¯∑ä—Îé‚í
-%pvp-1019-polygonMap-PolygonArena_1619pvp1019"
-polygonMap*PolygonArena_161921019:1019B1019PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿ »ä‘ÏƒíÆÅïß–·ÌÀ€ú˛ŸÃà‚ë
-%pvp-1019-polygonMap-PolygonArena_1719pvp1019"
-polygonMap*PolygonArena_171921019:1019B1019PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿!»âÂäÕ√≈Ëp–≤ƒ≤úú‰À∞ã‚ë
-%pvp-1019-polygonMap-PolygonArena_1819pvp1019"
-polygonMap*PolygonArena_181921019:1019B1019PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿"»©ÄñÇ¡ﬂ‹˜z–Íæÿã•˚õÜ◊‚í
-%pvp-1019-polygonMap-PolygonArena_1919pvp1019"
-polygonMap*PolygonArena_191921019:1019B1019PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿#»‹¥÷ºØÂï˛–£ «Ë©…Å¿˙‚p
-pvp-1019-rectangleMappvp1019"rectangleMap21019:1005B1005PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»•¨øıØ˜Û∆h–†ô∫ı˙ﬂ‰î˘‚j
-pvp-1020-bridgeMappvp1020"	bridgeMap21020:1005B1005PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»ÌìíñˆáâŒı–ò⁄Íê˙Á’V‚i
-pvp-1020-circleMappvp1020"	circleMap21020:1005B1005PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»¥Ë»¯Éñπ√t–ÒÑôñ æ£ˇ%‚í
-%pvp-1020-polygonMap-PolygonArena_0220pvp1020"
-polygonMap*PolygonArena_022021020:1020B1020PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»Üä“’ÿ≥êî…–€æËªÁÇÌó¿‚ë
-%pvp-1020-polygonMap-PolygonArena_0320pvp1020"
-polygonMap*PolygonArena_032021020:1020B1020PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»¯ÇΩÙ€æ®  –ÒäÕñàíØ¢2‚í
-%pvp-1020-polygonMap-PolygonArena_0420pvp1020"
-polygonMap*PolygonArena_042021020:1020B1020PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»Ì¯Â˝∆”®Ô˚–¥–é¥ﬂï‚Áã‚ë
-%pvp-1020-polygonMap-PolygonArena_0520pvp1020"
-polygonMap*PolygonArena_052021020:1020B1020PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»Ö´∆Ñ≥Ö±Ÿ[–‰¸ûÒ˘†√ˇõ‚ë
-%pvp-1020-polygonMap-PolygonArena_0620pvp1020"
-polygonMap*PolygonArena_062021020:1020B1020PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»ÅùÃ˛Ê¥Áì7–îÇ≤ë°‚ò˚á‚ë
-%pvp-1020-polygonMap-PolygonArena_0720pvp1020"
-polygonMap*PolygonArena_072021020:1020B1020PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»å∞¿˘’◊æ’N–çóÂ§Û§Âﬁ‚ë
-%pvp-1020-polygonMap-PolygonArena_0820pvp1020"
-polygonMap*PolygonArena_082021020:1020B1020PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»ïµ÷˜ﬁ†Ÿü©–®¨á·ÙáÇÚK‚ê
-%pvp-1020-polygonMap-PolygonArena_0920pvp1020"
-polygonMap*PolygonArena_092021020:1020B1020PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»≈˙©±’ûπ –ƒöøÓÿû÷Ó3‚ë
-%pvp-1020-polygonMap-PolygonArena_1020pvp1020"
-polygonMap*PolygonArena_102021020:1020B1020PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»∏ïé†Õ˝†Êd–Ÿı¶ÛçÚæπƒ‚í
-%pvp-1020-polygonMap-PolygonArena_1120pvp1020"
-polygonMap*PolygonArena_112021020:1020B1020PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»˘íä§ùÏ˚≠ë–‘≈Àèö˙Ö¸‚ê
-%pvp-1020-polygonMap-PolygonArena_1220pvp1020"
-polygonMap*PolygonArena_122021020:1020B1020PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»¸≤óöì¡¸∂x–ë»¯∑ä—Îé‚ë
-%pvp-1020-polygonMap-PolygonArena_1320pvp1020"
-polygonMap*PolygonArena_132021020:1020B1020PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»º¬Ó‡ˇŸéˆÛ–ë»¯∑ä—Îé‚ê
-%pvp-1020-polygonMap-PolygonArena_1420pvp1020"
-polygonMap*PolygonArena_142021020:1020B1020PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»º¥ÖÄé∂Ë›~–ë»¯∑ä—Îé‚ê
-%pvp-1020-polygonMap-PolygonArena_1520pvp1020"
-polygonMap*PolygonArena_152021020:1020B1020PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»¸ù≠ù¸ÖÖ0–ë»¯∑ä—Îé‚ë
-%pvp-1020-polygonMap-PolygonArena_1620pvp1020"
-polygonMap*PolygonArena_162021020:1020B1020PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿ »¯íÄ…Ç´ÜÆ–·ÌÀ€ú˛ŸÃà‚í
-%pvp-1020-polygonMap-PolygonArena_1720pvp1020"
-polygonMap*PolygonArena_172021020:1020B1020PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿!»€ì«òõ˘¶å¬–≤ƒ≤úú‰À∞ã‚í
-%pvp-1020-polygonMap-PolygonArena_1820pvp1020"
-polygonMap*PolygonArena_182021020:1020B1020PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿"»á”°ÿØ¯†öµ–Íæÿã•˚õÜ◊‚í
-%pvp-1020-polygonMap-PolygonArena_1920pvp1020"
-polygonMap*PolygonArena_192021020:1020B1020PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿#»ŒóôﬁΩ°⁄ëü–£ «Ë©…Å¿˙‚ë
-%pvp-1020-polygonMap-PolygonArena_2020pvp1020"
-polygonMap*PolygonArena_202021020:1020B1020PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿$»â‘£ÛÄ··ó–ƒ¢‡÷áëÌë‚p
-pvp-1020-rectangleMappvp1020"rectangleMap21020:1005B1005PXêÃ:®ˇˇˇˇˇˇˇˇˇ¿»ﬂÕˆÄÜ˚∂Ñ–†ô∫ı˙ﬂ‰î˘‚{
-seasonPvp-weekly-rectangle	seasonPvp1004"rectangleMap21004:1004B1004PXêÇ)®ˇˇˇˇˇˇˇˇˇ¿%»≠˙üÍ˛·ìÍã–‡ı˛ºÁü«œ‚ß
-training-sheet1-1training1001"rectangleMap21001:1001B1001HP»Xdr1001r1002r1003r1004r1005r1011r1013r1014xêî#®ˇˇˇˇˇˇˇˇˇ¿&»íÆ…⁄ÖÔûòõ–……±¢≥ûÈœê‚Ω
-training-sheet1-2training1001"	bridgeMap21001:1001B1001HP»X»bb
-jr1001r1002r1003r1004r1005r1011r1013r1014xÄä	êî#®ˇˇˇˇˇˇˇˇˇ¿'»˘∏’õ√ÅµΩÉ–÷≤èÏúí¢ÉA‚¡
-training-sheet1-3training1001"	bridgeMap21001:1001B1001HPdXêb
-bbbjìr1001r1002r1003r1004r1005r1020r1013r1014xêî#®ˇˇˇˇˇˇˇˇˇ¿(»üá≤¬»ÙÛ ¶–ºï°„÷◊Îõ6‚ß
-training-sheet2-1training1001"rectangleMap21001:1001B1001HP¨Xdr1001r1002r1003r1004r1005r1011r1013r1014xêî#®ˇˇˇˇˇˇˇˇˇ¿&»ÉÇ¬÷Òö±ñÔ–……±¢≥ûÈœê‚®
-training-sheet2-2training1001"rectangleMap21001:1001B1001HPdXdr1001r1002r1003r1004r1005r1011r1013r1014xÄêî#®ˇˇˇˇˇˇˇˇˇ¿)»Ø±ÇêÏŸ™Äj–’ôû·£ñ¥µ∏˙
-3001≈®˙
-3002©©˙
-3003ç™˙
-3004’´˙
-3005π¨˙
-3006ù≠˙
-3007ÂÆÊÆ˙
-3008	ı±ˆ±˜±˙
-3009…Ø Ø˙
-3010	Ÿ≤⁄≤€≤˙
-3011	Ω≥æ≥ø≥˙
-3012	°¥¢¥£¥˙
-3013	ÖµÜµáµ˙
-3014Ò™˙
-3015ÅÆ˙
-3016≠∞Æ∞˙
-3017ë±í±˙
-3018	ÈµÍµÎµ˙
-3019	Õ∂Œ∂œ∂˙
-3020	±∑≤∑≥∑˙
-3021ï∏ñ∏˙
-3022˘∏˙∏˙
-3023›πﬁπ˙
-3024	¡∫¬∫√∫Ç≈®ä€ Ï§(¸´Ç©©ä€ Ï§(¸´Çç™ä€ Ï§(¸´ÇÒ™ä€ Ï§(¸´Ç’´ä€ Ï§(ÑÇÇπ¨ä€ Ï§(ÑÇÇù≠ä€ Ï§(ÑÇÇÅÆä€ Ï§(ÑÇÇÂÆä€ Ï§(Ñ◊ÇÊÆä€ Ï§(àÆÇ…Øä€ Ï§(¿kÇ Øä€ Ï§(àÆÇ≠∞ä€ Ï§(¿kÇÆ∞ä€ Ï§(Ñ◊Çë±ä€ Ï§(àÆÇí±ä€ Ï§(àÆÇı±ä€ Ï§(àÆÇˆ±ä€ Ï§(¸´Ç˜±ä€ Ï§(¿kÇŸ≤ä€ Ï§(àÆÇ⁄≤ä€ Ï§(àÆÇ€≤ä€ Ï§(à∞ÇΩ≥ä€ Ï§(à∞Çæ≥ä€ Ï§(¿kÇø≥ä€ Ï§(¸´Ç°¥ä€ Ï§(àÆÇ¢¥ä€ Ï§(ÄÿÇ£¥ä€ Ï§(àÆÇÖµä€ Ï§(à∞ÇÜµä€ Ï§(¿kÇáµä€ Ï§(à∞ÇÈµä€ Ï§(ÄÿÇÍµä€ Ï§(¿kÇÎµä€ Ï§(àÆÇÕ∂ä€ Ï§(àÆÇŒ∂ä€ Ï§(ÄÿÇœ∂ä€ Ï§(¸´Ç±∑ä€ Ï§(à∞Ç≤∑ä€ Ï§(¿kÇ≥∑ä€ Ï§(à∞Çï∏ä€ Ï§(Ñ◊Çñ∏ä€ Ï§(àÆÇ˘∏ä€ Ï§(¿kÇ˙∏ä€ Ï§(Ñ◊Ç›πä€ Ï§(àÆÇﬁπä€ Ï§(àÆÇ¡∫ä€ Ï§(àÆÇ¬∫ä€ Ï§(à∞Ç√∫ä€ Ï§(¸´äÏäÃäºä®ää"ä˙(äÊ/ä∆6ä	∏=ä
-§DäÑKäÙQä‡Xä¬_ä≤fäûmä˛säÓzä⁄Åäºàä¨èäòñä¯úäÍ£ä÷™ä∂±ä¶∏äíøäÙ≈äÊÃä“”ä ≤⁄ä!¢·ä"éËä#Óä$‡ıä%Ã¸ä&¨Éä'ûää(äëä)Íóä*⁄ûä+∆•ä,®¨ä-ò≥ä.Ñ∫ä/‰¿ä0‘«ä1æŒä2¢’ä3í‹ä4¸‚ä5ﬁÈä6–ä7∫˜ä8ú˛ä9åÖä:ˆãä;⁄íä<Ãôä=∂†ä>òßä?àÆä@Ú¥äA÷ªäB∆¬äC∞…äDí–äEÑ◊äFÓ›äG–‰äH¿ÎäI™ÚäJé˘äKÄÄäLÍÜäMÃçäNºîäO¶õäPä¢äQ˙®äR‰ØäS∆∂äT∏ΩäU¢ƒäVÑÀäWÙ—äXﬁÿäY¬ﬂäZ≤Êä[úÌä\˛Ûä]Ó˙ä^ÿÅä_ºàä`¨èäaññäb¯úäcÍ£äd‘™äe∂±äf¶∏ägêøähÙ≈äiÊÃäj–”äk≤⁄äl¢·ämåËänÓäo‡ıäp ¸äq¨ÉärûääsàëätÍóäu⁄ûävƒ•äw®¨äxò≥äyÇ∫äz‰¿ä{‘«ä|æŒä}¢’ä~í‹ä¸‚ä	ÄﬁÈä	Å–ä	Ç∫˜ä	Éú˛ä	ÑåÖä	Öˆãä	Ü⁄íä	áÃôä	à∂†ä	âòßä	äàÆä	ãÚ¥ä	å÷ªä	ç∆¬ä	é∞…ä	èí–ä	êÑ◊ä	ëÓ›ä	í–‰ä	ì¿Îä	î™Úä	ïé˘ä	ñÄÄí í ä"í §Dí ≤fí ºàí ÷™í ÊÃí
- Óí
- äëí
-	 ò≥í
-
- ¢’í
- ∫˜í Ãôí
- ÷ªí
- Ó›í
- ÄÄí
- ä¢í
- ¢ƒí ≤Êí
- ºàí
- ‘™í
- ÊÃí
- Óí
- àëí ò≥í
- ¢’í
- ∫˜í
- Ãôí
- ÷ªí
- Ó›í ÄÄö:""""ö:""""ö<""""öD
-""""öJ	""""öJ$""""öJ*"	""""öJ0'
-""""öJ	#6,#	""""öJ
-+>#2(
-""""öJ3F)8!-#
-	""""öJ;N/>&2 (	
-""""öJCV5D+7%-
-	""""öJK^;J0<*2	
-""""öJSfAP5A/7
-	""""öJ[nGV:F4<
-""""öJcvM\?K9A""""öJk~SbDP>F""""öKsÜYhIUCK""""öK{é_nNZHP""""¢battlecore-v1®±æä´àÜëûè∞⁄∏ëø¬Ë
-û																						                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-û	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-üIç"û                                                                                                                                                                                                                                                                                              *û                                                                                                                                                                                                                                                                                            2û                                                                                                                                                                                                                                                                                            : :default-main-tower:	mainTower¬î
-ê                ê	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-ëIç"ê                                                                                                                                                *ê                                                                                                                                              2ê                                                                                                                                              : :default-main-tower:	mainTower¬‡
-≤														              
-
-
-
-
-
-
-
-
-
-
-
-
-
-≤	 
-	 
-	 
-	 
-	
-	
-	
-	 
-	 
-	 
-	 
-≥Iç"≤                                                                                                                                                                                  *≤                                                                                                                                                                                2≤                                                                                                                                                                                : :default-main-tower:	mainTower¬ÿ	
-∆												              
-
-
-
-
-
-
-
-
-
-
-
-∆
- 
- 
- 
- 
-	 
-	 
-	 
-	
-	 
-	 
-	 
-	 	 	 	 	«Iç"∆                                                                                                                                                                                                      *∆                                                                                                                                                                                                    2∆                                                                                                                                                                                                    : :default-main-tower:	mainTower¬ÿ	
-∆																		                  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-∆	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-«Iç"∆                                                                                                                                                                                                      *∆                                                                                                                                                                                                    2∆                                                                                                                                                                                                    : :default-main-tower:	mainTower¬§
-Ë																                
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Ë	 	 
-	 
-	 
-	 
-	
-	
-	
-	 
-	 
-	 
-	 
-	 
-ÈIç"Ë                                                                                                                                                                                                                                        *Ë                                                                                                                                                                                                                                      2Ë                                                                                                                                                                                                                                      : :default-main-tower:	mainTower¬ú
-¸														                
-
-
-
-
-
-
-
-
-
-
-
-
-
-¸
- 
- 
- 
- 
-	 
-	 
-	 
-	 
-	
-	 
-	 
-	 
-	 
-	 	 	 	 	˝Iç"¸                                                                                                                                                                                                                                                            *¸                                                                                                                                                                                                                                                          2¸                                                                                                                                                                                                                                                          : :default-main-tower:	mainTower¬Ù
-†																		               †	 
-	 
-	 
-	 
-	 
-	
-	
-	
-	
-	 
-°Iç"†                                                                                                                                                                *†                                                                                                                                                              2†                                                                                                                                                              : :default-main-tower:	mainTower¬‹
-
-‹																				                    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-‹	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-›Iç"‹                                                                                                                                                                                                                            *‹                                                                                                                                                                                                                          2‹                                                                                                                                                                                                                          : :default-main-tower:	mainTower¬¿
-Ç																		                  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Ç	 	 
-	 
-	 
-	 
-	
-	
-	
-	 
-	 
-	 
-	 
-	 
-ÉIç"Ç                                                                                                                                                                                                                                                                  *Ç                                                                                                                                                                                                                                                                2Ç                                                                                                                                                                                                                                                                : :default-main-tower:	mainTower¬Ñ
-∏																                  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-∏
- 
- 
- 
- 
-	 
-	 
-	 
-	 
-	 
-	
-	 
-	 
-	 
-	 
-	 
-	 	 	 	 	πIç"∏                                                                                                                                                                                                                                                                                                                        *∏                                                                                                                                                                                                                                                                                                                      2∏                                                                                                                                                                                                                                                                                                                      : :default-main-tower:	mainTower¬Ï
-¥																				                 ¥	 
-	 
-	 
-	 
-	 
-	
-	
-	
-	
-	 
-µIç"¥                                                                                                                                                                                    *¥                                                                                                                                                                                  2¥                                                                                                                                                                                  : :default-main-tower:	mainTower¬å
-§											            
-
-
-
-
-
-
-
-
-
-
-§			 
-	 
-	
-	
-	
-	 
-	 
-
-
-•Iç"§                                                                                                                                                                    *§                                                                                                                                                                  2§                                                                                                                                                                  : :default-main-tower:	mainTower¬¸
-Ã																								                    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Ã	 	 	 
-	 
-	 
-	 
-	
-	
-	
-	 
-	 
-	 
-	 
-	 
- 
-ÕIç"Ã                                                                                                                                                                                                                                                                                                                                            *Ã                                                                                                                                                                                                                                                                                                                                          2Ã                                                                                                                                                                                                                                                                                                                                          : :default-main-tower:	mainTower¬®
-˛																		                    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-˛
- 
- 
- 
- 
-	 
-	 
-	 
-	 
-	 
-	 
-	
-	 
-	 
-	 
-	 
-	 
-	 
-	 	 	 	 	ˇIç"˛                                                                                                                                                                                                                                                                                                                                                                                              *˛                                                                                                                                                                                                                                                                                                                                                                                            2˛                                                                                                                                                                                                                                                                                                                                                                                            : :default-main-tower:	mainTower¬‰
-à																						                     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-à	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	
-	
-	
-	 
-	 
-âIç"à                                                                                                                                                                                                                                                                        *à                                                                                                                                                                                                                                                                      2à                                                                                                                                                                                                                                                                      : :default-main-tower:	mainTower¬†
-
-“													              
-
-
-
-
-
-
-
-
-
-
-
-
-“				 
-	 
-	
-	
-	
-	 
-	 
-
-
-
-”Iç"“                                                                                                                                                                                                                  *“                                                                                                                                                                                                                2“                                                                                                                                                                                                                : :default-main-tower:	mainTower¬ê
-˙																	                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-˙	 	 	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	
-	
-
-˚Iç"˙                                                                                                                                                                                                                                                          *˙                                                                                                                                                                                                                                                        2˙                                                                                                                                                                                                                                                        : :default-main-tower:	mainTower¬Ñ
-∏																								                        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-∏	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-πIç"∏                                                                                                                                                                                                                                                                                                                        *∏                                                                                                                                                                                                                                                                                                                      2∏                                                                                                                                                                                                                                                                                                                      : :default-main-tower:	mainTower¬∏
-ñ																										                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ñ	  "	  	 
- 	 
-	 
-	 
-	
-	
-	
-	
-	
-	 
-	 
-	 
-	 
- 
- 
-óIç"ñ                                                                                                                                                                                                                                                                                                                                                                                                                      *ñ                                                                                                                                                                                                                                                                                                                                                                                                                    2ñ                                                                                                                                                                                                                                                                                                                                                                                                                    : :default-main-tower:	mainTower¬†
-“																						                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-“
- 
- 
- 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 	 	 	”Iç"“                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  *“                                                                                                                                                                                                                                                                                                                                                                                                                                                                                2“                                                                                                                                                                                                                                                                                                                                                                                                                                                                                : :default-main-tower:	mainTower¬î
-ê																								                   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ê	 
-	 
-	 
-	 
-	 
-	 
-	
-	
-	
-	
-	
-	
-	 
-ëIç"ê                                                                                                                                                                                                                                                                                *ê                                                                                                                                                                                                                                                                              2ê                                                                                                                                                                                                                                                                              : :default-main-tower:	mainTower¬º
-Ï															                
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Ï				 
-	 
-	
-	
-	
-	 
-	 
-
-
-
-ÌIç"Ï                                                                                                                                                                                                                                            *Ï                                                                                                                                                                                                                                          2Ï                                                                                                                                                                                                                                          : :default-main-tower:	mainTower¬¨
-î																			                        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-î	 	 	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	
-	
-
-ïIç"î                                                                                                                                                                                                                                                                                    *î                                                                                                                                                                                                                                                                                  2î                                                                                                                                                                                                                                                                                  : :default-main-tower:	mainTower¬å
-§																								                
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-§	 
-	 
-	 
-	
-	
-	
-	
-	
-	
-	
-	 
-	 
-	 
-•Iç"§                                                                                                                                                                                                                                                                                                    *§                                                                                                                                                                                                                                                                                                  2§                                                                                                                                                                                                                                                                                                  : :default-main-tower:	mainTower¬ê	
-∫								                
-
-
-
-
-
-
-
-∫
- 
- 
- 
-	 
-	 
-	
-	
-	
-	 
-	 
-	 	 	 	ªIç"∫                                                                                                                                                                                          *∫                                                                                                                                                                                        2∫                                                                                                                                                                                        : :default-main-tower:	mainTower¬å
-§														                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-§
-   						
-	
-	
-	
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 	 	 		•Iç"§                                                                                                                                                                                                                                                                                                                                                                                                                                    *§                                                                                                                                                                                                                                                                                                                                                                                                                                  2§                                                                                                                                                                                                                                                                                                                                                                                                                                  : :default-main-tower:	mainTower¬¸
-Ã														                          
-
-
-
-
-
-
-
-
-
-
-
-
-
-  Ã  
- 
- 
- 
- 
- 
- 
- 
-	 
-	 
-	 
-	 
-	
-	 
-	 
-	 
-	 
-	 	 	 	 	 	 	 	  ÕIç"Ã                                                                                                                                                                                                                                                                                                                                                                                                                                                                            *Ã                                                                                                                                                                                                                                                                                                                                                                                                                                                                          2Ã                                                                                                                                                                                                                                                                                                                                                                                                                                                                          : :default-main-tower:	mainTower¬Ñ
-∏																										                                
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-∏&(*,."$&(*,.0 "$&(*,.0 "$&(*,.0
- "$&(*,.0
- "$&(*,.0  "$&(*,.  "$&  "	 
- 	 
- 	 
- 	 
-!	 
-! %#! /-)'%#!	/-+)'%#!	/-+)'%#!	/-+)'%#!/-+)'%#!/-+)'%#!/-+)'%πIç"∏                                                                                                                                                                                                                                                                                                                                                                                                                                                        *∏                                                                                                                                                                                                                                                                                                                                                                                                                                                      2∏                                                                                                                                                                                                                                                                                                                                                                                                                                                      : :default-main-tower:	mainTower¬–
-⁄																									                                  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-⁄	 "$&(*	 "$&(	 "$&(	 "$&	 "$&	  "$	 
- "$	 
- "	 
- "!	 
- !	 
- #! 
-#! 
-%#!
-%#!
-'%#!
-'%#!
-€Iç"⁄                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          *⁄                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        2⁄                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        : :default-main-tower:	mainTower¬∞
-Í																                          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- Í
-"
- 
- 
-	 
-	 
-	 
-	 
-				 "!	 "$#! "$#!
- "#!
-
-
-
-	 
-	 
-	 
-	 
-	 
-		!	ÎIç"Í                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          *Í                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        2Í                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        : :default-main-tower:	mainTower¬†
-“							                                    
-
-
-
-
-
-
-“
-
-
-
-
-
-
- 
- 
-	 
- "$&(	 
- "$&(!	 
- "$&!	 
- "$&#!	 
- "#!	 
- "$%#!	 
- "%#!	 
- "'%#!	 
- 	 	 	 	 					”Iç"“                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  *“                                                                                                                                                                                                                                                                                                                                                                                                                                                                                2“                                                                                                                                                                                                                                                                                                                                                                                                                                                                                : :default-main-tower:	mainTower¬Ù
-‡																                        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-‡    
- 
- 
- 
- 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 	 	 	 	    ·Iç"‡                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *‡                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              2‡                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              : :default-main-tower:	mainTower¬∂
-´														                       
-
-
-
-
-
-
-
-
-
-
-
-
-
-´
-
-
- 
- 
- 
- 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 	 	 	 			¨Iç"´                                                                                                                                                                                                                                                                                                           *´                                                                                                                                                                                                                                                                                                         2´                                                                                                                                                                                                                                                                                                         : :default-main-tower:	mainTower¬î
-–																				                            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-–  
-	 
-	 
-	 
-	
-	
-	 
-	 
-	 
-	
-	
-	 
-	 
-	 
-	  —Iç"–                                                                                                                                                                                                                                                                                                                                                *–                                                                                                                                                                                                                                                                                                                                              2–                                                                                                                                                                                                                                                                                                                                              : :default-main-tower:	mainTower¬ˆ
-À																				                               
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-À&(*,$&(* "$&(* "$&(	 "$&(	 "$&	 "$&	 "$	 "$	 "	
- "	 
- 	
- 	 
-	
-!
-!
-#!
-#!
-%#!
-%#!
-'%#!'%#!)'%#)'%ÃIç"À                                                                                                                                                                                                                                                                                                                                                                                                                                                                           *À                                                                                                                                                                                                                                                                                                                                                                                                                                                                         2À                                                                                                                                                                                                                                                                                                                                                                                                                                                                         : :default-main-tower:	mainTower¬¥
-¿																                            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-¿	 
- "$	 
- " 
- 	
- 	 
-	 	 
-	
-	 
- 
-	 
-	
-	 !	 
-#!	 
-¡Iç"¿                                                                                                                                                                                                                                                                                                                                *¿                                                                                                                                                                                                                                                                                                                              2¿                                                                                                                                                                                                                                                                                                                              : :default-main-tower:	mainTower¬¨
-î																												                            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-î	 
- "$	 
- "$	 
- "	 
- "	 
- 	 
- 	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-!	 
-!	 
-#!	 
-ïIç"î                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    *î                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  2î                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  : :default-main-tower:	mainTower¬µ
-ê                ê	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-ëIç"ê                                                   2                2                                                                           *ê                                                                                                                                            2ê                                                                                                                                            : :1002:barracks:default-main-tower:	mainTower:1001:	resources¬¢	
-≤														              
-
-
-
-
-
-
-
-
-
-
-
-
-
-≤	 
-	 
-	 
-	 
-	
-	
-	
-	 
-	 
-	 
-	 
-≥Iç"≤                                                     ddd               22d 22      22 2d2 2       2222 22       2d2                                                              *≤                                                                           
-
-       
- 
-       
-
-                                                              2≤                                                                           		                                                                             : :1003:barracks:1013:1001:	resources:1014:defense:default-main-tower:	mainTower:1002:1005¬ü	
-≤														              
-
-
-
-
-
-
-
-
-
-
-
-
-
-≤	 
-	 
-	 
-	 
-	
-	
-	
-	 
-	 
-	 
-	 
-≥Iç"≤                                                                        2    2                        2           2    2                  2                                     *≤                                                                                                             	                                                           2≤                                                                                                             
-                                                           : :1004:barracks:1020:default-main-tower:	mainTower:":	UnCharted:1002:1014:defense:1003¬∞
-ê                ê	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-ëIç"ê                                                   2             2 2              22                                                           *ê                                                                                                                                        2ê                                                                                                                                        : :1002:barracks:1005:default-main-tower:	mainTower:1003»“«“óù˝¯ΩK–*ÿ∆aÍ
-$

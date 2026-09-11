@@ -1,9 +1,0 @@
-﻿{"Datas":[
-{"id":1,"taskType":2,"des":"参与 10 场游戏","parameter_progress":10,"parameter_nomal":0,"itemType":2,"item":20029,"count":5,"jump":1},
-{"id":2,"taskType":3,"des":"5 场游戏获胜","parameter_progress":5,"parameter_nomal":0,"itemType":2,"item":20029,"count":5,"jump":1},
-{"id":3,"taskType":1,"des":"消耗 1000 金币","parameter_progress":1000,"parameter_nomal":20005,"itemType":2,"item":20029,"count":5,"jump":2},
-{"id":4,"taskType":6,"des":"参与3次赛季匹配","parameter_progress":3,"parameter_nomal":0,"itemType":2,"item":20029,"count":5,"jump":7},
-{"id":5,"taskType":1,"des":"消耗 50 钻石","parameter_progress":50,"parameter_nomal":0,"itemType":2,"item":20029,"count":5,"jump":3},
-{"id":6,"taskType":5,"des":"抽取 1 次神器","parameter_progress":1,"parameter_nomal":0,"itemType":2,"item":20029,"count":5,"jump":6},
-{"id":7,"taskType":7,"des":"完成1次分享","parameter_progress":1,"parameter_nomal":0,"itemType":2,"item":20029,"count":5,"jump":8}]
-}

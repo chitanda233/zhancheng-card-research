@@ -1,8 +1,0 @@
-{
-    "AudioInfos": [
-        {
-            "Name": "Audio/Once/ToneUnity.wav",
-            "Length": "1.32"
-        }
-    ]
-}
