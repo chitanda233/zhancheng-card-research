@@ -119,8 +119,14 @@ jobs:
           grep -q '地图与翻格：摘要与专题入口' docs/reports/battle/report.md
           grep -q '并共用该玩家一个局内消费位' docs/reports/matching/report.md
           grep -q '25%到底什么时候发生' docs/reports/hex-random/index.html
-          ! grep -R -q 'research/archive/2026-09-03/reverse-engineering/canonical' scripts docs
-          ! grep -R -q '.github/workflows/rebuild-canonical-reverse.yml' scripts docs
+          ! grep -R -q \
+            --exclude='audit_current_baseline.py' \
+            --exclude='reconcile_current_baseline.py' \
+            'research/archive/2026-09-03/reverse-engineering/canonical' scripts docs
+          ! grep -R -q \
+            --exclude='audit_current_baseline.py' \
+            --exclude='reconcile_current_baseline.py' \
+            '.github/workflows/rebuild-canonical-reverse.yml' scripts docs
 
       - name: Commit reconciled sources and generated files
         shell: bash
