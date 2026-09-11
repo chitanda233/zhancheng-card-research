@@ -1,0 +1,10 @@
+0x4534	func[43532]	OpenHex	OK
+0x4597	func[6642]	GetHexOpenBlockReason	OK
+0x4598	func[43468]	SpendGold	OK
+0x459B	func[25588]	CommitOpenedHex	OK
+0xF495	func[25409]	ResolveOpenedHexOutcome	OK
+0xF61E	func[25522]	HasPlayerOpenAnchorNeighbor	OK
+0x42F2	func[25926]	SetHexOpened	OK
+0x4319	func[11720]	MarkDynamicWallsDirtyAround	OK
+0x88FC	func[14763]	ApplyBattleCoreAuthoritativeCellState	OK
+ALL_OK=True

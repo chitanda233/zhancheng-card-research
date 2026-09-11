@@ -1,0 +1,92 @@
+{
+  "Datas": [
+    {
+      "id": 1001,
+      "Race": 1,
+      "Show": 1,
+      "Round": 1,
+      "PackDes": "尊享人类礼包",
+      "Benefit": 3000,
+      "Level": 1,
+      "IapId": "com.city.csnew.contend.Premiumgold1",
+      "Rewards": "1040:240;20005:80000;20018:400"
+    },
+    {
+      "id": 1002,
+      "Race": 1,
+      "Show": 1,
+      "Round": 1,
+      "PackDes": "尊享人类礼包",
+      "Benefit": 3000,
+      "Level": 2,
+      "IapId": "com.city.csnew.contend.Premiumgold2",
+      "Rewards": "1040:480;20005:160000;20018:800"
+    },
+    {
+      "id": 1003,
+      "Race": 2,
+      "Show": 1,
+      "Round": 1,
+      "PackDes": "尊享兽人礼包",
+      "Benefit": 3000,
+      "Level": 1,
+      "IapId": "com.city.csnew.contend.Premiumgold3",
+      "Rewards": "1035:240;20005:80000;20018:400"
+    },
+    {
+      "id": 1004,
+      "Race": 2,
+      "Show": 1,
+      "Round": 1,
+      "PackDes": "尊享兽人礼包",
+      "Benefit": 3000,
+      "Level": 2,
+      "IapId": "com.city.csnew.contend.Premiumgold4",
+      "Rewards": "1035:480;20005:160000;20018:800"
+    },
+    {
+      "id": 1005,
+      "Race": 3,
+      "Show": 1,
+      "Round": 1,
+      "PackDes": "尊享亡灵礼包",
+      "Benefit": 3000,
+      "Level": 1,
+      "IapId": "com.city.csnew.contend.Premiumgold5",
+      "Rewards": "1034:240;20005:80000;20018:400"
+    },
+    {
+      "id": 1006,
+      "Race": 3,
+      "Show": 1,
+      "Round": 1,
+      "PackDes": "尊享亡灵礼包",
+      "Benefit": 3000,
+      "Level": 2,
+      "IapId": "com.city.csnew.contend.Premiumgold6",
+      "Rewards": "1034:480;20005:160000;20018:800"
+    },
+    {
+      "id": 1007,
+      "Race": 4,
+      "Show": 0,
+      "Round": 1,
+      "PackDes": "尊享机械礼包",
+      "Benefit": 3000,
+      "Level": 1,
+      "IapId": "com.city.csnew.contend.Premiumgold7",
+      "Rewards": "1049:240;20005:80000;20018:400"
+    },
+    {
+      "id": 1008,
+      "Race": 4,
+      "Show": 0,
+      "Round": 1,
+      "PackDes": "尊享机械礼包",
+      "Benefit": 3000,
+      "Level": 2,
+      "IapId": "com.city.csnew.contend.Premiumgold8",
+      "Rewards": "1049:480;20005:160000;20018:800"
+    }
+  ]
+}

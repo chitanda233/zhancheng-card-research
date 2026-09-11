@@ -1,0 +1,320 @@
+[
+  {
+    "cardEpicTalent": "300021;300041",
+    "cardGoldTalent": "40081",
+    "cardHaveTalent": "10001;10041",
+    "id": "1002"
+  },
+  {
+    "cardEpicTalent": "300221;300521",
+    "cardGoldTalent": "40151",
+    "cardHaveTalent": "10001;10051",
+    "id": "1003"
+  },
+  {
+    "cardEpicTalent": "300121;300131",
+    "cardGoldTalent": "40001",
+    "cardHaveTalent": "10011;10061",
+    "id": "1004"
+  },
+  {
+    "cardEpicTalent": "300021;300011",
+    "cardGoldTalent": "40011",
+    "cardHaveTalent": "10001;10061",
+    "id": "1005"
+  },
+  {
+    "cardEpicTalent": "300221;300231",
+    "cardGoldTalent": "40021",
+    "cardHaveTalent": "10001;10061",
+    "id": "1006"
+  },
+  {
+    "cardEpicTalent": "300121;300641",
+    "cardGoldTalent": "40051",
+    "cardHaveTalent": "10011;10061",
+    "id": "1007"
+  },
+  {
+    "cardEpicTalent": "300121;300131",
+    "cardGoldTalent": "40211",
+    "cardHaveTalent": "10011;10071",
+    "id": "1008"
+  },
+  {
+    "cardEpicTalent": "300121;300041",
+    "cardGoldTalent": "40231",
+    "cardHaveTalent": "10011;10071",
+    "id": "1009"
+  },
+  {
+    "cardEpicTalent": "300111;300121",
+    "cardGoldTalent": "40041",
+    "cardHaveTalent": "10011;10061",
+    "id": "1010"
+  },
+  {
+    "cardEpicTalent": "300121;300141",
+    "cardGoldTalent": "40111",
+    "cardHaveTalent": "10011;10031;10041",
+    "id": "1011"
+  },
+  {
+    "cardEpicTalent": "300521;300541",
+    "cardGoldTalent": "40061",
+    "cardHaveTalent": "10001;10061",
+    "id": "1012"
+  },
+  {
+    "cardEpicTalent": "300521;300541",
+    "cardGoldTalent": "40071",
+    "cardHaveTalent": "10001;10031;10061",
+    "id": "1013"
+  },
+  {
+    "cardEpicTalent": "300021;300611",
+    "cardGoldTalent": "40221",
+    "cardHaveTalent": "10011;10021;10071",
+    "id": "1014"
+  },
+  {
+    "cardEpicTalent": "300021;300611",
+    "cardGoldTalent": "40241",
+    "cardHaveTalent": "10011;10021;10071",
+    "id": "1015"
+  },
+  {
+    "cardEpicTalent": "300141;300211",
+    "cardGoldTalent": "40141",
+    "cardHaveTalent": "10011;10051",
+    "id": "1016"
+  },
+  {
+    "cardEpicTalent": "300221;300241",
+    "cardGoldTalent": "40161",
+    "cardHaveTalent": "10001;10051",
+    "id": "1017"
+  },
+  {
+    "cardEpicTalent": "300311;300411",
+    "cardGoldTalent": "40171",
+    "cardHaveTalent": "10011;10051",
+    "id": "1018"
+  },
+  {
+    "cardEpicTalent": "300111;300131",
+    "cardGoldTalent": "40031",
+    "cardHaveTalent": "10011;10061",
+    "id": "1019"
+  },
+  {
+    "cardEpicTalent": "300021;300011",
+    "cardGoldTalent": "40181",
+    "cardHaveTalent": "10001;10051",
+    "id": "1020"
+  },
+  {
+    "cardEpicTalent": "300121;300641",
+    "cardGoldTalent": "40121",
+    "cardHaveTalent": "10011;10041",
+    "id": "1021"
+  },
+  {
+    "cardEpicTalent": "300311;300641",
+    "cardGoldTalent": "40191",
+    "cardHaveTalent": "10011;10051",
+    "id": "1022"
+  },
+  {
+    "cardEpicTalent": "300121;300131",
+    "cardGoldTalent": "40101",
+    "cardHaveTalent": "10011;10041",
+    "id": "1023"
+  },
+  {
+    "cardEpicTalent": "300511;300221",
+    "cardGoldTalent": "40091",
+    "cardHaveTalent": "10001;10041",
+    "id": "1024"
+  },
+  {
+    "cardEpicTalent": "300511;300221",
+    "cardGoldTalent": "40131",
+    "cardHaveTalent": "10001;10041",
+    "id": "1025"
+  },
+  {
+    "cardEpicTalent": "300021;300011",
+    "cardGoldTalent": "40201",
+    "cardHaveTalent": "10011;10031;10051",
+    "id": "1026"
+  },
+  {
+    "cardEpicTalent": "300021;300011",
+    "cardGoldTalent": "40251",
+    "cardHaveTalent": "10001;10071",
+    "id": "1027"
+  },
+  {
+    "cardEpicTalent": "300121;300211",
+    "cardGoldTalent": "40261",
+    "cardHaveTalent": "10011;10031;10071",
+    "id": "1028"
+  },
+  {
+    "cardEpicTalent": "300221;300511",
+    "cardGoldTalent": "40271",
+    "cardHaveTalent": "10001;10061",
+    "id": "1029"
+  },
+  {
+    "cardEpicTalent": "300211;300231",
+    "cardGoldTalent": "40281",
+    "cardHaveTalent": "10001;10061",
+    "id": "1030"
+  },
+  {
+    "cardEpicTalent": "300221;300241",
+    "cardGoldTalent": "40291",
+    "cardHaveTalent": "10001;10041",
+    "id": "1031"
+  },
+  {
+    "cardEpicTalent": "300311;300411",
+    "cardGoldTalent": "40301",
+    "cardHaveTalent": "10011;10041",
+    "id": "1032"
+  },
+  {
+    "cardEpicTalent": "300521;300541",
+    "cardGoldTalent": "40311",
+    "cardHaveTalent": "10001;10031;10051",
+    "id": "1033"
+  },
+  {
+    "cardEpicTalent": "300521;300541",
+    "cardGoldTalent": "40321",
+    "cardHaveTalent": "10001;10051",
+    "id": "1034"
+  },
+  {
+    "cardEpicTalent": "300541;300011",
+    "cardGoldTalent": "40331",
+    "cardHaveTalent": "10001;10041",
+    "id": "1035"
+  },
+  {
+    "cardEpicTalent": "300231;300641",
+    "cardGoldTalent": "40341",
+    "cardHaveTalent": "10011;10051",
+    "id": "1036"
+  },
+  {
+    "cardEpicTalent": "300521;300541",
+    "cardGoldTalent": "40351",
+    "cardHaveTalent": "10001;10041",
+    "id": "1037"
+  },
+  {
+    "cardEpicTalent": "300021;300011",
+    "cardGoldTalent": "40361",
+    "cardHaveTalent": "10001;10071",
+    "id": "1038"
+  },
+  {
+    "cardEpicTalent": "300021;300011",
+    "cardGoldTalent": "40371",
+    "cardHaveTalent": "10001;10071",
+    "id": "1039"
+  },
+  {
+    "cardEpicTalent": "300221;300231",
+    "cardGoldTalent": "40381",
+    "cardHaveTalent": "10001;10061",
+    "id": "1040"
+  },
+  {
+    "cardEpicTalent": "300521;300541",
+    "cardGoldTalent": "40391",
+    "cardHaveTalent": "10001;10061",
+    "id": "1041"
+  },
+  {
+    "cardEpicTalent": "300021;300011",
+    "cardGoldTalent": "40401",
+    "cardHaveTalent": "10001;10061",
+    "id": "1042"
+  },
+  {
+    "cardEpicTalent": "300121;300641",
+    "cardGoldTalent": "40411",
+    "cardHaveTalent": "10011;10061",
+    "id": "1043"
+  },
+  {
+    "cardEpicTalent": "300021;300011",
+    "cardGoldTalent": "40471",
+    "cardHaveTalent": "10011;10031;10071",
+    "id": "1049"
+  },
+  {
+    "cardEpicTalent": "300021;300011",
+    "cardGoldTalent": "40481",
+    "cardHaveTalent": "10001;10071",
+    "id": "1050"
+  },
+  {
+    "cardEpicTalent": "300121;300131",
+    "cardGoldTalent": "40421",
+    "cardHaveTalent": "10011;10061",
+    "id": "1044"
+  },
+  {
+    "cardEpicTalent": "300121;300131",
+    "cardGoldTalent": "40441",
+    "cardHaveTalent": "10011;10041",
+    "id": "1046"
+  },
+  {
+    "cardEpicTalent": "300541;300011",
+    "cardGoldTalent": "40451",
+    "cardHaveTalent": "10001;10041",
+    "id": "1047"
+  },
+  {
+    "cardEpicTalent": "300211;300231",
+    "cardGoldTalent": "40431",
+    "cardHaveTalent": "10001;10061",
+    "id": "1045"
+  },
+  {
+    "cardEpicTalent": "300021;300511",
+    "cardGoldTalent": "40461",
+    "cardHaveTalent": "10001;10071",
+    "id": "1048"
+  },
+  {
+    "cardEpicTalent": "300231;300311",
+    "cardGoldTalent": "40661",
+    "cardHaveTalent": "10011;10051",
+    "id": "1051"
+  },
+  {
+    "cardEpicTalent": "300011;300521",
+    "cardGoldTalent": "40671",
+    "cardHaveTalent": "10001;10051",
+    "id": "1052"
+  },
+  {
+    "cardEpicTalent": "300641;300121",
+    "cardGoldTalent": "40681",
+    "cardHaveTalent": "10011;10031;10071",
+    "id": "1053"
+  },
+  {
+    "cardEpicTalent": "300021;300041",
+    "cardGoldTalent": "40691",
+    "cardHaveTalent": "10001;10071",
+    "id": "1054"
+  }
+]

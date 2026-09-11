@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1001",
+    "name": "军营",
+    "type": "Attack",
+    "prefabPath": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_Training .prefab"
+  },
+  {
+    "id": "1002",
+    "name": "训练场",
+    "type": "Attack",
+    "prefabPath": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_Alchemy.prefab"
+  },
+  {
+    "id": "1003",
+    "name": "冒险者公会",
+    "type": "Attack",
+    "prefabPath": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_Barracks.prefab"
+  },
+  {
+    "id": "1004",
+    "name": "住宅",
+    "type": "Hp",
+    "prefabPath": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/UpgradeMainTower/Build_Residence.prefab"
+  },
+  {
+    "id": "1005",
+    "name": "教堂",
+    "type": "Hp",
+    "prefabPath": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_Church.prefab"
+  },
+  {
+    "id": "1006",
+    "name": "果树",
+    "type": "Hp",
+    "prefabPath": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_Tavern.prefab"
+  },
+  {
+    "id": "1007",
+    "name": "食物商店",
+    "type": "CoinOutPut",
+    "prefabPath": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_Vegetable_Store .prefab"
+  },
+  {
+    "id": "1008",
+    "name": "道具商店",
+    "type": "CoinOutPut",
+    "prefabPath": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/UpgradeMainTower/Build_Prop_Store.prefab"
+  },
+  {
+    "id": "1009",
+    "name": "金矿",
+    "type": "CoinOutPut",
+    "prefabPath": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/UpgradeMainTower/Build_Goldmine.prefab"
+  },
+  {
+    "id": "1010",
+    "name": "树",
+    "type": "null",
+    "prefabPath": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_Tree_A.prefab"
+  }
+]

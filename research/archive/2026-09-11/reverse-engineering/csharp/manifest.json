@@ -1,0 +1,574 @@
+{
+  "schema_version": 2,
+  "generator": {
+    "name": "Perfare/Il2CppDumper",
+    "tag": "v6.7.46",
+    "commit": "8a521b9c180cf13499253f0818cbc729dca767cb",
+    "source": "https://github.com/Perfare/Il2CppDumper",
+    "build_target": "net7.0",
+    "dotnet": "10.0.400",
+    "GenerateStruct": false,
+    "GenerateDummyDll": true
+  },
+  "inputs": {
+    "primary_il2cpp_module": {
+      "path": "/tmp/current-main.webgl.wasm",
+      "size": 38009451,
+      "sha256": "52b679d02a884ce14782dd4fadf06e610b39d79070dcd41699f6cc0522aec19e"
+    },
+    "metadata": {
+      "path": "research/archive/2026-09-11/reverse-engineering/global-metadata.decrypted.dat",
+      "size": 16795612,
+      "sha256": "fa178d839cb6d8b8b24ca5acd8d4bbcef4963332fd49859c80a0dbe20dcc239f"
+    }
+  },
+  "runtime_split_boundary": "The primary wasmcode module is the IL2CPP image used for dump.cs/RVA naming. wasmcode1 is a WXWebAssembly runtime split executable payload; wasmcode2 is a function-split archive consumed as bytes by innerInitFuncSplitWasm. Neither split payload is treated as a second independent IL2CPP image.",
+  "auto_discovered_registrations": {
+    "CodeRegistration": "0x0CF1EC",
+    "MetadataRegistration": "0x09490C"
+  },
+  "known_tool_limitation": "GenerateStruct is disabled because v6.7.46 StructGenerator over-reads a protected metadata string-literal index on this title. This does not affect dump.cs generation or DummyDll export.",
+  "important_boundary": "dump.cs and DummyDll restore metadata/type declarations, not original executable C# method bodies. Behavior must be verified against the primary canonical disassembly and runtime split evidence.",
+  "files": [
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/AllIn1VfxAssmebly.dll",
+      "size": 15872,
+      "sha256": "6fd3afcc763e76ee3823f244f88856690c4fbf5e9f6944c54b5768ee56b0ccb6"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/AllIn1VfxDemoScriptAssemblies.dll",
+      "size": 25600,
+      "sha256": "4efe676e7d5cb7a960b3022d34308cf0bc3246b1c390983b72fda555f5cc5496"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/AllIn1VfxTexDemoAssembly.dll",
+      "size": 6656,
+      "sha256": "3785519951484418eb22ef5fdabb6cf94ce0e748f7602824c4da65e760a847c0"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Assembly-CSharp-firstpass.dll",
+      "size": 13312,
+      "sha256": "387dfc0a5c763fd36e9193c999abcfd68eb379c045e4f8ff4b425f34c28397f9"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Assembly-CSharp.dll",
+      "size": 7821312,
+      "sha256": "956117cbf86bc32d40ca41f7f7ae0fdc974cb1e15550911a74aa80564a92ccf3"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/BattleCore.dll",
+      "size": 1107456,
+      "sha256": "31675ffe94dd8b58d0f258861996581e3402307ee05346a94e7a499aaac2b9b9"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/BattleCoreUnityAdapter.dll",
+      "size": 778240,
+      "sha256": "68aa6d97eba7bac413b8266e349bc1cec4df102e67cfc4c4a3af78d92ae8ea57"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/BouncyCastle.Cryptography.dll",
+      "size": 1075712,
+      "sha256": "4ba6e52f55804f294e1242eb8d6f1888f41148f449c98a40f89afb7a1f5dc7ea"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Cinemachine.dll",
+      "size": 306176,
+      "sha256": "498e1c7037bb83151cf01989223228f587afff84d48eb505fdc03119a59b4ff8"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Coffee.UIParticle.dll",
+      "size": 26112,
+      "sha256": "568ab57935d8a5c03b2d324182598b8beb2c42ef453df461abc978defd6236b6"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/DOTween.dll",
+      "size": 145920,
+      "sha256": "9ec1383183f2e947cdd68ecb975abe59fe9d480941a43fcfd40b277d6fc471b8"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/DOTweenPro.dll",
+      "size": 12800,
+      "sha256": "07a5d5823e4b571fb7c7f827574abe1c078b419397855e7afd1542056102ac31"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/DebugSystem.dll",
+      "size": 155648,
+      "sha256": "e7db59a189cba7c1cdca3978f929009a345fab6b694bb87cbb49f37f1e947f4f"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/DeterministicFixedPoint.Core.dll",
+      "size": 28672,
+      "sha256": "9bda75c61746461f75480763dd7d3791d6d68c67ff9fcc8a41757cb06df12482"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/GFHanldMono.dll",
+      "size": 33792,
+      "sha256": "fb72a91d9b7e1303a41da6b6778c76a43e247260301dd91954ea602742907a25"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/GFRunning.dll",
+      "size": 1377280,
+      "sha256": "0bdc915ab8daab76347781b6e09d792ef8258c3c187207fa9b17689c43d1f5cc"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/GFXYX_WX_Start.dll",
+      "size": 3072,
+      "sha256": "78adcea2f27787fe0f1153a778ba6e517a5d06eca1446ec542a4ce1ab889d841"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Google.Protobuf.dll",
+      "size": 485888,
+      "sha256": "0b03fa7a1d78deb49bf6d7a1d1dd898fb3852b8d17e5e6bf43bd20e58a7bb7f9"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/GravityEngine.dll",
+      "size": 98304,
+      "sha256": "ed37b8bf3ee9fdae9ac48e0837e5129dd947b10fd994f21e91f197a35afc286f"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Il2CppDummyDll.dll",
+      "size": 4096,
+      "sha256": "18343059c392724f784a3eb0ba41dd9cfbd3198bff1f7d09b2686b4b3b198780"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/KinoBloom.Runtime.dll",
+      "size": 6656,
+      "sha256": "f5dfb31aac8599bc35b0674600fb995769bd67f8d3884d2412c25fe8ea07768f"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/LitJson.dll",
+      "size": 66560,
+      "sha256": "b2f279b9bfad2d14a13fbd832434d6843d30e65bb1a73ff02256b01058c4c546"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/LuTween.Runtime.dll",
+      "size": 7680,
+      "sha256": "d97cbc1b6bc751f7a32f7f511f023c2912017d690293197b3ac675adef26ab47"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/MemoryPack.Core2021.dll",
+      "size": 68608,
+      "sha256": "ebfd148281433cb8aa27ca64f510769fc41b8d05a9ee14421e3683b78d878f87"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/MeshBakerCore.dll",
+      "size": 306688,
+      "sha256": "a565b37c69be86b4cef12f6e411f984507be113d2e75c7c25a0effb310cc0947"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/MeshBakerExamples.dll",
+      "size": 11776,
+      "sha256": "00d420f010f9df54cc1529cbf6a5b9b452d4fa046e335113a4e3d1b88f3112b2"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Mono.Security.dll",
+      "size": 136704,
+      "sha256": "57b05968be1ad5d951287893d73724d9dbf7ac980042b81dd56571f24576e24d"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/NCalc.dll",
+      "size": 99328,
+      "sha256": "3a2961a7f6c5366e24bacabfd6109602e46a77f7b5bb63983339f44581215605"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Newtonsoft.Json.dll",
+      "size": 459264,
+      "sha256": "7c51b9b8c59508aa12a3e019f7076e182aaf70402b807e1934fe629cfc3ed017"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Poco.dll",
+      "size": 38400,
+      "sha256": "518d2b0a636e54c9d666fe6a002abe7523a94d19e1ad37671b2a68762196823c"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/QRCoder.dll",
+      "size": 49664,
+      "sha256": "5af0047e257d7232f6b0bcbb4c901013b01aa1223a802615ed545e322d25efeb"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/SocketTools.dll",
+      "size": 6144,
+      "sha256": "9f009c390011d87f5232e89589ace1f73beb76a35ba9db197475167811e78a0d"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/StylizedWaterForURP.dll",
+      "size": 20480,
+      "sha256": "670f1c645270ba87a55f7fc3049162c99542835077dcc8445a9c534a8406fa02"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/System.Core.dll",
+      "size": 552448,
+      "sha256": "82747b181c377e55186e060dd1833448e40aaf50534bf7c9b285a8423efb77e0"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/System.Data.dll",
+      "size": 527872,
+      "sha256": "d60da204d9e85014641e1ce828620af935671951d9a6a9473c040e653dcf2001"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/System.Drawing.dll",
+      "size": 20480,
+      "sha256": "bf6cc9cb4ea4c38248d39d4dd7aeb554acc99acdd708878f4af88ed8245d6f7b"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/System.IO.Compression.dll",
+      "size": 87040,
+      "sha256": "5bed28480fcda4cbaef39f0c03ad7ddc00f306130d3c2821f54f59adcd62c55c"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/System.Net.Http.dll",
+      "size": 74752,
+      "sha256": "b527c8efdcd7a8e57e1cf6f3d7d9455284ce218daae0de251b91ed05a1ad45f1"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/System.Numerics.dll",
+      "size": 37376,
+      "sha256": "229492b41f6766ee8548d66af056a45491e1e4586e494b0752d2ffb6830a36c6"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/System.Runtime.CompilerServices.Unsafe.dll",
+      "size": 3072,
+      "sha256": "9d94af92df03e2dab61c64f83cc408a88b1b192ece635348cac3962e2c8e6a6a"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/System.Runtime.Serialization.dll",
+      "size": 4096,
+      "sha256": "4df86e05aa7abfbd8463c1d25cf3da3ac84f238bd1429e45d99af7131ba28ebe"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/System.Xml.Linq.dll",
+      "size": 39424,
+      "sha256": "471d7a42527b68699926616b8be16845b73e55f686da1fd4efa68475b4db9eda"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/System.Xml.dll",
+      "size": 1261568,
+      "sha256": "ef5df366323bdbeb0226d0577a65651a8a3dba8f48ccd53392e731fb7126eecb"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/System.dll",
+      "size": 980480,
+      "sha256": "ab0ffa8c6ecd978aa120af7d6960fa34ee695d53fce10d1c9e37aeba0e3dabe4"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/ToonyColorsPro.Runtime.dll",
+      "size": 12288,
+      "sha256": "8f3d6d0ecc3c4dc71c03444913707b67f687d7d1bef5b40786329b656a57c1de"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/ToonyColorsPro2.Demo.dll",
+      "size": 26624,
+      "sha256": "939c0662258cf849b329637fd08db185e47c6672c42caf7c850376c766f43688"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UniTask.dll",
+      "size": 207872,
+      "sha256": "34dc755e82bd4f9c0159c180f38889fb578552ff3e4d9e1bcf411b59c4331079"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Unity.Addressables.dll",
+      "size": 122880,
+      "sha256": "4bc8f8daf2858e96392d13a11c0c9d2967fa8b586f9e1d41703a0a1849969110"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Unity.Burst.dll",
+      "size": 19456,
+      "sha256": "a25626cda99f4f8fd7d9f799f00cd96d4e7a3b4b85e633bc2e29112b833136a6"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Unity.FontABTool.dll",
+      "size": 8704,
+      "sha256": "3f4881dd2329f8e745725bb480aafa01c355e6acb471fc04cf75b9b3a2fd685d"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Unity.Mathematics.dll",
+      "size": 40448,
+      "sha256": "be857b8ea1cfe9019bd13560ced9cd59142fde2c8159de86d04a7fb65ecba3d2"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Unity.MemoryProfiler.dll",
+      "size": 4608,
+      "sha256": "762413025df95eaeb21305e47ac07597d80f1d97e5af38f66b52683b35d1cafc"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Unity.Profiling.Core.dll",
+      "size": 2560,
+      "sha256": "04759876d8360fa7710f3c234a9f6919e550ff2b317cafef41a044d4b5de6da4"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Unity.RenderPipeline.Universal.ShaderLibrary.dll",
+      "size": 7680,
+      "sha256": "72c4e1b17558e497fef95c1a1974a63f60ab8d67e43924ffc95949c2c9021427"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Unity.RenderPipelines.Core.Runtime.dll",
+      "size": 308224,
+      "sha256": "884b3bb38afc565d0f88c7db5ccc48b7923f866c84d5c22e8b7180a2a9afde3a"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Unity.RenderPipelines.Universal.Runtime.dll",
+      "size": 521216,
+      "sha256": "eca960604a350bdf29719e2f996e46d1b24e26dfe6caeb5c8645769467396232"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Unity.ResourceManager.dll",
+      "size": 160768,
+      "sha256": "b043e4e1a3d008f4e6fff0ac60f29e2710a281e107ebaf0eb4b66a0b751f7930"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Unity.TextMeshPro.dll",
+      "size": 309248,
+      "sha256": "a8eee2608ca70a57c5ec17a672da1ed75f305548fc1eebd2186f90dacf8c5663"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Unity.Timeline.dll",
+      "size": 106496,
+      "sha256": "88541635a48615e3c1930b54523fbb6808f038d686c451810d63266445010a9c"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.AndroidJNIModule.dll",
+      "size": 42496,
+      "sha256": "034d18b797b8bde4121072331af2b17a9c0cd52e054deefde086d463b9036663"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.AnimationModule.dll",
+      "size": 97280,
+      "sha256": "700645093dce84ef9c5e600fe0f6fb07ac1a5353c7c0ecc588179f715629fe8d"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.AssetBundleModule.dll",
+      "size": 8704,
+      "sha256": "cf67a67ebf3f33a0e545f9306bdff38d9ca77c01294d435fb104b874f2772080"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.AudioModule.dll",
+      "size": 27648,
+      "sha256": "38f5f5a16049070dfe43860e612532f261e557d76c84607d173e80e83f6a2127"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.CoreModule.dll",
+      "size": 1131008,
+      "sha256": "6026f1e7f156d73d8485a3502ad5b285e22963406fd3a136e4e593d6f08f607d"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.DirectorModule.dll",
+      "size": 4608,
+      "sha256": "ecac4ac771a3491d50e68f01938dbecb2fd92f160f1f54f8161dba2ec4f29a42"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.GridModule.dll",
+      "size": 2048,
+      "sha256": "38bc48ef142e1d47ee6c84c166a817b725e0f42516b775e5748d1681b508f3ff"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.IMGUIModule.dll",
+      "size": 143872,
+      "sha256": "0ed81f7aef44037a9192df77bb7b653c93b25e345b01f51844874a92c2cdc3d5"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.ImageConversionModule.dll",
+      "size": 3072,
+      "sha256": "23274229e9d4330a1f816690b508638172fdce0320e870d25e416910e5b4e565"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.InputLegacyModule.dll",
+      "size": 33280,
+      "sha256": "93007d6c3da38e907534da60680aaf73df7389f20c2cf3f7c440bbc273f10e9e"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.InputModule.dll",
+      "size": 4608,
+      "sha256": "51ceb2fa34ecbb0ce425711b3fbbc5b46af0a99a43d20cad414c4fa00fc7fba8"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.JSONSerializeModule.dll",
+      "size": 2560,
+      "sha256": "a49b3a0d31d158cef92b5c968a797d79867e5fff452575b576c3434a13471c9f"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.ParticleSystemModule.dll",
+      "size": 81920,
+      "sha256": "43b2e202bff22dc904d1cd9538fbfdc291cd85f8f090cd1e16952dfc5f7ce98e"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.Physics2DModule.dll",
+      "size": 20992,
+      "sha256": "a2ec1b0e8dbe1de4aef05f8f6bd77038c29b92b45d6e1ac706b63f4df13f3eb6"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.PhysicsModule.dll",
+      "size": 64000,
+      "sha256": "369f500cd60a6558779b3b6e77c0b57a825e039f9c57d39cf6b4b8d07b89d3c3"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.PropertiesModule.dll",
+      "size": 44032,
+      "sha256": "1a9bc656740fc0a6788dd2acb71152602cfcc19111a6a583b341bc20b9be0653"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.SharedInternalsModule.dll",
+      "size": 4096,
+      "sha256": "9d890b5914e5fd95f9c09e7bf7334606d978db4b59cf0680a6e3fba41334515a"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.SpriteShapeModule.dll",
+      "size": 2048,
+      "sha256": "02209969d642e8339ef1f6ae0e7e6878308778db059cca4ac1389a0aca392997"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.SubsystemsModule.dll",
+      "size": 8704,
+      "sha256": "fa149314954a8fb54f6cc96e2f17b2e821e0979ee68dc4b0e23ff33a92bbd3c5"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.TextCoreFontEngineModule.dll",
+      "size": 34816,
+      "sha256": "a7c15354c82be1081264775364d8f1cffc23f63e06c7e059728103a4cf525a57"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.TextCoreTextEngineModule.dll",
+      "size": 140800,
+      "sha256": "ef6bf69652ef2a01f2e4037669093cf323e420a684bf86ad40ce9debacada3ef"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.TextRenderingModule.dll",
+      "size": 16896,
+      "sha256": "7352c2d16be1752fdf68172767176245ee51fe90abcafe534852fbf350f5b942"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.TilemapModule.dll",
+      "size": 2560,
+      "sha256": "8bc1b128506d26a6917d61b451fd80d361ad8c01a001e11817b861850e265c76"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.UI.dll",
+      "size": 333824,
+      "sha256": "a2629c2c4ed5322f97f69fa06fd7da8eeca0201d79867d5f5692c24999f10f87"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.UIElementsModule.dll",
+      "size": 1439232,
+      "sha256": "16f247f254fa8073c6b2432f1434726b253b35499e5164384736b8325785ea6a"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.UIModule.dll",
+      "size": 27648,
+      "sha256": "2eb6c4101b62bef6e330df154f9c7b500759aa80472c9e1a08301e3fc2b1fe6d"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.UnityWebRequestAssetBundleModule.dll",
+      "size": 5120,
+      "sha256": "5a6cbd971a44a38e89985ddfcc51d7762a08e9e1791d497c2f94116d71b09063"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.UnityWebRequestModule.dll",
+      "size": 35840,
+      "sha256": "be6d6fc652854f12346671006278bc1d64b1f6e3933ae046fb6ddbbfb1423814"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.UnityWebRequestTextureModule.dll",
+      "size": 4096,
+      "sha256": "d40f94aab1b5f3325e54fea49c5937c08c4677f76545ecf01982737b0dbc94b5"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.UnityWebRequestWWWModule.dll",
+      "size": 3584,
+      "sha256": "8491fa2f77f577c0010b620ee894ee589d66ef601f8d8ce3d8285d0395a49fba"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.VideoModule.dll",
+      "size": 9216,
+      "sha256": "75b615cc673e7b29075e4ff069f37a7e31535ba27adb25a7fe04a881ecfa3a72"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.WebGLModule.dll",
+      "size": 2048,
+      "sha256": "b1da0b47e14d32d97c0f5239838be9a4c6dedd0101d389cc62ca6c6ab67edc17"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.XRModule.dll",
+      "size": 26624,
+      "sha256": "5dec7886169a9bd400326b355b66733771847a0b9f966c236aef6ccf0f6be00e"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/UnityEngine.dll",
+      "size": 2048,
+      "sha256": "50e206478942d257e7eda4ede96d452b4f5e4fbe272bae12a4a1a9bf259cdefb"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/VibratorManager.Runtime.dll",
+      "size": 5632,
+      "sha256": "d8d87d743df2afc977305f0dae60edb3a7156ed18e8104fa092e15b859bad152"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/WG.EpicTween.Runtime.dll",
+      "size": 16896,
+      "sha256": "6419b431fc6578367a4f020983ff32b90feb33194c68555afa23813fb9707a86"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/WXFunction.dll",
+      "size": 152576,
+      "sha256": "421a179578ed3941e14cdeab59d8b1b1a4c6e8dd7234a8903036bb06d178958b"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/WXFunctionCompatibility.dll",
+      "size": 5632,
+      "sha256": "473bece77d200eaf07a586847f72464869312925d4c0712248472f3fcc957826"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Whinarn.UnityMeshSimplifier.Runtime.dll",
+      "size": 49152,
+      "sha256": "8428e532f5d60d58481d20dc616a0da8ea0610ca5c589093aaccfadcb4aa9a90"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Wx.dll",
+      "size": 70144,
+      "sha256": "102dde250ef32d9dca39da8abfdf98255a45b6443afe9989e04c63658352c473"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/XYXCommon.dll",
+      "size": 528896,
+      "sha256": "c12cacb2e5545f8967421fbac4687e3a893b73392628b87654ed2dfe8c795546"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/XYXCommonCompatibility.dll",
+      "size": 3584,
+      "sha256": "da850ee9550c970629d7e00945d95f1701a0ffca63473ed56c827917bce40147"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/__Generated",
+      "size": 2560,
+      "sha256": "d3a7773631ff28e12b9495929eafcacf125d161471e84bb1dd23aa492061f993"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/mscorlib.dll",
+      "size": 2192896,
+      "sha256": "3658bbc0ba56a01026789dc09f2595e0a42e6e59d095174dadf7f77b75571204"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/spine-csharp.dll",
+      "size": 151040,
+      "sha256": "7c71b1c7bbcfce069211a6734126b267c9aa4738b0a9cea1e60f0aeb485c8706"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/spine-unity.dll",
+      "size": 159232,
+      "sha256": "0b43fdd9b5282d4ecf874c2f066763b40416cc39309de00e083176ca98e17359"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/wx-runtime.dll",
+      "size": 432128,
+      "sha256": "37d29c185c2b1e29fd70db4e44d5b779de879e0d7dfeeb52f69934e9f64103e3"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/dump.cs",
+      "size": 40181988,
+      "sha256": "5a8048902c797bcf28e55627e4b6d2d71fc809fc409b2662dfd72a382d172853"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/csharp/il2cppdumper.log",
+      "size": 207,
+      "sha256": "1502400f0396d26756183b3eafa34ae9e059a4553067adc9ac541ea5d194c343"
+    }
+  ]
+}

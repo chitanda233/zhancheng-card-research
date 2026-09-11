@@ -1,0 +1,240 @@
+[
+  {
+    "id": "1001",
+    "nameKey": "",
+    "path": "Assets/_Res/Addressable/CharactersOrganized/Kuloubing/Prefabs/Role_Kuloubing_Red.prefab",
+    "highPath": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_HighPrefabs/Role_Kuloubing_Red_High.prefab",
+    "iconPath": ""
+  },
+  {
+    "id": "1002",
+    "nameKey": "",
+    "path": "Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/Build/Build_Skeleton_Red_New.prefab",
+    "highPath": "",
+    "iconPath": ""
+  },
+  {
+    "id": "1003",
+    "nameKey": "",
+    "path": "Assets/_Res/Addressable/CharactersOrganized/Langqibing/Prefabs/Role_Langqibing_Blue.prefab",
+    "highPath": "",
+    "iconPath": ""
+  },
+  {
+    "id": "1004",
+    "nameKey": "",
+    "path": "Assets/_Res/Addressable/CharactersOrganized/Silingnvwang/Prefabs/Role_Silingnvwang_Red.prefab",
+    "highPath": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_HighPrefabs/Role_Silingnvwang_Red_High.prefab",
+    "iconPath": ""
+  },
+  {
+    "id": "1005",
+    "nameKey": "",
+    "path": "Assets/_Res/Addressable/CharactersOrganized/Longqishi/Prefabs/Role_Longqishi_Blue.prefab",
+    "highPath": "",
+    "iconPath": ""
+  },
+  {
+    "id": "1006",
+    "nameKey": "",
+    "path": "Assets/_Res/Addressable/CharactersOrganized/Catapult/Prefabs/Catapult_Blue.prefab",
+    "highPath": "",
+    "iconPath": ""
+  },
+  {
+    "id": "1007",
+    "nameKey": "",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/UpgradeMainTower/Citizen_C.prefab",
+    "highPath": "",
+    "iconPath": ""
+  },
+  {
+    "id": "1008",
+    "nameKey": "",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/Tile/Nature/Mountain_StoneAge.prefab",
+    "highPath": "",
+    "iconPath": ""
+  },
+  {
+    "id": "1009",
+    "nameKey": "",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/Tile/Nature/NatureLake.prefab",
+    "highPath": "",
+    "iconPath": ""
+  },
+  {
+    "id": "1010",
+    "nameKey": "",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_Tree_A.prefab",
+    "highPath": "",
+    "iconPath": ""
+  },
+  {
+    "id": "1011",
+    "nameKey": "",
+    "path": "Assets/_Res/Addressable/CharactersOrganized/Skeleton_Rogue/Prefabs/Role_Skeleton_Rogue_Red.prefab",
+    "highPath": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_HighPrefabs/Role_Skeleton_Rogue_Red_High.prefab",
+    "iconPath": ""
+  },
+  {
+    "id": "1012",
+    "nameKey": "",
+    "path": "Assets/_Res/Addressable/CharactersOrganized/Skeleton_Warrior/Prefabs/Role_Skeleton_Warrior_Red.prefab",
+    "highPath": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_HighPrefabs/Role_Skeleton_Warrior_Red_High.prefab",
+    "iconPath": ""
+  },
+  {
+    "id": "1013",
+    "nameKey": "",
+    "path": "Assets/_Res/Addressable/CharactersOrganized/Skeleton_Mage/Prefabs/Role_Skeleton_Mage_Red.prefab",
+    "highPath": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_HighPrefabs/Role_Skeleton_Mage_Red_High.prefab",
+    "iconPath": ""
+  },
+  {
+    "id": "1014",
+    "nameKey": "",
+    "path": "Assets/_Res/Addressable/CharactersOrganized/Skeleton_Golem/Prefabs/Role_Skeleton_Golem_Red.prefab",
+    "highPath": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_HighPrefabs/Role_Skeleton_Golem_Red_High.prefab",
+    "iconPath": ""
+  },
+  {
+    "id": "1015",
+    "nameKey": "",
+    "path": "Assets/_Res/Addressable/CharactersOrganized/BingShungJuLong/Prefabs/Role_BingShungJuLong_Red.prefab",
+    "highPath": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_HighPrefabs/Role_BingShungJuLong_Red_High.prefab",
+    "iconPath": ""
+  },
+  {
+    "id": "1016",
+    "nameKey": "NewMainCity_BuildingChurch",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_Church.prefab",
+    "highPath": "",
+    "iconPath": "Assets/_Res/Addressable/04MetaGameBundle/Sprites/NewMainCity/NewMainCity_Building_Church.png"
+  },
+  {
+    "id": "1017",
+    "nameKey": "NewMainCity_BuildingTavern",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_Tavern.prefab",
+    "highPath": "",
+    "iconPath": "Assets/_Res/Addressable/04MetaGameBundle/Sprites/NewMainCity/NewMainCity_Building_Tavern.png"
+  },
+  {
+    "id": "1018",
+    "nameKey": "NewMainCity_BuildingBarracks",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_Barracks.prefab",
+    "highPath": "",
+    "iconPath": "Assets/_Res/Addressable/04MetaGameBundle/Sprites/NewMainCity/NewMainCity_Building_Barracks.png"
+  },
+  {
+    "id": "1019",
+    "nameKey": "NewMainCity_BuildingTraining",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_Training .prefab",
+    "highPath": "",
+    "iconPath": "Assets/_Res/Addressable/04MetaGameBundle/Sprites/NewMainCity/NewMainCity_Building_Training.png"
+  },
+  {
+    "id": "1020",
+    "nameKey": "",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_TerranDomain.prefab",
+    "highPath": "",
+    "iconPath": ""
+  },
+  {
+    "id": "1021",
+    "nameKey": "",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_MainCity_Lv{0}_Player.prefab",
+    "highPath": "",
+    "iconPath": ""
+  },
+  {
+    "id": "1022",
+    "nameKey": "NewMainCity_BuildingVegetableStore",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_Vegetable_Store .prefab",
+    "highPath": "",
+    "iconPath": "Assets/_Res/Addressable/04MetaGameBundle/Sprites/NewMainCity/NewMainCity_Building_Vegetable_Store.png"
+  },
+  {
+    "id": "1023",
+    "nameKey": "NewMainCity_BuildingAlchemy",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_Alchemy.prefab",
+    "highPath": "",
+    "iconPath": "Assets/_Res/Addressable/04MetaGameBundle/Sprites/NewMainCity/NewMainCity_Building_Alchemy.png"
+  },
+  {
+    "id": "1024",
+    "nameKey": "",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_MainCity_Lv{0}.prefab",
+    "highPath": "",
+    "iconPath": ""
+  },
+  {
+    "id": "1025",
+    "nameKey": "NewMainCity_BuildingMageTower",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_MageTower.prefab",
+    "highPath": "",
+    "iconPath": "Assets/_Res/Addressable/04MetaGameBundle/Sprites/NewMainCity/NewMainCity_Building_MageTower.png"
+  },
+  {
+    "id": "1026",
+    "nameKey": "NewMainCity_BuildingPotionsTower",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_PotionsTower.prefab",
+    "highPath": "",
+    "iconPath": "Assets/_Res/Addressable/04MetaGameBundle/Sprites/NewMainCity/NewMainCity_Building_PotionsTower.png"
+  },
+  {
+    "id": "1027",
+    "nameKey": "NewMainCity_BuildingFort",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_Fort.prefab",
+    "highPath": "",
+    "iconPath": "Assets/_Res/Addressable/04MetaGameBundle/Sprites/NewMainCity/NewMainCity_Building_Fort.png"
+  },
+  {
+    "id": "1028",
+    "nameKey": "NewMainCity_BuildingKnights",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_Knights.prefab",
+    "highPath": "",
+    "iconPath": "Assets/_Res/Addressable/04MetaGameBundle/Sprites/NewMainCity/NewMainCity_Building_Knights.png"
+  },
+  {
+    "id": "1029",
+    "nameKey": "NewMainCity_BuildingFoundry",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_Foundry.prefab",
+    "highPath": "",
+    "iconPath": "Assets/_Res/Addressable/04MetaGameBundle/Sprites/NewMainCity/NewMainCity_Building_Foundry.png"
+  },
+  {
+    "id": "1030",
+    "nameKey": "NewMainCity_BuildingFarm",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_Farm.prefab",
+    "highPath": "",
+    "iconPath": "Assets/_Res/Addressable/04MetaGameBundle/Sprites/NewMainCity/NewMainCity_Building_Farm.png"
+  },
+  {
+    "id": "1031",
+    "nameKey": "NewMainCity_BuildingExchange",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_Exchange.prefab",
+    "highPath": "",
+    "iconPath": "Assets/_Res/Addressable/04MetaGameBundle/Sprites/NewMainCity/NewMainCity_Building_Exchange.png"
+  },
+  {
+    "id": "1032",
+    "nameKey": "NewMainCity_BuildingFountain",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_Fountain.prefab",
+    "highPath": "",
+    "iconPath": "Assets/_Res/Addressable/04MetaGameBundle/Sprites/NewMainCity/NewMainCity_Building_Fountain.png"
+  },
+  {
+    "id": "1033",
+    "nameKey": "NewMainCity_BuildingBazaar",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_Bazaar.prefab",
+    "highPath": "",
+    "iconPath": "Assets/_Res/Addressable/04MetaGameBundle/Sprites/NewMainCity/NewMainCity_Building_Bazaar.png"
+  },
+  {
+    "id": "1034",
+    "nameKey": "NewMainCity_BuildingPasture",
+    "path": "Assets/_Res/Addressable/04MetaGameBundle/Prefabs/NewMainCity_Building/NewMainCity_Building_Pasture.prefab",
+    "highPath": "",
+    "iconPath": "Assets/_Res/Addressable/04MetaGameBundle/Sprites/NewMainCity/NewMainCity_Building_Pasture.png"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "SeasonPVPWinScore",
+    "value": "10"
+  },
+  {
+    "id": "SeasonPVPLoseScore",
+    "value": "0"
+  },
+  {
+    "id": "WeeklyUnlockPVPWinRequirement",
+    "value": "100"
+  },
+  {
+    "id": "SeasonDefaultBattleCount",
+    "value": "50"
+  },
+  {
+    "id": "NormalPVPWinExp",
+    "value": "20"
+  },
+  {
+    "id": "NormalPVPLoseExp",
+    "value": "10"
+  },
+  {
+    "id": "SeasonPVPWinExp",
+    "value": "20"
+  },
+  {
+    "id": "SeasonPVPLoseExp",
+    "value": "10"
+  },
+  {
+    "id": "NormalPVPWinSeasonPassExp",
+    "value": "5,11"
+  },
+  {
+    "id": "DailySPPointsMatches",
+    "value": "50"
+  }
+]

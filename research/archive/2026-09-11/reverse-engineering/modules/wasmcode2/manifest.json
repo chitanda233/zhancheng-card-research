@@ -1,0 +1,30 @@
+{
+  "schema_version": 2,
+  "name": "wasmcode2",
+  "role": "function-split archive",
+  "raw_wxapkg_path": "research/archive/2026-09-11/raw/packages/wx9eed71970378b2ae/16/_wasmcode2_.wxapkg",
+  "raw_wxapkg_sha256": "cf0a158e34bedfbbdd5427a4fb48b3915df9d86056f4b80c6226886783f01535",
+  "raw_wxapkg_size": 12744150,
+  "unpacked_member": {
+    "file": "/wasmcode2/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
+    "offset": 120,
+    "size": 12742905,
+    "sha256": "c541581100f0a891ba8b8aaad3fde780e3b03cc48218537c143d33580987e34d"
+  },
+  "payload": {
+    "path": "research/archive/2026-09-11/unpacked/_wasmcode2_/wasmcode2/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
+    "size": 12742905,
+    "sha256": "c541581100f0a891ba8b8aaad3fde780e3b03cc48218537c143d33580987e34d"
+  },
+  "standard_brotli_probe": "failed",
+  "loader_semantics": "Loaded by wx.loadSubpackage(wasmcode2), read as bytes, passed to innerInitFuncSplitWasm({archiveArray}); missing functions are requested by table id via innerInvokeWasmBuffer.",
+  "shared_table_size": 367137,
+  "primary_mapping_boundary": "Do not map payload offsets or runtime-local indices directly onto the primary dump.cs RVA/function map without explicit linkage evidence.",
+  "generated": [
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/payload-analysis.json",
+      "size": 19912,
+      "sha256": "84424f70b55c7dce188d98b584602a555e67758dbd1288242946bc4f7ac9f45b"
+    }
+  ]
+}

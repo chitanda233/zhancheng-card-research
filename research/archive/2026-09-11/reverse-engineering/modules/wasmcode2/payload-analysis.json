@@ -1,0 +1,1045 @@
+{
+  "schema_version": 1,
+  "name": "wasmcode2",
+  "role": "function-split archive consumed by innerInitFuncSplitWasm",
+  "input": {
+    "path": "research/archive/2026-09-11/unpacked/_wasmcode2_/wasmcode2/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
+    "size": 12742905,
+    "sha256": "c541581100f0a891ba8b8aaad3fde780e3b03cc48218537c143d33580987e34d",
+    "prefix_hex_256": "983e00009f876816ebcc4472ad4f52e4c846de3349806266ae2d00edc3ffeb1c51253f500aa2aae2de9ffb1e081171761652505db922495c27c042a1bf6d6fc788fa182055d5de1327d031c4a402327f9d434cb279410a4a95f900caffffffffffffffffffffffdf6ab278fadaacae39aaba676767decceeddde47100e04f4f8780aa7281141414d4c4c4ccc8ffc342692c42441d159c9849e09654830564c1052a9c4e028afcdc6098dccd088495efa44836a53ce92bc5dbbb084443aa433a49b94339c0aeb7d24db40e46070dca9a0304d585628224c0e3df230669c693b3adec57e07879d60984c862d49860c2d488809b3892724190f3192e5709cd0e484",
+    "suffix_hex_256": "916777ef88be80fcc41464002fb8334866300ee1e1a0a2c64741e99dde2c8b095e730a3a54f8ababd653ede0dbc7ff4095619c6248fc1199cab1906105991a42cde8db56efbaddbf0eed9de0bbf7c1a187532f609fbd7e70ff200e5b1ab33dc9f198f2554ca107b52092205447ed9c96263d13066f8c2299b5b020e080c82d8c4faf9051510332de1595a839d734a9ebdb44aa85215b5e8ede5d48f8890e741b463d0a681cfe44f3c964322814422b175cc9b3d96f87835e70832c47e54ff833c36bc1c47f23ab10b6806d83dcd99bd75d2f7b3ef7811d023f02730cf204dc29a433b8973caf55dcd17c25f99b69f07f721039a12bc22546c494861ad3476079"
+  },
+  "format_probe": {
+    "starts_with_wasm_magic": false,
+    "standard_brotli_probe": "failed",
+    "magic_offsets": {
+      "wasm": [],
+      "gzip": [
+        76504,
+        117749,
+        121382,
+        124508,
+        127645,
+        253298,
+        279032,
+        657236,
+        677138,
+        687614,
+        730538,
+        775537,
+        824165,
+        842288,
+        879527,
+        899568,
+        900423,
+        906753,
+        1190730,
+        1293078,
+        1453163,
+        1514000,
+        1535503,
+        1604365,
+        1638539,
+        1746764,
+        1762988,
+        1795546,
+        1927319,
+        1961913,
+        2132141,
+        2190010,
+        2292134,
+        2332514,
+        2367271,
+        2395006,
+        2548263,
+        2838557,
+        2872052,
+        3180313,
+        3303120,
+        3345201,
+        3465027,
+        3722108,
+        3827985,
+        3838997,
+        4085783,
+        4116932,
+        4189011,
+        4374745,
+        4379996,
+        4426812,
+        4487375,
+        4491645,
+        4538498,
+        4581207,
+        4827999,
+        4859922,
+        4894548,
+        4896642,
+        4978939,
+        4992471,
+        5083659,
+        5100537,
+        5123895,
+        5178592,
+        5256275,
+        5411255,
+        5532433,
+        5608919,
+        5688338,
+        5957663,
+        5959099,
+        5975200,
+        6047879,
+        6048953,
+        6074266,
+        6090995,
+        6315283,
+        6356787,
+        6376200,
+        6392154,
+        6395172,
+        6433524,
+        6494349,
+        6517550,
+        6605128,
+        6710064,
+        6750609,
+        6759792,
+        6800086,
+        6811367,
+        6873625,
+        6905321,
+        6955040,
+        6957914,
+        6960325,
+        7121093,
+        7172504,
+        7204545,
+        7363220,
+        7396586,
+        7420021,
+        7443222,
+        7472006,
+        7492780,
+        7511160,
+        7578998,
+        7589026,
+        7686566,
+        7696539,
+        7708392,
+        7731853,
+        7756158,
+        7759247,
+        7828611,
+        7842135,
+        7875425,
+        8067176,
+        8121848,
+        8251285,
+        8293287,
+        8318005,
+        8387517,
+        8485139,
+        8525748,
+        8532502,
+        8541236,
+        8555407,
+        8572168,
+        8578748,
+        8594943,
+        8602792,
+        8615658,
+        8670120,
+        8710276,
+        8848789,
+        8867778,
+        8882812,
+        8973554,
+        9096176,
+        9181941,
+        9254686,
+        9273220,
+        9299844,
+        9346949,
+        9351641,
+        9405154,
+        9472016,
+        9544667,
+        9610530,
+        9615594,
+        9714149,
+        9788294,
+        9823565,
+        9843757,
+        9878555,
+        9887395,
+        9911856,
+        9917562,
+        9969424,
+        9996053,
+        10157085,
+        10257112,
+        10261655,
+        10419550,
+        10448678,
+        10494420,
+        10533295,
+        10611544,
+        10638006,
+        10705007,
+        10712353,
+        10849612,
+        11004644,
+        11147741,
+        11250337,
+        11276970,
+        11301625,
+        11447841,
+        11473710,
+        11479795,
+        11503596,
+        11513088,
+        11515047,
+        11601086,
+        11610557,
+        11953352,
+        12184473,
+        12211164,
+        12280283,
+        12327392,
+        12357547,
+        12365377,
+        12440353,
+        12460865,
+        12511720,
+        12537489,
+        12736616
+      ],
+      "zstd": [],
+      "zip": [],
+      "unityfs": [],
+      "brotli_dictionary_hint": []
+    },
+    "whole_file_entropy_bits_per_byte": 7.998614,
+    "entropy_per_1MiB_block": [
+      7.995688,
+      7.999048,
+      7.99902,
+      7.999192,
+      7.999036,
+      7.998713,
+      7.999121,
+      7.997947,
+      7.997647,
+      7.997875,
+      7.997827,
+      7.997854,
+      7.996597
+    ],
+    "printable_ascii_sample_count": 200,
+    "printable_ascii_samples": [
+      {
+        "offset": 3888,
+        "text": "}?+]dD?F\"x"
+      },
+      {
+        "offset": 4309,
+        "text": "%KCh/`^t"
+      },
+      {
+        "offset": 9602,
+        "text": "wFSJuMyDp"
+      },
+      {
+        "offset": 10299,
+        "text": "g.jAolx+\\"
+      },
+      {
+        "offset": 12553,
+        "text": "ifS3Ux2,*"
+      },
+      {
+        "offset": 17296,
+        "text": "S`~&XIdU"
+      },
+      {
+        "offset": 33812,
+        "text": "Z?F{dvL["
+      },
+      {
+        "offset": 35210,
+        "text": "Z]J8K_pt;G"
+      },
+      {
+        "offset": 38407,
+        "text": "TR1WZR2W"
+      },
+      {
+        "offset": 42610,
+        "text": "4Zx_'azB"
+      },
+      {
+        "offset": 43486,
+        "text": ":cn>En0e"
+      },
+      {
+        "offset": 48049,
+        "text": "Tk/:fnkrB"
+      },
+      {
+        "offset": 53960,
+        "text": "]EWG}T#j"
+      },
+      {
+        "offset": 56944,
+        "text": "TI0R9$=%"
+      },
+      {
+        "offset": 58169,
+        "text": "NLYRLGaI"
+      },
+      {
+        "offset": 66898,
+        "text": "Dzu8e2= 8"
+      },
+      {
+        "offset": 67530,
+        "text": "'a\"a!a&aK"
+      },
+      {
+        "offset": 74763,
+        "text": "4S48qGMa"
+      },
+      {
+        "offset": 91772,
+        "text": "_2'0kSlfXp"
+      },
+      {
+        "offset": 104689,
+        "text": "\"SP*DJBLV"
+      },
+      {
+        "offset": 107967,
+        "text": "]E*~\\'q!"
+      },
+      {
+        "offset": 113344,
+        "text": ";AYqbLt@"
+      },
+      {
+        "offset": 115910,
+        "text": "Sy<`@0e=/"
+      },
+      {
+        "offset": 116560,
+        "text": "(Jl +~@R3"
+      },
+      {
+        "offset": 121620,
+        "text": ":~W08=Us"
+      },
+      {
+        "offset": 121753,
+        "text": "s`e|2nH~"
+      },
+      {
+        "offset": 122282,
+        "text": "Fu\\[VWSUQ"
+      },
+      {
+        "offset": 125004,
+        "text": "ZoX,>a<u"
+      },
+      {
+        "offset": 134799,
+        "text": "P8M0]%:9"
+      },
+      {
+        "offset": 144108,
+        "text": "=4FFVu=$"
+      },
+      {
+        "offset": 159770,
+        "text": "Q3d5h.Ii!<Y"
+      },
+      {
+        "offset": 163157,
+        "text": ")Cf$:z]~"
+      },
+      {
+        "offset": 168420,
+        "text": "Bs;5Ta+t"
+      },
+      {
+        "offset": 178348,
+        "text": "jwd3rE!^"
+      },
+      {
+        "offset": 184675,
+        "text": "_R4gM-aF"
+      },
+      {
+        "offset": 192068,
+        "text": "Ychm)*gG"
+      },
+      {
+        "offset": 194052,
+        "text": "vABN\"rS31D"
+      },
+      {
+        "offset": 195277,
+        "text": "))>wopADU "
+      },
+      {
+        "offset": 198328,
+        "text": "t-\";\"/9r"
+      },
+      {
+        "offset": 202964,
+        "text": "Qn,mT:O?"
+      },
+      {
+        "offset": 208385,
+        "text": "*82y]4HC"
+      },
+      {
+        "offset": 209045,
+        "text": "7b*d6gNQ"
+      },
+      {
+        "offset": 214056,
+        "text": "\\HN]ueI6"
+      },
+      {
+        "offset": 219397,
+        "text": "6,Y\\pJ;t"
+      },
+      {
+        "offset": 224029,
+        "text": "WK%&LUU_"
+      },
+      {
+        "offset": 226432,
+        "text": "`x|M\\y4A"
+      },
+      {
+        "offset": 231159,
+        "text": "8%\\/Y^^j"
+      },
+      {
+        "offset": 238823,
+        "text": "(,aT-1Ys"
+      },
+      {
+        "offset": 250876,
+        "text": "P%FK 9N;C<g"
+      },
+      {
+        "offset": 253897,
+        "text": ".9/<O 0R"
+      },
+      {
+        "offset": 257676,
+        "text": "3g6w~NEN"
+      },
+      {
+        "offset": 266659,
+        "text": "a7'u7NvR"
+      },
+      {
+        "offset": 266963,
+        "text": "Ud[&%v7:"
+      },
+      {
+        "offset": 268024,
+        "text": "^(%j3~+r"
+      },
+      {
+        "offset": 281245,
+        "text": "Z5el]0M)"
+      },
+      {
+        "offset": 293485,
+        "text": "bs2\"?{\"G"
+      },
+      {
+        "offset": 300210,
+        "text": "V\\oYDXGE"
+      },
+      {
+        "offset": 304428,
+        "text": "XgHpR8iD"
+      },
+      {
+        "offset": 305149,
+        "text": "%[eHS$G "
+      },
+      {
+        "offset": 308330,
+        "text": "5;ssvx`2F"
+      },
+      {
+        "offset": 310224,
+        "text": "=%kb7&:%"
+      },
+      {
+        "offset": 319209,
+        "text": "VVn[K7]tFG"
+      },
+      {
+        "offset": 320158,
+        "text": "amk9p42'/"
+      },
+      {
+        "offset": 321335,
+        "text": "!vIg)!9K("
+      },
+      {
+        "offset": 322774,
+        "text": "Hr('#~}Um"
+      },
+      {
+        "offset": 323522,
+        "text": "(b4:6VuXe"
+      },
+      {
+        "offset": 324639,
+        "text": "Vo<tdr`.z"
+      },
+      {
+        "offset": 325653,
+        "text": "&K=:-RSXj"
+      },
+      {
+        "offset": 333618,
+        "text": "l\\UEY^MVIQS"
+      },
+      {
+        "offset": 336598,
+        "text": "hfnaiemck"
+      },
+      {
+        "offset": 337743,
+        "text": "HWY.W(Uj"
+      },
+      {
+        "offset": 340570,
+        "text": "HWFVN^Ai"
+      },
+      {
+        "offset": 340580,
+        "text": "eTTSC]CSKGW"
+      },
+      {
+        "offset": 341348,
+        "text": "1_Iz 9$="
+      },
+      {
+        "offset": 342268,
+        "text": "!AzwhM>e"
+      },
+      {
+        "offset": 510565,
+        "text": "@`aa`a`a!"
+      },
+      {
+        "offset": 514503,
+        "text": "58lH,j4{"
+      },
+      {
+        "offset": 520016,
+        "text": "%5~/_KGz"
+      },
+      {
+        "offset": 525590,
+        "text": "vkjo!:GLGd"
+      },
+      {
+        "offset": 525804,
+        "text": ".XQ]d??H"
+      },
+      {
+        "offset": 530914,
+        "text": "[q]_iQ2*"
+      },
+      {
+        "offset": 549959,
+        "text": "'!~1cGo8"
+      },
+      {
+        "offset": 553216,
+        "text": "J(U\\V7o!"
+      },
+      {
+        "offset": 560101,
+        "text": "G!KH?;F2"
+      },
+      {
+        "offset": 560927,
+        "text": "L4\"*y9 jq"
+      },
+      {
+        "offset": 563335,
+        "text": "Rrekod~3"
+      },
+      {
+        "offset": 569211,
+        "text": "I_$=Ry1V"
+      },
+      {
+        "offset": 572054,
+        "text": "!<`spfYL+r"
+      },
+      {
+        "offset": 577313,
+        "text": "@+D\\Hx_$"
+      },
+      {
+        "offset": 577514,
+        "text": "uu*ah31l"
+      },
+      {
+        "offset": 581599,
+        "text": "EUAax62W"
+      },
+      {
+        "offset": 585571,
+        "text": " #&\"$7#G"
+      },
+      {
+        "offset": 592980,
+        "text": "?-svf_zWM"
+      },
+      {
+        "offset": 593878,
+        "text": "(tx;yvj=;"
+      },
+      {
+        "offset": 597008,
+        "text": "n86D%l!R"
+      },
+      {
+        "offset": 600260,
+        "text": "j aAWjY$"
+      },
+      {
+        "offset": 602903,
+        "text": "64M&z:Lmw.c"
+      },
+      {
+        "offset": 606417,
+        "text": "JLU{ V]TH"
+      },
+      {
+        "offset": 607090,
+        "text": ")+@^ L!N"
+      },
+      {
+        "offset": 609131,
+        "text": "!e)0Weaf"
+      },
+      {
+        "offset": 612307,
+        "text": "X|Z.w:W27s"
+      },
+      {
+        "offset": 614196,
+        "text": "^A-gzU4d"
+      },
+      {
+        "offset": 614743,
+        "text": "TPI0~(x>"
+      },
+      {
+        "offset": 615597,
+        "text": "Vw1XW*K')"
+      },
+      {
+        "offset": 615988,
+        "text": "rwnKj%UA<+h"
+      },
+      {
+        "offset": 617239,
+        "text": "YK|6U'4z"
+      },
+      {
+        "offset": 623417,
+        "text": "9(5oo)4E"
+      },
+      {
+        "offset": 631386,
+        "text": "(dD8~z|$"
+      },
+      {
+        "offset": 644615,
+        "text": "_A>;=[@D"
+      },
+      {
+        "offset": 644839,
+        "text": "9Ubes4;5"
+      },
+      {
+        "offset": 646034,
+        "text": "Yti\\jyaS"
+      },
+      {
+        "offset": 656383,
+        "text": "~|J~T<.5H"
+      },
+      {
+        "offset": 658420,
+        "text": "y=\\3FDwOE&"
+      },
+      {
+        "offset": 661609,
+        "text": "3Wu{TeNr+*"
+      },
+      {
+        "offset": 674193,
+        "text": "q OUHtJ*w9"
+      },
+      {
+        "offset": 674600,
+        "text": "HHr>\"-iK"
+      },
+      {
+        "offset": 689990,
+        "text": "OURx_PO|"
+      },
+      {
+        "offset": 701503,
+        "text": "\\7O\"7-En"
+      },
+      {
+        "offset": 706402,
+        "text": "B)^~vrQB"
+      },
+      {
+        "offset": 710113,
+        "text": "bC_N@,g&"
+      },
+      {
+        "offset": 718022,
+        "text": "P8hHH#MP"
+      },
+      {
+        "offset": 724498,
+        "text": "_f^gX^,b"
+      },
+      {
+        "offset": 728226,
+        "text": "ZG46q*T'BO"
+      },
+      {
+        "offset": 731391,
+        "text": "uB2)FXB2h"
+      },
+      {
+        "offset": 746549,
+        "text": "qA%lQ=Z!"
+      },
+      {
+        "offset": 751564,
+        "text": "zT!TSS3B"
+      },
+      {
+        "offset": 754950,
+        "text": "IIN*h/p&6;"
+      },
+      {
+        "offset": 756398,
+        "text": "[lgE,[/&^Ha[{"
+      },
+      {
+        "offset": 765918,
+        "text": "dP~<J$U["
+      },
+      {
+        "offset": 766509,
+        "text": "Z]}ix7)e"
+      },
+      {
+        "offset": 766539,
+        "text": "drCe8grEj"
+      },
+      {
+        "offset": 769257,
+        "text": "{PxV8W{vk"
+      },
+      {
+        "offset": 776624,
+        "text": "M@5(;owx"
+      },
+      {
+        "offset": 783953,
+        "text": "`YNzJ{=9)"
+      },
+      {
+        "offset": 788952,
+        "text": "V<-MVG6 U"
+      },
+      {
+        "offset": 798299,
+        "text": " 6;S)*jj"
+      },
+      {
+        "offset": 803118,
+        "text": "S!TA%\"\"A"
+      },
+      {
+        "offset": 807246,
+        "text": "I~T_$39J"
+      },
+      {
+        "offset": 808878,
+        "text": "'{i40Xl7"
+      },
+      {
+        "offset": 810016,
+        "text": "3&jUR&E5"
+      },
+      {
+        "offset": 811651,
+        "text": "Y-76EdP!"
+      },
+      {
+        "offset": 818901,
+        "text": "'u$fZF]x@"
+      },
+      {
+        "offset": 821720,
+        "text": "K)M>(@wc]"
+      },
+      {
+        "offset": 833456,
+        "text": "6YGQyuKT"
+      },
+      {
+        "offset": 834099,
+        "text": "9-yDWCx~ky"
+      },
+      {
+        "offset": 835187,
+        "text": "\\q_Fa4[@"
+      },
+      {
+        "offset": 837278,
+        "text": "MZ'Cd 8v"
+      },
+      {
+        "offset": 847785,
+        "text": "hG~sa!tM"
+      },
+      {
+        "offset": 849686,
+        "text": "y,J=_]{:"
+      },
+      {
+        "offset": 851366,
+        "text": "K5oJPV3,"
+      },
+      {
+        "offset": 862877,
+        "text": "W'SI2q;+"
+      },
+      {
+        "offset": 876447,
+        "text": "mC*!4hu9b&7:"
+      },
+      {
+        "offset": 877168,
+        "text": "bQf!Z>P%"
+      },
+      {
+        "offset": 877607,
+        "text": "(YEJS,9'"
+      },
+      {
+        "offset": 885195,
+        "text": "gzI_BE,<:"
+      },
+      {
+        "offset": 885551,
+        "text": "HHWd8uS`"
+      },
+      {
+        "offset": 888287,
+        "text": "BfQCn86.2"
+      },
+      {
+        "offset": 896829,
+        "text": "P^wsK.+`"
+      },
+      {
+        "offset": 902526,
+        "text": "=qA2|,#)N"
+      },
+      {
+        "offset": 911631,
+        "text": "*7-+rpp{"
+      },
+      {
+        "offset": 920793,
+        "text": "9?y`MbW+"
+      },
+      {
+        "offset": 933104,
+        "text": "[v8l45BW"
+      },
+      {
+        "offset": 934574,
+        "text": "-[qUq5quA"
+      },
+      {
+        "offset": 943359,
+        "text": "?f$M&Cs\\"
+      },
+      {
+        "offset": 945787,
+        "text": "K{s^P|\"'"
+      },
+      {
+        "offset": 950263,
+        "text": "09#6GSQh"
+      },
+      {
+        "offset": 956813,
+        "text": "dg}}u+^w*Jz"
+      },
+      {
+        "offset": 957377,
+        "text": "J_'>Jy4n"
+      },
+      {
+        "offset": 967266,
+        "text": "03}\\)5wM/e"
+      },
+      {
+        "offset": 976444,
+        "text": "0GQ6|@1a"
+      },
+      {
+        "offset": 979391,
+        "text": "xU4$DsRA"
+      },
+      {
+        "offset": 982052,
+        "text": "zA0di:CQ"
+      },
+      {
+        "offset": 994085,
+        "text": "$): a+do~"
+      },
+      {
+        "offset": 994282,
+        "text": "X1m5~htX"
+      },
+      {
+        "offset": 1000358,
+        "text": "}5vv@Ly{y+"
+      },
+      {
+        "offset": 1005786,
+        "text": "LQgoF oM+"
+      },
+      {
+        "offset": 1007242,
+        "text": "sOhXqt$X"
+      },
+      {
+        "offset": 1009678,
+        "text": "x&WZJi,c"
+      },
+      {
+        "offset": 1013838,
+        "text": "Zl5G}0<n"
+      },
+      {
+        "offset": 1015306,
+        "text": "Z_\"gOg+)X"
+      },
+      {
+        "offset": 1015614,
+        "text": "8f-h0Fbe"
+      },
+      {
+        "offset": 1018162,
+        "text": "{[\"eR&G2"
+      },
+      {
+        "offset": 1019418,
+        "text": "cYJTTOYe"
+      },
+      {
+        "offset": 1020720,
+        "text": "!hPR~.jl\""
+      },
+      {
+        "offset": 1022523,
+        "text": "b9w OVki"
+      },
+      {
+        "offset": 1032404,
+        "text": "L,8[(rG\"^"
+      },
+      {
+        "offset": 1033190,
+        "text": "2H2\\!Q*^s"
+      },
+      {
+        "offset": 1034640,
+        "text": "+Khm02Y:"
+      },
+      {
+        "offset": 1036769,
+        "text": "M,'B*-iX"
+      },
+      {
+        "offset": 1044474,
+        "text": "[j\\d!(EN"
+      },
+      {
+        "offset": 1045611,
+        "text": "cu#Tx3DUfk"
+      },
+      {
+        "offset": 1047082,
+        "text": "EWH8?\"Kg9"
+      },
+      {
+        "offset": 1058136,
+        "text": "e5ub#3SV"
+      },
+      {
+        "offset": 1070874,
+        "text": "]t# &|J/"
+      },
+      {
+        "offset": 1074971,
+        "text": "crf%13og"
+      },
+      {
+        "offset": 1085160,
+        "text": "Cs.Zy?O-"
+      },
+      {
+        "offset": 1090378,
+        "text": "-!J\"7j+j"
+      },
+      {
+        "offset": 1093385,
+        "text": "rbN3x%Cd?"
+      },
+      {
+        "offset": 1095898,
+        "text": "ZVXg#8mw"
+      },
+      {
+        "offset": 1098122,
+        "text": "1pKo>K-Z"
+      }
+    ]
+  },
+  "loader_source": "research/archive/2026-09-11/unpacked/__WITHOUT_MULTI_PLUGINCODE__/game.js",
+  "analysis_boundary": "This report describes container/byte structure only. It does not infer primary-module RVA or function identity from offsets inside a runtime split payload."
+}

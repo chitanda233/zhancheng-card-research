@@ -1,0 +1,15 @@
+﻿{"Datas":[
+{"id":1,"rewardCode":"CB_GOLD_COIN","name":"陈伯限定黄金金币 45g"},
+{"id":2,"rewardCode":"ALIENWARE_16X","name":"外星人星舰16X笔记本"},
+{"id":3,"rewardCode":"IPHONE17PM_256G","name":"苹果17promax 256G"},
+{"id":4,"rewardCode":"IPHONE17_256G","name":"苹果17 256G"},
+{"id":5,"rewardCode":"SONY_PS5","name":"索尼PS5游戏机"},
+{"id":6,"rewardCode":"MI_TV_A75_75","name":"小米A75 75英寸电视机"},
+{"id":7,"rewardCode":"HK_SOUND_CRYSTAL5","name":"哈曼卡顿水晶五代音箱"},
+{"id":8,"rewardCode":"DJI_LITO1","name":"大疆Lito 1无人机"},
+{"id":9,"rewardCode":"REDMI_PAD2SE_6_128G","name":"小米平板REDMI Pad 2 SE（6+128G）"},
+{"id":10,"rewardCode":"CB_CUSTOM_KEYBOARD","name":"陈伯定制键盘"},
+{"id":11,"rewardCode":"CUSTOM_FIGURE","name":"陈伯定制手办"},
+{"id":12,"rewardCode":"CUSTOM_TSHIRT","name":"陈伯定制T恤"},
+{"id":13,"rewardCode":"diamond","name":"钻石"}]
+}

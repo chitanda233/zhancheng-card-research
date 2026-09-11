@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "tooltipCount": 1034,
+  "checks": [
+    "mouse hover",
+    "Escape dismissal",
+    "keyboard focus",
+    "card/tutorial namespace distinction",
+    "inline SVG tooltips",
+    "viewport edge positioning",
+    "390px touch/click tooltip",
+    "offline file URL"
+  ],
+  "pageErrors": [],
+  "ambiguous": [],
+  "wrongResource": []
+}

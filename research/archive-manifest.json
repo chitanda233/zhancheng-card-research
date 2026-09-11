@@ -1,0 +1,1697 @@
+{
+  "title": "占城大师研究快照完整性清单",
+  "generatedAt": "2026-09-11T06:19:30+00:00",
+  "archiveRoot": "research/archive",
+  "note": "当前研究快照与 canonical 逆向产物已纳入 Git；本清单用于验证归档字节完整性。",
+  "snapshots": [
+    {
+      "snapshot": "2026-09-03",
+      "files": 73,
+      "bytes": 394693049,
+      "entries": [
+        {
+          "path": "cache/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
+          "bytes": 1,
+          "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+        },
+        {
+          "path": "cache/StreamingAssets/WebGL/ljzs_lt/ABFiles_c3fdfad4f447f88024a81625325a5647.txt",
+          "bytes": 5157,
+          "sha256": "09aad146e89b6db1b7b1406fd0ac58387dc537cd9555d7a4c0078069322f33d9"
+        },
+        {
+          "path": "cache/StreamingAssets/WebGL/ljzs_lt/data/config_b0f5e3dd0a9c4d70113144d682a85db3.unity3d",
+          "bytes": 52669,
+          "sha256": "085862a88950e7962a611b12541d9c8be73664084a3b7707e81d022c8ee6cd17"
+        },
+        {
+          "path": "cache/StreamingAssets/WebGL/ljzs_lt/ljzs_lt_eff7e52d2eaf4140462661f223c51d7f",
+          "bytes": 2852,
+          "sha256": "bdc59745e7322ee3d166c11f1d13d0a89cd05b0936afe33c853ba1b5e0f4915a"
+        },
+        {
+          "path": "cache/StreamingAssets/WebGL/ljzs_lt/ui/uiroot.prefab_4967075b56d636d9e81dd8bb5c508428.unity3d",
+          "bytes": 5577,
+          "sha256": "a1e1536dc52c7460dd26fb41748bd643ad3eecdea5d936bbd294345efe089e64"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/01firstbundle_assets_all_3ffdc4ebbc7b6ef074f13e27e84e7c06.bundle",
+          "bytes": 1013038,
+          "sha256": "9f7fafee853b9d658f7b089d02a7608ff6eef2d5280de8b9bf63608a7fab6d52"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/02coregamebundle_assets_all_c6dfa4c52b17c05bb82c44d406f5e1c4.bundle",
+          "bytes": 4318676,
+          "sha256": "0d9f55350d4c0c62fe1cf0221d19f7c6839a502e24ca0ccb740edc2e055bf95f"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/04metagamebundle_assets_all_58240af7f1abe2a25d5b0d62bfdead4f.bundle",
+          "bytes": 14986747,
+          "sha256": "8d09478450beb0f238becfe549844d5207d0b83539822044456ea9669433bbfd"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/3ae6d97ed4ae5e5edbde3a654c423e24_unitybuiltinshaders_36685f24b5d46f9f9f9f18b91f574c3c.bundle",
+          "bytes": 111315,
+          "sha256": "7a2d37317276ab06bdef003fc2bb675de27d488b82b51a6c12ddb82acc0ae3a9"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/3dart_share_assets_all_1faa924e251d05d0c85269c3ae20077c.bundle",
+          "bytes": 5779122,
+          "sha256": "c38ef0cc4ef20f17a1f3153f20d14ab6d1205cd3851fdd1a0879fa4475a5807e"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/a01firstbundle_assets_all_c4b66dd62cf568d379fafefd5bb52b2b.bundle",
+          "bytes": 1778103,
+          "sha256": "3c827355852b000dd12d7305120ee52b226950f9d5a68c6019b1321fc906ef13"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/a02_arenawithprop_assets_all_e664cc5f9dc640503b410e5720199cca.bundle",
+          "bytes": 2807518,
+          "sha256": "e09a0d595dada194930bee2e0980a91ed9142020422b416a8e761be642134ea7"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/a02coregamebundle_assets_all_0f914b74a49f086b20b97816f0559b36.bundle",
+          "bytes": 4340415,
+          "sha256": "c4df25cf5219ffb7888dfb6ade0593e8bbb86d481c80045086abca930790fc44"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/a03coregamebundle_assets_all_8df5669643c9431d31280f52c9bbd3af.bundle",
+          "bytes": 316770,
+          "sha256": "46a9659b2b0f5ab2d2e4767ff1c5e82dbd52e07685a655e0cbad19c08f7dbcfb"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/a04metagamebundle_assets_all_f7f2d75ef683451b85ca8ef576ddfe81.bundle",
+          "bytes": 10858380,
+          "sha256": "6d793d51f1e0ba3888f8dfd64491e55025cdfa4428173b07f270cb04a7b3fa74"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/audiosbundle_assets_all_1160cec0a919418844657ba097aa7c85.bundle",
+          "bytes": 2225082,
+          "sha256": "681818378ae5323c71834384611c2c1c7662c7d1a8b41db6b262a5af69abe790"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/catalog_2026.08.05.09.26.16.hash",
+          "bytes": 32,
+          "sha256": "78050b5a853e1d28b42b47b2839da06273c1490c0fbe368e876706cbf2389c5e"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/catalog_2026.08.28.09.05.24.hash",
+          "bytes": 32,
+          "sha256": "e8e93d051814332fa5631db16c0a324b77138f9636a57f3b585678d9c2fba94f"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/cefbf0334e5fbb8f0ee2e12dbd1af7fe.bundle",
+          "bytes": 851642,
+          "sha256": "89dd77c7b8283eb99eda455451e55347e35fc3cf676b670905c443155abd1ff1"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/charactersorganized_assets__shared_7025386afcb9d9c2f79dd56a67b24dc1.bundle",
+          "bytes": 17931,
+          "sha256": "587b23141007d498d910d9fe79820dcb0d50252fa28e1800474822d31e8ab53e"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/charactersorganized_assets_animator_3c7da3d91e521c68debacc6e075da36f.bundle",
+          "bytes": 2720939,
+          "sha256": "71d1463dec8a2fd43991e34e41d7d07f77586eef65e7a974bdfc973e77d512c0"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/defaultlocalgroup_assets_all_4c031180b5ce3b46ed8000db096f08e3.bundle",
+          "bytes": 20287,
+          "sha256": "838ab64432596f502d694b027cc68f03f9130a1f42c3832e50100ce65bf3ca89"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/duplicateassetisolation_assets_all_62e98671e4c4f783c10e4b9c095cc0a5.bundle",
+          "bytes": 18215,
+          "sha256": "b9bf2a811df347f96bc68de80fcf047ea482960a4580da07667e629fd66842cc"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/effectsbundle_assets_all_3915bc155601fd0167ba608493abec2d.bundle",
+          "bytes": 3772406,
+          "sha256": "db1b7327c3372a3bbe4e6c68ce8e6511bdf1791d62bd1b3626eb82f3ed962d18"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/first_effectbundle_assets_all_8bc52dba72de2516b44042ae5d62f42a.bundle",
+          "bytes": 592009,
+          "sha256": "31d789e415968c06440c0ea8f888c17c85ab50cdef5f73fdf073e26145a25b9a"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/first_ui_assets_all_1f4402e98298d818d704df41f3b31643.bundle",
+          "bytes": 818417,
+          "sha256": "8712179936dc359bcd881fcc3269629a517880c73fef47e6f11433691eefac61"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/firstpack01_assets_all_d50b247164ad153710374000e3be085d.bundle",
+          "bytes": 1747999,
+          "sha256": "5086483435ebb7e158610ec750c477a8441cc38c303455db93194240d07fbb9f"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/firstpack02_assets_all_0d06eaef09cadb86ef077b8df025b4a7.bundle",
+          "bytes": 11334560,
+          "sha256": "0abf6dbed3a45a69062a114768e500c4a78a6adc1882ebe99e71beaafaf6cc3b"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/firstpack0_preload_assets_all_c931ea4d901c477c2b238d6256ceef09.bundle",
+          "bytes": 2938885,
+          "sha256": "474e9c6e6c429b50bbb6fad9d69ac92a3d02087e3707d280a0b1a0c3dffd5533"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/firstpack2_assets_all_7d9e170e4653db36b2ba278f728c3261.bundle",
+          "bytes": 1958962,
+          "sha256": "cd84126fb2c164701b182f75c8cd4d26b5795bc50ac32f850150cb6f1d50028c"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/firstpack_assets_all_90b6de9d931fc3fb82824eb3d8945aa5.bundle",
+          "bytes": 6002967,
+          "sha256": "60595571358e6776f8b19210b86e931eea6548baae8192a5ded72449e9656a50"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/firstpack_home_assets_all_78b8ab3069d237b58c5ad1e6fb5a098c.bundle",
+          "bytes": 12134730,
+          "sha256": "9fc2052745620dec27f06684a73aac7d7bb88d100bca0f54c5683b6133ac61ca"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/font_assets_all_0293e8064761aaac395760cea10f4fbf.bundle",
+          "bytes": 2901920,
+          "sha256": "dd6352cf792fdd4c5c26e68581036604ccbd9727182e4f81c64c86d5f7f4fe66"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/prefabs_assets_all_8b0200574148f11d24ff5c3226907f45.bundle",
+          "bytes": 1866451,
+          "sha256": "a3e17f4ee1f02e20a94c896a2b98bb53f7bfc2dd6023b81df3f622c5ef207997"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/pub_share_assets_all_dc303f4f8f28fdd823675df4f7c8f159.bundle",
+          "bytes": 324132,
+          "sha256": "eb45341b196d1e58acf7e4b387fd713099fee0d7fee5eb9fa36463d659131fd3"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/pvppanel_assets_all_6d0566bc10ae4b0a58bd2a30ecae01bd.bundle",
+          "bytes": 265818,
+          "sha256": "511fa8baa54c3b39ae8f1aad5a65f149e5e35991d8e49ecdfcf87b287b97a897"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/scenepack_assets_all_a0b8d925928ace4254c343747ac57884.bundle",
+          "bytes": 22889,
+          "sha256": "099780d6153e8b58c948d460814c2a5383516371ef0a9bb3bf8ff57fbfc64cc9"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/spine_assets_artifactunlock_6d37f7ce413302111a3c91248b1c28c8.bundle",
+          "bytes": 34467,
+          "sha256": "94abff86cd78841335ad7acbb1472c8f64bc4ef0e0ef5df06a511e9a70504913"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/spine_assets_summon_8cf08864754a00a239e4aa69cd540f6f.bundle",
+          "bytes": 259866,
+          "sha256": "d59697df6978c576b12496186141f2b2be104ed3253c554fe6f9f9291f9d2537"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/spine_assets_upgradercard_6b82b175245f7402bc1a9a302e5e1989.bundle",
+          "bytes": 27843,
+          "sha256": "0236b5cf4417dc6eba974ac3abd67d803b192f77014f8487f78a3e7f2e8dbb44"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/spine_assets_upgraderewardspreviewpanel_ed714a2c8663c25bcee3e7c593766662.bundle",
+          "bytes": 57379,
+          "sha256": "c1582d96648fd07931a21f32e777f3644c5c20e1a074fd3366e0330a58f7be11"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/spine_assets_weeklyclashpanel_40b11238d429f9be1e221452a7b5dfe0.bundle",
+          "bytes": 31177,
+          "sha256": "2d22f4675e2cd7cf4d340766b9e081e60a89311b66e2eef5eee9ee44a0951e1c"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/spinebundle_assets_all_bdb4f591cf39b46a3722d9d5e955e624.bundle",
+          "bytes": 5797698,
+          "sha256": "5ca0fa56e92ace2b2720459dfdd8d94dcf459cfd4a2269340d70d2c8c80ffcbd"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/spritesbundle_assets_all_3a14cc4e248b7792bb96f57eb3ae308b.bundle",
+          "bytes": 7713230,
+          "sha256": "0dab839446bfd23672281abfcf210d1a91e17acae23905ec904b143cc493c256"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/ui_assets_all_203a422009754cbc3795352f3abf337c.bundle",
+          "bytes": 4157902,
+          "sha256": "87fbdc36b1ade3be53e9eced657878ec7169ca715c7c09d1b9c8ff6ed0f43276"
+        },
+        {
+          "path": "cache/StreamingAssets/aa/WebGL/uipackage_assets_all_dce677db473f179827e86e72a1621520.bundle",
+          "bytes": 3430832,
+          "sha256": "0898ddc2a36c6520d0b8a28c02735b0b94f738fe7713aad3d9bd660d2e39f147"
+        },
+        {
+          "path": "cache/__PATCH_DIR/patchFuncIndexList.json",
+          "bytes": 9354,
+          "sha256": "c2bfc25950ea0ad037bafbc67fb3bdf52e92a93db16622b54487ff38ef14e800"
+        },
+        {
+          "path": "cache/a23078fc21f9ca79.webgl.data.unityweb.bin",
+          "bytes": 20479611,
+          "sha256": "73833e7229d02b630e5ebe408b8b4ecc75120153f71cefcb69445043c822e426"
+        },
+        {
+          "path": "reverse-engineering/canonical/README.md",
+          "bytes": 2563,
+          "sha256": "5a6ee21e0e877162eefc8113cb1805c6efc9385e30cf7e50a99a8c40df036d32"
+        },
+        {
+          "path": "reverse-engineering/canonical/dump-audit.json",
+          "bytes": 716,
+          "sha256": "6de0c132198c7224602e82148a3a30255406a83549981a16053fd943c5a83134"
+        },
+        {
+          "path": "reverse-engineering/canonical/element-map.tsv",
+          "bytes": 7447845,
+          "sha256": "95ba803409de762458315f38a0563899fa5095e8911fbc361610cfeb1bfa5d16"
+        },
+        {
+          "path": "reverse-engineering/canonical/manifest.json",
+          "bytes": 3065,
+          "sha256": "e5c74343f512b728731a36e28898ff50b9311cfff9f0ddcc2d2b9998a07e26e7"
+        },
+        {
+          "path": "reverse-engineering/canonical/method-map.tsv",
+          "bytes": 14551469,
+          "sha256": "2fcd64e545acca5b195dcfb833677c5106f429858251349752685553f40f91fd"
+        },
+        {
+          "path": "reverse-engineering/canonical/module-info.txt",
+          "bytes": 68853565,
+          "sha256": "174a538a97155d72e077d8aa371493b262c16a21cc0793a95f8baf51f222614f"
+        },
+        {
+          "path": "reverse-engineering/canonical/module.objdump.gz",
+          "bytes": 67128949,
+          "sha256": "7063018bb59c9ba4cd142dc7b25196eeda3be13656a89588498d3f699885a804"
+        },
+        {
+          "path": "reverse-engineering/canonical/module.wat.gz",
+          "bytes": 23231838,
+          "sha256": "50f7f8fbc3ae3c3cb81c1d92c486015b8cf099cf48538eaa842b6af91037cef5"
+        },
+        {
+          "path": "reverse-engineering/canonical/validation.json",
+          "bytes": 2830,
+          "sha256": "db6b9c132c3d65cf6a32041ceacd3f9f1470687984b6d0b2173b4786329441b3"
+        },
+        {
+          "path": "reverse-engineering/canonical/validation.txt",
+          "bytes": 396,
+          "sha256": "f9f1335965c90d3184303bc4e2ddb33650159210872e64d05ec9b3dd967af040"
+        },
+        {
+          "path": "reverse-engineering/dump.cs",
+          "bytes": 40181928,
+          "sha256": "100964dcabdcbb2ed9691dee8dfb375664a164332827a83e2c2a92c0b39db0a5"
+        },
+        {
+          "path": "reverse-engineering/global-metadata.decrypted.dat",
+          "bytes": 16795612,
+          "sha256": "fa178d839cb6d8b8b24ca5acd8d4bbcef4963332fd49859c80a0dbe20dcc239f"
+        },
+        {
+          "path": "unpacked/__WITHOUT_MULTI_PLUGINCODE__/GameConfig.json",
+          "bytes": 488,
+          "sha256": "3bae7d7dcb10ff6758877f0ffce5409ea91e443411c601e8ae93bf29a373bdfc"
+        },
+        {
+          "path": "unpacked/__WITHOUT_MULTI_PLUGINCODE__/app-config.json",
+          "bytes": 719,
+          "sha256": "0dd70efc46aecd600b08349581c0bb7909131cd2f02a8a10002330279aaa3032"
+        },
+        {
+          "path": "unpacked/__WITHOUT_MULTI_PLUGINCODE__/game.js",
+          "bytes": 709114,
+          "sha256": "1681cabc642b868633ceb9a66951484f7cd8ede1cf0de358b4abe6b6e468e674"
+        },
+        {
+          "path": "unpacked/__WITHOUT_MULTI_PLUGINCODE__/images/375x812.jpg",
+          "bytes": 360088,
+          "sha256": "b479abda2a91f30f616418409eb365073213689212a082bbd67427cffd5df6a9"
+        },
+        {
+          "path": "unpacked/__WITHOUT_MULTI_PLUGINCODE__/images/background.jpg",
+          "bytes": 8917,
+          "sha256": "ee88b4672db843d57b164c5deeaf62e096e3bf91881bdba71a85dd980687db80"
+        },
+        {
+          "path": "unpacked/__WITHOUT_MULTI_PLUGINCODE__/images/unity_logo.png",
+          "bytes": 1216,
+          "sha256": "34799ce1b7a341e39c6c6ea7fa439f170989f3ecc5d0cd3681573569b4b6d239"
+        },
+        {
+          "path": "unpacked/__WITHOUT_MULTI_PLUGINCODE__/workers.js",
+          "bytes": 1750,
+          "sha256": "90cb3596d9411b4c9e024c9dd9efde5b7045914e8fb02e85d9c727c8066226ce"
+        },
+        {
+          "path": "unpacked/_wasmcode1_/wasmcode1/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
+          "bytes": 7706151,
+          "sha256": "743d3f960e614dc2d39ae5d498f28f8a3314a1302f7ae64c0927cf253fb89952"
+        },
+        {
+          "path": "unpacked/_wasmcode1_/wasmcode1/game.js",
+          "bytes": 1118,
+          "sha256": "8bc01c28bda03c4536bd7990755c3cd1aee1eeca22bd552caa343339d473b2d9"
+        },
+        {
+          "path": "unpacked/_wasmcode_/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
+          "bytes": 6786702,
+          "sha256": "63c975b04a35b32e292143ae4dbc95067423d46a31a22e5646c4ade909a527e2"
+        },
+        {
+          "path": "unpacked/_wasmcode_/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br.precompile.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "unpacked/_wasmcode_/wasmcode/game.js",
+          "bytes": 1116,
+          "sha256": "d62e8b985b0b982a84147725bb9cf550c84eadbdd472525e7b9174703c9e7ae1"
+        },
+        {
+          "path": "unpacked/package-manifest.json",
+          "bytes": 2890,
+          "sha256": "4471e77f8eeffed241a8a62a2d58a11bd85b768f80af09e7940db5af1c135e99"
+        }
+      ]
+    },
+    {
+      "snapshot": "2026-09-11",
+      "files": 262,
+      "bytes": 692430662,
+      "entries": [
+        {
+          "path": "README.md",
+          "bytes": 3553,
+          "sha256": "4a9c4296a5c99a1db8de8bc44fba017218a200ae4c949f7e879a347b116103e7"
+        },
+        {
+          "path": "archive.ps1",
+          "bytes": 3578,
+          "sha256": "f91ef1a8b3f50de2508cc08156826bc8b6540c16637939e1f38d55eafb45a53e"
+        },
+        {
+          "path": "manifest.json",
+          "bytes": 35666,
+          "sha256": "63bc6b9b301a85dc93db3e20622240ebb447afc32e6164ed238f8efa8a850f8f"
+        },
+        {
+          "path": "post-match-change-report.md",
+          "bytes": 1757,
+          "sha256": "984e61a882bc1f56ca9df28e683628e747adbfe6d31519c97d6cf57f98f55e61"
+        },
+        {
+          "path": "raw/icon/wx9eed71970378b2ae_ee037200596d28604630fd571df98b25.png",
+          "bytes": 42163,
+          "sha256": "4d6b8fe262b7b74c62e09aa7218ec6e01b2d3f3c9f7ac9f14229ddd67475412f"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/initial-rendering-cache-config.json",
+          "bytes": 2,
+          "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/launch.config",
+          "bytes": 875,
+          "sha256": "00b64d424c52537a8bf853294f6baaecc65a89d75a507e2eba8c07e58fb87a82"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/mmkvadapterstorage/wx9eed71970378b2ae",
+          "bytes": 4096,
+          "sha256": "946d78547533afc6d61fb488085baadd19c98188e03e6758c6069b491d2de917"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/mmkvadapterstorage/wx9eed71970378b2ae.crc",
+          "bytes": 4096,
+          "sha256": "07ec138acd64ec7d50648befa1ae977f032f624d5593cf8d33157059cb52d983"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/store/images/1f1fe7ae02f8321fa9d730e777d5fe70",
+          "bytes": 42163,
+          "sha256": "4d6b8fe262b7b74c62e09aa7218ec6e01b2d3f3c9f7ac9f14229ddd67475412f"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/store/images/25b66edaf140fa49c226e08c3e6d495f",
+          "bytes": 42163,
+          "sha256": "4d6b8fe262b7b74c62e09aa7218ec6e01b2d3f3c9f7ac9f14229ddd67475412f"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/store/images/wx9eed71970378b2ae",
+          "bytes": 42163,
+          "sha256": "4d6b8fe262b7b74c62e09aa7218ec6e01b2d3f3c9f7ac9f14229ddd67475412f"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
+          "bytes": 1,
+          "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/WebGL/ljzs_lt/ABFiles_c3fdfad4f447f88024a81625325a5647.txt",
+          "bytes": 5157,
+          "sha256": "09aad146e89b6db1b7b1406fd0ac58387dc537cd9555d7a4c0078069322f33d9"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/WebGL/ljzs_lt/data/config_b0f5e3dd0a9c4d70113144d682a85db3.unity3d",
+          "bytes": 52669,
+          "sha256": "085862a88950e7962a611b12541d9c8be73664084a3b7707e81d022c8ee6cd17"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/WebGL/ljzs_lt/ljzs_lt_eff7e52d2eaf4140462661f223c51d7f",
+          "bytes": 2852,
+          "sha256": "bdc59745e7322ee3d166c11f1d13d0a89cd05b0936afe33c853ba1b5e0f4915a"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/WebGL/ljzs_lt/ui/uiroot.prefab_4967075b56d636d9e81dd8bb5c508428.unity3d",
+          "bytes": 5577,
+          "sha256": "a1e1536dc52c7460dd26fb41748bd643ad3eecdea5d936bbd294345efe089e64"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/01firstbundle_assets_all_3ffdc4ebbc7b6ef074f13e27e84e7c06.bundle",
+          "bytes": 1013038,
+          "sha256": "9f7fafee853b9d658f7b089d02a7608ff6eef2d5280de8b9bf63608a7fab6d52"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/02_arenawithprop_assets_all_0609726278dfd5c7ee80adc03080dab5.bundle",
+          "bytes": 2114493,
+          "sha256": "b91bc1d4a222097def54b29549c5d2922194fc5c6995f5fdb23e89745ae77148"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/02coregamebundle_assets_all_c6dfa4c52b17c05bb82c44d406f5e1c4.bundle",
+          "bytes": 4318676,
+          "sha256": "0d9f55350d4c0c62fe1cf0221d19f7c6839a502e24ca0ccb740edc2e055bf95f"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/04metagamebundle_assets_all_58240af7f1abe2a25d5b0d62bfdead4f.bundle",
+          "bytes": 14986747,
+          "sha256": "8d09478450beb0f238becfe549844d5207d0b83539822044456ea9669433bbfd"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/232ff9dc65e94d4e8e2d25dd8757fa7b.bundle",
+          "bytes": 488912,
+          "sha256": "23108a6b5bf6b0238eecc6916c94a6b4783b2e8278671f5b442fd0e2a512d3dc"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/3ae6d97ed4ae5e5edbde3a654c423e24_unitybuiltinshaders_36685f24b5d46f9f9f9f18b91f574c3c.bundle",
+          "bytes": 111315,
+          "sha256": "7a2d37317276ab06bdef003fc2bb675de27d488b82b51a6c12ddb82acc0ae3a9"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/3dart_share_assets_all_1faa924e251d05d0c85269c3ae20077c.bundle",
+          "bytes": 5779122,
+          "sha256": "c38ef0cc4ef20f17a1f3153f20d14ab6d1205cd3851fdd1a0879fa4475a5807e"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/a01firstbundle_assets_all_c4b66dd62cf568d379fafefd5bb52b2b.bundle",
+          "bytes": 1778103,
+          "sha256": "3c827355852b000dd12d7305120ee52b226950f9d5a68c6019b1321fc906ef13"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/a02_arenawithprop_assets_all_e664cc5f9dc640503b410e5720199cca.bundle",
+          "bytes": 2807518,
+          "sha256": "e09a0d595dada194930bee2e0980a91ed9142020422b416a8e761be642134ea7"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/a02coregamebundle_assets_all_0f914b74a49f086b20b97816f0559b36.bundle",
+          "bytes": 4340415,
+          "sha256": "c4df25cf5219ffb7888dfb6ade0593e8bbb86d481c80045086abca930790fc44"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/a03coregamebundle_assets_all_8df5669643c9431d31280f52c9bbd3af.bundle",
+          "bytes": 316770,
+          "sha256": "46a9659b2b0f5ab2d2e4767ff1c5e82dbd52e07685a655e0cbad19c08f7dbcfb"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/a04metagamebundle_assets_all_f7f2d75ef683451b85ca8ef576ddfe81.bundle",
+          "bytes": 10858380,
+          "sha256": "6d793d51f1e0ba3888f8dfd64491e55025cdfa4428173b07f270cb04a7b3fa74"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/audiosbundle_assets_all_1160cec0a919418844657ba097aa7c85.bundle",
+          "bytes": 2225082,
+          "sha256": "681818378ae5323c71834384611c2c1c7662c7d1a8b41db6b262a5af69abe790"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/catalog_2026.08.05.09.26.16.hash",
+          "bytes": 32,
+          "sha256": "78050b5a853e1d28b42b47b2839da06273c1490c0fbe368e876706cbf2389c5e"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/catalog_2026.08.28.09.05.24.hash",
+          "bytes": 32,
+          "sha256": "e8e93d051814332fa5631db16c0a324b77138f9636a57f3b585678d9c2fba94f"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/cefbf0334e5fbb8f0ee2e12dbd1af7fe.bundle",
+          "bytes": 851642,
+          "sha256": "89dd77c7b8283eb99eda455451e55347e35fc3cf676b670905c443155abd1ff1"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets__shared_7025386afcb9d9c2f79dd56a67b24dc1.bundle",
+          "bytes": 17931,
+          "sha256": "587b23141007d498d910d9fe79820dcb0d50252fa28e1800474822d31e8ab53e"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_animator_3c7da3d91e521c68debacc6e075da36f.bundle",
+          "bytes": 2720939,
+          "sha256": "71d1463dec8a2fd43991e34e41d7d07f77586eef65e7a974bdfc973e77d512c0"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_ballista_5be4ec7d5e12ad80703227bcf7e797d1.bundle",
+          "bytes": 216526,
+          "sha256": "b88a81a02c4ae78b31df2654c522d52f23abd0b61e0ffbf42be20f214c58adfc"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_bear_05e50ca67663a8db48619df7c8a34ae1.bundle",
+          "bytes": 623519,
+          "sha256": "40ccf9dc217eb1dad1a0a116d318dc7badffe37299c5851eee600e32cef78876"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_bingshungjulong_096683aee99bdf9988c4c2b546309644.bundle",
+          "bytes": 404491,
+          "sha256": "ca4b2a7483b993fd1da58e4c14833da396d1f088a486afad4b6b1ebfa62ec5d9"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_catapult_d6d9e262fe6e8852ea30a768dd5498df.bundle",
+          "bytes": 196504,
+          "sha256": "7e6f23a7ce185149f6cc8df4ae03f4cefc19cc777333e2440a753a80d7f3c072"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_changmaoshou_e098ab0905a36adda0952fc165b97321.bundle",
+          "bytes": 360693,
+          "sha256": "7bdd2fe3720ae49f8f771c557ceb1f1c3859d4f864fc1615ef500f59791cf00c"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_cunmin_a1da65c550e97eea3c5d24ed646e8aac.bundle",
+          "bytes": 517280,
+          "sha256": "95eb3cdbb9aacfa8bc90b38f67e0cad87598522372e568f8e91ab9e57f2241b1"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_deluyi_fc58c8e1063932a73a682a2764ac0da6.bundle",
+          "bytes": 254632,
+          "sha256": "88542d6be5d4ef950c20b98c1d5e7ea7e138644997811713cfe153d457fc5e02"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_emolingzhu_04d87d4d02709059873436926175f68b.bundle",
+          "bytes": 645034,
+          "sha256": "7508f387c24ad05fcd7c945503c4ecd3ffafeab787117954e83fe493b40c961c"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_fashi_3af351fcb89d2d98a2b2d31bc98c549d.bundle",
+          "bytes": 235916,
+          "sha256": "f02fec2161bb432ea4c58d45a66a292042cfd32b7f52fa9312e3caa5515ccc63"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_gebulin_c2e14aa6d285a9e263a7efd3c3b12c21.bundle",
+          "bytes": 1043034,
+          "sha256": "52bafbc0f4375c4a4ee1b7ba720c230961ab697c8ef233c1cd19b386274768c7"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_gongchengche_a298984b83e745da4cb8996fb56f3559.bundle",
+          "bytes": 298862,
+          "sha256": "db562f856c83fbe235182cc92d09e6fe881b6b4d9471181c0068ffe9fed55bdd"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_helicopter_26b51e04c82f13c47523e86fce4b4513.bundle",
+          "bytes": 370513,
+          "sha256": "ad931958c6d46d0765bbfa55e9cd39d78724c629b6bf79d38516df5578962c3d"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_jiansheng_8faa6211345c5995f99b696a29bae730.bundle",
+          "bytes": 941089,
+          "sha256": "9adb26fcaf39fc07823c7d1b3b691a6b85fcb0672a038575267ec7a9905adb85"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_jianshi_c2290435fa719a537504c39095240d69.bundle",
+          "bytes": 86377,
+          "sha256": "1b93ec5d93854434580316413522c53032a30fd84c4219270a36c425ec47d11d"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_jisi_f0dddb09fd7c2562926dcb900a71fad0.bundle",
+          "bytes": 978430,
+          "sha256": "f614390e364489017a59a9c163ba485aafa02332c2d9e71d0edfe42144eb77af"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_jujishou_dfb151ca6e41d5bac76fd95ad4ad2a94.bundle",
+          "bytes": 184122,
+          "sha256": "fb4330b5ea2fdcc39492daff866562068098313f5520ca691394aefe32194c52"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_langqibing_e7d478fe2fe241dfca75d701708e6f2d.bundle",
+          "bytes": 1589937,
+          "sha256": "7d838f3bfeed42e66c1410c7f3a52f9494c4048237f4359bcbba63c5427c48e7"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_magneticgiant_1504ac2bae9b92a12347aad59df23691.bundle",
+          "bytes": 1525935,
+          "sha256": "ed8ef2d3ce3108be3e059cfdcd10c787c2e708d20212395feafac4869f02cf17"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_mechanicalbird_45787d95b55d181cc6346ee2f4fa7751.bundle",
+          "bytes": 514907,
+          "sha256": "95bddbaad472509eb40f3d181ed89d1f6fbf27ef1f865094cfffed0137666dab"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_mechanicalguard_f4dd6e2ccbd66fb6464fb9f0b4e27ca1.bundle",
+          "bytes": 544201,
+          "sha256": "f265847652a7a0a602b8217b55c7c9b048bdf0cc0a7cd65cb8ec3fcc8a344378"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_qibing_0103a0e72122d901122694626492ed79.bundle",
+          "bytes": 946555,
+          "sha256": "4fe57f4919c4b28c2ad23da383dd78b9687a1398ee307be8e48fac38601c24a2"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_qibingpro_16e7421caf8825035d3a3d42f83dd5e6.bundle",
+          "bytes": 910484,
+          "sha256": "a7ba827da7a322f52534152c15ee19e021be7edb3eb6d3b65d35d5cd78d90b34"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_robot_8752ac975b2b9b52ccef3d73ec146521.bundle",
+          "bytes": 600851,
+          "sha256": "2375b3e15f76e9c5c8aadfb3c4d43887b3495d814927bd7e7a825c1fd07b479d"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_shixianggui_768da742e4c163ae0b9605c6e2ce695f.bundle",
+          "bytes": 675873,
+          "sha256": "b38fba0846395425258cabe2853e0b335053f23cde3e3352924bf24a58eaa5f4"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_silingnvwang_a9a7131f060d9dea26ecb220761823bc.bundle",
+          "bytes": 279102,
+          "sha256": "784b232e9704825ca1be7dc59255326273210553f31f54b0762c21f1e4810488"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_siwangqishi_c0794edd2a9c709ce7687d2aa6882bd6.bundle",
+          "bytes": 1423414,
+          "sha256": "01f37a235e62394fba2fd830c80d60c936d0a1a8e64b5379f21588385e6305c7"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_skeleton_golem_8c0c06a9708945383fae553acde99a6a.bundle",
+          "bytes": 285411,
+          "sha256": "70ff17d32db3193b679db75ff0599a717e008a6c4e74c27ef283850d2dbbf21c"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_skeleton_mage_110013a42cbc5fb2ce72476fdd0559ec.bundle",
+          "bytes": 276846,
+          "sha256": "377929c4af267ab7b116bf8efb31b5f05c590a988ac6e45b3e3318621099b6ce"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_skeleton_rogue_23568b73241e13615d6b6c089c6a8703.bundle",
+          "bytes": 248715,
+          "sha256": "805acd1b8d8e3dc770714830f0e7be8c638e50ac3c31a112c8a604c6176d3c1e"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_skeleton_warrior_c4c5303cafdddcd0ffe1e883673b8834.bundle",
+          "bytes": 237324,
+          "sha256": "9b67ff408463331b80169fcfde75c7cc82a1d9c45af6476cdc451f5d7d66b7e7"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_tancexianfeng_7024da1c1882a46ddf8cd93449de29ae.bundle",
+          "bytes": 321939,
+          "sha256": "d5f801e353187a24c1beb3139f58406b43543e84f05bacf6728abc8cf3742940"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_tiejiang_50b9f83eb7ac5ff442800755262b37b0.bundle",
+          "bytes": 781533,
+          "sha256": "0db396ee61d087b4eff573db5c76d26e186611eaa7b0dc2431a30868ac6f1567"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_valkyrie_875422d21c6d307a00bd5db9b7032e3d.bundle",
+          "bytes": 755011,
+          "sha256": "ccbad9c4ec123c0dd3add3e9c75e702082bd159483580e80673980c7e5879d48"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_xiongmao_06e8a1b8c797a89454837b328e0e53e3.bundle",
+          "bytes": 619739,
+          "sha256": "20a10e151edad93dd07b04e93d04a6dc4c170674b22d0ae9f7dc020780fbfb2a"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_youxia_d4d341ea82b7ff86a91658b9c011ad0b.bundle",
+          "bytes": 288129,
+          "sha256": "740031b75afc2180543b69de44302a23cbaf63767b7e7490fd3fe6fafca1980e"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/defaultlocalgroup_assets_all_4c031180b5ce3b46ed8000db096f08e3.bundle",
+          "bytes": 20287,
+          "sha256": "838ab64432596f502d694b027cc68f03f9130a1f42c3832e50100ce65bf3ca89"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/duplicateassetisolation_assets_all_62e98671e4c4f783c10e4b9c095cc0a5.bundle",
+          "bytes": 18215,
+          "sha256": "b9bf2a811df347f96bc68de80fcf047ea482960a4580da07667e629fd66842cc"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/effectsbundle_assets_all_3915bc155601fd0167ba608493abec2d.bundle",
+          "bytes": 3772406,
+          "sha256": "db1b7327c3372a3bbe4e6c68ce8e6511bdf1791d62bd1b3626eb82f3ed962d18"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/first_effectbundle_assets_all_8bc52dba72de2516b44042ae5d62f42a.bundle",
+          "bytes": 592009,
+          "sha256": "31d789e415968c06440c0ea8f888c17c85ab50cdef5f73fdf073e26145a25b9a"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/first_ui_assets_all_1f4402e98298d818d704df41f3b31643.bundle",
+          "bytes": 818417,
+          "sha256": "8712179936dc359bcd881fcc3269629a517880c73fef47e6f11433691eefac61"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/firstpack01_assets_all_d50b247164ad153710374000e3be085d.bundle",
+          "bytes": 1747999,
+          "sha256": "5086483435ebb7e158610ec750c477a8441cc38c303455db93194240d07fbb9f"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/firstpack02_assets_all_0d06eaef09cadb86ef077b8df025b4a7.bundle",
+          "bytes": 11334560,
+          "sha256": "0abf6dbed3a45a69062a114768e500c4a78a6adc1882ebe99e71beaafaf6cc3b"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/firstpack0_preload_assets_all_c931ea4d901c477c2b238d6256ceef09.bundle",
+          "bytes": 2938885,
+          "sha256": "474e9c6e6c429b50bbb6fad9d69ac92a3d02087e3707d280a0b1a0c3dffd5533"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/firstpack2_assets_all_7d9e170e4653db36b2ba278f728c3261.bundle",
+          "bytes": 1958962,
+          "sha256": "cd84126fb2c164701b182f75c8cd4d26b5795bc50ac32f850150cb6f1d50028c"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/firstpack_assets_all_90b6de9d931fc3fb82824eb3d8945aa5.bundle",
+          "bytes": 6002967,
+          "sha256": "60595571358e6776f8b19210b86e931eea6548baae8192a5ded72449e9656a50"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/firstpack_character_assets_all_7fcab0fa8a4b20ca2dffffbff76311b8.bundle",
+          "bytes": 2222447,
+          "sha256": "f0d5060a4f31cddd1be090aec18674cbef91799ddc46b08756f85eb271e30376"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/firstpack_home_assets_all_78b8ab3069d237b58c5ad1e6fb5a098c.bundle",
+          "bytes": 12134730,
+          "sha256": "9fc2052745620dec27f06684a73aac7d7bb88d100bca0f54c5683b6133ac61ca"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/font_assets_all_0293e8064761aaac395760cea10f4fbf.bundle",
+          "bytes": 2901920,
+          "sha256": "dd6352cf792fdd4c5c26e68581036604ccbd9727182e4f81c64c86d5f7f4fe66"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/prefabs_assets_all_8b0200574148f11d24ff5c3226907f45.bundle",
+          "bytes": 1866451,
+          "sha256": "a3e17f4ee1f02e20a94c896a2b98bb53f7bfc2dd6023b81df3f622c5ef207997"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/pub_share_assets_all_dc303f4f8f28fdd823675df4f7c8f159.bundle",
+          "bytes": 324132,
+          "sha256": "eb45341b196d1e58acf7e4b387fd713099fee0d7fee5eb9fa36463d659131fd3"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/pvppanel_assets_all_6d0566bc10ae4b0a58bd2a30ecae01bd.bundle",
+          "bytes": 265818,
+          "sha256": "511fa8baa54c3b39ae8f1aad5a65f149e5e35991d8e49ecdfcf87b287b97a897"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/scenepack_assets_all_a0b8d925928ace4254c343747ac57884.bundle",
+          "bytes": 22889,
+          "sha256": "099780d6153e8b58c948d460814c2a5383516371ef0a9bb3bf8ff57fbfc64cc9"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/spine_assets_artifactunlock_6d37f7ce413302111a3c91248b1c28c8.bundle",
+          "bytes": 34467,
+          "sha256": "94abff86cd78841335ad7acbb1472c8f64bc4ef0e0ef5df06a511e9a70504913"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/spine_assets_expression_3b90864add2afee7eb614bad845ea033.bundle",
+          "bytes": 636112,
+          "sha256": "b4ed1effbec712e9b4addd9b4364c36d5362729b910a34d6852914a012b9a67b"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/spine_assets_summon_8cf08864754a00a239e4aa69cd540f6f.bundle",
+          "bytes": 259866,
+          "sha256": "d59697df6978c576b12496186141f2b2be104ed3253c554fe6f9f9291f9d2537"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/spine_assets_treasureboxopen_d08079bc203b55adc0157334ecf44ebb.bundle",
+          "bytes": 1215814,
+          "sha256": "4d81ef10f984ab0514f088f203013ca45d98c5d9a16e3478d7980b966520ed1b"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/spine_assets_upgradercard_6b82b175245f7402bc1a9a302e5e1989.bundle",
+          "bytes": 27843,
+          "sha256": "0236b5cf4417dc6eba974ac3abd67d803b192f77014f8487f78a3e7f2e8dbb44"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/spine_assets_upgraderewardspreviewpanel_ed714a2c8663c25bcee3e7c593766662.bundle",
+          "bytes": 57379,
+          "sha256": "c1582d96648fd07931a21f32e777f3644c5c20e1a074fd3366e0330a58f7be11"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/spine_assets_weeklyclashpanel_40b11238d429f9be1e221452a7b5dfe0.bundle",
+          "bytes": 31177,
+          "sha256": "2d22f4675e2cd7cf4d340766b9e081e60a89311b66e2eef5eee9ee44a0951e1c"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/spinebundle_assets_all_bdb4f591cf39b46a3722d9d5e955e624.bundle",
+          "bytes": 5797698,
+          "sha256": "5ca0fa56e92ace2b2720459dfdd8d94dcf459cfd4a2269340d70d2c8c80ffcbd"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/spritesbundle_assets_all_3a14cc4e248b7792bb96f57eb3ae308b.bundle",
+          "bytes": 7713230,
+          "sha256": "0dab839446bfd23672281abfcf210d1a91e17acae23905ec904b143cc493c256"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/ui_assets_all_203a422009754cbc3795352f3abf337c.bundle",
+          "bytes": 4157902,
+          "sha256": "87fbdc36b1ade3be53e9eced657878ec7169ca715c7c09d1b9c8ff6ed0f43276"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/uipackage_assets_all_dce677db473f179827e86e72a1621520.bundle",
+          "bytes": 3430832,
+          "sha256": "0898ddc2a36c6520d0b8a28c02735b0b94f738fe7713aad3d9bd660d2e39f147"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/__PATCH_DIR/patchFuncIndexList.json",
+          "bytes": 9657,
+          "sha256": "9f003212ae8166b574754616bcf9ff856e432e6a278bb459c0eb29e782ea7818"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/a23078fc21f9ca79.webgl.data.unityweb.bin",
+          "bytes": 20479611,
+          "sha256": "73833e7229d02b630e5ebe408b8b4ecc75120153f71cefcb69445043c822e426"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usr/miniprogramLog/log1",
+          "bytes": 323938,
+          "sha256": "d4657d9204308bd3d1121091db34fa04535702044792983652bd5694493a2271"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usrmmkvstorage0/wx9eed71970378b2ae",
+          "bytes": 4194304,
+          "sha256": "aa122f6dea171628788212ccc3bc7636a3224f3dd318b9198f5e3792f718ab97"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usrmmkvstorage0/wx9eed71970378b2ae.crc",
+          "bytes": 4096,
+          "sha256": "dbb567b34780cbfbe9634af164c4f5830f295010a884eadb5b1d2a4b2a03cc45"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usrmmkvstorage1/wx9eed71970378b2ae",
+          "bytes": 4096,
+          "sha256": "bf96011df27ef1902fe6cbea88b3c0863e4f1e8044f2afd82f02200f240f8fcc"
+        },
+        {
+          "path": "raw/local/wx9eed71970378b2ae/usrmmkvstorage1/wx9eed71970378b2ae.crc",
+          "bytes": 4096,
+          "sha256": "c7b18334ee5772e014bd5b4af3c76c7fa1cf4ae419dabdb957bcb4061745054f"
+        },
+        {
+          "path": "raw/packages/wx9eed71970378b2ae/16/__WITHOUT_MULTI_PLUGINCODE__.wxapkg",
+          "bytes": 1082515,
+          "sha256": "aecd5116b80eab73ca9eca61fb8351a41bc83550e03d46678d7c02973042747b"
+        },
+        {
+          "path": "raw/packages/wx9eed71970378b2ae/16/_wasmcode1_.wxapkg",
+          "bytes": 7707396,
+          "sha256": "722c0a1586cf52dee2414e6ad689df68976c90eda890c455bfa24f5d9e487310"
+        },
+        {
+          "path": "raw/packages/wx9eed71970378b2ae/16/_wasmcode2_.wxapkg",
+          "bytes": 12744150,
+          "sha256": "cf0a158e34bedfbbdd5427a4fb48b3915df9d86056f4b80c6226886783f01535"
+        },
+        {
+          "path": "raw/packages/wx9eed71970378b2ae/16/_wasmcode_.wxapkg",
+          "bytes": 6788029,
+          "sha256": "13e5d1fa468ae73f09bc2c63f2e4fca79f68c51ec329d6e99ee03d287ee17bc6"
+        },
+        {
+          "path": "reverse-engineering/canonical/README.md",
+          "bytes": 700,
+          "sha256": "4fc90aa9c8c1ec2d277466952b13c90f1a9472065b4f711f2b4c1f8053991c5c"
+        },
+        {
+          "path": "reverse-engineering/canonical/dump-audit.json",
+          "bytes": 716,
+          "sha256": "6de0c132198c7224602e82148a3a30255406a83549981a16053fd943c5a83134"
+        },
+        {
+          "path": "reverse-engineering/canonical/element-map.tsv",
+          "bytes": 7447845,
+          "sha256": "95ba803409de762458315f38a0563899fa5095e8911fbc361610cfeb1bfa5d16"
+        },
+        {
+          "path": "reverse-engineering/canonical/manifest.json",
+          "bytes": 6209,
+          "sha256": "b9fd0b19dbc5e82e84881bb6bb00aef8060d9c58a1797556f5a1a17b4a52cca8"
+        },
+        {
+          "path": "reverse-engineering/canonical/method-map.tsv",
+          "bytes": 14551499,
+          "sha256": "0029bcb83c7b553536029427d1d3d18900006abe5fbf91ba644fbeeefb5be29c"
+        },
+        {
+          "path": "reverse-engineering/canonical/module-info.txt",
+          "bytes": 68853568,
+          "sha256": "bfb6ae01ac0268d56a7d43551713edabfef01e875eabd37be6a5b1c3e256f4b1"
+        },
+        {
+          "path": "reverse-engineering/canonical/module.objdump.gz",
+          "bytes": 67128717,
+          "sha256": "89cf6b73be7b19946683029beda1325488429b18525d6565eee78f52d4f7d196"
+        },
+        {
+          "path": "reverse-engineering/canonical/module.wat.gz",
+          "bytes": 23231824,
+          "sha256": "42299da6cb45e478e9dcaa4610cef09096ab2ade048410c3d6cd33dc7a6eeaf6"
+        },
+        {
+          "path": "reverse-engineering/canonical/validation.json",
+          "bytes": 2831,
+          "sha256": "2d8d69b6486fbb63fcc5104a5ca08738aee5d8e83fba422b70ad19c6c79e16b4"
+        },
+        {
+          "path": "reverse-engineering/canonical/validation.txt",
+          "bytes": 396,
+          "sha256": "f9f1335965c90d3184303bc4e2ddb33650159210872e64d05ec9b3dd967af040"
+        },
+        {
+          "path": "reverse-engineering/capture-completeness.json",
+          "bytes": 923,
+          "sha256": "bb24e3ee692289bcd958ef0aa0a74166e2624078a1c8b80567e85031b2637675"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/AllIn1VfxAssmebly.dll",
+          "bytes": 15872,
+          "sha256": "6fd3afcc763e76ee3823f244f88856690c4fbf5e9f6944c54b5768ee56b0ccb6"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/AllIn1VfxDemoScriptAssemblies.dll",
+          "bytes": 25600,
+          "sha256": "4efe676e7d5cb7a960b3022d34308cf0bc3246b1c390983b72fda555f5cc5496"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/AllIn1VfxTexDemoAssembly.dll",
+          "bytes": 6656,
+          "sha256": "3785519951484418eb22ef5fdabb6cf94ce0e748f7602824c4da65e760a847c0"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Assembly-CSharp-firstpass.dll",
+          "bytes": 13312,
+          "sha256": "387dfc0a5c763fd36e9193c999abcfd68eb379c045e4f8ff4b425f34c28397f9"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Assembly-CSharp.dll",
+          "bytes": 7821312,
+          "sha256": "956117cbf86bc32d40ca41f7f7ae0fdc974cb1e15550911a74aa80564a92ccf3"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/BattleCore.dll",
+          "bytes": 1107456,
+          "sha256": "31675ffe94dd8b58d0f258861996581e3402307ee05346a94e7a499aaac2b9b9"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/BattleCoreUnityAdapter.dll",
+          "bytes": 778240,
+          "sha256": "68aa6d97eba7bac413b8266e349bc1cec4df102e67cfc4c4a3af78d92ae8ea57"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/BouncyCastle.Cryptography.dll",
+          "bytes": 1075712,
+          "sha256": "4ba6e52f55804f294e1242eb8d6f1888f41148f449c98a40f89afb7a1f5dc7ea"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Cinemachine.dll",
+          "bytes": 306176,
+          "sha256": "498e1c7037bb83151cf01989223228f587afff84d48eb505fdc03119a59b4ff8"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Coffee.UIParticle.dll",
+          "bytes": 26112,
+          "sha256": "568ab57935d8a5c03b2d324182598b8beb2c42ef453df461abc978defd6236b6"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/DOTween.dll",
+          "bytes": 145920,
+          "sha256": "9ec1383183f2e947cdd68ecb975abe59fe9d480941a43fcfd40b277d6fc471b8"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/DOTweenPro.dll",
+          "bytes": 12800,
+          "sha256": "07a5d5823e4b571fb7c7f827574abe1c078b419397855e7afd1542056102ac31"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/DebugSystem.dll",
+          "bytes": 155648,
+          "sha256": "e7db59a189cba7c1cdca3978f929009a345fab6b694bb87cbb49f37f1e947f4f"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/DeterministicFixedPoint.Core.dll",
+          "bytes": 28672,
+          "sha256": "9bda75c61746461f75480763dd7d3791d6d68c67ff9fcc8a41757cb06df12482"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/GFHanldMono.dll",
+          "bytes": 33792,
+          "sha256": "fb72a91d9b7e1303a41da6b6778c76a43e247260301dd91954ea602742907a25"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/GFRunning.dll",
+          "bytes": 1377280,
+          "sha256": "0bdc915ab8daab76347781b6e09d792ef8258c3c187207fa9b17689c43d1f5cc"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/GFXYX_WX_Start.dll",
+          "bytes": 3072,
+          "sha256": "78adcea2f27787fe0f1153a778ba6e517a5d06eca1446ec542a4ce1ab889d841"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Google.Protobuf.dll",
+          "bytes": 485888,
+          "sha256": "0b03fa7a1d78deb49bf6d7a1d1dd898fb3852b8d17e5e6bf43bd20e58a7bb7f9"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/GravityEngine.dll",
+          "bytes": 98304,
+          "sha256": "ed37b8bf3ee9fdae9ac48e0837e5129dd947b10fd994f21e91f197a35afc286f"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Il2CppDummyDll.dll",
+          "bytes": 4096,
+          "sha256": "18343059c392724f784a3eb0ba41dd9cfbd3198bff1f7d09b2686b4b3b198780"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/KinoBloom.Runtime.dll",
+          "bytes": 6656,
+          "sha256": "f5dfb31aac8599bc35b0674600fb995769bd67f8d3884d2412c25fe8ea07768f"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/LitJson.dll",
+          "bytes": 66560,
+          "sha256": "b2f279b9bfad2d14a13fbd832434d6843d30e65bb1a73ff02256b01058c4c546"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/LuTween.Runtime.dll",
+          "bytes": 7680,
+          "sha256": "d97cbc1b6bc751f7a32f7f511f023c2912017d690293197b3ac675adef26ab47"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/MemoryPack.Core2021.dll",
+          "bytes": 68608,
+          "sha256": "ebfd148281433cb8aa27ca64f510769fc41b8d05a9ee14421e3683b78d878f87"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/MeshBakerCore.dll",
+          "bytes": 306688,
+          "sha256": "a565b37c69be86b4cef12f6e411f984507be113d2e75c7c25a0effb310cc0947"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/MeshBakerExamples.dll",
+          "bytes": 11776,
+          "sha256": "00d420f010f9df54cc1529cbf6a5b9b452d4fa046e335113a4e3d1b88f3112b2"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Mono.Security.dll",
+          "bytes": 136704,
+          "sha256": "57b05968be1ad5d951287893d73724d9dbf7ac980042b81dd56571f24576e24d"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/NCalc.dll",
+          "bytes": 99328,
+          "sha256": "3a2961a7f6c5366e24bacabfd6109602e46a77f7b5bb63983339f44581215605"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Newtonsoft.Json.dll",
+          "bytes": 459264,
+          "sha256": "7c51b9b8c59508aa12a3e019f7076e182aaf70402b807e1934fe629cfc3ed017"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Poco.dll",
+          "bytes": 38400,
+          "sha256": "518d2b0a636e54c9d666fe6a002abe7523a94d19e1ad37671b2a68762196823c"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/QRCoder.dll",
+          "bytes": 49664,
+          "sha256": "5af0047e257d7232f6b0bcbb4c901013b01aa1223a802615ed545e322d25efeb"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/SocketTools.dll",
+          "bytes": 6144,
+          "sha256": "9f009c390011d87f5232e89589ace1f73beb76a35ba9db197475167811e78a0d"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/StylizedWaterForURP.dll",
+          "bytes": 20480,
+          "sha256": "670f1c645270ba87a55f7fc3049162c99542835077dcc8445a9c534a8406fa02"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/System.Core.dll",
+          "bytes": 552448,
+          "sha256": "82747b181c377e55186e060dd1833448e40aaf50534bf7c9b285a8423efb77e0"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/System.Data.dll",
+          "bytes": 527872,
+          "sha256": "d60da204d9e85014641e1ce828620af935671951d9a6a9473c040e653dcf2001"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/System.Drawing.dll",
+          "bytes": 20480,
+          "sha256": "bf6cc9cb4ea4c38248d39d4dd7aeb554acc99acdd708878f4af88ed8245d6f7b"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/System.IO.Compression.dll",
+          "bytes": 87040,
+          "sha256": "5bed28480fcda4cbaef39f0c03ad7ddc00f306130d3c2821f54f59adcd62c55c"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/System.Net.Http.dll",
+          "bytes": 74752,
+          "sha256": "b527c8efdcd7a8e57e1cf6f3d7d9455284ce218daae0de251b91ed05a1ad45f1"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/System.Numerics.dll",
+          "bytes": 37376,
+          "sha256": "229492b41f6766ee8548d66af056a45491e1e4586e494b0752d2ffb6830a36c6"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/System.Runtime.CompilerServices.Unsafe.dll",
+          "bytes": 3072,
+          "sha256": "9d94af92df03e2dab61c64f83cc408a88b1b192ece635348cac3962e2c8e6a6a"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/System.Runtime.Serialization.dll",
+          "bytes": 4096,
+          "sha256": "4df86e05aa7abfbd8463c1d25cf3da3ac84f238bd1429e45d99af7131ba28ebe"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/System.Xml.Linq.dll",
+          "bytes": 39424,
+          "sha256": "471d7a42527b68699926616b8be16845b73e55f686da1fd4efa68475b4db9eda"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/System.Xml.dll",
+          "bytes": 1261568,
+          "sha256": "ef5df366323bdbeb0226d0577a65651a8a3dba8f48ccd53392e731fb7126eecb"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/System.dll",
+          "bytes": 980480,
+          "sha256": "ab0ffa8c6ecd978aa120af7d6960fa34ee695d53fce10d1c9e37aeba0e3dabe4"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/ToonyColorsPro.Runtime.dll",
+          "bytes": 12288,
+          "sha256": "8f3d6d0ecc3c4dc71c03444913707b67f687d7d1bef5b40786329b656a57c1de"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/ToonyColorsPro2.Demo.dll",
+          "bytes": 26624,
+          "sha256": "939c0662258cf849b329637fd08db185e47c6672c42caf7c850376c766f43688"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UniTask.dll",
+          "bytes": 207872,
+          "sha256": "34dc755e82bd4f9c0159c180f38889fb578552ff3e4d9e1bcf411b59c4331079"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Unity.Addressables.dll",
+          "bytes": 122880,
+          "sha256": "4bc8f8daf2858e96392d13a11c0c9d2967fa8b586f9e1d41703a0a1849969110"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Unity.Burst.dll",
+          "bytes": 19456,
+          "sha256": "a25626cda99f4f8fd7d9f799f00cd96d4e7a3b4b85e633bc2e29112b833136a6"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Unity.FontABTool.dll",
+          "bytes": 8704,
+          "sha256": "3f4881dd2329f8e745725bb480aafa01c355e6acb471fc04cf75b9b3a2fd685d"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Unity.Mathematics.dll",
+          "bytes": 40448,
+          "sha256": "be857b8ea1cfe9019bd13560ced9cd59142fde2c8159de86d04a7fb65ecba3d2"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Unity.MemoryProfiler.dll",
+          "bytes": 4608,
+          "sha256": "762413025df95eaeb21305e47ac07597d80f1d97e5af38f66b52683b35d1cafc"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Unity.Profiling.Core.dll",
+          "bytes": 2560,
+          "sha256": "04759876d8360fa7710f3c234a9f6919e550ff2b317cafef41a044d4b5de6da4"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Unity.RenderPipeline.Universal.ShaderLibrary.dll",
+          "bytes": 7680,
+          "sha256": "72c4e1b17558e497fef95c1a1974a63f60ab8d67e43924ffc95949c2c9021427"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Unity.RenderPipelines.Core.Runtime.dll",
+          "bytes": 308224,
+          "sha256": "884b3bb38afc565d0f88c7db5ccc48b7923f866c84d5c22e8b7180a2a9afde3a"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Unity.RenderPipelines.Universal.Runtime.dll",
+          "bytes": 521216,
+          "sha256": "eca960604a350bdf29719e2f996e46d1b24e26dfe6caeb5c8645769467396232"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Unity.ResourceManager.dll",
+          "bytes": 160768,
+          "sha256": "b043e4e1a3d008f4e6fff0ac60f29e2710a281e107ebaf0eb4b66a0b751f7930"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Unity.TextMeshPro.dll",
+          "bytes": 309248,
+          "sha256": "a8eee2608ca70a57c5ec17a672da1ed75f305548fc1eebd2186f90dacf8c5663"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Unity.Timeline.dll",
+          "bytes": 106496,
+          "sha256": "88541635a48615e3c1930b54523fbb6808f038d686c451810d63266445010a9c"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.AndroidJNIModule.dll",
+          "bytes": 42496,
+          "sha256": "034d18b797b8bde4121072331af2b17a9c0cd52e054deefde086d463b9036663"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.AnimationModule.dll",
+          "bytes": 97280,
+          "sha256": "700645093dce84ef9c5e600fe0f6fb07ac1a5353c7c0ecc588179f715629fe8d"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.AssetBundleModule.dll",
+          "bytes": 8704,
+          "sha256": "cf67a67ebf3f33a0e545f9306bdff38d9ca77c01294d435fb104b874f2772080"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.AudioModule.dll",
+          "bytes": 27648,
+          "sha256": "38f5f5a16049070dfe43860e612532f261e557d76c84607d173e80e83f6a2127"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.CoreModule.dll",
+          "bytes": 1131008,
+          "sha256": "6026f1e7f156d73d8485a3502ad5b285e22963406fd3a136e4e593d6f08f607d"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.DirectorModule.dll",
+          "bytes": 4608,
+          "sha256": "ecac4ac771a3491d50e68f01938dbecb2fd92f160f1f54f8161dba2ec4f29a42"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.GridModule.dll",
+          "bytes": 2048,
+          "sha256": "38bc48ef142e1d47ee6c84c166a817b725e0f42516b775e5748d1681b508f3ff"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.IMGUIModule.dll",
+          "bytes": 143872,
+          "sha256": "0ed81f7aef44037a9192df77bb7b653c93b25e345b01f51844874a92c2cdc3d5"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.ImageConversionModule.dll",
+          "bytes": 3072,
+          "sha256": "23274229e9d4330a1f816690b508638172fdce0320e870d25e416910e5b4e565"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.InputLegacyModule.dll",
+          "bytes": 33280,
+          "sha256": "93007d6c3da38e907534da60680aaf73df7389f20c2cf3f7c440bbc273f10e9e"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.InputModule.dll",
+          "bytes": 4608,
+          "sha256": "51ceb2fa34ecbb0ce425711b3fbbc5b46af0a99a43d20cad414c4fa00fc7fba8"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.JSONSerializeModule.dll",
+          "bytes": 2560,
+          "sha256": "a49b3a0d31d158cef92b5c968a797d79867e5fff452575b576c3434a13471c9f"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.ParticleSystemModule.dll",
+          "bytes": 81920,
+          "sha256": "43b2e202bff22dc904d1cd9538fbfdc291cd85f8f090cd1e16952dfc5f7ce98e"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.Physics2DModule.dll",
+          "bytes": 20992,
+          "sha256": "a2ec1b0e8dbe1de4aef05f8f6bd77038c29b92b45d6e1ac706b63f4df13f3eb6"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.PhysicsModule.dll",
+          "bytes": 64000,
+          "sha256": "369f500cd60a6558779b3b6e77c0b57a825e039f9c57d39cf6b4b8d07b89d3c3"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.PropertiesModule.dll",
+          "bytes": 44032,
+          "sha256": "1a9bc656740fc0a6788dd2acb71152602cfcc19111a6a583b341bc20b9be0653"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.SharedInternalsModule.dll",
+          "bytes": 4096,
+          "sha256": "9d890b5914e5fd95f9c09e7bf7334606d978db4b59cf0680a6e3fba41334515a"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.SpriteShapeModule.dll",
+          "bytes": 2048,
+          "sha256": "02209969d642e8339ef1f6ae0e7e6878308778db059cca4ac1389a0aca392997"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.SubsystemsModule.dll",
+          "bytes": 8704,
+          "sha256": "fa149314954a8fb54f6cc96e2f17b2e821e0979ee68dc4b0e23ff33a92bbd3c5"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.TextCoreFontEngineModule.dll",
+          "bytes": 34816,
+          "sha256": "a7c15354c82be1081264775364d8f1cffc23f63e06c7e059728103a4cf525a57"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.TextCoreTextEngineModule.dll",
+          "bytes": 140800,
+          "sha256": "ef6bf69652ef2a01f2e4037669093cf323e420a684bf86ad40ce9debacada3ef"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.TextRenderingModule.dll",
+          "bytes": 16896,
+          "sha256": "7352c2d16be1752fdf68172767176245ee51fe90abcafe534852fbf350f5b942"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.TilemapModule.dll",
+          "bytes": 2560,
+          "sha256": "8bc1b128506d26a6917d61b451fd80d361ad8c01a001e11817b861850e265c76"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.UI.dll",
+          "bytes": 333824,
+          "sha256": "a2629c2c4ed5322f97f69fa06fd7da8eeca0201d79867d5f5692c24999f10f87"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.UIElementsModule.dll",
+          "bytes": 1439232,
+          "sha256": "16f247f254fa8073c6b2432f1434726b253b35499e5164384736b8325785ea6a"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.UIModule.dll",
+          "bytes": 27648,
+          "sha256": "2eb6c4101b62bef6e330df154f9c7b500759aa80472c9e1a08301e3fc2b1fe6d"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.UnityWebRequestAssetBundleModule.dll",
+          "bytes": 5120,
+          "sha256": "5a6cbd971a44a38e89985ddfcc51d7762a08e9e1791d497c2f94116d71b09063"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.UnityWebRequestModule.dll",
+          "bytes": 35840,
+          "sha256": "be6d6fc652854f12346671006278bc1d64b1f6e3933ae046fb6ddbbfb1423814"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.UnityWebRequestTextureModule.dll",
+          "bytes": 4096,
+          "sha256": "d40f94aab1b5f3325e54fea49c5937c08c4677f76545ecf01982737b0dbc94b5"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.UnityWebRequestWWWModule.dll",
+          "bytes": 3584,
+          "sha256": "8491fa2f77f577c0010b620ee894ee589d66ef601f8d8ce3d8285d0395a49fba"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.VideoModule.dll",
+          "bytes": 9216,
+          "sha256": "75b615cc673e7b29075e4ff069f37a7e31535ba27adb25a7fe04a881ecfa3a72"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.WebGLModule.dll",
+          "bytes": 2048,
+          "sha256": "b1da0b47e14d32d97c0f5239838be9a4c6dedd0101d389cc62ca6c6ab67edc17"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.XRModule.dll",
+          "bytes": 26624,
+          "sha256": "5dec7886169a9bd400326b355b66733771847a0b9f966c236aef6ccf0f6be00e"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/UnityEngine.dll",
+          "bytes": 2048,
+          "sha256": "50e206478942d257e7eda4ede96d452b4f5e4fbe272bae12a4a1a9bf259cdefb"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/VibratorManager.Runtime.dll",
+          "bytes": 5632,
+          "sha256": "d8d87d743df2afc977305f0dae60edb3a7156ed18e8104fa092e15b859bad152"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/WG.EpicTween.Runtime.dll",
+          "bytes": 16896,
+          "sha256": "6419b431fc6578367a4f020983ff32b90feb33194c68555afa23813fb9707a86"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/WXFunction.dll",
+          "bytes": 152576,
+          "sha256": "421a179578ed3941e14cdeab59d8b1b1a4c6e8dd7234a8903036bb06d178958b"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/WXFunctionCompatibility.dll",
+          "bytes": 5632,
+          "sha256": "473bece77d200eaf07a586847f72464869312925d4c0712248472f3fcc957826"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Whinarn.UnityMeshSimplifier.Runtime.dll",
+          "bytes": 49152,
+          "sha256": "8428e532f5d60d58481d20dc616a0da8ea0610ca5c589093aaccfadcb4aa9a90"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/Wx.dll",
+          "bytes": 70144,
+          "sha256": "102dde250ef32d9dca39da8abfdf98255a45b6443afe9989e04c63658352c473"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/XYXCommon.dll",
+          "bytes": 528896,
+          "sha256": "c12cacb2e5545f8967421fbac4687e3a893b73392628b87654ed2dfe8c795546"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/XYXCommonCompatibility.dll",
+          "bytes": 3584,
+          "sha256": "da850ee9550c970629d7e00945d95f1701a0ffca63473ed56c827917bce40147"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/__Generated",
+          "bytes": 2560,
+          "sha256": "d3a7773631ff28e12b9495929eafcacf125d161471e84bb1dd23aa492061f993"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/mscorlib.dll",
+          "bytes": 2192896,
+          "sha256": "3658bbc0ba56a01026789dc09f2595e0a42e6e59d095174dadf7f77b75571204"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/spine-csharp.dll",
+          "bytes": 151040,
+          "sha256": "7c71b1c7bbcfce069211a6734126b267c9aa4738b0a9cea1e60f0aeb485c8706"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/spine-unity.dll",
+          "bytes": 159232,
+          "sha256": "0b43fdd9b5282d4ecf874c2f066763b40416cc39309de00e083176ca98e17359"
+        },
+        {
+          "path": "reverse-engineering/csharp/DummyDll/wx-runtime.dll",
+          "bytes": 432128,
+          "sha256": "37d29c185c2b1e29fd70db4e44d5b779de879e0d7dfeeb52f69934e9f64103e3"
+        },
+        {
+          "path": "reverse-engineering/csharp/README.md",
+          "bytes": 824,
+          "sha256": "a65fd99cb5b9b266ffbec2951065fcccc6cf31e8b685e043aa04707243891638"
+        },
+        {
+          "path": "reverse-engineering/csharp/dump.cs",
+          "bytes": 40181988,
+          "sha256": "5a8048902c797bcf28e55627e4b6d2d71fc809fc409b2662dfd72a382d172853"
+        },
+        {
+          "path": "reverse-engineering/csharp/il2cppdumper.log",
+          "bytes": 207,
+          "sha256": "1502400f0396d26756183b3eafa34ae9e059a4553067adc9ac541ea5d194c343"
+        },
+        {
+          "path": "reverse-engineering/csharp/manifest.json",
+          "bytes": 25724,
+          "sha256": "05c58a50c327c8bf7cd091ad971347b4ac4a96bf5e2ce8ac2b654b3da35f5aa5"
+        },
+        {
+          "path": "reverse-engineering/global-metadata.decrypted.dat",
+          "bytes": 16795612,
+          "sha256": "fa178d839cb6d8b8b24ca5acd8d4bbcef4963332fd49859c80a0dbe20dcc239f"
+        },
+        {
+          "path": "reverse-engineering/modules/split-runtime.md",
+          "bytes": 1341,
+          "sha256": "3ba971e276559aece9a0f261a353242e13bb57ae0cac53eb0d9870077de95487"
+        },
+        {
+          "path": "reverse-engineering/modules/wasmcode1/README.md",
+          "bytes": 338,
+          "sha256": "9018a9ba0215a93650e0e3d9f281e0d13bb73c595dc9da42f4d5f35f4906c45f"
+        },
+        {
+          "path": "reverse-engineering/modules/wasmcode1/manifest.json",
+          "bytes": 2550,
+          "sha256": "a63aa4ddc718d236681bc548124c4e59f83daa66ba091a4f1f44b46bc9bc1f77"
+        },
+        {
+          "path": "reverse-engineering/modules/wasmcode1/module-info.txt",
+          "bytes": 26833042,
+          "sha256": "321d238ec0b7dc49afb93a89314afddf337ce614d888f554093b2c7e97de3808"
+        },
+        {
+          "path": "reverse-engineering/modules/wasmcode1/module.objdump.gz.part-000",
+          "bytes": 94371840,
+          "sha256": "a3a7b55d8ed3540c8f8ca01a1f5d8829567582207fc3026f658d39a04bb99212"
+        },
+        {
+          "path": "reverse-engineering/modules/wasmcode1/module.objdump.gz.part-001",
+          "bytes": 32888682,
+          "sha256": "e4abe7597abc94e4cce14f7c2305d3f3c422e7a7d712fa4f9d6532c3dd3c7765"
+        },
+        {
+          "path": "reverse-engineering/modules/wasmcode1/module.wat.gz",
+          "bytes": 29729641,
+          "sha256": "5f8e88c1248f79a487811842194086dde93480e9a4eb4f4e15347ea0de993f93"
+        },
+        {
+          "path": "reverse-engineering/modules/wasmcode1/payload-analysis.json",
+          "bytes": 18104,
+          "sha256": "b76996bd471fad016c544697de02637ef3ffcb87e03f3fa96cdb912f38fffdf0"
+        },
+        {
+          "path": "reverse-engineering/modules/wasmcode2/README.md",
+          "bytes": 307,
+          "sha256": "eed4f28a2c367aa83adf4ca3529681e188a929cc4ffe23c0d00f767b28d3e9e2"
+        },
+        {
+          "path": "reverse-engineering/modules/wasmcode2/manifest.json",
+          "bytes": 1469,
+          "sha256": "cb23e0e3193be91c749609d786142998eb54ad5d19b94ff843b21b3152d233ea"
+        },
+        {
+          "path": "reverse-engineering/modules/wasmcode2/payload-analysis.json",
+          "bytes": 19912,
+          "sha256": "84424f70b55c7dce188d98b584602a555e67758dbd1288242946bc4f7ac9f45b"
+        },
+        {
+          "path": "runtime-capture/manifest.json",
+          "bytes": 1276,
+          "sha256": "967f2948ded7953ae6068122bf745faf2e7a54e4002a605dcd15258ebb4631bd"
+        },
+        {
+          "path": "runtime-capture/network/wasmcode2-download.zstd",
+          "bytes": 12628216,
+          "sha256": "b4dd59701eac9a898cf26411989da384905f07c18f2fed33031f18dccceffe31"
+        },
+        {
+          "path": "runtime-capture/new-files/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/StreamingAssets/aa/WebGL/charactersorganized_assets_qiuzhang_cb864d627a76ffe9c514f09256225826.bundle",
+          "bytes": 693861,
+          "sha256": "f0f48b66c183767fc5724d22768cebe74ba61a574d507628ae344483f2b3f8f4"
+        },
+        {
+          "path": "runtime-capture/result.md",
+          "bytes": 3824,
+          "sha256": "2d88cf45d18f92c283f6b5cf239ca0f04ce48d84885d972b30abb8f6c5359b86"
+        },
+        {
+          "path": "unpacked/__WITHOUT_MULTI_PLUGINCODE__/GameConfig.json",
+          "bytes": 488,
+          "sha256": "3bae7d7dcb10ff6758877f0ffce5409ea91e443411c601e8ae93bf29a373bdfc"
+        },
+        {
+          "path": "unpacked/__WITHOUT_MULTI_PLUGINCODE__/app-config.json",
+          "bytes": 719,
+          "sha256": "0dd70efc46aecd600b08349581c0bb7909131cd2f02a8a10002330279aaa3032"
+        },
+        {
+          "path": "unpacked/__WITHOUT_MULTI_PLUGINCODE__/game.js",
+          "bytes": 709114,
+          "sha256": "1681cabc642b868633ceb9a66951484f7cd8ede1cf0de358b4abe6b6e468e674"
+        },
+        {
+          "path": "unpacked/__WITHOUT_MULTI_PLUGINCODE__/images/375x812.jpg",
+          "bytes": 360088,
+          "sha256": "b479abda2a91f30f616418409eb365073213689212a082bbd67427cffd5df6a9"
+        },
+        {
+          "path": "unpacked/__WITHOUT_MULTI_PLUGINCODE__/images/background.jpg",
+          "bytes": 8917,
+          "sha256": "ee88b4672db843d57b164c5deeaf62e096e3bf91881bdba71a85dd980687db80"
+        },
+        {
+          "path": "unpacked/__WITHOUT_MULTI_PLUGINCODE__/images/unity_logo.png",
+          "bytes": 1216,
+          "sha256": "34799ce1b7a341e39c6c6ea7fa439f170989f3ecc5d0cd3681573569b4b6d239"
+        },
+        {
+          "path": "unpacked/__WITHOUT_MULTI_PLUGINCODE__/workers.js",
+          "bytes": 1750,
+          "sha256": "90cb3596d9411b4c9e024c9dd9efde5b7045914e8fb02e85d9c727c8066226ce"
+        },
+        {
+          "path": "unpacked/_wasmcode1_/wasmcode1/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
+          "bytes": 7706151,
+          "sha256": "743d3f960e614dc2d39ae5d498f28f8a3314a1302f7ae64c0927cf253fb89952"
+        },
+        {
+          "path": "unpacked/_wasmcode1_/wasmcode1/game.js",
+          "bytes": 1118,
+          "sha256": "8bc01c28bda03c4536bd7990755c3cd1aee1eeca22bd552caa343339d473b2d9"
+        },
+        {
+          "path": "unpacked/_wasmcode2_/wasmcode2/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
+          "bytes": 12742905,
+          "sha256": "c541581100f0a891ba8b8aaad3fde780e3b03cc48218537c143d33580987e34d"
+        },
+        {
+          "path": "unpacked/_wasmcode2_/wasmcode2/game.js",
+          "bytes": 1118,
+          "sha256": "04e89969ef39f7a4f0ad949e16c0fb459edcc8a3ea411cbdc30bc486c3a1906c"
+        },
+        {
+          "path": "unpacked/_wasmcode_/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
+          "bytes": 6786702,
+          "sha256": "63c975b04a35b32e292143ae4dbc95067423d46a31a22e5646c4ade909a527e2"
+        },
+        {
+          "path": "unpacked/_wasmcode_/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br.precompile.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "unpacked/_wasmcode_/wasmcode/game.js",
+          "bytes": 1116,
+          "sha256": "d62e8b985b0b982a84147725bb9cf550c84eadbdd472525e7b9174703c9e7ae1"
+        },
+        {
+          "path": "unpacked/package-manifest.json",
+          "bytes": 5055,
+          "sha256": "035cbfa06aab204d09e2f6c7dc7f1aa6a05444eca23c8b1f2ff2893565fff802"
+        },
+        {
+          "path": "verify.ps1",
+          "bytes": 3063,
+          "sha256": "5a7668d568e1b582e087e5f1df4f8709482111d725dadc6874e605af09bd5313"
+        }
+      ]
+    }
+  ]
+}

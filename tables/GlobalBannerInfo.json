@@ -1,0 +1,345 @@
+[
+  {
+    "BannerName": "敌人旗帜",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jichupifu-00.png",
+    "BannerType": "enemy",
+    "des": "BattleBanner_Banner",
+    "id": "6000"
+  },
+  {
+    "BannerName": "玩家旗帜",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jichupifu-0.png",
+    "BannerType": "player",
+    "des": "BattleBanner_Banner",
+    "id": "6001"
+  },
+  {
+    "BannerName": "默认旗帜1",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jichupifu-1.png",
+    "BannerType": "default",
+    "des": "BattleBanner_Banner",
+    "id": "6002"
+  },
+  {
+    "BannerName": "默认旗帜2",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jichupifu-2.png",
+    "BannerType": "default",
+    "des": "BattleBanner_Banner",
+    "id": "6003"
+  },
+  {
+    "BannerName": "默认旗帜3",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jichupifu-3.png",
+    "BannerType": "default",
+    "des": "BattleBanner_Banner",
+    "id": "6004"
+  },
+  {
+    "BannerName": "默认旗帜4",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jichupifu-4.png",
+    "BannerType": "default",
+    "des": "BattleBanner_Banner",
+    "id": "6005"
+  },
+  {
+    "BannerName": "竞技场旗帜1",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jinjichang-1.png",
+    "BannerType": "ArenaGiftPack",
+    "des": "BattleBanner_Banner",
+    "id": "6006"
+  },
+  {
+    "BannerName": "竞技场旗帜2",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jinjichang-2.png",
+    "BannerType": "ArenaGiftPack",
+    "des": "BattleBanner_Banner",
+    "id": "6007"
+  },
+  {
+    "BannerName": "竞技场旗帜3",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jinjichang-3.png",
+    "BannerType": "ArenaGiftPack",
+    "des": "BattleBanner_Banner",
+    "id": "6008"
+  },
+  {
+    "BannerName": "竞技场旗帜4",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jinjichang-4.png",
+    "BannerType": "ArenaGiftPack",
+    "des": "BattleBanner_Banner",
+    "id": "6009"
+  },
+  {
+    "BannerName": "竞技场旗帜5",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jinjichang-5.png",
+    "BannerType": "ArenaGiftPack",
+    "des": "BattleBanner_Banner",
+    "id": "6010"
+  },
+  {
+    "BannerName": "竞技场旗帜6",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jinjichang-6.png",
+    "BannerType": "ArenaGiftPack",
+    "des": "BattleBanner_Banner",
+    "id": "6011"
+  },
+  {
+    "BannerName": "竞技场旗帜7",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jinjichang-7.png",
+    "BannerType": "ArenaGiftPack",
+    "des": "BattleBanner_Banner",
+    "id": "6012"
+  },
+  {
+    "BannerName": "竞技场旗帜8",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jinjichang-8.png",
+    "BannerType": "ArenaGiftPack",
+    "des": "BattleBanner_Banner",
+    "id": "6013"
+  },
+  {
+    "BannerName": "竞技场旗帜9",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jinjichang-9.png",
+    "BannerType": "ArenaGiftPack",
+    "des": "BattleBanner_Banner",
+    "id": "6014"
+  },
+  {
+    "BannerName": "竞技场旗帜10",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jinjichang-10.png",
+    "BannerType": "ArenaGiftPack",
+    "des": "BattleBanner_Banner",
+    "id": "6015"
+  },
+  {
+    "BannerName": "竞技场旗帜11",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jinjichang-11.png",
+    "BannerType": "ArenaGiftPack",
+    "des": "BattleBanner_Banner",
+    "id": "6016"
+  },
+  {
+    "BannerName": "竞技场旗帜12",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jinjichang-12.png",
+    "BannerType": "ArenaGiftPack",
+    "des": "BattleBanner_Banner",
+    "id": "6017"
+  },
+  {
+    "BannerName": "竞技场旗帜13",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jinjichang-13.png",
+    "BannerType": "ArenaGiftPack",
+    "des": "BattleBanner_Banner",
+    "id": "6018"
+  },
+  {
+    "BannerName": "竞技场旗帜14",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jinjichang-14.png",
+    "BannerType": "ArenaGiftPack",
+    "des": "BattleBanner_Banner",
+    "id": "6019"
+  },
+  {
+    "BannerName": "竞技场旗帜15",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jinjichang-15.png",
+    "BannerType": "ArenaGiftPack",
+    "des": "BattleBanner_Banner",
+    "id": "6020"
+  },
+  {
+    "BannerName": "月卡旗帜",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/yueka-1.png",
+    "BannerType": "MonthCardGiftPack",
+    "des": "BattleBanner_Banner",
+    "id": "6021"
+  },
+  {
+    "BannerName": "赛季旗帜1",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/Season/SeasonBanner1.png",
+    "BannerType": "Season",
+    "des": "BattleBanner_Banner",
+    "id": "6101"
+  },
+  {
+    "BannerName": "赛季旗帜2",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/Season/SeasonBanner2.png",
+    "BannerType": "Season",
+    "des": "BattleBanner_Banner",
+    "id": "6102"
+  },
+  {
+    "BannerName": "赛季旗帜3",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/Season/SeasonBanner3.png",
+    "BannerType": "Season",
+    "des": "BattleBanner_Banner",
+    "id": "6103"
+  },
+  {
+    "BannerName": "赛季旗帜4",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/Season/SeasonBanner4.png",
+    "BannerType": "Season",
+    "des": "BattleBanner_Banner",
+    "id": "6104"
+  },
+  {
+    "BannerName": "赛季旗帜5",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/Season/SeasonBanner5.png",
+    "BannerType": "Season",
+    "des": "BattleBanner_Banner",
+    "id": "6105"
+  },
+  {
+    "BannerName": "赛季旗帜6",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/Season/SeasonBanner6.png",
+    "BannerType": "Season",
+    "des": "BattleBanner_Banner",
+    "id": "6106"
+  },
+  {
+    "BannerName": "赛季旗帜7",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/Season/SeasonBanner7.png",
+    "BannerType": "Season",
+    "des": "BattleBanner_Banner",
+    "id": "6107"
+  },
+  {
+    "BannerName": "赛季旗帜8",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/Season/SeasonBanner8.png",
+    "BannerType": "Season",
+    "des": "BattleBanner_Banner",
+    "id": "6108"
+  },
+  {
+    "BannerName": "赛季旗帜9",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/Season/SeasonBanner9.png",
+    "BannerType": "Season",
+    "des": "BattleBanner_Banner",
+    "id": "6109"
+  },
+  {
+    "BannerName": "赛季旗帜10",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/Season/SeasonBanner10.png",
+    "BannerType": "Season",
+    "des": "BattleBanner_Banner",
+    "id": "6110"
+  },
+  {
+    "BannerName": "赛季旗帜11",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/Season/SeasonBanner11.png",
+    "BannerType": "Season",
+    "des": "BattleBanner_Banner",
+    "id": "6111"
+  },
+  {
+    "BannerName": "赛季旗帜12",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/Season/SeasonBanner12.png",
+    "BannerType": "Season",
+    "des": "BattleBanner_Banner",
+    "id": "6112"
+  },
+  {
+    "BannerName": "赛季旗帜13",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/Season/SeasonBanner13.png",
+    "BannerType": "Season",
+    "des": "BattleBanner_Banner",
+    "id": "6113"
+  },
+  {
+    "BannerName": "赛季旗帜14",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/Season/SeasonBanner14.png",
+    "BannerType": "Season",
+    "des": "BattleBanner_Banner",
+    "id": "6114"
+  },
+  {
+    "BannerName": "赛季旗帜15",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/Season/SeasonBanner15.png",
+    "BannerType": "Season",
+    "des": "BattleBanner_Banner",
+    "id": "6115"
+  },
+  {
+    "BannerName": "赛季旗帜16",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/Season/SeasonBanner16.png",
+    "BannerType": "Season",
+    "des": "BattleBanner_Banner",
+    "id": "6116"
+  },
+  {
+    "BannerName": "赛季旗帜17",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/Season/SeasonBanner17.png",
+    "BannerType": "Season",
+    "des": "BattleBanner_Banner",
+    "id": "6117"
+  },
+  {
+    "BannerName": "竞技旗帜01",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/PvpRankRewards/S1_1_1.png",
+    "BannerType": "PVPSession",
+    "des": "BattleBanner_Banner",
+    "id": "6200"
+  },
+  {
+    "BannerName": "竞技旗帜02",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/PvpRankRewards/S1_1_2.png",
+    "BannerType": "PVPSession",
+    "des": "BattleBanner_Banner",
+    "id": "6201"
+  },
+  {
+    "BannerName": "竞技旗帜03",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/PvpRankRewards/S1_1_3.png",
+    "BannerType": "PVPSession",
+    "des": "BattleBanner_Banner",
+    "id": "6202"
+  },
+  {
+    "BannerName": "竞技旗帜04",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/PvpRankRewards/S1_1_4.png",
+    "BannerType": "PVPSession",
+    "des": "BattleBanner_Banner",
+    "id": "6203"
+  },
+  {
+    "BannerName": "足球庆典战旗1",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jinjichang-16.png",
+    "BannerType": "WorldCup",
+    "des": "BattleBanner_Banner",
+    "id": "6118"
+  },
+  {
+    "BannerName": "竞技场旗帜16",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jinjichang-17.png",
+    "BannerType": "ArenaGiftPack",
+    "des": "BattleBanner_Banner",
+    "id": "6022"
+  },
+  {
+    "BannerName": "竞技场旗帜17",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jinjichang-18.png",
+    "BannerType": "ArenaGiftPack",
+    "des": "BattleBanner_Banner",
+    "id": "6023"
+  },
+  {
+    "BannerName": "竞技场旗帜18",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jinjichang-19.png",
+    "BannerType": "ArenaGiftPack",
+    "des": "BattleBanner_Banner",
+    "id": "6024"
+  },
+  {
+    "BannerName": "竞技场旗帜19",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jinjichang-20.png",
+    "BannerType": "ArenaGiftPack",
+    "des": "BattleBanner_Banner",
+    "id": "6025"
+  },
+  {
+    "BannerName": "竞技场旗帜20",
+    "BannerPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/GameSkin/BusinessCard/jinjichang-21.png",
+    "BannerType": "ArenaGiftPack",
+    "des": "BattleBanner_Banner",
+    "id": "6026"
+  }
+]

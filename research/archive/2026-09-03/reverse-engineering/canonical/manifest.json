@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "canonical_input": {
+    "path": "research/archive/2026-09-03/unpacked/_wasmcode_/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
+    "size": 6786702,
+    "sha256": "63c975b04a35b32e292143ae4dbc95067423d46a31a22e5646c4ade909a527e2"
+  },
+  "decompressed_wasm": {
+    "path": "/tmp/canonical.webgl.wasm",
+    "size": 38009451,
+    "sha256": "52b679d02a884ce14782dd4fadf06e610b39d79070dcd41699f6cc0522aec19e"
+  },
+  "metadata_reference": {
+    "path": "research/archive/2026-09-03/reverse-engineering/global-metadata.decrypted.dat",
+    "size": 16795612,
+    "sha256": "fa178d839cb6d8b8b24ca5acd8d4bbcef4963332fd49859c80a0dbe20dcc239f"
+  },
+  "dump_declaration_reference": {
+    "path": "research/archive/2026-09-03/reverse-engineering/dump.cs",
+    "size": 40181928,
+    "sha256": "100964dcabdcbb2ed9691dee8dfb375664a164332827a83e2c2a92c0b39db0a5"
+  },
+  "other_raw_wasm_candidates": [
+    {
+      "path": "research/archive/2026-09-03/unpacked/_wasmcode1_/wasmcode1/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
+      "canonical": false,
+      "size": 7706151
+    },
+    {
+      "path": "research/archive/2026-09-03/unpacked/_wasmcode_/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
+      "canonical": true,
+      "size": 6786702
+    }
+  ],
+  "tools": {
+    "wasm2wat": "1.0.34",
+    "wasm-objdump": "1.0.34"
+  },
+  "generated": [
+    {
+      "path": "research/archive/2026-09-03/reverse-engineering/canonical/dump-audit.json",
+      "size": 716,
+      "sha256": "6de0c132198c7224602e82148a3a30255406a83549981a16053fd943c5a83134"
+    },
+    {
+      "path": "research/archive/2026-09-03/reverse-engineering/canonical/element-map.tsv",
+      "size": 7814982,
+      "sha256": "d299172d6ca07835689a1149f85735982e83886a1edea5a09348cd8c89b85878"
+    },
+    {
+      "path": "research/archive/2026-09-03/reverse-engineering/canonical/method-map.tsv",
+      "size": 14672918,
+      "sha256": "fbffd0ec55ed7b292fcc23fbbd1349c5e4be80e0052e4355c9a34b798b522eeb"
+    },
+    {
+      "path": "research/archive/2026-09-03/reverse-engineering/canonical/module-info.txt",
+      "size": 68853565,
+      "sha256": "174a538a97155d72e077d8aa371493b262c16a21cc0793a95f8baf51f222614f"
+    },
+    {
+      "path": "research/archive/2026-09-03/reverse-engineering/canonical/module.objdump.gz",
+      "size": 67128949,
+      "sha256": "7063018bb59c9ba4cd142dc7b25196eeda3be13656a89588498d3f699885a804"
+    },
+    {
+      "path": "research/archive/2026-09-03/reverse-engineering/canonical/module.wat.gz",
+      "size": 23231838,
+      "sha256": "50f7f8fbc3ae3c3cb81c1d92c486015b8cf099cf48538eaa842b6af91037cef5"
+    },
+    {
+      "path": "research/archive/2026-09-03/reverse-engineering/canonical/validation.json",
+      "size": 2830,
+      "sha256": "db6b9c132c3d65cf6a32041ceacd3f9f1470687984b6d0b2173b4786329441b3"
+    },
+    {
+      "path": "research/archive/2026-09-03/reverse-engineering/canonical/validation.txt",
+      "size": 396,
+      "sha256": "f9f1335965c90d3184303bc4e2ddb33650159210872e64d05ec9b3dd967af040"
+    }
+  ]
+}

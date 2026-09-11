@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1001",
+    "des": "一星",
+    "price": "50",
+    "uiResPath": "Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/SpriteUI/OneStarUI.prefab",
+    "probabilityProfile": "74,20,5,1,0"
+  },
+  {
+    "id": "1002",
+    "des": "二星",
+    "price": "100",
+    "uiResPath": "Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/SpriteUI/TwoStarUI.prefab",
+    "probabilityProfile": "50,40,8,2,0"
+  },
+  {
+    "id": "1003",
+    "des": "三星",
+    "price": "250",
+    "uiResPath": "Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/SpriteUI/ThereStarUI.prefab",
+    "probabilityProfile": "0,0,90,10,0"
+  },
+  {
+    "id": "1004",
+    "des": "未知",
+    "price": "25",
+    "uiResPath": "Assets/_Res/Addressable/02CoreGameBundle/Prefabs/CoreGame/SpriteUI/UnChartedUI.prefab",
+    "probabilityProfile": "0,0,15,5,80"
+  }
+]

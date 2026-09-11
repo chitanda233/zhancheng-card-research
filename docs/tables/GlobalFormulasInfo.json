@@ -1,0 +1,142 @@
+[
+  {
+    "id": "10001",
+    "name": "金币收益等级",
+    "des": "x = 当前等级",
+    "priceFormula": "50*x1+50",
+    "valueFormula": "x1"
+  },
+  {
+    "id": "10002",
+    "name": "人口收益等级",
+    "des": "x = 当前等级",
+    "priceFormula": "200*x1+50",
+    "valueFormula": "x1"
+  },
+  {
+    "id": "10003",
+    "name": "时代等级",
+    "des": "x = 当前等级",
+    "priceFormula": "5000*2^(x1-1)",
+    "valueFormula": "x1"
+  },
+  {
+    "id": "10004",
+    "name": "近战攻击频率",
+    "des": "常量",
+    "priceFormula": "1",
+    "valueFormula": "null"
+  },
+  {
+    "id": "10005",
+    "name": "近战攻击力",
+    "des": "x = 战斗力",
+    "priceFormula": "x1",
+    "valueFormula": "null"
+  },
+  {
+    "id": "10006",
+    "name": "远程攻击频率",
+    "des": "常量",
+    "priceFormula": "1.5",
+    "valueFormula": "null"
+  },
+  {
+    "id": "10007",
+    "name": "远程攻击力",
+    "des": "x = 战斗力",
+    "priceFormula": "x1",
+    "valueFormula": "null"
+  },
+  {
+    "id": "10008",
+    "name": "网格解锁花费",
+    "des": "x = 当前已经解锁的网格数",
+    "priceFormula": "50*x1",
+    "valueFormula": "null"
+  },
+  {
+    "id": "10009",
+    "name": "建筑花费,价值公式",
+    "des": "x1 = 系数, 见单元格类型表\nx2 = 当前格子数量",
+    "priceFormula": "(x1+x2)^2",
+    "valueFormula": "null"
+  },
+  {
+    "id": "10010",
+    "name": "升级卡牌所需钻石公式",
+    "des": "x1 = 卡牌等级",
+    "priceFormula": "5*x1*x1*x1",
+    "valueFormula": "null"
+  },
+  {
+    "id": "10011",
+    "name": "主城人口每次增长数量",
+    "des": "常量",
+    "priceFormula": "null",
+    "valueFormula": "1"
+  },
+  {
+    "id": "10012",
+    "name": "主城人口每次增长间隔(分钟)",
+    "des": "x1= 增长次数, 初始为0",
+    "priceFormula": "null",
+    "valueFormula": "60+x1*30"
+  },
+  {
+    "id": "10013",
+    "name": "主城人口换算金币产出",
+    "des": "x1 = 人口",
+    "priceFormula": "null",
+    "valueFormula": "x1*0.1"
+  },
+  {
+    "id": "10014",
+    "name": "主城人口最大值",
+    "des": "常量",
+    "priceFormula": "null",
+    "valueFormula": "100"
+  },
+  {
+    "id": "10015",
+    "name": "看视频加速主城人口增长事件 (分钟)",
+    "des": "常量",
+    "priceFormula": "null",
+    "valueFormula": "30"
+  },
+  {
+    "id": "10016",
+    "name": "看视频加速主城人口增长冷却 (小时)",
+    "des": "常量",
+    "priceFormula": "null",
+    "valueFormula": "6"
+  },
+  {
+    "id": "10017",
+    "name": "战斗摧毁普通建筑获得木材",
+    "des": "常量",
+    "priceFormula": "null",
+    "valueFormula": "5"
+  },
+  {
+    "id": "10018",
+    "name": "战斗摧毁主城",
+    "des": "常量",
+    "priceFormula": "null",
+    "valueFormula": "50"
+  },
+  {
+    "id": "10019",
+    "name": "主城玩法战斗胜利获得金币",
+    "des": "x1 = 难度等级",
+    "priceFormula": "null",
+    "valueFormula": "x1*100"
+  },
+  {
+    "id": "10020",
+    "name": "主城玩法战斗胜利获得钻石",
+    "des": "常量",
+    "priceFormula": "null",
+    "valueFormula": "5"
+  }
+]

@@ -1,0 +1,202 @@
+[
+  {
+    "bgIconPath": "Assets/_Res/Addressable/02CoreGameBundle/Sprites/HeroCardPanel/bmp_HW_kp_wzd_9.png",
+    "des": "RandomCard_OwnGreen_Des",
+    "iconPath": "Assets/_Res/Addressable/01FirstBundle/Sprites/MainPanel/icon_HW_zjm_3.png",
+    "id": "5001",
+    "name": "RandomCard_Name",
+    "randomFromOwnedCards": true,
+    "randomProbability": "R:100",
+    "rareLevel": "R"
+  },
+  {
+    "bgIconPath": "Assets/_Res/Addressable/02CoreGameBundle/Sprites/HeroCardPanel/bmp_HW_kp_wzd_3.png",
+    "des": "RandomCard_OwnBlue_Des",
+    "iconPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/Common/icon_Card_lslb_2.png",
+    "id": "5002",
+    "name": "RandomCard_Name",
+    "randomFromOwnedCards": true,
+    "randomProbability": "SR:100",
+    "rareLevel": "SR"
+  },
+  {
+    "bgIconPath": "Assets/_Res/Addressable/02CoreGameBundle/Sprites/HeroCardPanel/bmp_HW_kp_wzd_4.png",
+    "des": "RandomCard_OwnPurple_Des",
+    "iconPath": "Assets/_Res/Addressable/04MetaGameBundle/Sprites/GiftChainPanel/icon_HW_lslb_2.png",
+    "id": "5003",
+    "name": "RandomCard_Name",
+    "randomFromOwnedCards": true,
+    "randomProbability": "SSR:100",
+    "rareLevel": "SSR"
+  },
+  {
+    "bgIconPath": "Assets/_Res/Addressable/02CoreGameBundle/Sprites/HeroCardPanel/bmp_HW_kp_wzd_5.png",
+    "des": "RandomCard_OwnGold_Des",
+    "iconPath": "Assets/_Res/Addressable/04MetaGameBundle/Sprites/GiftChainPanel/icon_HW_lslb_1.png",
+    "id": "5004",
+    "name": "RandomCard_Name",
+    "randomFromOwnedCards": true,
+    "randomProbability": "SSSR:100",
+    "rareLevel": "SSSR"
+  },
+  {
+    "bgIconPath": "Assets/_Res/Addressable/SpritesBundle/HexWarriors/bmp_HW_js_djk_1.png",
+    "des": "RandomCard_OwnGreenToBlue_Des",
+    "iconPath": "Assets/_Res/Addressable/01FirstBundle/Sprites/MainPanel/icon_HW_zjm_3.png",
+    "id": "5005",
+    "name": "RandomCard_Name",
+    "randomFromOwnedCards": true,
+    "randomProbability": "R:50;SR:50",
+    "rareLevel": "R"
+  },
+  {
+    "bgIconPath": "Assets/_Res/Addressable/SpritesBundle/HexWarriors/bmp_HW_js_djk_1.png",
+    "des": "RandomCard_OwnGreenToPurple_Des",
+    "iconPath": "Assets/_Res/Addressable/01FirstBundle/Sprites/MainPanel/icon_HW_zjm_3.png",
+    "id": "5006",
+    "name": "RandomCard_Name",
+    "randomFromOwnedCards": true,
+    "randomProbability": "R:50;SR:30;SSR:20",
+    "rareLevel": "SR"
+  },
+  {
+    "bgIconPath": "Assets/_Res/Addressable/SpritesBundle/HexWarriors/bmp_HW_js_djk_1.png",
+    "des": "RandomCard_OwnGreenToGold_Des",
+    "iconPath": "Assets/_Res/Addressable/01FirstBundle/Sprites/MainPanel/icon_HW_zjm_3.png",
+    "id": "5007",
+    "name": "RandomCard_Name",
+    "randomFromOwnedCards": true,
+    "randomProbability": "R:40;SR:30;SSR:20;SSSR:10",
+    "rareLevel": "SR"
+  },
+  {
+    "bgIconPath": "Assets/_Res/Addressable/SpritesBundle/HexWarriors/bmp_HW_js_djk_1.png",
+    "des": "RandomCard_OwnBlueToPurple_Des",
+    "iconPath": "Assets/_Res/Addressable/01FirstBundle/Sprites/MainPanel/icon_HW_zjm_3.png",
+    "id": "5008",
+    "name": "RandomCard_Name",
+    "randomFromOwnedCards": true,
+    "randomProbability": "SR:50;SSR:50",
+    "rareLevel": "SR"
+  },
+  {
+    "bgIconPath": "Assets/_Res/Addressable/SpritesBundle/HexWarriors/bmp_HW_js_djk_1.png",
+    "des": "RandomCard_OwnBlueToGold_Des",
+    "iconPath": "Assets/_Res/Addressable/01FirstBundle/Sprites/MainPanel/icon_HW_zjm_3.png",
+    "id": "5009",
+    "name": "RandomCard_Name",
+    "randomFromOwnedCards": true,
+    "randomProbability": "SR:50;SSR:40;SSSR:10",
+    "rareLevel": "SSR"
+  },
+  {
+    "bgIconPath": "Assets/_Res/Addressable/SpritesBundle/HexWarriors/bmp_HW_js_djk_1.png",
+    "des": "RandomCard_OwnPurpleToGold_Des",
+    "iconPath": "Assets/_Res/Addressable/01FirstBundle/Sprites/MainPanel/icon_HW_zjm_3.png",
+    "id": "5010",
+    "name": "RandomCard_Name",
+    "randomFromOwnedCards": true,
+    "randomProbability": "SSR:80;SSSR:20",
+    "rareLevel": "SSSR"
+  },
+  {
+    "bgIconPath": "Assets/_Res/Addressable/SpritesBundle/HexWarriors/bmp_HW_js_djk_1.png",
+    "des": "RandomCard_NotOwnedGreen_Des",
+    "iconPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/Common/icon_Card_lslb_1.png",
+    "id": "5011",
+    "name": "RandomCard_Name",
+    "randomFromOwnedCards": false,
+    "randomProbability": "R:100",
+    "rareLevel": "R"
+  },
+  {
+    "bgIconPath": "Assets/_Res/Addressable/SpritesBundle/HexWarriors/bmp_HW_js_djk_2.png",
+    "des": "RandomCard_NotOwnedBlue_Des",
+    "iconPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/Common/icon_Card_lslb_2.png",
+    "id": "5012",
+    "name": "RandomCard_Name",
+    "randomFromOwnedCards": false,
+    "randomProbability": "SR:100",
+    "rareLevel": "SR"
+  },
+  {
+    "bgIconPath": "Assets/_Res/Addressable/SpritesBundle/HexWarriors/bmp_HW_js_djk_3.png",
+    "des": "RandomCard_NotOwnedPurple_Des",
+    "iconPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/Common/icon_Card_lslb_3.png",
+    "id": "5013",
+    "name": "RandomCard_Name",
+    "randomFromOwnedCards": false,
+    "randomProbability": "SSR:100",
+    "rareLevel": "SSR"
+  },
+  {
+    "bgIconPath": "Assets/_Res/Addressable/SpritesBundle/HexWarriors/bmp_HW_js_djk_4.png",
+    "des": "RandomCard_NotOwnedGold_Des",
+    "iconPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/Common/icon_Card_lslb_4.png",
+    "id": "5014",
+    "name": "RandomCard_Name",
+    "randomFromOwnedCards": false,
+    "randomProbability": "SSSR:100",
+    "rareLevel": "SSSR"
+  },
+  {
+    "bgIconPath": "Assets/_Res/Addressable/SpritesBundle/HexWarriors/bmp_HW_js_djk_1.png",
+    "des": "RandomCard_NotOwnedGreenToBlue_Des",
+    "iconPath": "Assets/_Res/Addressable/01FirstBundle/Sprites/MainPanel/icon_HW_zjm_3.png",
+    "id": "5015",
+    "name": "RandomCard_Name",
+    "randomFromOwnedCards": false,
+    "randomProbability": "R:50;SR:50",
+    "rareLevel": "R"
+  },
+  {
+    "bgIconPath": "Assets/_Res/Addressable/SpritesBundle/HexWarriors/bmp_HW_js_djk_1.png",
+    "des": "RandomCard_NotOwnedGreenToPurple_Des",
+    "iconPath": "Assets/_Res/Addressable/01FirstBundle/Sprites/MainPanel/icon_HW_zjm_3.png",
+    "id": "5016",
+    "name": "RandomCard_Name",
+    "randomFromOwnedCards": false,
+    "randomProbability": "R:50;SR:30;SSR:20",
+    "rareLevel": "SR"
+  },
+  {
+    "bgIconPath": "Assets/_Res/Addressable/SpritesBundle/HexWarriors/bmp_HW_js_djk_1.png",
+    "des": "RandomCard_NotOwnedGreenToGold_Des",
+    "iconPath": "Assets/_Res/Addressable/SpritesBundle/Dynamic/Common/icon_Card_lslb_all.png",
+    "id": "5017",
+    "name": "RandomCard_Name",
+    "randomFromOwnedCards": false,
+    "randomProbability": "R:40;SR:30;SSR:20;SSSR:10",
+    "rareLevel": "SR"
+  },
+  {
+    "bgIconPath": "Assets/_Res/Addressable/SpritesBundle/HexWarriors/bmp_HW_js_djk_1.png",
+    "des": "RandomCard_NotOwnedBlueToPurple_Des",
+    "iconPath": "Assets/_Res/Addressable/01FirstBundle/Sprites/MainPanel/icon_HW_zjm_3.png",
+    "id": "5018",
+    "name": "RandomCard_Name",
+    "randomFromOwnedCards": false,
+    "randomProbability": "SR:50;SSR:50",
+    "rareLevel": "SR"
+  },
+  {
+    "bgIconPath": "Assets/_Res/Addressable/SpritesBundle/HexWarriors/bmp_HW_js_djk_1.png",
+    "des": "RandomCard_NotOwnedBlueToGold_Des",
+    "iconPath": "Assets/_Res/Addressable/01FirstBundle/Sprites/MainPanel/icon_HW_zjm_3.png",
+    "id": "5019",
+    "name": "RandomCard_Name",
+    "randomFromOwnedCards": false,
+    "randomProbability": "SR:50;SSR:40;SSSR:10",
+    "rareLevel": "SSR"
+  },
+  {
+    "bgIconPath": "Assets/_Res/Addressable/SpritesBundle/HexWarriors/bmp_HW_js_djk_1.png",
+    "des": "RandomCard_NotOwnedPurpleToGold_Des",
+    "iconPath": "Assets/_Res/Addressable/01FirstBundle/Sprites/MainPanel/icon_HW_zjm_3.png",
+    "id": "5020",
+    "name": "RandomCard_Name",
+    "randomFromOwnedCards": false,
+    "randomProbability": "SSR:80;SSSR:20",
+    "rareLevel": "SSSR"
+  }
+]

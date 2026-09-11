@@ -1,0 +1,398 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="占城大师局内战斗规则：经济、地图池、翻格概率、自动出兵、胜负、神器与版本变化"><title>占城大师 · 局内战斗规则</title><style>
+:root{--ink:#19383d;--muted:#60777a;--paper:#f4f7f6;--card:#fff;--line:#d4e2de;--green:#0a756c;--dark:#153f44;--gold:#b7781e;--blue:#e9f0fb;--warn:#fff3d8}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.8 "Microsoft YaHei","PingFang SC",system-ui,sans-serif}a{color:#08716d;text-underline-offset:3px}header{background:var(--dark);color:#f6fbfa;padding:42px 28px}.hero{max-width:1180px;margin:auto}.eyebrow{color:#a7dcd2;font:13px/1.2 Consolas,monospace;letter-spacing:.18em}.hero h1{font-size:clamp(32px,5vw,50px);line-height:1.2;margin:12px 0}.hero p{max-width:820px;color:#cde2de;font-size:18px}.chips{display:flex;gap:9px;flex-wrap:wrap}.chips span{border:1px solid #5c8580;border-radius:99px;padding:4px 11px;font-size:13px}main{max-width:1400px;margin:auto;display:grid;grid-template-columns:270px minmax(0,1fr);gap:28px;padding:28px}nav{position:sticky;top:18px;align-self:start;max-height:94vh;overflow:auto;font-size:13px}nav>ul{padding-left:0;list-style:none}nav ul ul{padding-left:18px;margin:5px 0 14px;border-left:2px solid #c7dcd7}nav li{margin:7px 0}article{background:#fff;border:1px solid var(--line);border-radius:14px;padding:32px 40px;min-width:0}h2{font-size:27px;margin:58px -10px 20px;padding:14px 18px;border-left:6px solid var(--green);border-radius:8px;background:#e5f2ed;scroll-margin-top:15px}h2:first-child{margin-top:0}h3{font-size:20px;margin:34px 0 12px;padding-bottom:7px;border-bottom:1px solid #d8e5e1;scroll-margin-top:15px}h4{font-size:17px;margin:24px 0 10px}p{margin:12px 0}.summary{background:#e5f2ed;border-left:4px solid var(--green);padding:15px 18px;border-radius:6px}.flow{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin:22px 0}.flow div{position:relative;background:#edf5f2;border:1px solid #c8dcd6;border-radius:9px;padding:13px 10px;min-height:94px}.flow b{display:block;color:var(--green)}.flow div:not(:last-child):after{content:'›';position:absolute;right:-9px;top:29px;z-index:2;color:#527b77;font-size:25px}.scroll{overflow:auto;margin:17px 0}table{border-collapse:collapse;width:100%;font-size:14px}th{background:#e6f0ed;text-align:left;padding:10px 12px}td{border-bottom:1px solid #e1e8e6;padding:10px 12px;vertical-align:top;min-width:90px}tr:nth-child(even) td{background:#fafcfb}code,.idtip{background:#eef3f2;border-radius:4px;padding:2px 5px}.idtip{cursor:help;color:#08716d;border-bottom:1px dotted #08716d}.idtip:hover,.idtip:focus{background:#d7eee7;outline:2px solid #63b7a7}.callout{padding:14px 17px;border-radius:7px;background:var(--warn);border-left:4px solid var(--gold)}.arena-tool{background:#f1f5fa;border:1px solid #ccd9e7;border-radius:11px;padding:18px;margin:22px 0}.arena-tool label{font-weight:700}.arena-tool select{margin-left:8px;padding:7px 10px;border:1px solid #8ba5a8;border-radius:6px;background:#fff}.arena-stats{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:14px}.arena-stats div{background:#fff;border:1px solid #d8e2e8;border-radius:7px;padding:9px}.arena-stats b{display:block;color:var(--green);font-size:18px}.source-list{font-size:14px;color:var(--muted)}.back{position:fixed;right:16px;bottom:16px;z-index:20;background:var(--dark);color:#fff;padding:9px 13px;border-radius:99px;text-decoration:none;box-shadow:0 5px 18px #0004}#tooltip{position:fixed;z-index:100;width:max-content;max-width:min(420px,calc(100vw - 24px));padding:13px 16px;background:#153f44;color:#f5fbfa;border-radius:9px;box-shadow:0 8px 26px #0004;white-space:pre-line;font-size:14px}#tooltip[hidden]{display:none}#tooltip b{display:block;color:#a7e7d7;margin-bottom:4px}@media(max-width:1000px){main{grid-template-columns:1fr;padding:16px}nav{position:static;max-height:300px;background:#e6f0ed;padding:12px 18px;border-radius:9px}article{padding:25px 20px}.flow{grid-template-columns:repeat(2,1fr)}.flow div:after{display:none}.arena-stats{grid-template-columns:repeat(3,1fr)}}@media(max-width:520px){header{padding:32px 20px}.flow,.arena-stats{grid-template-columns:1fr}.scroll table{min-width:680px}article{padding:22px 14px}h2{font-size:22px;margin-left:0;margin-right:0}.back{font-size:12px}}@media print{nav,.back,#tooltip,.arena-tool{display:none}main{display:block;padding:0}article{border:0}.scroll{overflow:visible}table{font-size:10px}}
+article li a,article li code{overflow-wrap:anywhere;word-break:break-all}
+@media(max-width:1000px){main{grid-template-columns:minmax(0,1fr)}}
+</style></head><body><header><div class="hero"><div class="eyebrow">IN-BATTLE RULEBOOK</div><h1>《占城大师》局内战斗规则</h1><p>把一局战斗拆成经济、空间、兵线、目标和时间五个维度；地图与地块随机只保留玩家视角摘要，底层概率统一进入独立专题。</p><div class="chips"><span>局内经济</span><span>空间扩张</span><span>自动兵线</span><span>随机专题分离</span></div></div></header><main><nav><strong>页面目录</strong><ul>
+<li><a href="#module-overview"><strong>模块一：局内整体流程</strong></a><ul>
+<li><a href="#rule-1">一句话理解</a></li><li><a href="#rule-2">单局规则链</a></li><li><a href="#rule-3">玩家能控制什么</a></li><li><a href="#rule-4">局内经济</a></li><li><a href="#rule-5">建筑、出兵与路线</a></li><li><a href="#rule-6">两条胜利路线</a></li><li><a href="#rule-7">神器规则</a></li><li><a href="#rule-8">竞技场参数</a></li><li><a href="#rule-9">普通场与赛季PVP</a></li><li><a href="#rule-10">局内/局外结算</a></li>
+</ul></li>
+<li><a href="#module-hex"><strong>模块二：地图与翻格摘要</strong></a><ul>
+<li><a href="#hex-1">玩家需要知道什么</a></li><li><a href="#hex-2">新显现格与25%</a></li><li><a href="#hex-3">SSSR与后置修正</a></li><li><a href="#hex-4">页面职责</a></li>
+</ul></li>
+<li><a href="#appendix"><strong>证据与附录</strong></a><ul>
+<li><a href="#appendix-1">常见误读</a></li><li><a href="#appendix-2">证据与待验证</a></li><li><a href="#appendix-3">数据来源</a></li>
+</ul></li></ul></nav><article>
+<p>研究快照：2026-09-03；资源版本：<code>1.4.15.558-preview</code>。本页只解释“进入一局后发生什么”，卡牌升级、宝箱开启、领地探索等局外养成不在主规则内。</p>
+<h2 id="module-overview">模块一：局内整体流程规则</h2>
+<p>这一模块从玩家视角解释一局怎样开始、推进和结束；翻格子的内部概率集中放在模块二，避免打断整体流程。</p>
+<h3 id="rule-1">1. 一句话理解</h3>
+<p class="summary">玩家不直接操纵每个士兵，而是持续做三件事：<strong>等局内金币、选择地块翻开、决定经济/兵力/防御和神器的投入时机</strong>。建筑自动产出，单位自动寻找目标并战斗；最终通过摧毁敌方全部建筑，或计时结束时拥有更多占领格获胜。</p>
+<h3 id="rule-2">2. 单局规则链</h3>
+<div class="flow" aria-label="一局战斗流程"><div><b>① 入场</b>看地图与初始局势</div><div><b>② 产金</b>等待自动经济</div><div><b>③ 翻格</b>花钱扩张</div><div><b>④ 成军</b>建筑自动产兵</div><div><b>⑤ 交战</b>自动战斗与路线拉扯</div><div><b>⑥ 神器</b>充能后择机释放</div><div><b>⑦ 判定</b>拆建筑或超时占地</div></div><div class="scroll"><table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>玩家行为</th>
+<th>系统自动行为</th>
+<th>主要风险</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>入场</td>
+<td>观察地图、初始建筑、牌组与双方位置</td>
+<td>根据模式/地图载入主塔、不可翻格点和初始资源</td>
+<td>不同地图和训练分支初始预算不同</td>
+</tr>
+<tr>
+<td>产金</td>
+<td>决定立即花钱还是等待</td>
+<td>领主塔定期产金币；已翻出的金矿继续产金</td>
+<td>过度等钱会让出地图空间</td>
+</tr>
+<tr>
+<td>翻格</td>
+<td>选择合法地块并支付基础价格</td>
+<td>按地块配置产生建筑/结果，占领版图扩大</td>
+<td>星级越高越贵，结果仍带随机性</td>
+</tr>
+<tr>
+<td>成军</td>
+<td>决定补经济、兵营还是防御位置</td>
+<td>兵营按各自间隔自动产兵</td>
+<td>慢兵营可能来不及形成兵线</td>
+</tr>
+<tr>
+<td>交战</td>
+<td>通过建筑位置拉扯、分兵或偷袭</td>
+<td>单位自动索敌、移动和攻击</td>
+<td>目标切换和障碍寻路细节未完全恢复</td>
+</tr>
+<tr>
+<td>神器</td>
+<td>充能后选择释放时机与目标</td>
+<td>新版按累计翻格次数充能</td>
+<td>为充能盲目翻格可能破坏经济节奏</td>
+</tr>
+<tr>
+<td>结束</td>
+<td>根据局势争取拆完建筑或占地领先</td>
+<td>摧毁全部建筑立即判胜；超时比较占地数</td>
+<td>平局、断线与部分异常判定仍待实测</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="rule-3">3. 玩家能控制什么</h3>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>可以直接控制</th>
+<th>主要由系统自动执行</th>
+<th>尚未完全确认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>翻哪一个合法地块、何时花金币、建筑布局形成后的路线利用、神器释放目标/时机</td>
+<td>主塔和金矿产钱、兵营生产、单位索敌/移动/攻击、伤害结算</td>
+<td>地块合法性完整规则、锁定后重新索敌频率、障碍寻路、平局处理、所有增益叠加顺序</td>
+</tr>
+</tbody>
+</table></div>
+<p>“自动出兵”不等于没有操作：玩家的主要操作被前置到资源分配和空间布局，而不是即时微操每个士兵。</p>
+<h3 id="rule-4">4. 局内经济</h3>
+<ul>
+<li>局内金币用于购买地块，只在本局决策中使用；没有证据表明剩余局内金币会自动结转为局外金币。</li>
+<li>局外金币资源ID <span class="idtip" tabindex="0" data-title="资源20005 · 局外金币" data-tip="用于卡牌升级；不是本局翻格时使用的金币。">20005</span> 用于卡牌升级，是结算/宝箱/任务等来源的长期资源。</li>
+<li>教程只确认领主塔定期产金币，没有恢复一个适用于所有模式和等级的统一基础产金数值。</li>
+<li>金矿卡 <span class="idtip" tabindex="0" data-title="当前上下文中的ID 1001" data-tip="该数字被多张表复用：这里按相邻文字判断为金矿/一星格/教程/竞技场记录，详见对应表链接。">1001</span> 的建筑配置以 <code>attack=10+(L-1)</code> 承担单次产量，以 <code>spawnTime=6000-5L</code> 毫秒承担间隔：1级约每5.995秒产10金币。羁绊、领地或活动增益不在这个基础算例里。</li>
+</ul>
+<h3 id="rule-5">5. 建筑、出兵与路线</h3>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>作用</th>
+<th>基础配置例子</th>
+<th>读法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>领主塔</td>
+<td>初始核心、定期产金，也是对方必须摧毁的建筑之一</td>
+<td>具体属性受竞技场、领地等分支影响</td>
+<td>既是经济源也是胜负核心</td>
+</tr>
+<tr>
+<td>金矿</td>
+<td>增加后续金币流</td>
+<td>金矿 <span class="idtip" tabindex="0" data-title="当前上下文中的ID 1001" data-tip="该数字被多张表复用：这里按相邻文字判断为金矿/一星格/教程/竞技场记录，详见对应表链接。">1001</span>：1级单次10、约5.995秒一次</td>
+<td>当前牺牲战力换未来翻格能力</td>
+</tr>
+<tr>
+<td>兵营</td>
+<td>定时产生会自动战斗的单位</td>
+<td>熊战士 <span class="idtip" tabindex="0" data-title="当前上下文中的ID 1002" data-tip="该数字可能指二星格、熊战士卡牌或竞技场2配置，需结合相邻名称。">1002</span>：7秒；骷髅战士 <span class="idtip" tabindex="0" data-title="当前上下文中的ID 1003" data-tip="该数字可能指三星格、骷髅战士卡牌或竞技场3配置，需结合相邻名称。">1003</span>：4秒；弓箭手 <span class="idtip" tabindex="0" data-title="当前上下文中的ID 1004" data-tip="该数字可能指未知格、弓箭手卡牌或竞技场4配置，需结合相邻名称。">1004</span>：12秒；剑士 <span class="idtip" tabindex="0" data-title="卡牌/教程ID 1005" data-tip="正文此处用于剑士卡牌或基础购买教程，结合相邻名称读取。">1005</span>：12秒</td>
+<td>比较卡牌时要同时看单体能力与成军速度</td>
+</tr>
+<tr>
+<td>防御塔</td>
+<td>不产兵，在范围内直接攻击</td>
+<td>箭塔 <span class="idtip" tabindex="0" data-title="卡牌1014 · 箭塔" data-tip="防御建筑，不生产单位；基础射程字段为8。">1014</span>：基础射程字段8</td>
+<td>可用于守线，也可作为拉扯敌兵的建筑目标</td>
+</tr>
+</tbody>
+</table></div>
+<p>教程规则是：<strong>没有攻击目标的单位，优先受直线距离最近的建筑吸引</strong>。翻出新建筑可以短暂改变敌方行进方向，形成拉扯；当右侧敌兵被防御塔吸引时，可从左侧扩张偷袭主城。已锁定目标是否立即切换、索敌刷新间隔和复杂障碍路径仍未确认。</p>
+<p>本地文本还存在“连接两个或更多建筑会产生防护墙”的说明，但当前分支是否启用、墙体如何计入阻挡和胜负尚未实测，所以不并入确定主规则。</p>
+<h3 id="rule-6">6. 两条胜利路线</h3>
+<h4 id="a">路线A：摧毁建筑</h4>
+<p>教程 <span class="idtip" tabindex="0" data-title="教程1007 · 摧毁建筑胜利" data-tip="教程原文：摧毁敌人的所有建筑以赢得比赛。">1007</span> 明确写“摧毁敌人的所有建筑以赢得比赛”。快速兵线、远程输出、攻城能力和绕开正面防御都服务于这条路线。它不是“击杀单位数更多就赢”。</p>
+<h4 id="b">路线B：超时占地</h4>
+<p>教程 <span class="idtip" tabindex="0" data-title="教程18003 · 超时占地胜利" data-tip="教程原文：计时结束前，我方占领格比对方多也可以获胜。">18003</span> 明确写：计时结束前，我方占领的地块比对方多也可以获胜。因而落后时不一定要强拆主塔，也可以切边、偷格、拖延对方兵线后争取版图领先。</p>
+<p>未确认项包括：占地相同时如何处理、不可翻格/中立格是否计数、建筑刚被摧毁后的格位归属更新时点。</p>
+<h3 id="rule-7">7. 神器在局内怎样工作</h3>
+<p>当前优先采用新版教程分支：</p>
+<ol>
+<li>翻格累计到第8次，第一次充能完成；</li>
+<li>再累计到第20次，第二次充能完成；</li>
+<li>再累计到第36次，第三次充能完成；</li>
+<li>单局最多使用3次，充能完成后拖拽释放。</li>
+</ol>
+<p>后两段实际增量是12格、16格，不是每隔12秒或16秒。旧资源仍保留“战斗30秒后可用、每场一次”和神器 <code>coolDown=30</code> 字段；它们属于旧/其他分支，不能与8/20/36格规则叠加成“双重门槛”。是否还有额外冷却需实战确认。</p>
+<h3 id="rule-8">8. 竞技场怎样改变规则参数</h3>
+<p>普通竞技场共20档；早期四档已足以说明趋势：地图尺寸、局内时限、金矿数量上限候选值和结算基数随竞技场变化。下面的金矿上限依赖本地默认开关 <code>MinesCountLimit=1</code>，不是服务器实时状态证明。</p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th style="text-align: right;">竞技场</th>
+<th style="text-align: right;">时限</th>
+<th>地图尺寸候选</th>
+<th style="text-align: right;">金矿上限候选</th>
+<th>胜/负进度</th>
+<th style="text-align: right;">胜利局外金币</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">180秒</td>
+<td>8×16 / 10×18 / 14×14</td>
+<td style="text-align: right;">8</td>
+<td>+3 / −2</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">190秒</td>
+<td>9×18 / 11×20 / 16×16</td>
+<td style="text-align: right;">9</td>
+<td>+6 / −4</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">200秒</td>
+<td>10×20 / 12×22 / 18×18</td>
+<td style="text-align: right;">10</td>
+<td>+9 / −6</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">210秒</td>
+<td>11×22 / 13×24 / 20×20</td>
+<td style="text-align: right;">11</td>
+<td>+12 / −8</td>
+<td style="text-align: right;">60</td>
+</tr>
+</tbody>
+</table></div>
+<p>页面下方的竞技场查看器可浏览全部20档。<code>completeTrophyRequire</code> 是进度门槛字段，不代表单局胜利条件；<code>victoryGoldNoBet</code> 是结算后的局外金币，也不是本局翻格预算。</p>
+<section class="arena-tool"><label for="arenaSelect">查看全部竞技场参数</label><select id="arenaSelect"></select><div class="arena-stats"><div>时限<b><span data-arena="countDownTime"></span>秒</b></div><div>地图候选<b data-arena="arenaMapSize"></b></div><div>金矿上限候选<b data-arena="minesCountLimit"></b></div><div>胜利进度<b>+<span data-arena="trophyReward"></span></b></div><div>失败扣减基数<b>-<span data-arena="trophyPunish"></span></b></div><div>胜利局外金币<b data-arena="victoryGoldNoBet"></b></div></div></section><h3 id="rule-9">9. 普通竞技场与赛季PVP不要混用</h3>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>规则面</th>
+<th>普通竞技场</th>
+<th>独立赛季PVP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>开放</td>
+<td>训练后进入普通竞技场体系</td>
+<td>配置要求普通竞技场4</td>
+</tr>
+<tr>
+<td>时限</td>
+<td>竞技场1为180秒，后续逐步上升至300秒</td>
+<td>配置 <code>PvpPlayTime=300</code></td>
+</tr>
+<tr>
+<td>进度</td>
+<td>奖杯/竞技场进度，场1胜+3、负−2</td>
+<td>段位分基础胜+20、负扣16，另有修正</td>
+</tr>
+<tr>
+<td>通行证</td>
+<td>有旧通行证残留，当前沿用待核</td>
+<td>新PVP通行证经验胜100、负30</td>
+</tr>
+<tr>
+<td>首局</td>
+<td>普通AI有独立难度表</td>
+<td><code>Pvp_PlayFirstBot=1</code>、首图 <span class="idtip" tabindex="0" data-title="当前上下文中的ID 1001" data-tip="该数字被多张表复用：这里按相邻文字判断为金矿/一星格/教程/竞技场记录，详见对应表链接。">1001</span> 只是首局预设证据</td>
+</tr>
+</tbody>
+</table></div>
+<p class="callout">本地存在25档普通敌人难度和86套PVP机器人预设。这证明系统具备机器人/AI配置，不证明所有对局都是机器人，更不能由此推断付费会操纵胜负。</p>
+<h3 id="rule-10">10. 局内结束与局外结算边界</h3>
+<p>普通场1胜利的基础配置组合是：局外金币+5、竞技场进度+3、账号经验+20，并检查是否得到可放入槽位的胜利宝箱。失败有进度扣减基数2、账号经验+10；失败金币和箱子没有足够证据。</p>
+<p>以下内容不应提前算进局内规则：</p>
+<ul>
+<li>得到宝箱不等于立即取得箱内卡牌和材料；</li>
+<li>达到任务累计值后另行领取的奖励，不是每局固定产出；</li>
+<li>账号升级、竞技场节点、赛季段位包是独立里程碑奖励；</li>
+<li>结算广告礼包需要额外触发，不属于无条件基础结算；</li>
+<li>本局剩余金币没有已确认的局外换算规则。</li>
+</ul>
+<h2 id="module-hex">模块二：地图与翻格：摘要与专题入口</h2>
+<p>本页不再维护第二份地图模板清单、四档概率表、具体卡牌抽取函数和SSSR修正细表。它们统一归入<a href="../hex-random/index.html">地块生成与兵种随机专题</a>。本页只保留玩家理解一局战斗所需的结论，避免同一底层机制在两个页面分别更新后产生冲突。</p>
+<h3 id="hex-1">1. 玩家在一局里需要知道什么</h3>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>玩家看到的现象</th>
+<th>当前采用的底层解释</th>
+<th>完整细节归属</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一局进入某张地图</td>
+<td>模式、竞技场／PVP层级、服务器或本地候选池共同决定地图；训练局可以固定编排</td>
+<td><a href="../hex-random/index.html">地块随机专题：地图选择与模板</a></td>
+</tr>
+<tr>
+<td>扩张后周围出现一星／二星／三星／未知格</td>
+<td>未被固定用途覆盖的普通格在开局初始化时已通过<code>Range(0,4)</code>生成四档，各25%；当前没有证据表明显现瞬间重新抽档位</td>
+<td><a href="../hex-random/index.html">地块随机专题：25%发生时点</a></td>
+</tr>
+<tr>
+<td>支付金币打开格子后得到兵营／资源／空</td>
+<td>常规路径主要揭晓开局保存的隐藏结果；少数引导、占领重生成和点击后修正规则可以覆盖</td>
+<td><a href="../hex-random/index.html">地块随机专题：隐藏内容与点击覆盖</a></td>
+</tr>
+<tr>
+<td>某些局很早出现SSSR</td>
+<td>基础品质权重可被用户标签、周卡、每日祝福等不同分支修正；这些修正不是统一的固定百分点</td>
+<td><a href="../hex-random/index.html">地块随机专题：SSSR权重</a></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="hex-2">2. 新显现格与25%的当前证据边界</h3>
+<p>当前函数级证据支持“<strong>开局预生成，扩张时揭晓</strong>”：<code>BuildStableGenerationOrder</code>先按seed与Q/R坐标确定内部生成顺序，普通格在初始化的<code>ResolveInitialRarity</code>里执行<code>Range(0,4)</code>；实际开格函数读取已经存在的<code>BattleHexCellState</code>并优先按隐藏建筑结算，没有再次调用四档随机。</p>
+<p>但负责“打开一个格后，哪些邻格被设为可见／可开启”的完整状态更新函数仍未完全恢复，所以这里只采用强证据结论：<strong>目前没有找到邻格显现时重新掷一次25%的调用链</strong>，而不把表现层每一步写成已完全确认。</p>
+<h3 id="hex-3">3. SSSR保护与点击后修正只保留一句话结论</h3>
+<p>用户标签侧，刚付费<code>+10</code>、连败<code>+50</code>、回流<code>+30</code>、对手连胜<code>+50</code>是加到SSSR段的<strong>权重值</strong>而非百分点；有效项先合并为B，并共用该玩家一个局内消费位。首个符合条件的SSSR兵营在内部生成序列中出现后，这整组用户标签加权停止。没有发现“固定每隔N格重新触发”“连续N格没出就递增”或“普通SSSR之间强制间隔N格”的规则。</p>
+<p>玩家真正点击时仍有独立后置逻辑，例如前几次低价格的部分SSR／SSSR结果可能尝试重抽为R。因此“内部第几个格生成SSSR”和“玩家第几次实际翻到SSSR”不是同一个指标。公式、叠加示例、消费条件和其他祝福分支全部以<a href="../hex-random/index.html">地块随机专题</a>为准。</p>
+<h3 id="hex-4">4. 页面职责</h3>
+<ul>
+<li><strong>本页 BATTLE：</strong>局内经济、空间扩张、兵线、神器、胜负与模式差异。</li>
+<li><strong>HEX RANDOMNESS：</strong>地图模板与选图、开局稳定生成顺序、四档25%、R／SR／SSR／SSSR、具体建筑候选、用户标签、祝福、低价重抽和随机证据。</li>
+<li><strong>MATCHING：</strong>真人搜索窗口、Bot介入参数、段位候选池和玩家状态是否进入匹配选择。</li>
+<li><strong>BOT：</strong>86套机器人逐卡载荷、神器、主城和AI行为。</li>
+</ul>
+<h2 id="appendix">证据与附录</h2>
+<h3 id="appendix-1">1. 常见误读与正确口径</h3>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>误读</th>
+<th>正确口径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单位会自动打，所以没有策略</td>
+<td>操作集中在经济、翻格位置、路线拉扯和神器时机</td>
+</tr>
+<tr>
+<td>击杀多就一定赢</td>
+<td>明确胜路是拆完敌方建筑，或超时占地更多</td>
+</tr>
+<tr>
+<td>未知格最后一项80就是80%出最高品质</td>
+<td>五位依次是普通、稀有、史诗、传说、空；未知格为15%史诗、5%传说、80%空</td>
+</tr>
+<tr>
+<td>4个箱槽就是4箱同时计时</td>
+<td>储存槽与解锁并行数是两回事</td>
+</tr>
+<tr>
+<td>每日金币上限是每日只能打40局</td>
+<td>只是基础胜利金币额度恰为单胜×40，不限制对局数</td>
+</tr>
+<tr>
+<td>有机器人表就说明全是机器人</td>
+<td>只证明存在机器人能力和预设，不证明每局匹配身份</td>
+</tr>
+<tr>
+<td>神器30秒后解锁，再翻8格才能用</td>
+<td>旧30秒规则与新版翻格充能属于不同分支，不叠加</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="appendix-2">2. 证据分级与待验证项</h3>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>等级</th>
+<th>本页采用方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>教程中文原文</td>
+<td>用于确认产金、购买、自动出兵、拆建筑、超时占地、路线拉扯和神器充能</td>
+</tr>
+<tr>
+<td>静态配置</td>
+<td>用于地块价格、基础结果权重、地图坐标、PVP地图池权重、概率修改入口与结算基数</td>
+</tr>
+<tr>
+<td>画面继承</td>
+<td>竞技场1显示9/25与成功+3；不是本轮重新实测</td>
+</tr>
+<tr>
+<td>默认开关</td>
+<td>只选择优先分析分支，不当作服务器实时值</td>
+</tr>
+<tr>
+<td>分析推导</td>
+<td>经济换战力、拉扯价值与策略选择；不包装成底层代码规则</td>
+</tr>
+<tr>
+<td>公开材料</td>
+<td>仅作版本线索或玩法交叉验证，不能覆盖本地配置证据</td>
+</tr>
+</tbody>
+</table></div>
+<p>优先验证：普通场经典/多边形最终分流；普通地图四种外观格的生成配比；2000金币保底的累计与重置范围；每日祝福、周卡与神器锻造加成的完整叠加顺序；服务器实时开关与每局实际用户标签；平局、断线与投降判定。</p>
+<h3 id="appendix-3">3. 数据来源</h3>
+<ul>
+<li><a href="../../tables/GlobalTutorialInfo.json"><code>GlobalTutorialInfo（全局教程流程信息）</code></a>与<a href="../../tables/I2Terms.json"><code>I2Terms（本地化文本词条）</code></a></li>
+<li><a href="../../tables/GlobalHexInfo.json"><code>GlobalHexInfo（全局六边形地块信息）</code></a></li>
+<li><a href="../../tables/GlobalArenaInfoSheet2.json"><code>GlobalArenaInfoSheet2（全局竞技场信息·Sheet2表）</code></a>与<a href="../../tables/GlobalPolygonArenaInfoSheet2.json"><code>GlobalPolygonArenaInfoSheet2（全局多边形竞技场信息·Sheet2表）</code></a></li>
+<li><a href="../../tables/PvpMapConfig.json"><code>PvpMapConfig（PVP地图配置）</code></a>与<a href="../../tables/PvpSettingConfig.json"><code>PvpSettingConfig（PVP全局规则配置）</code></a></li>
+<li><a href="../../tables/GlobalTrainingMapInfoSheet1.json"><code>GlobalTrainingMapInfoSheet1（训练地图配置分支1）</code></a>与<a href="../../tables/GlobalTrainingMapInfoSheet2.json"><code>GlobalTrainingMapInfoSheet2（训练地图配置分支2）</code></a></li>
+<li>已恢复的IL2CPP v31元数据与主WASM函数体：初始隐藏内容、候选过滤、等概率列表抽取、前三次低价重抽、账号标签金卡加成和确定性随机算法</li>
+<li><a href="../../tables/GlobalBlessInfo.json"><code>GlobalBlessInfo（全局祝福信息）</code></a>与<a href="../../tables/GlobalArtifactsForgeInfo.json"><code>GlobalArtifactsForgeInfo（神器锻造信息）</code></a></li>
+<li><a href="../../tables/GlobalArchitectureInfogameplay_improve_01.json"><code>GlobalArchitectureInfogameplay_improve_01（全局建筑信息·玩法优化01版）</code></a></li>
+<li><a href="../../tables/GlobalRoleInfogameplay_improve_01.json"><code>GlobalRoleInfogameplay_improve_01（全局战斗单位信息·玩法优化01版）</code></a></li>
+<li><a href="../../tables/EnemyDifficultLevelInfosgameplay_improve_01.json"><code>EnemyDifficultLevelInfosgameplay_improve_01（敌方难度等级信息·玩法优化01版）</code></a></li>
+<li><a href="../../tables/PvpBotConfig.json"><code>PvpBotConfig（PVP机器人预设配置）</code></a></li>
+<li><a href="../../tables/RemoteConfig.json"><code>RemoteConfig（远程配置缓存）</code></a>仅使用玩法开关白名单</li>
+</ul></article></main><a class="back" href="../../index.html">← 研究首页</a><aside id="tooltip" role="tooltip" hidden><b></b><span></span></aside><script>
+const arenas=[{"id": "1001", "completeTrophyRequire": "25", "trophyReward": "3", "trophyPunish": "2", "countDownTime": "180", "minesCountLimit": "8", "victoryGoldNoBet": "5", "dailyGoldLimitNoBet": "200", "arenaMapSize": "8,16;10,18;14,14"}, {"id": "1002", "completeTrophyRequire": "75", "trophyReward": "6", "trophyPunish": "4", "countDownTime": "190", "minesCountLimit": "9", "victoryGoldNoBet": "20", "dailyGoldLimitNoBet": "800", "arenaMapSize": "9,18;11,20;16,16"}, {"id": "1003", "completeTrophyRequire": "100", "trophyReward": "9", "trophyPunish": "6", "countDownTime": "200", "minesCountLimit": "10", "victoryGoldNoBet": "40", "dailyGoldLimitNoBet": "1600", "arenaMapSize": "10,20;12,22;18,18"}, {"id": "1004", "completeTrophyRequire": "200", "trophyReward": "12", "trophyPunish": "8", "countDownTime": "210", "minesCountLimit": "11", "victoryGoldNoBet": "60", "dailyGoldLimitNoBet": "2400", "arenaMapSize": "11,22;13,24;20,20"}, {"id": "1005", "completeTrophyRequire": "400", "trophyReward": "15", "trophyPunish": "10", "countDownTime": "220", "minesCountLimit": "12", "victoryGoldNoBet": "80", "dailyGoldLimitNoBet": "3200", "arenaMapSize": "12,24;14,26;22,22"}, {"id": "1006", "completeTrophyRequire": "800", "trophyReward": "18", "trophyPunish": "12", "countDownTime": "230", "minesCountLimit": "13", "victoryGoldNoBet": "100", "dailyGoldLimitNoBet": "4000", "arenaMapSize": "13,26;15,28;24,24"}, {"id": "1007", "completeTrophyRequire": "1600", "trophyReward": "20", "trophyPunish": "14", "countDownTime": "240", "minesCountLimit": "14", "victoryGoldNoBet": "150", "dailyGoldLimitNoBet": "6000", "arenaMapSize": "14,28;16,30;26,26"}, {"id": "1008", "completeTrophyRequire": "3200", "trophyReward": "22", "trophyPunish": "16", "countDownTime": "250", "minesCountLimit": "15", "victoryGoldNoBet": "200", "dailyGoldLimitNoBet": "8000", "arenaMapSize": "15,30;17,32;28,28"}, {"id": "1009", "completeTrophyRequire": "3200", "trophyReward": "25", "trophyPunish": "18", "countDownTime": "260", "minesCountLimit": "16", "victoryGoldNoBet": "250", "dailyGoldLimitNoBet": "10000", "arenaMapSize": "16,32;18,34;30,30"}, {"id": "1010", "completeTrophyRequire": "6400", "trophyReward": "30", "trophyPunish": "20", "countDownTime": "270", "minesCountLimit": "17", "victoryGoldNoBet": "300", "dailyGoldLimitNoBet": "12000", "arenaMapSize": "17,34;19,36;32,32"}, {"id": "1011", "completeTrophyRequire": "9600", "trophyReward": "38", "trophyPunish": "22", "countDownTime": "280", "minesCountLimit": "18", "victoryGoldNoBet": "350", "dailyGoldLimitNoBet": "14000", "arenaMapSize": "18,36;20,38;34,34"}, {"id": "1012", "completeTrophyRequire": "16000", "trophyReward": "48", "trophyPunish": "24", "countDownTime": "290", "minesCountLimit": "19", "victoryGoldNoBet": "400", "dailyGoldLimitNoBet": "16000", "arenaMapSize": "19,38;21,40;36,36"}, {"id": "1013", "completeTrophyRequire": "25600", "trophyReward": "55", "trophyPunish": "26", "countDownTime": "290", "minesCountLimit": "19", "victoryGoldNoBet": "450", "dailyGoldLimitNoBet": "18000", "arenaMapSize": "19,38;21,40;36,36"}, {"id": "1014", "completeTrophyRequire": "35200", "trophyReward": "60", "trophyPunish": "28", "countDownTime": "290", "minesCountLimit": "19", "victoryGoldNoBet": "500", "dailyGoldLimitNoBet": "20000", "arenaMapSize": "19,38;21,40;36,36"}, {"id": "1015", "completeTrophyRequire": "46000", "trophyReward": "65", "trophyPunish": "30", "countDownTime": "290", "minesCountLimit": "19", "victoryGoldNoBet": "550", "dailyGoldLimitNoBet": "22000", "arenaMapSize": "19,38;21,40;36,36"}, {"id": "1016", "completeTrophyRequire": "56800", "trophyReward": "75", "trophyPunish": "32", "countDownTime": "300", "minesCountLimit": "19", "victoryGoldNoBet": "600", "dailyGoldLimitNoBet": "24000", "arenaMapSize": "11,22;13,24;20,20"}, {"id": "1017", "completeTrophyRequire": "67600", "trophyReward": "85", "trophyPunish": "34", "countDownTime": "300", "minesCountLimit": "19", "victoryGoldNoBet": "650", "dailyGoldLimitNoBet": "26000", "arenaMapSize": "15,30;17,32;28,28"}, {"id": "1018", "completeTrophyRequire": "78400", "trophyReward": "95", "trophyPunish": "36", "countDownTime": "300", "minesCountLimit": "19", "victoryGoldNoBet": "700", "dailyGoldLimitNoBet": "28000", "arenaMapSize": "17,34;19,36;32,32"}, {"id": "1019", "completeTrophyRequire": "89200", "trophyReward": "100", "trophyPunish": "38", "countDownTime": "300", "minesCountLimit": "19", "victoryGoldNoBet": "750", "dailyGoldLimitNoBet": "30000", "arenaMapSize": "19,38;21,40;36,36"}, {"id": "1020", "completeTrophyRequire": "100000", "trophyReward": "110", "trophyPunish": "40", "countDownTime": "300", "minesCountLimit": "19", "victoryGoldNoBet": "800", "dailyGoldLimitNoBet": "32000", "arenaMapSize": "12,24;14,26;22,22"}];
+const sel=document.getElementById('arenaSelect'), fields=['countDownTime','arenaMapSize','minesCountLimit','trophyReward','trophyPunish','victoryGoldNoBet'];
+function showArena(){const a=arenas[sel.selectedIndex];fields.forEach(k=>document.querySelector('[data-arena="'+k+'"]').textContent=a[k]);}
+arenas.forEach((a,i)=>{const o=document.createElement('option');o.value=i;o.textContent='竞技场 '+(Number(a.id)-1000);sel.appendChild(o)});sel.addEventListener('change',showArena);showArena();
+const tip=document.getElementById('tooltip');let current;
+function place(el){const r=el.getBoundingClientRect();tip.hidden=false;const b=tip.getBoundingClientRect();tip.style.left=Math.max(12,Math.min(r.left,innerWidth-b.width-12))+'px';let y=r.bottom+8;if(y+b.height>innerHeight-12)y=Math.max(12,r.top-b.height-8);tip.style.top=y+'px'}
+function openTip(el){current=el;tip.querySelector('b').textContent=el.dataset.title;tip.querySelector('span').textContent=el.dataset.tip;el.setAttribute('aria-describedby','tooltip');place(el)}
+function closeTip(){if(current)current.removeAttribute('aria-describedby');current=null;tip.hidden=true}
+document.addEventListener('pointerover',e=>{const el=e.target.closest('.idtip');if(el)openTip(el)});document.addEventListener('pointerout',e=>{if(e.target.closest('.idtip'))closeTip()});document.addEventListener('focusin',e=>{if(e.target.matches('.idtip'))openTip(e.target)});document.addEventListener('focusout',e=>{if(e.target.matches('.idtip'))closeTip()});document.addEventListener('click',e=>{const el=e.target.closest('.idtip');if(el)openTip(el);else closeTip()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeTip()});
+</script></body></html>
