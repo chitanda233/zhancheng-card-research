@@ -1,0 +1,139 @@
+{
+  "schema_version": 3,
+  "snapshot": "2026-09-11",
+  "raw_snapshot_manifest": {
+    "path": "research/archive/2026-09-11/manifest.json",
+    "size": 35422,
+    "sha256": "b7ee10bcd114e5dd73fef50ec251834c169482c8410df9ce8e41933432dfb223"
+  },
+  "raw_main_wxapkg": {
+    "path": "research/archive/2026-09-11/raw/packages/wx9eed71970378b2ae/16/_wasmcode_.wxapkg",
+    "size": 6788029,
+    "sha256": "13e5d1fa468ae73f09bc2c63f2e4fca79f68c51ec329d6e99ee03d287ee17bc6"
+  },
+  "unpacked_package_manifest": {
+    "path": "research/archive/2026-09-11/unpacked/package-manifest.json",
+    "size": 4073,
+    "sha256": "149747e9eaa311b16c9fedbd55023084836143f650f884c006d03d6367ae13e1"
+  },
+  "canonical_input_member": {
+    "file": "/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
+    "offset": 204,
+    "size": 6786702,
+    "sha256": "63c975b04a35b32e292143ae4dbc95067423d46a31a22e5646c4ade909a527e2"
+  },
+  "canonical_input": {
+    "path": "research/archive/2026-09-11/unpacked/_wasmcode_/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
+    "size": 6786702,
+    "sha256": "63c975b04a35b32e292143ae4dbc95067423d46a31a22e5646c4ade909a527e2"
+  },
+  "decompressed_wasm": {
+    "path": "/tmp/current.webgl.wasm",
+    "size": 38009451,
+    "sha256": "52b679d02a884ce14782dd4fadf06e610b39d79070dcd41699f6cc0522aec19e"
+  },
+  "metadata_source": {
+    "path": "research/archive/2026-09-11/raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/a23078fc21f9ca79.webgl.data.unityweb.bin",
+    "size": 20479611,
+    "sha256": "73833e7229d02b630e5ebe408b8b4ecc75120153f71cefcb69445043c822e426"
+  },
+  "metadata_recovery_script": {
+    "path": "scripts/recover_il2cpp_metadata.py",
+    "size": 4116,
+    "sha256": "84b1eae78e5dd1bede6c209e5760e60ac770144847267cbebd545de49f26405d"
+  },
+  "metadata_rebuild_verified_against_prior_reference": true,
+  "metadata_reference": {
+    "path": "research/archive/2026-09-11/reverse-engineering/global-metadata.decrypted.dat",
+    "size": 16795612,
+    "sha256": "fa178d839cb6d8b8b24ca5acd8d4bbcef4963332fd49859c80a0dbe20dcc239f"
+  },
+  "dump_declaration_reference": {
+    "path": "research/archive/2026-09-11/reverse-engineering/dump.cs",
+    "size": 40181928,
+    "sha256": "100964dcabdcbb2ed9691dee8dfb375664a164332827a83e2c2a92c0b39db0a5"
+  },
+  "dump_provenance": {
+    "status": "reused-by-byte-identity",
+    "reason": "The 2026-09-11 archived wxapkg set is byte-identical to the prior package set and metadata recovered from the new raw UnityWebData is byte-identical to the prior metadata. Therefore the prior dump.cs declaration snapshot is valid for this code image.",
+    "important_boundary": "dump.cs is still a declaration/name/layout reference. Its original Il2CppDumper/Cpp2IL generator/version is unknown and its empty C# bodies are not executable behavior.",
+    "source_dump": {
+      "path": "research/archive/2026-09-03/reverse-engineering/dump.cs",
+      "size": 40181928,
+      "sha256": "100964dcabdcbb2ed9691dee8dfb375664a164332827a83e2c2a92c0b39db0a5"
+    },
+    "source_metadata": {
+      "path": "research/archive/2026-09-03/reverse-engineering/global-metadata.decrypted.dat",
+      "size": 16795612,
+      "sha256": "fa178d839cb6d8b8b24ca5acd8d4bbcef4963332fd49859c80a0dbe20dcc239f"
+    },
+    "new_metadata": {
+      "path": "research/archive/2026-09-11/reverse-engineering/global-metadata.decrypted.dat",
+      "size": 16795612,
+      "sha256": "fa178d839cb6d8b8b24ca5acd8d4bbcef4963332fd49859c80a0dbe20dcc239f"
+    }
+  },
+  "capture_completeness": {
+    "declared_subpackages": [
+      "wasmcode",
+      "data-package",
+      "wasmcode1",
+      "wasmcode2"
+    ],
+    "archived_code_subpackages": [
+      "wasmcode",
+      "wasmcode1"
+    ],
+    "declared_but_not_present_as_wxapkg": [
+      "data-package",
+      "wasmcode2"
+    ],
+    "scope_note": "The Git snapshot is complete for the three locally archived wxapkg files. Missing declared subpackages may have been on-demand/not cached; this does not prove online absence."
+  },
+  "tools": {
+    "wasm2wat": "1.0.34",
+    "wasm-objdump": "1.0.34"
+  },
+  "generated": [
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/canonical/dump-audit.json",
+      "size": 716,
+      "sha256": "6de0c132198c7224602e82148a3a30255406a83549981a16053fd943c5a83134"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/canonical/element-map.tsv",
+      "size": 7447845,
+      "sha256": "95ba803409de762458315f38a0563899fa5095e8911fbc361610cfeb1bfa5d16"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv",
+      "size": 14551469,
+      "sha256": "2fcd64e545acca5b195dcfb833677c5106f429858251349752685553f40f91fd"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/canonical/module-info.txt",
+      "size": 68853563,
+      "sha256": "ece987e31ea44f483873948400c17d33194b12fcfb73cc7d5722de3eb0d145fb"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz",
+      "size": 67129269,
+      "sha256": "2595cc915ffb1543016fe7320f37c7482b47c1e8786a468de66376b8239724d5"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/canonical/module.wat.gz",
+      "size": 23231824,
+      "sha256": "42299da6cb45e478e9dcaa4610cef09096ab2ade048410c3d6cd33dc7a6eeaf6"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/canonical/validation.json",
+      "size": 2831,
+      "sha256": "2d8d69b6486fbb63fcc5104a5ca08738aee5d8e83fba422b70ad19c6c79e16b4"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/canonical/validation.txt",
+      "size": 396,
+      "sha256": "f9f1335965c90d3184303bc4e2ddb33650159210872e64d05ec9b3dd967af040"
+    }
+  ]
+}

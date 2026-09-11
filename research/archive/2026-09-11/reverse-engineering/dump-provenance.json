@@ -1,0 +1,20 @@
+{
+  "status": "reused-by-byte-identity",
+  "reason": "The 2026-09-11 archived wxapkg set is byte-identical to the prior package set and metadata recovered from the new raw UnityWebData is byte-identical to the prior metadata. Therefore the prior dump.cs declaration snapshot is valid for this code image.",
+  "important_boundary": "dump.cs is still a declaration/name/layout reference. Its original Il2CppDumper/Cpp2IL generator/version is unknown and its empty C# bodies are not executable behavior.",
+  "source_dump": {
+    "path": "research/archive/2026-09-03/reverse-engineering/dump.cs",
+    "size": 40181928,
+    "sha256": "100964dcabdcbb2ed9691dee8dfb375664a164332827a83e2c2a92c0b39db0a5"
+  },
+  "source_metadata": {
+    "path": "research/archive/2026-09-03/reverse-engineering/global-metadata.decrypted.dat",
+    "size": 16795612,
+    "sha256": "fa178d839cb6d8b8b24ca5acd8d4bbcef4963332fd49859c80a0dbe20dcc239f"
+  },
+  "new_metadata": {
+    "path": "research/archive/2026-09-11/reverse-engineering/global-metadata.decrypted.dat",
+    "size": 16795612,
+    "sha256": "fa178d839cb6d8b8b24ca5acd8d4bbcef4963332fd49859c80a0dbe20dcc239f"
+  }
+}

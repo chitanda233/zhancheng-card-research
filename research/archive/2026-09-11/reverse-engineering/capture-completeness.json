@@ -1,0 +1,17 @@
+{
+  "declared_subpackages": [
+    "wasmcode",
+    "data-package",
+    "wasmcode1",
+    "wasmcode2"
+  ],
+  "archived_code_subpackages": [
+    "wasmcode",
+    "wasmcode1"
+  ],
+  "declared_but_not_present_as_wxapkg": [
+    "data-package",
+    "wasmcode2"
+  ],
+  "scope_note": "The Git snapshot is complete for the three locally archived wxapkg files. Missing declared subpackages may have been on-demand/not cached; this does not prove online absence."
+}
