@@ -15,7 +15,6 @@ on:
       - 'scripts/build_chest_report.py'
       - 'scripts/build_journey_evidence.py'
       - 'scripts/build_journey_report.py'
-      - 'scripts/build_html.mjs'
       - 'scripts/matching_report.md'
       - 'scripts/bot_report.md'
       - 'scripts/bot_ai_rules.md'
@@ -56,9 +55,6 @@ jobs:
 
       - name: Consolidate battle and hex ownership
         run: python scripts/consolidate_battle_hex_boundary.py
-
-      - name: Rebuild static card HTML and Markdown
-        run: node scripts/build_html.mjs
 
       - name: Rebuild journey evidence and report
         run: |
@@ -116,12 +112,12 @@ jobs:
       - name: Commit reconciled sources and generated files
         shell: bash
         run: |
-          if git diff --quiet -- README.md scripts outputs/20260903 outputs/new-player-journey outputs/chests outputs/battle-rules outputs/matching outputs/hex-random outputs/current-baseline-audit.json docs; then
+          if git diff --quiet -- README.md scripts outputs/new-player-journey outputs/chests outputs/battle-rules outputs/matching outputs/hex-random outputs/current-baseline-audit.json docs; then
             echo 'No reconciled or generated changes.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add README.md scripts outputs/20260903 outputs/new-player-journey outputs/chests outputs/battle-rules outputs/matching outputs/hex-random outputs/current-baseline-audit.json docs
+          git add README.md scripts outputs/new-player-journey outputs/chests outputs/battle-rules outputs/matching outputs/hex-random outputs/current-baseline-audit.json docs
           git commit -m 'docs: refresh all reports against current reverse baseline'
           git push
