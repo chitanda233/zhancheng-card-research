@@ -1,0 +1,48 @@
+name: Rebuild unified reverse baseline
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/rebuild-unified-reverse.yml'
+      - 'research/archive/2026-09-11/raw/packages/**'
+      - 'research/archive/2026-09-11/raw/local/**/a23078fc21f9ca79.webgl.data.unityweb.bin'
+      - 'research/archive/2026-09-11/manifest.json'
+      - 'scripts/rebuild_unified_reverse.sh'
+      - 'scripts/unpack_wxapkg.py'
+      - 'scripts/build_wasm_method_maps.py'
+      - 'scripts/recover_il2cpp_metadata.py'
+      - 'scripts/build_archive_manifest.py'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rebuild-unified-reverse
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '7.0.x'
+
+      - name: Install reverse-engineering dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y wabt
+          wasm2wat --version
+          wasm-objdump --version
+          dotnet --version
+
+      - name: Rebuild unified main + split-WASM baseline
+        shell: bash
+        run: bash scripts/rebuild_unified_reverse.sh
