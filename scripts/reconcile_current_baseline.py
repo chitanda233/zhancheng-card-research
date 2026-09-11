@@ -4,7 +4,7 @@
 Static configuration/UI observations from 2026-09-03 remain historical facts. This script
 only updates places where function-level reverse evidence or build instructions must point
 to the current 2026-09-11 baseline, and makes the two dates explicit in mixed reports.
-It is intentionally idempotent and fails when a known source shape unexpectedly changes.
+Historical files under outputs/20260903 are never regenerated or edited here.
 """
 from __future__ import annotations
 
@@ -153,16 +153,9 @@ patch("scripts/build_public_site.py", [
         "<div class=\"meta\"><span>快照 2026-09-03</span><span>资源 1.4.15.558-preview</span>",
         "<div class=\"meta\"><span>配置/界面快照 2026-09-03</span><span>逆向基准 2026-09-11</span><span>资源 1.4.15.558-preview</span>",
     ),
-])
-
-patch("scripts/build_html.mjs", [
     (
-        '<div class="eyebrow">本地资源解析 · 2026.09.03</div>',
-        '<div class="eyebrow">本地配置解析 · 2026.09.03 · 当前逆向基准 2026.09.11</div>',
-    ),
-    (
-        "本地快照：${data.extractionDate}。微信包版本 ${data.packageVersion}，AppID ${data.appid}。",
-        "配置快照：${data.extractionDate}。当前函数级逆向基准：2026-09-11。微信包版本 ${data.packageVersion}，AppID ${data.appid}。",
+        "cards_html = (SYSTEM_SRC / '占城大师_全卡牌图鉴.html').read_text(encoding='utf-8')\nwrite(CARDS_DIR / 'index.html', add_portal_link(cards_html))\ncopy(SYSTEM_SRC / '占城大师_卡牌拆解报告.md', CARDS_DIR / 'report.md')",
+        "cards_html = (SYSTEM_SRC / '占城大师_全卡牌图鉴.html').read_text(encoding='utf-8')\ncards_html = cards_html.replace('<body>', '<body><div style=\"padding:8px 16px;background:#173e43;color:#eef8f5;font:13px/1.5 Microsoft YaHei,sans-serif\">配置/界面快照 2026-09-03 · 当前函数级逆向基准 2026-09-11</div>', 1)\nwrite(CARDS_DIR / 'index.html', add_portal_link(cards_html))\ncards_report = (SYSTEM_SRC / '占城大师_卡牌拆解报告.md').read_text(encoding='utf-8')\ncards_report = cards_report.replace('本地快照：2026-09-03。微信包版本 16，AppID wx9eed71970378b2ae。', '配置/界面快照：2026-09-03；当前函数级逆向基准：2026-09-11。微信包版本 16，AppID wx9eed71970378b2ae。', 1)\nwrite(CARDS_DIR / 'report.md', cards_report)",
     ),
 ])
 
