@@ -62,10 +62,19 @@ def scan_forbidden(errors: list[str]) -> None:
         "research/archive/2026-09-03/reverse-engineering/canonical",
         ".github/workflows/rebuild-canonical-reverse.yml",
     ]
+    # These two scripts intentionally contain the legacy strings as audit needles /
+    # migration search keys. They are not consumers of the legacy baseline.
+    intentional_literal_holders = {
+        Path("scripts/audit_current_baseline.py"),
+        Path("scripts/reconcile_current_baseline.py"),
+    }
     roots = [ROOT / "scripts", ROOT / "docs"]
     for base in roots:
         for p in base.rglob("*"):
             if not p.is_file() or p.suffix.lower() not in {".py", ".md", ".json", ".html", ".js", ".mjs", ".cjs", ".yml", ".yaml"}:
+                continue
+            rel = p.relative_to(ROOT)
+            if rel in intentional_literal_holders:
                 continue
             try:
                 text = p.read_text(encoding="utf-8")
@@ -73,7 +82,7 @@ def scan_forbidden(errors: list[str]) -> None:
                 continue
             for needle in forbidden:
                 if needle in text:
-                    errors.append(f"stale current-baseline reference: {p.relative_to(ROOT)} -> {needle}")
+                    errors.append(f"stale current-baseline reference: {rel} -> {needle}")
 
 
 def audit_reverse(errors: list[str]) -> dict[str, object]:
