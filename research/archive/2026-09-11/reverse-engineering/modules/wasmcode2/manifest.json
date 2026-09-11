@@ -23,18 +23,18 @@
   "generated": [
     {
       "path": "research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/archive-format.json",
-      "size": 13981,
-      "sha256": "1aff63e50dc68f1210afe633be583327ef2a2dc5f92a05a3fbdfde0536f9901b"
+      "size": 14047,
+      "sha256": "42d65e0fb2cf23a61a0b71f1b033fd53f2de647bf30fbcf1870766b066bda4c6"
     },
     {
       "path": "research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/brotli-framing-probe.json",
-      "size": 1737,
-      "sha256": "fa057b5a936caa4a4eee34cd32fddb70de23298d4cfe531713ae415b0b9af177"
+      "size": 1803,
+      "sha256": "d5d392ca83d1b7421e5b44926dfc604002feadb3adb5ea587d9f77a7eca77a4f"
     },
     {
       "path": "research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/decoded-body-analysis.json",
-      "size": 2163,
-      "sha256": "d6ad7bf563497d07cd9bd9e214668bacbc30b28005ea7a03c39a449a281ad8c3"
+      "size": 2189,
+      "sha256": "10e135f16fb39bcedc9d8511f305f9c8843220a98db9617dc89f6edceb4b1563"
     },
     {
       "path": "research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/method-crosswalk-summary.json",

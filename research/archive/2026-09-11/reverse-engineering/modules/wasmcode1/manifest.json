@@ -22,11 +22,6 @@
   "primary_mapping_boundary": "Do not map payload offsets or runtime-local indices directly onto the primary dump.cs RVA/function map without explicit linkage evidence.",
   "generated": [
     {
-      "path": "research/archive/2026-09-11/reverse-engineering/modules/wasmcode1/module-info.txt",
-      "size": 26833042,
-      "sha256": "321d238ec0b7dc49afb93a89314afddf337ce614d888f554093b2c7e97de3808"
-    },
-    {
       "path": "research/archive/2026-09-11/reverse-engineering/modules/wasmcode1/module.objdump.gz.part-000",
       "size": 94371840,
       "sha256": "a3a7b55d8ed3540c8f8ca01a1f5d8829567582207fc3026f658d39a04bb99212"
@@ -48,8 +43,8 @@
     }
   ],
   "standards_decoded_wasm": {
-    "path": "/tmp/wasmcode1.standard.wasm",
     "size": 53720581,
-    "sha256": "011484d38106d692477e1213430cd0533abf0bb9c69587054b3c5a0d7fda6f5b"
+    "sha256": "011484d38106d692477e1213430cd0533abf0bb9c69587054b3c5a0d7fda6f5b",
+    "derived_from": "research/archive/2026-09-11/unpacked/_wasmcode1_/wasmcode1/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br (runtime-decoded split module)"
   }
 }

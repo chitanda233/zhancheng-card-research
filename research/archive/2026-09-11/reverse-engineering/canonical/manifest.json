@@ -29,9 +29,9 @@
     "sha256": "63c975b04a35b32e292143ae4dbc95067423d46a31a22e5646c4ade909a527e2"
   },
   "decompressed_wasm": {
-    "path": "/tmp/current-main.webgl.wasm",
     "size": 38009451,
-    "sha256": "52b679d02a884ce14782dd4fadf06e610b39d79070dcd41699f6cc0522aec19e"
+    "sha256": "52b679d02a884ce14782dd4fadf06e610b39d79070dcd41699f6cc0522aec19e",
+    "derived_from": "research/archive/2026-09-11/unpacked/_wasmcode_/wasmcode/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br (Brotli-decompressed main module)"
   },
   "metadata_source": {
     "path": "research/archive/2026-09-11/raw/local/wx9eed71970378b2ae/usr/__GAME_FILE_CACHE/a23078fc21f9ca79.webgl.data.unityweb.bin",
@@ -50,8 +50,8 @@
   },
   "csharp_manifest": {
     "path": "research/archive/2026-09-11/reverse-engineering/csharp/manifest.json",
-    "size": 25724,
-    "sha256": "80a4fc7c73de8ae54ac364175f947907985f0035c407775a3bfc284735bb10ae"
+    "size": 25844,
+    "sha256": "d066948e22d4f5ed7bb6ee84b25b309208ef0efc3bb838a1d0a18c6f40fc8355"
   },
   "csharp_dump": {
     "path": "research/archive/2026-09-11/reverse-engineering/csharp/dump.cs",
@@ -67,13 +67,13 @@
   "split_payload_manifests": {
     "wasmcode1": {
       "path": "research/archive/2026-09-11/reverse-engineering/modules/wasmcode1/manifest.json",
-      "size": 2550,
-      "sha256": "a63aa4ddc718d236681bc548124c4e59f83daa66ba091a4f1f44b46bc9bc1f77"
+      "size": 2450,
+      "sha256": "18b789683c510eb3883399ae2b4cddde53fff8defcad0671381e6a57a38077ca"
     },
     "wasmcode2": {
       "path": "research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/manifest.json",
       "size": 4445,
-      "sha256": "f56781778a1cab88ccf44c1c58942220aeef86b573c27343b7710acf1097cfc9"
+      "sha256": "7d46c2babbbfe8073b7fc0f2a045f7cd0766566296d994ca4bd024fc286ccd1c"
     }
   },
   "legacy_2026_09_03_dump_used": false,
@@ -125,11 +125,6 @@
       "sha256": "0029bcb83c7b553536029427d1d3d18900006abe5fbf91ba644fbeeefb5be29c"
     },
     {
-      "path": "research/archive/2026-09-11/reverse-engineering/canonical/module-info.txt",
-      "size": 68853568,
-      "sha256": "bfb6ae01ac0268d56a7d43551713edabfef01e875eabd37be6a5b1c3e256f4b1"
-    },
-    {
       "path": "research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz",
       "size": 67128717,
       "sha256": "89cf6b73be7b19946683029beda1325488429b18525d6565eee78f52d4f7d196"
@@ -143,11 +138,6 @@
       "path": "research/archive/2026-09-11/reverse-engineering/canonical/validation.json",
       "size": 2831,
       "sha256": "2d8d69b6486fbb63fcc5104a5ca08738aee5d8e83fba422b70ad19c6c79e16b4"
-    },
-    {
-      "path": "research/archive/2026-09-11/reverse-engineering/canonical/validation.txt",
-      "size": 396,
-      "sha256": "f9f1335965c90d3184303bc4e2ddb33650159210872e64d05ec9b3dd967af040"
     }
   ],
   "wasmcode2_crosswalk_summary": {
