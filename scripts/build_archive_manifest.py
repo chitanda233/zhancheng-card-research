@@ -1,4 +1,8 @@
-"""Create a tracked integrity manifest for the committed research snapshot archive."""
+"""Create a tracked integrity manifest for the committed research snapshot archive.
+
+This script is also an explicit dependency of the unified reverse rebuild workflow,
+so integrity-policy changes trigger a fresh end-to-end baseline verification.
+"""
 import hashlib
 import json
 from datetime import datetime, timezone
