@@ -9,6 +9,8 @@ on:
       - 'research/archive/2026-09-11/raw/local/**/a23078fc21f9ca79.webgl.data.unityweb.bin'
       - 'research/archive/2026-09-11/manifest.json'
       - 'scripts/rebuild_unified_reverse.sh'
+      - 'scripts/build_wasmcode2_package.py'
+      - 'scripts/prune_reverse_outputs.py'
       - 'scripts/analyze_split_payload.py'
       - 'scripts/probe_split_brotli.js'
       - 'scripts/analyze_wasmcode2_archive.js'
@@ -53,76 +55,87 @@ jobs:
           test "$(dotnet --version)" = '10.0.400'
           dotnet --list-runtimes | grep -q '^Microsoft.NETCore.App 7\.'
 
-      - name: Rebuild unified main + split-WASM baseline
-        shell: bash
-        run: bash scripts/rebuild_unified_reverse.sh
-
-      - name: Rebuild and finalize wasmcode2 archive crosswalk
+      - name: Rebuild raw to canonical baseline
         shell: bash
         run: |
           set -euo pipefail
-          PAYLOAD='research/archive/2026-09-11/unpacked/_wasmcode2_/wasmcode2/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br'
-          OUT='research/archive/2026-09-11/reverse-engineering/modules/wasmcode2'
-          CANON='research/archive/2026-09-11/reverse-engineering/canonical'
-          mkdir -p "$OUT"
+          # The legacy shell still contains its historical commit/push footer.
+          # CI executes only the build/verification core so the workflow owns the
+          # single final commit after wasmcode2 finalization and pruning.
+          sed '/^git config user.name/,$d' scripts/rebuild_unified_reverse.sh > /tmp/rebuild_unified_reverse_core.sh
+          test -s /tmp/rebuild_unified_reverse_core.sh
+          bash /tmp/rebuild_unified_reverse_core.sh
 
-          node scripts/probe_split_brotli.js "$PAYLOAD" "$OUT/brotli-framing-probe.json" /tmp/wasmcode2-framing
-          if [ -s /tmp/wasmcode2-framing.decoded.bin ]; then
-            python3 scripts/analyze_split_payload.py /tmp/wasmcode2-framing.decoded.bin "$OUT/decoded-body-analysis.json" \
-              --name wasmcode2-decoded-body --role 'decoded candidate body from custom-prefix Brotli probe' --brotli-status not-tested
-          else
-            rm -f "$OUT/decoded-body-analysis.json"
+      - name: Finalize wasmcode2 archive and crosswalk
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/build_wasmcode2_package.py
+
+      - name: Prune redundant reverse outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/prune_reverse_outputs.py
+          test ! -e research/archive/2026-09-11/reverse-engineering/canonical/module-info.txt
+          test ! -e research/archive/2026-09-11/reverse-engineering/canonical/validation.txt
+          test ! -e research/archive/2026-09-11/reverse-engineering/modules/wasmcode1/module-info.txt
+
+      - name: Refresh archive provenance and audit reverse plus docs
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/build_archive_manifest.py
+          python3 scripts/audit_current_baseline.py
+          if grep -R '"path": "/tmp/' \
+              research/archive/2026-09-11/reverse-engineering/canonical/manifest.json \
+              research/archive/2026-09-11/reverse-engineering/csharp/manifest.json \
+              research/archive/2026-09-11/reverse-engineering/modules/wasmcode1/manifest.json \
+              research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/decoded-body-analysis.json; then
+            echo 'temporary /tmp path leaked into long-lived reverse provenance' >&2
+            exit 1
           fi
 
-          node scripts/analyze_wasmcode2_archive.js \
-            "$PAYLOAD" "$OUT/archive-format.json" "$OUT/table-value-map.tsv" 367137
+      - name: Verify staged provenance and commit once
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add -A \
+            research/archive/2026-09-11/unpacked \
+            research/archive/2026-09-11/reverse-engineering \
+            research/archive-manifest.json
 
-          python3 scripts/build_wasmcode2_method_crosswalk.py \
-            "$OUT/table-value-map.tsv" \
-            "$CANON/method-map.tsv" \
-            "$OUT/method-crosswalk.tsv" \
-            "$OUT/method-crosswalk-summary.json"
-
-          python3 - "$OUT/method-crosswalk-summary.json" "$OUT/README.md" <<'PY'
-          import json, sys
+          python3 - <<'PY'
+          import hashlib, json, subprocess
           from pathlib import Path
-          summary_path, readme_path = map(Path, sys.argv[1:])
-          s = json.loads(summary_path.read_text(encoding='utf-8'))
-          c = s['counts']
-          present = {x['method_name']: x for x in s['key_method_checks'] if x['present_in_wasmcode2_table_map']}
-          lines = [
-              '# wasmcode2 runtime split package · 2026-09-11', '',
-              'Role: function-split archive consumed by the runtime split manager.', '',
-              'The standard Brotli/WASM probe does not identify this member as a standalone WebAssembly module. Loader evidence shows that the bytes are passed to `innerInitFuncSplitWasm({archiveArray})`, and missing functions are requested by shared table id through `innerInvokeWasmBuffer`. See `payload-analysis.json`, `archive-format.json`, and `../split-runtime.md`.', '',
-              'This directory now also contains a reproducible crosswalk to the primary C#/RVA namespace. The two namespaces remain semantically distinct: the join is only on the proven shared table id; `archive_value` is intentionally left uninterpreted and must not be treated as a byte offset or function address without further evidence.', '',
-              f"- non-sentinel wasmcode2 table slots: {c['wasmcode2_non_sentinel_table_slots']:,}",
-              f"- canonical primary C# methods: {c['canonical_primary_methods']:,}",
-              f"- primary methods with a wasmcode2 table entry: {c['primary_methods_present_in_wasmcode2_table_map']:,}",
-              f"- primary methods without a wasmcode2 table entry: {c['primary_methods_absent_from_wasmcode2_table_map']:,}", '',
-              'Among the nine previously hard-validated gameplay methods, the exact-RVA crosswalk currently finds:',
+
+          manifests = [
+              Path('research/archive/2026-09-11/reverse-engineering/csharp/manifest.json'),
+              Path('research/archive/2026-09-11/reverse-engineering/canonical/manifest.json'),
+              Path('research/archive/2026-09-11/reverse-engineering/modules/wasmcode1/manifest.json'),
+              Path('research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/manifest.json'),
           ]
-          for name in ('ResolveOpenedHexOutcome', 'HasPlayerOpenAnchorNeighbor'):
-              x = present[name]
-              lines.append(f"- `{name}` `{x['rva_hex']}` → canonical `func[{x['canonical_wasm_func']}]` → archive value `{x['archive_value']}`")
-          lines += ['', '`method-crosswalk.tsv` is the row-level join and `method-crosswalk-summary.json` is the machine-readable audit. Presence in this map does not prove that a function body exists exclusively in wasmcode2.', '']
-          readme_path.write_text('\n'.join(lines), encoding='utf-8')
+          for manifest_path in manifests:
+              data = json.loads(manifest_path.read_text(encoding='utf-8'))
+              for item in data.get('files', data.get('generated', [])):
+                  path = item['path']
+                  blob = subprocess.check_output(['git', 'show', f':{path}'])
+                  if len(blob) != item['size'] or hashlib.sha256(blob).hexdigest() != item['sha256']:
+                      raise SystemExit(f'Git-index bytes disagree with manifest: {path}')
+          print('final reverse Git-index provenance verification OK')
           PY
 
-          python3 scripts/finalize_wasmcode2_manifest.py "$OUT" "$CANON/manifest.json"
-          python3 scripts/build_archive_manifest.py
-          python3 scripts/audit_current_baseline.py --reverse-only
+          if git diff --cached --quiet; then
+            echo 'No generated reverse changes to commit.'
+            exit 0
+          fi
 
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add "$OUT" "$CANON/manifest.json" research/archive-manifest.json
-          if git diff --cached --quiet; then
-            echo 'No wasmcode2/final-manifest changes to commit.'
-            exit 0
-          fi
           git fetch origin master
           if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/master)" ]; then
             echo 'master advanced during unified reverse analysis; refusing stale push' >&2
             exit 1
           fi
-          git commit -m 'research: finalize unified reverse provenance'
+          git commit -m 'research: rebuild unified reverse baseline'
           git push origin HEAD:master
