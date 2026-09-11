@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "name": "wasmcode2",
   "role": "function-split archive",
   "raw_wxapkg_path": "research/archive/2026-09-11/raw/packages/wx9eed71970378b2ae/16/_wasmcode2_.wxapkg",
@@ -22,9 +22,67 @@
   "primary_mapping_boundary": "Do not map payload offsets or runtime-local indices directly onto the primary dump.cs RVA/function map without explicit linkage evidence.",
   "generated": [
     {
+      "path": "research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/archive-format.json",
+      "size": 13981,
+      "sha256": "1aff63e50dc68f1210afe633be583327ef2a2dc5f92a05a3fbdfde0536f9901b"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/brotli-framing-probe.json",
+      "size": 1737,
+      "sha256": "fa057b5a936caa4a4eee34cd32fddb70de23298d4cfe531713ae415b0b9af177"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/decoded-body-analysis.json",
+      "size": 2163,
+      "sha256": "d6ad7bf563497d07cd9bd9e214668bacbc30b28005ea7a03c39a449a281ad8c3"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/method-crosswalk-summary.json",
+      "size": 4066,
+      "sha256": "cb729730c673f312dbda6e62ae8c2aaa83a8c91983225bbf2560116097c3f07e"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/method-crosswalk.tsv",
+      "size": 9715243,
+      "sha256": "0a8b7472f52d3e1104def9df70db9ed81d1b27eccff36699942373795ee7f2c9"
+    },
+    {
       "path": "research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/payload-analysis.json",
       "size": 19912,
       "sha256": "84424f70b55c7dce188d98b584602a555e67758dbd1288242946bc4f7ac9f45b"
+    },
+    {
+      "path": "research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/table-value-map.tsv",
+      "size": 3020641,
+      "sha256": "84bd927bdfde03416609ef929b1a22908526c7272155c0946b05116dcc325229"
     }
-  ]
+  ],
+  "crosswalk": {
+    "join_key": "wasmcode2 table_id == canonical primary method rva_dec/shared table slot",
+    "semantic_boundary": "archive_value is intentionally left uninterpreted. Runtime evidence proves table-id keyed function-split lookup, but does not yet prove whether archive_value is a function ordinal, record id, offset, or another manager-private identifier. Presence in this table also does not by itself prove that the function body exists exclusively in wasmcode2.",
+    "counts": {
+      "wasmcode2_non_sentinel_table_slots": 247542,
+      "canonical_primary_methods": 121448,
+      "primary_methods_present_in_wasmcode2_table_map": 76073,
+      "primary_methods_absent_from_wasmcode2_table_map": 45375,
+      "wasmcode2_slots_without_primary_csharp_method": 171469,
+      "unique_archive_values_among_primary_methods": 67691,
+      "duplicate_archive_values_among_primary_methods": 2988
+    },
+    "table_value_map": {
+      "path": "research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/table-value-map.tsv",
+      "size": 3020641,
+      "sha256": "84bd927bdfde03416609ef929b1a22908526c7272155c0946b05116dcc325229"
+    },
+    "primary_method_map": {
+      "path": "research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv",
+      "size": 14551499,
+      "sha256": "0029bcb83c7b553536029427d1d3d18900006abe5fbf91ba644fbeeefb5be29c"
+    },
+    "summary": {
+      "path": "research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/method-crosswalk-summary.json",
+      "size": 4066,
+      "sha256": "cb729730c673f312dbda6e62ae8c2aaa83a8c91983225bbf2560116097c3f07e"
+    }
+  }
 }

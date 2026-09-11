@@ -1,6 +1,6 @@
 {
   "title": "占城大师研究快照完整性清单",
-  "generatedAt": "2026-09-11T07:51:59+00:00",
+  "generatedAt": "2026-09-11T07:52:06+00:00",
   "archiveRoot": "research/archive",
   "note": "当前研究快照与 canonical 逆向产物已纳入 Git；本清单用于验证归档字节完整性。",
   "snapshots": [
@@ -378,8 +378,8 @@
     },
     {
       "snapshot": "2026-09-11",
-      "files": 262,
-      "bytes": 692430662,
+      "files": 268,
+      "bytes": 705192906,
       "entries": [
         {
           "path": "README.md",
@@ -943,8 +943,8 @@
         },
         {
           "path": "reverse-engineering/canonical/manifest.json",
-          "bytes": 6209,
-          "sha256": "989829c9e6efa1634f87933472bae4785d1eea9d700900cdcb9731de58040c10"
+          "bytes": 6459,
+          "sha256": "628831ce58c7880227684ed1e19b12e123b26127f9af3814d9fc0ef65ed48e7d"
         },
         {
           "path": "reverse-engineering/canonical/method-map.tsv",
@@ -1578,18 +1578,48 @@
         },
         {
           "path": "reverse-engineering/modules/wasmcode2/README.md",
-          "bytes": 307,
-          "sha256": "eed4f28a2c367aa83adf4ca3529681e188a929cc4ffe23c0d00f767b28d3e9e2"
+          "bytes": 1494,
+          "sha256": "7cdbf733486545c49894a4faef121ed5f5d668298833ada4a9ddf91ed808b8aa"
+        },
+        {
+          "path": "reverse-engineering/modules/wasmcode2/archive-format.json",
+          "bytes": 13981,
+          "sha256": "1aff63e50dc68f1210afe633be583327ef2a2dc5f92a05a3fbdfde0536f9901b"
+        },
+        {
+          "path": "reverse-engineering/modules/wasmcode2/brotli-framing-probe.json",
+          "bytes": 1737,
+          "sha256": "fa057b5a936caa4a4eee34cd32fddb70de23298d4cfe531713ae415b0b9af177"
+        },
+        {
+          "path": "reverse-engineering/modules/wasmcode2/decoded-body-analysis.json",
+          "bytes": 2163,
+          "sha256": "d6ad7bf563497d07cd9bd9e214668bacbc30b28005ea7a03c39a449a281ad8c3"
         },
         {
           "path": "reverse-engineering/modules/wasmcode2/manifest.json",
-          "bytes": 1469,
-          "sha256": "cb23e0e3193be91c749609d786142998eb54ad5d19b94ff843b21b3152d233ea"
+          "bytes": 4445,
+          "sha256": "f56781778a1cab88ccf44c1c58942220aeef86b573c27343b7710acf1097cfc9"
+        },
+        {
+          "path": "reverse-engineering/modules/wasmcode2/method-crosswalk-summary.json",
+          "bytes": 4066,
+          "sha256": "cb729730c673f312dbda6e62ae8c2aaa83a8c91983225bbf2560116097c3f07e"
+        },
+        {
+          "path": "reverse-engineering/modules/wasmcode2/method-crosswalk.tsv",
+          "bytes": 9715243,
+          "sha256": "0a8b7472f52d3e1104def9df70db9ed81d1b27eccff36699942373795ee7f2c9"
         },
         {
           "path": "reverse-engineering/modules/wasmcode2/payload-analysis.json",
           "bytes": 19912,
           "sha256": "84424f70b55c7dce188d98b584602a555e67758dbd1288242946bc4f7ac9f45b"
+        },
+        {
+          "path": "reverse-engineering/modules/wasmcode2/table-value-map.tsv",
+          "bytes": 3020641,
+          "sha256": "84bd927bdfde03416609ef929b1a22908526c7272155c0946b05116dcc325229"
         },
         {
           "path": "runtime-capture/manifest.json",

@@ -1,5 +1,5 @@
 {
-  "schema_version": 5,
+  "schema_version": 6,
   "snapshot": "2026-09-11",
   "authoritative_baseline": true,
   "raw_snapshot_manifest": {
@@ -72,8 +72,8 @@
     },
     "wasmcode2": {
       "path": "research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/manifest.json",
-      "size": 1469,
-      "sha256": "cb23e0e3193be91c749609d786142998eb54ad5d19b94ff843b21b3152d233ea"
+      "size": 4445,
+      "sha256": "f56781778a1cab88ccf44c1c58942220aeef86b573c27343b7710acf1097cfc9"
     }
   },
   "legacy_2026_09_03_dump_used": false,
@@ -149,5 +149,10 @@
       "size": 396,
       "sha256": "f9f1335965c90d3184303bc4e2ddb33650159210872e64d05ec9b3dd967af040"
     }
-  ]
+  ],
+  "wasmcode2_crosswalk_summary": {
+    "path": "research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/method-crosswalk-summary.json",
+    "size": 4066,
+    "sha256": "cb729730c673f312dbda6e62ae8c2aaa83a8c91983225bbf2560116097c3f07e"
+  }
 }
