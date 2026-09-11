@@ -1,0 +1,116 @@
+#!/usr/bin/env python3
+"""Audit the current reverse baseline and published docs for stale provenance."""
+from __future__ import annotations
+
+import argparse
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def load_json(path: str):
+    return json.loads((ROOT / path).read_text(encoding="utf-8"))
+
+
+def require(condition: bool, message: str, errors: list[str]) -> None:
+    if not condition:
+        errors.append(message)
+
+
+def scan_forbidden(errors: list[str]) -> None:
+    forbidden = [
+        "research/archive/2026-09-03/reverse-engineering/canonical",
+        ".github/workflows/rebuild-canonical-reverse.yml",
+    ]
+    roots = [ROOT / "scripts", ROOT / "docs"]
+    for base in roots:
+        for p in base.rglob("*"):
+            if not p.is_file() or p.suffix.lower() not in {".py", ".md", ".json", ".html", ".js", ".mjs", ".cjs", ".yml", ".yaml"}:
+                continue
+            try:
+                text = p.read_text(encoding="utf-8")
+            except UnicodeDecodeError:
+                continue
+            for needle in forbidden:
+                if needle in text:
+                    errors.append(f"stale current-baseline reference: {p.relative_to(ROOT)} -> {needle}")
+
+
+def audit_reverse(errors: list[str]) -> dict[str, object]:
+    canonical = load_json("research/archive/2026-09-11/reverse-engineering/canonical/manifest.json")
+    csharp = load_json("research/archive/2026-09-11/reverse-engineering/csharp/manifest.json")
+    capture = load_json("research/archive/2026-09-11/reverse-engineering/capture-completeness.json")
+    wasm2 = load_json("research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/manifest.json")
+    cross = load_json("research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/method-crosswalk-summary.json")
+    require(canonical.get("snapshot") == "2026-09-11", "canonical snapshot is not 2026-09-11", errors)
+    require(canonical.get("authoritative_baseline") is True, "canonical baseline not authoritative", errors)
+    require(canonical.get("legacy_2026_09_03_dump_used") is False, "legacy 2026-09-03 dump still marked in use", errors)
+    require(csharp.get("generator", {}).get("commit") == "8a521b9c180cf13499253f0818cbc729dca767cb", "Il2CppDumper commit drift", errors)
+    require(csharp.get("generator", {}).get("dotnet") == "10.0.400", "unexpected .NET SDK in C# manifest", errors)
+    require(capture.get("archived_code_subpackages") == ["wasmcode", "wasmcode1", "wasmcode2"], "code subpackage capture set drift", errors)
+    require(capture.get("declared_but_not_present_as_wxapkg") == ["data-package"], "unexpected capture completeness boundary", errors)
+    required_generated = {"payload-analysis.json", "brotli-framing-probe.json", "decoded-body-analysis.json", "archive-format.json", "table-value-map.tsv", "method-crosswalk.tsv", "method-crosswalk-summary.json"}
+    generated_names = {Path(str(x["path"])).name for x in wasm2.get("generated", [])}
+    require(required_generated.issubset(generated_names), f"wasmcode2 manifest missing generated provenance: {sorted(required_generated-generated_names)}", errors)
+    counts = cross.get("counts", {})
+    require(counts.get("canonical_primary_methods") == 121448, "canonical method count drift", errors)
+    require(counts.get("primary_methods_present_in_wasmcode2_table_map") == 76073, "wasmcode2 crosswalk count drift", errors)
+    require(counts.get("primary_methods_absent_from_wasmcode2_table_map") == 45375, "wasmcode2 absent-method count drift", errors)
+    exact = {x["method_name"]: x for x in cross.get("key_method_checks", [])}
+    require(exact.get("ResolveOpenedHexOutcome", {}).get("archive_value") == 133371, "ResolveOpenedHexOutcome crosswalk drift", errors)
+    require(exact.get("HasPlayerOpenAnchorNeighbor", {}).get("archive_value") == 46079, "HasPlayerOpenAnchorNeighbor crosswalk drift", errors)
+    return {"canonical_schema": canonical.get("schema_version"), "csharp_dump": canonical.get("csharp_dump", {}).get("sha256"), "wasmcode2_counts": counts}
+
+
+def audit_docs(errors: list[str]) -> dict[str, object]:
+    scan_forbidden(errors)
+    mixed_pages = ["system", "battle", "chests", "hex-random", "matching"]
+    for name in mixed_pages:
+        text = (ROOT / f"docs/reports/{name}/report.md").read_text(encoding="utf-8")
+        require("2026-09-11" in text[:1200], f"{name} report header does not expose 2026-09-11 reverse baseline", errors)
+    for name in ["cards", "journey"]:
+        text = (ROOT / f"docs/reports/{name}/report.md").read_text(encoding="utf-8")
+        require("2026-09-11" in text[:1200], f"{name} report does not distinguish current reverse baseline", errors)
+    portal = (ROOT / "docs/index.html").read_text(encoding="utf-8")
+    require("配置/界面快照 2026-09-03" in portal, "portal missing configuration snapshot label", errors)
+    require("逆向基准 2026-09-11" in portal, "portal missing reverse baseline label", errors)
+    json_checks = [
+        ("docs/reports/battle/battle-rules-data.json", "reverseBaseline"),
+        ("docs/reports/chests/chests-data.json", "reverseBaseline"),
+        ("docs/reports/matching/matching-data.json", "reverseBaseline"),
+        ("docs/reports/journey/local-evidence.json", "reverseBaseline"),
+        ("docs/reports/system/evidence.json", "reverseBaseline"),
+    ]
+    for path, key in json_checks:
+        data = load_json(path)
+        require(data.get(key) == "2026-09-11", f"{path} missing {key}=2026-09-11", errors)
+    return {"mixed_reports": mixed_pages, "static_reports": ["cards", "journey"], "reverse_baseline": "2026-09-11", "config_snapshot": "2026-09-03"}
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--reverse-only", action="store_true")
+    ap.add_argument("--docs-only", action="store_true")
+    ap.add_argument("--output", type=Path)
+    args = ap.parse_args()
+    if args.reverse_only and args.docs_only:
+        raise SystemExit("choose at most one of --reverse-only / --docs-only")
+    errors: list[str] = []
+    result: dict[str, object] = {"schema_version": 1, "errors": errors}
+    if not args.docs_only:
+        result["reverse"] = audit_reverse(errors)
+    if not args.reverse_only:
+        result["docs"] = audit_docs(errors)
+    result["ok"] = not errors
+    text = json.dumps(result, ensure_ascii=False, indent=2) + "\n"
+    if args.output:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(text, encoding="utf-8")
+    print(text)
+    if errors:
+        raise SystemExit(1)
+
+
+if __name__ == "__main__":
+    main()

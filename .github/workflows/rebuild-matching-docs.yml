@@ -1,0 +1,131 @@
+name: Rebuild research docs
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - 'README.md'
+      - 'scripts/reconcile_current_baseline.py'
+      - 'scripts/reconcile_report_sources.py'
+      - 'scripts/consolidate_battle_hex_boundary.py'
+      - 'scripts/systems_report_template.md'
+      - 'scripts/build_systems_report.py'
+      - 'scripts/build_battle_rules_report.py'
+      - 'scripts/build_chest_report.py'
+      - 'scripts/build_journey_evidence.py'
+      - 'scripts/build_journey_report.py'
+      - 'scripts/build_html.mjs'
+      - 'scripts/matching_report.md'
+      - 'scripts/bot_report.md'
+      - 'scripts/bot_ai_rules.md'
+      - 'scripts/build_matching_report.py'
+      - 'scripts/hex_random_report.md'
+      - 'scripts/build_hex_random_report.py'
+      - 'scripts/build_public_site.py'
+      - 'scripts/audit_current_baseline.py'
+      - 'outputs/new-player-journey/report-body.md'
+      - 'tables/**'
+      - '.github/workflows/rebuild-matching-docs.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rebuild-research-docs
+  cancel-in-progress: true
+
+jobs:
+  rebuild:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: python -m pip install --disable-pip-version-check markdown pillow
+
+      - name: Reconcile current evidence baseline
+        run: python scripts/reconcile_current_baseline.py
+
+      - name: Reconcile cross-report source conclusions
+        run: python scripts/reconcile_report_sources.py
+
+      - name: Consolidate battle and hex ownership
+        run: python scripts/consolidate_battle_hex_boundary.py
+
+      - name: Rebuild static card HTML and Markdown
+        run: node scripts/build_html.mjs
+
+      - name: Rebuild journey evidence and report
+        run: |
+          python scripts/build_journey_evidence.py
+          python scripts/build_journey_report.py
+
+      - name: Rebuild chest report
+        run: python scripts/build_chest_report.py
+
+      - name: Rebuild system report
+        run: python scripts/build_systems_report.py
+
+      - name: Rebuild battle report
+        run: python scripts/build_battle_rules_report.py
+
+      - name: Rebuild matching report
+        run: python scripts/build_matching_report.py
+
+      - name: Rebuild hex randomness report
+        run: python scripts/build_hex_random_report.py
+
+      - name: Rebuild public docs
+        run: python scripts/build_public_site.py
+
+      - name: Audit current reverse/docs provenance
+        run: python scripts/audit_current_baseline.py --output outputs/current-baseline-audit.json
+
+      - name: Validate generated reports
+        shell: bash
+        run: |
+          set -euo pipefail
+          for f in \
+            docs/reports/system/index.html \
+            docs/reports/battle/index.html \
+            docs/reports/cards/index.html \
+            docs/reports/journey/index.html \
+            docs/reports/chests/index.html \
+            docs/reports/matching/index.html \
+            docs/reports/matching/bot.html \
+            docs/reports/hex-random/index.html; do test -s "$f"; done
+          grep -q '逆向基准 2026-09-11' docs/index.html
+          grep -q '函数级逆向基准：2026-09-11' docs/reports/battle/report.md
+          grep -q '函数级逆向基准：2026-09-11' docs/reports/chests/report.md
+          grep -q '2026-09-11' docs/reports/hex-random/report.md
+          grep -q '函数级逆向基准：2026-09-11' docs/reports/matching/report.md
+          grep -q '当前函数级逆向基准：2026-09-11' docs/reports/cards/report.md
+          grep -q '当前函数级逆向基准：2026-09-11' docs/reports/journey/report.md
+          grep -q '目前没有证据表明周围格在“刚显现”那一刻重新掷一次25%' docs/reports/system/report.md
+          grep -q '地图与翻格：摘要与专题入口' docs/reports/battle/report.md
+          grep -q '并共用该玩家一个局内消费位' docs/reports/matching/report.md
+          grep -q '25%到底什么时候发生' docs/reports/hex-random/index.html
+          ! grep -R -q 'research/archive/2026-09-03/reverse-engineering/canonical' scripts docs
+          ! grep -R -q '.github/workflows/rebuild-canonical-reverse.yml' scripts docs
+
+      - name: Commit reconciled sources and generated files
+        shell: bash
+        run: |
+          if git diff --quiet -- README.md scripts outputs/20260903 outputs/new-player-journey outputs/chests outputs/battle-rules outputs/matching outputs/hex-random outputs/current-baseline-audit.json docs; then
+            echo 'No reconciled or generated changes.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add README.md scripts outputs/20260903 outputs/new-player-journey outputs/chests outputs/battle-rules outputs/matching outputs/hex-random outputs/current-baseline-audit.json docs
+          git commit -m 'docs: refresh all reports against current reverse baseline'
+          git push
