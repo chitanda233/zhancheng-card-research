@@ -14,17 +14,17 @@ import json
 from collections import Counter
 from pathlib import Path
 
-KEY_METHODS = (
-    "OpenHex",
-    "GetHexOpenBlockReason",
-    "SpendGold",
-    "CommitOpenedHex",
-    "ResolveOpenedHexOutcome",
-    "HasPlayerOpenAnchorNeighbor",
-    "SetHexOpened",
-    "MarkDynamicWallsDirtyAround",
-    "ApplyBattleCoreAuthoritativeCellState",
-)
+KEY_METHODS = {
+    "OpenHex": 0x4534,
+    "GetHexOpenBlockReason": 0x4597,
+    "SpendGold": 0x4598,
+    "CommitOpenedHex": 0x459B,
+    "ResolveOpenedHexOutcome": 0xF495,
+    "HasPlayerOpenAnchorNeighbor": 0xF61E,
+    "SetHexOpened": 0x42F2,
+    "MarkDynamicWallsDirtyAround": 0x4319,
+    "ApplyBattleCoreAuthoritativeCellState": 0x88FC,
+}
 
 
 def read_tsv(path: Path) -> list[dict[str, str]]:
@@ -94,24 +94,33 @@ def main() -> None:
     joined_rvas = {int(row["table_id_dec"]) for row in joined}
     archive_values = [int(row["archive_value"]) for row in joined]
     value_counts = Counter(archive_values)
+
     key_rows = []
-    for name in KEY_METHODS:
-        matches = [row for row in joined if name in str(row["signature"])]
+    for name, rva in KEY_METHODS.items():
+        method = method_by_rva.get(rva)
+        if method is None:
+            raise SystemExit(f"validated key RVA missing from canonical method map: {name} 0x{rva:X}")
+        archive_value = archive_by_table.get(rva)
         key_rows.append(
             {
                 "method_name": name,
-                "matches": matches,
-                "present_in_wasmcode2_table_map": bool(matches),
+                "rva_hex": f"0x{rva:X}",
+                "rva_dec": rva,
+                "canonical_wasm_func": method["wasm_func"],
+                "canonical_signature": method["signature"],
+                "present_in_wasmcode2_table_map": archive_value is not None,
+                "archive_value": archive_value,
             }
         )
 
     report = {
-        "schema_version": 1,
+        "schema_version": 2,
         "join_key": "wasmcode2 table_id == canonical primary method rva_dec/shared table slot",
         "semantic_boundary": (
             "archive_value is intentionally left uninterpreted. Runtime evidence proves table-id keyed "
             "function-split lookup, but does not yet prove whether archive_value is a function ordinal, "
-            "record id, offset, or another manager-private identifier."
+            "record id, offset, or another manager-private identifier. Presence in this table also does "
+            "not by itself prove that the function body exists exclusively in wasmcode2."
         ),
         "counts": {
             "wasmcode2_non_sentinel_table_slots": len(archive_by_table),
