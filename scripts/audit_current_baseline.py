@@ -19,6 +19,10 @@ def require(condition: bool, message: str, errors: list[str]) -> None:
         errors.append(message)
 
 
+def has_reverse_baseline_date(text: str) -> bool:
+    return "2026-09-11" in text or "2026 年 9 月 11 日" in text or "2026年9月11日" in text
+
+
 def sha256_file(path: Path) -> str:
     h = hashlib.sha256()
     with path.open("rb") as f:
@@ -62,8 +66,6 @@ def scan_forbidden(errors: list[str]) -> None:
         "research/archive/2026-09-03/reverse-engineering/canonical",
         ".github/workflows/rebuild-canonical-reverse.yml",
     ]
-    # These two scripts intentionally contain the legacy strings as audit needles /
-    # migration search keys. They are not consumers of the legacy baseline.
     intentional_literal_holders = {
         Path("scripts/audit_current_baseline.py"),
         Path("scripts/reconcile_current_baseline.py"),
@@ -116,11 +118,11 @@ def audit_docs(errors: list[str]) -> dict[str, object]:
     scan_forbidden(errors)
     mixed_pages = ["system", "battle", "chests", "hex-random", "matching"]
     for name in mixed_pages:
-        text = (ROOT / f"docs/reports/{name}/report.md").read_text(encoding="utf-8")
-        require("2026-09-11" in text[:1200], f"{name} report header does not expose 2026-09-11 reverse baseline", errors)
+        text = (ROOT / f"docs/reports/{name}/report.md").read_text(encoding="utf-8")[:1200]
+        require(has_reverse_baseline_date(text), f"{name} report header does not expose 2026-09-11 reverse baseline", errors)
     for name in ["cards", "journey"]:
-        text = (ROOT / f"docs/reports/{name}/report.md").read_text(encoding="utf-8")
-        require("2026-09-11" in text[:1200], f"{name} report does not distinguish current reverse baseline", errors)
+        text = (ROOT / f"docs/reports/{name}/report.md").read_text(encoding="utf-8")[:1200]
+        require(has_reverse_baseline_date(text), f"{name} report does not distinguish current reverse baseline", errors)
     portal = (ROOT / "docs/index.html").read_text(encoding="utf-8")
     require("配置/界面快照 2026-09-03" in portal, "portal missing configuration snapshot label", errors)
     require("逆向基准 2026-09-11" in portal, "portal missing reverse baseline label", errors)
