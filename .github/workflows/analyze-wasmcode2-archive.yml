@@ -1,0 +1,47 @@
+name: Analyze wasmcode2 archive format
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/analyze-wasmcode2-archive.yml'
+      - 'scripts/analyze_wasmcode2_archive.js'
+      - 'research/archive/2026-09-11/raw/packages/**/_wasmcode2_.wxapkg'
+      - 'research/archive/2026-09-11/unpacked/_wasmcode2_/**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: analyze-wasmcode2-archive
+  cancel-in-progress: false
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Analyze archive framing and table map
+        shell: bash
+        run: |
+          set -euo pipefail
+          PAYLOAD='research/archive/2026-09-11/unpacked/_wasmcode2_/wasmcode2/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br'
+          OUT='research/archive/2026-09-11/reverse-engineering/modules/wasmcode2'
+          node scripts/analyze_wasmcode2_archive.js "$PAYLOAD" "$OUT/archive-format.json" "$OUT/table-value-map.tsv" 367137
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$OUT/archive-format.json" "$OUT/table-value-map.tsv"
+          if git diff --cached --quiet; then
+            echo 'No archive-analysis changes to commit.'
+            exit 0
+          fi
+          git fetch origin master
+          if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/master)" ]; then
+            echo 'master advanced during archive analysis; refusing stale push' >&2
+            exit 1
+          fi
+          git commit -m 'research: decode wasmcode2 function-table map'
+          git push origin HEAD:master
