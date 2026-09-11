@@ -24,6 +24,7 @@ on:
       - 'scripts/build_public_site.py'
       - 'scripts/audit_current_baseline.py'
       - 'outputs/20260903/**'
+      - 'outputs/system/**'
       - 'outputs/new-player-journey/originals-baseline.json'
       - 'outputs/new-player-journey/report-body.md'
       - 'tables/**'
@@ -124,12 +125,12 @@ jobs:
       - name: Commit reconciled sources and generated files
         shell: bash
         run: |
-          if git diff --quiet -- README.md scripts outputs/new-player-journey outputs/chests outputs/battle-rules outputs/matching outputs/hex-random outputs/current-docs-audit.json docs; then
+          if git diff --quiet -- README.md scripts outputs/system outputs/new-player-journey outputs/chests outputs/battle-rules outputs/matching outputs/hex-random outputs/current-docs-audit.json docs; then
             echo 'No reconciled or generated changes.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add README.md scripts outputs/new-player-journey outputs/chests outputs/battle-rules outputs/matching outputs/hex-random outputs/current-docs-audit.json docs
+          git add README.md scripts outputs/system outputs/new-player-journey outputs/chests outputs/battle-rules outputs/matching outputs/hex-random outputs/current-docs-audit.json docs
           git commit -m 'docs: refresh all reports against current reverse baseline'
           git push
