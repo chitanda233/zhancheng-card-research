@@ -20,11 +20,12 @@ def patch(path: str, replacements: list[tuple[str, str]]) -> None:
     text = p.read_text(encoding="utf-8")
     original = text
     for old, new in replacements:
+        if old in text:
+            text = text.replace(old, new, 1)
+            continue
         if new in text:
             continue
-        if old not in text:
-            raise RuntimeError(f"{path}: expected source text not found: {old[:120]!r}")
-        text = text.replace(old, new, 1)
+        raise RuntimeError(f"{path}: neither old nor reconciled source text found: {old[:120]!r}")
     if text != original:
         p.write_text(text, encoding="utf-8")
         print(f"updated {path}")
