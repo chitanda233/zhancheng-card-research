@@ -27,6 +27,11 @@ def sha256_file(path: Path) -> str:
     return h.hexdigest()
 
 
+def sha256_with_crlf(path: Path) -> str:
+    data = path.read_bytes().replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+    return hashlib.sha256(data).hexdigest()
+
+
 def audit_historical_snapshot(errors: list[str]) -> dict[str, object]:
     baseline_path = ROOT / "outputs/new-player-journey/originals-baseline.json"
     frozen_root = ROOT / "outputs/20260903"
@@ -39,11 +44,12 @@ def audit_historical_snapshot(errors: list[str]) -> dict[str, object]:
             continue
         actual = sha256_file(path)
         checked[name] = actual
-        require(
-            actual == expected,
-            f"historical snapshot hash drift: outputs/20260903/{name} expected={expected} actual={actual}",
-            errors,
-        )
+        if actual != expected:
+            crlf = sha256_with_crlf(path)
+            errors.append(
+                f"historical snapshot hash drift: outputs/20260903/{name} "
+                f"expected={expected} actual={actual} crlf_candidate={crlf}"
+            )
     return {
         "baseline": "outputs/new-player-journey/originals-baseline.json",
         "frozen_root": "outputs/20260903",
