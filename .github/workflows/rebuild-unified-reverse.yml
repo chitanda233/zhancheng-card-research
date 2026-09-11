@@ -77,6 +77,40 @@ jobs:
             "$OUT/method-crosswalk.tsv" \
             "$OUT/method-crosswalk-summary.json"
 
+          python3 - "$OUT/method-crosswalk-summary.json" "$OUT/README.md" <<'PY'
+          import json, sys
+          from pathlib import Path
+          summary_path, readme_path = map(Path, sys.argv[1:])
+          s = json.loads(summary_path.read_text(encoding='utf-8'))
+          c = s['counts']
+          present = {x['method_name']: x for x in s['key_method_checks'] if x['present_in_wasmcode2_table_map']}
+          lines = [
+              '# wasmcode2 runtime split package · 2026-09-11',
+              '',
+              'Role: function-split archive consumed by the runtime split manager.',
+              '',
+              'The standard Brotli/WASM probe does not identify this member as a standalone WebAssembly module. Loader evidence shows that the bytes are passed to `innerInitFuncSplitWasm({archiveArray})`, and missing functions are requested by shared table id through `innerInvokeWasmBuffer`. See `payload-analysis.json`, `archive-format.json`, and `../split-runtime.md`.',
+              '',
+              'This directory now also contains a reproducible crosswalk to the primary C#/RVA namespace. The two namespaces remain semantically distinct: the join is only on the proven shared table id; `archive_value` is intentionally left uninterpreted and must not be treated as a byte offset or function address without further evidence.',
+              '',
+              f"- non-sentinel wasmcode2 table slots: {c['wasmcode2_non_sentinel_table_slots']:,}",
+              f"- canonical primary C# methods: {c['canonical_primary_methods']:,}",
+              f"- primary methods with a wasmcode2 table entry: {c['primary_methods_present_in_wasmcode2_table_map']:,}",
+              f"- primary methods without a wasmcode2 table entry: {c['primary_methods_absent_from_wasmcode2_table_map']:,}",
+              '',
+              'Among the nine previously hard-validated gameplay methods, the exact-RVA crosswalk currently finds:',
+          ]
+          for name in ('ResolveOpenedHexOutcome', 'HasPlayerOpenAnchorNeighbor'):
+              x = present[name]
+              lines.append(f"- `{name}` `{x['rva_hex']}` → canonical `func[{x['canonical_wasm_func']}]` → archive value `{x['archive_value']}`")
+          lines += [
+              '',
+              '`method-crosswalk.tsv` is the row-level join and `method-crosswalk-summary.json` is the machine-readable audit. Presence in this map does not prove that a function body exists exclusively in wasmcode2.',
+              '',
+          ]
+          readme_path.write_text('\n'.join(lines), encoding='utf-8')
+          PY
+
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add \
@@ -85,7 +119,8 @@ jobs:
             "$OUT/archive-format.json" \
             "$OUT/table-value-map.tsv" \
             "$OUT/method-crosswalk.tsv" \
-            "$OUT/method-crosswalk-summary.json" 2>/dev/null || true
+            "$OUT/method-crosswalk-summary.json" \
+            "$OUT/README.md" 2>/dev/null || true
           if git diff --cached --quiet; then
             echo 'No wasmcode2 analysis changes to commit.'
             exit 0
