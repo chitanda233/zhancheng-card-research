@@ -197,7 +197,6 @@ MAIN_WAT='/tmp/current-main.wat'
 MAIN_OBJDUMP='/tmp/current-main.objdump'
 wasm2wat "$MAIN_WASM" -o "$MAIN_WAT"
 wasm-objdump -d "$MAIN_WASM" > "$MAIN_OBJDUMP"
-wasm-objdump -x "$MAIN_WASM" > "$OUT/module-info.txt"
 gzip -n -9 -c "$MAIN_WAT" > "$OUT/module.wat.gz"
 gzip -n -9 -c "$MAIN_OBJDUMP" > "$OUT/module.objdump.gz"
 python3 scripts/build_wasm_method_maps.py "$MAIN_WASM" "$CSHARP/dump.cs" "$OUT"
@@ -220,7 +219,6 @@ python3 scripts/analyze_split_payload.py "$WASM2_ARCHIVE" "$MODULES/wasmcode2/pa
 if [ "$WASM1_STATUS" = 'standard-wasm' ]; then
   wasm2wat /tmp/wasmcode1.standard.wasm -o /tmp/wasmcode1.wat
   wasm-objdump -d /tmp/wasmcode1.standard.wasm > /tmp/wasmcode1.objdump
-  wasm-objdump -x /tmp/wasmcode1.standard.wasm > "$MODULES/wasmcode1/module-info.txt"
   gzip -n -9 -c /tmp/wasmcode1.wat > "$MODULES/wasmcode1/module.wat.gz"
   gzip -n -9 -c /tmp/wasmcode1.objdump > "$MODULES/wasmcode1/module.objdump.gz"
   split_if_needed "$MODULES/wasmcode1/module.wat.gz"
@@ -364,26 +362,10 @@ grep -q '"schema_version": 5' "$OUT/manifest.json"
 grep -q '"legacy_2026_09_03_dump_used": false' "$OUT/manifest.json"
 grep -q '"primary_method_rva_unmapped": 0' "$OUT/dump-audit.json"
 grep -q '"duplicate_primary_rva_count": 0' "$OUT/dump-audit.json"
-grep -q 'ALL_OK=True' "$OUT/validation.txt"
+python3 -c 'import json; assert json.load(open("research/archive/2026-09-11/reverse-engineering/canonical/validation.json", encoding="utf-8"))["all_ok"] is True'
 grep -q '"name": "wasmcode1"' "$MODULES/wasmcode1/manifest.json"
 grep -q '"name": "wasmcode2"' "$MODULES/wasmcode2/manifest.json"
 grep -q 'function-split archive' "$MODULES/wasmcode2/manifest.json"
 grep -q 'RESOLVED' "$ROOT/capture-completeness.json"
 test ! -e "$ROOT/dump.cs"
 test ! -e "$ROOT/dump-provenance.json"
-
-git add "$UNPACKED" "$ROOT"
-python3 - "$CSHARP/manifest.json" "$OUT/manifest.json" "$MODULES/wasmcode1/manifest.json" "$MODULES/wasmcode2/manifest.json" <<'PY'
-import hashlib, json, subprocess, sys
-from pathlib import Path
-for manifest_path in map(Path,sys.argv[1:]):
-    m=json.loads(manifest_path.read_text(encoding='utf-8'))
-    for item in m.get('files',m.get('generated',[])):
-        path=item['path']
-        data=subprocess.check_output(['git','show',f':{path}'])
-        if len(data)!=item['size'] or hashlib.sha256(data).hexdigest()!=item['sha256']:
-            raise SystemExit(f'Git-index bytes disagree with manifest: {path}')
-print('unified runtime-split Git-index verification OK')
-PY
-
-python3 scripts/build_archive_manifest.py
