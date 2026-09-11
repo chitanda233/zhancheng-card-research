@@ -1,0 +1,646 @@
+{
+  "appId": "wx9eed71970378b2ae",
+  "sourceRoot": "C:\\Users\\berserker\\AppData\\Roaming\\Tencent\\xwechat\\radium\\users\\c147fc455d8bdf41123a2e607252a9a7\\applet",
+  "verifiedUtc": "2026-09-11T02:30:27.7158627Z",
+  "verification": "All files individually verified against source before and after copying with SHA256; directory inventories match. Live backup, not a globally atomic snapshot.",
+  "refreshedFiles": [
+    "local\\wx9eed71970378b2ae\\mmkvadapterstorage\\wx9eed71970378b2ae",
+    "local\\wx9eed71970378b2ae\\mmkvadapterstorage\\wx9eed71970378b2ae.crc",
+    "local\\wx9eed71970378b2ae\\usrmmkvstorage0\\wx9eed71970378b2ae",
+    "local\\wx9eed71970378b2ae\\usrmmkvstorage0\\wx9eed71970378b2ae.crc"
+  ],
+  "fileCount": 104,
+  "totalBytes": 188059236,
+  "files": [
+    {
+      "relativePath": "icon\\wx9eed71970378b2ae_ee037200596d28604630fd571df98b25.png",
+      "bytes": 42163,
+      "sha256": "4D6B8FE262B7B74C62E09AA7218EC6E01B2D3F3C9F7AC9F14229DDD67475412F",
+      "verifiedUtc": "2026-09-11T02:30:26.5400424Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\initial-rendering-cache-config.json",
+      "bytes": 2,
+      "sha256": "44136FA355B3678A1146AD16F7E8649E94FB4FC21FE77E8310C060F61CAAFF8A",
+      "verifiedUtc": "2026-09-11T02:30:26.5550859Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\launch.config",
+      "bytes": 875,
+      "sha256": "00B64D424C52537A8BF853294F6BAAECC65A89D75A507E2EBA8C07E58FB87A82",
+      "verifiedUtc": "2026-09-11T02:30:26.5559109Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\mmkvadapterstorage\\wx9eed71970378b2ae",
+      "bytes": 4096,
+      "sha256": "946D78547533AFC6D61FB488085BAADD19C98188E03E6758C6069B491D2DE917",
+      "verifiedUtc": "2026-09-11T02:30:26.5640531Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\mmkvadapterstorage\\wx9eed71970378b2ae.crc",
+      "bytes": 4096,
+      "sha256": "07EC138ACD64EC7D50648BEFA1AE977F032F624D5593CF8D33157059CB52D983",
+      "verifiedUtc": "2026-09-11T02:30:26.5657741Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\store\\images\\1f1fe7ae02f8321fa9d730e777d5fe70",
+      "bytes": 42163,
+      "sha256": "4D6B8FE262B7B74C62E09AA7218EC6E01B2D3F3C9F7AC9F14229DDD67475412F",
+      "verifiedUtc": "2026-09-11T02:30:26.5667307Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\store\\images\\25b66edaf140fa49c226e08c3e6d495f",
+      "bytes": 42163,
+      "sha256": "4D6B8FE262B7B74C62E09AA7218EC6E01B2D3F3C9F7AC9F14229DDD67475412F",
+      "verifiedUtc": "2026-09-11T02:30:26.5677696Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\store\\images\\wx9eed71970378b2ae",
+      "bytes": 42163,
+      "sha256": "4D6B8FE262B7B74C62E09AA7218EC6E01B2D3F3C9F7AC9F14229DDD67475412F",
+      "verifiedUtc": "2026-09-11T02:30:26.5688011Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\miniprogramLog\\log1",
+      "bytes": 323938,
+      "sha256": "D4657D9204308BD3D1121091DB34FA04535702044792983652BD5694493A2271",
+      "verifiedUtc": "2026-09-11T02:30:26.5711499Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br",
+      "bytes": 1,
+      "sha256": "6E340B9CFFB37A989CA544E6BB780A2C78901D3FB33738768511A30617AFA01D",
+      "verifiedUtc": "2026-09-11T02:30:26.5718903Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\a23078fc21f9ca79.webgl.data.unityweb.bin",
+      "bytes": 20479611,
+      "sha256": "73833E7229D02B630E5EBE408B8B4ECC75120153F71CEFCB69445043C822E426",
+      "verifiedUtc": "2026-09-11T02:30:26.6714158Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\01firstbundle_assets_all_3ffdc4ebbc7b6ef074f13e27e84e7c06.bundle",
+      "bytes": 1013038,
+      "sha256": "9F7FAFEE853B9D658F7B089D02A7608FF6EEF2D5280DE8B9BF63608A7FAB6D52",
+      "verifiedUtc": "2026-09-11T02:30:26.6771137Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\02_arenawithprop_assets_all_0609726278dfd5c7ee80adc03080dab5.bundle",
+      "bytes": 2114493,
+      "sha256": "B91BC1D4A222097DEF54B29549C5D2922194FC5C6995F5FDB23E89745AE77148",
+      "verifiedUtc": "2026-09-11T02:30:26.6881765Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\02coregamebundle_assets_all_c6dfa4c52b17c05bb82c44d406f5e1c4.bundle",
+      "bytes": 4318676,
+      "sha256": "0D9F55350D4C0C62FE1CF0221D19F7C6839A502E24CA0CCB740EDC2E055BF95F",
+      "verifiedUtc": "2026-09-11T02:30:26.7100248Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\04metagamebundle_assets_all_58240af7f1abe2a25d5b0d62bfdead4f.bundle",
+      "bytes": 14986747,
+      "sha256": "8D09478450BEB0F238BECFE549844D5207D0B83539822044456EA9669433BBFD",
+      "verifiedUtc": "2026-09-11T02:30:26.782969Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\232ff9dc65e94d4e8e2d25dd8757fa7b.bundle",
+      "bytes": 488912,
+      "sha256": "23108A6B5BF6B0238EECC6916C94A6B4783B2E8278671F5B442FD0E2A512D3DC",
+      "verifiedUtc": "2026-09-11T02:30:26.7871435Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\3ae6d97ed4ae5e5edbde3a654c423e24_unitybuiltinshaders_36685f24b5d46f9f9f9f18b91f574c3c.bundle",
+      "bytes": 111315,
+      "sha256": "7A2D37317276AB06BDEF003FC2BB675DE27D488B82B51A6C12DDB82ACC0AE3A9",
+      "verifiedUtc": "2026-09-11T02:30:26.7886008Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\3dart_share_assets_all_1faa924e251d05d0c85269c3ae20077c.bundle",
+      "bytes": 5779122,
+      "sha256": "C38EF0CC4EF20F17A1F3153F20D14AB6D1205CD3851FDD1A0879FA4475A5807E",
+      "verifiedUtc": "2026-09-11T02:30:26.8156124Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\a01firstbundle_assets_all_c4b66dd62cf568d379fafefd5bb52b2b.bundle",
+      "bytes": 1778103,
+      "sha256": "3C827355852B000DD12D7305120EE52B226950F9D5A68C6019B1321FC906EF13",
+      "verifiedUtc": "2026-09-11T02:30:26.8239133Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\a02_arenawithprop_assets_all_e664cc5f9dc640503b410e5720199cca.bundle",
+      "bytes": 2807518,
+      "sha256": "E09A0D595DADA194930BEE2E0980A91ED9142020422B416A8E761BE642134EA7",
+      "verifiedUtc": "2026-09-11T02:30:26.8381091Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\a02coregamebundle_assets_all_0f914b74a49f086b20b97816f0559b36.bundle",
+      "bytes": 4340415,
+      "sha256": "C4DF25CF5219FFB7888DFB6ADE0593E8BBB86D481C80045086ABCA930790FC44",
+      "verifiedUtc": "2026-09-11T02:30:26.8574827Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\a03coregamebundle_assets_all_8df5669643c9431d31280f52c9bbd3af.bundle",
+      "bytes": 316770,
+      "sha256": "46A9659B2B0F5AB2D2E4767FF1C5E82DBD52E07685A655E0CBAD19C08F7DBCFB",
+      "verifiedUtc": "2026-09-11T02:30:26.8605164Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\a04metagamebundle_assets_all_f7f2d75ef683451b85ca8ef576ddfe81.bundle",
+      "bytes": 10858380,
+      "sha256": "6D793D51F1E0BA3888F8DFD64491E55025CDFA4428173B07F270CB04A7B3FA74",
+      "verifiedUtc": "2026-09-11T02:30:26.9079786Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\audiosbundle_assets_all_1160cec0a919418844657ba097aa7c85.bundle",
+      "bytes": 2225082,
+      "sha256": "681818378AE5323C71834384611C2C1C7662C7D1A8B41DB6B262A5AF69ABE790",
+      "verifiedUtc": "2026-09-11T02:30:26.9198414Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\catalog_2026.08.05.09.26.16.hash",
+      "bytes": 32,
+      "sha256": "78050B5A853E1D28B42B47B2839DA06273C1490C0FBE368E876706CBF2389C5E",
+      "verifiedUtc": "2026-09-11T02:30:26.920669Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\catalog_2026.08.28.09.05.24.hash",
+      "bytes": 32,
+      "sha256": "E8E93D051814332FA5631DB16C0A324B77138F9636A57F3B585678D9C2FBA94F",
+      "verifiedUtc": "2026-09-11T02:30:26.9213487Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\cefbf0334e5fbb8f0ee2e12dbd1af7fe.bundle",
+      "bytes": 851642,
+      "sha256": "89DD77C7B8283EB99EDA455451E55347E35FC3CF676B670905C443155ABD1FF1",
+      "verifiedUtc": "2026-09-11T02:30:26.9258706Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets__shared_7025386afcb9d9c2f79dd56a67b24dc1.bundle",
+      "bytes": 17931,
+      "sha256": "587B23141007D498D910D9FE79820DCB0D50252FA28E1800474822D31E8AB53E",
+      "verifiedUtc": "2026-09-11T02:30:26.9268283Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_animator_3c7da3d91e521c68debacc6e075da36f.bundle",
+      "bytes": 2720939,
+      "sha256": "71D1463DEC8A2FD43991E34E41D7D07F77586EEF65E7A974BDFC973E77D512C0",
+      "verifiedUtc": "2026-09-11T02:30:26.9411665Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_ballista_5be4ec7d5e12ad80703227bcf7e797d1.bundle",
+      "bytes": 216526,
+      "sha256": "B88A81A02C4AE78B31DF2654C522D52F23ABD0B61E0FFBF42BE20F214C58ADFC",
+      "verifiedUtc": "2026-09-11T02:30:26.9435009Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_bear_05e50ca67663a8db48619df7c8a34ae1.bundle",
+      "bytes": 623519,
+      "sha256": "40CCF9DC217EB1DAD1A0A116D318DC7BADFFE37299C5851EEE600E32CEF78876",
+      "verifiedUtc": "2026-09-11T02:30:26.9516092Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_bingshungjulong_096683aee99bdf9988c4c2b546309644.bundle",
+      "bytes": 404491,
+      "sha256": "CA4B2A7483B993FD1DA58E4C14833DA396D1F088A486AFAD4B6B1EBFA62EC5D9",
+      "verifiedUtc": "2026-09-11T02:30:26.9580457Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_catapult_d6d9e262fe6e8852ea30a768dd5498df.bundle",
+      "bytes": 196504,
+      "sha256": "7E6F23A7CE185149F6CC8DF4AE03F4CEFC19CC777333E2440A753A80D7F3C072",
+      "verifiedUtc": "2026-09-11T02:30:26.9609708Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_changmaoshou_e098ab0905a36adda0952fc165b97321.bundle",
+      "bytes": 360693,
+      "sha256": "7BDD2FE3720AE49F8F771C557CEB1F1C3859D4F864FC1615EF500F59791CF00C",
+      "verifiedUtc": "2026-09-11T02:30:26.9641537Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_cunmin_a1da65c550e97eea3c5d24ed646e8aac.bundle",
+      "bytes": 517280,
+      "sha256": "95EB3CDBB9AACFA8BC90B38F67E0CAD87598522372E568F8E91AB9E57F2241B1",
+      "verifiedUtc": "2026-09-11T02:30:26.9683073Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_deluyi_fc58c8e1063932a73a682a2764ac0da6.bundle",
+      "bytes": 254632,
+      "sha256": "88542D6BE5D4EF950C20B98C1D5E7EA7E138644997811713CFE153D457FC5E02",
+      "verifiedUtc": "2026-09-11T02:30:26.9714507Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_emolingzhu_04d87d4d02709059873436926175f68b.bundle",
+      "bytes": 645034,
+      "sha256": "7508F387C24AD05FCD7C945503C4ECD3FFAFEAB787117954E83FE493B40C961C",
+      "verifiedUtc": "2026-09-11T02:30:26.9760589Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_fashi_3af351fcb89d2d98a2b2d31bc98c549d.bundle",
+      "bytes": 235916,
+      "sha256": "F02FEC2161BB432EA4C58D45A66A292042CFD32B7F52FA9312E3CAA5515CCC63",
+      "verifiedUtc": "2026-09-11T02:30:26.9788838Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_gebulin_c2e14aa6d285a9e263a7efd3c3b12c21.bundle",
+      "bytes": 1043034,
+      "sha256": "52BAFBC0F4375C4A4EE1B7BA720C230961AB697C8EF233C1CD19B386274768C7",
+      "verifiedUtc": "2026-09-11T02:30:26.9848058Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_gongchengche_a298984b83e745da4cb8996fb56f3559.bundle",
+      "bytes": 298862,
+      "sha256": "DB562F856C83FBE235182CC92D09E6FE881B6B4D9471181C0068FFE9FED55BDD",
+      "verifiedUtc": "2026-09-11T02:30:26.9893242Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_helicopter_26b51e04c82f13c47523e86fce4b4513.bundle",
+      "bytes": 370513,
+      "sha256": "AD931958C6D46D0765BBFA55E9CD39D78724C629B6BF79D38516DF5578962C3D",
+      "verifiedUtc": "2026-09-11T02:30:26.9924958Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_jiansheng_8faa6211345c5995f99b696a29bae730.bundle",
+      "bytes": 941089,
+      "sha256": "9ADB26FCAF39FC07823C7D1B3B691A6B85FCB0672A038575267EC7A9905ADB85",
+      "verifiedUtc": "2026-09-11T02:30:26.997676Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_jianshi_c2290435fa719a537504c39095240d69.bundle",
+      "bytes": 86377,
+      "sha256": "1B93EC5D93854434580316413522C53032A30FD84C4219270A36C425EC47D11D",
+      "verifiedUtc": "2026-09-11T02:30:27.0004334Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_jisi_f0dddb09fd7c2562926dcb900a71fad0.bundle",
+      "bytes": 978430,
+      "sha256": "F614390E364489017A59A9C163BA485AAFA02332C2D9E71D0EDFE42144EB77AF",
+      "verifiedUtc": "2026-09-11T02:30:27.0054253Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_jujishou_dfb151ca6e41d5bac76fd95ad4ad2a94.bundle",
+      "bytes": 184122,
+      "sha256": "FB4330B5EA2FDCC39492DAFF866562068098313F5520CA691394AEFE32194C52",
+      "verifiedUtc": "2026-09-11T02:30:27.0080459Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_langqibing_e7d478fe2fe241dfca75d701708e6f2d.bundle",
+      "bytes": 1589937,
+      "sha256": "7D838F3BFEED42E66C1410C7F3A52F9494C4048237F4359BCBBA63C5427C48E7",
+      "verifiedUtc": "2026-09-11T02:30:27.0163136Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_magneticgiant_1504ac2bae9b92a12347aad59df23691.bundle",
+      "bytes": 1525935,
+      "sha256": "ED8EF2D3CE3108BE3E059CFDCD10C787C2E708D20212395FEAFAC4869F02CF17",
+      "verifiedUtc": "2026-09-11T02:30:27.0243966Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_mechanicalbird_45787d95b55d181cc6346ee2f4fa7751.bundle",
+      "bytes": 514907,
+      "sha256": "95BDDBAAD472509EB40F3D181ED89D1F6FBF27EF1F865094CFFFED0137666DAB",
+      "verifiedUtc": "2026-09-11T02:30:27.0276791Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_mechanicalguard_f4dd6e2ccbd66fb6464fb9f0b4e27ca1.bundle",
+      "bytes": 544201,
+      "sha256": "F265847652A7A0A602B8217B55C7C9B048BDF0CC0A7CD65CB8EC3FCC8A344378",
+      "verifiedUtc": "2026-09-11T02:30:27.0312433Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_qibing_0103a0e72122d901122694626492ed79.bundle",
+      "bytes": 946555,
+      "sha256": "4FE57F4919C4B28C2AD23DA383DD78B9687A1398EE307BE8E48FAC38601C24A2",
+      "verifiedUtc": "2026-09-11T02:30:27.0368223Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_qibingpro_16e7421caf8825035d3a3d42f83dd5e6.bundle",
+      "bytes": 910484,
+      "sha256": "A7BA827DA7A322F52534152C15EE19E021BE7EDB3EB6D3B65D35D5CD78D90B34",
+      "verifiedUtc": "2026-09-11T02:30:27.0419172Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_robot_8752ac975b2b9b52ccef3d73ec146521.bundle",
+      "bytes": 600851,
+      "sha256": "2375B3E15F76E9C5C8AADFB3C4D43887B3495D814927BD7E7A825C1FD07B479D",
+      "verifiedUtc": "2026-09-11T02:30:27.0459218Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_shixianggui_768da742e4c163ae0b9605c6e2ce695f.bundle",
+      "bytes": 675873,
+      "sha256": "B38FBA0846395425258CABE2853E0B335053F23CDE3E3352924BF24A58EAA5F4",
+      "verifiedUtc": "2026-09-11T02:30:27.0495764Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_silingnvwang_a9a7131f060d9dea26ecb220761823bc.bundle",
+      "bytes": 279102,
+      "sha256": "784B232E9704825CA1BE7DC59255326273210553F31F54B0762C21F1E4810488",
+      "verifiedUtc": "2026-09-11T02:30:27.0519838Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_siwangqishi_c0794edd2a9c709ce7687d2aa6882bd6.bundle",
+      "bytes": 1423414,
+      "sha256": "01F37A235E62394FBA2FD830C80D60C936D0A1A8E64B5379F21588385E6305C7",
+      "verifiedUtc": "2026-09-11T02:30:27.0624363Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_skeleton_golem_8c0c06a9708945383fae553acde99a6a.bundle",
+      "bytes": 285411,
+      "sha256": "70FF17D32DB3193B679DB75FF0599A717E008A6C4E74C27EF283850D2DBBF21C",
+      "verifiedUtc": "2026-09-11T02:30:27.0649123Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_skeleton_mage_110013a42cbc5fb2ce72476fdd0559ec.bundle",
+      "bytes": 276846,
+      "sha256": "377929C4AF267AB7B116BF8EFB31B5F05C590A988AC6E45B3E3318621099B6CE",
+      "verifiedUtc": "2026-09-11T02:30:27.0670282Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_skeleton_rogue_23568b73241e13615d6b6c089c6a8703.bundle",
+      "bytes": 248715,
+      "sha256": "805ACD1B8D8E3DC770714830F0E7BE8C638E50AC3C31A112C8A604C6176D3C1E",
+      "verifiedUtc": "2026-09-11T02:30:27.0694488Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_skeleton_warrior_c4c5303cafdddcd0ffe1e883673b8834.bundle",
+      "bytes": 237324,
+      "sha256": "9B67FF408463331B80169FCFDE75C7CC82A1D9C45AF6476CDC451F5D7D66B7E7",
+      "verifiedUtc": "2026-09-11T02:30:27.0712368Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_tancexianfeng_7024da1c1882a46ddf8cd93449de29ae.bundle",
+      "bytes": 321939,
+      "sha256": "D5F801E353187A24C1BEB3139F58406B43543E84F05BACF6728ABC8CF3742940",
+      "verifiedUtc": "2026-09-11T02:30:27.0739431Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_tiejiang_50b9f83eb7ac5ff442800755262b37b0.bundle",
+      "bytes": 781533,
+      "sha256": "0DB396EE61D087B4EFF573DB5C76D26E186611EAA7B0DC2431A30868AC6F1567",
+      "verifiedUtc": "2026-09-11T02:30:27.0789234Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_valkyrie_875422d21c6d307a00bd5db9b7032e3d.bundle",
+      "bytes": 755011,
+      "sha256": "CCBAD9C4EC123C0DD3ADD3E9C75E702082BD159483580E80673980C7E5879D48",
+      "verifiedUtc": "2026-09-11T02:30:27.0838447Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_xiongmao_06e8a1b8c797a89454837b328e0e53e3.bundle",
+      "bytes": 619739,
+      "sha256": "20A10E151EDAD93DD07B04E93D04A6DC4C170674B22D0AE9F7DC020780FBFB2A",
+      "verifiedUtc": "2026-09-11T02:30:27.0871827Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\charactersorganized_assets_youxia_d4d341ea82b7ff86a91658b9c011ad0b.bundle",
+      "bytes": 288129,
+      "sha256": "740031B75AFC2180543B69DE44302A23CBAF63767B7E7490FD3FE6FAFCA1980E",
+      "verifiedUtc": "2026-09-11T02:30:27.0891526Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\defaultlocalgroup_assets_all_4c031180b5ce3b46ed8000db096f08e3.bundle",
+      "bytes": 20287,
+      "sha256": "838AB64432596F502D694B027CC68F03F9130A1F42C3832E50100CE65BF3CA89",
+      "verifiedUtc": "2026-09-11T02:30:27.0901834Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\duplicateassetisolation_assets_all_62e98671e4c4f783c10e4b9c095cc0a5.bundle",
+      "bytes": 18215,
+      "sha256": "B9BF2A811DF347F96BC68DE80FCF047EA482960A4580DA07667E629FD66842CC",
+      "verifiedUtc": "2026-09-11T02:30:27.0914027Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\effectsbundle_assets_all_3915bc155601fd0167ba608493abec2d.bundle",
+      "bytes": 3772406,
+      "sha256": "DB1B7327C3372A3BBE4E6C68CE8E6511BDF1791D62BD1B3626EB82F3ED962D18",
+      "verifiedUtc": "2026-09-11T02:30:27.1095815Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\first_effectbundle_assets_all_8bc52dba72de2516b44042ae5d62f42a.bundle",
+      "bytes": 592009,
+      "sha256": "31D789E415968C06440C0EA8F888C17C85AB50CDEF5F73FDF073E26145A25B9A",
+      "verifiedUtc": "2026-09-11T02:30:27.1131442Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\first_ui_assets_all_1f4402e98298d818d704df41f3b31643.bundle",
+      "bytes": 818417,
+      "sha256": "8712179936DC359BCD881FCC3269629A517880C73FEF47E6F11433691EEFAC61",
+      "verifiedUtc": "2026-09-11T02:30:27.1175146Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\firstpack_assets_all_90b6de9d931fc3fb82824eb3d8945aa5.bundle",
+      "bytes": 6002967,
+      "sha256": "60595571358E6776F8B19210B86E931EEA6548BAAE8192A5DED72449E9656A50",
+      "verifiedUtc": "2026-09-11T02:30:27.14565Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\firstpack_character_assets_all_7fcab0fa8a4b20ca2dffffbff76311b8.bundle",
+      "bytes": 2222447,
+      "sha256": "F0D5060A4F31CDDD1BE090AEC18674CBEF91799DDC46B08756F85EB271E30376",
+      "verifiedUtc": "2026-09-11T02:30:27.1577636Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\firstpack_home_assets_all_78b8ab3069d237b58c5ad1e6fb5a098c.bundle",
+      "bytes": 12134730,
+      "sha256": "9FC2052745620DEC27F06684A73AAC7D7BB88D100BCA0F54C5683B6133AC61CA",
+      "verifiedUtc": "2026-09-11T02:30:27.2160014Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\firstpack0_preload_assets_all_c931ea4d901c477c2b238d6256ceef09.bundle",
+      "bytes": 2938885,
+      "sha256": "474E9C6E6C429B50BBB6FAD9D69AC92A3D02087E3707D280A0B1A0C3DFFD5533",
+      "verifiedUtc": "2026-09-11T02:30:27.230128Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\firstpack01_assets_all_d50b247164ad153710374000e3be085d.bundle",
+      "bytes": 1747999,
+      "sha256": "5086483435EBB7E158610EC750C477A8441CC38C303455DB93194240D07FBB9F",
+      "verifiedUtc": "2026-09-11T02:30:27.2378533Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\firstpack02_assets_all_0d06eaef09cadb86ef077b8df025b4a7.bundle",
+      "bytes": 11334560,
+      "sha256": "0ABF6DBED3A45A69062A114768E500C4A78A6ADC1882EBE99E71BEAAFAF6CC3B",
+      "verifiedUtc": "2026-09-11T02:30:27.2872684Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\firstpack2_assets_all_7d9e170e4653db36b2ba278f728c3261.bundle",
+      "bytes": 1958962,
+      "sha256": "CD84126FB2C164701B182F75C8CD4D26B5795BC50AC32F850150CB6F1D50028C",
+      "verifiedUtc": "2026-09-11T02:30:27.2966247Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\font_assets_all_0293e8064761aaac395760cea10f4fbf.bundle",
+      "bytes": 2901920,
+      "sha256": "DD6352CF792FDD4C5C26E68581036604CCBD9727182E4F81C64C86D5F7F4FE66",
+      "verifiedUtc": "2026-09-11T02:30:27.3097856Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\prefabs_assets_all_8b0200574148f11d24ff5c3226907f45.bundle",
+      "bytes": 1866451,
+      "sha256": "A3E17F4EE1F02E20A94C896A2B98BB53F7BFC2DD6023B81DF3F622C5EF207997",
+      "verifiedUtc": "2026-09-11T02:30:27.3187883Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\pub_share_assets_all_dc303f4f8f28fdd823675df4f7c8f159.bundle",
+      "bytes": 324132,
+      "sha256": "EB45341B196D1E58ACF7E4B387FD713099FEE0D7FEE5EB9FA36463D659131FD3",
+      "verifiedUtc": "2026-09-11T02:30:27.3214586Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\pvppanel_assets_all_6d0566bc10ae4b0a58bd2a30ecae01bd.bundle",
+      "bytes": 265818,
+      "sha256": "511FA8BAA54C3B39AE8F1AAD5A65F149E5E35991D8E49ECDFCF87B287B97A897",
+      "verifiedUtc": "2026-09-11T02:30:27.3236474Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\scenepack_assets_all_a0b8d925928ace4254c343747ac57884.bundle",
+      "bytes": 22889,
+      "sha256": "099780D6153E8B58C948D460814C2A5383516371EF0A9BB3BF8FF57FBFC64CC9",
+      "verifiedUtc": "2026-09-11T02:30:27.3247717Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\spine_assets_artifactunlock_6d37f7ce413302111a3c91248b1c28c8.bundle",
+      "bytes": 34467,
+      "sha256": "94ABFF86CD78841335AD7ACBB1472C8F64BC4EF0E0EF5DF06A511E9A70504913",
+      "verifiedUtc": "2026-09-11T02:30:27.32602Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\spine_assets_expression_3b90864add2afee7eb614bad845ea033.bundle",
+      "bytes": 636112,
+      "sha256": "B4ED1EFFBEC712E9B4ADDD9B4364C36D5362729B910A34D6852914A012B9A67B",
+      "verifiedUtc": "2026-09-11T02:30:27.3301308Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\spine_assets_summon_8cf08864754a00a239e4aa69cd540f6f.bundle",
+      "bytes": 259866,
+      "sha256": "D59697DF6978C576B12496186141F2B2BE104ED3253C554FE6F9F9291F9D2537",
+      "verifiedUtc": "2026-09-11T02:30:27.3322406Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\spine_assets_treasureboxopen_d08079bc203b55adc0157334ecf44ebb.bundle",
+      "bytes": 1215814,
+      "sha256": "4D81EF10F984AB0514F088F203013CA45D98C5D9A16E3478D7980B966520ED1B",
+      "verifiedUtc": "2026-09-11T02:30:27.3389724Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\spine_assets_upgradercard_6b82b175245f7402bc1a9a302e5e1989.bundle",
+      "bytes": 27843,
+      "sha256": "0236B5CF4417DC6EBA974AC3ABD67D803B192F77014F8487F78A3E7F2E8DBB44",
+      "verifiedUtc": "2026-09-11T02:30:27.3400423Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\spine_assets_upgraderewardspreviewpanel_ed714a2c8663c25bcee3e7c593766662.bundle",
+      "bytes": 57379,
+      "sha256": "C1582D96648FD07931A21F32E777F3644C5C20E1A074FD3366E0330A58F7BE11",
+      "verifiedUtc": "2026-09-11T02:30:27.3415896Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\spine_assets_weeklyclashpanel_40b11238d429f9be1e221452a7b5dfe0.bundle",
+      "bytes": 31177,
+      "sha256": "2D22F4675E2CD7CF4D340766B9E081E60A89311B66E2EEF5EEE9EE44A0951E1C",
+      "verifiedUtc": "2026-09-11T02:30:27.3425755Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\spinebundle_assets_all_bdb4f591cf39b46a3722d9d5e955e624.bundle",
+      "bytes": 5797698,
+      "sha256": "5CA0FA56E92ACE2B2720459DFDD8D94DCF459CFD4A2269340D70D2C8C80FFCBD",
+      "verifiedUtc": "2026-09-11T02:30:27.3702906Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\spritesbundle_assets_all_3a14cc4e248b7792bb96f57eb3ae308b.bundle",
+      "bytes": 7713230,
+      "sha256": "0DAB839446BFD23672281ABFCF210D1A91E17ACAE23905EC904B143CC493C256",
+      "verifiedUtc": "2026-09-11T02:30:27.4070964Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\ui_assets_all_203a422009754cbc3795352f3abf337c.bundle",
+      "bytes": 4157902,
+      "sha256": "87FBDC36B1ADE3BE53E9ECED657878EC7169CA715C7C09D1B9C8FF6ED0F43276",
+      "verifiedUtc": "2026-09-11T02:30:27.4261227Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\aa\\WebGL\\uipackage_assets_all_dce677db473f179827e86e72a1621520.bundle",
+      "bytes": 3430832,
+      "sha256": "0898DDC2A36C6520D0B8A28C02735B0B94F738FE7713AAD3D9BD660D2E39F147",
+      "verifiedUtc": "2026-09-11T02:30:27.4431225Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\WebGL\\ljzs_lt\\ABFiles_c3fdfad4f447f88024a81625325a5647.txt",
+      "bytes": 5189,
+      "sha256": "D176A3A0B121807232FB6CCC0EDA115E43F80266E21E4ED5A18585DBFCD9F5AA",
+      "verifiedUtc": "2026-09-11T02:30:27.4443128Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\WebGL\\ljzs_lt\\ljzs_lt_eff7e52d2eaf4140462661f223c51d7f",
+      "bytes": 2852,
+      "sha256": "BDC59745E7322EE3D166C11F1D13D0A89CD05B0936AFE33C853BA1B5E0F4915A",
+      "verifiedUtc": "2026-09-11T02:30:27.4451398Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\WebGL\\ljzs_lt\\data\\config_b0f5e3dd0a9c4d70113144d682a85db3.unity3d",
+      "bytes": 52669,
+      "sha256": "085862A88950E7962A611B12541D9C8BE73664084A3B7707E81D022C8EE6CD17",
+      "verifiedUtc": "2026-09-11T02:30:27.4461764Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\StreamingAssets\\WebGL\\ljzs_lt\\ui\\uiroot.prefab_4967075b56d636d9e81dd8bb5c508428.unity3d",
+      "bytes": 5577,
+      "sha256": "A1E1536DC52C7460DD26FB41748BD643AD3EECDEA5D936BBD294345EFE089E64",
+      "verifiedUtc": "2026-09-11T02:30:27.4470488Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usr\\__GAME_FILE_CACHE\\__PATCH_DIR\\patchFuncIndexList.json",
+      "bytes": 9657,
+      "sha256": "9F003212AE8166B574754616BCF9FF856E432E6A278BB459C0EB29E782EA7818",
+      "verifiedUtc": "2026-09-11T02:30:27.4479786Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usrmmkvstorage0\\wx9eed71970378b2ae",
+      "bytes": 4194304,
+      "sha256": "AA122F6DEA171628788212CCC3BC7636A3224F3DD318B9198F5E3792F718AB97",
+      "verifiedUtc": "2026-09-11T02:30:27.4854119Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usrmmkvstorage0\\wx9eed71970378b2ae.crc",
+      "bytes": 4096,
+      "sha256": "DBB567B34780CBFBE9634AF164C4F5830F295010A884EADB5B1D2A4B2A03CC45",
+      "verifiedUtc": "2026-09-11T02:30:27.4874642Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usrmmkvstorage1\\wx9eed71970378b2ae",
+      "bytes": 4096,
+      "sha256": "BF96011DF27EF1902FE6CBEA88B3C0863E4F1E8044F2AFD82F02200F240F8FCC",
+      "verifiedUtc": "2026-09-11T02:30:27.4881509Z"
+    },
+    {
+      "relativePath": "local\\wx9eed71970378b2ae\\usrmmkvstorage1\\wx9eed71970378b2ae.crc",
+      "bytes": 4096,
+      "sha256": "C7B18334EE5772E014BD5B4AF3C76C7FA1CF4AE419DABDB957BCB4061745054F",
+      "verifiedUtc": "2026-09-11T02:30:27.4888421Z"
+    },
+    {
+      "relativePath": "packages\\wx9eed71970378b2ae\\16\\__WITHOUT_MULTI_PLUGINCODE__.wxapkg",
+      "bytes": 1082515,
+      "sha256": "AECD5116B80EAB73CA9ECA61FB8351A41BC83550E03D46678D7C02973042747B",
+      "verifiedUtc": "2026-09-11T02:30:27.5985536Z"
+    },
+    {
+      "relativePath": "packages\\wx9eed71970378b2ae\\16\\_wasmcode_.wxapkg",
+      "bytes": 6788029,
+      "sha256": "13E5D1FA468AE73F09BC2C63F2E4FCA79F68C51EC329D6E99EE03D287EE17BC6",
+      "verifiedUtc": "2026-09-11T02:30:27.6355007Z"
+    },
+    {
+      "relativePath": "packages\\wx9eed71970378b2ae\\16\\_wasmcode1_.wxapkg",
+      "bytes": 7707396,
+      "sha256": "722C0A1586CF52DEE2414E6AD689DF68976C90EDA890C455BFA24F5D9E487310",
+      "verifiedUtc": "2026-09-11T02:30:27.6697288Z"
+    }
+  ],
+  "groups": [
+    "packages\\wx9eed71970378b2ae\\16",
+    "local\\wx9eed71970378b2ae",
+    "icon\\wx9eed71970378b2ae_ee037200596d28604630fd571df98b25.png"
+  ],
+  "packageSelection": "Only local package version directory 16 retained; older directory 13 removed from this archive after verification."
+}
