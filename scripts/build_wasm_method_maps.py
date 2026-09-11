@@ -204,10 +204,6 @@ def main() -> None:
         json.dumps({"element_segments": segment_rows, "checks": validation, "all_ok": all_ok}, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
-    with (args.output_dir / "validation.txt").open("w", encoding="utf-8", newline="\n") as f:
-        for x in validation:
-            f.write(f"{x['rva']}\tfunc[{x['actual_func']}]\t{x['expected_name']}\t{'OK' if x['ok'] else 'FAIL'}\n")
-        f.write(f"ALL_OK={all_ok}\n")
     if not all_ok:
         raise SystemExit("canonical mapping validation failed")
 
