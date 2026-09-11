@@ -9,6 +9,8 @@ on:
       - 'research/archive/2026-09-11/raw/local/**/a23078fc21f9ca79.webgl.data.unityweb.bin'
       - 'research/archive/2026-09-11/manifest.json'
       - 'scripts/rebuild_unified_reverse.sh'
+      - 'scripts/analyze_split_payload.py'
+      - 'scripts/probe_split_brotli.js'
       - 'scripts/unpack_wxapkg.py'
       - 'scripts/build_wasm_method_maps.py'
       - 'scripts/recover_il2cpp_metadata.py'
@@ -46,3 +48,27 @@ jobs:
       - name: Rebuild unified main + split-WASM baseline
         shell: bash
         run: bash scripts/rebuild_unified_reverse.sh
+
+      - name: Probe wasmcode2 archive framing
+        shell: bash
+        run: |
+          set -euo pipefail
+          PAYLOAD='research/archive/2026-09-11/unpacked/_wasmcode2_/wasmcode2/8bb243383eca8b55.webgl.wasm.code.unityweb.wasm.br'
+          OUT='research/archive/2026-09-11/reverse-engineering/modules/wasmcode2'
+          mkdir -p "$OUT"
+          node scripts/probe_split_brotli.js "$PAYLOAD" "$OUT/brotli-framing-probe.json" /tmp/wasmcode2-framing
+          if [ -s /tmp/wasmcode2-framing.decoded.bin ]; then
+            python3 scripts/analyze_split_payload.py /tmp/wasmcode2-framing.decoded.bin "$OUT/decoded-body-analysis.json" \
+              --name wasmcode2-decoded-body --role 'decoded candidate body from custom-prefix Brotli probe' --brotli-status not-tested
+          else
+            rm -f "$OUT/decoded-body-analysis.json"
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$OUT/brotli-framing-probe.json" "$OUT/decoded-body-analysis.json" 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo 'No framing-probe changes to commit.'
+            exit 0
+          fi
+          git commit -m 'research: probe wasmcode2 archive framing'
+          git push origin HEAD:master
