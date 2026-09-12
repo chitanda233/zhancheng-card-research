@@ -1,10 +1,11 @@
-"""Join reviewed bot tables and generate a standalone matching report."""
+"""Join reviewed matching/bot tables and publish two pages with explicit ownership."""
 import base64
 import hashlib
 import html
 import json
+import re
 from io import BytesIO
-from collections import Counter, defaultdict
+from collections import defaultdict
 from pathlib import Path
 
 import markdown
@@ -102,15 +103,19 @@ for cid in used_ids:
     cards[cid]['image'] = 'data:image/webp;base64,' + base64.b64encode(buffer.getvalue()).decode('ascii')
 
 source_info = [{'table': n, 'rows': len(v), 'sha256': hashlib.sha256((ROOT / 'tables' / (n + '.json')).read_bytes()).hexdigest()} for n, v in tables.items()]
-data = {'snapshot': '2026-09-03', 'reverseBaseline': '2026-09-11', 'reviewed': '2026-09-11', 'version': '1.4.15.558-preview',
-        'bots': bots, 'ranks': ranks, 'cards': cards, 'skills': skills, 'artifacts': artifacts,
-        'affixes': affixes, 'tables': {k: v for k, v in tables.items() if k not in ('PvpBotConfig', 'GlobalHeroCardInfoSheet5', 'GlobalCardTalentInfoSheet3')},
-        'counts': {'botRecords': len(bots), 'distinctLoadouts': len(body_groups), 'distinctCardSets': len(deck_groups), 'cardSlots': 688, 'cardTypes': len(used_ids)}, 'sources': source_info}
+data = {
+    'snapshot': '2026-09-03', 'reverseBaseline': '2026-09-11', 'reviewed': '2026-09-11', 'version': '1.4.15.558-preview',
+    'bots': bots, 'ranks': ranks, 'cards': cards, 'skills': skills, 'artifacts': artifacts,
+    'affixes': affixes, 'tables': {k: v for k, v in tables.items() if k not in ('PvpBotConfig', 'GlobalHeroCardInfoSheet5', 'GlobalCardTalentInfoSheet3')},
+    'counts': {'botRecords': len(bots), 'distinctLoadouts': len(body_groups), 'distinctCardSets': len(deck_groups), 'cardSlots': 688, 'cardTypes': len(used_ids)},
+    'sources': source_info,
+}
 
+# Matching is the overview. Detailed bot payload/AI material belongs only to bot.html.
 md = (ROOT / 'scripts/matching_report.md').read_text(encoding='utf-8')
+md = re.sub(r'\n<!--\s*\n## 7\.6 机器人 AI 行为：已恢复的具体动作.*?-->\s*$', '\n', md, flags=re.S)
 ai_rules = (ROOT / 'scripts/bot_ai_rules.md').read_text(encoding='utf-8')
-ai_heading = '## 7.6 机器人 AI 行为：已恢复的具体动作'
-md = md.split(ai_heading, 1)[0] + ai_heading + '\n\n' + ai_rules + '\n\n### 7.7 预设用到的每条神器词缀' + md.split('### 7.7 预设用到的每条神器词缀', 1)[1]
+
 blocks = {}
 blocks['WINDOWS'] = table(['ID', 'MatchingTime', 'PointRange', 'MaxPoint'], [(r['id'], span(r['MatchingTime']), span(r['PointRange']), r['MaxPoint']) for r in tables['PvpMatchingConfig']])
 blocks['RANKS'] = table(['段位 / 分数原区间', 'Time / Prob / Plus / TypeProb', '候选 ID', '条数', '卡牌等级', '装备神器等级'],
@@ -190,7 +195,8 @@ field_rows = [
     ('Talents', '顶层天赋列表；全部为空，不等于每张卡没有 TalentIds'),
     ('WeeklyCycleCardType / DailyBlessId', '活动卡类型与祝福 ID；条件性内容'),
     ('UserLabels', '机器人自身标签与类别等级；不代表真人账户标签'),
-    ('DebugForceNextBarracksCards', '价格到指定卡片的覆盖记录；存在非空样本，执行条件未确认')]
+    ('DebugForceNextBarracksCards', '价格到指定卡片的覆盖记录；存在非空样本，执行条件未确认'),
+]
 blocks['EXPLORER'] = table(['配置组成', '实际含义'], field_rows) + '\n\n<!--BOT_TOOL-->'
 for key, value in blocks.items():
     md = md.replace('<!--' + key + '-->', value)
@@ -199,12 +205,12 @@ summary_rows = []
 for b in bots:
     deck = b['loadout']['Cards']
     summary_rows.append(f'<tr data-id="{b["id"]}"><td><a href="#bot-detail" data-bot="{b["id"]}">{b["id"]} · {esc(b["playerDisplayName"])}</a></td><td>{span([c["Level"] for c in deck])}</td><td>' + '；'.join(f'{esc(cards[c["CardId"]]["name"])} {c["Level"]}级' for c in deck) + '</td></tr>')
-tool = '''<div class="tool" id="bot-tool"><div class="filters"><label>段位候选池<select id="rank-filter"><option value="all">全部预设</option>''' + ''.join(f'<option value="{r["id"]}">{esc(r["Name"])}</option>' for r in ranks) + '''</select></label><label>预设 / 卡牌<input id="bot-search" type="search" placeholder="编号、昵称、卡牌名"></label></div><p id="pool-info" aria-live="polite"></p><div class="scroll bot-list"><table><thead><tr><th>预设</th><th>卡牌等级</th><th>完整卡组</th></tr></thead><tbody id="bot-rows">''' + ''.join(summary_rows) + '''</tbody></table></div><div id="bot-detail"><label>机器人预设<select id="bot-select">''' + ''.join(f'<option value="{b["id"]}">{b["id"]} · {esc(b["playerDisplayName"])}</option>' for b in bots) + '''</select></label><div id="profile" aria-live="polite"></div></div><noscript><p>详细预设见下方完整文字版和 JSON。</p></noscript></div>'''
+tool = '''<div class="tool" id="bot-tool"><div class="filters"><label>段位候选池<select id="rank-filter"><option value="all">全部预设</option>''' + ''.join(f'<option value="{r["id"]}">{esc(r["Name"])}</option>' for r in ranks) + '''</select></label><label>预设 / 卡牌<input id="bot-search" type="search" placeholder="编号、昵称、卡牌名"></label></div><p id="pool-info" aria-live="polite"></p><div class="scroll bot-list"><table><thead><tr><th>预设</th><th>卡牌等级</th><th>完整卡组</th></tr></thead><tbody id="bot-rows">''' + ''.join(summary_rows) + '''</tbody></table></div><div id="bot-detail"><label>机器人预设<select id="bot-select">''' + ''.join(f'<option value="{b["id"]}">{b["id"]} · {esc(b["playerDisplayName"])}</option>' for b in bots) + '''</select></label><div id="profile" aria-live="polite"></div></div><noscript><p>机器人逐卡配置可下载 matching-data.json 复核。</p></noscript></div>'''
 
 md_parser = markdown.Markdown(extensions=['tables', 'fenced_code', 'toc'], extension_configs={'toc': {'permalink': False}})
-body = md_parser.convert(md.replace('<!--BOT_TOOL-->', tool))
+body = md_parser.convert(md)
 body = body.replace('<table>', '<div class="scroll"><table>').replace('</table>', '</table></div>')
-# Make recurring configuration identifiers self-documenting in the rendered report.
+
 tips = {
     'PvpMatchingConfig': ('匹配窗口表', '按排队时间段给出 PointRange 和 MaxPoint；它不保存玩家当前积分。'),
     'MatchingTime': ('等待时间窗', '该行生效的排队时间区间，原始单位按表保留。'),
@@ -222,20 +228,26 @@ tips = {
     'enemyFlipHexSeq': ('训练敌方翻格序列', '训练地图中敌方按顺序执行的六边形坐标字符串。'),
     'enemyFlipIntervals': ('训练翻格间隔', '与坐标序列对应的原始间隔值；是教学脚本，不是 PVP 通用行动间隔。'),
 }
-import re
 for ident, (title, desc) in tips.items():
     pattern = r'<code>' + re.escape(ident) + r'</code>'
     body = re.sub(pattern, f'<span class="idtip" tabindex="0" data-title="{html.escape(title, quote=True)}" data-tip="{html.escape(desc, quote=True)}">{ident}</span>', body)
+
 css = (ROOT / 'scripts/matching_report.css').read_text(encoding='utf-8')
-js = (ROOT / 'scripts/matching_report.js').read_text(encoding='utf-8')
-embedded = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
-page = '<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>占城大师 · 匹配体验与机器人完整配置</title><style>' + css + '</style></head><body><header><a href="../../index.html">占城大师研究资料库</a><span>匹配与机器人 · 2026-09-10 复核</span></header><main id="top"><nav aria-label="章节目录">' + md_parser.toc + '</nav><article>' + body + '</article></main><aside id="tooltip" role="tooltip" hidden><b></b><span></span></aside><div class="floating-actions" aria-label="页面导航"><a href="../../index.html" title="返回研究主页面">⌂<span>主页面</span></a><a href="#top" title="回到页面最上方">↑<span>顶部</span></a></div><script id="matching-data" type="application/json">' + embedded + '</script><script>' + js + '</script></body></html>'
+# Matching overview needs only the generic identifier tooltip, not the 86-bot explorer runtime/data payload.
+tooltip_js = '''
+'use strict';
+const tooltip=document.getElementById('tooltip');let activeTip;
+function placeTip(el){const r=el.getBoundingClientRect();tooltip.querySelector('b').textContent=el.dataset.title||'字段说明';tooltip.querySelector('span').textContent=el.dataset.tip||'';tooltip.hidden=false;const x=Math.max(12,Math.min(r.left,innerWidth-tooltip.offsetWidth-12));const y=Math.max(12,Math.min(r.bottom+8,innerHeight-tooltip.offsetHeight-12));tooltip.style.left=x+'px';tooltip.style.top=y+'px';el.setAttribute('aria-describedby','tooltip');activeTip=el;}
+function hideTip(){if(activeTip)activeTip.removeAttribute('aria-describedby');tooltip.hidden=true;activeTip=null;}
+document.querySelectorAll('[data-tip]').forEach(el=>{el.addEventListener('mouseenter',()=>placeTip(el));el.addEventListener('mouseleave',hideTip);el.addEventListener('focus',()=>placeTip(el));el.addEventListener('blur',hideTip);el.addEventListener('click',()=>placeTip(el));});
+addEventListener('keydown',e=>{if(e.key==='Escape')hideTip();});addEventListener('resize',hideTip);addEventListener('scroll',hideTip,true);
+'''
+page = '<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>占城大师 · 匹配体验与机器人介入规则</title><style>' + css + '</style></head><body><header><a href="../../index.html">占城大师研究资料库</a><span>匹配机制 · 2026-09-11 复核</span></header><main id="top"><nav aria-label="章节目录">' + md_parser.toc + '</nav><article>' + body + '</article></main><aside id="tooltip" role="tooltip" hidden><b></b><span></span></aside><div class="floating-actions" aria-label="页面导航"><a href="../../index.html" title="返回研究主页面">⌂<span>主页面</span></a><a href="#top" title="回到页面最上方">↑<span>顶部</span></a></div><script>' + tooltip_js + '</script></body></html>'
 (OUT / 'index.html').write_text(page, encoding='utf-8')
 
-# A focused companion page keeps the large bot payload explorer readable.
+# Bot page owns all detailed loadout/AI material and the interactive explorer.
 bot_md = (ROOT / 'scripts/bot_report.md').read_text(encoding='utf-8')
-ai_section = ai_rules
-ai_section = ai_section.replace('### 7.6.', '### 6.')
+ai_section = ai_rules.replace('### 7.6.', '### 6.')
 bot_md = bot_md.split('## 6. 机器人 AI 行为', 1)[0] + '## 6. 机器人 AI 行为\n' + ai_section + '\n## 7. 数据来源\n\n<!--SOURCES-->\n\n<!--FUNCTIONS-->\n'
 for key, value in blocks.items():
     bot_md = bot_md.replace('<!--' + key + '-->', value)
@@ -243,16 +255,13 @@ bot_body = md_parser.convert(bot_md.replace('<!--BOT_TOOL-->', tool))
 bot_body = bot_body.replace('<table>', '<div class="scroll"><table>').replace('</table>', '</table></div>')
 for ident, (title, desc) in tips.items():
     bot_body = re.sub(r'<code>' + re.escape(ident) + r'</code>', f'<span class="idtip" tabindex="0" data-title="{html.escape(title, quote=True)}" data-tip="{html.escape(desc, quote=True)}">{ident}</span>', bot_body)
-bot_page = '<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>占城大师 · 机器人配置详表</title><style>' + css + '</style></head><body><header><a href="../../index.html">占城大师研究资料库</a><span>机器人配置 · 2026-09-10 复核</span></header><main id="top"><nav aria-label="章节目录">' + md_parser.toc + '</nav><article>' + bot_body + '</article></main><aside id="tooltip" role="tooltip" hidden><b></b><span></span></aside><div class="floating-actions" aria-label="页面导航"><a href="../../index.html" title="返回研究主页面">⌂<span>主页面</span></a><a href="#top" title="回到页面最上方">↑<span>顶部</span></a></div><script id="matching-data" type="application/json">' + embedded + '</script><script>' + js + '</script></body></html>'
+js = (ROOT / 'scripts/matching_report.js').read_text(encoding='utf-8')
+embedded = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
+bot_page = '<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>占城大师 · 机器人配置详表</title><style>' + css + '</style></head><body><header><a href="../../index.html">占城大师研究资料库</a><span>机器人配置 · 2026-09-11 复核</span></header><main id="top"><nav aria-label="章节目录">' + md_parser.toc + '</nav><article>' + bot_body + '</article></main><aside id="tooltip" role="tooltip" hidden><b></b><span></span></aside><div class="floating-actions" aria-label="页面导航"><a href="../../index.html" title="返回研究主页面">⌂<span>主页面</span></a><a href="#top" title="回到页面最上方">↑<span>顶部</span></a></div><script id="matching-data" type="application/json">' + embedded + '</script><script>' + js + '</script></body></html>'
 (OUT / 'bot.html').write_text(bot_page, encoding='utf-8')
 
-# The downloadable report also contains every original loadout for offline review.
-appendix = ['\n## 附录：86 条预设逐卡清单\n']
-for b in bots:
-    appendix.append(f"### ID {b['id']} · {b['playerDisplayName']}\n")
-    appendix.append(table(['卡 ID', '中文名', '等级', '技能/天赋 ID 与名称'], [(c['CardId'], cards[c['CardId']]['name'], c['Level'], '；'.join(s + ' ' + skills[s]['name'] for s in c['TalentIds']) or '无') for c in b['loadout']['Cards']]))
-    appendix.append('\n```json\n' + json.dumps({k: v for k, v in b['loadout'].items() if k != 'Cards'}, ensure_ascii=False, indent=2) + '\n```\n')
-(OUT / 'report.md').write_text(md.replace('<!--BOT_TOOL-->', '全部逐卡配置见本文末尾附录。') + '\n'.join(appendix), encoding='utf-8')
+# The downloadable matching report is deliberately concise; detailed bot records live in bot.html/matching-data.json.
+(OUT / 'report.md').write_text(md.rstrip() + '\n', encoding='utf-8')
 for card in data['cards'].values():
     card.pop('image', None)
 (OUT / 'matching-data.json').write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
