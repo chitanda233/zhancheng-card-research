@@ -19,7 +19,7 @@ jobs:
         with:
           ref: research/all-sssr-deck-hex
           fetch-depth: 1
-      - name: Extract candidate and fallback functions
+      - name: Extract key fallback functions
         shell: bash
         run: |
           python - <<'PY'
@@ -28,92 +28,59 @@ jobs:
 
           mm = Path('research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv')
           objp = Path('research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz')
-          rows = []
-          by_func = {}
+          rows=[]; by_func={}
           with mm.open(encoding='utf-8', newline='') as f:
               for r in csv.DictReader(f, delimiter='\t'):
                   rows.append(r)
-                  try:
-                      by_func.setdefault(int(r['wasm_func']), []).append(r)
-                  except Exception:
-                      pass
-
-          terms = [
-              'ResolveRandomArchitecture', 'ResolveInitialRarity', 'BuildCellContent',
-              'SelectCardForCellArchitecture', 'SelectCardForHex'
-          ]
-          selected = {}
-          for r in rows:
-              hay = ' '.join(str(r.get(k,'')) for k in ('declaring_type_context','signature','method_name'))
-              if any(t in hay for t in terms):
-                  try: selected[int(r['wasm_func'])] = r
+                  try: by_func.setdefault(int(r['wasm_func']), []).append(r)
                   except Exception: pass
-
-          obj = gzip.open(objp, 'rt', encoding='utf-8', errors='replace').read()
-          starts = [(m.start(), int(m.group(1))) for m in re.finditer(r'(?m)^.*func\[([0-9]+)\].*$', obj)]
-          pos = {fn:i for i,(_,fn) in enumerate(starts)}
+          obj=gzip.open(objp,'rt',encoding='utf-8',errors='replace').read()
+          starts=[(m.start(),int(m.group(1))) for m in re.finditer(r'(?m)^.*func\[([0-9]+)\].*$',obj)]
+          pos={fn:i for i,(_,fn) in enumerate(starts)}
           def body(fn):
-              i=pos[fn]; a=starts[i][0]; b=starts[i+1][0] if i+1<len(starts) else len(obj)
-              return obj[a:b]
+              i=pos[fn];a=starts[i][0];b=starts[i+1][0] if i+1<len(starts) else len(obj);return obj[a:b]
           def desc(fn):
               rs=by_func.get(fn,[])
-              if not rs: return '(no method-map name)'
-              return ' || '.join(f"{r.get('rva_hex','')} {r.get('declaring_type_context','')}.{r.get('signature','')}" for r in rs[:8])
-          def callees(fn):
-              if fn not in pos: return []
-              seen=[]
-              for m in re.finditer(r'\bcall\s+([0-9]+)\b', body(fn)):
-                  c=int(m.group(1))
-                  if c not in seen: seen.append(c)
-              return seen
+              return ' || '.join(f"{r.get('rva_hex','')} {r.get('declaring_type_context','')}.{r.get('signature','')}" for r in rs[:8]) or '(no method-map name)'
+          def annotate(text):
+              def repl(m):
+                  fn=int(m.group(1)); return m.group(0)+'    ;; '+desc(fn)
+              return re.sub(r'(?m)^(.*\bcall\s+([0-9]+)\b.*)$', lambda m: m.group(1)+'    ;; '+desc(int(m.group(2))), text)
+          def callers(target):
+              needle=re.compile(r'\bcall\s+'+str(target)+r'\b')
+              found=[]
+              for i,(a,fn) in enumerate(starts):
+                  b=starts[i+1][0] if i+1<len(starts) else len(obj)
+                  if needle.search(obj[a:b]): found.append(fn)
+              return found
 
-          out=['# All-SSSR deck hex fallback analysis']
-          out += ['', '## selected methods']
-          for fn in sorted(selected): out.append(f'func[{fn}] {desc(fn)}')
-          for fn in sorted(selected):
-              if fn not in pos: continue
-              b=body(fn)
-              out += ['', f'## func[{fn}] {desc(fn)}', '```', b, '```', '', '### direct callees']
-              for c in callees(fn): out.append(f'func[{c}] {desc(c)}')
-          Path('outputs/all-sssr-deck-hex.txt').write_text('\n'.join(out), encoding='utf-8')
-
-          summary=['# Compact all-SSSR deck hex analysis','', '## BattleInitialHexContentGenerator methods containing architecture/rarity/card/loadout/fallback']
-          seen=set()
-          for r in rows:
-              ctx=str(r.get('declaring_type_context',''))
-              sig=str(r.get('signature',''))
-              if 'BattleInitialHexContentGenerator' not in ctx: continue
-              low=sig.lower()
-              if not any(x in low for x in ('architecture','rarity','card','loadout','candidate','fallback','rare','goldmine')): continue
-              try: fn=int(r['wasm_func'])
-              except Exception: continue
-              key=(fn,sig)
-              if key in seen: continue
-              seen.add(key)
-              summary.append(f'func[{fn}] {r.get("rva_hex","")} {ctx}.{sig}')
-
-          roots=[]
+          names=['ResolveRandomArchitecture','ResolveArchitecture','ShouldAllowPackageCardFallback','CountCardsByRare','IsInitialCardCandidateAllowedByRare','AddForcedBarracksCandidates','CollectLegendaryCandidates']
+          name_to_funcs={n:[] for n in names}
           for r in rows:
               sig=str(r.get('signature',''))
-              if any(t in sig for t in ('ResolveRandomArchitecture','BuildCellContent','ResolveInitialRarity')):
-                  try: roots.append(int(r['wasm_func']))
-                  except Exception: pass
-          roots=list(dict.fromkeys(roots))
-          for root in roots:
-              summary += ['', f'## call graph root func[{root}] {desc(root)}']
-              for c in callees(root):
-                  summary.append(f'  -> func[{c}] {desc(c)}')
-                  named = [x for x in callees(c) if by_func.get(x)]
-                  for d in named[:80]: summary.append(f'       -> func[{d}] {desc(d)}')
+              for n in names:
+                  if n in sig:
+                      try:
+                          fn=int(r['wasm_func'])
+                          if fn not in name_to_funcs[n]: name_to_funcs[n].append(fn)
+                      except Exception: pass
 
-          Path('outputs/all-sssr-deck-hex-summary.txt').write_text('\n'.join(summary), encoding='utf-8')
-          print('\n'.join(summary[:220]))
+          out=['# Key SSSR fallback functions']
+          for n in names:
+              out += ['',f'## {n}']
+              for fn in name_to_funcs[n]:
+                  out.append(f'func[{fn}] {desc(fn)}')
+                  out.append('callers: '+', '.join(f'func[{x}] {desc(x)}' for x in callers(fn)))
+                  if fn in pos:
+                      out += ['```',annotate(body(fn)),'```']
+          Path('outputs/all-sssr-deck-keyfuncs.txt').write_text('\n'.join(out),encoding='utf-8')
+          print('\n'.join(out[:200]))
           PY
       - name: Commit analysis output
         shell: bash
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add outputs/all-sssr-deck-hex.txt outputs/all-sssr-deck-hex-summary.txt
-          git commit -m 'research: capture all-SSSR deck hex fallback evidence'
+          git add outputs/all-sssr-deck-keyfuncs.txt
+          git commit -m 'research: capture key all-SSSR fallback functions'
           git push origin HEAD:research/all-sssr-deck-hex
