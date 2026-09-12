@@ -19,80 +19,55 @@ jobs:
         with:
           ref: research/occupied-hex-deep-dive
           fetch-depth: 1
-      - name: Extract compact occupied hex evidence
+      - name: Extract occupied hex decision chain
         shell: bash
         run: |
           python - <<'PY'
           from pathlib import Path
           import csv, gzip, re
-
           root=Path('.')
           mm=root/'research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv'
-          wat_gz=root/'research/archive/2026-09-11/reverse-engineering/canonical/module.wat.gz'
           obj_gz=root/'research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz'
-          dump=root/'research/archive/2026-09-11/reverse-engineering/csharp/dump.cs'
-
           by_rva={}; by_func={}
           with mm.open(encoding='utf-8',newline='') as f:
               for r in csv.DictReader(f,delimiter='\t'):
-                  by_rva[r['rva_hex'].upper()]=r; by_func.setdefault(int(r['wasm_func']),[]).append(r)
-
-          rvas=['0x42EE']+[f'0x{v:X}' for v in range(0xF368,0xF374)]+['0xF495']
-          targets=[by_rva[x.upper()] for x in rvas if x.upper() in by_rva]
-          funcs=[int(r['wasm_func']) for r in targets]
-          exact={int(r['wasm_func']):r for r in targets}
-
-          wat=gzip.open(wat_gz,'rt',encoding='utf-8',errors='replace').read()
-          starts=[(m.start(),int(m.group(1))) for m in re.finditer(r'(?m)^\s*\(func \(;([0-9]+);\)',wat)]
-          pos={fn:i for i,(_,fn) in enumerate(starts)}
-          def wat_body(fn):
-              i=pos.get(fn)
-              if i is None: return '(function body not present as standalone WAT func; likely shared/aliased table target)'
-              a=starts[i][0]; b=starts[i+1][0] if i+1<len(starts) else len(wat); return wat[a:b]
-
+                  by_rva[r['rva_hex'].upper()]=r
+                  by_func.setdefault(int(r['wasm_func']),[]).append(r)
+          wanted=['0x42EE']+[f'0x{v:X}' for v in range(0xF368,0xF384)]+['0xF495']
+          targets=[by_rva[x.upper()] for x in wanted if x.upper() in by_rva]
           obj=gzip.open(obj_gz,'rt',encoding='utf-8',errors='replace').read()
-          ostarts=[(m.start(),int(m.group(1))) for m in re.finditer(r'(?m)^.*func\[([0-9]+)\].*$',obj)]
-          opos={fn:i for i,(_,fn) in enumerate(ostarts)}
-          def obj_body(fn):
-              i=opos.get(fn)
-              if i is None: return '(no standalone objdump body found)'
-              a=ostarts[i][0]; b=ostarts[i+1][0] if i+1<len(ostarts) else len(obj); return obj[a:b]
-
-          def sig(fn):
-              r=exact.get(fn); return f"{r['rva_hex']} {r['signature']}" if r else ''
-
-          lines=dump.read_text(encoding='utf-8',errors='replace').splitlines()
-          def decl(needle):
-              hits=[i for i,l in enumerate(lines) if needle in l and ('struct ' in l or 'enum ' in l or 'class ' in l)]
-              if not hits: return '(not found)'
-              i=hits[-1] if 'BattleHexCellState' not in needle else hits[0]
-              return '\n'.join(lines[max(0,i-4):min(len(lines),i+75)])
-
-          out=['# Occupied hex compact evidence','','## Exact method map']
-          out += [f"{r['rva_hex']} -> func[{r['wasm_func']}] :: {r['signature']}" for r in targets]
-          out += ['','## Relevant declarations','', '### CapturedHiddenHexCardCandidate',decl('BattleSimulation.CapturedHiddenHexCardCandidate'),'', '### CapturedHiddenHexCandidateSlice',decl('BattleSimulation.CapturedHiddenHexCandidateSlice'),'', '### CapturedHiddenHexCandidateCacheKind',decl('BattleSimulation.CapturedHiddenHexCandidateCacheKind'),'', '### BattleHexCellState',decl('BattleHexCellState // TypeDefIndex')]
-
-          out += ['','## Function instruction summaries']
-          for fn in funcs:
-              wb=wat_body(fn)
-              call_lines=[ln.strip() for ln in wb.splitlines() if 'call' in ln]
-              mem_lines=[ln.strip() for ln in wb.splitlines() if any(k in ln for k in ('i32.load8','i32.store8','i32.load offset=','i32.store offset=','i64.load','i64.store'))]
-              consts=[ln.strip() for ln in wb.splitlines() if re.search(r'\bi32\.const\b|\bi64\.const\b',ln)]
-              out += ['',f'### func[{fn}] {sig(fn)}','CALLS:']+call_lines[:160]+['MEMORY:']+mem_lines[:200]+['CONSTS:']+consts[:200]
-
-          core=[int(by_rva[x.upper()]['wasm_func']) for x in ['0xF368','0xF369','0xF36A','0xF371','0xF495'] if x.upper() in by_rva]
-          out += ['','## Full WAT bodies for core path']
-          for fn in core: out += ['',f'### func[{fn}] {sig(fn)}',wat_body(fn)]
-          out += ['','## Objdump bodies for core path']
-          for fn in core: out += ['',f'### func[{fn}] {sig(fn)}',obj_body(fn)]
-
-          p=Path('outputs/occupied-hex-core.txt'); p.write_text('\n'.join(out),encoding='utf-8'); print('bytes',p.stat().st_size)
+          starts=[(m.start(),int(m.group(1))) for m in re.finditer(r'(?m)^.*func\[([0-9]+)\].*$',obj)]
+          pos={fn:i for i,(_,fn) in enumerate(starts)}
+          def body(fn):
+              i=pos.get(fn)
+              if i is None:return ''
+              a=starts[i][0];b=starts[i+1][0] if i+1<len(starts) else len(obj);return obj[a:b]
+          def desc(fn):
+              rr=by_func.get(fn,[])
+              return ' || '.join(f"{r['rva_hex']} {r['declaring_type_context']}.{r['signature']}" for r in rr[:8])
+          out=['# Occupied hex decision chain','','## Methods']
+          for r in targets: out.append(f"{r['rva_hex']} -> func[{r['wasm_func']}] :: {r['signature']}")
+          out+=['','## Annotated calls']
+          for r in targets:
+              fn=int(r['wasm_func']); b=body(fn)
+              out += ['',f"### {r['rva_hex']} func[{fn}] {r['signature']}"]
+              for line in b.splitlines():
+                  m=re.search(r'\bcall\s+(\d+)',line)
+                  if m:
+                      cal=int(m.group(1)); out.append(line.strip()+'  =>  '+desc(cal))
+          core_rvas=['0x42EE','0xF368','0xF369','0xF36A','0xF377','0xF378','0xF379','0xF37A','0xF37B','0xF37C','0xF37D','0xF37E','0xF37F','0xF380','0xF381','0xF382','0xF383','0xF495']
+          out+=['','## Full objdump core bodies']
+          for rv in core_rvas:
+              r=by_rva.get(rv.upper())
+              if not r: continue
+              fn=int(r['wasm_func']); out += ['',f"### {rv} func[{fn}] {r['signature']}",body(fn)]
+          p=Path('outputs/occupied-hex-chain.txt');p.write_text('\n'.join(out),encoding='utf-8');print(p.stat().st_size)
           PY
       - name: Commit analysis output
         shell: bash
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add outputs/occupied-hex-core.txt
-          git commit -m 'research: extract compact occupied hex evidence'
+          git add outputs/occupied-hex-chain.txt
+          git commit -m 'research: extract occupied hex decision chain'
           git push origin HEAD:research/occupied-hex-deep-dive
