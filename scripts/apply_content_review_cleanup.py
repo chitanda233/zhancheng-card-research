@@ -132,12 +132,6 @@ text = replace_once(
     "账号标签本身如何触发、清除、扣次以及进入匹配载荷，统一由[匹配与机器人专题](../matching/index.html)维护。本页只负责这些状态进入地块生成后如何改变品质权重与一次性消费状态；不能由地块修正反推出服务端一定按付费、连胜或连败选择某个 Bot。",
     "hex/matching ownership",
 )
-text = replace_once(
-    text,
-    "每个竞技场各有矩形、桥形、圆形3个资源引用，共20×3=60。",
-    "这里统计的是 `GlobalArenaInfo` 的**客户端经典资源引用**：每个竞技场各有矩形、桥形、圆形3个，共20×3=60；它不是 `PvpMapConfig` 的经典条目数。后者在5.3按赛季PVP候选池单独统计，当前经典三图只出现在层级5～15，即11×3=33条。",
-    "map-count scope",
-)
 write_if_changed(path, original, text)
 
 print("remaining content-review migration applied")
