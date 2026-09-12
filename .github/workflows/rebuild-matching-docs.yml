@@ -24,6 +24,8 @@ on:
       - 'scripts/build_matching_report.py'
       - 'scripts/hex_random_report.md'
       - 'scripts/build_hex_random_report.py'
+      - 'scripts/hex_coordinates_report.md'
+      - 'scripts/build_hex_coordinates_report.py'
       - 'scripts/build_public_site.py'
       - 'scripts/audit_current_baseline.py'
       - 'outputs/20260903/**'
@@ -85,6 +87,9 @@ jobs:
       - name: Rebuild hex randomness report
         run: python scripts/build_hex_random_report.py
 
+      - name: Rebuild hex coordinate concepts
+        run: python scripts/build_hex_coordinates_report.py
+
       - name: Rebuild public docs
         run: python scripts/build_public_site.py
 
@@ -110,7 +115,9 @@ jobs:
             docs/reports/chests/index.html \
             docs/reports/matching/index.html \
             docs/reports/matching/bot.html \
-            docs/reports/hex-random/index.html; do test -s "$f"; done
+            docs/reports/hex-random/index.html \
+            docs/reports/hex-coordinates/index.html \
+            docs/reports/hex-coordinates/report.md; do test -s "$f"; done
           grep -q '逆向基准 2026-09-11' docs/index.html
           grep -q '函数级逆向基准：2026-09-11' docs/reports/battle/report.md
           grep -q '函数级逆向基准：2026-09-11' docs/reports/chests/report.md
@@ -123,6 +130,9 @@ jobs:
           grep -q '精确的 SSSR 权重增量、合并方式、一次性消费状态与生成顺序统一以' docs/reports/matching/report.md
           grep -q '25%到底什么时候发生' docs/reports/hex-random/index.html
           grep -q '地图计数口径' docs/reports/hex-random/report.md
+          grep -q 'Q / R 六边形坐标概念' docs/index.html
+          grep -q 'q + r + s = 0' docs/reports/hex-coordinates/report.md
+          grep -q 'Neighbors 告诉你' docs/reports/hex-coordinates/report.md
           test "$(wc -l < docs/reports/matching/report.md)" -lt 400
           ! grep -q '附录：86 条预设逐卡清单' docs/reports/matching/report.md
           ! grep -q '## 7.6 机器人 AI 行为' docs/reports/matching/report.md
@@ -136,12 +146,12 @@ jobs:
       - name: Commit generated files
         shell: bash
         run: |
-          if git diff --quiet -- README.md scripts outputs/system outputs/new-player-journey outputs/chests outputs/battle-rules outputs/matching outputs/hex-random outputs/current-docs-audit.json docs; then
+          if git diff --quiet -- README.md scripts outputs/system outputs/new-player-journey outputs/chests outputs/battle-rules outputs/matching outputs/hex-random outputs/hex-coordinates outputs/current-docs-audit.json docs; then
             echo 'No generated changes.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add README.md scripts outputs/system outputs/new-player-journey outputs/chests outputs/battle-rules outputs/matching outputs/hex-random outputs/current-docs-audit.json docs
+          git add README.md scripts outputs/system outputs/new-player-journey outputs/chests outputs/battle-rules outputs/matching outputs/hex-random outputs/hex-coordinates outputs/current-docs-audit.json docs
           git commit -m 'docs: refresh reports from canonical sources'
           git push origin HEAD:master
