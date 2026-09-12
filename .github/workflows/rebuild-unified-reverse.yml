@@ -9,7 +9,6 @@ on:
       - 'research/archive/2026-09-11/raw/local/**/a23078fc21f9ca79.webgl.data.unityweb.bin'
       - 'research/archive/2026-09-11/manifest.json'
       - 'scripts/rebuild_unified_reverse.sh'
-      - 'scripts/strip_reverse_commit_footer.py'
       - 'scripts/build_wasmcode2_package.py'
       - 'scripts/prune_reverse_outputs.py'
       - 'scripts/analyze_split_payload.py'
@@ -55,12 +54,6 @@ jobs:
           wasm-objdump --version
           test "$(dotnet --version)" = '10.0.400'
           dotnet --list-runtimes | grep -q '^Microsoft.NETCore.App 7\.'
-
-      - name: Migrate legacy reverse shell footer
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 scripts/strip_reverse_commit_footer.py
 
       - name: Rebuild raw to canonical baseline
         shell: bash

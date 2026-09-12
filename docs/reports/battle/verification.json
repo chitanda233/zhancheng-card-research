@@ -12,13 +12,13 @@
   "files": [
     {
       "file": "index.html",
-      "bytes": 35222,
-      "sha256": "c983961054f7c849e86c8b5ab10f5e0d492e473a8d104696d5b597f47574b9ce"
+      "bytes": 33957,
+      "sha256": "9f7c35250f54021847b1dc515325f98f349e5f2f893e425ad0155df0fe6a8fbe"
     },
     {
       "file": "report.md",
-      "bytes": 14629,
-      "sha256": "1fbdc055dff1c67e954eac5e0b12991d2a513ffb5b0b4e32526595cc812a9927"
+      "bytes": 13501,
+      "sha256": "a1dec1e0d6da30afb512d1ef283c69db7467a17887adcd037feecdf0bdc85a7b"
     },
     {
       "file": "battle-rules-data.json",

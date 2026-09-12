@@ -14,6 +14,11 @@ def load_json(path: str):
     return json.loads((ROOT / path).read_text(encoding="utf-8"))
 
 
+def table_rows(path: str):
+    value = load_json(path)
+    return value.get("Datas", value) if isinstance(value, dict) else value
+
+
 def require(condition: bool, message: str, errors: list[str]) -> None:
     if not condition:
         errors.append(message)
@@ -123,9 +128,30 @@ def audit_docs(errors: list[str]) -> dict[str, object]:
     for name in ["cards", "journey"]:
         text = (ROOT / f"docs/reports/{name}/report.md").read_text(encoding="utf-8")[:1200]
         require(has_reverse_baseline_date(text), f"{name} report does not distinguish current reverse baseline", errors)
+
     portal = (ROOT / "docs/index.html").read_text(encoding="utf-8")
     require("配置/界面快照 2026-09-03" in portal, "portal missing configuration snapshot label", errors)
     require("逆向基准 2026-09-11" in portal, "portal missing reverse baseline label", errors)
+
+    # Enforce one owner for detailed bot material. The matching overview must stay lightweight.
+    matching_report = (ROOT / "docs/reports/matching/report.md").read_text(encoding="utf-8")
+    matching_html = (ROOT / "docs/reports/matching/index.html").read_text(encoding="utf-8")
+    bot_html = (ROOT / "docs/reports/matching/bot.html").read_text(encoding="utf-8")
+    require("## 附录：86 条预设逐卡清单" not in matching_report, "matching report reintroduced the 86-bot raw appendix", errors)
+    require("## 7.6 机器人 AI 行为" not in matching_report, "matching report reintroduced bot AI detail owned by bot.html", errors)
+    require('id="bot-tool"' not in matching_html, "matching overview reintroduced bot explorer DOM", errors)
+    require('id="matching-data"' not in matching_html, "matching overview reintroduced full bot data payload", errors)
+    require('id="bot-tool"' in bot_html, "bot detail page missing explorer DOM", errors)
+    require('id="matching-data"' in bot_html, "bot detail page missing embedded bot data", errors)
+
+    # Two correct map counts live at different layers and must never be collapsed into one "map total".
+    arenas = table_rows("tables/GlobalArenaInfoSheet2.json")
+    pvp_maps = table_rows("tables/PvpMapConfig.json")
+    classic_resource_refs = len(arenas) * 3
+    pvp_classic_setups = sum(1 for row in pvp_maps if "polygonMap-" not in str(row.get("Map_setupId", "")))
+    require(classic_resource_refs == 60, f"classic resource reference count drift: {classic_resource_refs} != 60", errors)
+    require(pvp_classic_setups == 33, f"PvpMapConfig classic setup count drift: {pvp_classic_setups} != 33", errors)
+
     json_checks = [
         ("docs/reports/battle/battle-rules-data.json", "reverseBaseline"),
         ("docs/reports/chests/chests-data.json", "reverseBaseline"),
@@ -142,6 +168,11 @@ def audit_docs(errors: list[str]) -> dict[str, object]:
         "reverse_baseline": "2026-09-11",
         "config_snapshot": "2026-09-03",
         "historical_snapshot": historical,
+        "matching_ownership": {"overview": "matching", "bot_details": "matching/bot.html + matching-data.json"},
+        "map_count_scopes": {
+            "GlobalArenaInfoSheet2_classic_resource_references": classic_resource_refs,
+            "PvpMapConfig_classic_candidate_setups": pvp_classic_setups,
+        },
     }
 
 

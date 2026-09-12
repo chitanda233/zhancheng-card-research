@@ -19,6 +19,14 @@
       "baseline": "outputs/new-player-journey/originals-baseline.json",
       "frozen_root": "outputs/20260903",
       "checked_files": 6
+    },
+    "matching_ownership": {
+      "overview": "matching",
+      "bot_details": "matching/bot.html + matching-data.json"
+    },
+    "map_count_scopes": {
+      "GlobalArenaInfoSheet2_classic_resource_references": 60,
+      "PvpMapConfig_classic_candidate_setups": 33
     }
   },
   "ok": true
