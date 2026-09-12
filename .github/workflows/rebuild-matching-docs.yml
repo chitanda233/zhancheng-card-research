@@ -5,7 +5,6 @@ on:
   push:
     branches:
       - master
-      - cleanup/content-review-final
     paths:
       - 'README.md'
       - 'scripts/systems_report_template.md'
