@@ -2,6 +2,11 @@ name: Rebuild research docs
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows:
+      - Rebuild unified reverse baseline
+    types:
+      - completed
   push:
     branches:
       - master
@@ -31,17 +36,23 @@ on:
 permissions:
   contents: write
 
+# Serialize every workflow that can write generated research files to master.
 concurrency:
-  group: rebuild-research-docs
-  cancel-in-progress: true
+  group: research-pipeline-master
+  cancel-in-progress: false
 
 jobs:
   rebuild:
-    if: github.actor != 'github-actions[bot]'
+    if: >-
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') ||
+      (github.event_name != 'workflow_run' && github.actor != 'github-actions[bot]')
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout latest master
         uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 1
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -133,4 +144,4 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add README.md scripts outputs/system outputs/new-player-journey outputs/chests outputs/battle-rules outputs/matching outputs/hex-random outputs/current-docs-audit.json docs
           git commit -m 'docs: refresh reports from canonical sources'
-          git push
+          git push origin HEAD:master
