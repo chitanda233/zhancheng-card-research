@@ -26,18 +26,16 @@ jobs:
           from pathlib import Path
           import csv, gzip, re
 
-          root = Path('.')
-          mm = root/'research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv'
-          wat_gz = root/'research/archive/2026-09-11/reverse-engineering/canonical/module.wat.gz'
-          obj_gz = root/'research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz'
-          dump = root/'research/archive/2026-09-11/reverse-engineering/csharp/dump.cs'
+          root=Path('.')
+          mm=root/'research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv'
+          wat_gz=root/'research/archive/2026-09-11/reverse-engineering/canonical/module.wat.gz'
+          obj_gz=root/'research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz'
+          dump=root/'research/archive/2026-09-11/reverse-engineering/csharp/dump.cs'
 
-          rows=[]
-          by_rva={}
-          by_func={}
-          with mm.open(encoding='utf-8', newline='') as f:
-              for r in csv.DictReader(f, delimiter='\t'):
-                  rows.append(r); by_rva[r['rva_hex'].upper()]=r; by_func.setdefault(int(r['wasm_func']),[]).append(r)
+          by_rva={}; by_func={}
+          with mm.open(encoding='utf-8',newline='') as f:
+              for r in csv.DictReader(f,delimiter='\t'):
+                  by_rva[r['rva_hex'].upper()]=r; by_func.setdefault(int(r['wasm_func']),[]).append(r)
 
           rvas=['0x42EE']+[f'0x{v:X}' for v in range(0xF368,0xF374)]+['0xF495']
           targets=[by_rva[x.upper()] for x in rvas if x.upper() in by_rva]
@@ -48,52 +46,47 @@ jobs:
           starts=[(m.start(),int(m.group(1))) for m in re.finditer(r'(?m)^\s*\(func \(;([0-9]+);\)',wat)]
           pos={fn:i for i,(_,fn) in enumerate(starts)}
           def wat_body(fn):
-              i=pos[fn]; a=starts[i][0]; b=starts[i+1][0] if i+1<len(starts) else len(wat); return wat[a:b]
+              i=pos.get(fn)
+              if i is None: return '(function body not present as standalone WAT func; likely shared/aliased table target)'
+              a=starts[i][0]; b=starts[i+1][0] if i+1<len(starts) else len(wat); return wat[a:b]
 
           obj=gzip.open(obj_gz,'rt',encoding='utf-8',errors='replace').read()
-          # objdump function headers look like func[123]:
           ostarts=[(m.start(),int(m.group(1))) for m in re.finditer(r'(?m)^.*func\[([0-9]+)\].*$',obj)]
           opos={fn:i for i,(_,fn) in enumerate(ostarts)}
           def obj_body(fn):
               i=opos.get(fn)
-              if i is None: return ''
+              if i is None: return '(no standalone objdump body found)'
               a=ostarts[i][0]; b=ostarts[i+1][0] if i+1<len(ostarts) else len(obj); return obj[a:b]
 
-          def target_sig(fn):
-              r=exact.get(fn)
-              return f"{r['rva_hex']} {r['signature']}" if r else ''
+          def sig(fn):
+              r=exact.get(fn); return f"{r['rva_hex']} {r['signature']}" if r else ''
 
           lines=dump.read_text(encoding='utf-8',errors='replace').splitlines()
-          def type_block(needle):
+          def decl(needle):
               hits=[i for i,l in enumerate(lines) if needle in l and ('struct ' in l or 'enum ' in l or 'class ' in l)]
               if not hits: return '(not found)'
               i=hits[-1] if 'BattleHexCellState' not in needle else hits[0]
-              return '\n'.join(lines[max(0,i-4):min(len(lines),i+70)])
+              return '\n'.join(lines[max(0,i-4):min(len(lines),i+75)])
 
-          out=['# Occupied hex compact evidence','', '## Exact method map']
-          for r in targets: out.append(f"{r['rva_hex']} -> func[{r['wasm_func']}] :: {r['signature']}")
+          out=['# Occupied hex compact evidence','','## Exact method map']
+          out += [f"{r['rva_hex']} -> func[{r['wasm_func']}] :: {r['signature']}" for r in targets]
+          out += ['','## Relevant declarations','', '### CapturedHiddenHexCardCandidate',decl('BattleSimulation.CapturedHiddenHexCardCandidate'),'', '### CapturedHiddenHexCandidateSlice',decl('BattleSimulation.CapturedHiddenHexCandidateSlice'),'', '### CapturedHiddenHexCandidateCacheKind',decl('BattleSimulation.CapturedHiddenHexCandidateCacheKind'),'', '### BattleHexCellState',decl('BattleHexCellState // TypeDefIndex')]
 
-          out += ['', '## Relevant declarations', '', '### CapturedHiddenHexCardCandidate', type_block('BattleSimulation.CapturedHiddenHexCardCandidate'), '', '### CapturedHiddenHexCandidateSlice', type_block('BattleSimulation.CapturedHiddenHexCandidateSlice'), '', '### CapturedHiddenHexCandidateCacheKind', type_block('BattleSimulation.CapturedHiddenHexCandidateCacheKind'), '', '### BattleHexCellState', type_block('BattleHexCellState // TypeDefIndex')]
-
-          out += ['', '## Function instruction summaries']
+          out += ['','## Function instruction summaries']
           for fn in funcs:
               wb=wat_body(fn)
               call_lines=[ln.strip() for ln in wb.splitlines() if 'call' in ln]
               mem_lines=[ln.strip() for ln in wb.splitlines() if any(k in ln for k in ('i32.load8','i32.store8','i32.load offset=','i32.store offset=','i64.load','i64.store'))]
               consts=[ln.strip() for ln in wb.splitlines() if re.search(r'\bi32\.const\b|\bi64\.const\b',ln)]
-              out += ['', f'### func[{fn}] {target_sig(fn)}', 'CALLS:'] + call_lines[:120] + ['MEMORY:'] + mem_lines[:160] + ['CONSTS:'] + consts[:160]
+              out += ['',f'### func[{fn}] {sig(fn)}','CALLS:']+call_lines[:160]+['MEMORY:']+mem_lines[:200]+['CONSTS:']+consts[:200]
 
-          out += ['', '## Full WAT bodies for core path']
-          core=[int(by_rva[x.upper()]['wasm_func']) for x in ['0x42EE','0xF368','0xF369','0xF36A','0xF371','0xF495']]
-          for fn in core:
-              out += ['', f'### func[{fn}] {target_sig(fn)}', wat_body(fn)]
+          core=[int(by_rva[x.upper()]['wasm_func']) for x in ['0xF368','0xF369','0xF36A','0xF371','0xF495'] if x.upper() in by_rva]
+          out += ['','## Full WAT bodies for core path']
+          for fn in core: out += ['',f'### func[{fn}] {sig(fn)}',wat_body(fn)]
+          out += ['','## Objdump bodies for core path']
+          for fn in core: out += ['',f'### func[{fn}] {sig(fn)}',obj_body(fn)]
 
-          out += ['', '## Objdump bodies for core path']
-          for fn in core:
-              out += ['', f'### func[{fn}] {target_sig(fn)}', obj_body(fn)]
-
-          p=Path('outputs/occupied-hex-core.txt'); p.write_text('\n'.join(out),encoding='utf-8')
-          print('bytes',p.stat().st_size)
+          p=Path('outputs/occupied-hex-core.txt'); p.write_text('\n'.join(out),encoding='utf-8'); print('bytes',p.stat().st_size)
           PY
       - name: Commit analysis output
         shell: bash
