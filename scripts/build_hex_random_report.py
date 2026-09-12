@@ -10,15 +10,19 @@ OUT = ROOT / 'outputs/hex-random'
 OUT.mkdir(parents=True, exist_ok=True)
 md = (ROOT / 'scripts/hex_random_report.md').read_text(encoding='utf8')
 
+
 def load_table(name):
     data = json.loads((ROOT / 'tables' / f'{name}.json').read_text(encoding='utf-8-sig'))
     return data.get('Datas', data) if isinstance(data, dict) else data
 
+
 def cell(value):
     return html.escape(str(value if value not in (None, '') else '—'))
 
+
 def explained(value, description):
     return (value, description)
+
 
 def template_table(headers, rows, label, open_by_default=False):
     head = ''.join(f'<th>{cell(x)}</th>' for x in headers)
@@ -30,6 +34,7 @@ def template_table(headers, rows, label, open_by_default=False):
     body = ''.join('<tr class="template-row">' + ''.join(td(x) for x in row) + '</tr>' for row in rows)
     opened = ' open' if open_by_default else ''
     return f'<details class="template-block"{opened}><summary>{cell(label)} · {len(rows)}条</summary><div class="scroll"><table><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div></details>'
+
 
 arenas = load_table('GlobalArenaInfoSheet2')
 polygons = load_table('GlobalPolygonArenaInfoSheet2')
@@ -66,6 +71,20 @@ training_rows = []
 for sheet, values in (('Sheet1', training_1), ('Sheet2', training_2)):
     for row in values:
         training_rows.append((sheet, explained(row['id'], f'GlobalTrainingMapInfo{sheet}中的训练模板ID；该记录可包含固定格子和敌方脚本。'), row['mapShape'], row['mapSize'], len([x for x in row.get('hexConfigs','').split(';') if x]), row['playerInitialCoin'], row['enemyInitialCoin'], row.get('enemyFlipHexSeq','') or '—', row.get('enemyFlipIntervals','') or '—'))
+
+# These are two different layers, not competing answers to one "map count" question.
+classic_resource_refs = len(classic)
+pvp_classic_setups = sum(1 for row in pvp_maps if 'polygonMap-' not in str(row.get('Map_setupId', '')))
+assert classic_resource_refs == 60, classic_resource_refs
+assert pvp_classic_setups == 33, pvp_classic_setups
+map_count_note = (
+    f"**地图计数口径：** `GlobalArenaInfoSheet2` 的20个普通竞技场各保留矩形、桥形、圆形3个经典资源引用，"
+    f"所以这里能列出 **{classic_resource_refs} 条经典资源引用**；`PvpMapConfig` 当前真正列入赛季PVP候选池的经典setup则是 "
+    f"**{pvp_classic_setups} 条**。前者是竞技场资源层，后者是PVP候选setup层，不能互相当成同一个‘地图总数’。"
+)
+anchor = '普通竞技场在经典三形与多边形之间的上游最终分流仍未完整恢复。'
+assert anchor in md
+md = md.replace(anchor, map_count_note + '\n\n' + anchor, 1)
 
 md = md.replace('<!--CLASSIC_TEMPLATE_ROWS-->', template_table(
     ['竞技场', '配置ID', '形状', '尺寸', '双方主城', '地面Prefab', '该竞技场排除点记录'], classic, '普通竞技场经典资源引用'))
@@ -104,6 +123,7 @@ tips = {
 }
 for token, description in tips.items():
     body = body.replace('<code>'+token+'</code>', '<code class="idtip" tabindex="0" data-tip="'+html.escape(description, quote=True)+'">'+token+'</code>')
+
 # Reuse the established report design, not chest-page JavaScript or data.
 chest = (ROOT / 'outputs/chests/index.html').read_text(encoding='utf8')
 css = re.search(r'<style>(.*?)</style>', chest, re.S).group(1)
@@ -123,4 +143,4 @@ templateSearch.addEventListener('input',filterTemplates);filterTemplates();
 page = f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="占城大师地图模板选择、开局逐格生成、点击翻格覆盖、随机控制和保护机制的代码复核"><title>占城大师 · 地图与地块生成规则</title><style>{css}</style></head><body><header><div><div class="eyebrow">HEX RANDOMNESS · CODE AUDIT</div><h1>地图与地块生成规则</h1><p>按一局真实发生的顺序，说明地图、每个格子的内容与点击后的最终结果怎样确定。</p><div class="chips"><span>387条模板记录</span><span>9级生成优先级</span><span>4种地块档位</span><span>点击后覆盖规则</span></div><div class="flow" aria-label="生成流程"><span>选择地图模板</span><span>→ 分配固定格</span><span>→ 抽地块档位</span><span>→ 抽内部稀有度</span><span>→ 选择具体建筑</span><span>→ 点击后覆盖</span></div></div></header><main><nav aria-label="章节目录">{renderer.toc}</nav><article>{body}</article></main><a class="back" href="../../index.html">← 研究首页</a><aside id="tooltip" role="tooltip" hidden></aside><script>{js}</script></body></html>'''
 (OUT / 'index.html').write_text(page, encoding='utf8')
 (OUT / 'report.md').write_text(md, encoding='utf8')
-print(json.dumps({'page':'hex-random', 'templates':len(classic)+len(polygon_rows)+len(pvp_rows)+len(training_rows), 'output':str(OUT)}, ensure_ascii=False))
+print(json.dumps({'page':'hex-random', 'templates':len(classic)+len(polygon_rows)+len(pvp_rows)+len(training_rows), 'classicResourceRefs':classic_resource_refs, 'pvpClassicSetups':pvp_classic_setups, 'output':str(OUT)}, ensure_ascii=False))
