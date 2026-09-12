@@ -9,6 +9,7 @@ on:
       - 'README.md'
       - 'scripts/reconcile_current_baseline.py'
       - 'scripts/consolidate_battle_hex_boundary.py'
+      - 'scripts/apply_content_review_cleanup.py'
       - 'scripts/systems_report_template.md'
       - 'scripts/build_systems_report.py'
       - 'scripts/build_battle_rules_report.py'
@@ -61,6 +62,9 @@ jobs:
 
       - name: Consolidate battle and hex ownership
         run: python scripts/consolidate_battle_hex_boundary.py
+
+      - name: Apply content review cleanup
+        run: python scripts/apply_content_review_cleanup.py
 
       - name: Rebuild journey evidence and report
         run: |
@@ -115,10 +119,18 @@ jobs:
           grep -q '函数级逆向基准：2026-09-11' docs/reports/matching/report.md
           grep -q '当前函数级逆向基准：2026-09-11' docs/reports/cards/report.md
           grep -q '当前函数级逆向基准：2026-09-11' docs/reports/journey/report.md
-          grep -q '目前没有证据表明周围格在“刚显现”那一刻重新掷一次25%' docs/reports/system/report.md
+          grep -q '本页不再维护第二份四档概率表' docs/reports/system/report.md
           grep -q '地图与翻格：摘要与专题入口' docs/reports/battle/report.md
-          grep -q '并共用该玩家一个局内消费位' docs/reports/matching/report.md
+          grep -q '精确的 SSSR 权重增量、合并方式、一次性消费状态与生成顺序统一以' docs/reports/matching/report.md
           grep -q '25%到底什么时候发生' docs/reports/hex-random/index.html
+          grep -q '11×3=33条' docs/reports/hex-random/report.md
+          test "$(wc -l < docs/reports/matching/report.md)" -lt 400
+          ! grep -q '附录：86 条预设逐卡清单' docs/reports/matching/report.md
+          ! grep -q '## 7.6 机器人 AI 行为' docs/reports/matching/report.md
+          ! grep -q 'id="matching-data"' docs/reports/matching/index.html
+          ! grep -q 'id="bot-tool"' docs/reports/matching/index.html
+          grep -q 'id="matching-data"' docs/reports/matching/bot.html
+          grep -q 'id="bot-tool"' docs/reports/matching/bot.html
           ! grep -R -q \
             --exclude='audit_current_baseline.py' \
             --exclude='reconcile_current_baseline.py' \
@@ -138,5 +150,5 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add README.md scripts outputs/system outputs/new-player-journey outputs/chests outputs/battle-rules outputs/matching outputs/hex-random outputs/current-docs-audit.json docs
-          git commit -m 'docs: refresh all reports against current reverse baseline'
+          git commit -m 'docs: apply content review cleanup and refresh reports'
           git push
