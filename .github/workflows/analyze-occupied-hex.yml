@@ -19,55 +19,41 @@ jobs:
         with:
           ref: research/occupied-hex-deep-dive
           fetch-depth: 1
-      - name: Extract occupied hex decision chain
+      - name: Find occupied hex callers
         shell: bash
         run: |
           python - <<'PY'
           from pathlib import Path
-          import csv, gzip, re
-          root=Path('.')
-          mm=root/'research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv'
-          obj_gz=root/'research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz'
-          by_rva={}; by_func={}
+          import csv,gzip,re
+          mm=Path('research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv')
+          objp=Path('research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz')
+          by_func={}
           with mm.open(encoding='utf-8',newline='') as f:
-              for r in csv.DictReader(f,delimiter='\t'):
-                  by_rva[r['rva_hex'].upper()]=r
-                  by_func.setdefault(int(r['wasm_func']),[]).append(r)
-          wanted=['0x42EE']+[f'0x{v:X}' for v in range(0xF368,0xF384)]+['0xF495']
-          targets=[by_rva[x.upper()] for x in wanted if x.upper() in by_rva]
-          obj=gzip.open(obj_gz,'rt',encoding='utf-8',errors='replace').read()
+            for r in csv.DictReader(f,delimiter='\t'):
+              by_func.setdefault(int(r['wasm_func']),[]).append(r)
+          obj=gzip.open(objp,'rt',encoding='utf-8',errors='replace').read()
           starts=[(m.start(),int(m.group(1))) for m in re.finditer(r'(?m)^.*func\[([0-9]+)\].*$',obj)]
-          pos={fn:i for i,(_,fn) in enumerate(starts)}
-          def body(fn):
-              i=pos.get(fn)
-              if i is None:return ''
-              a=starts[i][0];b=starts[i+1][0] if i+1<len(starts) else len(obj);return obj[a:b]
           def desc(fn):
-              rr=by_func.get(fn,[])
-              return ' || '.join(f"{r['rva_hex']} {r['declaring_type_context']}.{r['signature']}" for r in rr[:8])
-          out=['# Occupied hex decision chain','','## Methods']
-          for r in targets: out.append(f"{r['rva_hex']} -> func[{r['wasm_func']}] :: {r['signature']}")
-          out+=['','## Annotated calls']
-          for r in targets:
-              fn=int(r['wasm_func']); b=body(fn)
-              out += ['',f"### {r['rva_hex']} func[{fn}] {r['signature']}"]
-              for line in b.splitlines():
-                  m=re.search(r'\bcall\s+(\d+)',line)
-                  if m:
-                      cal=int(m.group(1)); out.append(line.strip()+'  =>  '+desc(cal))
-          core_rvas=['0x42EE','0xF368','0xF369','0xF36A','0xF377','0xF378','0xF379','0xF37A','0xF37B','0xF37C','0xF37D','0xF37E','0xF37F','0xF380','0xF381','0xF382','0xF383','0xF495']
-          out+=['','## Full objdump core bodies']
-          for rv in core_rvas:
-              r=by_rva.get(rv.upper())
-              if not r: continue
-              fn=int(r['wasm_func']); out += ['',f"### {rv} func[{fn}] {r['signature']}",body(fn)]
-          p=Path('outputs/occupied-hex-chain.txt');p.write_text('\n'.join(out),encoding='utf-8');print(p.stat().st_size)
+            return ' || '.join(f"{r['rva_hex']} {r['declaring_type_context']}.{r['signature']}" for r in by_func.get(fn,[])[:10])
+          targets=[25323,43533,25286,25409]
+          out=['# Occupied hex callers']
+          for target in targets:
+            out += ['',f'## callers of func[{target}] {desc(target)}']
+            pat=re.compile(r'\bcall\s+'+str(target)+r'\b')
+            for i,(a,fn) in enumerate(starts):
+              b=starts[i+1][0] if i+1<len(starts) else len(obj)
+              body=obj[a:b]
+              if pat.search(body):
+                out.append(f'caller func[{fn}] {desc(fn)}')
+                for line in body.splitlines():
+                  if pat.search(line): out.append('  '+line.strip())
+          p=Path('outputs/occupied-hex-callers.txt');p.write_text('\n'.join(out),encoding='utf-8');print(p.read_text())
           PY
       - name: Commit analysis output
         shell: bash
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add outputs/occupied-hex-chain.txt
-          git commit -m 'research: extract occupied hex decision chain'
+          git add outputs/occupied-hex-callers.txt
+          git commit -m 'research: locate occupied hex regeneration callers'
           git push origin HEAD:research/occupied-hex-deep-dive
