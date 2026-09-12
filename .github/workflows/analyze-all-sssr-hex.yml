@@ -40,13 +40,12 @@ jobs:
 
           terms = [
               'ResolveRandomArchitecture', 'ResolveInitialRarity', 'BuildCellContent',
-              'SelectCardForCellArchitecture', 'SelectCardForHex',
-              'BuildArchitecture', 'Candidate', 'Architecture'
+              'SelectCardForCellArchitecture', 'SelectCardForHex'
           ]
           selected = {}
           for r in rows:
               hay = ' '.join(str(r.get(k,'')) for k in ('declaring_type_context','signature','method_name'))
-              if any(t in hay for t in terms[:5]):
+              if any(t in hay for t in terms):
                   try: selected[int(r['wasm_func'])] = r
                   except Exception: pass
 
@@ -60,6 +59,13 @@ jobs:
               rs=by_func.get(fn,[])
               if not rs: return '(no method-map name)'
               return ' || '.join(f"{r.get('rva_hex','')} {r.get('declaring_type_context','')}.{r.get('signature','')}" for r in rs[:8])
+          def callees(fn):
+              if fn not in pos: return []
+              seen=[]
+              for m in re.finditer(r'\bcall\s+([0-9]+)\b', body(fn)):
+                  c=int(m.group(1))
+                  if c not in seen: seen.append(c)
+              return seen
 
           out=['# All-SSSR deck hex fallback analysis']
           out += ['', '## selected methods']
@@ -68,22 +74,46 @@ jobs:
               if fn not in pos: continue
               b=body(fn)
               out += ['', f'## func[{fn}] {desc(fn)}', '```', b, '```', '', '### direct callees']
-              callees=[]
-              for m in re.finditer(r'\bcall\s+([0-9]+)\b', b):
-                  c=int(m.group(1))
-                  if c not in callees: callees.append(c)
-              for c in callees:
-                  out.append(f'func[{c}] {desc(c)}')
+              for c in callees(fn): out.append(f'func[{c}] {desc(c)}')
+          Path('outputs/all-sssr-deck-hex.txt').write_text('\n'.join(out), encoding='utf-8')
 
-          p=Path('outputs/all-sssr-deck-hex.txt')
-          p.write_text('\n'.join(out), encoding='utf-8')
-          print('\n'.join(out[:120]))
+          summary=['# Compact all-SSSR deck hex analysis','', '## BattleInitialHexContentGenerator methods containing architecture/rarity/card/loadout/fallback']
+          seen=set()
+          for r in rows:
+              ctx=str(r.get('declaring_type_context',''))
+              sig=str(r.get('signature',''))
+              if 'BattleInitialHexContentGenerator' not in ctx: continue
+              low=sig.lower()
+              if not any(x in low for x in ('architecture','rarity','card','loadout','candidate','fallback','rare','goldmine')): continue
+              try: fn=int(r['wasm_func'])
+              except Exception: continue
+              key=(fn,sig)
+              if key in seen: continue
+              seen.add(key)
+              summary.append(f'func[{fn}] {r.get("rva_hex","")} {ctx}.{sig}')
+
+          roots=[]
+          for r in rows:
+              sig=str(r.get('signature',''))
+              if any(t in sig for t in ('ResolveRandomArchitecture','BuildCellContent','ResolveInitialRarity')):
+                  try: roots.append(int(r['wasm_func']))
+                  except Exception: pass
+          roots=list(dict.fromkeys(roots))
+          for root in roots:
+              summary += ['', f'## call graph root func[{root}] {desc(root)}']
+              for c in callees(root):
+                  summary.append(f'  -> func[{c}] {desc(c)}')
+                  named = [x for x in callees(c) if by_func.get(x)]
+                  for d in named[:80]: summary.append(f'       -> func[{d}] {desc(d)}')
+
+          Path('outputs/all-sssr-deck-hex-summary.txt').write_text('\n'.join(summary), encoding='utf-8')
+          print('\n'.join(summary[:220]))
           PY
       - name: Commit analysis output
         shell: bash
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add outputs/all-sssr-deck-hex.txt
+          git add outputs/all-sssr-deck-hex.txt outputs/all-sssr-deck-hex-summary.txt
           git commit -m 'research: capture all-SSSR deck hex fallback evidence'
           git push origin HEAD:research/all-sssr-deck-hex
