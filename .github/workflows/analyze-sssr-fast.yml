@@ -19,7 +19,7 @@ jobs:
         with:
           ref: research/all-sssr-deck-hex
           fetch-depth: 1
-      - name: Extract exact click fallback bodies
+      - name: Extract exact R-card fallback body
         shell: bash
         run: |
           python - <<'PY'
@@ -34,17 +34,14 @@ jobs:
           obj=gzip.open('research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz','rt',encoding='utf-8',errors='replace').read()
           starts=[(m.start(),int(m.group(1))) for m in re.finditer(r'(?m)^.*func\[([0-9]+)\].*$',obj)]
           pos={fn:i for i,(_,fn) in enumerate(starts)}
-          def desc(fn):
-            return ' || '.join(f"{r.get('rva_hex','')} {r.get('declaring_type_context','')}.{r.get('signature','')}" for r in by_func.get(fn,[])[:12]) or '(unnamed)'
+          def desc(fn): return ' || '.join(f"{r.get('rva_hex','')} {r.get('declaring_type_context','')}.{r.get('signature','')}" for r in by_func.get(fn,[])[:12]) or '(unnamed)'
           def body(fn):
             i=pos[fn];a=starts[i][0];b=starts[i+1][0] if i+1<len(starts) else len(obj);return obj[a:b]
-          def annotated(fn):
-            return re.sub(r'(?m)^(.*\bcall\s+([0-9]+)\b.*)$',lambda m:m.group(1)+'    ;; '+desc(int(m.group(2))),body(fn))
-          targets=[7565,9247,25362,25585,25409]
-          out=['# Exact cheap-cell click fallback bodies']
-          for fn in targets:
-            out += ['',f'## func[{fn}] {desc(fn)}','```',annotated(fn),'```']
-          Path('outputs/all-sssr-click-exact.txt').write_text('\n'.join(out),encoding='utf-8')
+          def annotated(fn): return re.sub(r'(?m)^(.*\bcall\s+([0-9]+)\b.*)$',lambda m:m.group(1)+'    ;; '+desc(int(m.group(2))),body(fn))
+          targets=[25388]
+          out=['# Exact first-three R-card selector']
+          for fn in targets: out += ['',f'## func[{fn}] {desc(fn)}','```',annotated(fn),'```']
+          Path('outputs/all-sssr-r-selector.txt').write_text('\n'.join(out),encoding='utf-8')
           print('\n'.join(f'func[{fn}] {desc(fn)}' for fn in targets))
           PY
       - name: Commit output
@@ -52,6 +49,6 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add outputs/all-sssr-click-exact.txt
-          git commit -m 'research: capture exact cheap-cell click fallback'
+          git add outputs/all-sssr-r-selector.txt
+          git commit -m 'research: capture first-three R-card selector'
           git push origin HEAD:research/all-sssr-deck-hex
