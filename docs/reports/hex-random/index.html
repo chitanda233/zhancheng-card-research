@@ -27,7 +27,7 @@ fieldset{border:1px solid var(--line);border-radius:8px;margin:16px 0;display:fl
 <li><a href="#41">4.1 正常路径：沿用初始化隐藏结果</a></li>
 <li><a href="#42">4.2 低价格子存在高品质重抽/降级路径</a></li>
 <li><a href="#43">4.3 祝福、神器和引导也可能后置覆盖</a></li>
-<li><a href="#44">4.4 被占领后重新开放：这个格子会进入第二次生命周期</a></li>
+<li><a href="#44">4.4 被占领隐藏格：价格档保留，内部稀有度与具体内容重抽</a></li>
 </ul>
 </li>
 <li><a href="#5-sssr">5. SSSR加权：这是第二层随机的修正，不是另一套地块生成规则</a><ul>
@@ -108,6 +108,7 @@ fieldset{border:1px solid var(--line);border-radius:8px;margin:16px 0;display:fl
 </tr>
 </tbody>
 </table></div>
+<p>这里还有一个明确的运行时例外：<strong>符合条件的未打开隐藏格在所有权变化时会进入“第二次生成”</strong>。这次不会重抽25/50/100/250价格档，而是保留原价格，按新归属方可用候选重新抽内部稀有度和具体隐藏内容；详见4.4。</p>
 <p>如果只想知道机制本身，读第1～4节即可；第5节以后主要是加权、seed、地图池和证据细节。</p>
 <h2 id="1">1. 一个普通地块从出生到被玩家打开</h2>
 <h3 id="11">1.1 初始化：先生成基础隐藏结果</h3>
@@ -141,7 +142,7 @@ A 尚未打开：B / C / D 还不满足当前扩张条件
 → ResolveOpenedHexOutcome（RVA 0xF495 / func[25409]）
 </code></pre>
 <p><code>ResolveOpenedHexOutcome</code>接收的是已经存在的<code>BattleHexCellState</code>。正常兵营路径优先通过<code class="idtip" tabindex="0" data-tip="优先把开局隐藏建筑映射到玩家本局拥有的对应卡牌。">SelectCardForCellArchitecture</code>按格子保存的隐藏建筑去匹配卡牌；内容缺失或无法匹配时才走<code class="idtip" tabindex="0" data-tip="隐藏建筑缺失或无法匹配时使用的回退选卡路径。">SelectCardForHex</code>回退。当前开格主链里没有再次执行决定普通四档的<code>Range(0,4)</code>。</p>
-<p>因此最准确的说法不是“开局已经完全锁死一切”，而是：<strong>开局已经生成基础隐藏结果；玩家点击时通常只是结算和揭晓，但少量明确规则仍可以改写最终结果。</strong></p>
+<p>因此最准确的说法不是“开局已经完全锁死一切”，而是：<strong>开局已经生成基础隐藏结果；玩家点击时通常只是结算和揭晓，但少量明确规则仍可以改写最终结果。</strong> 如果一个仍未打开的隐藏格在点击前发生符合条件的所有权变化，它还可能先经过4.4所述的占领重生成，再由后续点击揭晓新的隐藏结果。</p>
 <h2 id="2">2. 随机到底随机了什么</h2>
 <h3 id="21-25-50-100-250">2.1 第一层：普通格的25 / 50 / 100 / 250档位</h3>
 <p>没有被固定用途、模板内容或特殊资源提前占用的普通格，会在<code class="idtip" tabindex="0" data-tip="决定地块档位对应的内部稀有度；普通格的档位先由Range(0,4)产生。">ResolveInitialRarity</code>进入：</p>
@@ -332,23 +333,94 @@ A 尚未打开：B / C / D 还不满足当前扩张条件
 <li>神器首次传说升级：满足对应开关、候选来自本局牌组、阵营有效且机会未消耗等条件时，可在已有候选基础上尝试替换为传说候选。</li>
 <li>超级召唤：<code class="idtip" tabindex="0" data-tip="局内金币成功扣款入口，同时记录超级召唤祝福消费进度。">SpendGold</code>成功扣款后累计祝福进度；本地阈值为2000。达到阈值后进入Ready，之后在合法翻格结果处理中消费并尝试选择传说卡。</li>
 <li>教程/引导：教程可以预置结果；guidedGame的敌方SSSR还存在按当前档位降级的路径，另有龙骑士强制引导。</li>
-<li>被占领隐藏格：存在重新生成路径，但会排除已开/不可开格、主城、桥、资源箱、特殊士兵格和部分特殊金卡建筑。</li>
+<li>被占领隐藏格：这不是点击阶段才发生的重抽，而是在符合条件的所有权变化时提前重生成隐藏内容；具体见4.4。</li>
 </ul>
-<h3 id="44">4.4 被占领后重新开放：这个格子会进入第二次生命周期</h3>
-<p>普通首次地块可以理解为“开局预生成基础隐藏结果 → 扩张显现 → 玩家点击揭晓”。但地块被对方占领、随后又重新进入另一方可操作范围时，当前代码里存在单独的<strong>被占领隐藏格重新生成路径</strong>。因此这类格子不能简单理解成“把开局时同一坐标保存的旧隐藏结果再展示一次”。</p>
-<p>更合适的结构是：</p>
-<pre><code class="language-text">开局初始化该坐标的基础状态
-→ 一方打开 / 占有该格
-→ 对局中发生所有权或占领状态变化
-→ 该格重新进入可操作候选
-→ 命中被占领隐藏格的重生成路径
-→ 生成新的可再次揭晓状态
-→ 另一方之后可以再次点击
+<h3 id="44">4.4 被占领隐藏格：价格档保留，内部稀有度与具体内容重抽</h3>
+<p>这里要先区分玩家视角的“占过以后又能点”和底层authoritative state。<code>ShouldRegenerateCapturedHiddenHexContent</code>会排除<code>IsOpened=true</code>、不可开启格、双方主城、桥格、资源箱、特殊士兵格，以及部分已有/特殊建筑。也就是说，这条机制<strong>不是把任意已经打开的敌方地块清空后再开一次</strong>；它处理的是所有权发生变化时，仍处于隐藏/未打开状态且允许重生成的captured hidden cell。</p>
+<p>当前已经把调用时点追到所有权变化链：</p>
+<pre><code class="language-text">ResolveHexOwnershipFromUnitPresence
+→ ApplyHexOwnershipChangeIfNeeded（RVA 0x450B / func[43600]）
+→ ShouldRegenerateCapturedHiddenHexContent
+→ TryRegenerateCapturedHiddenHexContent（RVA 0xF368 / func[25323]）
+→ 保留当前 Price，并由 Price 还原原品质档
+→ GetCapturedHiddenHexAvailableRareMask(..., originalQualityRareMask)
+→ 去掉新归属方没有合法候选的稀有度档
+→ 按剩余权重重新抽内部稀有度
+→ TrySelectCapturedHiddenHexCard
+→ 写回新的隐藏内容状态
+→ 玩家之后真正点击时再走正常 OpenHex 链揭晓 / 结算
 </code></pre>
-<p>这条重生成路径不是对所有格子无条件执行。当前已确认会排除：已经打开或不可打开的格子、双方主城、桥格、资源箱、特殊士兵格，以及部分特殊金卡建筑等对象。也就是说，系统会先判断这个格子是否适合进入“占领后再次生成”的普通候选，而不是把所有被争夺过的坐标一律清空重抽。</p>
-<p>这里需要保留一个重要证据边界：<strong>目前已经确认“占领后存在重新生成隐藏状态”的路径，但还没有把这条路径继续追到足以证明它到底重抽三层中的哪几层。</strong> 现在不能严谨地断言它一定会重新抽25/50/100/250档位，也不能断言它只重抽R/SR/SSR/SSSR或只重选具体建筑。这部分应单独继续追函数链后再下结论。</p>
-<p>因此，“开局已经生成整张地图的初始隐藏布局”与“部分地块在占领后会进入第二次生成周期”可以同时成立：前者描述初始状态，后者描述对局过程中少数格子的运行时再生成。</p>
-<p>所以“初始化已决定”指的是<strong>基础隐藏结果已经生成</strong>，不是“之后任何逻辑都绝对不能碰它”。</p>
+<p>第一层已经可以明确：<strong>不会重新执行普通格的<code>Range(0,4)</code>，25/50/100/250价格档位保留。</strong> 重生成函数直接从当前<code>Price</code>恢复原品质，因此同一坐标被捕获后仍然是原来的价格档：</p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th style="text-align: right;">保留的Price</th>
+<th>还原档位</th>
+<th style="text-align: right;">本档基础R</th>
+<th style="text-align: right;">SR</th>
+<th style="text-align: right;">SSR</th>
+<th style="text-align: right;">SSSR</th>
+<th style="text-align: right;">空</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">25</td>
+<td>问号</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">80</td>
+</tr>
+<tr>
+<td style="text-align: right;">50</td>
+<td>一星</td>
+<td style="text-align: right;">74</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td style="text-align: right;">100</td>
+<td>二星</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td style="text-align: right;">250</td>
+<td>三星</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table></div>
+<p>第二层会重抽，但上表不能机械当成每次占领后的最终百分比。<code>GetCapturedHiddenHexAvailableRareMask</code>会把原品质允许的稀有度范围和<strong>新归属玩家当前真正存在的合法候选</strong>相交；某个稀有度没有候选时，该权重段不会继续参加这次选择，剩余有效权重按比例重新归一化。例如一个50金币一星格，若新归属方没有任何合法R候选，但SR、SSR、SSSR都存在，那么参与二次随机的权重从<code>74:20:5:1</code>变成<code>20:5:1</code>，对应条件概率约为76.92%、19.23%、3.85%。</p>
+<p>问号格的“空”是本档结果之一，因此25金币格在占领后重生成时仍可能再次抽到空；它不是因为已经经历过一次争夺就必定变成建筑。</p>
+<p>第三层也会重选具体内容。<code>TrySelectCapturedHiddenHexCard</code>使用新的<code>playerId</code>和当前合法候选上下文来构建被占领隐藏格候选，并存在<code>Exact</code>、<code>ExactBarracksRestricted</code>、<code>BarracksFallback</code>等候选/回退模式。因此这里不应理解为“把原来对手已经藏在这个坐标里的那张卡转交给新玩家”；更准确的是：<strong>价格档保留，但内部内容针对新归属方重新建立候选并重新选择。</strong> 同时，由于存在回退分支，也不能把所有模式简化为“永远只从玩家装备牌组中抽”。</p>
+<p>这条重生成链没有重新进入开局的<code>ResolveInitialRarity → ResolveUserLabelGoldCardOdd</code>用户标签加权链。因此JustPaidUser、LosingStreak、InactiveUser、对手WinningStreak等开局SSSR增量，不会因为一个隐藏格发生所有权变化就在这里重新触发一次；占领重生成使用的是原价格档对应的基础稀有度权重，再叠加“当前哪些稀有度实际有合法候选”的可用性过滤。</p>
+<p>最后要把“什么时候随机”和“什么时候揭晓”分开：<strong>二次随机发生在所有权变化时，第二次点击不是才开始随机。</strong> 新隐藏结果写回后，玩家以后真正点击该格，仍进入<code>OpenHex → GetHexOpenBlockReason → SpendGold → CommitOpenedHex → ResolveOpenedHexOutcome</code>。因此4.2和4.3列出的低价降级、超级召唤、神器、教程等点击阶段规则，仍可能在这份二次基础隐藏结果之上继续改写最终展示。</p>
+<p>所以完整生命周期应写成：</p>
+<pre><code class="language-text">开局生成：价格档 + 初始稀有度 + 初始具体内容
+→ 格子保持未打开隐藏状态
+→ 所有权变化
+→ 若符合 captured hidden 重生成条件：
+     保留价格档
+     → 按新归属方候选可用性重抽内部稀有度
+     → 重选具体隐藏内容
+     → 保存新的隐藏结果
+→ 玩家之后点击
+→ 正常 OpenHex 结算 / 揭晓
+→ 少量点击阶段规则仍可覆盖最终结果
+</code></pre>
+<p>因此，“开局已经生成整张地图的初始隐藏布局”与“部分未打开隐藏格在占领时进入第二次生成周期”可以同时成立。前者描述初始状态，后者描述运行时所有权变化；二者之间最关键的边界就是：<strong>第二次生成保留第一层价格档，只重做后面的内部内容层。</strong></p>
 <h2 id="5-sssr">5. SSSR加权：这是第二层随机的修正，不是另一套地块生成规则</h2>
 <p>从系统结构看，这部分只是“内部稀有度抽取”的修正层。它不会把25元格改成250元格，也不会决定某格什么时候显现，因此放在普通生成主线之后理解更合适。</p>
 <h3 id="51-sssr">5.1 用户标签只增加SSSR权重</h3>
@@ -554,8 +626,8 @@ P(其他结果) = 原权重 / (100 + B)
 </tr>
 <tr>
 <td>被占领隐藏格重生成</td>
-<td>占领/所有权变化后的特殊流程</td>
-<td>让符合条件的格子进入第二次生成周期；当前尚未确认具体重抽哪几层</td>
+<td>所有权变化时</td>
+<td>仅处理符合条件的未打开隐藏格；保留25/50/100/250价格档，按新归属方可用候选重抽内部稀有度并重选具体隐藏内容</td>
 </tr>
 <tr>
 <td>动态墙刷新</td>
@@ -572,7 +644,7 @@ P(其他结果) = 原权重 / (100 + B)
 <li>旧<code>minesCountLimit</code>到当前<code>BattleConfigPackage</code>的完整注入关系。</li>
 <li>分包桥接后的完整OpenHex日志时序，以及超级召唤全部合法目标类型。</li>
 <li>特殊资源内容字符串和所有候选为空时的端到端边界。</li>
-<li>被占领隐藏格重新生成时，究竟会重新抽25/50/100/250档位、内部稀有度、具体建筑中的哪几层；当前只确认存在重生成路径和排除对象。</li>
+<li>被占领隐藏格候选选择中<code>Exact</code>、<code>ExactBarracksRestricted</code>、<code>BarracksFallback</code>等回退模式在所有战斗模式下的完整优先级，以及极端候选全空时最终如何与服务端/UI收口。</li>
 <li>当前已恢复链路没有发现实时胜率、战斗秒数、固定N格SSSR冷却或固定N格递增保底，但这不能证明所有服务端实验和未恢复分包都绝对不存在这些机制。</li>
 </ul>
 <h2 id="11_1">11. 函数证据索引</h2>
@@ -610,6 +682,16 @@ P(其他结果) = 原权重 / (100 + B)
 <td>解析开格结果</td>
 <td><code>ResolveOpenedHexOutcome</code></td>
 <td>RVA <code>0xF495</code> / <code>func[25409]</code></td>
+</tr>
+<tr>
+<td>所有权变化处理</td>
+<td><code>ApplyHexOwnershipChangeIfNeeded</code></td>
+<td>RVA <code>0x450B</code> / <code>func[43600]</code></td>
+</tr>
+<tr>
+<td>被占领隐藏格重生成</td>
+<td><code>TryRegenerateCapturedHiddenHexContent</code></td>
+<td>RVA <code>0xF368</code> / <code>func[25323]</code></td>
 </tr>
 <tr>
 <td>邻接开放锚点</td>
