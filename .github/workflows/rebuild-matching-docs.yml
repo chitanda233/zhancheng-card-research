@@ -7,8 +7,6 @@ on:
       - master
     paths:
       - 'README.md'
-      - 'scripts/reconcile_current_baseline.py'
-      - 'scripts/consolidate_battle_hex_boundary.py'
       - 'scripts/apply_content_review_cleanup.py'
       - 'scripts/systems_report_template.md'
       - 'scripts/build_systems_report.py'
@@ -56,12 +54,6 @@ jobs:
 
       - name: Verify frozen 20260903 snapshot before rebuild
         run: python scripts/audit_current_baseline.py --historical-only
-
-      - name: Reconcile current evidence baseline
-        run: python scripts/reconcile_current_baseline.py
-
-      - name: Consolidate battle and hex ownership
-        run: python scripts/consolidate_battle_hex_boundary.py
 
       - name: Apply content review cleanup
         run: python scripts/apply_content_review_cleanup.py
@@ -133,11 +125,9 @@ jobs:
           grep -q 'id="bot-tool"' docs/reports/matching/bot.html
           ! grep -R -q \
             --exclude='audit_current_baseline.py' \
-            --exclude='reconcile_current_baseline.py' \
             'research/archive/2026-09-03/reverse-engineering/canonical' scripts docs
           ! grep -R -q \
             --exclude='audit_current_baseline.py' \
-            --exclude='reconcile_current_baseline.py' \
             '.github/workflows/rebuild-canonical-reverse.yml' scripts docs
 
       - name: Commit reconciled sources and generated files
