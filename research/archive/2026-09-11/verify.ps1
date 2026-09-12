@@ -1,4 +1,13 @@
+param(
+    [switch]$AllowArchiveRefresh
+)
+
 $ErrorActionPreference = 'Stop'
+
+if (-not $AllowArchiveRefresh) {
+    throw 'Safety stop: this script refreshes the frozen 2026-09-11 archive from a live local WeChat source. Do not run it for routine verification. If you intentionally need to rebuild this archived snapshot in place, re-run with -AllowArchiveRefresh after confirming the source and date.'
+}
+
 $sourceRoot = 'C:\Users\berserker\AppData\Roaming\Tencent\xwechat\radium\users\c147fc455d8bdf41123a2e607252a9a7\applet'
 $raw = Join-Path $PSScriptRoot 'raw'
 $entries = @()
