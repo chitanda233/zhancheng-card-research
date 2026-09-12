@@ -1,0 +1,168 @@
+# Compact all-SSSR deck hex analysis
+
+## BattleInitialHexContentGenerator methods containing architecture/rarity/card/loadout/fallback
+func[39406] 0xF030 BattleInitialHexContentGenerator.InitialHexConfigLookup.public bool TryFindCard(string cardId, out BattleConfigCardDefinition card) { }
+func[39407] 0xF031 BattleInitialHexContentGenerator.InitialHexConfigLookup.public bool TryFindArchitecture(string architectureId, out BattleConfigArchitectureDefinition architecture) { }
+func[39410] 0xF032 BattleInitialHexContentGenerator.InitialArchitectureSelection.public void .ctor(string architectureId, string cardId, int rareLevel, string cardFettersType) { }
+func[48073] 0xF035 BattleInitialHexContentGenerator.InitialRaritySelection.public void .ctor(bool hasRarityProfile, int quality, int rareLevel) { }
+func[39404] 0xF036 BattleInitialHexContentGenerator.InitialRaritySelection.public BattleInitialHexContentGenerator.InitialRaritySelection WithQualityAndRareLevel(int quality, int rareLevel) { }
+func[39408] 0xF038 BattleInitialHexContentGenerator.InitialCardCandidate.public void .ctor(BattleConfigCardDefinition card, bool fromLoadout) { }
+func[48194] 0xF039 BattleInitialHexContentGenerator.InitialCardCandidate.public void .ctor(string architectureId) { }
+func[48136] 0xF03A BattleInitialHexContentGenerator.InitialCardCandidate.private void .ctor(string architectureId, string cardId, int rareLevel, string cardFettersType, bool fromLoadout) { }
+func[5135] 0xF03B BattleInitialHexContentGenerator.InitialCardCandidate.public BattleInitialHexContentGenerator.InitialCardCandidate Normalized() { }
+func[14709] 0xF03C BattleInitialHexContentGenerator.InitialCardCandidate.public int CompareTo(BattleInitialHexContentGenerator.InitialCardCandidate other) { }
+func[26052] 0xEFE2 BattleInitialHexContentGenerator.internal static BattleSetupConfig BuildInitialSetupNormalized(BattleConfigPackage normalizedPackage, BattleSetupConfig setup, ulong seed, PlayerBattleLoadout[] loadouts) { }
+func[43879] 0x54F7 BattleInitialHexContentGenerator.private static BattleSetupHexCell BuildCellContent(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, BattleSetupHexCell source, ref FPRandom random, PlayerBattleLoadout[] loadouts, bool isResourcesGame, bool guidedGame, BattleHexCoord[] playerNear, BattleHexCoord[] enemyNear, int[] playerSlots, int[] enemySlots, Dictionary<string, int> indexByCoord, Dictionary<int, bool> legendaryTraitConsumedByPlayer, BattleInitialHexContentGenerator.GoldMineLimitState goldMineLimit, BattleInitialHexContentGenerator.UserLabelGoldCardOddState userLabelGoldCardOdd, HashSet<string> specialResourceCoords, int specialResourceArenaNumber) { }
+func[26043] 0xEFE7 BattleInitialHexContentGenerator.private static void RemoveSelectedSpecialResourceNeighbors(List<BattleHexCoord> candidates, BattleHexCoord selected) { }
+func[48165] 0xEFE8 BattleInitialHexContentGenerator.private static bool IsLegacyNeighbor(BattleHexCoord candidate, BattleHexCoord center) { }
+func[26030] 0xEFEA BattleInitialHexContentGenerator.private static bool TryBuildSpecialResourceCell(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, BattleSetupHexCell source, int playerId, PlayerBattleLoadout[] loadouts, int arenaNumber, ref FPRandom random, out BattleSetupHexCell cell) { }
+func[26036] 0xEFEC BattleInitialHexContentGenerator.private static BattleInitialHexContentGenerator.InitialArchitectureSelection ResolveSpecialGoldCardBuildArchitecture(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, PlayerBattleLoadout[] loadouts, int playerId, ref FPRandom random) { }
+func[48165] 0xEFEF BattleInitialHexContentGenerator.private static bool ShouldUseUnChartedPresentation(BattleInitialHexContentGenerator.InitialHexIntent intent, BattleInitialHexContentGenerator.InitialRaritySelection rarity) { }
+func[26037] 0xEFF1 BattleInitialHexContentGenerator.private static int ResolvePrice(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialRaritySelection rarity, BattleInitialHexContentGenerator.InitialHexIntent fallbackIntent, string fallbackHexType, string architectureId, string cardId) { }
+func[26042] 0xEFFB BattleInitialHexContentGenerator.private static BattleInitialHexContentGenerator.InitialArchitectureSelection ResolveArchitecture(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, PlayerBattleLoadout[] loadouts, int playerId, bool isEnemyHex, string hexType, BattleInitialHexContentGenerator.InitialHexIntent intent, BattleInitialHexContentGenerator.InitialRaritySelection rarity, ref FPRandom random, Dictionary<int, bool> legendaryTraitConsumedByPlayer, BattleInitialHexContentGenerator.GoldMineLimitState goldMineLimit, bool blockGoldMineForUnChartedPresentation) { }
+func[15972] 0xEFFC BattleInitialHexContentGenerator.private static BattleInitialHexContentGenerator.InitialArchitectureSelection ResolveRandomArchitecture(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, PlayerBattleLoadout[] loadouts, int playerId, bool isEnemyHex, BattleInitialHexContentGenerator.InitialRaritySelection rarity, ref FPRandom random, Dictionary<int, bool> legendaryTraitConsumedByPlayer, BattleInitialHexContentGenerator.GoldMineLimitState goldMineLimit, bool blockGoldMineForUnChartedPresentation) { }
+func[26028] 0xEFFD BattleInitialHexContentGenerator.private static bool TryResolveForcedDefenseArchitecture(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, PlayerBattleLoadout[] loadouts, int playerId, ref FPRandom random, out BattleInitialHexContentGenerator.InitialArchitectureSelection selection, out int quality) { }
+func[26050] 0xEFFE BattleInitialHexContentGenerator.private static void CollectForcedDefenseCandidates(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, PlayerBattleLoadout loadout, List<BattleInitialHexContentGenerator.InitialCardCandidate> candidates) { }
+func[26032] 0xEFFF BattleInitialHexContentGenerator.private static BattleInitialHexContentGenerator.InitialCardCandidate SelectForcedDefenseCandidate(List<BattleInitialHexContentGenerator.InitialCardCandidate> candidates, int roll) { }
+func[9304] 0xF000 BattleInitialHexContentGenerator.private static string ResolveHexTypeFromArchitecture(BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, BattleInitialHexContentGenerator.InitialArchitectureSelection selection) { }
+func[26054] 0xF002 BattleInitialHexContentGenerator.private static void AddForcedBarracksCandidates(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, PlayerBattleLoadout loadout, List<BattleInitialHexContentGenerator.InitialCardCandidate> candidates) { }
+func[48186] 0xF003 BattleInitialHexContentGenerator.private static bool ShouldAllowPackageCardFallback(PlayerBattleLoadout loadout) { }
+func[43878] 0xF004 BattleInitialHexContentGenerator.private static void ConsumeForcedBarracksPreOverrideRoll(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, PlayerBattleLoadout loadout, BattleInitialHexContentGenerator.InitialRaritySelection rarity, ref FPRandom random) { }
+func[48556] 0xF005 BattleInitialHexContentGenerator.private static int CountCardsByRare(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, PlayerBattleLoadout loadout, int rareLevel) { }
+func[26027] 0xF006 BattleInitialHexContentGenerator.private static bool TrySelectGoldMineCandidate(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, List<BattleInitialHexContentGenerator.InitialCardCandidate> candidates, out BattleInitialHexContentGenerator.InitialCardCandidate selected) { }
+func[48186] 0xF007 BattleInitialHexContentGenerator.private static bool IsGoldMineCandidate(BattleInitialHexContentGenerator.InitialCardCandidate candidate) { }
+func[48165] 0xF008 BattleInitialHexContentGenerator.private static bool IsGoldMineId(string architectureId, string cardId) { }
+func[48183] 0xF009 BattleInitialHexContentGenerator.private static bool IsInitialCardCandidateAllowedByGoldMineLimit(string architectureId, string cardId, bool blockRandomGoldMine) { }
+func[6658] 0xF00A BattleInitialHexContentGenerator.private static bool IsInitialCardCandidateAllowedByHiddenRestrictions(BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, string architectureId, string cardId, bool blockRandomGoldMine, bool blockDefenseForUnChartedPresentation) { }
+func[26046] 0xF00B BattleInitialHexContentGenerator.private static bool IsDefenseCardOrArchitecture(BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, string architectureId, string cardId) { }
+func[48165] 0xF00C BattleInitialHexContentGenerator.private static bool ShouldBlockRandomGoldMine(BattleInitialHexContentGenerator.GoldMineLimitState state, bool isEnemyHex) { }
+func[15973] 0xF00D BattleInitialHexContentGenerator.private static void RecordSelectedGoldMine(BattleInitialHexContentGenerator.GoldMineLimitState state, BattleInitialHexContentGenerator.InitialCardCandidate selected, bool isEnemyHex) { }
+func[26048] 0xF00E BattleInitialHexContentGenerator.private static BattleInitialHexContentGenerator.GoldMineLimitState CreateGoldMineLimitState(BattleConfigPackage package, string arenaId) { }
+func[26038] 0xF00F BattleInitialHexContentGenerator.private static BattleInitialHexContentGenerator.InitialRaritySelection ResolveInitialRarity(BattleConfigPackage package, PlayerBattleLoadout[] loadouts, int playerId, bool isEnemyHex, bool guidedGame, BattleInitialHexContentGenerator.InitialHexIntent intent, BattleInitialHexContentGenerator.UserLabelGoldCardOddState userLabelGoldCardOdd, ref FPRandom random) { }
+func[48556] 0xF010 BattleInitialHexContentGenerator.private static int ApplyGuidedEnemyGoldCardBlock(bool guidedGame, bool isEnemyHex, int quality, int rareLevel) { }
+func[15969] 0xF011 BattleInitialHexContentGenerator.private static bool TryFindHexRarityProfile(BattleConfigPackage package, int quality, out BattleConfigHexRarityProfile profile) { }
+func[48183] 0xF012 BattleInitialHexContentGenerator.private static bool IsInitialCardCandidateAllowedByRare(int candidateRareLevel, BattleInitialHexContentGenerator.InitialRaritySelection rarity, bool ignoreRarityProfile) { }
+func[11798] 0xF013 BattleInitialHexContentGenerator.private static int ResolveUserLabelGoldCardOdd(BattleConfigPackage package, PlayerBattleLoadout[] loadouts, int playerId, BattleInitialHexContentGenerator.UserLabelGoldCardOddState state) { }
+func[43876] 0xF014 BattleInitialHexContentGenerator.private static void RecordUserLabelGoldCardOddReset(BattleConfigPackage package, PlayerBattleLoadout[] loadouts, int playerId, string hexType, BattleInitialHexContentGenerator.InitialArchitectureSelection selection, BattleInitialHexContentGenerator.UserLabelGoldCardOddState state) { }
+func[26040] 0xF016 BattleInitialHexContentGenerator.private static int ResolveDailyBlessGoldCardSummonOdd(BattleConfigPackage package, PlayerBattleLoadout loadout) { }
+func[26034] 0xF017 BattleInitialHexContentGenerator.private static int ResolveWeeklyCycleCardGoldCardOdd(PlayerBattleLoadout loadout) { }
+func[43875] 0xF018 BattleInitialHexContentGenerator.private static bool TryResolveWeeklyCycleCardId(string cycleCardType, out string cardId) { }
+func[48186] 0xF019 BattleInitialHexContentGenerator.private static bool IsDailyBlessGoldCardSummonOddType(string blessType) { }
+func[15970] 0xF01B BattleInitialHexContentGenerator.private static BattleInitialHexContentGenerator.InitialCardCandidate TryApplyLegendarySummonTrait(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, PlayerBattleLoadout loadout, int playerId, string wantedType, BattleInitialHexContentGenerator.InitialCardCandidate selected, ref FPRandom random, Dictionary<int, bool> legendaryTraitConsumedByPlayer) { }
+func[15968] 0xF01C BattleInitialHexContentGenerator.private static bool TrySelectLegendaryCandidate(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, PlayerBattleLoadout loadout, string wantedType, string cardFettersType, ref FPRandom random, out BattleInitialHexContentGenerator.InitialCardCandidate selected) { }
+func[26049] 0xF01D BattleInitialHexContentGenerator.private static void CollectLegendaryCandidates(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, PlayerBattleLoadout loadout, string wantedType, string cardFettersType, bool fromLoadout, List<BattleInitialHexContentGenerator.InitialCardCandidate> sameFetters, List<BattleInitialHexContentGenerator.InitialCardCandidate> fallback) { }
+func[11800] 0xF01E BattleInitialHexContentGenerator.private static void AddLegendaryCandidate(BattleConfigCardDefinition card, string wantedType, string cardFettersType, bool fromLoadout, List<BattleInitialHexContentGenerator.InitialCardCandidate> sameFetters, List<BattleInitialHexContentGenerator.InitialCardCandidate> fallback) { }
+func[26041] 0xF01F BattleInitialHexContentGenerator.private static long ResolveArtifactForgeTraitPercentRaw(BattleConfigPackage package, PlayerBattleLoadout loadout, string cardFettersType, int attrType) { }
+func[26029] 0xF022 BattleInitialHexContentGenerator.private static bool TryResolveCardFettersValue(string cardFettersType, out int value) { }
+func[48183] 0xF024 BattleInitialHexContentGenerator.private static bool TryFindCard(BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, string cardId, out BattleConfigCardDefinition card) { }
+func[48183] 0xF025 BattleInitialHexContentGenerator.private static bool TryFindArchitecture(BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, string architectureId, out BattleConfigArchitectureDefinition architecture) { }
+func[48165] 0xF026 BattleInitialHexContentGenerator.private static PlayerBattleLoadout FindLoadout(PlayerBattleLoadout[] loadouts, int playerId) { }
+func[48165] 0xF027 BattleInitialHexContentGenerator.private static PlayerBattleLoadout FindOpponentLoadout(PlayerBattleLoadout[] loadouts, int playerId) { }
+func[26044] 0xF028 BattleInitialHexContentGenerator.private static PlayerBattleLoadout[] NormalizeLoadoutsForInitialSetup(PlayerBattleLoadout[] loadouts) { }
+func[26047] 0xF029 BattleInitialHexContentGenerator.private static BattleInitialHexContentGenerator.UserLabelGoldCardOddState CreateUserLabelGoldCardOddState(PlayerBattleLoadout[] loadouts) { }
+
+## call graph root func[43879] 0x54F7 BattleInitialHexContentGenerator.private static BattleSetupHexCell BuildCellContent(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, BattleSetupHexCell source, ref FPRandom random, PlayerBattleLoadout[] loadouts, bool isResourcesGame, bool guidedGame, BattleHexCoord[] playerNear, BattleHexCoord[] enemyNear, int[] playerSlots, int[] enemySlots, Dictionary<string, int> indexByCoord, Dictionary<int, bool> legendaryTraitConsumedByPlayer, BattleInitialHexContentGenerator.GoldMineLimitState goldMineLimit, BattleInitialHexContentGenerator.UserLabelGoldCardOddState userLabelGoldCardOdd, HashSet<string> specialResourceCoords, int specialResourceArenaNumber) { }
+  -> func[997] (no method-map name)
+  -> func[4046] 0xF1A1 BattleSetupHexCell.public BattleSetupHexCell Normalized() { }
+  -> func[1147] 0x13D3 String.public static bool IsNullOrWhiteSpace(string value) { }
+       -> func[2411] 0x21B7A ThrowHelper.internal static void ThrowIndexOutOfRangeException() { }
+       -> func[1547] 0x215C7 Char.public static bool IsWhiteSpace(char c) { }
+  -> func[9305] 0xF02E BattleInitialHexContentGenerator.private static string CoordKey(int q, int r) { }
+       -> func[1071] 0x11F1 CultureInfo.public static CultureInfo get_InvariantCulture() { }
+       -> func[1477] 0x1D7A Int32.public string ToString(IFormatProvider provider) { }
+       -> func[1065] 0x13D2 String.public static string Concat(string str0, string str1, string str2) { }
+  -> func[1534] (no method-map name)
+       -> func[1043] 0x13E9 InvalidOperationException.public void .ctor(string message) { }
+  -> func[26030] 0xEFEA BattleInitialHexContentGenerator.private static bool TryBuildSpecialResourceCell(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, BattleSetupHexCell source, int playerId, PlayerBattleLoadout[] loadouts, int arenaNumber, ref FPRandom random, out BattleSetupHexCell cell) { }
+       -> func[4046] 0xF1A1 BattleSetupHexCell.public BattleSetupHexCell Normalized() { }
+       -> func[1693] 0x43CA FPRandom.public int Range(int minInclusive, int maxExclusive) { }
+       -> func[26036] 0xEFEC BattleInitialHexContentGenerator.private static BattleInitialHexContentGenerator.InitialArchitectureSelection ResolveSpecialGoldCardBuildArchitecture(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, PlayerBattleLoadout[] loadouts, int playerId, ref FPRandom random) { }
+  -> func[9280] 0xEE0E BattleRulesetSwitches.public BattleRulesetSwitches Normalized() { }
+       -> func[2556] 0xEEBA BattleConfigPackageUtility.public static string[] NormalizeStringArray(string[] source) { }
+  -> func[26039] 0xEFF3 BattleInitialHexContentGenerator.private static BattleInitialHexContentGenerator.InitialHexIntent ResolveInitialIntent(BattleHexCoord coord, BattleHexCoord[] playerNear, BattleHexCoord[] enemyNear, int[] playerSlots, int[] enemySlots, bool soldierPileEnabled) { }
+  -> func[26038] 0xF00F BattleInitialHexContentGenerator.private static BattleInitialHexContentGenerator.InitialRaritySelection ResolveInitialRarity(BattleConfigPackage package, PlayerBattleLoadout[] loadouts, int playerId, bool isEnemyHex, bool guidedGame, BattleInitialHexContentGenerator.InitialHexIntent intent, BattleInitialHexContentGenerator.UserLabelGoldCardOddState userLabelGoldCardOdd, ref FPRandom random) { }
+       -> func[1693] 0x43CA FPRandom.public int Range(int minInclusive, int maxExclusive) { }
+       -> func[15969] 0xF011 BattleInitialHexContentGenerator.private static bool TryFindHexRarityProfile(BattleConfigPackage package, int quality, out BattleConfigHexRarityProfile profile) { }
+       -> func[26040] 0xF016 BattleInitialHexContentGenerator.private static int ResolveDailyBlessGoldCardSummonOdd(BattleConfigPackage package, PlayerBattleLoadout loadout) { }
+       -> func[26034] 0xF017 BattleInitialHexContentGenerator.private static int ResolveWeeklyCycleCardGoldCardOdd(PlayerBattleLoadout loadout) { }
+       -> func[11798] 0xF013 BattleInitialHexContentGenerator.private static int ResolveUserLabelGoldCardOdd(BattleConfigPackage package, PlayerBattleLoadout[] loadouts, int playerId, BattleInitialHexContentGenerator.UserLabelGoldCardOddState state) { }
+  -> func[998] (no method-map name)
+  -> func[15972] 0xEFFC BattleInitialHexContentGenerator.private static BattleInitialHexContentGenerator.InitialArchitectureSelection ResolveRandomArchitecture(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, PlayerBattleLoadout[] loadouts, int playerId, bool isEnemyHex, BattleInitialHexContentGenerator.InitialRaritySelection rarity, ref FPRandom random, Dictionary<int, bool> legendaryTraitConsumedByPlayer, BattleInitialHexContentGenerator.GoldMineLimitState goldMineLimit, bool blockGoldMineForUnChartedPresentation) { }
+       -> func[6658] 0xF00A BattleInitialHexContentGenerator.private static bool IsInitialCardCandidateAllowedByHiddenRestrictions(BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, string architectureId, string cardId, bool blockRandomGoldMine, bool blockDefenseForUnChartedPresentation) { }
+       -> func[1693] 0x43CA FPRandom.public int Range(int minInclusive, int maxExclusive) { }
+       -> func[5135] 0xF03B BattleInitialHexContentGenerator.InitialCardCandidate.public BattleInitialHexContentGenerator.InitialCardCandidate Normalized() { }
+       -> func[15970] 0xF01B BattleInitialHexContentGenerator.private static BattleInitialHexContentGenerator.InitialCardCandidate TryApplyLegendarySummonTrait(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, PlayerBattleLoadout loadout, int playerId, string wantedType, BattleInitialHexContentGenerator.InitialCardCandidate selected, ref FPRandom random, Dictionary<int, bool> legendaryTraitConsumedByPlayer) { }
+       -> func[15973] 0xF00D BattleInitialHexContentGenerator.private static void RecordSelectedGoldMine(BattleInitialHexContentGenerator.GoldMineLimitState state, BattleInitialHexContentGenerator.InitialCardCandidate selected, bool isEnemyHex) { }
+  -> func[9304] 0xF000 BattleInitialHexContentGenerator.private static string ResolveHexTypeFromArchitecture(BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, BattleInitialHexContentGenerator.InitialArchitectureSelection selection) { }
+       -> func[1147] 0x13D3 String.public static bool IsNullOrWhiteSpace(string value) { }
+       -> func[1062] 0xBFE String.public static bool Equals(string a, string b, StringComparison comparisonType) { }
+  -> func[1062] 0xBFE String.public static bool Equals(string a, string b, StringComparison comparisonType) { }
+       -> func[1372] 0xBD8 CultureInfo.public static CultureInfo get_CurrentCulture() { }
+       -> func[2490] 0x21A06 SpanHelpers.public static bool SequenceEqual(ref byte first, ref byte second, ulong length) { }
+       -> func[6584] 0x22EB8 CompareInfo.internal static int CompareOrdinalIgnoreCase(string strA, int indexA, int lengthA, string strB, int indexB, int lengthB) { }
+       -> func[1094] 0x16E8 ArgumentException.public void .ctor(string message, string paramName) { }
+  -> func[1693] 0x43CA FPRandom.public int Range(int minInclusive, int maxExclusive) { }
+  -> func[26028] 0xEFFD BattleInitialHexContentGenerator.private static bool TryResolveForcedDefenseArchitecture(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, PlayerBattleLoadout[] loadouts, int playerId, ref FPRandom random, out BattleInitialHexContentGenerator.InitialArchitectureSelection selection, out int quality) { }
+       -> func[26050] 0xEFFE BattleInitialHexContentGenerator.private static void CollectForcedDefenseCandidates(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, PlayerBattleLoadout loadout, List<BattleInitialHexContentGenerator.InitialCardCandidate> candidates) { }
+       -> func[1693] 0x43CA FPRandom.public int Range(int minInclusive, int maxExclusive) { }
+       -> func[26032] 0xEFFF BattleInitialHexContentGenerator.private static BattleInitialHexContentGenerator.InitialCardCandidate SelectForcedDefenseCandidate(List<BattleInitialHexContentGenerator.InitialCardCandidate> candidates, int roll) { }
+       -> func[5135] 0xF03B BattleInitialHexContentGenerator.InitialCardCandidate.public BattleInitialHexContentGenerator.InitialCardCandidate Normalized() { }
+       -> func[1147] 0x13D3 String.public static bool IsNullOrWhiteSpace(string value) { }
+  -> func[26042] 0xEFFB BattleInitialHexContentGenerator.private static BattleInitialHexContentGenerator.InitialArchitectureSelection ResolveArchitecture(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, PlayerBattleLoadout[] loadouts, int playerId, bool isEnemyHex, string hexType, BattleInitialHexContentGenerator.InitialHexIntent intent, BattleInitialHexContentGenerator.InitialRaritySelection rarity, ref FPRandom random, Dictionary<int, bool> legendaryTraitConsumedByPlayer, BattleInitialHexContentGenerator.GoldMineLimitState goldMineLimit, bool blockGoldMineForUnChartedPresentation) { }
+       -> func[1062] 0xBFE String.public static bool Equals(string a, string b, StringComparison comparisonType) { }
+       -> func[6658] 0xF00A BattleInitialHexContentGenerator.private static bool IsInitialCardCandidateAllowedByHiddenRestrictions(BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, string architectureId, string cardId, bool blockRandomGoldMine, bool blockDefenseForUnChartedPresentation) { }
+       -> func[26054] 0xF002 BattleInitialHexContentGenerator.private static void AddForcedBarracksCandidates(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, PlayerBattleLoadout loadout, List<BattleInitialHexContentGenerator.InitialCardCandidate> candidates) { }
+       -> func[1693] 0x43CA FPRandom.public int Range(int minInclusive, int maxExclusive) { }
+       -> func[26027] 0xF006 BattleInitialHexContentGenerator.private static bool TrySelectGoldMineCandidate(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, List<BattleInitialHexContentGenerator.InitialCardCandidate> candidates, out BattleInitialHexContentGenerator.InitialCardCandidate selected) { }
+       -> func[5135] 0xF03B BattleInitialHexContentGenerator.InitialCardCandidate.public BattleInitialHexContentGenerator.InitialCardCandidate Normalized() { }
+       -> func[15970] 0xF01B BattleInitialHexContentGenerator.private static BattleInitialHexContentGenerator.InitialCardCandidate TryApplyLegendarySummonTrait(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, PlayerBattleLoadout loadout, int playerId, string wantedType, BattleInitialHexContentGenerator.InitialCardCandidate selected, ref FPRandom random, Dictionary<int, bool> legendaryTraitConsumedByPlayer) { }
+       -> func[15973] 0xF00D BattleInitialHexContentGenerator.private static void RecordSelectedGoldMine(BattleInitialHexContentGenerator.GoldMineLimitState state, BattleInitialHexContentGenerator.InitialCardCandidate selected, bool isEnemyHex) { }
+  -> func[15975] 0xF015 BattleInitialHexContentGenerator.private static bool IsBarracksLikeHexType(string hexType) { }
+       -> func[1062] 0xBFE String.public static bool Equals(string a, string b, StringComparison comparisonType) { }
+  -> func[11798] 0xF013 BattleInitialHexContentGenerator.private static int ResolveUserLabelGoldCardOdd(BattleConfigPackage package, PlayerBattleLoadout[] loadouts, int playerId, BattleInitialHexContentGenerator.UserLabelGoldCardOddState state) { }
+       -> func[5235] 0xEE7F BattleUserLabelState.public BattleUserLabelState Normalized() { }
+  -> func[26037] 0xEFF1 BattleInitialHexContentGenerator.private static int ResolvePrice(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialRaritySelection rarity, BattleInitialHexContentGenerator.InitialHexIntent fallbackIntent, string fallbackHexType, string architectureId, string cardId) { }
+       -> func[1062] 0xBFE String.public static bool Equals(string a, string b, StringComparison comparisonType) { }
+       -> func[2696] 0x431F BattleEconomyConfig.public BattleEconomyConfig Normalized() { }
+       -> func[4869] 0xEE1B BattleEconomyConfig.public static BattleEconomyConfig Default() { }
+  -> func[11799] 0xF02D BattleInitialHexContentGenerator.internal static ulong CalculateInitialCellContentHash(BattleSetupHexCell cell) { }
+       -> func[1347] 0x4412 BattleHash.public void AddString(string value) { }
+
+## call graph root func[15972] 0xEFFC BattleInitialHexContentGenerator.private static BattleInitialHexContentGenerator.InitialArchitectureSelection ResolveRandomArchitecture(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, PlayerBattleLoadout[] loadouts, int playerId, bool isEnemyHex, BattleInitialHexContentGenerator.InitialRaritySelection rarity, ref FPRandom random, Dictionary<int, bool> legendaryTraitConsumedByPlayer, BattleInitialHexContentGenerator.GoldMineLimitState goldMineLimit, bool blockGoldMineForUnChartedPresentation) { }
+  -> func[997] (no method-map name)
+  -> func[998] (no method-map name)
+  -> func[1000] (no method-map name)
+  -> func[1034] (no method-map name)
+  -> func[4245] (no method-map name)
+  -> func[6658] 0xF00A BattleInitialHexContentGenerator.private static bool IsInitialCardCandidateAllowedByHiddenRestrictions(BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, string architectureId, string cardId, bool blockRandomGoldMine, bool blockDefenseForUnChartedPresentation) { }
+       -> func[1062] 0xBFE String.public static bool Equals(string a, string b, StringComparison comparisonType) { }
+       -> func[26046] 0xF00B BattleInitialHexContentGenerator.private static bool IsDefenseCardOrArchitecture(BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, string architectureId, string cardId) { }
+  -> func[2263] (no method-map name)
+  -> func[4749] (no method-map name)
+  -> func[1693] 0x43CA FPRandom.public int Range(int minInclusive, int maxExclusive) { }
+  -> func[2425] (no method-map name)
+       -> func[1083] 0x891 ThrowHelper.internal static void ThrowArgumentOutOfRange_IndexException() { }
+  -> func[5135] 0xF03B BattleInitialHexContentGenerator.InitialCardCandidate.public BattleInitialHexContentGenerator.InitialCardCandidate Normalized() { }
+       -> func[1147] 0x13D3 String.public static bool IsNullOrWhiteSpace(string value) { }
+  -> func[15970] 0xF01B BattleInitialHexContentGenerator.private static BattleInitialHexContentGenerator.InitialCardCandidate TryApplyLegendarySummonTrait(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, PlayerBattleLoadout loadout, int playerId, string wantedType, BattleInitialHexContentGenerator.InitialCardCandidate selected, ref FPRandom random, Dictionary<int, bool> legendaryTraitConsumedByPlayer) { }
+       -> func[1147] 0x13D3 String.public static bool IsNullOrWhiteSpace(string value) { }
+       -> func[26041] 0xF01F BattleInitialHexContentGenerator.private static long ResolveArtifactForgeTraitPercentRaw(BattleConfigPackage package, PlayerBattleLoadout loadout, string cardFettersType, int attrType) { }
+       -> func[26033] 0xF023 BattleInitialHexContentGenerator.private static bool RollPercentChance(ref FPRandom random, long chanceRaw) { }
+       -> func[15968] 0xF01C BattleInitialHexContentGenerator.private static bool TrySelectLegendaryCandidate(BattleConfigPackage package, BattleInitialHexContentGenerator.InitialHexConfigLookup lookup, PlayerBattleLoadout loadout, string wantedType, string cardFettersType, ref FPRandom random, out BattleInitialHexContentGenerator.InitialCardCandidate selected) { }
+  -> func[15973] 0xF00D BattleInitialHexContentGenerator.private static void RecordSelectedGoldMine(BattleInitialHexContentGenerator.GoldMineLimitState state, BattleInitialHexContentGenerator.InitialCardCandidate selected, bool isEnemyHex) { }
+       -> func[1062] 0xBFE String.public static bool Equals(string a, string b, StringComparison comparisonType) { }
+
+## call graph root func[26038] 0xF00F BattleInitialHexContentGenerator.private static BattleInitialHexContentGenerator.InitialRaritySelection ResolveInitialRarity(BattleConfigPackage package, PlayerBattleLoadout[] loadouts, int playerId, bool isEnemyHex, bool guidedGame, BattleInitialHexContentGenerator.InitialHexIntent intent, BattleInitialHexContentGenerator.UserLabelGoldCardOddState userLabelGoldCardOdd, ref FPRandom random) { }
+  -> func[997] (no method-map name)
+  -> func[998] (no method-map name)
+  -> func[1693] 0x43CA FPRandom.public int Range(int minInclusive, int maxExclusive) { }
+  -> func[15969] 0xF011 BattleInitialHexContentGenerator.private static bool TryFindHexRarityProfile(BattleConfigPackage package, int quality, out BattleConfigHexRarityProfile profile) { }
+       -> func[6674] 0xEE22 BattleConfigHexRarityProfile.public BattleConfigHexRarityProfile Normalized() { }
+  -> func[26040] 0xF016 BattleInitialHexContentGenerator.private static int ResolveDailyBlessGoldCardSummonOdd(BattleConfigPackage package, PlayerBattleLoadout loadout) { }
+       -> func[1144] 0x152F String.public string Trim() { }
+       -> func[1062] 0xBFE String.public static bool Equals(string a, string b, StringComparison comparisonType) { }
+  -> func[26034] 0xF017 BattleInitialHexContentGenerator.private static int ResolveWeeklyCycleCardGoldCardOdd(PlayerBattleLoadout loadout) { }
+       -> func[15677] 0xF895 BattleWeeklyCycleCard.public static bool TryResolveCardId(string value, out string cardId) { }
+       -> func[1062] 0xBFE String.public static bool Equals(string a, string b, StringComparison comparisonType) { }
+  -> func[11798] 0xF013 BattleInitialHexContentGenerator.private static int ResolveUserLabelGoldCardOdd(BattleConfigPackage package, PlayerBattleLoadout[] loadouts, int playerId, BattleInitialHexContentGenerator.UserLabelGoldCardOddState state) { }
+       -> func[5235] 0xEE7F BattleUserLabelState.public BattleUserLabelState Normalized() { }
