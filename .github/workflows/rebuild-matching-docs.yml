@@ -8,7 +8,6 @@ on:
       - cleanup/content-review-final
     paths:
       - 'README.md'
-      - 'scripts/apply_content_review_cleanup.py'
       - 'scripts/systems_report_template.md'
       - 'scripts/build_systems_report.py'
       - 'scripts/build_battle_rules_report.py'
@@ -55,9 +54,6 @@ jobs:
 
       - name: Verify frozen 20260903 snapshot before rebuild
         run: python scripts/audit_current_baseline.py --historical-only
-
-      - name: Apply one-shot content ownership cleanup
-        run: python scripts/apply_content_review_cleanup.py
 
       - name: Rebuild journey evidence and report
         run: |
@@ -124,22 +120,18 @@ jobs:
           ! grep -q 'id="bot-tool"' docs/reports/matching/index.html
           grep -q 'id="matching-data"' docs/reports/matching/bot.html
           grep -q 'id="bot-tool"' docs/reports/matching/bot.html
-          ! grep -R -q \
-            --exclude='audit_current_baseline.py' \
-            'research/archive/2026-09-03/reverse-engineering/canonical' scripts docs
-          ! grep -R -q \
-            --exclude='audit_current_baseline.py' \
-            '.github/workflows/rebuild-canonical-reverse.yml' scripts docs
+          ! grep -R -q --exclude='audit_current_baseline.py' 'research/archive/2026-09-03/reverse-engineering/canonical' scripts docs
+          ! grep -R -q --exclude='audit_current_baseline.py' '.github/workflows/rebuild-canonical-reverse.yml' scripts docs
 
-      - name: Commit migrated sources and generated files
+      - name: Commit generated files
         shell: bash
         run: |
           if git diff --quiet -- README.md scripts outputs/system outputs/new-player-journey outputs/chests outputs/battle-rules outputs/matching outputs/hex-random outputs/current-docs-audit.json docs; then
-            echo 'No source or generated changes.'
+            echo 'No generated changes.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add README.md scripts outputs/system outputs/new-player-journey outputs/chests outputs/battle-rules outputs/matching outputs/hex-random outputs/current-docs-audit.json docs
-          git commit -m 'docs: apply content ownership cleanup and refresh reports'
+          git commit -m 'docs: refresh reports from canonical sources'
           git push
