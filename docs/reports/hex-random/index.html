@@ -13,7 +13,8 @@ fieldset{border:1px solid var(--line);border-radius:8px;margin:16px 0;display:fl
 <li><a href="#21-25-50-100-250">2.1 第一层：普通格的25 / 50 / 100 / 250档位</a></li>
 <li><a href="#22-r-sr-ssr-sssr">2.2 第二层：档位决定内部R / SR / SSR / SSSR / 空权重</a></li>
 <li><a href="#23">2.3 第三层：同稀有度中再选具体建筑</a></li>
-<li><a href="#24">2.4 三层随机不要混成一句“翻格随机”</a></li>
+<li><a href="#24-sssr-50-100-sssr">2.4 极端卡组：全 SSSR 时，50 / 100 低价格格可能最终仍翻出 SSSR</a></li>
+<li><a href="#25">2.5 三层随机不要混成一句“翻格随机”</a></li>
 </ul>
 </li>
 <li><a href="#3">3. 不是所有格子都走这套普通三层随机</a><ul>
@@ -256,7 +257,62 @@ A 尚未打开：B / C / D 还不满足当前扩张条件
 </ol>
 <p>当前没有发现这一层给单张候选配置额外独立权重。如果有N个完全等价的合法候选，条件概率就是1/N。牌组缺失或为空时仍存在从战斗配置包回退的分支，因此不能把所有模式都写成“永远只从玩家装备牌组里抽”。</p>
 <p>例如问号格已经抽到SSR，且当前有3个完全等价的合法SSR兵营，那么每个兵营在“已经是问号”的条件下基础概率约为15%÷3=5%；若从任意普通格开始算，还要再乘前一层的25%。</p>
-<h3 id="24">2.4 三层随机不要混成一句“翻格随机”</h3>
+<h3 id="24-sssr-50-100-sssr">2.4 极端卡组：全 SSSR 时，50 / 100 低价格格可能最终仍翻出 SSSR</h3>
+<p>这里存在一个重要的牌组边界：<strong>如果玩家的非空战斗牌组里只有 SSSR，50 / 100 普通兵营格的基础稀有度概率不会被改成100% SSSR，但最终点击结果可能因为候选为空后的回退路径而落到 SSSR。</strong> 这不是第二层概率表失效，而是“第二层先抽稀有度、第三层找不到对应候选、点击阶段再回退选卡”叠加出来的结果。</p>
+<p>以50金币一星格为例，初始化仍然先按74 / 20 / 5 / 1抽R / SR / SSR / SSSR；100金币二星格也仍然按50 / 40 / 8 / 2抽。假设50格先抽到R，而当前非空牌组全部是SSSR，<code class="idtip" tabindex="0" data-tip="按稀有度、牌组、建筑类型、问号限制和金矿额度过滤后抽具体候选。">ResolveRandomArchitecture</code>会因为稀有度不匹配把这些SSSR候选过滤掉。当前链路显示，配置包卡池回退主要用于loadout缺失或卡组为空，不会因为“牌组非空但恰好没有本次目标稀有度”就自动补一张公共R卡，因此这个格子的初始化具体建筑可能没有匹配候选。</p>
+<p>玩家之后真正点击时，<code>ResolveOpenedHexOutcome</code>会优先让<code class="idtip" tabindex="0" data-tip="优先把开局隐藏建筑映射到玩家本局拥有的对应卡牌。">SelectCardForCellArchitecture</code>读取格子已有隐藏建筑；如果隐藏建筑缺失或无法映射到玩家本局拥有的卡，就回退到<code>SelectCardForHex(playerId, hexType)</code>。这个回退不再携带初始化阶段那次R / SR / SSR / SSSR抽取作为硬性稀有度限制，而是按当前格子类型从本局合法卡中选。于是，在这个格子类型下如果玩家所有合法候选都只有SSSR，最终就会选到SSSR。</p>
+<pre><code class="language-text">50 / 100普通兵营格
+→ 初始化仍按原概率抽内部稀有度
+→ 例如抽到R或SR
+→ 全SSSR非空牌组没有对应稀有度候选
+→ 初始化具体建筑候选为空 / 无法匹配
+→ 玩家点击
+→ SelectCardForCellArchitecture失败或无匹配
+→ SelectCardForHex回退
+→ 当前合法候选只有SSSR
+→ 最终得到SSSR
+</code></pre>
+<p>前几次低价翻格还有一层保护，但它也不能凭空制造玩家没有的R卡。<code class="idtip" tabindex="0" data-tip="对前几次低价翻格的部分SSR及以上结果尝试重抽成R。">TryApplyFirstThreeCheapOpenReroll</code>在价格低于250、已开低价格计数仍在保护范围、当前候选稀有度至少为SSR且不是资源/防御建筑等条件满足时，会调用<code>SelectFirstThreeRCardWithoutGoldMine(playerId)</code>尝试换成一张R卡。该选择器从玩家自己的战斗牌组寻找符合条件的R候选；如果全牌组都是SSSR，R候选为空，这次降级替换就无法成功，原来的SSSR结果会保留。</p>
+<p>因此，在当前客户端链路下，可以把这个极端案例概括为：</p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>场景</th>
+<th>初始化内部稀有度</th>
+<th>第三层候选</th>
+<th>点击阶段可能结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>50格抽到R / SR / SSR，牌组只有SSSR</td>
+<td>仍按74 / 20 / 5 / 1正常抽</td>
+<td>目标稀有度可能无候选</td>
+<td>回退后可落到SSSR</td>
+</tr>
+<tr>
+<td>100格抽到R / SR / SSR，牌组只有SSSR</td>
+<td>仍按50 / 40 / 8 / 2正常抽</td>
+<td>目标稀有度可能无候选</td>
+<td>回退后可落到SSSR</td>
+</tr>
+<tr>
+<td>50 / 100格本来就抽到SSSR</td>
+<td>SSSR</td>
+<td>有合法SSSR候选</td>
+<td>正常选择SSSR</td>
+</tr>
+<tr>
+<td>低价保护尝试把高稀有度降成R，但牌组没有R</td>
+<td>—</td>
+<td>R重抽池为空</td>
+<td>降级失败，保留原结果</td>
+</tr>
+</tbody>
+</table></div>
+<p>这里有两个边界必须保留。第一，这个结论针对会进入普通兵营选卡链的格子，金矿、防御、特殊资源、教程强制格等不能直接套用。第二，必须存在符合当前<code>hexType</code>等限制的合法SSSR候选；“牌组全是SSSR”不等于任意格子都一定能找到合法SSSR。另一个容易误解的点是：<strong>最终变成SSSR不会把地块价格同步改成250。50格仍是50，100格仍是100；改变的是最终卡牌结果，不是第一层价格档位。</strong></p>
+<p>从设计角度看，这意味着极端牌组构成可能穿透50 / 100格原本的稀有度分布。基础权重表仍然真实参与初始化，但如果目标稀有度在玩家非空牌组中没有任何合法候选，后续回退会让玩家最终看到的分布显著偏离基础权重，因此分析实战出卡率时不能只看<code>GlobalHexInfo</code>四档概率表。</p>
+<h3 id="25">2.5 三层随机不要混成一句“翻格随机”</h3>
 <p>最容易产生误解的说法是“玩家翻一个格，系统随机一张卡”。当前证据更准确的模型是：</p>
 <pre><code class="language-text">普通格初始化
   ├─ 第一层：随机价格档位

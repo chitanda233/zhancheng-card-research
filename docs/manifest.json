@@ -1,6 +1,6 @@
 {
   "title": "占城大师研究资料库发布清单",
-  "generatedAt": "2026-09-12T10:28:10+00:00",
+  "generatedAt": "2026-09-12T11:48:41+00:00",
   "snapshot": "2026-09-03",
   "files": [
     {
@@ -80,13 +80,13 @@
     },
     {
       "path": "reports/hex-random/index.html",
-      "bytes": 201491,
-      "sha256": "c6075c08f52f9f6fe2ead74ddcf1e6429b2f83c3b7ff1bfc7da64f4cdefcb4b9"
+      "bytes": 206432,
+      "sha256": "9b1a40cabb54c9661311e203fde27ed05edee05315ffd264958545ebe06eb912"
     },
     {
       "path": "reports/hex-random/report.md",
-      "bytes": 179858,
-      "sha256": "1d2d0f02349c40cdafe28479e4e9aaa2d80408e539299221be8a5e5536d696f0"
+      "bytes": 183819,
+      "sha256": "ba2dd340826fc6334ad4f4c2a6429f5114d2f92981827165e57d67c7be7b47f1"
     },
     {
       "path": "reports/journey/index.html",
@@ -100,8 +100,8 @@
     },
     {
       "path": "reports/journey/journey-nodes.csv",
-      "bytes": 42443,
-      "sha256": "8bf7c3588b888d9d08012815df4c7271bfbfc4a082f663ca33029a20232706b7"
+      "bytes": 42413,
+      "sha256": "321fbec7e577e7172f7def3951f55f1a060752c123120c9fb764b8e9182cacfa"
     },
     {
       "path": "reports/journey/journey-nodes.json",
