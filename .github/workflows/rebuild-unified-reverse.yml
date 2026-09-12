@@ -3,8 +3,9 @@ name: Rebuild unified reverse baseline
 on:
   workflow_dispatch:
   push:
+    branches:
+      - master
     paths:
-      - '.github/workflows/rebuild-unified-reverse.yml'
       - 'research/archive/2026-09-11/raw/packages/**'
       - 'research/archive/2026-09-11/raw/local/**/a23078fc21f9ca79.webgl.data.unityweb.bin'
       - 'research/archive/2026-09-11/manifest.json'
@@ -25,8 +26,10 @@ on:
 permissions:
   contents: write
 
+# Reverse and docs both write generated files to master. Serialize them so a docs refresh
+# cannot advance master while a long reverse rebuild is preparing its final commit.
 concurrency:
-  group: rebuild-unified-reverse
+  group: research-pipeline-master
   cancel-in-progress: false
 
 jobs:
@@ -36,6 +39,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: master
           fetch-depth: 1
 
       - uses: actions/setup-dotnet@v4
