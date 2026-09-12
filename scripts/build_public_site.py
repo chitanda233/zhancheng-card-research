@@ -17,6 +17,7 @@ JOURNEY_SRC = ROOT / 'outputs/new-player-journey'
 BATTLE_SRC = ROOT / 'outputs/battle-rules'
 CHEST_SRC = ROOT / 'outputs/chests'
 HEX_SRC = ROOT / 'outputs/hex-random'
+COORD_SRC = ROOT / 'outputs/hex-coordinates'
 MATCHING_SRC = ROOT / 'outputs/matching'
 
 SYSTEM_DIR = DOCS / 'reports/system'
@@ -25,10 +26,11 @@ JOURNEY_DIR = DOCS / 'reports/journey'
 BATTLE_DIR = DOCS / 'reports/battle'
 CHEST_DIR = DOCS / 'reports/chests'
 HEX_DIR = DOCS / 'reports/hex-random'
+COORD_DIR = DOCS / 'reports/hex-coordinates'
 MATCHING_DIR = DOCS / 'reports/matching'
 TABLES_DIR = DOCS / 'tables'
 
-for folder in (DOCS, SYSTEM_DIR, CARDS_DIR, JOURNEY_DIR, BATTLE_DIR, CHEST_DIR, HEX_DIR, MATCHING_DIR, TABLES_DIR):
+for folder in (DOCS, SYSTEM_DIR, CARDS_DIR, JOURNEY_DIR, BATTLE_DIR, CHEST_DIR, HEX_DIR, COORD_DIR, MATCHING_DIR, TABLES_DIR):
     folder.mkdir(parents=True, exist_ok=True)
 
 
@@ -103,6 +105,10 @@ for name in ('index.html', 'report.md', 'chests-data.json'):
 for name in ('index.html', 'report.md'):
     copy(HEX_SRC / name, HEX_DIR / name)
 
+# Coordinate concepts are an explanatory layer, not another gameplay source of truth.
+for name in ('index.html', 'report.md'):
+    copy(COORD_SRC / name, COORD_DIR / name)
+
 for name in ('index.html', 'bot.html', 'report.md', 'matching-data.json'):
     copy(MATCHING_SRC / name, MATCHING_DIR / name)
 
@@ -146,6 +152,7 @@ index = '''<!doctype html>
 <a class="card" href="reports/hex-random/index.html"><span class="num">06 / HEX RANDOMNESS</span><h3>地块生成与兵种随机</h3><p>开局预生成、邻格显现时点、SSSR一次性标签加权、低价重抽与祝福，含概率试算。</p><b>打开随机机制复核 →</b></a>
 <a class="card" href="reports/matching/index.html"><span class="num">07 / MATCHING</span><h3>匹配与机器人介入</h3><p>真人分差窗口、Bot介入参数、段位候选池与玩家状态；具体机器人配置独立维护。</p><b>打开匹配专题页 →</b></a>
 <a class="card" href="reports/matching/bot.html"><span class="num">08 / BOTS</span><h3>机器人配置详表</h3><p>86套逐卡等级与技能、神器、主城、标签和 AI 行为。</p><b>打开机器人详表 →</b></a>
+<a class="card" href="reports/hex-coordinates/index.html"><span class="num">09 / HEX COORDS</span><h3>Q / R 六边形坐标概念</h3><p>解释Q/R逻辑坐标、六邻格、第三轴、标准距离公式，以及它们在本项目开格、邻接和稳定生成顺序中的实际位置。</p><b>打开概念专题 →</b></a>
 </section><section class="info"><div><h3>阅读口径</h3><p>静态配置不等于线上实时开关；教程ID只证明局部连接，不按编号大小推定播放顺序；未启用资源不代表已经上线。</p></div><div><h3>数据下载</h3><ul><li><a href="reports/cards/cards.xlsx">卡牌资料 Excel</a></li><li><a href="reports/cards/cards-data.json">卡牌 JSON</a></li><li><a href="reports/journey/journey-nodes.csv">新手节点 CSV</a></li><li><a href="reports/journey/tutorial-graph.json">教程图 JSON</a></li><li><a href="manifest.json">发布文件校验清单</a></li></ul></div></section></main></body></html>'''
 write(DOCS / 'index.html', index)
 
@@ -156,6 +163,7 @@ allowed = {
     BATTLE_DIR/'index.html', BATTLE_DIR/'report.md', BATTLE_DIR/'battle-rules-data.json', BATTLE_DIR/'verification.json',
     CHEST_DIR/'index.html', CHEST_DIR/'report.md', CHEST_DIR/'chests-data.json',
     HEX_DIR/'index.html', HEX_DIR/'report.md',
+    COORD_DIR/'index.html', COORD_DIR/'report.md',
     MATCHING_DIR/'index.html', MATCHING_DIR/'bot.html', MATCHING_DIR/'report.md', MATCHING_DIR/'matching-data.json',
     JOURNEY_DIR/'index.html', JOURNEY_DIR/'source-manifest.json',
     *(JOURNEY_DIR / name for name in journey_files.values()),
