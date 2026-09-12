@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""One-shot migration for the 2026-09-12 content-review cleanup.
+"""One-shot migration for the remaining 2026-09-12 report ownership cleanup.
 
-This script is intentionally temporary. It moves reviewed conclusions into their final
-single-owner sources and removes stale matching-report payload duplication. Delete it
-from the workflow and repository after one successful rebuild commits the migrated
-sources and generated docs.
+The matching builder has already been fixed directly. This temporary helper only moves
+remaining duplicated prose into its final single-owner sources. Delete this file and
+its workflow step after one successful rebuild commits the migrated sources and docs.
 """
 from __future__ import annotations
 
@@ -35,7 +34,7 @@ def replace_once(text: str, old: str, new: str, label: str) -> str:
     return text.replace(old, new, 1)
 
 
-# 1) MATCHING owns player-state lifecycle and matchmaking selection, not hex formulas or bot payload detail.
+# 1) MATCHING owns player-state lifecycle and matchmaking selection, not hex formulas.
 path, text = read("scripts/matching_report.md")
 original = text
 text = replace_once(
@@ -67,68 +66,7 @@ text = re.sub(
 write_if_changed(path, original, text)
 
 
-# 2) The matching builder must not re-inject commented legacy AI sections or append 86 raw JSON payloads.
-path, text = read("scripts/build_matching_report.py")
-original = text
-legacy_injection = (
-    "md = (ROOT / 'scripts/matching_report.md').read_text(encoding='utf-8')\n"
-    "ai_rules = (ROOT / 'scripts/bot_ai_rules.md').read_text(encoding='utf-8')\n"
-    "ai_heading = '## 7.6 机器人 AI 行为：已恢复的具体动作'\n"
-    "md = md.split(ai_heading, 1)[0] + ai_heading + '\\n\\n' + ai_rules + '\\n\\n### 7.7 预设用到的每条神器词缀' + md.split('### 7.7 预设用到的每条神器词缀', 1)[1]\n"
-    "blocks = {}"
-)
-clean_injection = (
-    "md = (ROOT / 'scripts/matching_report.md').read_text(encoding='utf-8')\n"
-    "ai_rules = (ROOT / 'scripts/bot_ai_rules.md').read_text(encoding='utf-8')\n"
-    "blocks = {}"
-)
-text = replace_once(text, legacy_injection, clean_injection, "matching AI reinjection")
-text = replace_once(
-    text,
-    "body = md_parser.convert(md.replace('<!--BOT_TOOL-->', tool))",
-    "body = md_parser.convert(md)",
-    "matching main bot tool",
-)
-
-main_block = re.compile(
-    r"js = \(ROOT / 'scripts/matching_report\.js'\)\.read_text\(encoding='utf-8'\)\n"
-    r"embedded = json\.dumps\(data, ensure_ascii=False, separators=\(',', ':'\)\)\.replace\('<', '\\\\u003c'\)\n"
-    r"page = .*?\n\(OUT / 'index\.html'\)\.write_text\(page, encoding='utf-8'\)",
-    re.S,
-)
-main_replacement = '''js = (ROOT / 'scripts/matching_report.js').read_text(encoding='utf-8')
-embedded = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
-main_js = r"""
-const tip=document.getElementById('tooltip');let current=null;
-function place(el){const r=el.getBoundingClientRect();tip.hidden=false;const b=tip.getBoundingClientRect();tip.style.left=Math.max(12,Math.min(r.left,innerWidth-b.width-12))+'px';let y=r.bottom+8;if(y+b.height>innerHeight-12)y=Math.max(12,r.top-b.height-8);tip.style.top=y+'px'}
-function openTip(el){current=el;tip.querySelector('b').textContent=el.dataset.title||'';tip.querySelector('span').textContent=el.dataset.tip||'';el.setAttribute('aria-describedby','tooltip');place(el)}
-function closeTip(){if(current)current.removeAttribute('aria-describedby');current=null;tip.hidden=true}
-document.addEventListener('pointerover',e=>{const el=e.target.closest('.idtip');if(el)openTip(el)});document.addEventListener('pointerout',e=>{if(e.target.closest('.idtip'))closeTip()});document.addEventListener('focusin',e=>{if(e.target.matches('.idtip'))openTip(e.target)});document.addEventListener('focusout',e=>{if(e.target.matches('.idtip'))closeTip()});document.addEventListener('click',e=>{const el=e.target.closest('.idtip');if(el)openTip(el);else closeTip()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeTip()});
-"""
-page = '<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>占城大师 · 匹配体验与机器人介入规则</title><style>' + css + '</style></head><body><header><a href="../../index.html">占城大师研究资料库</a><span>匹配体验 · 2026-09-11 复核</span></header><main id="top"><nav aria-label="章节目录">' + md_parser.toc + '</nav><article>' + body + '</article></main><aside id="tooltip" role="tooltip" hidden><b></b><span></span></aside><div class="floating-actions" aria-label="页面导航"><a href="../../index.html" title="返回研究主页面">⌂<span>主页面</span></a><a href="#top" title="回到页面最上方">↑<span>顶部</span></a></div><script>' + main_js + '</script></body></html>'
-(OUT / 'index.html').write_text(page, encoding='utf-8')'''
-text, n = main_block.subn(main_replacement, text, count=1)
-if n != 1 and "const tip=document.getElementById('tooltip');let current=null;" not in text:
-    raise RuntimeError("matching main-page payload block not found")
-
-appendix_block = re.compile(
-    r"# The downloadable report also contains every original loadout for offline review\.\n"
-    r"appendix = \['\\n## 附录：86 条预设逐卡清单\\n'\].*?"
-    r"\(OUT / 'report\.md'\)\.write_text\(.*?encoding='utf-8'\)\n",
-    re.S,
-)
-appendix_replacement = (
-    "# Keep the downloadable matching report focused on matchmaking and player-state rules.\n"
-    "# Per-bot loadouts, artifacts and AI behavior live only on bot.html / matching-data.json.\n"
-    "(OUT / 'report.md').write_text(md, encoding='utf-8')\n"
-)
-text, n = appendix_block.subn(appendix_replacement, text, count=1)
-if n != 1 and "Keep the downloadable matching report focused" not in text:
-    raise RuntimeError("matching raw appendix block not found")
-write_if_changed(path, original, text)
-
-
-# 3) SYSTEM keeps a player-facing summary; HEX RANDOMNESS owns exact tier/weight tables.
+# 2) SYSTEM keeps a player-facing summary; HEX RANDOMNESS owns exact tier/weight tables.
 path, text = read("scripts/systems_report_template.md")
 original = text
 text = text.replace("内容重整：2026年9月9日。", "内容核对：2026年9月11日。", 1)
@@ -146,7 +84,7 @@ if n != 1 and "本页不再维护第二份四档概率表" not in text:
 write_if_changed(path, original, text)
 
 
-# 4) BATTLE keeps only the player-facing hex summary and links to the canonical hex report.
+# 3) BATTLE keeps only the player-facing hex summary and links to the canonical hex report.
 path, text = read("scripts/build_battle_rules_report.py")
 original = text
 battle_section = re.compile(r"## 模块二：地图与翻格：摘要与专题入口\n\n.*?(?=## 证据与附录)", re.S)
@@ -185,7 +123,7 @@ if n != 1 and "本页不再维护第二份地图模板、四档概率" not in te
 write_if_changed(path, original, text)
 
 
-# 5) HEX RANDOMNESS owns the exact modifiers; MATCHING owns account-state lifecycle.
+# 4) HEX RANDOMNESS owns exact modifiers; MATCHING owns account-state lifecycle.
 path, text = read("scripts/hex_random_report.md")
 original = text
 text = replace_once(
@@ -202,4 +140,4 @@ text = replace_once(
 )
 write_if_changed(path, original, text)
 
-print("content-review migration applied")
+print("remaining content-review migration applied")
