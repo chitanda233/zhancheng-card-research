@@ -116,7 +116,7 @@ jobs:
           grep -q '地图与翻格：摘要与专题入口' docs/reports/battle/report.md
           grep -q '精确的 SSSR 权重增量、合并方式、一次性消费状态与生成顺序统一以' docs/reports/matching/report.md
           grep -q '25%到底什么时候发生' docs/reports/hex-random/index.html
-          grep -q '11×3=33条' docs/reports/hex-random/report.md
+          grep -q '地图计数口径' docs/reports/hex-random/report.md
           test "$(wc -l < docs/reports/matching/report.md)" -lt 400
           ! grep -q '附录：86 条预设逐卡清单' docs/reports/matching/report.md
           ! grep -q '## 7.6 机器人 AI 行为' docs/reports/matching/report.md
