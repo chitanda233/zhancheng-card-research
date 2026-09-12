@@ -128,7 +128,9 @@ jobs:
           grep -q '本页不再维护第二份四档概率表' docs/reports/system/report.md
           grep -q '地图与翻格：摘要与专题入口' docs/reports/battle/report.md
           grep -q '精确的 SSSR 权重增量、合并方式、一次性消费状态与生成顺序统一以' docs/reports/matching/report.md
-          grep -q '25%到底什么时候发生' docs/reports/hex-random/index.html
+          grep -q '一个普通地块从出生到被玩家打开' docs/reports/hex-random/index.html
+          grep -q '三层随机不要混成一句' docs/reports/hex-random/report.md
+          grep -q 'SSSR加权：这是第二层随机的修正' docs/reports/hex-random/report.md
           grep -q '地图计数口径' docs/reports/hex-random/report.md
           grep -q 'Q / R 六边形坐标概念' docs/index.html
           grep -q 'q + r + s = 0' docs/reports/hex-coordinates/report.md
