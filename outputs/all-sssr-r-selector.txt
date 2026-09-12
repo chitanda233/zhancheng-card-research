@@ -1,0 +1,971 @@
+# Exact first-three R-card selector
+
+## func[25388] 0xF385 BattleSimulation.private BattleSimulation.SelectedCard SelectFirstThreeRCardWithoutGoldMine(int playerId) { }
+```
+1134fe0 func[25388] <j71469>:
+ 1134fe1: 01 7e                      | local[2] type=i64
+ 1134fe3: 05 7f                      | local[3..7] type=i32
+ 1134fe5: 23 00                      | global.get 0 <primary.global$0>
+ 1134fe7: 41 b0 03                   | i32.const 432
+ 1134fea: 6b                         | i32.sub
+ 1134feb: 21 03                      | local.set 3
+ 1134fed: 20 03                      | local.get 3
+ 1134fef: 24 00                      | global.set 0 <primary.global$0>
+ 1134ff1: 41 89 d0 b4 05             | i32.const 11347977
+ 1134ff6: 2d 00 00                   | i32.load8_u 0 0
+ 1134ff9: 45                         | i32.eqz
+ 1134ffa: 04 40                      | if
+ 1134ffc: 41 88 bb dd 04             |   i32.const 9919880
+ 1135001: 10 e5 07                   |   call 997 <j996>    ;; (unnamed)
+ 1135004: 41 88 99 d7 04             |   i32.const 9817224
+ 1135009: 10 e5 07                   |   call 997 <j996>    ;; (unnamed)
+ 113500c: 41 f0 9d dc 04             |   i32.const 9899760
+ 1135011: 10 e5 07                   |   call 997 <j996>    ;; (unnamed)
+ 1135014: 41 f4 9d dc 04             |   i32.const 9899764
+ 1135019: 10 e5 07                   |   call 997 <j996>    ;; (unnamed)
+ 113501c: 41 f8 9d dc 04             |   i32.const 9899768
+ 1135021: 10 e5 07                   |   call 997 <j996>    ;; (unnamed)
+ 1135024: 41 fc 9d dc 04             |   i32.const 9899772
+ 1135029: 10 e5 07                   |   call 997 <j996>    ;; (unnamed)
+ 113502c: 41 80 9e dc 04             |   i32.const 9899776
+ 1135031: 10 e5 07                   |   call 997 <j996>    ;; (unnamed)
+ 1135034: 41 c4 d1 d8 04             |   i32.const 9840836
+ 1135039: 10 e5 07                   |   call 997 <j996>    ;; (unnamed)
+ 113503c: 41 89 d0 b4 05             |   i32.const 11347977
+ 1135041: 41 01                      |   i32.const 1
+ 1135043: 3a 00 00                   |   i32.store8 0 0
+ 1135046: 0b                         | end
+ 1135047: 20 03                      | local.get 3
+ 1135049: 41 00                      | i32.const 0
+ 113504b: 36 02 f0 02                | i32.store 2 368
+ 113504f: 20 03                      | local.get 3
+ 1135051: 42 00                      | i64.const 0
+ 1135053: 37 03 e8 02                | i64.store 3 360
+ 1135057: 20 03                      | local.get 3
+ 1135059: 42 00                      | i64.const 0
+ 113505b: 37 03 e0 02                | i64.store 3 352
+ 113505f: 20 03                      | local.get 3
+ 1135061: 42 00                      | i64.const 0
+ 1135063: 37 03 d8 02                | i64.store 3 344
+ 1135067: 20 03                      | local.get 3
+ 1135069: 42 00                      | i64.const 0
+ 113506b: 37 03 d0 02                | i64.store 3 336
+ 113506f: 20 03                      | local.get 3
+ 1135071: 42 00                      | i64.const 0
+ 1135073: 37 03 c8 02                | i64.store 3 328
+ 1135077: 20 03                      | local.get 3
+ 1135079: 42 00                      | i64.const 0
+ 113507b: 37 03 c0 02                | i64.store 3 320
+ 113507f: 20 03                      | local.get 3
+ 1135081: 42 00                      | i64.const 0
+ 1135083: 37 03 b8 02                | i64.store 3 312
+ 1135087: 20 03                      | local.get 3
+ 1135089: 42 00                      | i64.const 0
+ 113508b: 37 03 b0 02                | i64.store 3 304
+ 113508f: 20 03                      | local.get 3
+ 1135091: 42 00                      | i64.const 0
+ 1135093: 37 03 a8 02                | i64.store 3 296
+ 1135097: 20 03                      | local.get 3
+ 1135099: 42 00                      | i64.const 0
+ 113509b: 37 03 a0 02                | i64.store 3 288
+ 113509f: 20 03                      | local.get 3
+ 11350a1: 42 00                      | i64.const 0
+ 11350a3: 37 03 98 02                | i64.store 3 280
+ 11350a7: 20 01                      | local.get 1
+ 11350a9: 28 02 dc 04                | i32.load 2 604
+ 11350ad: 21 06                      | local.set 6
+ 11350af: 20 06                      | local.get 6
+ 11350b1: 28 02 0c                   | i32.load 2 12
+ 11350b4: 21 05                      | local.set 5
+ 11350b6: 20 06                      | local.get 6
+ 11350b8: 41 00                      | i32.const 0
+ 11350ba: 36 02 0c                   | i32.store 2 12
+ 11350bd: 20 06                      | local.get 6
+ 11350bf: 20 06                      | local.get 6
+ 11350c1: 28 02 10                   | i32.load 2 16
+ 11350c4: 41 01                      | i32.const 1
+ 11350c6: 6a                         | i32.add
+ 11350c7: 36 02 10                   | i32.store 2 16
+ 11350ca: 20 05                      | local.get 5
+ 11350cc: 41 00                      | i32.const 0
+ 11350ce: 4a                         | i32.gt_s
+ 11350cf: 04 40                      | if
+ 11350d1: 20 06                      |   local.get 6
+ 11350d3: 28 02 08                   |   i32.load 2 8
+ 11350d6: 41 00                      |   i32.const 0
+ 11350d8: 20 05                      |   local.get 5
+ 11350da: 41 00                      |   i32.const 0
+ 11350dc: 10 b0 08                   |   call 1072 <j1080>    ;; 0xDE9 Array.public static void Clear(Array array, int index, int length) { }
+ 11350df: 0b                         | end
+ 11350e0: 02 40                      | block
+ 11350e2: 02 40                      |   block
+ 11350e4: 02 40                      |     block
+ 11350e6: 02 40                      |       block
+ 11350e8: 20 01                      |         local.get 1
+ 11350ea: 28 02 14                   |         i32.load 2 20
+ 11350ed: 21 08                      |         local.set 8
+ 11350ef: 20 08                      |         local.get 8
+ 11350f1: 28 02 0c                   |         i32.load 2 12
+ 11350f4: 21 09                      |         local.set 9
+ 11350f6: 20 09                      |         local.get 9
+ 11350f8: 41 00                      |         i32.const 0
+ 11350fa: 4a                         |         i32.gt_s
+ 11350fb: 04 40                      |         if
+ 11350fd: 41 00                      |           i32.const 0
+ 11350ff: 21 05                      |           local.set 5
+ 1135101: 03 40                      |           loop
+ 1135103: 20 08                      |             local.get 8
+ 1135105: 20 05                      |             local.get 5
+ 1135107: 41 02                      |             i32.const 2
+ 1135109: 74                         |             i32.shl
+ 113510a: 6a                         |             i32.add
+ 113510b: 28 02 10                   |             i32.load 2 16
+ 113510e: 21 07                      |             local.set 7
+ 1135110: 20 07                      |             local.get 7
+ 1135112: 04 40                      |             if
+ 1135114: 20 07                      |               local.get 7
+ 1135116: 28 02 08                   |               i32.load 2 8
+ 1135119: 20 02                      |               local.get 2
+ 113511b: 46                         |               i32.eq
+ 113511c: 0d 03                      |               br_if 3
+ 113511e: 0b                         |             end
+ 113511f: 20 05                      |             local.get 5
+ 1135121: 41 01                      |             i32.const 1
+ 1135123: 6a                         |             i32.add
+ 1135124: 21 05                      |             local.set 5
+ 1135126: 20 05                      |             local.get 5
+ 1135128: 20 09                      |             local.get 9
+ 113512a: 47                         |             i32.ne
+ 113512b: 0d 00                      |             br_if 0
+ 113512d: 0b                         |           end
+ 113512e: 0b                         |         end
+ 113512f: 41 88 bb dd 04             |         i32.const 9919880
+ 1135134: 28 02 00                   |         i32.load 2 0
+ 1135137: 21 02                      |         local.set 2
+ 1135139: 20 02                      |         local.get 2
+ 113513b: 28 02 1c                   |         i32.load 2 28
+ 113513e: 21 05                      |         local.set 5
+ 1135140: 20 05                      |         local.get 5
+ 1135142: 45                         |         i32.eqz
+ 1135143: 04 40                      |         if
+ 1135145: 20 02                      |           local.get 2
+ 1135147: 10 f3 07                   |           call 1011 <j1011>    ;; (unnamed)
+ 113514a: 1a                         |           drop
+ 113514b: 20 02                      |           local.get 2
+ 113514d: 28 02 1c                   |           i32.load 2 28
+ 1135150: 21 05                      |           local.set 5
+ 1135152: 0b                         |         end
+ 1135153: 20 05                      |         local.get 5
+ 1135155: 28 02 08                   |         i32.load 2 8
+ 1135158: 21 05                      |         local.set 5
+ 113515a: 20 05                      |         local.get 5
+ 113515c: 2d 00 bd 01                |         i32.load8_u 0 189
+ 1135160: 41 01                      |         i32.const 1
+ 1135162: 71                         |         i32.and
+ 1135163: 45                         |         i32.eqz
+ 1135164: 04 40                      |         if
+ 1135166: 20 05                      |           local.get 5
+ 1135168: 10 e7 07                   |           call 999 <j998>    ;; (unnamed)
+ 113516b: 21 05                      |           local.set 5
+ 113516d: 0b                         |         end
+ 113516e: 20 05                      |         local.get 5
+ 1135170: 28 02 74                   |         i32.load 2 116
+ 1135173: 45                         |         i32.eqz
+ 1135174: 04 40                      |         if
+ 1135176: 20 05                      |           local.get 5
+ 1135178: 10 e6 07                   |           call 998 <j997>    ;; (unnamed)
+ 113517b: 0b                         |         end
+ 113517c: 20 02                      |         local.get 2
+ 113517e: 28 02 1c                   |         i32.load 2 28
+ 1135181: 28 02 08                   |         i32.load 2 8
+ 1135184: 21 05                      |         local.set 5
+ 1135186: 20 05                      |         local.get 5
+ 1135188: 2d 00 bd 01                |         i32.load8_u 0 189
+ 113518c: 41 01                      |         i32.const 1
+ 113518e: 71                         |         i32.and
+ 113518f: 45                         |         i32.eqz
+ 1135190: 0d 01                      |         br_if 1
+ 1135192: 0c 02                      |         br 2
+ 1135194: 0b                         |       end
+ 1135195: 20 07                      |       local.get 7
+ 1135197: 28 02 0c                   |       i32.load 2 12
+ 113519a: 21 07                      |       local.set 7
+ 113519c: 20 07                      |       local.get 7
+ 113519e: 0d 02                      |       br_if 2
+ 11351a0: 41 88 bb dd 04             |       i32.const 9919880
+ 11351a5: 28 02 00                   |       i32.load 2 0
+ 11351a8: 21 02                      |       local.set 2
+ 11351aa: 20 02                      |       local.get 2
+ 11351ac: 28 02 1c                   |       i32.load 2 28
+ 11351af: 21 05                      |       local.set 5
+ 11351b1: 20 05                      |       local.get 5
+ 11351b3: 45                         |       i32.eqz
+ 11351b4: 04 40                      |       if
+ 11351b6: 20 02                      |         local.get 2
+ 11351b8: 10 f3 07                   |         call 1011 <j1011>    ;; (unnamed)
+ 11351bb: 1a                         |         drop
+ 11351bc: 20 02                      |         local.get 2
+ 11351be: 28 02 1c                   |         i32.load 2 28
+ 11351c1: 21 05                      |         local.set 5
+ 11351c3: 0b                         |       end
+ 11351c4: 20 05                      |       local.get 5
+ 11351c6: 28 02 08                   |       i32.load 2 8
+ 11351c9: 21 05                      |       local.set 5
+ 11351cb: 20 05                      |       local.get 5
+ 11351cd: 2d 00 bd 01                |       i32.load8_u 0 189
+ 11351d1: 41 01                      |       i32.const 1
+ 11351d3: 71                         |       i32.and
+ 11351d4: 45                         |       i32.eqz
+ 11351d5: 04 40                      |       if
+ 11351d7: 20 05                      |         local.get 5
+ 11351d9: 10 e7 07                   |         call 999 <j998>    ;; (unnamed)
+ 11351dc: 21 05                      |         local.set 5
+ 11351de: 0b                         |       end
+ 11351df: 20 05                      |       local.get 5
+ 11351e1: 28 02 74                   |       i32.load 2 116
+ 11351e4: 45                         |       i32.eqz
+ 11351e5: 04 40                      |       if
+ 11351e7: 20 05                      |         local.get 5
+ 11351e9: 10 e6 07                   |         call 998 <j997>    ;; (unnamed)
+ 11351ec: 0b                         |       end
+ 11351ed: 20 02                      |       local.get 2
+ 11351ef: 28 02 1c                   |       i32.load 2 28
+ 11351f2: 28 02 08                   |       i32.load 2 8
+ 11351f5: 21 05                      |       local.set 5
+ 11351f7: 20 05                      |       local.get 5
+ 11351f9: 2d 00 bd 01                |       i32.load8_u 0 189
+ 11351fd: 41 01                      |       i32.const 1
+ 11351ff: 71                         |       i32.and
+ 1135200: 0d 01                      |       br_if 1
+ 1135202: 0b                         |     end
+ 1135203: 20 05                      |     local.get 5
+ 1135205: 10 e7 07                   |     call 999 <j998>    ;; (unnamed)
+ 1135208: 21 05                      |     local.set 5
+ 113520a: 0b                         |   end
+ 113520b: 20 05                      |   local.get 5
+ 113520d: 28 02 5c                   |   i32.load 2 92
+ 1135210: 28 02 00                   |   i32.load 2 0
+ 1135213: 21 07                      |   local.set 7
+ 1135215: 0b                         | end
+ 1135216: 20 07                      | local.get 7
+ 1135218: 28 02 0c                   | i32.load 2 12
+ 113521b: 41 00                      | i32.const 0
+ 113521d: 4a                         | i32.gt_s
+ 113521e: 04 40                      | if
+ 1135220: 41 00                      |   i32.const 0
+ 1135222: 21 05                      |   local.set 5
+ 1135224: 03 40                      |   loop
+ 1135226: 20 07                      |     local.get 7
+ 1135228: 20 05                      |     local.get 5
+ 113522a: 41 0c                      |     i32.const 12
+ 113522c: 6c                         |     i32.mul
+ 113522d: 6a                         |     i32.add
+ 113522e: 21 02                      |     local.set 2
+ 1135230: 02 40                      |     block
+ 1135232: 20 01                      |       local.get 1
+ 1135234: 20 02                      |       local.get 2
+ 1135236: 28 02 10                   |       i32.load 2 16
+ 1135239: 20 03                      |       local.get 3
+ 113523b: 41 98 02                   |       i32.const 280
+ 113523e: 6a                         |       i32.add
+ 113523f: 20 03                      |       local.get 3
+ 1135241: 10 fb 13                   |       call 2555 <j3571>    ;; 0xF3CA BattleSimulation.private bool TryFindCard(string cardId, out BattleConfigCardDefinition definition) { }
+ 1135244: 45                         |       i32.eqz
+ 1135245: 0d 00                      |       br_if 0
+ 1135247: 20 03                      |       local.get 3
+ 1135249: 20 03                      |       local.get 3
+ 113524b: 29 03 b8 02                |       i64.load 3 312
+ 113524f: 37 03 98 03                |       i64.store 3 408
+ 1135253: 20 03                      |       local.get 3
+ 1135255: 20 03                      |       local.get 3
+ 1135257: 29 03 b0 02                |       i64.load 3 304
+ 113525b: 37 03 90 03                |       i64.store 3 400
+ 113525f: 20 03                      |       local.get 3
+ 1135261: 20 03                      |       local.get 3
+ 1135263: 29 03 a8 02                |       i64.load 3 296
+ 1135267: 37 03 88 03                |       i64.store 3 392
+ 113526b: 20 03                      |       local.get 3
+ 113526d: 20 03                      |       local.get 3
+ 113526f: 29 03 a0 02                |       i64.load 3 288
+ 1135273: 37 03 80 03                |       i64.store 3 384
+ 1135277: 20 03                      |       local.get 3
+ 1135279: 20 03                      |       local.get 3
+ 113527b: 29 03 98 02                |       i64.load 3 280
+ 113527f: 37 03 f8 02                |       i64.store 3 376
+ 1135283: 41 88 99 d7 04             |       i32.const 9817224
+ 1135288: 28 02 00                   |       i32.load 2 0
+ 113528b: 21 08                      |       local.set 8
+ 113528d: 20 08                      |       local.get 8
+ 113528f: 28 02 74                   |       i32.load 2 116
+ 1135292: 45                         |       i32.eqz
+ 1135293: 04 40                      |       if
+ 1135295: 20 08                      |         local.get 8
+ 1135297: 10 e6 07                   |         call 998 <j997>    ;; (unnamed)
+ 113529a: 0b                         |       end
+ 113529b: 20 03                      |       local.get 3
+ 113529d: 20 03                      |       local.get 3
+ 113529f: 29 03 98 03                |       i64.load 3 408
+ 11352a3: 37 03 c8 01                |       i64.store 3 200
+ 11352a7: 20 03                      |       local.get 3
+ 11352a9: 20 03                      |       local.get 3
+ 11352ab: 29 03 90 03                |       i64.load 3 400
+ 11352af: 37 03 c0 01                |       i64.store 3 192
+ 11352b3: 20 03                      |       local.get 3
+ 11352b5: 20 03                      |       local.get 3
+ 11352b7: 29 03 88 03                |       i64.load 3 392
+ 11352bb: 37 03 b8 01                |       i64.store 3 184
+ 11352bf: 20 03                      |       local.get 3
+ 11352c1: 20 03                      |       local.get 3
+ 11352c3: 29 03 80 03                |       i64.load 3 384
+ 11352c7: 37 03 b0 01                |       i64.store 3 176
+ 11352cb: 20 03                      |       local.get 3
+ 11352cd: 20 03                      |       local.get 3
+ 11352cf: 29 03 f8 02                |       i64.load 3 376
+ 11352d3: 37 03 a8 01                |       i64.store 3 168
+ 11352d7: 20 03                      |       local.get 3
+ 11352d9: 41 a8 01                   |       i32.const 168
+ 11352dc: 6a                         |       i32.add
+ 11352dd: 20 03                      |       local.get 3
+ 11352df: 10 a1 c7 01                |       call 25505 <j71614>    ;; 0xF386 BattleSimulation.private static bool IsFirstThreeRerollCandidate(BattleConfigCardDefinition card) { }
+ 11352e3: 45                         |       i32.eqz
+ 11352e4: 0d 00                      |       br_if 0
+ 11352e6: 20 03                      |       local.get 3
+ 11352e8: 20 02                      |       local.get 2
+ 11352ea: 28 02 18                   |       i32.load 2 24
+ 11352ed: 36 02 90 02                |       i32.store 2 272
+ 11352f1: 20 02                      |       local.get 2
+ 11352f3: 28 02 10                   |       i32.load 2 16
+ 11352f6: ad                         |       i64.extend_i32_u
+ 11352f7: 20 02                      |       local.get 2
+ 11352f9: 28 02 14                   |       i32.load 2 20
+ 11352fc: ad                         |       i64.extend_i32_u
+ 11352fd: 42 20                      |       i64.const 32
+ 11352ff: 86                         |       i64.shl
+ 1135300: 84                         |       i64.or
+ 1135301: 21 04                      |       local.set 4
+ 1135303: 20 03                      |       local.get 3
+ 1135305: 20 03                      |       local.get 3
+ 1135307: 29 03 a0 02                |       i64.load 3 288
+ 113530b: 37 03 88 01                |       i64.store 3 136
+ 113530f: 20 03                      |       local.get 3
+ 1135311: 20 03                      |       local.get 3
+ 1135313: 29 03 a8 02                |       i64.load 3 296
+ 1135317: 37 03 90 01                |       i64.store 3 144
+ 113531b: 20 03                      |       local.get 3
+ 113531d: 20 03                      |       local.get 3
+ 113531f: 29 03 b0 02                |       i64.load 3 304
+ 1135323: 37 03 98 01                |       i64.store 3 152
+ 1135327: 20 03                      |       local.get 3
+ 1135329: 20 03                      |       local.get 3
+ 113532b: 29 03 b8 02                |       i64.load 3 312
+ 113532f: 37 03 a0 01                |       i64.store 3 160
+ 1135333: 20 03                      |       local.get 3
+ 1135335: 20 04                      |       local.get 4
+ 1135337: 37 03 88 02                |       i64.store 3 264
+ 113533b: 20 03                      |       local.get 3
+ 113533d: 41 00                      |       i32.const 0
+ 113533f: 36 02 80 02                |       i32.store 2 256
+ 1135343: 20 03                      |       local.get 3
+ 1135345: 42 00                      |       i64.const 0
+ 1135347: 37 03 f8 01                |       i64.store 3 248
+ 113534b: 20 03                      |       local.get 3
+ 113534d: 42 00                      |       i64.const 0
+ 113534f: 37 03 f0 01                |       i64.store 3 240
+ 1135353: 20 03                      |       local.get 3
+ 1135355: 42 00                      |       i64.const 0
+ 1135357: 37 03 e8 01                |       i64.store 3 232
+ 113535b: 20 03                      |       local.get 3
+ 113535d: 42 00                      |       i64.const 0
+ 113535f: 37 03 e0 01                |       i64.store 3 224
+ 1135363: 20 03                      |       local.get 3
+ 1135365: 42 00                      |       i64.const 0
+ 1135367: 37 03 d8 01                |       i64.store 3 216
+ 113536b: 20 03                      |       local.get 3
+ 113536d: 20 03                      |       local.get 3
+ 113536f: 29 03 98 02                |       i64.load 3 280
+ 1135373: 37 03 80 01                |       i64.store 3 128
+ 1135377: 20 03                      |       local.get 3
+ 1135379: 42 00                      |       i64.const 0
+ 113537b: 37 03 d0 01                |       i64.store 3 208
+ 113537f: 20 03                      |       local.get 3
+ 1135381: 20 03                      |       local.get 3
+ 1135383: 28 02 90 02                |       i32.load 2 272
+ 1135387: 36 02 78                   |       i32.store 2 120
+ 113538a: 20 03                      |       local.get 3
+ 113538c: 20 03                      |       local.get 3
+ 113538e: 29 03 88 02                |       i64.load 3 264
+ 1135392: 37 03 70                   |       i64.store 3 112
+ 1135395: 20 03                      |       local.get 3
+ 1135397: 41 d0 01                   |       i32.const 208
+ 113539a: 6a                         |       i32.add
+ 113539b: 20 03                      |       local.get 3
+ 113539d: 41 80 01                   |       i32.const 128
+ 11353a0: 6a                         |       i32.add
+ 11353a1: 20 03                      |       local.get 3
+ 11353a3: 41 f0 00                   |       i32.const 112
+ 11353a6: 6a                         |       i32.add
+ 11353a7: 41 00                      |       i32.const 0
+ 11353a9: 10 b2 1a                   |       call 3378 <j5113>    ;; 0xF7A3 BattleSimulation.SelectedCard.public void .ctor(BattleConfigCardDefinition card, BattleLoadoutCard loadout) { } || 0xF7AB BattleSimulation.LegendaryCardCandidate.public void .ctor(BattleConfigCardDefinition card, BattleLoadoutCard loadout) { } || 0xF7AD BattleSimulation.RerollCardCandidate.public void .ctor(BattleConfigCardDefinition card, BattleLoadoutCard loadout) { }
+ 11353ac: 41 f0 9d dc 04             |       i32.const 9899760
+ 11353b1: 28 02 00                   |       i32.load 2 0
+ 11353b4: 21 08                      |       local.set 8
+ 11353b6: 20 03                      |       local.get 3
+ 11353b8: 20 03                      |       local.get 3
+ 11353ba: 28 02 80 02                |       i32.load 2 256
+ 11353be: 36 02 a8 03                |       i32.store 2 424
+ 11353c2: 20 03                      |       local.get 3
+ 11353c4: 20 03                      |       local.get 3
+ 11353c6: 29 03 f8 01                |       i64.load 3 248
+ 11353ca: 37 03 a0 03                |       i64.store 3 416
+ 11353ce: 20 03                      |       local.get 3
+ 11353d0: 20 03                      |       local.get 3
+ 11353d2: 29 03 f0 01                |       i64.load 3 240
+ 11353d6: 37 03 98 03                |       i64.store 3 408
+ 11353da: 20 03                      |       local.get 3
+ 11353dc: 20 03                      |       local.get 3
+ 11353de: 29 03 e8 01                |       i64.load 3 232
+ 11353e2: 37 03 90 03                |       i64.store 3 400
+ 11353e6: 20 03                      |       local.get 3
+ 11353e8: 20 03                      |       local.get 3
+ 11353ea: 29 03 e0 01                |       i64.load 3 224
+ 11353ee: 37 03 88 03                |       i64.store 3 392
+ 11353f2: 20 03                      |       local.get 3
+ 11353f4: 20 03                      |       local.get 3
+ 11353f6: 29 03 d8 01                |       i64.load 3 216
+ 11353fa: 37 03 80 03                |       i64.store 3 384
+ 11353fe: 20 03                      |       local.get 3
+ 1135400: 20 03                      |       local.get 3
+ 1135402: 29 03 d0 01                |       i64.load 3 208
+ 1135406: 37 03 f8 02                |       i64.store 3 376
+ 113540a: 20 06                      |       local.get 6
+ 113540c: 20 06                      |       local.get 6
+ 113540e: 28 02 10                   |       i32.load 2 16
+ 1135411: 41 01                      |       i32.const 1
+ 1135413: 6a                         |       i32.add
+ 1135414: 36 02 10                   |       i32.store 2 16
+ 1135417: 20 06                      |       local.get 6
+ 1135419: 28 02 0c                   |       i32.load 2 12
+ 113541c: 21 02                      |       local.set 2
+ 113541e: 20 06                      |       local.get 6
+ 1135420: 28 02 08                   |       i32.load 2 8
+ 1135423: 21 09                      |       local.set 9
+ 1135425: 20 02                      |       local.get 2
+ 1135427: 20 09                      |       local.get 9
+ 1135429: 28 02 0c                   |       i32.load 2 12
+ 113542c: 49                         |       i32.lt_u
+ 113542d: 04 40                      |       if
+ 113542f: 20 06                      |         local.get 6
+ 1135431: 20 02                      |         local.get 2
+ 1135433: 41 01                      |         i32.const 1
+ 1135435: 6a                         |         i32.add
+ 1135436: 36 02 0c                   |         i32.store 2 12
+ 1135439: 20 09                      |         local.get 9
+ 113543b: 20 02                      |         local.get 2
+ 113543d: 41 34                      |         i32.const 52
+ 113543f: 6c                         |         i32.mul
+ 1135440: 6a                         |         i32.add
+ 1135441: 21 02                      |         local.set 2
+ 1135443: 20 02                      |         local.get 2
+ 1135445: 41 40                      |         i32.const 4294967232
+ 1135447: 6b                         |         i32.sub
+ 1135448: 20 03                      |         local.get 3
+ 113544a: 28 02 a8 03                |         i32.load 2 424
+ 113544e: 36 02 00                   |         i32.store 2 0
+ 1135451: 20 03                      |         local.get 3
+ 1135453: 29 03 a0 03                |         i64.load 3 416
+ 1135457: 21 04                      |         local.set 4
+ 1135459: 20 02                      |         local.get 2
+ 113545b: 20 04                      |         local.get 4
+ 113545d: a7                         |         i32.wrap_i64
+ 113545e: 36 02 38                   |         i32.store 2 56
+ 1135461: 20 02                      |         local.get 2
+ 1135463: 20 04                      |         local.get 4
+ 1135465: 42 20                      |         i64.const 32
+ 1135467: 88                         |         i64.shr_u
+ 1135468: a7                         |         i32.wrap_i64
+ 1135469: 36 02 3c                   |         i32.store 2 60
+ 113546c: 20 03                      |         local.get 3
+ 113546e: 29 03 98 03                |         i64.load 3 408
+ 1135472: 21 04                      |         local.set 4
+ 1135474: 20 02                      |         local.get 2
+ 1135476: 20 04                      |         local.get 4
+ 1135478: a7                         |         i32.wrap_i64
+ 1135479: 36 02 30                   |         i32.store 2 48
+ 113547c: 20 02                      |         local.get 2
+ 113547e: 20 04                      |         local.get 4
+ 1135480: 42 20                      |         i64.const 32
+ 1135482: 88                         |         i64.shr_u
+ 1135483: a7                         |         i32.wrap_i64
+ 1135484: 36 02 34                   |         i32.store 2 52
+ 1135487: 20 03                      |         local.get 3
+ 1135489: 29 03 90 03                |         i64.load 3 400
+ 113548d: 21 04                      |         local.set 4
+ 113548f: 20 02                      |         local.get 2
+ 1135491: 20 04                      |         local.get 4
+ 1135493: a7                         |         i32.wrap_i64
+ 1135494: 36 02 28                   |         i32.store 2 40
+ 1135497: 20 02                      |         local.get 2
+ 1135499: 20 04                      |         local.get 4
+ 113549b: 42 20                      |         i64.const 32
+ 113549d: 88                         |         i64.shr_u
+ 113549e: a7                         |         i32.wrap_i64
+ 113549f: 36 02 2c                   |         i32.store 2 44
+ 11354a2: 20 03                      |         local.get 3
+ 11354a4: 29 03 88 03                |         i64.load 3 392
+ 11354a8: 21 04                      |         local.set 4
+ 11354aa: 20 02                      |         local.get 2
+ 11354ac: 20 04                      |         local.get 4
+ 11354ae: a7                         |         i32.wrap_i64
+ 11354af: 36 02 20                   |         i32.store 2 32
+ 11354b2: 20 02                      |         local.get 2
+ 11354b4: 20 04                      |         local.get 4
+ 11354b6: 42 20                      |         i64.const 32
+ 11354b8: 88                         |         i64.shr_u
+ 11354b9: a7                         |         i32.wrap_i64
+ 11354ba: 36 02 24                   |         i32.store 2 36
+ 11354bd: 20 03                      |         local.get 3
+ 11354bf: 29 03 80 03                |         i64.load 3 384
+ 11354c3: 21 04                      |         local.set 4
+ 11354c5: 20 02                      |         local.get 2
+ 11354c7: 20 04                      |         local.get 4
+ 11354c9: a7                         |         i32.wrap_i64
+ 11354ca: 36 02 18                   |         i32.store 2 24
+ 11354cd: 20 02                      |         local.get 2
+ 11354cf: 20 04                      |         local.get 4
+ 11354d1: 42 20                      |         i64.const 32
+ 11354d3: 88                         |         i64.shr_u
+ 11354d4: a7                         |         i32.wrap_i64
+ 11354d5: 36 02 1c                   |         i32.store 2 28
+ 11354d8: 20 03                      |         local.get 3
+ 11354da: 29 03 f8 02                |         i64.load 3 376
+ 11354de: 21 04                      |         local.set 4
+ 11354e0: 20 02                      |         local.get 2
+ 11354e2: 20 04                      |         local.get 4
+ 11354e4: a7                         |         i32.wrap_i64
+ 11354e5: 36 02 10                   |         i32.store 2 16
+ 11354e8: 20 02                      |         local.get 2
+ 11354ea: 20 04                      |         local.get 4
+ 11354ec: 42 20                      |         i64.const 32
+ 11354ee: 88                         |         i64.shr_u
+ 11354ef: a7                         |         i32.wrap_i64
+ 11354f0: 36 02 14                   |         i32.store 2 20
+ 11354f3: 0c 01                      |         br 1
+ 11354f5: 0b                         |       end
+ 11354f6: 20 08                      |       local.get 8
+ 11354f8: 28 02 10                   |       i32.load 2 16
+ 11354fb: 28 02 60                   |       i32.load 2 96
+ 11354fe: 28 02 38                   |       i32.load 2 56
+ 1135501: 21 02                      |       local.set 2
+ 1135503: 20 03                      |       local.get 3
+ 1135505: 20 03                      |       local.get 3
+ 1135507: 28 02 a8 03                |       i32.load 2 424
+ 113550b: 36 02 68                   |       i32.store 2 104
+ 113550e: 20 03                      |       local.get 3
+ 1135510: 20 03                      |       local.get 3
+ 1135512: 29 03 a0 03                |       i64.load 3 416
+ 1135516: 37 03 60                   |       i64.store 3 96
+ 1135519: 20 03                      |       local.get 3
+ 113551b: 20 03                      |       local.get 3
+ 113551d: 29 03 98 03                |       i64.load 3 408
+ 1135521: 37 03 58                   |       i64.store 3 88
+ 1135524: 20 03                      |       local.get 3
+ 1135526: 20 03                      |       local.get 3
+ 1135528: 29 03 90 03                |       i64.load 3 400
+ 113552c: 37 03 50                   |       i64.store 3 80
+ 113552f: 20 03                      |       local.get 3
+ 1135531: 20 03                      |       local.get 3
+ 1135533: 29 03 88 03                |       i64.load 3 392
+ 1135537: 37 03 48                   |       i64.store 3 72
+ 113553a: 20 03                      |       local.get 3
+ 113553c: 41 40                      |       i32.const 4294967232
+ 113553e: 6b                         |       i32.sub
+ 113553f: 20 03                      |       local.get 3
+ 1135541: 29 03 80 03                |       i64.load 3 384
+ 1135545: 37 03 00                   |       i64.store 3 0
+ 1135548: 20 03                      |       local.get 3
+ 113554a: 20 03                      |       local.get 3
+ 113554c: 29 03 f8 02                |       i64.load 3 376
+ 1135550: 37 03 38                   |       i64.store 3 56
+ 1135553: 20 06                      |       local.get 6
+ 1135555: 20 03                      |       local.get 3
+ 1135557: 41 38                      |       i32.const 56
+ 1135559: 6a                         |       i32.add
+ 113555a: 20 02                      |       local.get 2
+ 113555c: 10 e9 1d                   |       call 3817 <j5994>    ;; (unnamed)
+ 113555f: 0b                         |     end
+ 1135560: 20 05                      |     local.get 5
+ 1135562: 41 01                      |     i32.const 1
+ 1135564: 6a                         |     i32.add
+ 1135565: 21 05                      |     local.set 5
+ 1135567: 20 05                      |     local.get 5
+ 1135569: 20 07                      |     local.get 7
+ 113556b: 28 02 0c                   |     i32.load 2 12
+ 113556e: 48                         |     i32.lt_s
+ 113556f: 0d 00                      |     br_if 0
+ 1135571: 0b                         |   end
+ 1135572: 0b                         | end
+ 1135573: 02 40                      | block
+ 1135575: 20 06                      |   local.get 6
+ 1135577: 28 02 0c                   |   i32.load 2 12
+ 113557a: 45                         |   i32.eqz
+ 113557b: 04 40                      |   if
+ 113557d: 41 c4 d1 d8 04             |     i32.const 9840836
+ 1135582: 28 02 00                   |     i32.load 2 0
+ 1135585: 21 01                      |     local.set 1
+ 1135587: 20 01                      |     local.get 1
+ 1135589: 28 02 74                   |     i32.load 2 116
+ 113558c: 45                         |     i32.eqz
+ 113558d: 04 40                      |     if
+ 113558f: 20 01                      |       local.get 1
+ 1135591: 10 e6 07                   |       call 998 <j997>    ;; (unnamed)
+ 1135594: 41 c4 d1 d8 04             |       i32.const 9840836
+ 1135599: 28 02 00                   |       i32.load 2 0
+ 113559c: 21 01                      |       local.set 1
+ 113559e: 0b                         |     end
+ 113559f: 20 01                      |     local.get 1
+ 11355a1: 28 02 5c                   |     i32.load 2 92
+ 11355a4: 21 01                      |     local.set 1
+ 11355a6: 20 00                      |     local.get 0
+ 11355a8: 21 02                      |     local.set 2
+ 11355aa: 20 01                      |     local.get 1
+ 11355ac: 28 02 00                   |     i32.load 2 0
+ 11355af: ad                         |     i64.extend_i32_u
+ 11355b0: 20 01                      |     local.get 1
+ 11355b2: 28 02 04                   |     i32.load 2 4
+ 11355b5: ad                         |     i64.extend_i32_u
+ 11355b6: 42 20                      |     i64.const 32
+ 11355b8: 86                         |     i64.shl
+ 11355b9: 84                         |     i64.or
+ 11355ba: 21 04                      |     local.set 4
+ 11355bc: 20 02                      |     local.get 2
+ 11355be: 20 04                      |     local.get 4
+ 11355c0: a7                         |     i32.wrap_i64
+ 11355c1: 36 02 00                   |     i32.store 2 0
+ 11355c4: 20 02                      |     local.get 2
+ 11355c6: 20 04                      |     local.get 4
+ 11355c8: 42 20                      |     i64.const 32
+ 11355ca: 88                         |     i64.shr_u
+ 11355cb: a7                         |     i32.wrap_i64
+ 11355cc: 36 02 04                   |     i32.store 2 4
+ 11355cf: 20 00                      |     local.get 0
+ 11355d1: 20 01                      |     local.get 1
+ 11355d3: 28 02 30                   |     i32.load 2 48
+ 11355d6: 36 02 30                   |     i32.store 2 48
+ 11355d9: 20 01                      |     local.get 1
+ 11355db: 28 02 28                   |     i32.load 2 40
+ 11355de: ad                         |     i64.extend_i32_u
+ 11355df: 20 01                      |     local.get 1
+ 11355e1: 28 02 2c                   |     i32.load 2 44
+ 11355e4: ad                         |     i64.extend_i32_u
+ 11355e5: 42 20                      |     i64.const 32
+ 11355e7: 86                         |     i64.shl
+ 11355e8: 84                         |     i64.or
+ 11355e9: 21 04                      |     local.set 4
+ 11355eb: 20 00                      |     local.get 0
+ 11355ed: 20 04                      |     local.get 4
+ 11355ef: a7                         |     i32.wrap_i64
+ 11355f0: 36 02 28                   |     i32.store 2 40
+ 11355f3: 20 00                      |     local.get 0
+ 11355f5: 20 04                      |     local.get 4
+ 11355f7: 42 20                      |     i64.const 32
+ 11355f9: 88                         |     i64.shr_u
+ 11355fa: a7                         |     i32.wrap_i64
+ 11355fb: 36 02 2c                   |     i32.store 2 44
+ 11355fe: 20 01                      |     local.get 1
+ 1135600: 28 02 20                   |     i32.load 2 32
+ 1135603: ad                         |     i64.extend_i32_u
+ 1135604: 20 01                      |     local.get 1
+ 1135606: 28 02 24                   |     i32.load 2 36
+ 1135609: ad                         |     i64.extend_i32_u
+ 113560a: 42 20                      |     i64.const 32
+ 113560c: 86                         |     i64.shl
+ 113560d: 84                         |     i64.or
+ 113560e: 21 04                      |     local.set 4
+ 1135610: 20 00                      |     local.get 0
+ 1135612: 20 04                      |     local.get 4
+ 1135614: a7                         |     i32.wrap_i64
+ 1135615: 36 02 20                   |     i32.store 2 32
+ 1135618: 20 00                      |     local.get 0
+ 113561a: 20 04                      |     local.get 4
+ 113561c: 42 20                      |     i64.const 32
+ 113561e: 88                         |     i64.shr_u
+ 113561f: a7                         |     i32.wrap_i64
+ 1135620: 36 02 24                   |     i32.store 2 36
+ 1135623: 20 01                      |     local.get 1
+ 1135625: 28 02 18                   |     i32.load 2 24
+ 1135628: ad                         |     i64.extend_i32_u
+ 1135629: 20 01                      |     local.get 1
+ 113562b: 28 02 1c                   |     i32.load 2 28
+ 113562e: ad                         |     i64.extend_i32_u
+ 113562f: 42 20                      |     i64.const 32
+ 1135631: 86                         |     i64.shl
+ 1135632: 84                         |     i64.or
+ 1135633: 21 04                      |     local.set 4
+ 1135635: 20 00                      |     local.get 0
+ 1135637: 20 04                      |     local.get 4
+ 1135639: a7                         |     i32.wrap_i64
+ 113563a: 36 02 18                   |     i32.store 2 24
+ 113563d: 20 00                      |     local.get 0
+ 113563f: 20 04                      |     local.get 4
+ 1135641: 42 20                      |     i64.const 32
+ 1135643: 88                         |     i64.shr_u
+ 1135644: a7                         |     i32.wrap_i64
+ 1135645: 36 02 1c                   |     i32.store 2 28
+ 1135648: 20 01                      |     local.get 1
+ 113564a: 28 02 10                   |     i32.load 2 16
+ 113564d: ad                         |     i64.extend_i32_u
+ 113564e: 20 01                      |     local.get 1
+ 1135650: 28 02 14                   |     i32.load 2 20
+ 1135653: ad                         |     i64.extend_i32_u
+ 1135654: 42 20                      |     i64.const 32
+ 1135656: 86                         |     i64.shl
+ 1135657: 84                         |     i64.or
+ 1135658: 21 04                      |     local.set 4
+ 113565a: 20 00                      |     local.get 0
+ 113565c: 20 04                      |     local.get 4
+ 113565e: a7                         |     i32.wrap_i64
+ 113565f: 36 02 10                   |     i32.store 2 16
+ 1135662: 20 00                      |     local.get 0
+ 1135664: 20 04                      |     local.get 4
+ 1135666: 42 20                      |     i64.const 32
+ 1135668: 88                         |     i64.shr_u
+ 1135669: a7                         |     i32.wrap_i64
+ 113566a: 36 02 14                   |     i32.store 2 20
+ 113566d: 20 01                      |     local.get 1
+ 113566f: 28 02 08                   |     i32.load 2 8
+ 1135672: ad                         |     i64.extend_i32_u
+ 1135673: 20 01                      |     local.get 1
+ 1135675: 28 02 0c                   |     i32.load 2 12
+ 1135678: ad                         |     i64.extend_i32_u
+ 1135679: 42 20                      |     i64.const 32
+ 113567b: 86                         |     i64.shl
+ 113567c: 84                         |     i64.or
+ 113567d: 21 04                      |     local.set 4
+ 113567f: 20 00                      |     local.get 0
+ 1135681: 20 04                      |     local.get 4
+ 1135683: a7                         |     i32.wrap_i64
+ 1135684: 36 02 08                   |     i32.store 2 8
+ 1135687: 20 00                      |     local.get 0
+ 1135689: 20 04                      |     local.get 4
+ 113568b: 42 20                      |     i64.const 32
+ 113568d: 88                         |     i64.shr_u
+ 113568e: a7                         |     i32.wrap_i64
+ 113568f: 36 02 0c                   |     i32.store 2 12
+ 1135692: 0c 01                      |     br 1
+ 1135694: 0b                         |   end
+ 1135695: 20 06                      |   local.get 6
+ 1135697: 41 f8 9d dc 04             |   i32.const 9899768
+ 113569c: 28 02 00                   |   i32.load 2 0
+ 113569f: 10 b2 b0 01                |   call 22578 <j60664>    ;; (unnamed)
+ 11356a3: 20 03                      |   local.get 3
+ 11356a5: 41 f8 02                   |   i32.const 376
+ 11356a8: 6a                         |   i32.add
+ 11356a9: 20 06                      |   local.get 6
+ 11356ab: 20 01                      |   local.get 1
+ 11356ad: 41 d0 08                   |   i32.const 1104
+ 11356b0: 6a                         |   i32.add
+ 11356b1: 41 00                      |   i32.const 0
+ 11356b3: 20 06                      |   local.get 6
+ 11356b5: 28 02 0c                   |   i32.load 2 12
+ 11356b8: 41 00                      |   i32.const 0
+ 11356ba: 10 9d 0d                   |   call 1693 <j2019>    ;; 0x43CA FPRandom.public int Range(int minInclusive, int maxExclusive) { }
+ 11356bd: 41 80 9e dc 04             |   i32.const 9899776
+ 11356c2: 28 02 00                   |   i32.load 2 0
+ 11356c5: 10 f8 12                   |   call 2424 <j3332>    ;; (unnamed)
+ 11356c8: 20 03                      |   local.get 3
+ 11356ca: 20 03                      |   local.get 3
+ 11356cc: 28 02 a8 03                |   i32.load 2 424
+ 11356d0: 36 02 f0 02                |   i32.store 2 368
+ 11356d4: 20 03                      |   local.get 3
+ 11356d6: 20 03                      |   local.get 3
+ 11356d8: 29 03 a0 03                |   i64.load 3 416
+ 11356dc: 37 03 e8 02                |   i64.store 3 360
+ 11356e0: 20 03                      |   local.get 3
+ 11356e2: 20 03                      |   local.get 3
+ 11356e4: 29 03 98 03                |   i64.load 3 408
+ 11356e8: 37 03 e0 02                |   i64.store 3 352
+ 11356ec: 20 03                      |   local.get 3
+ 11356ee: 20 03                      |   local.get 3
+ 11356f0: 29 03 90 03                |   i64.load 3 400
+ 11356f4: 37 03 d8 02                |   i64.store 3 344
+ 11356f8: 20 03                      |   local.get 3
+ 11356fa: 20 03                      |   local.get 3
+ 11356fc: 29 03 88 03                |   i64.load 3 392
+ 1135700: 37 03 d0 02                |   i64.store 3 336
+ 1135704: 20 03                      |   local.get 3
+ 1135706: 20 03                      |   local.get 3
+ 1135708: 29 03 80 03                |   i64.load 3 384
+ 113570c: 37 03 c8 02                |   i64.store 3 328
+ 1135710: 20 03                      |   local.get 3
+ 1135712: 20 03                      |   local.get 3
+ 1135714: 29 03 f8 02                |   i64.load 3 376
+ 1135718: 37 03 c0 02                |   i64.store 3 320
+ 113571c: 20 06                      |   local.get 6
+ 113571e: 28 02 0c                   |   i32.load 2 12
+ 1135721: 21 01                      |   local.set 1
+ 1135723: 20 06                      |   local.get 6
+ 1135725: 41 00                      |   i32.const 0
+ 1135727: 36 02 0c                   |   i32.store 2 12
+ 113572a: 20 06                      |   local.get 6
+ 113572c: 20 06                      |   local.get 6
+ 113572e: 28 02 10                   |   i32.load 2 16
+ 1135731: 41 01                      |   i32.const 1
+ 1135733: 6a                         |   i32.add
+ 1135734: 36 02 10                   |   i32.store 2 16
+ 1135737: 20 01                      |   local.get 1
+ 1135739: 41 00                      |   i32.const 0
+ 113573b: 4a                         |   i32.gt_s
+ 113573c: 04 40                      |   if
+ 113573e: 20 06                      |     local.get 6
+ 1135740: 28 02 08                   |     i32.load 2 8
+ 1135743: 41 00                      |     i32.const 0
+ 1135745: 20 01                      |     local.get 1
+ 1135747: 41 00                      |     i32.const 0
+ 1135749: 10 b0 08                   |     call 1072 <j1080>    ;; 0xDE9 Array.public static void Clear(Array array, int index, int length) { }
+ 113574c: 0b                         |   end
+ 113574d: 20 03                      |   local.get 3
+ 113574f: 20 03                      |   local.get 3
+ 1135751: 28 02 f0 02                |   i32.load 2 368
+ 1135755: 36 02 80 02                |   i32.store 2 256
+ 1135759: 20 03                      |   local.get 3
+ 113575b: 20 03                      |   local.get 3
+ 113575d: 29 03 e8 02                |   i64.load 3 360
+ 1135761: 37 03 f8 01                |   i64.store 3 248
+ 1135765: 20 03                      |   local.get 3
+ 1135767: 20 03                      |   local.get 3
+ 1135769: 29 03 e0 02                |   i64.load 3 352
+ 113576d: 37 03 f0 01                |   i64.store 3 240
+ 1135771: 20 03                      |   local.get 3
+ 1135773: 20 03                      |   local.get 3
+ 1135775: 29 03 d8 02                |   i64.load 3 344
+ 1135779: 37 03 e8 01                |   i64.store 3 232
+ 113577d: 20 03                      |   local.get 3
+ 113577f: 20 03                      |   local.get 3
+ 1135781: 29 03 d0 02                |   i64.load 3 336
+ 1135785: 37 03 e0 01                |   i64.store 3 224
+ 1135789: 20 03                      |   local.get 3
+ 113578b: 20 03                      |   local.get 3
+ 113578d: 29 03 c8 02                |   i64.load 3 328
+ 1135791: 37 03 d8 01                |   i64.store 3 216
+ 1135795: 20 03                      |   local.get 3
+ 1135797: 20 03                      |   local.get 3
+ 1135799: 29 03 c0 02                |   i64.load 3 320
+ 113579d: 37 03 d0 01                |   i64.store 3 208
+ 11357a1: 20 00                      |   local.get 0
+ 11357a3: 41 00                      |   i32.const 0
+ 11357a5: 36 02 30                   |   i32.store 2 48
+ 11357a8: 42 00                      |   i64.const 0
+ 11357aa: 21 04                      |   local.set 4
+ 11357ac: 20 00                      |   local.get 0
+ 11357ae: 20 04                      |   local.get 4
+ 11357b0: a7                         |   i32.wrap_i64
+ 11357b1: 36 02 28                   |   i32.store 2 40
+ 11357b4: 20 00                      |   local.get 0
+ 11357b6: 20 04                      |   local.get 4
+ 11357b8: 42 20                      |   i64.const 32
+ 11357ba: 88                         |   i64.shr_u
+ 11357bb: a7                         |   i32.wrap_i64
+ 11357bc: 36 02 2c                   |   i32.store 2 44
+ 11357bf: 42 00                      |   i64.const 0
+ 11357c1: 21 04                      |   local.set 4
+ 11357c3: 20 00                      |   local.get 0
+ 11357c5: 20 04                      |   local.get 4
+ 11357c7: a7                         |   i32.wrap_i64
+ 11357c8: 36 02 20                   |   i32.store 2 32
+ 11357cb: 20 00                      |   local.get 0
+ 11357cd: 20 04                      |   local.get 4
+ 11357cf: 42 20                      |   i64.const 32
+ 11357d1: 88                         |   i64.shr_u
+ 11357d2: a7                         |   i32.wrap_i64
+ 11357d3: 36 02 24                   |   i32.store 2 36
+ 11357d6: 42 00                      |   i64.const 0
+ 11357d8: 21 04                      |   local.set 4
+ 11357da: 20 00                      |   local.get 0
+ 11357dc: 20 04                      |   local.get 4
+ 11357de: a7                         |   i32.wrap_i64
+ 11357df: 36 02 18                   |   i32.store 2 24
+ 11357e2: 20 00                      |   local.get 0
+ 11357e4: 20 04                      |   local.get 4
+ 11357e6: 42 20                      |   i64.const 32
+ 11357e8: 88                         |   i64.shr_u
+ 11357e9: a7                         |   i32.wrap_i64
+ 11357ea: 36 02 1c                   |   i32.store 2 28
+ 11357ed: 42 00                      |   i64.const 0
+ 11357ef: 21 04                      |   local.set 4
+ 11357f1: 20 00                      |   local.get 0
+ 11357f3: 20 04                      |   local.get 4
+ 11357f5: a7                         |   i32.wrap_i64
+ 11357f6: 36 02 10                   |   i32.store 2 16
+ 11357f9: 20 00                      |   local.get 0
+ 11357fb: 20 04                      |   local.get 4
+ 11357fd: 42 20                      |   i64.const 32
+ 11357ff: 88                         |   i64.shr_u
+ 1135800: a7                         |   i32.wrap_i64
+ 1135801: 36 02 14                   |   i32.store 2 20
+ 1135804: 42 00                      |   i64.const 0
+ 1135806: 21 04                      |   local.set 4
+ 1135808: 20 00                      |   local.get 0
+ 113580a: 20 04                      |   local.get 4
+ 113580c: a7                         |   i32.wrap_i64
+ 113580d: 36 02 08                   |   i32.store 2 8
+ 1135810: 20 00                      |   local.get 0
+ 1135812: 20 04                      |   local.get 4
+ 1135814: 42 20                      |   i64.const 32
+ 1135816: 88                         |   i64.shr_u
+ 1135817: a7                         |   i32.wrap_i64
+ 1135818: 36 02 0c                   |   i32.store 2 12
+ 113581b: 42 00                      |   i64.const 0
+ 113581d: 21 04                      |   local.set 4
+ 113581f: 20 00                      |   local.get 0
+ 1135821: 20 04                      |   local.get 4
+ 1135823: a7                         |   i32.wrap_i64
+ 1135824: 36 02 00                   |   i32.store 2 0
+ 1135827: 20 00                      |   local.get 0
+ 1135829: 20 04                      |   local.get 4
+ 113582b: 42 20                      |   i64.const 32
+ 113582d: 88                         |   i64.shr_u
+ 113582e: a7                         |   i32.wrap_i64
+ 113582f: 36 02 04                   |   i32.store 2 4
+ 1135832: 20 03                      |   local.get 3
+ 1135834: 20 03                      |   local.get 3
+ 1135836: 29 03 e0 02                |   i64.load 3 352
+ 113583a: 37 03 30                   |   i64.store 3 48
+ 113583d: 20 03                      |   local.get 3
+ 113583f: 20 03                      |   local.get 3
+ 1135841: 29 03 d8 02                |   i64.load 3 344
+ 1135845: 37 03 28                   |   i64.store 3 40
+ 1135848: 20 03                      |   local.get 3
+ 113584a: 20 03                      |   local.get 3
+ 113584c: 29 03 d0 02                |   i64.load 3 336
+ 1135850: 37 03 20                   |   i64.store 3 32
+ 1135853: 20 03                      |   local.get 3
+ 1135855: 20 03                      |   local.get 3
+ 1135857: 29 03 c8 02                |   i64.load 3 328
+ 113585b: 37 03 18                   |   i64.store 3 24
+ 113585e: 20 03                      |   local.get 3
+ 1135860: 20 03                      |   local.get 3
+ 1135862: 28 02 80 02                |   i32.load 2 256
+ 1135866: 36 02 08                   |   i32.store 2 8
+ 1135869: 20 03                      |   local.get 3
+ 113586b: 20 03                      |   local.get 3
+ 113586d: 29 03 c0 02                |   i64.load 3 320
+ 1135871: 37 03 10                   |   i64.store 3 16
+ 1135874: 20 03                      |   local.get 3
+ 1135876: 20 03                      |   local.get 3
+ 1135878: 29 03 f8 01                |   i64.load 3 248
+ 113587c: 37 03 00                   |   i64.store 3 0
+ 113587f: 20 00                      |   local.get 0
+ 1135881: 20 03                      |   local.get 3
+ 1135883: 41 10                      |   i32.const 16
+ 1135885: 6a                         |   i32.add
+ 1135886: 20 03                      |   local.get 3
+ 1135888: 41 00                      |   i32.const 0
+ 113588a: 10 b2 1a                   |   call 3378 <j5113>    ;; 0xF7A3 BattleSimulation.SelectedCard.public void .ctor(BattleConfigCardDefinition card, BattleLoadoutCard loadout) { } || 0xF7AB BattleSimulation.LegendaryCardCandidate.public void .ctor(BattleConfigCardDefinition card, BattleLoadoutCard loadout) { } || 0xF7AD BattleSimulation.RerollCardCandidate.public void .ctor(BattleConfigCardDefinition card, BattleLoadoutCard loadout) { }
+ 113588d: 0b                         | end
+ 113588e: 20 03                      | local.get 3
+ 1135890: 41 b0 03                   | i32.const 432
+ 1135893: 6a                         | i32.add
+ 1135894: 24 00                      | global.set 0 <primary.global$0>
+ 1135896: 0b                         | end
+
+```
