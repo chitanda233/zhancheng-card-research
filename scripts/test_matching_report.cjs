@@ -15,14 +15,26 @@ const data = JSON.parse(fs.readFileSync(path.join(root,'reports/matching/matchin
     fs.createReadStream(file).pipe(res);
   });
   await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
-  const url = 'http://127.0.0.1:' + server.address().port + '/reports/matching/index.html';
+  const base = 'http://127.0.0.1:' + server.address().port + '/reports/matching/';
   let browser;
   const errors=[];
   try {
     browser = await chromium.launch({headless:true,channel:'msedge'});
     const page=await browser.newPage({viewport:{width:1440,height:1000}});
     page.on('pageerror',e=>errors.push(e.message));
-    await page.goto(url);
+
+    // Matching overview must stay lightweight and must not own the bot explorer payload.
+    await page.goto(base + 'index.html');
+    assert.equal(await page.locator('#bot-tool').count(),0);
+    assert.equal(await page.locator('#matching-data').count(),0);
+    assert.match(await page.locator('body').innerText(),/机器人配置详表/);
+    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+    await page.screenshot({path:path.join(output,'matching-overview.png')});
+    assert.deepEqual(errors,[]);
+
+    // All detailed bot configuration is owned by the companion page.
+    await page.goto(base + 'bot.html');
+    assert.equal(await page.locator('#matching-data').count(),1);
     assert.equal(await page.locator('#bot-rows tr').count(),86);
     for(const rank of data.ranks) {
       await page.selectOption('#rank-filter',String(rank.id));
@@ -60,8 +72,18 @@ const data = JSON.parse(fs.readFileSync(path.join(root,'reports/matching/matchin
     await page.locator('#bot-detail').evaluate(el=>el.scrollIntoView({block:'start',behavior:'instant'}));
     await page.screenshot({path:path.join(output,'mobile-profile.png')});
     assert.deepEqual(errors,[]);
-    const html=fs.readFileSync(path.join(root,'reports/matching/index.html'),'utf8');
-    assert.equal(/<!--(?:WINDOWS|RANKS|BOT_TOOL|AI_RELEASE|AFFIXES|SOURCES)-->/.test(html),false);
+
+    const overview=fs.readFileSync(path.join(root,'reports/matching/index.html'),'utf8');
+    const botHtml=fs.readFileSync(path.join(root,'reports/matching/bot.html'),'utf8');
+    const report=fs.readFileSync(path.join(root,'reports/matching/report.md'),'utf8');
+    assert.equal(/<!--(?:WINDOWS|RANKS|BOT_TOOL|AI_RELEASE|AFFIXES|SOURCES)-->/.test(overview),false);
+    assert.equal(/id=["']bot-tool["']/.test(overview),false);
+    assert.equal(/id=["']matching-data["']/.test(overview),false);
+    assert.equal(/## 附录：86 条预设逐卡清单/.test(report),false);
+    assert.equal(/## 7\.6 机器人 AI 行为/.test(report),false);
+    assert.equal(/id=["']bot-tool["']/.test(botHtml),true);
+    assert.equal(/id=["']matching-data["']/.test(botHtml),true);
+
     for(const s of data.sources) assert.ok(fs.existsSync(path.join(root,'tables',s.table+'.json')),s.table);
     const manifest=JSON.parse(fs.readFileSync(path.join(root,'manifest.json'),'utf8'));
     const {createHash}=require('node:crypto');
@@ -76,7 +98,7 @@ const data = JSON.parse(fs.readFileSync(path.join(root,'reports/matching/matchin
         if(target) assert.ok(fs.existsSync(path.resolve(root,path.dirname(file.path),target)),file.path+' -> '+target);
       }
     }
-    console.log(JSON.stringify({passed:true,rankPools:25,botProfiles:86,cardSlots:688,viewports:[1440,390],errors},null,2));
+    console.log(JSON.stringify({passed:true,matchingOverview:true,rankPools:25,botProfiles:86,cardSlots:688,viewports:[1440,390],errors},null,2));
   } finally {
     if(browser) await browser.close();
     await new Promise(resolve=>server.close(resolve));
