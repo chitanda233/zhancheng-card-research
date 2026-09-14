@@ -649,7 +649,7 @@ public class QualityInformationWindowUGUI : BaseInformationWindowUGUI // TypeDef
 ## tables/scripts candidates
 
 tables/I2Terms.json:2598:       "卡组必须包含至少1张{0}卡牌"
-scripts/_tmp_extract_deck_rule_wat.py:73: op=ROOT/'research/deck-rarity-rule-wat.txt'
+scripts/_tmp_extract_deck_rule_wat.py:40: (ROOT/'research/deck-rarity-rule-wat.txt').write_text('\n'.join(out),encoding='utf-8')
 scripts/build_matching_report.py:167: blocks['AFFIXES'] = table(['ID / 名称', 'CardGrouping', 'Quality', 'Level', 'ValueType', 'attrType', 'attrValue'], [(aid + ' ' + affixes[aid]['label'], *[affixes[aid][k] for k in ('CardGrouping', 'Quality', 'Level', 'ValueType', 'attrType', 'attrValue')]) for aid in used_affixes])
 
 ## binary/metadata strings candidates
