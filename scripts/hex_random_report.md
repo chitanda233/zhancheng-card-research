@@ -361,7 +361,7 @@ ResolveHexOwnershipFromUnitPresence
 
 这条重生成链没有重新进入开局的`ResolveInitialRarity → ResolveUserLabelGoldCardOdd`用户标签加权链。因此JustPaidUser、LosingStreak、InactiveUser、对手WinningStreak等开局SSSR增量，不会因为一个隐藏格发生所有权变化就在这里重新触发一次；占领重生成使用的是原价格档对应的基础稀有度权重，再叠加“当前哪些稀有度实际有合法候选”的可用性过滤。
 
-最后要把“什么时候随机”和“什么时候揭晓”分开：**二次随机发生在所有权变化时，第二次点击不是才开始随机。** 新隐藏结果写回后，玩家以后真正点击该格，仍进入`OpenHex → GetHexOpenBlockReason → SpendGold → CommitOpenedHex → ResolveOpenedHexOutcome`。因此4.2和4.3列出的低价降级、超级召唤、神器、教程等点击阶段规则，仍可能在这份二次基础隐藏结果之上继续改写最终展示。
+最后要把“什么时候随机”和“什么时候揭晓”分开：**二次随机发生在所有权变化时，第二次点击不是才开始随机。** 新隐藏结果写回后，玩家以后真正点击该格，仍进入`OpenHex → GetHexOpenBlockReason → SpendGold → CommitOpenedHex → ResolveOpenedHexOutcome`。因此5.2和5.3列出的低价降级、超级召唤、神器、教程等点击阶段规则，仍可能在这份二次基础隐藏结果之上继续改写最终展示。
 
 所以完整生命周期应写成：
 
