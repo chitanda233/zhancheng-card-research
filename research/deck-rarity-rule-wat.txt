@@ -5,13 +5,8 @@ rva_hex	rva_dec	wasm_func	dump_line	namespace	declaring_type_context	signature
 0x721B	29211	14751	487		HexInfoUI	internal bool get_IsShowingPricePrompt() { }
 
 # TARGET METHOD-MAP ROWS
-0x346A	13418	18963	100457		CardDeckChangePanel.<UpdateCardDeck>d__24	private void MoveNext() { }
-0x2AD6	10966	48194	100543	UIModuleO	CardDeckChangePanel	private void ChangeEquipCard(int nowCardDeckIndex) { }
-0xA67A	42618	48200	100556	UIModuleO	CardDeckChangePanel	private void UpdateCardDeck(List<UserHeroCardData> cardDatas, bool isEnemy) { }
-0xA67E	42622	48194	100569	UIModuleO	CardDeckChangePanel	private void UpdateShowCardTypeCountUI(List<UserHeroCardData> cardDatas) { }
-0xEE9A	61082	14006	526446	BattleCore	PlayerBattleLoadoutValidator	private static void ValidateCards(BattleConfigPackage package, BattleLoadoutCard[] cards) { }
 
-# INFERRED TARGET FUNCS
+# TARGET FUNCS
 0x2AD6	CardDeckChangePanel.ChangeEquipCard	[]
 0xA67A	CardDeckChangePanel.UpdateCardDeck	[]
 0x346A	CardDeckChangePanel.<UpdateCardDeck>d__24.MoveNext	[]
