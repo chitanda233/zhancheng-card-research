@@ -13,7 +13,14 @@ fieldset{border:1px solid var(--line);border-radius:8px;margin:16px 0;display:fl
 <li><a href="#21-25-50-100-250">2.1 第一层：普通格的25 / 50 / 100 / 250档位</a></li>
 <li><a href="#22-r-sr-ssr-sssr">2.2 第二层：档位决定内部R / SR / SSR / SSSR / 空权重</a></li>
 <li><a href="#23">2.3 第三层：同稀有度中再选具体建筑</a></li>
-<li><a href="#24-sssr-50-100-sssr">2.4 极端卡组：全 SSSR 时，50 / 100 低价格格可能最终仍翻出 SSSR</a></li>
+<li><a href="#24-sssr">2.4 外部组卡约束与内部战斗逻辑：正常玩家不能构造“全 SSSR 卡组”</a><ul>
+<li><a href="#241-r-sr-ssr">2.4.1 外部设置规则：卡组编辑器强制保留R / SR / SSR</a></li>
+<li><a href="#242">2.4.2 战斗内部规则：不会因为外部最低配卡要求而改写四档概率</a></li>
+<li><a href="#243">2.4.3 “至少各一张”也不等于任何格子都一定有候选</a></li>
+<li><a href="#244-uiloadout-sssr">2.4.4 异常/绕过UI的Loadout：全 SSSR 仍是底层可分析的理论边界</a></li>
+<li><a href="#245-loadout">2.4.5 战斗层还有Loadout校验，但当前不能证明它重复执行同一条稀有度规则</a></li>
+</ul>
+</li>
 <li><a href="#25">2.5 三层随机不要混成一句“翻格随机”</a></li>
 </ul>
 </li>
@@ -110,6 +117,7 @@ fieldset{border:1px solid var(--line);border-radius:8px;margin:16px 0;display:fl
 </tbody>
 </table></div>
 <p>这里还有一个明确的运行时例外：<strong>符合条件的未打开隐藏格在所有权变化时会进入“第二次生成”</strong>。这次不会重抽25/50/100/250价格档，而是保留原价格，按新归属方可用候选重新抽内部稀有度和具体隐藏内容；详见4.4。</p>
+<p>还要把<strong>外部组卡规则</strong>和<strong>战斗内部生成规则</strong>分开理解。正常玩家在卡组编辑界面不能把牌组配成全SSSR：实测与本地化键<code>CantEquipCardTip</code>共同表明，卡组至少要保留1张R（绿色）、1张SR（蓝色）、1张SSR（紫色）。但战斗内部的地块稀有度权重并不会因为这个UI限制而改写；它仍按<code>GlobalHexInfo</code>先抽内部稀有度，再去当前战斗牌组中寻找合法候选。正常产品规则与异常/调试边界的区别详见2.4。</p>
 <p>如果只想知道机制本身，读第1～4节即可；第5节以后主要是加权、seed、地图池和证据细节。</p>
 <h2 id="1">1. 一个普通地块从出生到被玩家打开</h2>
 <h3 id="11">1.1 初始化：先生成基础隐藏结果</h3>
@@ -257,61 +265,118 @@ A 尚未打开：B / C / D 还不满足当前扩张条件
 </ol>
 <p>当前没有发现这一层给单张候选配置额外独立权重。如果有N个完全等价的合法候选，条件概率就是1/N。牌组缺失或为空时仍存在从战斗配置包回退的分支，因此不能把所有模式都写成“永远只从玩家装备牌组里抽”。</p>
 <p>例如问号格已经抽到SSR，且当前有3个完全等价的合法SSR兵营，那么每个兵营在“已经是问号”的条件下基础概率约为15%÷3=5%；若从任意普通格开始算，还要再乘前一层的25%。</p>
-<h3 id="24-sssr-50-100-sssr">2.4 极端卡组：全 SSSR 时，50 / 100 低价格格可能最终仍翻出 SSSR</h3>
-<p>这里存在一个重要的牌组边界：<strong>如果玩家的非空战斗牌组里只有 SSSR，50 / 100 普通兵营格的基础稀有度概率不会被改成100% SSSR，但最终点击结果可能因为候选为空后的回退路径而落到 SSSR。</strong> 这不是第二层概率表失效，而是“第二层先抽稀有度、第三层找不到对应候选、点击阶段再回退选卡”叠加出来的结果。</p>
-<p>以50金币一星格为例，初始化仍然先按74 / 20 / 5 / 1抽R / SR / SSR / SSSR；100金币二星格也仍然按50 / 40 / 8 / 2抽。假设50格先抽到R，而当前非空牌组全部是SSSR，<code class="idtip" tabindex="0" data-tip="按稀有度、牌组、建筑类型、问号限制和金矿额度过滤后抽具体候选。">ResolveRandomArchitecture</code>会因为稀有度不匹配把这些SSSR候选过滤掉。当前链路显示，配置包卡池回退主要用于loadout缺失或卡组为空，不会因为“牌组非空但恰好没有本次目标稀有度”就自动补一张公共R卡，因此这个格子的初始化具体建筑可能没有匹配候选。</p>
-<p>玩家之后真正点击时，<code>ResolveOpenedHexOutcome</code>会优先让<code class="idtip" tabindex="0" data-tip="优先把开局隐藏建筑映射到玩家本局拥有的对应卡牌。">SelectCardForCellArchitecture</code>读取格子已有隐藏建筑；如果隐藏建筑缺失或无法映射到玩家本局拥有的卡，就回退到<code>SelectCardForHex(playerId, hexType)</code>。这个回退不再携带初始化阶段那次R / SR / SSR / SSSR抽取作为硬性稀有度限制，而是按当前格子类型从本局合法卡中选。于是，在这个格子类型下如果玩家所有合法候选都只有SSSR，最终就会选到SSSR。</p>
-<pre><code class="language-text">50 / 100普通兵营格
-→ 初始化仍按原概率抽内部稀有度
-→ 例如抽到R或SR
-→ 全SSSR非空牌组没有对应稀有度候选
-→ 初始化具体建筑候选为空 / 无法匹配
-→ 玩家点击
-→ SelectCardForCellArchitecture失败或无匹配
-→ SelectCardForHex回退
-→ 当前合法候选只有SSSR
-→ 最终得到SSSR
+<h3 id="24-sssr">2.4 外部组卡约束与内部战斗逻辑：正常玩家不能构造“全 SSSR 卡组”</h3>
+<p>这一层必须区分“玩家在界面上能配置什么”和“战斗代码拿到一个Loadout以后怎样运行”。前者是<strong>产品外部约束</strong>，后者是<strong>实际战斗逻辑</strong>。两者共同决定正常对局，但不能互相替代解释。</p>
+<h4 id="241-r-sr-ssr">2.4.1 外部设置规则：卡组编辑器强制保留R / SR / SSR</h4>
+<p>当前客户端本地化表存在专门提示键：</p>
+<pre><code class="language-text">CantEquipCardTip = 卡组必须包含至少1张{0}卡牌
 </code></pre>
-<p>前几次低价翻格还有一层保护，但它也不能凭空制造玩家没有的R卡。<code class="idtip" tabindex="0" data-tip="对前几次低价翻格的部分SSR及以上结果尝试重抽成R。">TryApplyFirstThreeCheapOpenReroll</code>在价格低于250、已开低价格计数仍在保护范围、当前候选稀有度至少为SSR且不是资源/防御建筑等条件满足时，会调用<code>SelectFirstThreeRCardWithoutGoldMine(playerId)</code>尝试换成一张R卡。该选择器从玩家自己的战斗牌组寻找符合条件的R候选；如果全牌组都是SSSR，R候选为空，这次降级替换就无法成功，原来的SSSR结果会保留。</p>
-<p>因此，在当前客户端链路下，可以把这个极端案例概括为：</p>
+<p>结合实际卡组编辑表现，<code>{0}</code>会对应玩家看到的不同稀有度类别。正常玩家至少必须保留：</p>
 <div class="scroll"><table>
 <thead>
 <tr>
-<th>场景</th>
-<th>初始化内部稀有度</th>
-<th>第三层候选</th>
-<th>点击阶段可能结果</th>
+<th>玩家看到的颜色</th>
+<th>内部稀有度</th>
+<th style="text-align: right;">正常卡组最低数量</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>50格抽到R / SR / SSR，牌组只有SSSR</td>
-<td>仍按74 / 20 / 5 / 1正常抽</td>
-<td>目标稀有度可能无候选</td>
-<td>回退后可落到SSSR</td>
+<td>绿色</td>
+<td>R</td>
+<td style="text-align: right;">至少1张</td>
 </tr>
 <tr>
-<td>100格抽到R / SR / SSR，牌组只有SSSR</td>
-<td>仍按50 / 40 / 8 / 2正常抽</td>
-<td>目标稀有度可能无候选</td>
-<td>回退后可落到SSSR</td>
+<td>蓝色</td>
+<td>SR</td>
+<td style="text-align: right;">至少1张</td>
 </tr>
 <tr>
-<td>50 / 100格本来就抽到SSSR</td>
+<td>紫色</td>
+<td>SSR</td>
+<td style="text-align: right;">至少1张</td>
+</tr>
+<tr>
+<td>金色</td>
 <td>SSSR</td>
-<td>有合法SSSR候选</td>
-<td>正常选择SSSR</td>
-</tr>
-<tr>
-<td>低价保护尝试把高稀有度降成R，但牌组没有R</td>
-<td>—</td>
-<td>R重抽池为空</td>
-<td>降级失败，保留原结果</td>
+<td style="text-align: right;">当前没有发现“至少1张”的同类要求</td>
 </tr>
 </tbody>
 </table></div>
-<p>这里有两个边界必须保留。第一，这个结论针对会进入普通兵营选卡链的格子，金矿、防御、特殊资源、教程强制格等不能直接套用。第二，必须存在符合当前<code>hexType</code>等限制的合法SSSR候选；“牌组全是SSSR”不等于任意格子都一定能找到合法SSSR。另一个容易误解的点是：<strong>最终变成SSSR不会把地块价格同步改成250。50格仍是50，100格仍是100；改变的是最终卡牌结果，不是第一层价格档位。</strong></p>
-<p>从设计角度看，这意味着极端牌组构成可能穿透50 / 100格原本的稀有度分布。基础权重表仍然真实参与初始化，但如果目标稀有度在玩家非空牌组中没有任何合法候选，后续回退会让玩家最终看到的分布显著偏离基础权重，因此分析实战出卡率时不能只看<code>GlobalHexInfo</code>四档概率表。</p>
+<p>组卡界面对应<code>UIModuleO.CardDeckChangePanel</code>。当前恢复到的关键方法包括<code>ChangeEquipCard(int nowCardDeckIndex)</code>、<code>UpdateCardDeck(...)</code>和<code>UpdateShowCardTypeCountUI(...)</code>，说明这个限制属于卡组编辑/更新链。<code>CantEquipCardTip_GoldMine = 不要放弃金矿！</code>还表明同一界面存在其他组卡合法性约束，但当前证据不足以把所有外部约束都归纳成同一种稀有度规则。</p>
+<p>因此，对<strong>正常玩家路径</strong>而言，“非空战斗牌组全部由SSSR组成”不是一个合法的UI配置。之前把“全SSSR卡组”作为正常实战边界是不准确的，应该降级为异常、调试、旧数据或其他绕过正常组卡界面的理论输入。</p>
+<h4 id="242">2.4.2 战斗内部规则：不会因为外部最低配卡要求而改写四档概率</h4>
+<p>外部卡组限制并不意味着战斗内部把50 / 100格的概率重新设计成“保证抽到牌组里已有的稀有度”。当前主链仍然是：</p>
+<pre><code class="language-text">普通格确定价格档位
+→ 按GlobalHexInfo抽R / SR / SSR / SSSR / 空
+→ 按抽中的稀有度筛选当前战斗Loadout中的合法候选
+→ 选择具体建筑并保存隐藏结果
+→ 点击时通常读取该隐藏结果
+→ 缺失或无法映射时才进入后续回退
+</code></pre>
+<p>例如50金币一星格仍然按74 / 20 / 5 / 1抽R / SR / SSR / SSSR；100金币二星格仍然按50 / 40 / 8 / 2抽。UI强制玩家至少带一张R、一张SR、一张SSR，主要作用是让正常牌组更不容易出现“抽到了某个低稀有度，但整个牌组完全没有这个稀有度”的极端空候选情况，而不是改变第二层随机本身。</p>
+<p>这也是理解产品设计的一条重要线索：<strong>外部组卡规则在为内部随机系统提供输入前提，内部随机系统本身仍按自己的概率和候选规则运行。</strong></p>
+<h4 id="243">2.4.3 “至少各一张”也不等于任何格子都一定有候选</h4>
+<p>这里不能进一步推成“正常卡组永远不会发生候选为空”。第三层还有<code>hexType</code>、问号格排除金矿/防御、固定用途、金矿额度等筛选。玩家虽然至少拥有一张R、一张SR、一张SSR，但某个具体稀有度的那一张卡可能并不符合当前格子的类型或其他限制，所以某个具体格子仍可能出现目标稀有度下没有合法候选的情况。</p>
+<p>因此，<code class="idtip" tabindex="0" data-tip="优先把开局隐藏建筑映射到玩家本局拥有的对应卡牌。">SelectCardForCellArchitecture</code>失败后再进入<code class="idtip" tabindex="0" data-tip="隐藏建筑缺失或无法匹配时使用的回退选卡路径。">SelectCardForHex</code>等回退路径依然是有意义的运行时防护，不能因为UI已经做了最低配卡限制就认为这些fallback永远不可达。</p>
+<h4 id="244-uiloadout-sssr">2.4.4 异常/绕过UI的Loadout：全 SSSR 仍是底层可分析的理论边界</h4>
+<p>如果通过调试、回放、旧数据、异常载荷或其他方式让战斗层收到一个“非空且全部是SSSR”的Loadout，那么之前恢复出的底层边界仍成立：初始化阶段的第二层概率表不会自动改成100% SSSR；如果先抽到R / SR / SSR但第三层没有对应候选，点击阶段可能因为隐藏建筑缺失或无法映射而进入回退，最终从当前合法卡中落到SSSR。</p>
+<pre><code class="language-text">异常/绕过UI的全SSSR Loadout
+→ 50 / 100格仍按原概率抽内部稀有度
+→ 例如先抽到R或SR
+→ 当前Loadout没有对应稀有度候选
+→ 初始化具体建筑缺失或无法匹配
+→ 点击阶段进入fallback
+→ 当前合法候选只有SSSR
+→ 最终可能得到SSSR
+</code></pre>
+<p>前几次低价翻格的<code class="idtip" tabindex="0" data-tip="对前几次低价翻格的部分SSR及以上结果尝试重抽成R。">TryApplyFirstThreeCheapOpenReroll</code>也不能凭空生成玩家没有的R卡。它会尝试通过<code>SelectFirstThreeRCardWithoutGoldMine(playerId)</code>从玩家自己的战斗牌组寻找R候选；异常Loadout如果完全没有R，降级替换仍可能失败。</p>
+<p>但这只能写成<strong>底层异常输入下的代码边界</strong>，不能再写成“玩家可以通过全SSSR组卡穿透50 / 100格概率”的正常策略。</p>
+<h4 id="245-loadout">2.4.5 战斗层还有Loadout校验，但当前不能证明它重复执行同一条稀有度规则</h4>
+<p>BattleCore中存在<code>PlayerBattleLoadoutValidator.ValidateCards(...)</code>，说明战斗入口还会对载入卡牌做独立合法性检查。当前恢复的函数体更像是在验证卡牌ID、配置引用等载入合法性；目前没有足够证据确认它还会再次检查“R / SR / SSR至少各1张”。</p>
+<p>所以现阶段应把规则分层写成：</p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>层级</th>
+<th>已确认规则</th>
+<th>当前证据边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>卡组编辑UI</td>
+<td>正常玩家至少保留1张R、1张SR、1张SSR</td>
+<td>已由实测与<code>CantEquipCardTip</code>互相印证</td>
+</tr>
+<tr>
+<td>战斗初始化</td>
+<td>仍按地块档位的原始稀有度权重抽取</td>
+<td>不会因为UI最低配卡规则而自动改权重</td>
+</tr>
+<tr>
+<td>第三层候选</td>
+<td>按抽中稀有度、<code>hexType</code>和特殊限制筛当前Loadout</td>
+<td>即使各稀有度至少1张，也可能因类型不匹配而局部无候选</td>
+</tr>
+<tr>
+<td>点击fallback</td>
+<td>隐藏建筑缺失/无法匹配时存在回退选卡</td>
+<td>用于处理局部无候选和异常状态</td>
+</tr>
+<tr>
+<td>BattleCore载入校验</td>
+<td>存在<code>ValidateCards(...)</code></td>
+<td>当前不能证明它重复强制R/SR/SSR各1张</td>
+</tr>
+<tr>
+<td>全SSSR Loadout</td>
+<td>正常UI不可配置</td>
+<td>只保留为调试/异常/绕过UI输入的理论边界</td>
+</tr>
+</tbody>
+</table></div>
+<p>因此，后续分析实战出卡率时应优先采用<strong>正常玩家合法卡组</strong>作为样本空间；只有专门研究容错、调试入口或异常载荷时，才使用“全SSSR”等越过外部组卡规则的极端输入。</p>
 <h3 id="25">2.5 三层随机不要混成一句“翻格随机”</h3>
 <p>最容易产生误解的说法是“玩家翻一个格，系统随机一张卡”。当前证据更准确的模型是：</p>
 <pre><code class="language-text">普通格初始化
