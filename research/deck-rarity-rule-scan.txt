@@ -675,3 +675,471 @@ global-metadata.decrypted.dat: uintuint2({0}, {1})uint3({0}, {1}, {2})uint4({0},
 global-metadata.decrypted.dat: PlayerBattleLoadoutValidator
 global-metadata.decrypted.dat: ValidateSingleLoadout
 global-metadata.decrypted.dat: OnWeeklyClashSettlementPopupPanelRewardItemUIScrollViewValueChanged^OnWeeklyClashSettlementPopupPanelShowDesClicked`OnWeeklyClashSettlementPopupPanelClaimBtnClickedZOnWeeklyClashSettlementPopupPanelChangeActive6OnBtnDailyBlessChangeActiveBOnUpgradeRewardsItemRewardClickedROnUpgradeRewardsPreviewPanelRewardClickedNOnSettingsPanelPlayerFeedbackBtnClickedFOnSettingsPanelDeleteAccountClickedFOnPlayerFeedbackPanelBlackBGClickedHOnPlayerFeedbackPanelPlayerIdClicked`OnPlayerFeedbackPanelEmailInputFieldValueChanged\OnPlayerFeedbackPanelFeedbackInputFieldClickedVOnPlayerFeedbackPanelInputFieldValueChangedFOnPlayerFeedbackPanelSendBtnClickedHOnPlayerFeedbackPanelCloseBtnClickedBOnPlayerFeedbackPanelChangeActivefOnPlayerFeedbackPanelFeedbackInputFieldValueChangedLOnLoadingPanelPlayerFeedbackBtnClickedROnPlayerFeedbackPanelTemplateValueChangedJOnPlayerFeedbackPanelItemValueChanged>OnBoxPanelBtnBuyBoxSlot3Clicked>OnBoxPanelBtnBuyBoxSlot4Clicked4OnBoxPanelImgBoxBg1Clicked4OnBoxPanelImgBoxBg2Clicked4OnBoxPanelImgBoxBg3Clicked4OnBoxPanelImgBoxBg4Clicked6OnChooseBoxItemChangeActiveNOnChooseBoxToUnlockPanelBtnCloseClicked^OnChooseBoxToUnlockPanelChooseBoxSRValueChangedPOnChooseBoxToUnlockPanelBtnUnlockClickedHOnChooseBoxToUnlockPanelChangeActiveFOnChooseBoxItemChooseBoxItemClickedBOnChooseBoxToUnlockPanelBGClicked4OnBuyBoxSlotPanelBGClicked@OnBuyBoxSlotPanelBtnCloseClickedFOnBuyBoxSlotPanelHWIAPButtonClicked:OnBuyBoxSlotPanelChangeActiveVOnHerpCardViewAllCardScrollViewValueChangedBOnHerpCardViewBtnCardDeck1ClickedBOnHerpCardViewBtnCardDeck2ClickedBOnHerpCardViewBtnCardDeck3ClickedBOnHerpCardViewBtnCardDeck4ClickedBOnHerpCardViewBtnCardDeck5ClickedROnHerpCardViewEquipScrollViewValueChanged<OnHerpCardViewBtnTerranClicked8OnHerpCardViewBtnOrcsClicked<OnHerpCardViewBtnUndeadClicked>OnHerpCardViewBtnMachineClicked:OnHerpCardViewBtnMeleeClicked<OnHerpCardViewBtnRemoteClicked<OnHerpCardViewBtnCancelClicked4OnHerpCardViewChangeActive6OnArtifactViewBtnUseClicked>OnArtifactViewBtnUpgradeClickedHOnArtifactViewImgSVBotBgValueChanged<OnArtifactViewSummonBtnClicked4OnArtifactViewChangeActiveXOnBackpackViewBackPackScrollViewValueChanged4OnBackpackViewChangeActiveVOnHeroCardViewAllCardScrollViewValueChangedBOnHeroCardViewBtnCardDeck1ClickedBOnHeroCardViewBtnCardDeck2ClickedBOnHeroCardViewBtnCardDeck3ClickedBOnHeroCardViewBtnCardDeck4ClickedBOnHeroCardViewBtnCardDeck5ClickedROnHeroCardViewEquipScrollViewValueChanged<OnHeroCardViewBtnTerranClicked8OnHeroCardViewBtnOrcsClicked<OnHeroCardViewBtnUndeadClicked>OnHeroCardViewBtnMachineClicked:OnHeroCardViewBtnMeleeClicked<OnHeroCardViewBtnRemoteClicked<OnHeroCardViewBtnCancelClicked4OnHeroCardViewChangeActive8OnExpressionViewChangeActiveVOnExpressionViewEmojiScrollViewValueChanged@OnExpressionViewItemChangeActiveHOnExpressionViewPitchOnButtonClickedXOnExpressionViewLoopItemPitchOnButtonClickedHOnExpressionViewLoopItemChangeActiveJOnExpressionViewUsingItemChangeActiveBOnExpressionViewLoopItemBgClickedLOnExpressionViewUsingItem1ChangeActive^OnExpressionViewUsingItemUsingItemButtonClickedLOnExpressionViewUsingItemButtonClicked2OnTabGroupBtnSalesClicked6OnTabGroupBtnPrimaryClicked2OnTabGroupBtnArenaClicked,OnTabGroupChangeActive2OnShopPanelShowDesClickedlOnArenaProgressItem_ArenaBtnClaimCompleteRewardClickedXOnArenaProgressItem_ArenaBtnRewardOneClickedXOnArenaProgressItem_ArenaBtnRewardTwoClicked\OnArenaProgressItem_ArenaBtnRewardThereClickedJOnArenaProgressItem_ArenaChangeActiveTOnArenaProgressItem_ExpressionChangeActiveNOnArenaProgressItem_DefaultChangeActiveFOnHeroCardPanelBtnExpressionClickedTOnArenaProgressPanelScrollViewValueChangedVOnTrophyProgressPanelScrollViewValueChangedFOnTrophyProgressPanelBtnBackClickedBOnTrophyProgressPanelChangeActive^OnTrophyProgressPanelLoopScrollViewValueChangednOnTrophyProgressItem_ArenaBtnClaimCompleteRewardClickedZOnTrophyProgressItem_ArenaBtnRewardOneClickedZOnTrophyProgressItem_ArenaBtnRewardTwoClicked^OnTrophyProgressItem_ArenaBtnRewardThereClickedLOnTrophyProgressItem_ArenaChangeActiverOnTrophyProgressItem_DefaultBtnClaimCompleteRewardClickedPOnTrophyProgressItem_DefaultChangeActivexOnTrophyProgressItem_ExpressionBtnClaimCompleteRewardClickedVOnTrophyProgressItem_ExpressionChangeActive`OnTrophyProgressItem_ExpressionBackgroundClicked2OnRewardTitleChangeActive2OnSplashPanelChangeActive2OnGamePanelRightBGClicked@OnGamePanelCheat_BtnCloseClicked>OnChestSlotsViewBtnCloseClicked@OnChestSlotsViewImgBoxBg1Clicked@OnChestSlotsViewImgBoxBg2Clicked@OnChestSlotsViewImgBoxBg3ClickedJOnChestSlotsViewBtnBuyBoxSlot3Clicked@OnChestSlotsViewImgBoxBg4ClickedJOnChestSlotsViewBtnBuyBoxSlot4Clicked8OnChestSlotsViewChangeActive>OnMainReadyPanelBtnCloseClicked@OnMainReadyPanelImgBoxBg1Clicked@OnMainReadyPanelImgBoxBg2Clicked@OnMainReadyPanelImgBoxBg3ClickedJOnMainReadyPanelBtnBuyBoxSlot3Clicked@OnMainReadyPanelImgBoxBg4ClickedJOnMainReadyPanelBtnBuyBoxSlot4ClickedtOnTrophyProgressItem_TrainingBtnClaimCompleteRewardClickedROnTrophyProgressItem_TrainingChangeActive:OnNewArtifactItemChangeActiveHOnArtifactLevelComponentChangeActive:OnArtifactLevelUIChangeActiveHOnAllNewArtifactViewSummonBtnClickedTOnAllNewArtifactViewScrollViewValueChanged@OnAllNewArtifactViewChangeActiveBOnArtifactStarLevelUIChangeActiveBOnNewArtifactItemQualityBgClickedDOnArtifactDetailsPanelCloseClickedPOnArtifactDetailsPanelStarUpgradeClickedDOnArtifactDetailsPanelEquipClickedHOnArtifactDetailsPanelUpgradeClickedHOnArtifactDetailsPanelRefreshClickedDOnArtifactDetailsPanelChangeActiveNOnArtifactDetailsPanelBackgroundClickedHOnAllNewArtifactViewQualityBgClicked0OnForgelItemChangeActive0RefreshNewArtifactViewUIDOnForgingDetailsItemRefreshClicked@OnForgingDetailsItemChangeActiveTOnArtifactDetailsPanelForgingDetailClickedHOnArtifactStarUpPanelCloseBtnClickedDOnArtifactStarUpPanelStarUpClickedBOnArtifactStarUpPanelChangeActiveFOnArtifactStarUpPanelBlackBGClicked6OnADSBreakPanelChangeActiveTOnArtifactEntryRefreshPanelBtnCloseClickedXOnArtifactEntryRefreshPanelBtnForgingClickedXOnArtifactEntryRefreshPanelBtnReplaceClickedXOnArtifactEntryRefreshPanelBtnKeepOldClickedNOnArtifactEntryRefreshPanelChangeActive\OnArtifactTraitReforgeIntroPanelBlackBGClicked^OnArtifactTraitReforgeIntroPanelCloseBtnClickedXOnArtifactTraitReforgeIntroPanelChangeActivebOnArtifactTraitReforgeIntroPanelBackgroundClickedfOnArtifactsSummonPanelSwitchSummonCountValueChangedXOnArtifactEntryRefreshPanelBackgroundClicked^OnArtifactEntryRefreshPanelImgTopEntryBgClicked^OnArtifactEntryRefreshPanelImgBotEntryBgClickedTOnOutsiderCheatPanelBtnAddPropCountClickedJOnOutsiderCheatPanelBtnAddPropClicked`OnUserResourcesPanelUserResourceUICrystalClicked6OnRewardPanelShowDesClicked2OnRewardPanelBGBtnClickedfOnMultistageNewcomerPackageV1PanelBackgroundClicked\OnMultistageNewcomerPackageV1PanelCloseClicked\OnMultistageNewcomerPackageV1PanelImgBgClickedbOnMultistageNewcomerPackageV1PanelClaimBtnClicked
+
+## CardDeckChangePanel exact declaration slice
+
+100300: 
+100301: 	// RVA: 0xA669 Offset: 0xA669 VA: 0xA669
+100302: 	public void .ctor() { }
+100303: 
+100304: 	[CompilerGenerated]
+100305: 	[DebuggerHidden]
+100306: 	// RVA: 0xA66A Offset: 0xA66A VA: 0xA66A
+100307: 	private UniTask <>n__0(object[] args) { }
+100308: }
+100309: 
+100310: // Namespace: 
+100311: [CompilerGenerated]
+100312: [Serializable]
+100313: private sealed class CardDeckChangePanel.<>c // TypeDefIndex: 2738
+100314: {
+100315: 	// Fields
+100316: 	public static readonly CardDeckChangePanel.<>c <>9; // 0x0
+100317: 	public static Converter<int, string> <>9__26_0; // 0x4
+100318: 	public static Func<UserHeroCardData, int, <>f__AnonymousType1<UserHeroCardData, int>> <>9__26_1; // 0x8
+100319: 	public static Func<<>f__AnonymousType1<UserHeroCardData, int>, int> <>9__26_3; // 0xC
+100320: 	public static Func<<>f__AnonymousType1<UserHeroCardData, int>, UserHeroCardData> <>9__26_4; // 0x10
+100321: 
+100322: 	// Methods
+100323: 
+100324: 	// RVA: 0xA68C Offset: 0xA68C VA: 0xA68C
+100325: 	private static void .cctor() { }
+100326: 
+100327: 	// RVA: 0xA68D Offset: 0xA68D VA: 0xA68D
+100328: 	public void .ctor() { }
+100329: 
+100330: 	// RVA: 0xA68E Offset: 0xA68E VA: 0xA68E
+100331: 	internal string <SortByPartialOrder>b__26_0(int id) { }
+100332: 
+100333: 	// RVA: 0xA68F Offset: 0xA68F VA: 0xA68F
+100334: 	internal <>f__AnonymousType1<UserHeroCardData, int> <SortByPartialOrder>b__26_1(UserHeroCardData item, int index) { }
+100335: 
+100336: 	// RVA: 0xA690 Offset: 0xA690 VA: 0xA690
+100337: 	internal int <SortByPartialOrder>b__26_3(<>f__AnonymousType1<UserHeroCardData, int> x) { }
+100338: 
+100339: 	// RVA: 0xA691 Offset: 0xA691 VA: 0xA691
+100340: 	internal UserHeroCardData <SortByPartialOrder>b__26_4(<>f__AnonymousType1<UserHeroCardData, int> x) { }
+100341: }
+100342: 
+100343: // Namespace: 
+100344: [CompilerGenerated]
+100345: private sealed class CardDeckChangePanel.<>c__DisplayClass26_0 // TypeDefIndex: 2739
+100346: {
+100347: 	// Fields
+100348: 	public Dictionary<string, int> positionDict; // 0x8
+100349: 
+100350: 	// Methods
+100351: 
+100352: 	// RVA: 0xA692 Offset: 0xA692 VA: 0xA692
+100353: 	public void .ctor() { }
+100354: 
+100355: 	// RVA: 0xA693 Offset: 0xA693 VA: 0xA693
+100356: 	internal int <SortByPartialOrder>b__2(<>f__AnonymousType1<UserHeroCardData, int> x) { }
+100357: }
+100358: 
+100359: // Namespace: 
+100360: [CompilerGenerated]
+100361: private struct CardDeckChangePanel.<Awake>d__7 : IAsyncStateMachine // TypeDefIndex: 2740
+100362: {
+100363: 	// Fields
+100364: 	public int <>1__state; // 0x0
+100365: 	public AsyncVoidMethodBuilder <>t__builder; // 0x4
+100366: 	public CardDeckChangePanel <>4__this; // 0x14
+100367: 	private UniTask.Awaiter<GameObject> <>u__1; // 0x18
+100368: 
+100369: 	// Methods
+100370: 
+100371: 	// RVA: 0x3464 Offset: 0x3464 VA: 0x3464 Slot: 4
+100372: 	private void MoveNext() { }
+100373: 
+100374: 	[DebuggerHidden]
+100375: 	// RVA: 0xA694 Offset: 0xA694 VA: 0xA694 Slot: 5
+100376: 	private void SetStateMachine(IAsyncStateMachine stateMachine) { }
+100377: }
+100378: 
+100379: // Namespace: 
+100380: [CompilerGenerated]
+100381: private struct CardDeckChangePanel.<CreateShowCard>d__37 : IAsyncStateMachine // TypeDefIndex: 2741
+100382: {
+100383: 	// Fields
+100384: 	public int <>1__state; // 0x0
+100385: 	public AsyncVoidMethodBuilder <>t__builder; // 0x4
+100386: 	public CardDeckChangePanel <>4__this; // 0x14
+100387: 	public string filterField; // 0x18
+100388: 	public string filterValue; // 0x1C
+100389: 	private YieldAwaitable.Awaiter <>u__1; // 0x20
+100390: 
+100391: 	// Methods
+100392: 
+100393: 	// RVA: 0x3466 Offset: 0x3466 VA: 0x3466 Slot: 4
+100394: 	private void MoveNext() { }
+100395: 
+100396: 	[DebuggerHidden]
+100397: 	// RVA: 0xA695 Offset: 0xA695 VA: 0xA695 Slot: 5
+100398: 	private void SetStateMachine(IAsyncStateMachine stateMachine) { }
+100399: }
+100400: 
+100401: // Namespace: 
+100402: [CompilerGenerated]
+100403: private struct CardDeckChangePanel.<Show>d__9 : IAsyncStateMachine // TypeDefIndex: 2742
+100404: {
+100405: 	// Fields
+100406: 	public int <>1__state; // 0x0
+100407: 	public AsyncUniTaskMethodBuilder <>t__builder; // 0x4
+100408: 	public CardDeckChangePanel <>4__this; // 0xC
+100409: 	public object[] args; // 0x10
+100410: 
+100411: 	// Methods
+100412: 
+100413: 	// RVA: 0xA696 Offset: 0xA696 VA: 0xA696 Slot: 4
+100414: 	private void MoveNext() { }
+100415: 
+100416: 	[DebuggerHidden]
+100417: 	// RVA: 0xA697 Offset: 0xA697 VA: 0xA697 Slot: 5
+100418: 	private void SetStateMachine(IAsyncStateMachine stateMachine) { }
+100419: }
+100420: 
+100421: // Namespace: 
+100422: [CompilerGenerated]
+100423: private struct CardDeckChangePanel.<UpdateBubbleUI>d__36 : IAsyncStateMachine // TypeDefIndex: 2743
+100424: {
+100425: 	// Fields
+100426: 	public int <>1__state; // 0x0
+100427: 	public AsyncVoidMethodBuilder <>t__builder; // 0x4
+100428: 	public CardDeckChangePanel <>4__this; // 0x14
+100429: 	public int num; // 0x18
+100430: 	public bool isNormal; // 0x1C
+100431: 	public string[] str; // 0x20
+100432: 
+100433: 	// Methods
+100434: 
+100435: 	// RVA: 0x3468 Offset: 0x3468 VA: 0x3468 Slot: 4
+100436: 	private void MoveNext() { }
+100437: 
+100438: 	[DebuggerHidden]
+100439: 	// RVA: 0xA698 Offset: 0xA698 VA: 0xA698 Slot: 5
+100440: 	private void SetStateMachine(IAsyncStateMachine stateMachine) { }
+100441: }
+100442: 
+100443: // Namespace: 
+100444: [CompilerGenerated]
+100445: private struct CardDeckChangePanel.<UpdateCardDeck>d__24 : IAsyncStateMachine // TypeDefIndex: 2744
+100446: {
+100447: 	// Fields
+100448: 	public int <>1__state; // 0x0
+100449: 	public AsyncVoidMethodBuilder <>t__builder; // 0x4
+100450: 	public List<UserHeroCardData> cardDatas; // 0x14
+100451: 	public CardDeckChangePanel <>4__this; // 0x18
+100452: 	public bool isEnemy; // 0x1C
+100453: 	private UniTask.Awaiter<GameObject> <>u__1; // 0x20
+100454: 
+100455: 	// Methods
+100456: 
+100457: 	// RVA: 0x346A Offset: 0x346A VA: 0x346A Slot: 4
+100458: 	private void MoveNext() { }
+100459: 
+100460: 	[DebuggerHidden]
+100461: 	// RVA: 0xA699 Offset: 0xA699 VA: 0xA699 Slot: 5
+100462: 	private void SetStateMachine(IAsyncStateMachine stateMachine) { }
+100463: }
+100464: 
+100465: // Namespace: 
+100466: [CompilerGenerated]
+100467: private struct CardDeckChangePanel.<UpdateShowCardTypeCountUI>d__28 : IAsyncStateMachine // TypeDefIndex: 2745
+100468: {
+100469: 	// Fields
+100470: 	public int <>1__state; // 0x0
+100471: 	public AsyncVoidMethodBuilder <>t__builder; // 0x4
+100472: 	public List<UserHeroCardData> cardDatas; // 0x14
+100473: 	public CardDeckChangePanel <>4__this; // 0x18
+100474: 	private Dictionary<int, int> <cardAllFetter>5__2; // 0x1C
+100475: 	private Image <>7__wrap2; // 0x20
+100476: 	private UniTask.Awaiter<Sprite> <>u__1; // 0x24
+100477: 
+100478: 	// Methods
+100479: 
+100480: 	// RVA: 0x346C Offset: 0x346C VA: 0x346C Slot: 4
+100481: 	private void MoveNext() { }
+100482: 
+100483: 	[DebuggerHidden]
+100484: 	// RVA: 0xA69A Offset: 0xA69A VA: 0xA69A Slot: 5
+100485: 	private void SetStateMachine(IAsyncStateMachine stateMachine) { }
+100486: }
+100487: 
+100488: // Namespace: UIModuleO
+100489: public class CardDeckChangePanel : CardDeckChangePanelComponents // TypeDefIndex: 2746
+100490: {
+100491: 	// Fields
+100492: 	private int nowCardDeckIndex; // 0xEC
+100493: 	private List<GameObject> equipItem; // 0xF0
+100494: 	private Vector2 size; // 0xF4
+100495: 	private GameObject res; // 0xFC
+100496: 	private List<GameObject> showFetterCardList; // 0x100
+100497: 	private float num; // 0x104
+100498: 	private Dictionary<string, List<int>> cardTalentUnlockDic; // 0x108
+100499: 
+100500: 	// Methods
+100501: 
+100502: 	[AsyncStateMachine(typeof(CardDeckChangePanel.<Awake>d__7))]
+100503: 	// RVA: 0xA66C Offset: 0xA66C VA: 0xA66C Slot: 4
+100504: 	protected override void Awake() { }
+100505: 
+100506: 	// RVA: 0xA66D Offset: 0xA66D VA: 0xA66D
+100507: 	private void Update() { }
+100508: 
+100509: 	[AsyncStateMachine(typeof(CardDeckChangePanel.<Show>d__9))]
+100510: 	// RVA: 0xA66E Offset: 0xA66E VA: 0xA66E Slot: 5
+100511: 	public override UniTask Show(object[] args) { }
+100512: 
+100513: 	// RVA: 0xA66F Offset: 0xA66F VA: 0xA66F Slot: 12
+100514: 	protected override void OnButtonBgClicked() { }
+100515: 
+100516: 	// RVA: 0xA670 Offset: 0xA670 VA: 0xA670 Slot: 6
+100517: 	public override void Hide() { }
+100518: 
+100519: 	// RVA: 0xA671 Offset: 0xA671 VA: 0xA671 Slot: 7
+100520: 	protected override void OnHideAnimationComplete() { }
+100521: 
+100522: 	// RVA: 0xA672 Offset: 0xA672 VA: 0xA672
+100523: 	private void UpdateCardDeckBtnUI(int cardDeckIndex) { }
+100524: 
+100525: 	// RVA: 0xA673 Offset: 0xA673 VA: 0xA673
+100526: 	private void CardUpgrade(object o) { }
+100527: 
+100528: 	// RVA: 0xA674 Offset: 0xA674 VA: 0xA674 Slot: 14
+100529: 	protected override void OnButtonExtendBtnCardDeck1Clicked() { }
+100530: 
+100531: 	// RVA: 0xA675 Offset: 0xA675 VA: 0xA675 Slot: 15
+100532: 	protected override void OnButtonExtendBtnCardDeck2Clicked() { }
+100533: 
+100534: 	// RVA: 0xA676 Offset: 0xA676 VA: 0xA676 Slot: 16
+100535: 	protected override void OnButtonExtendBtnCardDeck3Clicked() { }
+100536: 
+100537: 	// RVA: 0xA677 Offset: 0xA677 VA: 0xA677 Slot: 17
+100538: 	protected override void OnButtonExtendBtnCardDeck4Clicked() { }
+100539: 
+100540: 	// RVA: 0xA678 Offset: 0xA678 VA: 0xA678 Slot: 18
+100541: 	protected override void OnButtonExtendBtnCardDeck5Clicked() { }
+100542: 
+100543: 	// RVA: 0x2AD6 Offset: 0x2AD6 VA: 0x2AD6
+100544: 	private void ChangeEquipCard(int nowCardDeckIndex) { }
+100545: 
+100546: 	// RVA: 0x2AD5 Offset: 0x2AD5 VA: 0x2AD5
+100547: 	private void ShowCardDeck(List<UserHeroCardData> cardList, Dictionary<string, List<int>> allCardUnLockTalent, bool isEnemy) { }
+100548: 
+100549: 	// RVA: 0x2AD7 Offset: 0x2AD7 VA: 0x2AD7
+100550: 	public void ChangeFetterButtonInteractable(bool interactable) { }
+100551: 
+100552: 	// RVA: 0xA679 Offset: 0xA679 VA: 0xA679
+100553: 	public void ButtonCardDeckSetActive(bool active) { }
+100554: 
+100555: 	[AsyncStateMachine(typeof(CardDeckChangePanel.<UpdateCardDeck>d__24))]
+100556: 	// RVA: 0xA67A Offset: 0xA67A VA: 0xA67A
+100557: 	private void UpdateCardDeck(List<UserHeroCardData> cardDatas, bool isEnemy) { }
+100558: 
+100559: 	// RVA: 0xA67B Offset: 0xA67B VA: 0xA67B
+100560: 	private void Clear() { }
+100561: 
+100562: 	// RVA: 0xA67C Offset: 0xA67C VA: 0xA67C
+100563: 	private List<UserHeroCardData> SortByPartialOrder(List<UserHeroCardData> dataList, List<int> orderedIds) { }
+100564: 
+100565: 	// RVA: 0xA67D Offset: 0xA67D VA: 0xA67D
+100566: 	private void UpdateAllBattleNum(List<UserHeroCardData> cardDatas, Dictionary<string, List<int>> allCardUnLockTalent) { }
+100567: 
+100568: 	[AsyncStateMachine(typeof(CardDeckChangePanel.<UpdateShowCardTypeCountUI>d__28))]
+100569: 	// RVA: 0xA67E Offset: 0xA67E VA: 0xA67E
+100570: 	private void UpdateShowCardTypeCountUI(List<UserHeroCardData> cardDatas) { }
+100571: 
+100572: 	// RVA: 0xA67F Offset: 0xA67F VA: 0xA67F Slot: 20
+100573: 	protected override void OnButtonExtendBtnOrcsClicked() { }
+100574: 
+100575: 	// RVA: 0xA680 Offset: 0xA680 VA: 0xA680 Slot: 21
+100576: 	protected override void OnButtonExtendBtnUndeadClicked() { }
+100577: 
+100578: 	// RVA: 0xA681 Offset: 0xA681 VA: 0xA681 Slot: 19
+100579: 	protected override void OnButtonExtendBtnTerranClicked() { }
+100580: 
+100581: 	// RVA: 0xA682 Offset: 0xA682 VA: 0xA682 Slot: 22
+100582: 	protected override void OnButtonExtendBtnMachineClicked() { }
+100583: 
+100584: 	// RVA: 0xA683 Offset: 0xA683 VA: 0xA683 Slot: 23
+100585: 	protected override void OnButtonExtendBtnMeleeClicked() { }
+100586: 
+100587: 	// RVA: 0xA684 Offset: 0xA684 VA: 0xA684 Slot: 24
+100588: 	protected override void OnButtonExtendBtnRemoteClicked() { }
+100589: 
+100590: 	// RVA: 0xA685 Offset: 0xA685 VA: 0xA685
+100591: 	private void UpdateFetterDesPage(string fetterBuffI2LocKey, string fetterActiveCount, bool isFetter, Vector2 introBackPivot, Vector3 followPos, int fetterValue, string titleDes) { }
+100592: 
+100593: 	[AsyncStateMachine(typeof(CardDeckChangePanel.<UpdateBubbleUI>d__36))]
+100594: 	// RVA: 0xA686 Offset: 0xA686 VA: 0xA686
+100595: 	private void UpdateBubbleUI(int num, string[] str, bool isNormal) { }
+100596: 
+100597: 	[AsyncStateMachine(typeof(CardDeckChangePanel.<CreateShowCard>d__37))]
+100598: 	// RVA: 0xA687 Offset: 0xA687 VA: 0xA687
+100599: 	private void CreateShowCard(Vector2 pos, string filterField, string filterValue) { }
+100600: 
+100601: 	// RVA: 0xA688 Offset: 0xA688 VA: 0xA688
+100602: 	private void IntroBackHide() { }
+100603: 
+100604: 	// RVA: 0xA689 Offset: 0xA689 VA: 0xA689
+100605: 	public void .ctor() { }
+100606: 
+100607: 	[CompilerGenerated]
+100608: 	[DebuggerHidden]
+100609: 	// RVA: 0xA68A Offset: 0xA68A VA: 0xA68A
+100610: 	private void <>n__0() { }
+100611: 
+100612: 	[CompilerGenerated]
+100613: 	[DebuggerHidden]
+100614: 	// RVA: 0xA68B Offset: 0xA68B VA: 0xA68B
+100615: 	private UniTask <>n__1(object[] args) { }
+100616: }
+100617: 
+100618: // Namespace: 
+100619: [CompilerGenerated]
+100620: private struct CardDeckChangePanelComponents.<Show>d__561 : IAsyncStateMachine // TypeDefIndex: 2747
+100621: {
+100622: 	// Fields
+100623: 	public int <>1__state; // 0x0
+100624: 	public AsyncUniTaskMethodBuilder <>t__builder; // 0x4
+100625: 	public CardDeckChangePanelComponents <>4__this; // 0xC
+100626: 	public object[] args; // 0x10
+100627: 
+100628: 	// Methods
+100629: 
+100630: 	// RVA: 0x2AD3 Offset: 0x2AD3 VA: 0x2AD3 Slot: 4
+100631: 	private void MoveNext() { }
+100632: 
+100633: 	[DebuggerHidden]
+100634: 	// RVA: 0xA6CD Offset: 0xA6CD VA: 0xA6CD Slot: 5
+100635: 	private void SetStateMachine(IAsyncStateMachine stateMachine) { }
+100636: }
+100637: 
+100638: // Namespace: UIModuleO
+100639: public class CardDeckChangePanelComponents : UIPanel, IUIPanelComponents // TypeDefIndex: 2748
+100640: {
+100641: 	// Fields
+100642: 	private Button _buttonBg; // 0x20
+100643: 	private RectTransform _rectTransformTop; // 0x24
+100644: 	private ScrollRect _scrollRectEquipScrollView; // 0x28
+100645: 	private RectTransform _rectTransformEquipContent; // 0x2C
+100646: 	private RectTransform _rectTransformBtnCardDeckRoot; // 0x30
+100647: 	private Image _imageBtnCardDeck1; // 0x34
+100648: 	private ButtonExtend _buttonExtendBtnCardDeck1; // 0x38
+100649: 	private Image _imageImgBtnDeckBanner1; // 0x3C
+100650: 	private Image _imageBtnCardDeck2; // 0x40
+
+## PlayerBattleLoadoutValidator exact declaration slice
+
+526390: 	// Methods
+526391: 
+526392: 	// RVA: 0xEE91 Offset: 0xEE91 VA: 0xEE91 Slot: 4
+526393: 	public int CompareTo(BattleLoadoutTalent other) { }
+526394: 
+526395: 	// RVA: 0xEE92 Offset: 0xEE92 VA: 0xEE92
+526396: 	public BattleLoadoutTalent Normalized() { }
+526397: 
+526398: 	// RVA: 0xEE93 Offset: 0xEE93 VA: 0xEE93
+526399: 	public static BattleLoadoutTalent[] NormalizeArray(BattleLoadoutTalent[] source) { }
+526400: 
+526401: 	// RVA: 0xEE94 Offset: 0xEE94 VA: 0xEE94
+526402: 	public static void AddArrayToHash(ref BattleHash hash, BattleLoadoutTalent[] values) { }
+526403: }
+526404: 
+526405: // Namespace: 
+526406: [CompilerGenerated]
+526407: [Serializable]
+526408: private sealed class PlayerBattleLoadoutValidator.<>c // TypeDefIndex: 6110
+526409: {
+526410: 	// Fields
+526411: 	public static readonly PlayerBattleLoadoutValidator.<>c <>9; // 0x0
+526412: 	public static Comparison<PlayerBattleLoadout> <>9__2_0; // 0x4
+526413: 
+526414: 	// Methods
+526415: 
+526416: 	// RVA: 0xEEB0 Offset: 0xEEB0 VA: 0xEEB0
+526417: 	private static void .cctor() { }
+526418: 
+526419: 	// RVA: 0xEEB1 Offset: 0xEEB1 VA: 0xEEB1
+526420: 	public void .ctor() { }
+526421: 
+526422: 	// RVA: 0xEEB2 Offset: 0xEEB2 VA: 0xEEB2
+526423: 	internal int <NormalizeAndValidateNormalizedPackage>b__2_0(PlayerBattleLoadout a, PlayerBattleLoadout b) { }
+526424: }
+526425: 
+526426: // Namespace: BattleCore
+526427: public static class PlayerBattleLoadoutValidator // TypeDefIndex: 6111
+526428: {
+526429: 	// Methods
+526430: 
+526431: 	// RVA: 0xEE95 Offset: 0xEE95 VA: 0xEE95
+526432: 	public static PlayerBattleLoadout[] NormalizeAndValidate(BattleConfigPackage package, PlayerBattleLoadout[] loadouts, int playerCount) { }
+526433: 
+526434: 	// RVA: 0xEE96 Offset: 0xEE96 VA: 0xEE96
+526435: 	public static PlayerBattleLoadout[] NormalizeAndValidate(BattleConfigRuntimeContext context, PlayerBattleLoadout[] loadouts, int playerCount) { }
+526436: 
+526437: 	// RVA: 0xEE97 Offset: 0xEE97 VA: 0xEE97
+526438: 	internal static PlayerBattleLoadout[] NormalizeAndValidateNormalizedPackage(BattleConfigPackage normalizedPackage, PlayerBattleLoadout[] loadouts, int playerCount) { }
+526439: 
+526440: 	// RVA: 0xEE98 Offset: 0xEE98 VA: 0xEE98
+526441: 	private static PlayerBattleLoadout[] CreateDefaultLoadouts(int playerCount) { }
+526442: 
+526443: 	// RVA: 0xEE99 Offset: 0xEE99 VA: 0xEE99
+526444: 	private static void ValidateSingleLoadout(BattleConfigPackage package, PlayerBattleLoadout loadout) { }
+526445: 
+526446: 	// RVA: 0xEE9A Offset: 0xEE9A VA: 0xEE9A
+526447: 	private static void ValidateCards(BattleConfigPackage package, BattleLoadoutCard[] cards) { }
+526448: 
+526449: 	// RVA: 0xEE9B Offset: 0xEE9B VA: 0xEE9B
+526450: 	private static void ValidateCardTalentIds(BattleConfigPackage package, BattleLoadoutCard card) { }
+526451: 
+526452: 	// RVA: 0xEE9C Offset: 0xEE9C VA: 0xEE9C
+526453: 	private static void ValidateArtifacts(BattleConfigPackage package, BattleLoadoutArtifact[] artifacts) { }
+526454: 
+526455: 	// RVA: 0xEE9D Offset: 0xEE9D VA: 0xEE9D
+526456: 	private static void ValidateBackpackOtherArtifacts(BattleConfigPackage package, BattleLoadoutArtifact[] equippedArtifacts, BattleLoadoutArtifact[] backpackOtherArtifacts) { }
+526457: 
+526458: 	// RVA: 0xEE9E Offset: 0xEE9E VA: 0xEE9E
+526459: 	private static void ValidateArtifactAffixIds(BattleConfigPackage package, BattleLoadoutArtifact artifact) { }
+526460: 
+526461: 	// RVA: 0xEE9F Offset: 0xEE9F VA: 0xEE9F
+526462: 	private static void ValidateArtifactPassiveBonuses(BattleLoadoutArtifactPassiveBonus[] bonuses) { }
+526463: 
+526464: 	// RVA: 0xEEA0 Offset: 0xEEA0 VA: 0xEEA0
+526465: 	private static void ValidateMainTower(BattleConfigPackage package, BattleLoadoutMainTower mainTower) { }
+526466: 
+526467: 	// RVA: 0xEEA1 Offset: 0xEEA1 VA: 0xEEA1
+526468: 	private static void ValidateTalents(BattleConfigPackage package, BattleLoadoutTalent[] talents) { }
+526469: 
+526470: 	// RVA: 0xEEA2 Offset: 0xEEA2 VA: 0xEEA2
+526471: 	private static void ValidateDailyBless(BattleConfigPackage package, string dailyBlessId) { }
+526472: 
+526473: 	// RVA: 0xEEA3 Offset: 0xEEA3 VA: 0xEEA3
+526474: 	private static void ValidateDebugForceNextBarracksCards(BattleConfigPackage package, BattleLoadoutCard[] loadoutCards, BattleLoadoutDebugForceNextBarracksCard[] debugCards) { }
+526475: 
+526476: 	// RVA: 0xEEA4 Offset: 0xEEA4 VA: 0xEEA4
+526477: 	private static int FindCard(BattleConfigCardDefinition[] values, string id) { }
+526478: 
+526479: 	// RVA: 0xEEA5 Offset: 0xEEA5 VA: 0xEEA5
+526480: 	private static bool ContainsLoadoutCard(BattleLoadoutCard[] values, string id) { }
+526481: 
+526482: 	// RVA: 0xEEA6 Offset: 0xEEA6 VA: 0xEEA6
+526483: 	private static bool IsDebugForceBarracksCard(BattleConfigPackage package, BattleConfigCardDefinition card) { }
+526484: 
+526485: 	// RVA: 0xEEA7 Offset: 0xEEA7 VA: 0xEEA7
+526486: 	private static bool TryFindArchitectureById(BattleConfigArchitectureDefinition[] values, string id, out BattleConfigArchitectureDefinition architecture) { }
+526487: 
+526488: 	// RVA: 0xEEA8 Offset: 0xEEA8 VA: 0xEEA8
+526489: 	private static bool TryFindArchitectureByCardId(BattleConfigArchitectureDefinition[] values, string cardId, out BattleConfigArchitectureDefinition architecture) { }
+526490: 
+526491: 	// RVA: 0xEEA9 Offset: 0xEEA9 VA: 0xEEA9
+526492: 	private static bool IsBarracksLikeHex(string hexType) { }
+526493: 
+526494: 	// RVA: 0xEEAA Offset: 0xEEAA VA: 0xEEAA
+526495: 	private static bool ContainsArtifact(BattleLoadoutArtifact[] artifacts, string propId) { }
+526496: 
+526497: 	// RVA: 0xEEAB Offset: 0xEEAB VA: 0xEEAB
+526498: 	private static int FindArtifact(BattleConfigArtifactDefinition[] values, string id) { }
+526499: 
+526500: 	// RVA: 0xEEAC Offset: 0xEEAC VA: 0xEEAC
