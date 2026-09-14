@@ -75,6 +75,14 @@ for binp in [ROOT/'research/archive/2026-09-11/reverse-engineering/csharp/DummyD
     if len(strhits)>=2500: break
 add('binary/metadata strings candidates',strhits)
 
+# F. exact declaration slices around the two strongest candidate classes
+for title, a, b in [
+    ('CardDeckChangePanel exact declaration slice', 100300, 100650),
+    ('PlayerBattleLoadoutValidator exact declaration slice', 526390, 526500),
+]:
+    rows=[f'{i+1}: {lines[i]}' for i in range(max(0,a-1), min(len(lines),b))]
+    add(title, rows)
+
 outp=ROOT/'research/deck-rarity-rule-scan.txt'
 outp.write_text('\n'.join(out),encoding='utf-8')
 print(outp)
