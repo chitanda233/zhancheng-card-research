@@ -6,62 +6,53 @@ method_map=ROOT/'research/archive/2026-09-11/reverse-engineering/canonical/metho
 wat_gz=ROOT/'research/archive/2026-09-11/reverse-engineering/canonical/module.wat.gz'
 targets={'0x2AD6':'CardDeckChangePanel.ChangeEquipCard','0xA67A':'CardDeckChangePanel.UpdateCardDeck','0x346A':'CardDeckChangePanel.<UpdateCardDeck>d__24.MoveNext','0xEE9A':'PlayerBattleLoadoutValidator.ValidateCards','0xA67E':'CardDeckChangePanel.UpdateShowCardTypeCountUI'}
 
-rows=[]
-with method_map.open(encoding='utf-8',errors='ignore') as f:
-    for line in f:
-        if any(t.lower() in line.lower() for t in targets):
-            rows.append(line.rstrip('\n'))
+all_rows=[]
+with method_map.open(encoding='utf-8',errors='ignore',newline='') as f:
+    reader=csv.DictReader(f,delimiter='\t')
+    for row in reader:
+        all_rows.append(row)
 
-# infer function indices from all matching rows
-funcs={}
-for row in rows:
-    rv=next((t for t in targets if t.lower() in row.lower()),None)
-    nums=[]
-    for pat in [r'func\[(\d+)\]',r'function(?:_index| index)?[=:\t ]+(\d+)',r'\t(\d+)\t']:
-        nums += [int(x) for x in re.findall(pat,row,re.I)]
-    funcs[rv]=sorted(set(nums))
+selected=[r for r in all_rows if str(r.get('rva_hex','')).upper() in targets]
+funcs={r['rva_hex'].upper():[int(r['wasm_func'])] for r in selected if str(r.get('wasm_func','')).isdigit()}
 
 text=gzip.open(wat_gz,'rt',encoding='utf-8',errors='ignore').read()
-# Build func start positions from WABT '(func (;123;)' markers.
 starts=[(int(m.group(1)),m.start()) for m in re.finditer(r'\(func\s+\(;\s*(\d+)\s*;\)',text)]
 pos={n:s for n,s in starts}
 order=sorted(pos.items(), key=lambda kv: kv[1])
 nextpos={n:(order[i+1][1] if i+1<len(order) else len(text)) for i,(n,s) in enumerate(order)}
 
-# if mapping regex guessed extra numbers, retain only existing WAT funcs
-for rv in list(funcs): funcs[rv]=[n for n in funcs[rv] if n in pos]
-
-# Build reverse func -> method-map lines for resolving callees.
+# canonical reverse map wasm_func -> declared methods
 reverse={}
-with method_map.open(encoding='utf-8',errors='ignore') as f:
-    for line in f:
-        found=re.findall(r'func\[(\d+)\]',line)
-        for x in found:
-            reverse.setdefault(int(x),[]).append(line.rstrip())
+for r in all_rows:
+    try: n=int(r.get('wasm_func',''))
+    except: continue
+    reverse.setdefault(n,[]).append(r)
 
 out=[]
-out.append('# TARGET METHOD-MAP ROWS')
-out.extend(rows or ['NO MATCHING ROWS'])
-out.append('\n# INFERRED TARGET FUNCS')
-for rv,name in targets.items(): out.append(f'{rv}\t{name}\t{funcs.get(rv)}')
+out.append('# METHOD MAP SAMPLE')
+out.append('rva_hex\trva_dec\twasm_func\tdump_line\tnamespace\tdeclaring_type_context\tsignature')
+for r in all_rows[:3]: out.append('\t'.join(str(r.get(k,'')) for k in ['rva_hex','rva_dec','wasm_func','dump_line','namespace','declaring_type_context','signature']))
+out.append('\n# TARGET METHOD-MAP ROWS')
+for r in selected:
+    out.append('\t'.join(str(r.get(k,'')) for k in ['rva_hex','rva_dec','wasm_func','dump_line','namespace','declaring_type_context','signature']))
+out.append('\n# TARGET FUNCS')
+for rv,name in targets.items(): out.append(f'{rv}\t{name}\t{funcs.get(rv.upper(),[])}')
 
 for rv,name in targets.items():
-    for fn in funcs.get(rv,[]):
+    for fn in funcs.get(rv.upper(),[]):
+        if fn not in pos:
+            out.append(f'\n===== {rv} {name} => func[{fn}] NOT IN MAIN WAT =====')
+            continue
         body=text[pos[fn]:nextpos[fn]]
-        # cap only after full function start to avoid giant output, normal functions are much smaller
         out.append(f'\n\n===== {rv} {name} => func[{fn}] =====\n')
-        out.append(body[:250000])
+        out.append(body[:300000])
         calls=sorted(set(int(x) for x in re.findall(r'\bcall\s+(\d+)\b',body)))
         out.append('\n-- DIRECT CALLS RESOLVED --')
         for c in calls:
             mapped=reverse.get(c,[])
             out.append(f'call {c}:')
-            out.extend('  '+x for x in mapped[:8])
-
-# Also output method-map header/sample so parser can be audited.
-with method_map.open(encoding='utf-8',errors='ignore') as f:
-    sample=[next(f,'').rstrip() for _ in range(4)]
-out.insert(0,'# METHOD MAP SAMPLE\n'+'\n'.join(sample)+'\n')
+            for r in mapped[:12]:
+                out.append('  '+ '\t'.join(str(r.get(k,'')) for k in ['rva_hex','declaring_type_context','signature']))
 
 op=ROOT/'research/deck-rarity-rule-wat.txt'
 op.write_text('\n'.join(out),encoding='utf-8')
