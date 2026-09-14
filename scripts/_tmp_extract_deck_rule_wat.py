@@ -27,11 +27,24 @@ for rv,name in targets.items(): out.append(f'{rv}\t{name}\tfunc[{funcs.get(rv)}]
 
 for src,path in wat_sources.items():
     text=gzip.open(path,'rt',encoding='utf-8',errors='ignore').read()
-    starts=[(int(m.group(1)),m.start()) for m in re.finditer(r'\(func\s+\(;\s*(\d+)\s*;\)',text)]
+    # Record sample function headers first so the format is auditable.
+    headers=re.findall(r'^\s*\(func[^\n]{0,180}',text,re.M)[:12]
+    out.append(f'\n\n# SOURCE {src} FUNCTION HEADER SAMPLES')
+    out.extend(headers)
+    starts=[]
+    patterns=[
+        r'\(func\s+\(;\s*(\d+)\s*;\)',
+        r'\(func\s+\$(?:func)?(\d+)\b',
+        r'\(func\s+\$(\d+)\b',
+    ]
+    for pat in patterns:
+        found=[(int(m.group(1)),m.start()) for m in re.finditer(pat,text)]
+        if found:
+            starts=found; break
     pos={n:s for n,s in starts}
     order=sorted(pos.items(),key=lambda x:x[1])
     nextpos={n:(order[i+1][1] if i+1<len(order) else len(text)) for i,(n,s) in enumerate(order)}
-    out.append(f'\n\n# SOURCE {src}: funcs={len(pos)} min={min(pos) if pos else None} max={max(pos) if pos else None}')
+    out.append(f'# SOURCE {src}: funcs={len(pos)} min={min(pos) if pos else None} max={max(pos) if pos else None}')
     for rv,name in targets.items():
         fn=funcs.get(rv)
         if fn not in pos:
@@ -40,21 +53,21 @@ for src,path in wat_sources.items():
         body=text[pos[fn]:nextpos[fn]]
         out.append(f'\n\n===== {src} {rv} {name} => func[{fn}] =====\n')
         out.append(body[:350000])
-        calls=sorted(set(int(x) for x in re.findall(r'\bcall\s+(\d+)\b',body)))
+        calls=sorted(set(int(x) for x in re.findall(r'\bcall\s+(?:\$func)?(\d+)\b',body)))
         out.append('\n-- DIRECT CALLS RESOLVED AGAINST CANONICAL MAP --')
         for c in calls:
             out.append(f'call {c}:')
             for r in reverse.get(c,[])[:20]:
                 out.append('  '+'\t'.join(str(r.get(k,'')) for k in ['rva_hex','declaring_type_context','signature']))
 
-# wasmcode2 crosswalk rows for these canonical primary methods
 cross=ROOT/'research/archive/2026-09-11/reverse-engineering/modules/wasmcode2/method-crosswalk.tsv'
 out.append('\n\n# WASMCODE2 CROSSWALK TARGET ROWS')
 if cross.exists():
     with cross.open(encoding='utf-8',errors='ignore') as f:
+        header=next(f,'').rstrip(); out.append(header)
         for line in f:
-            low=line.lower()
-            if any(rv in low for rv in targets) or any(name.lower().split('.')[-1] in low for name in targets.values()):
+            first=line.split('\t',1)[0].lower()
+            if first in targets:
                 out.append(line.rstrip())
 
 op=ROOT/'research/deck-rarity-rule-wat.txt'
