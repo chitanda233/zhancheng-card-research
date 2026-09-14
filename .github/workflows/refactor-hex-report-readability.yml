@@ -6,6 +6,7 @@ on:
       - refactor/hex-report-readability
     paths:
       - 'scripts/_tmp_refactor_hex_report.py'
+      - 'scripts/_tmp_fix_refactor_heading.py'
       - '.github/workflows/refactor-hex-report-readability.yml'
 
 permissions:
@@ -24,6 +25,8 @@ jobs:
           python-version: '3.12'
       - name: Install dependencies
         run: python -m pip install --disable-pip-version-check markdown pillow
+      - name: Fix refactor helper
+        run: python scripts/_tmp_fix_refactor_heading.py
       - name: Refactor source
         run: python scripts/_tmp_refactor_hex_report.py
       - name: Rebuild hex report and public docs
@@ -44,14 +47,14 @@ jobs:
           grep -q '函数证据索引' docs/reports/hex-random/report.md
           ! grep -q '### 2.4 外部组卡约束与内部战斗逻辑' scripts/hex_random_report.md
       - name: Remove one-shot helpers
-        run: rm -f scripts/_tmp_refactor_hex_report.py .github/workflows/refactor-hex-report-readability.yml
+        run: rm -f scripts/_tmp_refactor_hex_report.py scripts/_tmp_fix_refactor_heading.py .github/workflows/refactor-hex-report-readability.yml
       - name: Commit refactor and generated files
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A scripts/hex_random_report.md outputs/hex-random docs/reports/hex-random outputs/current-docs-audit.json scripts/_tmp_refactor_hex_report.py .github/workflows/refactor-hex-report-readability.yml
+          git add -A scripts/hex_random_report.md outputs/hex-random docs/reports/hex-random outputs/current-docs-audit.json scripts/_tmp_refactor_hex_report.py scripts/_tmp_fix_refactor_heading.py .github/workflows/refactor-hex-report-readability.yml
           if git diff --cached --quiet; then
             echo 'No changes to commit.'
             exit 0
