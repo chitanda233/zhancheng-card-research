@@ -1,0 +1,34 @@
+name: Scan deck rarity rule
+
+on:
+  push:
+    branches:
+      - research/deck-rarity-rule
+    paths:
+      - 'scripts/_tmp_scan_deck_rules.py'
+      - '.github/workflows/scan-deck-rarity-rule.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    if: ${{ github.actor != 'github-actions[bot]' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/deck-rarity-rule
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run scan
+        run: python scripts/_tmp_scan_deck_rules.py
+      - name: Commit scan result
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/deck-rarity-rule-scan.txt
+          git commit -m 'research: capture deck rarity rule scan'
+          git push origin HEAD:research/deck-rarity-rule
