@@ -1,0 +1,38 @@
+name: Patch hex deck constraints
+
+on:
+  push:
+    branches:
+      - fix/hex-deck-constraints
+    paths:
+      - 'scripts/_tmp_patch_hex_deck_constraints.py'
+      - '.github/workflows/patch-hex-deck-constraints.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: ${{ github.actor != 'github-actions[bot]' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/hex-deck-constraints
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Patch report source
+        run: python scripts/_tmp_patch_hex_deck_constraints.py
+      - name: Remove one-shot helpers
+        run: |
+          rm scripts/_tmp_patch_hex_deck_constraints.py
+          rm .github/workflows/patch-hex-deck-constraints.yml
+      - name: Commit report update
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scripts/hex_random_report.md scripts/_tmp_patch_hex_deck_constraints.py .github/workflows/patch-hex-deck-constraints.yml
+          git commit -m 'docs: distinguish deck UI constraints from battle logic'
+          git push origin HEAD:fix/hex-deck-constraints
