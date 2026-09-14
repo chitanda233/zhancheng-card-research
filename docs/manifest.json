@@ -1,6 +1,6 @@
 {
   "title": "占城大师研究资料库发布清单",
-  "generatedAt": "2026-09-14T04:12:25+00:00",
+  "generatedAt": "2026-09-14T04:42:10+00:00",
   "snapshot": "2026-09-03",
   "files": [
     {
@@ -80,13 +80,13 @@
     },
     {
       "path": "reports/hex-random/index.html",
-      "bytes": 210441,
-      "sha256": "84e732d416e0fc41c2fc1adfe524c98a58720441c0d4cc479a80b4ff7a59b3a5"
+      "bytes": 210874,
+      "sha256": "266f6801766153ef1b2805b9fab2df1c75f82461978ba9b818b773f899eb4ecd"
     },
     {
       "path": "reports/hex-random/report.md",
-      "bytes": 186482,
-      "sha256": "ec57a771e50e9aa83aa58f95aed9b09896f563b809e130c1eac136bc90f1e999"
+      "bytes": 187050,
+      "sha256": "6c89a8df83de8387dc8676775cb864a8df5699f63748c03e5b76729b21efae66"
     },
     {
       "path": "reports/journey/index.html",
