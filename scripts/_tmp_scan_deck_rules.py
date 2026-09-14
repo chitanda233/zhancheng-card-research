@@ -1,76 +1,79 @@
 from pathlib import Path
-import re
+import re, subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
-out = []
+out=[]
+def add(title, rows):
+    out.append('\n## '+title+'\n'); out.extend(rows)
 
+p=ROOT/'research/archive/2026-09-11/reverse-engineering/csharp/dump.cs'
+lines=p.read_text(encoding='utf-8',errors='ignore').splitlines()
 
-def add(title, lines):
-    out.append('\n## ' + title + '\n')
-    out.extend(lines)
-
-# 1) scan dump.cs declarations and nearby context
-p = ROOT / 'research/archive/2026-09-11/reverse-engineering/csharp/dump.cs'
-lines = p.read_text(encoding='utf-8', errors='ignore').splitlines()
-terms = ('deck','loadout','cardgroup','card group','lineup','formation','rare','rarity','quality')
-verbs = ('validate','check','can','is','get','count','limit','require','rule','condition','save','confirm','change','edit')
-hits = []
-for i, line in enumerate(lines):
-    low = line.lower()
-    if any(t in low for t in terms) and any(v in low for v in verbs):
-        if '(' in line or ';' in line:
-            a=max(0,i-3); b=min(len(lines),i+4)
-            hits.append(f'-- lines {a+1}-{b} --')
-            hits.extend(lines[a:b])
-            hits.append('')
-            if len(hits) > 2500:
-                break
-add('dump.cs candidate declarations/context', hits)
-
-# 2) stronger exact-ish symbols
-symbols = []
-pat = re.compile(r'.*(Deck|Loadout|Lineup|Formation|CardGroup).*(Rare|Rarity|Quality)|(Rare|Rarity|Quality).*(Deck|Loadout|Lineup|Formation|CardGroup).*', re.I)
+# A. all declarations inside deck/loadout/lineup/cardgroup-related classes
+class_hits=[]
+cur=''
+class_re=re.compile(r'^(?:public|private|internal|protected)?\s*(?:sealed\s+|abstract\s+|static\s+|partial\s+)*class\s+([\w<>`]+)|^(?:public|private|internal|protected)?\s*(?:sealed\s+|abstract\s+|static\s+|partial\s+)*struct\s+([\w<>`]+)')
 for i,line in enumerate(lines):
-    if pat.search(line):
-        symbols.append(f'{i+1}: {line}')
-        if len(symbols) >= 1000: break
-add('dump.cs mixed deck/rarity symbols', symbols)
-
-# 3) text/config scans
-text_hits=[]
-interesting_suffix={'.json','.csv','.txt','.md','.cs','.py','.yml','.yaml'}
-needles=('至少','绿色','蓝色','紫色','卡组','稀有度','品质','rare','rarity','deck','loadout')
-for fp in ROOT.rglob('*'):
-    if not fp.is_file() or fp.suffix.lower() not in interesting_suffix: continue
-    if fp == p or '_tmp_scan_deck_rules.py' in fp.name: continue
-    try:
-        arr=fp.read_text(encoding='utf-8',errors='ignore').splitlines()
-    except Exception:
-        continue
-    for i,line in enumerate(arr):
+    m=class_re.search(line.strip())
+    if m: cur=(m.group(1) or m.group(2) or '')
+    cl=cur.lower()
+    if any(x in cl for x in ('deck','loadout','lineup','cardgroup','formation')):
         low=line.lower()
-        # highly relevant if Chinese deck rule phrasing, or deck/loadout plus rarity words
-        cond = any(x in line for x in ('至少','绿色','蓝色','紫色')) or ((('deck' in low) or ('loadout' in low) or ('卡组' in line)) and (('rare' in low) or ('rarity' in low) or ('稀有' in line) or ('品质' in line)))
-        if cond:
-            text_hits.append(f'{fp.relative_to(ROOT)}:{i+1}: {line}')
-            if len(text_hits)>=3000: break
-    if len(text_hits)>=3000: break
-add('repo text/config/localization candidates', text_hits)
+        if '(' in line and any(v in low for v in ('valid','check','can','save','confirm','edit','change','set','add','remove','count','limit','rare','quality')):
+            class_hits.append(f'{i+1} [{cur}] {line.strip()}')
+add('methods in deck/loadout/lineup/cardgroup classes', class_hits[:2500])
 
-# 4) strings from Assembly-CSharp.dll if available via local checkout
-import subprocess
-binp=ROOT/'research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Assembly-CSharp.dll'
-str_hits=[]
-try:
-    s=subprocess.check_output(['strings','-a',str(binp)],text=True,errors='ignore')
-    for line in s.splitlines():
-        low=line.lower()
-        if (('deck' in low or 'loadout' in low or 'lineup' in low) and ('rare' in low or 'quality' in low or 'valid' in low or 'limit' in low or 'check' in low)):
-            str_hits.append(line)
-            if len(str_hits)>=1000: break
-except Exception as e:
-    str_hits.append('strings failed: '+repr(e))
-add('Assembly-CSharp.dll strings candidates', str_hits)
+# B. strongest mixed symbols: deck/loadout and rarity/quality on same declaration/context
+mixed=[]
+for i,line in enumerate(lines):
+    low=line.lower()
+    if (any(x in low for x in ('deck','loadout','lineup','cardgroup','formation')) and any(x in low for x in ('rare','rarity','quality'))):
+        a=max(0,i-2); b=min(len(lines),i+3)
+        mixed.append(f'-- {a+1}-{b} --'); mixed.extend(lines[a:b]); mixed.append('')
+        if len(mixed)>2500: break
+add('mixed deck + rarity declarations/context', mixed)
+
+# C. validation-like method names anywhere that mention Card/Deck/Loadout
+valid=[]
+for i,line in enumerate(lines):
+    low=line.lower()
+    if '(' not in line: continue
+    if any(v in low for v in ('validate','validation','check','canuse','cansave','canselect','canchange','isvalid','islegal','limit','require','condition')) and any(n in low for n in ('card','deck','loadout','lineup')):
+        valid.append(f'{i+1}: {line.strip()}')
+add('validation-like card/deck declarations', valid[:2500])
+
+# D. targeted tables/config only
+config=[]
+for base in (ROOT/'tables', ROOT/'scripts'):
+    if not base.exists(): continue
+    for fp in base.rglob('*'):
+        if not fp.is_file() or fp.suffix.lower() not in ('.json','.csv','.txt','.md','.py'): continue
+        if fp.name=='_tmp_scan_deck_rules.py': continue
+        try: arr=fp.read_text(encoding='utf-8',errors='ignore').splitlines()
+        except: continue
+        for i,line in enumerate(arr):
+            low=line.lower()
+            if ((any(x in low for x in ('deck','loadout','lineup','cardgroup')) and any(x in low for x in ('rare','rarity','quality','limit','min','require'))) or any(x in line for x in ('至少一张','至少1张','绿色','蓝色','紫色'))):
+                config.append(f'{fp.relative_to(ROOT)}:{i+1}: {line[:1000]}')
+                if len(config)>=2500: break
+        if len(config)>=2500: break
+    if len(config)>=2500: break
+add('tables/scripts candidates',config)
+
+# E. metadata / Assembly-CSharp symbol strings
+strhits=[]
+for binp in [ROOT/'research/archive/2026-09-11/reverse-engineering/csharp/DummyDll/Assembly-CSharp.dll', ROOT/'research/archive/2026-09-11/reverse-engineering/global-metadata.decrypted.dat']:
+    for args in (['strings','-a',str(binp)], ['strings','-el',str(binp)]):
+        try: txt=subprocess.check_output(args,text=True,errors='ignore')
+        except Exception: continue
+        for s in txt.splitlines():
+            low=s.lower()
+            if ((any(x in low for x in ('deck','loadout','lineup','cardgroup')) and any(x in low for x in ('rare','rarity','quality','valid','limit','require','check'))) or any(x in s for x in ('至少','绿色','蓝色','紫色'))):
+                strhits.append(f'{binp.name}: {s}')
+                if len(strhits)>=2500: break
+        if len(strhits)>=2500: break
+    if len(strhits)>=2500: break
+add('binary/metadata strings candidates',strhits)
 
 outp=ROOT/'research/deck-rarity-rule-scan.txt'
 outp.write_text('\n'.join(out),encoding='utf-8')
