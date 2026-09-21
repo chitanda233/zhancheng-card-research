@@ -1,4 +1,4 @@
-name: Ad negative-treatment research scan
+name: Ad negative-treatment research trace
 on:
   push:
     branches:
@@ -6,74 +6,98 @@ on:
 permissions:
   contents: read
 jobs:
-  scan:
+  trace:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           ref: research/ad-negative-treatment
           fetch-depth: 1
-      - name: Scan reverse declarations, method map and configs
+      - name: Trace ad-state fields and consumers
         shell: bash
         run: |
           python - <<'PY'
-          import re, pathlib, json
+          import re, pathlib, gzip
           root=pathlib.Path(".")
-          terms=[
-            "RewardedAd","RewardAd","RewardVideo","VideoAd","ShowAd","WatchAd","AdManager",
-            "Advertisement","Advert","Adz","VideoBtn","ECPM","AdValue","AdCount","NoAd","SkipAd",
-            "Morale","IdleDouble","DefeatPack","SuccessPack","Free_Crystal","Refresh_Daily_Bless",
-            "UserLabel","InactiveUser","LosingStreak","WinningStreak","JustPaidUser"
+          dump=root/"research/archive/2026-09-11/reverse-engineering/csharp/dump.cs"
+          lines=dump.read_text("utf-8",errors="ignore").splitlines()
+
+          def owner_of(idx):
+            for j in range(idx,-1,-1):
+              if re.match(r'^(public|private|internal|protected).*\b(class|struct|enum)\b',lines[j].strip()):
+                return j, lines[j]
+            return max(0,idx-40), "(owner not found)"
+
+          print("===== FIELD OWNERS / CLASS CONTEXT =====")
+          for needle in ["HasWatchedAd","class PlayerAdData","RecordWatchAdCount","RecordUserWathcAdCount","UpdateTxtWatchADPackCount"]:
+            print(f"### NEEDLE {needle}")
+            for i,l in enumerate(lines):
+              if needle.lower() in l.lower():
+                j,owner=owner_of(i)
+                print("OWNER",j+1,owner)
+                a=max(j,i-35); b=min(len(lines),max(i+45,j+120))
+                for k in range(a,b):
+                  print(f"{k+1}: {lines[k][:1800]}")
+                print("--- END CONTEXT ---")
+                break
+
+          methodmap=root/"research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv"
+          mmap=methodmap.read_text("utf-8",errors="ignore").splitlines()
+          exact=[
+            "ADSIMHelper","AdButtonManager","AdButtonExtend",
+            "ShopManager","PlayerShopData","PlayerAdData",
+            "UserLableManager","BattleCoreOfflinePveLoadoutBuilder","BattleOpponentInfoProvider",
+            "BattleResultPanel","ReportManager","AdsManager","DBTSDKManager"
           ]
-          rx=re.compile("|".join(re.escape(x) for x in terms),re.I)
+          kws=["WatchAd","WathcAd","RewardAd","NoAds","NoAD","VideoBtn","RemoveRewardAd",
+               "InactiveUser","LosingStreak","WinningStreak","JustPaidUser","UserLabel","UserLable",
+               "Morale","Defeat","SuccessPack","Idle"]
+          print("===== TARGET METHOD MAP =====")
+          selected=[]
+          for line in mmap:
+            if (any(x in line for x in exact) and any(k.lower() in line.lower() for k in kws)) or                any(s in line for s in [
+                 "ADSIMHelper\tpublic int GetVideoBtnData",
+                 "ShopManager\tpublic void RecordWatchAdCount",
+                 "ShopManager\tpublic void ResetWatchAdCount",
+                 "PlayerShopData\tpublic void RecordUserWathcAdCount",
+                 "BattleResultPanel\tprivate void UpdateTxtWatchADPackCount",
+                 "AdButtonManager\tprivate bool get_IsRemoveRewardAd",
+                 "ReportManager\tpublic void NewReportVideoNoAds"
+               ]):
+              print(line)
+              parts=line.split("\t")
+              if len(parts)>=3 and parts[2].isdigit():
+                selected.append((int(parts[2]),line))
+          # Also include every method owned by PlayerAdData and UserLableManager.
+          for line in mmap:
+            if "\tPlayerAdData\t" in line or "\tUserLableManager\t" in line:
+              print(line)
+              parts=line.split("\t")
+              if len(parts)>=3 and parts[2].isdigit():
+                selected.append((int(parts[2]),line))
+          # unique, cap relevant body extraction
+          uniq={}
+          for fid,line in selected: uniq[fid]=line
+          print("SELECTED_FUNC_IDS", sorted(uniq))
 
-          print("===== METHOD MAP MATCHES =====")
-          p=root/"research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv"
-          if p.exists():
-            n=0
-            for i,line in enumerate(p.read_text("utf-8",errors="ignore").splitlines(),1):
-              if rx.search(line):
-                print(f"{i}: {line[:1200]}")
-                n+=1
-                if n>=500: break
-            print("METHOD_MAP_COUNT",n)
-
-          print("===== DUMP.CS DECLARATION CONTEXT =====")
-          p=root/"research/archive/2026-09-11/reverse-engineering/csharp/dump.cs"
-          lines=p.read_text("utf-8",errors="ignore").splitlines()
-          hits=[]
-          for i,line in enumerate(lines):
-            if rx.search(line):
-              hits.append(i)
-          print("DUMP_HIT_COUNT",len(hits))
-          # collapse nearby hits; print contexts
-          shown=0; last=-99
-          for i in hits:
-            if i-last<7: continue
-            a=max(0,i-4); b=min(len(lines),i+6)
-            print(f"--- context line {i+1} ---")
-            for j in range(a,b):
-              print(f"{j+1}: {lines[j][:1600]}")
-            shown+=1; last=i
-            if shown>=250: break
-          print("DUMP_CONTEXTS_SHOWN",shown)
-
-          print("===== CONFIG / EXTRACTED TEXT MATCHES =====")
-          roots=[root/"tables",root/"extracted"]
-          count=0
-          needles=re.compile(r"(Rewarded|RewardVideo|VideoAd|WatchAd|ShowAd|AdzConfig|VideoBtn|ReportLable|Morale_Keep|Morale_Double|Idle_Double|Defeat_Pack|Success_Pack|Refresh_Daily_Bless|Special_Summon_Free|Free_Crystal|InactiveUser|LosingStreak|WinningStreak|JustPaidUser|广告|视频)",re.I)
-          for rr in roots:
-            if not rr.exists(): continue
-            for f in rr.rglob("*"):
-              if not f.is_file() or f.stat().st_size>3_000_000: continue
-              try: txt=f.read_text("utf-8",errors="ignore")
-              except: continue
-              for ln,line in enumerate(txt.splitlines(),1):
-                if needles.search(line):
-                  print(f"{f}:{ln}: {line[:1200]}")
-                  count+=1
-                  if count>=800: break
-              if count>=800: break
-            if count>=800: break
-          print("CONFIG_MATCH_COUNT",count)
+          obj=root/"research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz"
+          print("===== TARGET WASM FUNCTION BODIES =====")
+          if obj.exists():
+            wanted=set(uniq)
+            with gzip.open(obj,"rt",encoding="utf-8",errors="ignore") as fh:
+              data=fh.readlines()
+            # Headers commonly contain <func[N]>; collect first header exact match.
+            for fid in sorted(wanted):
+              pat=f"<func[{fid}]>"
+              starts=[i for i,l in enumerate(data) if pat in l]
+              print(f"### FUNC {fid} {uniq[fid]}")
+              if not starts:
+                print("BODY_HEADER_NOT_FOUND")
+                continue
+              i=starts[0]
+              for l in data[i:min(len(data),i+260)]:
+                # stop at next func header after first few lines
+                if l is not data[i] and "<func[" in l and re.search(r'<func\[\d+\]>',l):
+                  break
+                print(l.rstrip()[:2000])
           PY
