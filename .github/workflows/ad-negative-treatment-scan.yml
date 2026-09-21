@@ -1,0 +1,79 @@
+name: Ad negative-treatment research scan
+on:
+  push:
+    branches:
+      - research/ad-negative-treatment
+permissions:
+  contents: read
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/ad-negative-treatment
+          fetch-depth: 1
+      - name: Scan reverse declarations, method map and configs
+        shell: bash
+        run: |
+          python - <<'PY'
+          import re, pathlib, json
+          root=pathlib.Path(".")
+          terms=[
+            "RewardedAd","RewardAd","RewardVideo","VideoAd","ShowAd","WatchAd","AdManager",
+            "Advertisement","Advert","Adz","VideoBtn","ECPM","AdValue","AdCount","NoAd","SkipAd",
+            "Morale","IdleDouble","DefeatPack","SuccessPack","Free_Crystal","Refresh_Daily_Bless",
+            "UserLabel","InactiveUser","LosingStreak","WinningStreak","JustPaidUser"
+          ]
+          rx=re.compile("|".join(re.escape(x) for x in terms),re.I)
+
+          print("===== METHOD MAP MATCHES =====")
+          p=root/"research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv"
+          if p.exists():
+            n=0
+            for i,line in enumerate(p.read_text("utf-8",errors="ignore").splitlines(),1):
+              if rx.search(line):
+                print(f"{i}: {line[:1200]}")
+                n+=1
+                if n>=500: break
+            print("METHOD_MAP_COUNT",n)
+
+          print("===== DUMP.CS DECLARATION CONTEXT =====")
+          p=root/"research/archive/2026-09-11/reverse-engineering/csharp/dump.cs"
+          lines=p.read_text("utf-8",errors="ignore").splitlines()
+          hits=[]
+          for i,line in enumerate(lines):
+            if rx.search(line):
+              hits.append(i)
+          print("DUMP_HIT_COUNT",len(hits))
+          # collapse nearby hits; print contexts
+          shown=0; last=-99
+          for i in hits:
+            if i-last<7: continue
+            a=max(0,i-4); b=min(len(lines),i+6)
+            print(f"--- context line {i+1} ---")
+            for j in range(a,b):
+              print(f"{j+1}: {lines[j][:1600]}")
+            shown+=1; last=i
+            if shown>=250: break
+          print("DUMP_CONTEXTS_SHOWN",shown)
+
+          print("===== CONFIG / EXTRACTED TEXT MATCHES =====")
+          roots=[root/"tables",root/"extracted"]
+          count=0
+          needles=re.compile(r"(Rewarded|RewardVideo|VideoAd|WatchAd|ShowAd|AdzConfig|VideoBtn|ReportLable|Morale_Keep|Morale_Double|Idle_Double|Defeat_Pack|Success_Pack|Refresh_Daily_Bless|Special_Summon_Free|Free_Crystal|InactiveUser|LosingStreak|WinningStreak|JustPaidUser|广告|视频)",re.I)
+          for rr in roots:
+            if not rr.exists(): continue
+            for f in rr.rglob("*"):
+              if not f.is_file() or f.stat().st_size>3_000_000: continue
+              try: txt=f.read_text("utf-8",errors="ignore")
+              except: continue
+              for ln,line in enumerate(txt.splitlines(),1):
+                if needles.search(line):
+                  print(f"{f}:{ln}: {line[:1200]}")
+                  count+=1
+                  if count>=800: break
+              if count>=800: break
+            if count>=800: break
+          print("CONFIG_MATCH_COUNT",count)
+          PY
