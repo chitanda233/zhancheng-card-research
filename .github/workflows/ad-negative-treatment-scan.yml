@@ -1,4 +1,4 @@
-name: Ad negative-treatment deep trace
+name: Ad negative-treatment focused trace
 on:
   push:
     branches:
@@ -13,7 +13,7 @@ jobs:
         with:
           ref: research/ad-negative-treatment
           fetch-depth: 1
-      - name: Deep trace user ad labels and battle modifiers
+      - name: Focused trace
         shell: bash
         run: |
           python - <<'PY'
@@ -22,93 +22,101 @@ jobs:
           dump=root/"research/archive/2026-09-11/reverse-engineering/csharp/dump.cs"
           lines=dump.read_text("utf-8",errors="ignore").splitlines()
 
-          def print_context(needle, before=80, after=100, all_hits=False):
-            print(f"===== CONTEXT {needle} =====")
-            hits=[i for i,l in enumerate(lines) if needle.lower() in l.lower()]
-            print("HITS",hits[:20], "COUNT",len(hits))
-            for idx,i in enumerate(hits[:20] if all_hits else hits[:1]):
-              a=max(0,i-before); b=min(len(lines),i+after)
-              print(f"--- HIT {idx+1} line {i+1} ---")
-              for j in range(a,b):
-                print(f"{j+1}: {lines[j][:2000]}")
+          def enclosing_type(i):
+            for j in range(i,-1,-1):
+              s=lines[j].strip()
+              if re.search(r'\b(class|struct|enum)\b',s) and ('TypeDefIndex' in s or s.endswith('{') or ' enum ' in ' '+s+' '):
+                return j,s
+            return max(0,i-1),"(none)"
 
-          for needle in [
-            "HasWatchedAd", "public class UserLableData", "enum UserLable",
-            "RefreshUserLableHasWatchedAdData", "RefreshUserAdUserLable",
-            "EnmeyDifficultyLevelHandle", "EnmeyOpenHexOffsetHandle",
-            "UserOpenLendaryCardOddHandle", "EnemyOpenLendaryCardOddHandle",
-            "BattleUserLabelState"
-          ]:
-            print_context(needle)
+          for needle in ["HasWatchedAd","RefreshUserLableHasWatchedAdData","RefreshUserAdUserLable"]:
+            print("\n===== DECL",needle,"=====")
+            for i,l in enumerate(lines):
+              if needle.lower() in l.lower():
+                j,t=enclosing_type(i)
+                print("TYPE",j+1,t)
+                for k in range(max(j,i-45),min(len(lines),max(i+65,j+150))):
+                  print(f"{k+1}: {lines[k][:1800]}")
+                break
+
+          # Print full UserLable enum and UserLableData field block.
+          for needle in ["UserLableManager.UserLable", "class UserLableData"]:
+            print("\n===== TYPE SEARCH",needle,"=====")
+            found=[]
+            for i,l in enumerate(lines):
+              if needle.lower() in l.lower() and re.search(r'\b(class|struct|enum)\b',l):
+                found.append(i)
+            for i in found[:4]:
+              for k in range(i,min(len(lines),i+180)):
+                print(f"{k+1}: {lines[k][:1800]}")
+                if k>i+3 and lines[k].startswith("// Namespace:"): break
 
           mm=(root/"research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv").read_text("utf-8",errors="ignore").splitlines()
-          targets={}
-          names=[
+          target_names=[
             "RefreshUserLableHasWatchedAdData","RefreshUserAdUserLable",
             "EnmeyDifficultyLevelHandle","EnmeyOpenHexOffsetHandle",
             "UserOpenLendaryCardOddHandle","EnemyOpenLendaryCardOddHandle",
             "RefreshUserSomeLable","TryGetUserCategoryLevel",
-            "ResolveUserLabelState","BuildUserLabelsText"
+            "ResolveUserLabelState","BuildUserLabelsText",
+            "RecordWatchAdCount","RecordUserWathcAdCount"
           ]
+          targets={}
           for line in mm:
-            if any(n in line for n in names):
+            if any(n in line for n in target_names):
               p=line.split("\t")
               if len(p)>=3 and p[2].isdigit():
                 targets[int(p[2])]=line
-          print("===== TARGETS =====")
-          for k,v in sorted(targets.items()): print(k,v)
+          print("\n===== TARGET IDS =====")
+          for fid,v in sorted(targets.items()): print(fid,v)
 
           wat=root/"research/archive/2026-09-11/reverse-engineering/canonical/module.wat.gz"
-          obj=root/"research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz"
-          print("===== FORMAT SAMPLES =====")
-          if wat.exists():
-            with gzip.open(wat,"rt",encoding="utf-8",errors="ignore") as fh:
-              for _ in range(80):
-                s=fh.readline()
-                if not s: break
-                print("WAT",s.rstrip()[:2000])
-          if obj.exists():
-            with gzip.open(obj,"rt",encoding="utf-8",errors="ignore") as fh:
-              for _ in range(80):
-                s=fh.readline()
-                if not s: break
-                print("OBJ",s.rstrip()[:2000])
+          if not wat.exists():
+            print("NO WAT"); raise SystemExit
 
-          # Extract WAT bodies using wabt index comment syntax: (func (;123;)
-          if wat.exists():
-            with gzip.open(wat,"rt",encoding="utf-8",errors="ignore") as fh:
-              wlines=fh.readlines()
-            headers={}
-            hpat=re.compile(r'^\s*\(func\s+\(;([0-9]+);\)')
-            for i,l in enumerate(wlines):
-              m=hpat.match(l)
-              if m: headers[int(m.group(1))]=i
-            print("WAT_HEADER_COUNT",len(headers))
-            for fid,line in sorted(targets.items()):
-              print(f"===== WAT FUNC {fid} :: {line} =====")
-              if fid not in headers:
-                print("NO_WAT_HEADER")
-                continue
-              i=headers[fid]
-              # next func header or 1200 lines
-              nxt=min([x for x in headers.values() if x>i], default=min(len(wlines),i+1200))
-              for l in wlines[i:min(nxt,i+1200)]:
-                print(l.rstrip()[:2400])
+          # Detect real function header syntax from first 5000 func-looking lines.
+          print("\n===== WAT FUNC HEADER SAMPLES =====")
+          samples=0
+          with gzip.open(wat,"rt",encoding="utf-8",errors="ignore") as fh:
+            for ln,line in enumerate(fh,1):
+              if "(func" in line:
+                print(ln,line.rstrip()[:1800])
+                samples+=1
+                if samples>=20: break
 
-            print("===== CALLERS OF TARGET FUNCS =====")
-            for fid,line in sorted(targets.items()):
-              # WAT calls look like call <idx> or call $name; numeric in this build likely call 123
-              pats=[re.compile(rf'\bcall\s+{fid}\b'), re.compile(rf'\bcall\s+\(;?{fid};?\)')]
-              hits=[]
-              for i,l in enumerate(wlines):
-                if any(p.search(l) for p in pats): hits.append(i)
-              print(f"TARGET {fid} CALL_HITS {len(hits)} :: {line}")
-              for i in hits[:80]:
-                # find containing function header
-                h=None
-                for j in range(i,-1,-1):
-                  m=hpat.match(wlines[j])
-                  if m:
-                    h=(int(m.group(1)),j,wlines[j].strip()); break
-                print("CALLER",h, "LINE", i+1, wlines[i].strip()[:1200])
+          # Flexible header detector.
+          pats=[
+            re.compile(r'^\s*\(func\s+\(;\s*(\d+)\s*;\)'),
+            re.compile(r'^\s*\(func\s+\$(?:[^\s]+)?\s*\(;\s*(\d+)\s*;\)'),
+            re.compile(r'^\s*\(func\s+(\d+)\b'),
+          ]
+          def header_id(line):
+            for p in pats:
+              m=p.search(line)
+              if m: return int(m.group(1))
+            return None
+
+          bodies={fid:[] for fid in targets}
+          callers={fid:[] for fid in targets}
+          current=None
+          with gzip.open(wat,"rt",encoding="utf-8",errors="ignore") as fh:
+            for ln,line in enumerate(fh,1):
+              hid=header_id(line)
+              if hid is not None:
+                current=hid
+              if current in bodies and len(bodies[current])<1400:
+                bodies[current].append((ln,line.rstrip()))
+              if "call" in line:
+                nums=[int(x) for x in re.findall(r'\bcall\s+(\d+)\b',line)]
+                for n in nums:
+                  if n in callers and len(callers[n])<120:
+                    callers[n].append((current,ln,line.strip()))
+
+          for fid,v in sorted(targets.items()):
+            print(f"\n===== BODY FUNC {fid}: {v} =====")
+            if not bodies[fid]:
+              print("NO BODY CAPTURED")
+            else:
+              for ln,s in bodies[fid]: print(f"{ln}: {s[:2200]}")
+            print(f"===== CALLERS FUNC {fid} COUNT {len(callers[fid])} =====")
+            for x in callers[fid]: print(x)
           PY
