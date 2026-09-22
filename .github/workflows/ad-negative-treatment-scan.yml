@@ -1,4 +1,4 @@
-name: Ad negative-treatment research trace
+name: Ad negative-treatment deep trace
 on:
   push:
     branches:
@@ -13,7 +13,7 @@ jobs:
         with:
           ref: research/ad-negative-treatment
           fetch-depth: 1
-      - name: Trace ad-state fields and consumers
+      - name: Deep trace user ad labels and battle modifiers
         shell: bash
         run: |
           python - <<'PY'
@@ -22,82 +22,93 @@ jobs:
           dump=root/"research/archive/2026-09-11/reverse-engineering/csharp/dump.cs"
           lines=dump.read_text("utf-8",errors="ignore").splitlines()
 
-          def owner_of(idx):
-            for j in range(idx,-1,-1):
-              if re.match(r'^(public|private|internal|protected).*\b(class|struct|enum)\b',lines[j].strip()):
-                return j, lines[j]
-            return max(0,idx-40), "(owner not found)"
+          def print_context(needle, before=80, after=100, all_hits=False):
+            print(f"===== CONTEXT {needle} =====")
+            hits=[i for i,l in enumerate(lines) if needle.lower() in l.lower()]
+            print("HITS",hits[:20], "COUNT",len(hits))
+            for idx,i in enumerate(hits[:20] if all_hits else hits[:1]):
+              a=max(0,i-before); b=min(len(lines),i+after)
+              print(f"--- HIT {idx+1} line {i+1} ---")
+              for j in range(a,b):
+                print(f"{j+1}: {lines[j][:2000]}")
 
-          print("===== FIELD OWNERS / CLASS CONTEXT =====")
-          for needle in ["HasWatchedAd","class PlayerAdData","RecordWatchAdCount","RecordUserWathcAdCount","UpdateTxtWatchADPackCount"]:
-            print(f"### NEEDLE {needle}")
-            for i,l in enumerate(lines):
-              if needle.lower() in l.lower():
-                j,owner=owner_of(i)
-                print("OWNER",j+1,owner)
-                a=max(j,i-35); b=min(len(lines),max(i+45,j+120))
-                for k in range(a,b):
-                  print(f"{k+1}: {lines[k][:1800]}")
-                print("--- END CONTEXT ---")
-                break
+          for needle in [
+            "HasWatchedAd", "public class UserLableData", "enum UserLable",
+            "RefreshUserLableHasWatchedAdData", "RefreshUserAdUserLable",
+            "EnmeyDifficultyLevelHandle", "EnmeyOpenHexOffsetHandle",
+            "UserOpenLendaryCardOddHandle", "EnemyOpenLendaryCardOddHandle",
+            "BattleUserLabelState"
+          ]:
+            print_context(needle)
 
-          methodmap=root/"research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv"
-          mmap=methodmap.read_text("utf-8",errors="ignore").splitlines()
-          exact=[
-            "ADSIMHelper","AdButtonManager","AdButtonExtend",
-            "ShopManager","PlayerShopData","PlayerAdData",
-            "UserLableManager","BattleCoreOfflinePveLoadoutBuilder","BattleOpponentInfoProvider",
-            "BattleResultPanel","ReportManager","AdsManager","DBTSDKManager"
+          mm=(root/"research/archive/2026-09-11/reverse-engineering/canonical/method-map.tsv").read_text("utf-8",errors="ignore").splitlines()
+          targets={}
+          names=[
+            "RefreshUserLableHasWatchedAdData","RefreshUserAdUserLable",
+            "EnmeyDifficultyLevelHandle","EnmeyOpenHexOffsetHandle",
+            "UserOpenLendaryCardOddHandle","EnemyOpenLendaryCardOddHandle",
+            "RefreshUserSomeLable","TryGetUserCategoryLevel",
+            "ResolveUserLabelState","BuildUserLabelsText"
           ]
-          kws=["WatchAd","WathcAd","RewardAd","NoAds","NoAD","VideoBtn","RemoveRewardAd",
-               "InactiveUser","LosingStreak","WinningStreak","JustPaidUser","UserLabel","UserLable",
-               "Morale","Defeat","SuccessPack","Idle"]
-          print("===== TARGET METHOD MAP =====")
-          selected=[]
-          for line in mmap:
-            if (any(x in line for x in exact) and any(k.lower() in line.lower() for k in kws)) or                any(s in line for s in [
-                 "ADSIMHelper\tpublic int GetVideoBtnData",
-                 "ShopManager\tpublic void RecordWatchAdCount",
-                 "ShopManager\tpublic void ResetWatchAdCount",
-                 "PlayerShopData\tpublic void RecordUserWathcAdCount",
-                 "BattleResultPanel\tprivate void UpdateTxtWatchADPackCount",
-                 "AdButtonManager\tprivate bool get_IsRemoveRewardAd",
-                 "ReportManager\tpublic void NewReportVideoNoAds"
-               ]):
-              print(line)
-              parts=line.split("\t")
-              if len(parts)>=3 and parts[2].isdigit():
-                selected.append((int(parts[2]),line))
-          # Also include every method owned by PlayerAdData and UserLableManager.
-          for line in mmap:
-            if "\tPlayerAdData\t" in line or "\tUserLableManager\t" in line:
-              print(line)
-              parts=line.split("\t")
-              if len(parts)>=3 and parts[2].isdigit():
-                selected.append((int(parts[2]),line))
-          # unique, cap relevant body extraction
-          uniq={}
-          for fid,line in selected: uniq[fid]=line
-          print("SELECTED_FUNC_IDS", sorted(uniq))
+          for line in mm:
+            if any(n in line for n in names):
+              p=line.split("\t")
+              if len(p)>=3 and p[2].isdigit():
+                targets[int(p[2])]=line
+          print("===== TARGETS =====")
+          for k,v in sorted(targets.items()): print(k,v)
 
+          wat=root/"research/archive/2026-09-11/reverse-engineering/canonical/module.wat.gz"
           obj=root/"research/archive/2026-09-11/reverse-engineering/canonical/module.objdump.gz"
-          print("===== TARGET WASM FUNCTION BODIES =====")
+          print("===== FORMAT SAMPLES =====")
+          if wat.exists():
+            with gzip.open(wat,"rt",encoding="utf-8",errors="ignore") as fh:
+              for _ in range(80):
+                s=fh.readline()
+                if not s: break
+                print("WAT",s.rstrip()[:2000])
           if obj.exists():
-            wanted=set(uniq)
             with gzip.open(obj,"rt",encoding="utf-8",errors="ignore") as fh:
-              data=fh.readlines()
-            # Headers commonly contain <func[N]>; collect first header exact match.
-            for fid in sorted(wanted):
-              pat=f"<func[{fid}]>"
-              starts=[i for i,l in enumerate(data) if pat in l]
-              print(f"### FUNC {fid} {uniq[fid]}")
-              if not starts:
-                print("BODY_HEADER_NOT_FOUND")
+              for _ in range(80):
+                s=fh.readline()
+                if not s: break
+                print("OBJ",s.rstrip()[:2000])
+
+          # Extract WAT bodies using wabt index comment syntax: (func (;123;)
+          if wat.exists():
+            with gzip.open(wat,"rt",encoding="utf-8",errors="ignore") as fh:
+              wlines=fh.readlines()
+            headers={}
+            hpat=re.compile(r'^\s*\(func\s+\(;([0-9]+);\)')
+            for i,l in enumerate(wlines):
+              m=hpat.match(l)
+              if m: headers[int(m.group(1))]=i
+            print("WAT_HEADER_COUNT",len(headers))
+            for fid,line in sorted(targets.items()):
+              print(f"===== WAT FUNC {fid} :: {line} =====")
+              if fid not in headers:
+                print("NO_WAT_HEADER")
                 continue
-              i=starts[0]
-              for l in data[i:min(len(data),i+260)]:
-                # stop at next func header after first few lines
-                if l is not data[i] and "<func[" in l and re.search(r'<func\[\d+\]>',l):
-                  break
-                print(l.rstrip()[:2000])
+              i=headers[fid]
+              # next func header or 1200 lines
+              nxt=min([x for x in headers.values() if x>i], default=min(len(wlines),i+1200))
+              for l in wlines[i:min(nxt,i+1200)]:
+                print(l.rstrip()[:2400])
+
+            print("===== CALLERS OF TARGET FUNCS =====")
+            for fid,line in sorted(targets.items()):
+              # WAT calls look like call <idx> or call $name; numeric in this build likely call 123
+              pats=[re.compile(rf'\bcall\s+{fid}\b'), re.compile(rf'\bcall\s+\(;?{fid};?\)')]
+              hits=[]
+              for i,l in enumerate(wlines):
+                if any(p.search(l) for p in pats): hits.append(i)
+              print(f"TARGET {fid} CALL_HITS {len(hits)} :: {line}")
+              for i in hits[:80]:
+                # find containing function header
+                h=None
+                for j in range(i,-1,-1):
+                  m=hpat.match(wlines[j])
+                  if m:
+                    h=(int(m.group(1)),j,wlines[j].strip()); break
+                print("CALLER",h, "LINE", i+1, wlines[i].strip()[:1200])
           PY
